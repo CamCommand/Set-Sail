@@ -1,19 +1,21 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define Punk = Character('Punk', color="#E03B8B")
-$ hex = "#000000"
+define Punk = Character('Punk', color="#E03B8B") #temp character
 define MC = Character('[player_name]', color="#380101")
+define Fiona = Character('Fiona', color="#E44D1A")
+define G = Character('Geraldine', color="#DFDABB")
+define Astrid = Character('Astrid', color="#F236BD")
+define Behati = Character('Behati', color="#5E0F60")
+define May = Character('May', color="#0A4AF6")
 
+image BG bkgd = "map.png"
 
-# The game starts here.
+# The game starts here baby ;)
 
 label start:
+        scene BG bkgd
         $ player_name = ""
         $ player_identity = ""
-        scene bg dance
         "I do the same thing I do every morning and ask who I am."
 
         menu:
@@ -51,34 +53,39 @@ label start:
             MC "I'm looking good."
             Punk "This is a test line."
             MC "Another line..."
-            jump test
+            jump opening
         label choice_name_O:
             MC "Feeling tight."
-            jump test
+            jump opening
         label choice_name_R:
             MC "It's every day."
-            jump test
+            jump opening
         label choice_name_User:
             MC "Suffering."
-            jump test
+            jump opening
 
 
-label test:
+label opening:
     MC """
-    This is the first line of dialogue. It's longer than the other two
-    lines, so it has to wrap.
-
-    This is the second line of dialogue.
-
-    This is the third line of dialogue.
+    Opening
     """
 
-
-    "During this tutorial I kick your ass..."
-    scene bg aot
-    "Punk" "Yo bitch it's ya girl."
-    "Punk" "I've been \"kick your ass\" since you were a kid."
-
+label girltest:
+    scene BG bkgd
+    show astrid
+    Astrid "How's your day going so far?"
+    show g at right
+    G "What's up losers?"
+    show fiona at left
+    Fiona "I'm in the middle of something, one second."
+    hide astrid
+    hide g
+    hide fiona
+    show behati at right
+    Behati "I estimate a fifty percent chance if this working out."
+    show palmer at left
+    May "You need any help with those boxes?"
+    jump sprites
 
 label sprites:
     scene bg aot11
