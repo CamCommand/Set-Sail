@@ -29,7 +29,7 @@ label start:
 
     {cps=50}while some kept the old fashion {i}Jolly Roger{/i} casted. Thousands are at sea breathing new life into pirating today.
 
-    {cps=50}You are someone who has known nothing other than the life. Your own adventure is about to {b} Set Sail{/b}.
+    {cps=50}You are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}.
     {/cps}"""
 
     pause 3.0
