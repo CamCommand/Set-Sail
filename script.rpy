@@ -39,7 +39,8 @@ label select:
         with fade
         $ player_name = ""
         $ player_identity = ""
-        "{cps=50}I do the same thing I do every morning and ask who I am.{/cps}"
+        "{cps=50}“My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. I roll my neck around, it cracks in multiple places, I’m incredibly sore.“
+{/cps}"
 
         menu:
             "My name is Valerie":
