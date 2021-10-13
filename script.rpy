@@ -25,9 +25,9 @@ label start:
 
     {cps=50}The Pirate Code kept the practice alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle.
 
-    {cps=50}Marching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea
+    {cps=50}Marching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea while some kept the old fashion {i}Jolly Roger{/i} casted.
 
-    {cps=50}while some kept the old fashion {i}Jolly Roger{/i} casted. Thousands are at sea breathing new life into pirating today.
+    {cps=50}Thousands are at sea breathing new life into pirating today.
 
     {cps=50}You are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}.
     {/cps}"""
@@ -39,8 +39,7 @@ label select:
         with fade
         $ player_name = ""
         $ player_identity = ""
-        "{cps=50}“My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. I roll my neck around, it cracks in multiple places, I’m incredibly sore.“
-{/cps}"
+        "{cps=50}My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. I roll my neck around, it cracks in multiple places, I’m incredibly sore.{/cps}"
 
         menu:
             "My name is Valerie":
@@ -56,7 +55,7 @@ label select:
                 $ player_identity = "nb"
                 jump choice_name_R
             "What is my name?":
-                $ player_name = renpy.input("Choose your Identity", length=15)
+                $ player_name = renpy.input("Choose your name", length=15)
                 $ player_name = player_name.strip() #strip unused spaces
                 if player_name == "":
                     $ player_name = "Me"
@@ -74,19 +73,24 @@ label select:
 
 
         label choice_name_V:
-            MC "I'm looking good."
-            jump girltest
+            MC "{cps=50}I'm looking OK enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night.{/cps}"
+            jump opening
         label choice_name_O:
-            MC "Feeling tight."
-            jump girltest
+            MC "{cps=50}Feeling tight. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night.{/cps}"
+            jump opening
         label choice_name_R:
-            MC "It's every day."
-            jump girltest
+            MC "{cps=50}It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night.{/cps}"
+            jump opening
         label choice_name_User:
-            MC "Suffering."
+            MC "{cps=50}Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night.{/cps}"
+            jump opening
+
+        label opening:
+            MC "{cps=50}I get up from my cot and scan through my room. It’s a small closet under the stairs to the top deck with barely enough room for anything extra beyond my necessities.v{/cps}"
+            MC "{cps=50}I am lucky to have it, one of the only perks I’ve gotten from being the captain's child. The privacy is amazing, and the smells of the common area don’t leak into my nose from here.{/cps}"
+            MC "{cps=50}I’d like to think I earned this spot, but realistically, it was the only spot on the ship to keep a young person without anyone getting to them. Either way I appreciated the forethought.{/cps}"
+
             jump girltest
-
-
 
 label girltest:
     scene BG bkgd
@@ -102,9 +106,9 @@ label girltest:
     show behati at right
     Behati "I estimate a fifty percent chance if this working out."
     show palmer at left
-    May "You need any help with those boxes?"
+    May "You need any help with those boxes sweatheart?"
     jump sprites
-
+'''
 label sprites:
     scene bg aot11
     show img_1506
@@ -137,3 +141,4 @@ label sprites:
         Punk "Goddamn."
 
     return
+'''
