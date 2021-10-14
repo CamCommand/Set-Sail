@@ -95,8 +95,8 @@ label select:
             jump opening
 
         label opening:
-            MC "{cps=50}I get up from my cot and scan through my room. It’s a small closet under the stairs to the top deck with barely enough room for anything extra beyond my necessities.v{/cps}"
+            MC "{cps=50}I get up from my cot and scan through my room. It’s a small closet under the stairs to the top deck with barely enough room for anything extra beyond my necessities.{/cps}"
             MC "{cps=50}I am lucky to have it, one of the only perks I’ve gotten from being the captain's child. The privacy is amazing, and the smells of the common area don’t leak into my nose from here.{/cps}"
             MC "{cps=50}I’d like to think I earned this spot, but realistically, it was the only spot on the ship to keep a young person without anyone getting to them. Either way I appreciated the forethought.{/cps}"
 
-    return
+return
