@@ -321,6 +321,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
+        textbutton _("Pirate Code") action ShowMenu("PC")
         textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
@@ -351,6 +352,7 @@ style navigation_button_text:
 ## Used to display the main menu when Ren'Py starts.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
+
 
 screen main_menu():
 
@@ -573,6 +575,58 @@ style about_text is gui_text
 style about_label_text:
     size gui.label_text_size
 
+# divider for dev
+screen PC():
+
+    tag menu
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("Pirate Code"), scroll="viewport"):
+
+
+
+        vbox:
+
+            hbox:
+                label _("Rule 1: ")
+                text _("All are equal aboard the ship to direct democracy and basic needs. Pleasantries can be had at any time except for battle or during a scarcity by a vote. \n")
+            hbox:
+                label _("Rule 2: ")
+                text _("Everyone is entitled to their fair share of loot and clean clothes. Any act of theft against another or the company shall be marooned and forgotten. \n")
+            hbox:
+                label _("Rule 3: ")
+                text _("No gambling with the valuables of the company. \n")
+            hbox:
+                label _("Rule 4: ")
+                text _("Lights out when the sun goes down. Any merriment after that can be done under moonlight. \n")
+            hbox:
+                label _("Rule 5: ")
+                text _("It is everyone’s responsibility to keep their weaponry clean and ready at all times. \n")
+            hbox:
+                label _("Rule 6: ")
+                text _("Anyone coercing the desired sex or minors onto the ship will suffer harsh punishment. \n")
+            hbox:
+                label _("Rule 7: ")
+                text _("Those who avoid battle by their quarters will be at risk of marooning. \n")
+            hbox:
+                label _("Rule 8: ")
+                text _("No physical altercations on the ship, but quarrels are to be dealt with by duels on land only. The Quartermaster shall officiate any such duel. \n")
+            hbox:
+                label _("Rule 9: ")
+                text _("None shall abandon the pirate life until financially capable to do so. \n")
+            hbox:
+                label _("Rule 10: ")
+                text _("Ranking members of the company get first shares of the loot. All members of the company are allowed three holidays of their choosing. \n")
+
+
+style about_label is gui_label
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text:
+    size gui.label_text_size
 
 ## Load and Save screens #######################################################
 ##
@@ -1066,7 +1120,6 @@ screen mouse_help():
     hbox:
         label _("Mouse Wheel Down")
         text _("Rolls forward to later dialogue.")
-
 
 screen gamepad_help():
 
