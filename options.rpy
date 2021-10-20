@@ -31,6 +31,18 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+In 2017, pirating hasn’t lost it’s vigor.You play through the eyes of the protagonist who’s the child of the scourge of Cuba’s northern water, The Demonic Pirate Ricardo.  \n
+Quickly docked in Florida for supplies, your ship receives a letter from the local high school asking if a representative (preferably the Captain) of the Red Plague could give a talk about being a pirate to the Pirate Culture Club.  \n
+The bitter old Captain throws the letter away in disgust. You, the player, have never been to a high school, only ever knowing the seas as your teacher.  \n
+Wanting to teach the naive students why being a pirate is nothing to glorify, you decide to go and give a talk, prepping some of the worst stories imaginable to share.  \n
+Once you arrive, you are greeted by the pleasantly hospitable e-board of the club. Their questions are more humbling and inquisitive than you anticipate.  \n
+You end up having the most pleasant social experience of your life with the girls of the club, retailing fun pirating stories and inspiring some young pirates.  \n
+A four year time skip occurs and you are at sea in a losing battle against a new pirate ship. Your father, who has never lost a battle and seemingly never cared about you that much, sends you off in the last escape dingy.  \n
+You presume that your father and crew are all lost in battle. Washing up on a familiar shore line, you wander the mainland pondering your next move in between mourning your comrades.  \n
+You then lock eyes through a cafe window with a group of familiar girls. The old members of the Pirate Culture Club are meeting for drinks and invite you to join them.  \n
+The 2020 pandemic ruined each of their plans for the future and they have fallen on hard times. They ask of your adventures to inspire them, but you can only recall the recent bad news.  \n
+One from the group recommends that you start from scratch and start your own crew. They could be your first recruits! Elated by the idea to have a new crew around the same age as them, you humbly ask them to join his pirate crew.  \n
+Without anything else promising the girls a better future, they enthusiastically accept. Along with a strange but seemingly trustworthy woman who was eavesdropping, you'll get your affairs in order for a long journey ahead of you. Adventure, riches, and true friendship await when you set sail!
 """)
 
 
@@ -120,7 +132,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 50
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
