@@ -10,7 +10,7 @@ define Ma = Character('May', color="#0A4AF6")
 define n = nvl_narrator# Narrator
 # Minor characters in game definitions
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ])# Ol' Two Hands
-define Cap = Character('Captain', dynamic=True, color="#7F0505", who_outlines=[ (1, "#FFFFFF") ])# The Demonic Pirate Ricardo AKA Captain
+define Cap = Character('Captain', color="#7F0505")# The Demonic Pirate Ricardo AKA Captain
 # Affinity of main characters
 default Fiona_affinity = 0
 default G_affinity = 0
@@ -28,21 +28,21 @@ label start:
     nvl show dissolve
     n "\nPirating is older than recorded human history. Supply chains interrupted and intercepted by those with the might to steal large portions of materials."
 
-    n "\n Every stretch of water has seen one form or another of piracy. Normally, stealing large sums of profit is seen as immoral."
+    n "\nEvery stretch of water has seen one form or another of piracy. Normally, stealing large sums of profit is seen as immoral."
 
-    n "\n Yet pirates are deified and revered throughout history. Its unique form of crime shook the world in a way nothing else could."
+    n "\nYet pirates are deified and revered throughout history. Its unique form of crime shook the world in a way nothing else could."
 
-    n "\n Thus began a code between these pirates. An honor amongst thieves to be upheld keeping the practice ruly in unruly times."
+    n "\nThus began a code between these pirates. An honor amongst thieves to be upheld keeping the practice ruly in unruly times."
 
     nvl clear
 
-    n "\n The Pirate Code kept the practice alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle."
+    n "\nThe Pirate Code kept the practice alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle."
 
-    n "\n Marching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea while some kept the old fashion {i}Jolly Roger{/i} casted."
+    n "\nMarching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea while some kept the old fashion {i}Jolly Roger{/i} casted."
 
-    n "\n Thousands are at sea breathing new life into pirating today."
+    n "\nThousands are at sea breathing new life into pirating today."
 
-    n "\n You are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}."
+    n "\nYou are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}."
 
     pause 1.5
     nvl clear
@@ -54,7 +54,10 @@ label select:
         with fade
         $ player_name = "Default Pirate Person"
         $ player_identity = "nb"
+
         "My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. I roll my neck around, it cracks in multiple places, I’m incredibly sore."
+
+        "Morning to me..."
 
         menu:
             "{color=FF4DA6}My name is Valerie{/color}":
@@ -155,12 +158,12 @@ label select:
 
             "I make note over my other features quite harshly to myself. My next thought flickers from the back of my mind."
 
-            if player_identity = "f":
+            if player_identity == "f":
                 MC "Could I ever be a woman of the land?"
 
-            elif player_identity = "m":
+            elif player_identity == "m":
                 MC "Could I ever be a man of the land?"
-                
+
             else:
                 MC "Could I ever be someone of the land?"
 
@@ -186,10 +189,10 @@ label select:
 
             th "Of course Captain."
 
-            if player_identity = "f":
+            if player_identity == "f":
                 Cap "When I asked you to fetch me lass, I expected ye to do the searching and not be screaming. Ye’ve heard me in battle, am I incapable of hollering?"
 
-            elif player_identity = "m" or player_identity = "nb":
+            elif player_identity == "m" or player_identity == "nb":
                 Cap "When I asked you to fetch me lad, I expected ye to do the searching and not be screaming. Ye’ve heard me in battle, am I incapable of hollering?"
 
             th "No Captain. Ye have mighty powerful pipes."
@@ -208,14 +211,14 @@ label select:
 
             MC "You requested me Captain?"
 
-            if player_identity = "f":
+            if player_identity == "f":
                 Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lass. But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
                 Cap "Aye lass, I remember. That scallywag fell flat on their arse and we prodded dem every night. Haha ha! What happened to Crookshaw after that?"
 
-            elif player_identity = "m" or player_identity = "nb":
+            elif player_identity == "m" or player_identity == "nb":
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
                 Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lad. But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
@@ -250,18 +253,61 @@ label select:
 
             MC "No, never Captain."
 
-            if player_identity = "f":
+            if player_identity == "f":
                 Cap "Get it out of yer system now lass. If not fer me, member yer mudder. She gave up da land life fer da free sea. And she never looked back."
 
                 MC "Aye Captain. I’ll keep that fresh in my mind."
 
                 Cap "Alright lass, dismissed. Put on something nicer and don’t get arrested."
 
-            elif player_identity = "m" or player_identity = "nb":
+            elif player_identity == "m" or player_identity == "nb":
                 Cap "Get it out of yer system now lad. If not fer me, member yer mudder. She gave up da land life fer da free sea. And she never looked back."
 
                 MC "Aye Captain. I’ll keep that fresh in my mind."
 
                 Cap "Alright lad, dismissed. Put on something nicer and don’t get arrested."
 
+            # fade back to room
+
+            "I wonder how long Captain planned this? No way Feno could change the work schedule as quickly as yesterday, or even a week ago."
+
+            "If someone gets my work and they know it’s mine, they’ll definitely give me a hard time about it."
+
+            "This time off might be more of a double edged blade than Captain knows. However, he might expect me to hold my own at this point."
+
+            "He’s right, but it’s best to reduce conflict with other pirates, if not to save my own skin, then for the morale of the crew. We have to have each other's backs in a fire fight, no matter how one sided we might make them."
+
+            "Another pirate ship hasn’t attacked The Red Plague in years thanks to our rep. Yet sometimes crews will fight back when we are pillaging their exports."
+
+            "Numerous times I’ve had to cut the hand of a sailor who was looking to take a cheap shot at someone taking their spices. I’d be over for me if someone didn’t return the favor."
+
+            "Captain said we were close to a dock. If I don’t have any work I guess I have some time to kill."
+
+            $ mom_check = 0
+            $ rejection_list = {}
+            menu:
+                "Change clothing":
+                    jump clothes
+                "Read a book":
+                    jump book
+                "Relax some more":
+                    jump relax
+                "Day dream":
+                    jump dream
+
+        label clothes:
+
+            "test line"
+
+        label book:
+
+            "test line2"
+
+        label relax:
+
+            "test line3"
+
+        label dream:
+
+            "test line 4"
 return
