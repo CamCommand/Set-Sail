@@ -284,30 +284,271 @@ label select:
             "Captain said we were close to a dock. If I don’t have any work I guess I have some time to kill."
 
             $ mom_check = 0
-            $ rejection_list = {}
-            menu:
-                "Change clothing":
-                    jump clothes
-                "Read a book":
-                    jump book
-                "Relax some more":
-                    jump relax
-                "Day dream":
-                    jump dream
+            $ clothing_check = 0
+            $ daydream_check = 0
+            define counter = 0
+
+            $ re_list = ["No, I don’t want to think about it.", "No! I want to have a clear head if I’m gonna talk to anyone.", "Poseidon please let my mind be clear for the journey ahead of me.", "Poseidon, give me the strength of a thousand earthquakes to devour the thoughts of my mind.", "0"]
+            # re_list[0]
+
+        label waiting: #
+
+            if clothing_check == 0 and daydream_check == 0:
+                menu:
+                    "Change clothing":
+                        jump clothes
+                    "Read a book":
+                        jump book
+                    "Relax some more":
+                        jump relax
+                    "Day dream":
+                        jump dream
+
+            elif clothing_check == 1 and daydream_check == 0:
+                menu:
+                    "Read a book":
+                        jump book
+                    "Relax some more":
+                        jump relax
+                    "Day dream":
+                        jump dream
+
+            elif daydream_check == 1 and clothing_check == 0:
+                menu:
+                    "Change clothing":
+                        jump clothes
+                    "Read a book":
+                        jump book
+                    "Relax some more":
+                        jump relax
+                    "...Mom":
+                        jump mom
+            elif daydream_check == 1 and clothing_check == 1:
+                menu:
+                    "Read a book":
+                        jump book
+                    "Relax some more":
+                        jump relax
+                    "...Mom":
+                        jump mom
 
         label clothes:
+            $ clothing_check = 1
 
-            "test line"
+            MC  "Wait don’t I have a nicer set of clothes somewhere?"
+
+            "I can’t walk through the streets looking like a dirty pirate. There has to be a clean shirt I kept somewhere in here."
+
+            # shuffle sound effect
+
+            "It’s not under the books and it’s not on my bed so there aren’t a lot of other possibilities."
+
+            MC "Wait wait wait."
+
+            MC "Under my bed."
+
+            "Getting under there is a crapshoot already because I can barely squat in front of my bed, nevermind crawling under it."
+
+            "If I put these books on top of the bed and I can stick my arm under here."
+
+            MC "Got it!"
+
+            "Feeling the smooth finish of wood resin, I pull out a good sized cigar box I converted into an emergency provisions safe."
+
+            "JoJo gave it to me after he finished his smokes and stole a better box of cubans from another Captain."
+
+            "Anything perishable or fragile I steal that might be better to save goes in here. Sometimes fruits, candy, soap, and if memory serves."
+
+            MC "That’s one soft shirt."
+
+            "A folded black blouse barely fits in the recycled box. I stole it off a French Admiral’s son when he flipped me off as we were leaving their vessel."
+
+            "With this shirt and a quick shoe shine I should be looking moderately normal, or at least cleaner."
+
+            # *clothing sound and shine sound
+
+            "That took maybe five minutes, now what?"
+
+            jump waiting
 
         label book:
 
-            "test line2"
+            MC "I guess I could read without getting too invested."
+
+            "Most of these books aren’t actually stolen."
+
+            "Obviously the first few were, but either at pirate ports or on the mainland, if there is ever a delay with the Plague leaving I go and find someone to do a swap with."
+
+            "Most of those interactions go smoothly if you know who to approach. Not to stereotype, but the muscle bound tattooed walls of meat don’t tend to be well read."
+
+            "The more well dressed and young pirates normally have a novel or two they’d be willing to swap with me for one of mine."
+
+            "My mate Merigold in the Virgin Islands has a really nice collection and swaps with me what she wants me to read. Sometimes out of a sense of urgency with reading American classics."
+
+            "I prefer reading stuff that came out this decade. Most of my sociable insight of the mainland comes from young adult fiction."
+
+            "I believe smart enough to know the dialogue isn't one-to-one from someone my age, but it set a good groundwork for me since all I understand of conversation comes from pirates."
+
+            "Some of the least sociable people on Earth in my opinion. Very few pirates can have normal banter with me on something that isn't related to the life."
+
+            "I could use this day off to swap some books, but still have some to get through. As ample of an opportunity that this is, trying new things on the mainland could also be beneficial."
+
+            MC "So what should I start?"
+
+            menu:
+                "Gamer Uno":
+                    jump book1
+
+                "The Afterlife is for Real":
+                    jump book2
+
+                "Stripes Are The New Black":
+                    jump book3
+
+        label book1:
+
+            "Merigold had to explain to me what a video game was when she swapped with me."
+
+            "This book is supposedly about a dystopian world where people live in this virtual world instead of dealing with the hellscape they find themselves in."
+
+            "The main character lives in Mexico and is so good at the virtual game they upstart a revolution inside the game. Merigold said it was selling really well in the US so I asked to read it"
+
+            "Maybe I can pick up some mainland lingo. Although, I can’t tell which slang is real and which is made up for the book."
+
+            "..."
+
+            # book flipping sound
+
+            with fade
+            jump port
+
+        label book2:
+
+            "This is a nonfiction book?"
+
+            "It’s about a kid who died and was revived with a miraculous story of his culture's version of heaven. Funny how that works."
+
+            "His accounts of the afterlife perfectly match what he was told by adults and with punjuncent details for a six year old."
+
+            "I was taught the Greek myths. Knowing that they’re myths, but what happens to our souls seems so fair it gives me comfort in believing some of the stories for real."
+
+            "The suffering described in Tartarus sounds like around the suffering someone who is sent there would deserve. Only the worst of the worst go there."
+
+            "As nice as Elysium sounds, I’d be perfectly content with the Underworlds bleak nothingness for eternity. Sounds more peaceful than worshiping forever in Cloud World for no reason."
+
+            "..."
+
+            # book flipping sound
+
+            "According to this kid, no ferry ride to the Underworld from Charon and no panel of judges. Just the one guy and a bunch of fluffy angels."
+
+            "I wonder how many people on land think about this stuff on the day-to-day?"
+
+            with fade
+            jump port
+
+        label book3:
+
+            "A book about a normal woman getting sentenced to prison time for her past way of life."
+
+            "The juxtaposition sounds appealing. Pirates don’t get the luxury of sitting in a cell, but I always wondered what the lives are like of a bunch of criminals in the same building."
+
+            "Not enough to find out first hand, but that’s why books are so great. I can live a life that I could only sparsely imagine."
+
+            "..."
+
+            # book flipping sound
+
+            "Flipping through some chapter titles I can start with the assumption that this isn’t a glamorous lifestyle."
+
+            with fade
+            jump port
 
         label relax:
 
-            "test line3"
+            "Perhaps I should just relax some and enjoy the sway of the ocean."
+
+            MC "Arrrghhhh, did I just think the word “Perhaps”? I know I’m not as slimy as your average pirate, but I’ll be damned to Tatarus if I start acting like a British dandy royal."
+
+            "I might be stressing out about this. I’ll just close my eyes and lie down."
+
+            "A good snooze should whip my inner monologue into shape. Or, at the very least not make me sound like I live in a palace."
+
+            "If the Captain heard me say something like outloud he’d probably throw all my books overboard. I’d rather him cut out my tongue, then I couldn’t slip up again."
+
+            "..."
+
+            with fade
+            jump port
 
         label dream:
 
-            "test line 4"
+            $ daydream_check = 1
+
+            MC "I wonder what I can do at this port? Is the town around it big?"
+
+            "Wait a second. Captain didn’t tell me where we were docking. After the storm last night I don’t know if we changed trajectory from our usual routes or not."
+
+            "We were around Havana a couple of days ago. We might have turned north last night to avoid the worst of the storm. If that’s right then we are headed to."
+
+            "Florida."
+
+            "That’s why Captain said that thing about not needing anything from there anymore. Florida is where he picked up Mom all those years ago."
+
+            "Imagining this place as sentimental to him at all is difficult. The grizzled old pirate wouldn’t make special precautions for a port where literally zero people would fuck with them there."
+
+            "We haven’t been to that state since Mom died. I don’t want to think about it too much right now. But maybe, maybe I’ll walk the same ground she once did."
+
+            "..."
+
+            jump waiting
+
+        label mom:
+            if counter != 4:
+                $ lines = re_list[counter]
+                MC "[lines]"
+                $ counter += 1
+            else:
+                MC "Fuck!"
+                jump breakdown
+            jump waiting
+
+        label breakdown:
+
+            "Mom."
+
+            "I miss you."
+
+            "Being a pirate is so hard without you. You were there to balance out the lifestyle. Telling me stories of your life to make me feel safer."
+
+            "Getting the drunkards to stop yelling at me. Raising me better than the water ever has. I know the world of thieves more than anything else. More than myself."
+
+            "Shit, I wish you were still here."
+
+            "How different would I be if swashbuckling didn’t envelope me after you left? Would you recognize me?"
+
+            "You were the only person that cared for me, that I cared about. Dad gives me a day off of work and it’s the nicest thing anyone has done for me in years."
+
+            "I need more people like you in my or this life is gonna kill me slower than scurvy ever could. You didn’t own a single thing when you stepped on the Red Plague."
+
+            "All you left me were stories of your old life. And the scars you helped treat when you were here. They’ve opened up without you."
+
+            "Without you. I wouldn’t be anything. Or maybe I am nothing without your influence?"
+
+            # play sniffle noise
+            "..."
+
+            MC " I think I should keep on pirating."
+
+            "It’s what you would've wanted. It’s what I was taught."
+
+            "I believe you would have wanted me to find my answers without you anyway. Just as you did for yourself."
+
+            "Like Dad said, you were the happiest on this ship."
+
+            jump port
+
+        label port:
+
+        "You've reached the end of the script Cam."
 return
