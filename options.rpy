@@ -162,7 +162,7 @@ define config.save_directory = "SetSailTutorial-1632762486"
 ##
 ## The icon displayed on the taskbar or dock.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "gui/setSailTemp.png"
 
 
 ## Build configuration #########################################################
