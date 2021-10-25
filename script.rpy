@@ -1,7 +1,7 @@
 ﻿# The script of the game goes in this file.
 
 # Main characters in game definitions
-define MC = Character('[player_name]', dynamic=True, color="#990033")# Player Character
+define MC = Character("[player_name]", dynamic=True, color="#990033")# Player Character
 define Fi = Character('Fiona', color="#E44D1A")
 define G = Character('Geraldine', color="#DFDABB")# Geraldine
 define As = Character('Astrid', color="#F236BD")
@@ -20,6 +20,8 @@ default May_affinity = 0
 
 image BG bkgd = "map.png"
 image BG MC_room ="Minecraft_MC_room.png"
+image BG deckview = "deckview.png"
+image twohands = "TwoHands.png"
 
 # The game starts here baby ;)
 
@@ -112,6 +114,7 @@ label select:
         label opening:
             $ pirate = "Pirate"
             "Sunlight pours into my eyes through the cracks in the old boards."
+
             "I get up from my cot and scan through my room. It’s a small closet under the stairs to the top deck with barely enough room for anything extra beyond my necessities."
 
             "I am lucky to have it, one of the only perks I’ve gotten from being the captain's child. The privacy is amazing, and the smells of the common area don’t leak into my nose from here."
@@ -137,6 +140,7 @@ label select:
             "So it was my birthday at some point and all I got was new pains. Sometimes Captain says a passing mention of it, but we’ve been out for a while so I doubt he knew."
 
             th "Wheres [player_name]!? Why arrrgh’t they on deck?"
+
             "That sounds like my call to action. I quickly throw myself out of bed. My shoes are at my feet, but how could I lose track of my shirt in here?"
 
             "Scanning my small abode, it evades my glance. It must be under something."
@@ -173,7 +177,10 @@ label select:
 
             "Snapping back into action I head for the top deck. It’s time to start moving for real. I could use a peaceful type of day. As peaceful as pirate life can be."
 
-            #fade to new scene
+            with dissolve
+            scene BG deckview
+            show twohands at left
+            show captain at right
 
             "Blinding heavenly light engulfs my face as I surface above deck. Men and women working hard, or at least pretending to while The Demonic Pirate Ricardo is watching."
 
@@ -339,7 +346,7 @@ label select:
 
             "I can’t walk through the streets looking like a dirty pirate. There has to be a clean shirt I kept somewhere in here."
 
-            # shuffle sound effect
+            play sound "audio/rummaging_sound.wav"
 
             "It’s not under the books and it’s not on my bed so there aren’t a lot of other possibilities."
 
@@ -365,7 +372,9 @@ label select:
 
             "With this shirt and a quick shoe shine I should be looking moderately normal, or at least cleaner."
 
-            # *clothing sound and shine sound
+            play sound "audio/cloth_shine.wav"
+
+            pause 3.5
 
             "That took maybe five minutes, now what?"
 
@@ -415,9 +424,9 @@ label select:
 
             "Maybe I can pick up some mainland lingo. Although, I can’t tell which slang is real and which is made up for the book."
 
-            "..."
+            play sound "audio/pages.wav"
 
-            # book flipping sound
+            "..."
 
             with fade
             jump port
@@ -436,9 +445,9 @@ label select:
 
             "As nice as Elysium sounds, I’d be perfectly content with the Underworlds bleak nothingness for eternity. Sounds more peaceful than worshiping forever in Cloud World for no reason."
 
-            "..."
+            play sound "audio/pages.wav"
 
-            # book flipping sound
+            "..."
 
             "According to this kid, no ferry ride to the Underworld from Charon and no panel of judges. Just the one guy and a bunch of fluffy angels."
 
@@ -455,9 +464,9 @@ label select:
 
             "Not enough to find out first hand, but that’s why books are so great. I can live a life that I could only sparsely imagine."
 
-            "..."
+            play sound "audio/pages.wav"
 
-            # book flipping sound
+            "..."
 
             "Flipping through some chapter titles I can start with the assumption that this isn’t a glamorous lifestyle."
 
@@ -535,7 +544,8 @@ label select:
 
             "Without you. I wouldn’t be anything. Or maybe I am nothing without your influence?"
 
-            # play sniffle noise
+            play sound "audio/crysniff.wav"
+
             "..."
 
             MC " I think I should keep on pirating."
