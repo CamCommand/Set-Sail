@@ -25,7 +25,7 @@ label act1_2:
 
     "I might end up just having to bite the bullet on this if he doesn’t help."
 
-    scene BG topdeck
+    scene BG topdeck with fade
 
     "Everyone is unloading from the ship onto a boardwalk."
 
@@ -111,4 +111,68 @@ label act1_2:
 
     "Let’s get off the ship and have a look around first. At this point everyone looks so busy loading supplies I can slip by easily without them noticing."
 
-    # "You've reached the end of the script Cam."
+    scene BG harbor with fade
+    play music "audio/chattering.mp3"
+
+    "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
+
+    "Hopefully my cleaner outfit separates me from the seakissed pirates so that blending in isn’t a hurdle. Although, people seem to be wearing t-shirts and shorts so I might look a little odd."
+
+    "Let’s find out, hopefully my fake mainlander dialect can pass me through any doubt."
+
+    show woman with dissolve
+
+    MC "Excuse me ma’am, could I bother you for today’s date?"
+
+    woman "Umm yeah, it’s the 28th."
+
+    hide woman with moveoutleft
+
+    "Wow, she rushed away faster than what she was walking before. She didn’t scream or anything so I assume that counts as a win."
+
+    MC "The 28th. Hmmmm."
+
+    "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday. Don’t know where that came from, but nevermind. Don’t know where that came from, but nevermind."
+
+    "The letter said this place was called Seaborough. Some of the signs on the eatteries confirm it."
+
+    "Other than the more personal stuff Mom uses to tell me, I’ve heard some interesting things about Florida. Mainly how there’s a bunch of old and crazy people here who have given up on life."
+
+    "So I got to keep an eye out for lunatics, but also not to hurt anyone. Leaving my pistol onboard was a good idea, even if it leaves me naked."
+
+    "All the manual labor has me in good physical condition. In a fight I can take care of myself, but losing the ship’s annual arm wrestling contest keeps me humble."
+
+    "I have to wonder how often some of these people even look at a hammar. I should keep my expectations low. Let’s dive in head first, walk around, see what I can do."
+
+    scene BG black
+    scene BG harbor with fade
+
+    "Alright, that's enough walking. Where should I go?"
+
+    menu:
+        "Market":
+            jump market
+        "Tourist trap":
+            jump trap
+        "Arcade":
+            jump arcade
+        "School":
+            jump act1_3
+
+    label market:
+
+        MC "Something to eat sounds nice. I’m sure nobody will miss one apple."
+
+        jump act1_3
+
+    label trap:
+
+        MC "Let’s go see what the masses willingly get swindled for."
+
+        jump act1_3
+
+    label arcade:
+
+        MC "Oh! That place had those video games Merigold told me about. Checking those out is a must."
+
+        jump act1_3
