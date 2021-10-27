@@ -1,5 +1,6 @@
 ﻿label act1_1:
 
+        scene BG map at Pan((0,0), (2200,50), 55.0)
         play music "audio/waves.ogg"
         nvl show dissolve
         n "\nPirating is older than recorded human history. Supply chains interrupted and intercepted by those with the might to steal large portions of materials."
@@ -12,7 +13,7 @@
 
         nvl clear
 
-        n "\nThe Pirate Code kept the practice alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle."
+        n "\nThe Pirate Code kept the good times alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle."
 
         n "\nMarching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea while some kept the old fashion {i}Jolly Roger{/i} casted."
 
@@ -23,7 +24,6 @@
         pause 1.5
         nvl clear
 
-        with fade
         scene BG MC_room
         with fade
         with fade
@@ -31,28 +31,34 @@
         "My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
 
         "Morning to me..."
-
-        menu:
-            "{color=FF4DA6}My name is Valerie{/color}":
-                $ player_identity = "f"
-                $ player_name = "Valerie"
-                $ MC = Character('Valerie', color="FF4DA6")
-                jump choice_name_V
-            "{color=00AAFF}My name is Oscar{/color}":
-                $ player_identity = "m"
-                $ player_name = "Oscar"
-                $ MC = Character('Oscar', color="00AAFF")
-                jump choice_name_O
-            "{color=116600}My name is Reed{/color}":
-                $ player_identity = "nb"
-                $ player_name = "Reed"
-                $ MC = Character('Reed', color="116600")
-                jump choice_name_R
-            "What is my name?":
-                $ player_name = renpy.input("Choose your name", length=15)
-                $ player_name = player_name.strip() #strip unused spaces
-                if player_name == "":
-                    $ player_name = "Me"
+        label input:
+            menu:
+                "{color=FF4DA6}My name is Valerie{/color}":
+                    $ player_identity = "f"
+                    $ player_name = "Valerie"
+                    $ MC = Character('Valerie', color="FF4DA6")
+                    jump choice_name_V
+                "{color=00AAFF}My name is Oscar{/color}":
+                    $ player_identity = "m"
+                    $ player_name = "Oscar"
+                    $ MC = Character('Oscar', color="00AAFF")
+                    jump choice_name_O
+                "{color=116600}My name is Reed{/color}":
+                    $ player_identity = "nb"
+                    $ player_name = "Reed"
+                    $ MC = Character('Reed', color="116600")
+                    jump choice_name_R
+                "What is my name?":
+                    $ player_name = renpy.input("Choose your name", length=15)
+                    $ player_name = player_name.strip() #strip unused spaces
+                    if player_name == "":
+                        $ player_name = "Reed"
+                    if player_name == "Blackbeard" or player_name == "black beard" or player_name == "Black Beard":
+                        "Really? No jokes today, I can't take any more floggin'."
+                        jump input
+                    # if player_name == "Cam":
+                        # $ player_name = "Cam"
+                        # Add cheat menu to add to affinity variables
         "How do I identify?"
         menu:
             "{color=FF4DA6}Female{/color}":
