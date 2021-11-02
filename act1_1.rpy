@@ -31,64 +31,91 @@
         "My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
 
         "Morning to me..."
+
         label input:
             menu:
                 "{color=FF4DA6}My name is Valerie{/color}":
+
                     $ player_identity = "f"
                     $ player_name = "Valerie"
                     $ MC = Character('Valerie', color="FF4DA6")
                     jump choice_name_V
+
                 "{color=00AAFF}My name is Oscar{/color}":
+
                     $ player_identity = "m"
                     $ player_name = "Oscar"
                     $ MC = Character('Oscar', color="00AAFF")
                     jump choice_name_O
+
                 "{color=116600}My name is Reed{/color}":
+
                     $ player_identity = "nb"
                     $ player_name = "Reed"
                     $ MC = Character('Reed', color="116600")
                     jump choice_name_R
+
                 "What is my name?":
+
                     $ player_name = renpy.input("Choose your name", length=15)
                     $ player_name = player_name.strip() #strip unused spaces
+
                     if player_name == "":
+
                         $ player_name = "Reed"
+
                     if player_name == "Blackbeard" or player_name == "black beard" or player_name == "Black Beard":
+
                         "Really? No jokes today, I can't take any more floggin'."
                         jump input
+
                     # if player_name == "Cam":
                         # $ player_name = "Cam"
                         # Add cheat menu to add to affinity variables
+
         "How do I identify?"
+
         menu:
             "{color=FF4DA6}Female{/color}":
+
                 $ player_identity = "f"
                 $ MC = Character('[player_name]', color="FF4DA6")
                 jump choice_name_User
+
             "{color=00AAFF}Male{/color}":
+
                 $ MC = Character('[player_name]', color="00AAFF")
                 $ player_identity = "m"
                 jump choice_name_User
+
             "{color=116600}Non Binary{/color}":
+
                 $ MC = Character('[player_name]', color="116600")
                 $ player_identity = "nb"
                 jump choice_name_User
 
-
         label choice_name_V:
+
             MC "I'm feeling OK enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
+
         label choice_name_O:
+
             MC "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
+
         label choice_name_R:
+
             MC "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
+
         label choice_name_User:
+
             MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
 
         label opening:
+
             $ pirate = "Pirate"
             "Sunlight pours into my eyes through the cracks in the old boards."
 
@@ -105,8 +132,6 @@
             MC "Arrrgh!"
 
             MC "Ahhhh!"
-
-            MC "Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
             "I bend in every direction I can, but the stretching doesn’t alleviate the pain in my shoulders. If we are close to a port, maybe I can snag an extra pillow from a cafe or something."
 
@@ -198,6 +223,7 @@
             MC "You requested me Captain?"
 
             if player_identity == "f":
+
                 Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lass. But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
@@ -205,6 +231,7 @@
                 Cap "Aye lass, I remember. That scallywag fell flat on their arse and we prodded dem every night. Haha ha! What happened to Crookshaw after that?"
 
             elif player_identity == "m" or player_identity == "nb":
+
                 Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lad. But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
@@ -240,6 +267,7 @@
             MC "No, never Captain."
 
             if player_identity == "f":
+
                 Cap "Get it out of yer system now lass. If not fer me, member yer mudder. She gave up da land life fer da free sea. And she never looked back."
 
                 MC "Aye Captain. I’ll keep that fresh in my mind."
@@ -247,6 +275,7 @@
                 Cap "Alright lass, dismissed. Put on something nicer and don’t get arrested."
 
             elif player_identity == "m" or player_identity == "nb":
+
                 Cap "Get it out of yer system now lad. If not fer me, member yer mudder. She gave up da land life fer da free sea. And she never looked back."
 
                 MC "Aye Captain. I’ll keep that fresh in my mind."
@@ -279,7 +308,7 @@
             $ re_list = ["No, I don’t want to think about it.", "No! I want to have a clear head if I’m gonna talk to anyone.", "Poseidon please let my mind be clear for the journey ahead of me.", "Poseidon, give me the strength of a thousand earthquakes to devour the thoughts of my mind.", "0"]
             # re_list[0]
 
-        label waiting: #
+        label waiting:
 
             $ content_check = 0
 
