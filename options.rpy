@@ -31,7 +31,7 @@ define config.version = ".20"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-In 2017, pirating hasn’t lost it’s vigor.You play through the eyes of the protagonist who’s the child of the scourge of Cuba’s northern water, The Demonic Pirate Ricardo.  \n
+In 2017, pirating hasn’t lost it’s vigor. You play through the eyes of the protagonist who’s the child of the scourge of Cuba’s northern water, {i}The Demonic Pirate Ricardo{/i}.  \n
 Quickly docked in Florida for supplies, your ship receives a letter from the local high school asking if a representative (preferably the Captain) of the Red Plague could give a talk about being a pirate to the Pirate Culture Club.  \n
 The bitter old Captain throws the letter away in disgust. You, the player, have never been to a high school, only ever knowing the seas as your teacher.  \n
 Wanting to teach the naive students why being a pirate is nothing to glorify, you decide to go and give a talk, prepping some of the worst stories imaginable to share.  \n
