@@ -24,7 +24,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = ".20"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -50,7 +50,7 @@ Without anything else promising the girls a better future, they enthusiastically
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "SetSailTutorial"
+define build.name = "SetSail"
 
 
 ## Sounds and music ############################################################
@@ -155,7 +155,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "SetSailTutorial-1632762486"
+define config.save_directory = "SetSail_save_directory"
 
 
 ## Icon ########################################################################
