@@ -294,7 +294,7 @@
 
             "He’s right, but it’s best to reduce conflict with other pirates, if not to save my own skin, then for the morale of the crew. We have to have each other's backs in a fire fight, no matter how one sided we might make them."
 
-            "Another pirate ship hasn’t attacked The Red Plague in years thanks to our rep. Yet sometimes crews will fight back when we are pillaging their exports."
+            "Another pirate ship hasn’t attacked {color=#f00}The Red Plague{/color} in years thanks to our rep. Yet sometimes crews will fight back when we are pillaging their exports."
 
             "Numerous times I’ve had to cut the hand of a sailor who was looking to take a cheap shot at someone taking their spices. It'd be over for me if someone didn’t return the favor."
 
@@ -556,7 +556,7 @@
 
             "You were the only person that cared for me, that I cared about. Dad gives me a day off of work and it’s the nicest thing anyone has done for me in years."
 
-            "I need more people like you in my or this life is gonna kill me slower than scurvy ever could. You didn’t own a single thing when you stepped on the Red Plague."
+            "I need more people like you in my or this life is gonna kill me slower than scurvy ever could. You didn’t own a single thing when you stepped on {color=#f00}The Red Plague{/color}."
 
             "All you left me were stories of your old life. And the scars you helped treat when you were here. They’ve opened up without you."
 

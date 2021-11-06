@@ -31,7 +31,7 @@ label act1_2:
 
     "The port is partially empty. Maybe the town warned everyone of our arrival?"
 
-    "I can see people by the market. All sorts of types trying to avoid eye contact with the Red Plague. It’s towering over the stands and buildings lining the end of the harbor."
+    "I can see people by the market. All sorts of types trying to avoid eye contact with {color=#f00}The Red Plague{/color}. It’s towering over the stands and buildings lining the end of the harbor."
 
     "As if a sea monster poked it’s gigantic head out of the water to eye it’s next meal and everyone ignored it thinking it would shield them. I could be overthinking this."
 
@@ -42,7 +42,7 @@ label act1_2:
 
     fla "A postman handed me this upon our arrival Captain. It’s got your name on it. Well just your title actually."
 
-    Cap "\"To The Demonic Pirate Ricardo of the Red Plague\",  I don’t see a seal on it. Mustn’t be important. Wasn’t the Mayor supposed to make sure nobody would disturb us?"
+    Cap "\"To The Demonic Pirate Ricardo of The Red Plague\",  I don’t see a seal on it. Mustn’t be important. Wasn’t the Mayor supposed to make sure nobody would disturb us?"
 
     fla "Well the landlubber was terrified just handing it to me. Mustn't be important Captain. Just a poor prank, sorry to bother ye."
 
@@ -84,7 +84,7 @@ label act1_2:
 
     n "{font=Cursive_Option.ttf}Dear The Demonic Pirate Ricardo,"
 
-    n "{font=Cursive_Option.ttf}Word around Seaborough is that the Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them. It is the wish of ours at the Pirate Culture club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea."
+    n "{font=Cursive_Option.ttf}Word around Seaborough is that The Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them. It is the wish of ours at the Pirate Culture club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea."
 
     n "{font=Cursive_Option.ttf}\nYour freedom and lifestyle has inspired many students here past the threat you could wreak. We can provide food and drink (non alcoholic unfortunately) to those that are willing to share your adventures with us. A club representative will be waiting for you outside the school main entrance located at 232 Sunkissed Drive. We eagerly await your arrival Captain."
 
@@ -265,49 +265,7 @@ label act1_2:
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
 
-                MC "Excuse miss?"
-
-                woman "Yes, hello again. Did you decide on a book?"
-
-                MC "Um, no. I liked what you recommended but I left my wallet at home."
-
-                woman "Oh, well I can hold it on the side for you if you want."
-
-                MC "No that’s fine, I’ll come back later for it."
-
-                "Hopefully she forgets about this and doesn’t keep the store open for my blatant lie. Is it still appropriate to ask for directions?"
-
-                "Oh!"
-
-                "I didn't notice her nametage."
-
-                $ lib = "Yoko"
-                MC "Yoko."
-
-                MC "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
-
-                woman "Yeah sure. Don’t you have any kind of map app though?"
-
-                "No, the letter didn’t come with a map unfortunately. Just tell me please."
-
-                MC "Uh no, I don’t have one. Is it far away?"
-
-                woman "Not really. Going left out of the store, take the first left and it’s a mile up the road. You can’t miss it."
-
-                MC "Thank you Yoko. Have a nice afternoon."
-
-                woman "You too. Please come again."
-
-                "{i}Please come again?{/i}"
-
-                "Was that a formality or a personal request?"
-
-                "Did she want me to spend money? Now I feel kind of bad about stealing from her."
-
-                "Let's just focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
-
-                scene BG school with fade
-                jump act1_3
+                jump bstore_end
 
             "Smart":
                 $ book_choice = "Smart"
@@ -371,49 +329,7 @@ label act1_2:
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
 
-                MC "Excuse miss?"
-
-                woman "Yes, hello again. Did you decide on a book?"
-
-                MC "Um, no. I liked what you recommended but I left my wallet at home."
-
-                woman "Oh, well I can hold it on the side for you if you want."
-
-                MC "No that’s fine, I’ll come back later for it."
-
-                "Hopefully she forgets about this and doesn’t keep the store open for my blatant lie. Is it still appropriate to ask for directions?"
-
-                "Oh!"
-
-                "I didn't notice her nametage."
-
-                $ lib = "Yoko"
-                MC "Yoko."
-
-                MC "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
-
-                woman "Yeah sure. Don’t you have any kind of map app though?"
-
-                "No, the letter didn’t come with a map unfortunately. Just tell me please."
-
-                MC "Uh no, I don’t have one. Is it far away?"
-
-                woman "Not really. Going left out of the store, take the first left and it’s a mile up the road. You can’t miss it."
-
-                MC "Thank you Yoko. Have a nice afternoon."
-
-                woman "You too. Please come again."
-
-                "{i}Please come again?{/i}"
-
-                "Was that a formality or a personal request?"
-
-                "Did she want me to spend money? Now I feel kind of bad about stealing from her."
-
-                "Let's just focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
-
-                scene BG school with fade
-                jump act1_3
+                jump bstore_end
 
             "Funny":
                 $ book_choice = "Funny"
@@ -495,49 +411,7 @@ label act1_2:
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
 
-                MC "Excuse miss?"
-
-                woman "Yes, hello again. Did you decide on a book?"
-
-                MC "Um, no. I liked what you recommended but I left my wallet at home."
-
-                woman "Oh, well I can hold it on the side for you if you want."
-
-                MC "No that’s fine, I’ll come back later for it."
-
-                "Hopefully she forgets about this and doesn’t keep the store open for my blatant lie. Is it still appropriate to ask for directions?"
-
-                "Oh!"
-
-                "I didn't notice her nametage."
-
-                $ lib = "Yoko"
-                MC "Yoko."
-
-                MC "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
-
-                woman "Yeah sure. Don’t you have any kind of map app though?"
-
-                "No, the letter didn’t come with a map unfortunately. Just tell me please."
-
-                MC "Uh no, I don’t have one. Is it far away?"
-
-                woman "Not really. Going left out of the store, take the first left and it’s a mile up the road. You can’t miss it."
-
-                MC "Thank you Yoko. Have a nice afternoon."
-
-                woman "You too. Please come again."
-
-                "{i}Please come again?{/i}"
-
-                "Was that a formality or a personal request?"
-
-                "Did she want me to spend money? Now I feel kind of bad about stealing from her."
-
-                "Let's just focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
-
-                scene BG school with fade
-                jump act1_3
+                jump bstore_end
 
             "Nerdy":
 
@@ -605,6 +479,10 @@ label act1_2:
                 "Nobody sees me, the store is practically empty. The woman is reading behind the counter. An easy swipe for me."
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
+
+                jump bstore_end
+
+    label bstore_end:
 
                 MC "Excuse miss?"
 
@@ -739,6 +617,8 @@ label act1_2:
 
         MC "Excuse Ma’am."
 
+        # could use "Some Mom"->"Annoying Mom"->"Crazy Woman" trasformation
+
         m "Yes young lady."
 
         if player_identity == "m" or player_identity == "nb":
@@ -795,7 +675,194 @@ label act1_2:
 
     label arcade:
 
+        $ game_played = "" # for storing game played in arcade
+
         MC "Oh! That place had those video games Merigold told me about. Checking those out is a must."
+
+        "They’re supposed to be old and fun and she said I could pick them up easily."
+
+        scene BG ar with fade
+        pause 1.5
+
+        "A dim neon sign lights up the doorway of the building."
+
+        "\"Gaming Street\""
+
+        "That seems weird because this was the only arcade on the street that I noticed."
+
+        "It could be that people name their business like pirates name their ships."
+
+        "{color=#f00}The Red Plague{/color} is an actual disease, but the ship causes horror and pain as the sickness would."
+
+        "If gaming happens here, then why not call it a street."
+
+        # play beeping gaming sounds on entry
+
+        "The inside is illuminated by multicolored lights on the floors and ceiling. Layers of large machines with screens are backed up against the walls."
+
+        "There’s a fancy bar in the center of it all. A tall slender man in black is cleaning glasses with pristine looking rags."
+
+        show bartender with dissolve
+
+        bt "Oh!"
+
+        bt "Welcome!"
+
+        bt "People don’t normally come this close to opening. You want anything to drink?"
+
+        "I can’t exactly steal a drink from a bartender. How would one even play these games, nonetheless sneak them out the front door?"
+
+        MC "Um, no thank you."
+
+        MC "I was just wandering around. I’ve never seen an arcade before. I didn’t know they had bars in them."
+
+        bt "Well the good ones do at least."
+
+        bt "Har ha ha!"
+
+        bt "You want to try a game?"
+
+        MC "I’d like to, I’ve never played."
+
+        bt "You have any cash on you?"
+
+        MC "I have nothing on me, sorry. Like I said I was just wandering around."
+
+        bt "I see, well here. Have a game on me. You put one of these into the machine and follow the directions."
+
+        # coin flipping sound
+
+        "He flicks a coin in my direction from his thumb."
+
+        "It flies past me on my left side and bounces off the wall onto the floor."
+
+        "The bartender’s expression turns blank as he’s now staring at the floor."
+
+        MC  "Thanks matey."
+
+        "He mumbles something close to \"No problem\" under his breath staring at the floor."
+
+        hide bartender with dissolve
+
+        "A free game is more than I expected walking in here. What machine looks fun?"
+
+        menu:
+
+            "{color=#F93A22}Fly Guy{/color}":
+
+                "The red wrapped machine has drawings of a little person with wings shooting strange creatures with a harpoon and then pumping them with air until they fall to their death."
+
+                "After the coin goes into the machine it says {color=#F93A22}\"Player One\"{/color} can start. At hand level there is only a stick and one red button."
+
+                "Seems simple enough, hopefully easy to play."
+
+                # make a distored dig dug sound to play
+
+                "..."
+
+                scene BG black
+                scene ar with fade
+                $ game_played = "Fly Guy"
+
+                "That couldn’t have lasted longer than five minutes."
+
+                "I was shooting the little creatures pretty consistently until they overwhelmed me. They gave me three lives but the enemies didn’t reset at all and killed me the second I was back on the screen."
+
+                "Turning back to the bartender it was obvious he was watching during my first life, but after my character was corner he returned to preparing for paying customers."
+
+                ""
+
+                jump ar_end
+
+            "{color=#F9F222}Monkey 2{/color}":
+
+                "This machine appears as if it was painted over black recently."
+
+                "Different pictures of cartoon monkeys in distinct styles cover every inch of it. There are two sets of sticks and dozens of buttons as controls."
+
+                "None of which are labeled."
+
+                "The music coming from the screen is noticeably joyful. Compared to the other machines it sounds much higher quality."
+
+                "If I suck then no big deal, the song is simply mesmerizing. It takes the one coin given to me with no issues."
+
+                "Let's see if it has more cool songs."
+
+                # make a distored monkey ball sound to play
+
+                "..."
+
+                scene BG black
+                scene ar with fade
+                $ game_played = "Monkey 2"
+
+                "That was amazingly ridiculous!"
+
+                "No idea what was happening, but it was amazing. Monkeys kept falling down from the top of the screen and hitting buttons randomly seemingly did nothing."
+
+                "Yet the music, coupled with the monkey’s faces triggered something in my brain that forced a smile onto my face. That was incredibly fun."
+
+                "Ol’ Two Hands likes monkeys, I should tell him about it."
+
+                "Turning back to the bartender I could tell he was watching me enjoying the game. He also has a big grin on his face."
+
+                jump ar_end
+
+            "{color=#232AFA}Dinosaur Mission IX: Kingdom Royale Finale{/color}":
+
+                "The only part of this machine’s instructions that are in English is the title. Everything else is in Japanese, including what the button inputs do."
+
+                "The character that keeps appearing on the screen sort of looks like me, so I sort of want to try it. Paragraphs of text are scrolling by, none of which is understandable."
+
+                "Who would wanna read this much while playing a game? Isn’t the point of video games the action?"
+
+                "I don’t have any previous experience, my preconceived notions are being challenged as my character swings their sword in between enemies spousing meaty dialogue at me."
+
+                # make a distored dragon quest sound to play
+
+                "..."
+
+                scene BG black
+                scene ar with fade
+                $ game_played = "Dino Mission"
+
+                "It feels as if an hour has flown by."
+
+                "The game flashes {color=#D91400}\"Game Over\"{/color} in blood red English with an ominous sound playing. The gameplay wasn’t the most captivating, but it sucked me in so well without me noticing."
+
+                "People have started to wander in to play other games. The bartender is serving someone a dull looking drink with a pleasant expression."
+
+                jump ar_end
+
+    label ar_end:
+
+        "I should ask him how to get to the school. There was no sign of a map anywhere and all that was in the letter was the address."
+
+        "If I finish at the school quickly then maybe I should come back here and try to play more games. There’s bound to be some loose change at the school that could get me on a couple more machines."
+
+        show bartender with dissolve
+
+        bt "You have a good time on that one?"
+
+        MC "Yeah it was great. Thanks for letting me play."
+
+        MC "Do you know how to get to Seaborough high school from here?"
+
+        bt "Sure kid. Make a left when you exit and then take the next left. Follow the signs for the school zone and you won’t be able to miss it."
+
+        MC "Thank you matey."
+
+        bt "No problem."
+
+        bt "Come back with money for a drink later to thank me properly."
+
+        MC "Yeah, sure thing."
+
+        "That guy was super nice. I do want to come back later."
+
+        "But if I don’t find any money then I can’t. There’s nothing to steal in an arcade though."
+
+        "This is good knowledge to hold onto. Better make my way to the school."
 
         jump act1_3
 
@@ -804,5 +871,53 @@ label act1_2:
         "I should go to the school while I’m thinking about it. There’s no need to waste a ton of time there."
 
         "If things move quickly, I can check out the rest of town. Hopefully this club won’t eat up the entire day."
+
+        # scene BG street with dissove
+
+        "Wandering the town’s underbelly isn’t as exciting as I thought it would be."
+
+        "Seaborough’s streets are mainly made up of housing and abandoned complexes once I made it past the harbor. It’s super depressing seeing all the wrecked and abandoned buildings."
+
+        "When we destroy ships at least the sea takes care of their final resting place. Here, they just sit here and bake in the sun."
+
+        "The desolate poverty surrounding the area is dampening my mood. Trash is plentiful and the air is thick with discomfort."
+
+        "Speaking of the air, it’s much drier away from the ocean. It's making me sweat more than usual and I’ve only been walking for a few hours, I think."
+
+        "Looking for this school is taking too long, how much longer can I wander aimlessly? If I lose my way there’s no doubt the Captain will leave without me."
+
+        "There’s nothing for me to swindle or survive off of here. I’d be dead in a week, max."
+
+        "My shirt is starting to show sweat marks. Is it going to make the high schoolers make fun of me?"
+
+        MC "Oh no."
+
+        "This is going to be the first interaction with people my own age I’ve ever had. They might be a few years younger than me, but what if high schoolers are super mature?"
+
+        "I’ve got a lot of life experience. But they might not care what I say if I’m not the Captain."
+
+        "Should I lie? Or come in as an aggressive hardy pirate to scare them stiff?"
+
+        MC "Poseidon, fuel my flame!"
+
+        "I can do this."
+
+        "I’m a bloody pirate for God’s sake!"
+
+        "No more worrying about how people view me. A Pirate Culture Club wants to know what a pirate life is like. I’m going to show them what it’s really like."
+
+        "Behaving on land is one thing, but I’ve cut the arms off of a man who called the Captain a dolphin breeder. Torn threw ships like it was stale bread."
+
+        "A third tough sounding thing that's happened to me!"
+
+        "There’s no reason to worry. Once the way reveals itself to me, the Pirate Culture Club won’t know what hit them."
+
+        MC "Oh! And look what we got here."
+
+        "{b}School Zone Ahead{/b}"
+
+        "Did I ever say I needed a map?"
+
+        "Look out Seaborough, The Demonic Pirate [player_name] is coming in for a special lecture."
 
         jump act1_3

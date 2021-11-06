@@ -15,7 +15,8 @@ define Cap = Character('Captain', color="#7F0505")# The Demonic Pirate Ricardo A
 define fla = Character('Flavio', color="#BB64F2")# sir Flavio
 define woman = Character("[lib]",dynamic=True, color="#45F574")# Librarian
 define cr = Character('Passerbys', dynamic=True, color="#000001", who_outlines=[ (1, "#FFFFFF") ])# crowd of people
-define m = Character('Short Woman', color="#F263E2")# woman at market
+define m = Character('Woman', color="#F263E2")# woman at market
+define bt = Character('Bartender', color="#748DA3")# bartender at arcade
 
 # Affinity of main characters
 default Fiona_affinity = 0
@@ -34,12 +35,14 @@ image BG map = "map.png"
 image BG bstore = "bstore.png"
 image BG school = "school_temp.jpg"
 image BG market = "market_temp.jpg"
+image BG ar = "arcades.png"
 
 # Other characters images
 image twohands = "TwoHands.png"
 image captain = "captain.png"
 image fla = "flavio.png"
 image woman = "lady.png"
+image bartender = "bt1.png"
 
 # default player name and identity
 $ player_name = "Default Pirate Person"
