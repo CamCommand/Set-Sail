@@ -1,8 +1,8 @@
 ﻿label act1_3:
 
     pause 1.5
-    # scene BG schoolfront with dissolve
+    scene BG school with fade
 
-    "You've reached the end of the script tester. Ethan is a cool guy who gets woman and does drugs."
+    "You've reached the end of the script tester. Talking to girls sure is hard, amigright?"
 
     return

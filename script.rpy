@@ -13,9 +13,9 @@ define n = nvl_narrator# Narrator
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ])# Ol' Two Hands
 define Cap = Character('Captain', color="#7F0505")# The Demonic Pirate Ricardo AKA Captain
 define fla = Character('Flavio', color="#BB64F2")# sir Flavio
-define woman = Character("[lib]",dynamic=True, color="#45F574")# Librarian
-define cr = Character('Passerbys', dynamic=True, color="#000001", who_outlines=[ (1, "#FFFFFF") ])# crowd of people
-define m = Character('Woman', color="#F263E2")# woman at market
+define woman = Character('Woman',dynamic=True, color="#07BB01")# Librarian
+define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])# crowd of people
+define m = Character('Short Woman', color="#F263E2")# woman at market
 define bt = Character('Bartender', color="#748DA3")# bartender at arcade
 
 # Affinity of main characters
@@ -26,29 +26,29 @@ default Behati_affinity = 0
 default May_affinity = 0
 
 # background images
-image BG MC_room ="bedroom.png"
-image BG deckview = "deckview.png"
-image BG topdeck = "topdeck.png"
-image BG black = "black.png"
-image BG harbor = "harbortemp.png"
-image BG map = "map.png"
-image BG bstore = "bstore.png"
-image BG school = "school_temp.jpg"
-image BG market = "market_temp.jpg"
-image BG ar = "arcades.png"
+image BG MC_room ="background/bedroom.png"
+image BG deckview = "background/deckview.png"
+image BG topdeck = "background/topdeck.png"
+image BG black = "background/black.png"
+image BG harbor = "background/harbortemp.png"
+image BG map = "background/maplayered.png"
+image BG bstore = "background/bstore.png"
+image BG school = "background/school.png"
+image BG market = "background/market_temp.jpg"
+image BG ar = "background/arcades.png"
+image BG st = "background/street.png"
 
 # Other characters images
 image twohands = "TwoHands.png"
 image captain = "captain.png"
 image fla = "flavio.png"
-image woman = "lady.png"
+image lib = "lady.png"
 image bartender = "bt1.png"
+image mm = "momlady.png"
 
 # default player name and identity
 $ player_name = "Default Pirate Person"
 $ player_identity = "nb"
-
-$ lib = "Woman"# Woman you talk to becomes librarian
 
 # The game starts here baby!
 

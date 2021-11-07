@@ -1,5 +1,6 @@
 label act1_2:
-    play music "audio/ocean2.wav"
+
+    #play sound "audio/ocean2.wav" fadein 2.0
 
     th "Land Ho!"
 
@@ -14,7 +15,7 @@ label act1_2:
         MC "May have not been the cure my shoulders were looking for, but that still felt good."
 
     else:
-        play sound "audio/crysniff2.wav"
+        play sound "audio/crysniff2.wav" volume .5
 
         MC "Get it together, you're a pirate not a swabbie."
 
@@ -51,7 +52,7 @@ label act1_2:
     fla "Aye aye Captain!"
 
     hide flavio with moveoutleft
-    scene BG deckview
+    scene BG deckview with fade
     show flavio with moveinright
 
     MC "Oh Flavio, have you seen the Captain?"
@@ -81,16 +82,16 @@ label act1_2:
     "The outside may have been crude, but the handwriting is beautiful. Compared to my sea scratch it almost looks printed."
 
     nvl show dissolve
+    # Im so sorry this nvl looks this way, I just wanted it to be formated a certain way and the spacing made no sense
+    n "{font=Cursive_Option.ttf}Dear The Demonic Pirate Ricardo,{/font}"
 
-    n "{font=Cursive_Option.ttf}Dear The Demonic Pirate Ricardo,"
+    n "{font=Cursive_Option.ttf}Word around Seaborough is that The Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them.{/font}"
 
-    n "{font=Cursive_Option.ttf}Word around Seaborough is that The Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them. It is the wish of ours at the Pirate Culture club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea."
+    n "{font=Cursive_Option.ttf}It is the wish of ours at the Pirate Culture club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea. Your freedom and lifestyle has inspired many students here past{/font}"
 
-    n "{font=Cursive_Option.ttf}\nYour freedom and lifestyle has inspired many students here past the threat you could wreak. We can provide food and drink (non alcoholic unfortunately) to those that are willing to share your adventures with us. A club representative will be waiting for you outside the school main entrance located at 232 Sunkissed Drive. We eagerly await your arrival Captain."
+    n "{font=Cursive_Option.ttf}the threat you could wreak. We can provide food and drink (non alcoholic unfortunately) to those that are willing to share your adventures with us. A club representative will be waiting for you outside the school main entrance located at:{/font}"
 
-    n "{font=Cursive_Option.ttf}\n\nSincerely,"
-
-    n "{font=Cursive_Option.ttf}The Pirate Culture Club <3{/font}"
+    n "{font=Cursive_Option.ttf}232 Sunkissed Drive \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ We eagerly await your arrival \ Captain. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sincerely, \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The Pirate Culture Club <3{/font}"
 
     pause 1.5
     nvl clear
@@ -112,7 +113,7 @@ label act1_2:
     "Let’s get off the ship and have a look around first. At this point everyone looks so busy loading supplies I can slip by easily without them noticing."
 
     scene BG harbor with fade
-    play music "audio/chattering.mp3"
+    #play sound "audio/chattering.mp3" fadeout 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
 
@@ -120,19 +121,20 @@ label act1_2:
 
     "Let’s find out, hopefully my fake mainlander dialect can pass me through any doubt."
 
-    show woman with dissolve
+    show lib with dissolve
+    $ woman = Character('Woman',color="#07BB01")# Librarian
 
     MC "Excuse me ma’am, could I bother you for today’s date?"
 
     woman "Umm yeah, it’s the 28th."
 
-    hide woman with moveoutleft
+    hide lib with moveoutleft
 
     "Wow, she rushed away faster than what she was walking before. She didn’t scream or anything so I assume that counts as a win."
 
     MC "The 28th. Hmmmm."
 
-    "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday. Don’t know where that came from, but nevermind. Don’t know where that came from, but nevermind."
+    "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday. Don’t know where that came from, but nevermind."
 
     "The letter said this place was called Seaborough. Some of the signs on the eatteries confirm it."
 
@@ -170,6 +172,8 @@ label act1_2:
 
         MC "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
 
+        stop sound fadeout 2.0
+
         scene BG bstore with fade
         pause 2.0
 
@@ -183,8 +187,8 @@ label act1_2:
 
         "Normally I’d just snag the first book I see that I haven’t read, but there are so many good looking ones. Which one would be best?"
 
-        show woman with dissolve
-        $ lib = "Familiar Woman"
+        show lib with dissolve
+        $ woman = Character('Librarian',color="#07BB01")# Librarian
         woman "Excuse me, do you need help with something?"
 
         MC "Oh, um yeah I’m looking for a book."
@@ -219,17 +223,19 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide woman with moveoutright
+                hide lib with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
-                show woman with moveinright
-                woman "Have you read anything from the Parry Baxton series"
+                show lib with easeinright
+                woman "Have you read anything from the Parry Baxton series?"
 
                 MC "No I don’t think so. What’s it about?"
 
                 woman "Why don’t you skim it and find out."
 
                 MC "Yes, I guess I can do that, thank you."
+
+                hide lib with easeoutright
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
@@ -284,10 +290,10 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide woman with moveoutright
+                hide lib with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
-                show woman with moveinright
+                show lib with moveinright
 
                 woman "Have you read The Night Sky yet?"
 
@@ -296,6 +302,8 @@ label act1_2:
                 woman "Why don’t you skim it and find out."
 
                 MC "Yes, I guess I can do that, thank you."
+
+                hide lib with moveoutright
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
@@ -340,7 +348,7 @@ label act1_2:
 
                 "If I was able to make my own jokes, then it’s possible to even the playing field."
 
-                MC "Do you have any comedy books??"
+                MC "Do you have any comedy books?"
 
                 woman "Hehe."
 
@@ -350,10 +358,10 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide woman with moveoutright
+                hide lib with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
-                show woman with moveinright
+                show lib with moveinright
 
                 woman "Do you want like, a joke book?"
 
@@ -364,6 +372,8 @@ label act1_2:
                 woman "I don’t know if any joke books are good? This one is pirate themed if you’re into that sort of thing."
 
                 MC "I guess I’ll look at that one then."
+
+                hide lib with moveoutright
 
                 "She hands me the thick book of pirate jokes and returns to her seat at the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
@@ -433,10 +443,10 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide woman with moveoutright
+                hide lib with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
-                show woman with moveinright
+                show lib with moveinright
 
                 woman "Have you read Rune yet?"
 
@@ -445,6 +455,8 @@ label act1_2:
                 woman "Why don’t you skim it and find out."
 
                 MC "Yes, I guess I can do that, thank you."
+
+                hide lib with moveoutright
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
@@ -486,6 +498,8 @@ label act1_2:
 
                 MC "Excuse miss?"
 
+                show lib with dissolve
+
                 woman "Yes, hello again. Did you decide on a book?"
 
                 MC "Um, no. I liked what you recommended but I left my wallet at home."
@@ -500,7 +514,7 @@ label act1_2:
 
                 "I didn't notice her nametage."
 
-                $ lib = "Yoko"
+                $ woman = Character('Yoko',color="#07BB01")# Librarian
                 MC "Yoko."
 
                 MC "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
@@ -525,7 +539,6 @@ label act1_2:
 
                 "Let's just focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
 
-                scene BG school with fade
                 jump act1_3
 
     label market:
@@ -560,10 +573,11 @@ label act1_2:
         "I thought the mainlanders were more sanitary. With all this business, they wouldn’t miss one apple."
 
         with fade
+        play sound "audio/swipe.mp3"
 
         MC "Like swiping gold from a drunk."
 
-        # crunch sound effect
+        play sound "audio/apple1.mp3"
         $ food_check = 1
 
         "There’s a bench with nobody sitting there. Relaxing and eating while listening to other conversations could be a benefit."
@@ -602,8 +616,9 @@ label act1_2:
 
         cr "...with his feet over his head he split open both coconuts with his thighs."
 
-        # crunch sound effect
         "What!?"
+        pause 1.5
+        play sound "audio/apple2.mp3"
 
         "I should leave before I start asking questions I don’t want the answers to."
 
@@ -615,9 +630,9 @@ label act1_2:
 
         "Just need to walk up to someone who looks like a mom. They’ll know where it is."
 
-        MC "Excuse Ma’am."
+        MC "Excuse ma’am."
 
-        # could use "Some Mom"->"Annoying Mom"->"Crazy Woman" trasformation
+        show mm with dissolve
 
         m "Yes young lady."
 
@@ -625,6 +640,7 @@ label act1_2:
 
             "She thinks I’m a girl! Poseidon damn this luxurious hair!"
         else:
+
             "She doesn't sound annoyed, good start."
 
         MC "Do you know where the Seaborough high school is?"
@@ -636,6 +652,8 @@ label act1_2:
         m "You need to pick up something from another school?"
 
         "Damn this woman! Why is she asking so many questions? Is this so hard to just tell me?"
+
+        $ m = Character('Annoying Woman', color="#F263E2")# woman at market
 
         MC "Yup, that’s weird I know but that’s where they sent them."
 
@@ -653,6 +671,8 @@ label act1_2:
 
         m "The tests you took at your school got sent to another?"
 
+        $ m = Character('Nightmare', color="#F263E2")# woman at market
+
         MC "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
 
         m "Hmmm."
@@ -661,7 +681,9 @@ label act1_2:
 
         m "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
 
-        MC "Thank you Ma’am! Have a nice day!"
+        MC "Thank you ma’am! Have a nice day!"
+
+        hide mm with dissolve
 
         "That was painful."
 
@@ -696,7 +718,7 @@ label act1_2:
 
         "If gaming happens here, then why not call it a street."
 
-        # play beeping gaming sounds on entry
+        play sound "audio/entrybeep.mp3"
 
         "The inside is illuminated by multicolored lights on the floors and ceiling. Layers of large machines with screens are backed up against the walls."
 
@@ -730,7 +752,7 @@ label act1_2:
 
         bt "I see, well here. Have a game on me. You put one of these into the machine and follow the directions."
 
-        # coin flipping sound
+        play sound "audio/coin.mp3"
 
         "He flicks a coin in my direction from his thumb."
 
@@ -738,7 +760,7 @@ label act1_2:
 
         "The bartender’s expression turns blank as he’s now staring at the floor."
 
-        MC  "Thanks matey."
+        MC "Thanks matey."
 
         "He mumbles something close to \"No problem\" under his breath staring at the floor."
 
@@ -756,8 +778,7 @@ label act1_2:
 
                 "Seems simple enough, hopefully easy to play."
 
-                # make a distored dig dug sound to play
-
+                play sound "audio/flyguy.mp3"
                 "..."
 
                 scene BG black
@@ -788,7 +809,7 @@ label act1_2:
 
                 "Let's see if it has more cool songs."
 
-                # make a distored monkey ball sound to play
+                play sound "audio/monkey.mp3"
 
                 "..."
 
@@ -818,7 +839,7 @@ label act1_2:
 
                 "I don’t have any previous experience, my preconceived notions are being challenged as my character swings their sword in between enemies spousing meaty dialogue at me."
 
-                # make a distored dragon quest sound to play
+                play sound "audio/dino.mp3"
 
                 "..."
 
@@ -858,6 +879,8 @@ label act1_2:
 
         MC "Yeah, sure thing."
 
+        hide bartender with dissolve
+
         "That guy was super nice. I do want to come back later."
 
         "But if I don’t find any money then I can’t. There’s nothing to steal in an arcade though."
@@ -872,7 +895,7 @@ label act1_2:
 
         "If things move quickly, I can check out the rest of town. Hopefully this club won’t eat up the entire day."
 
-        # scene BG street with dissove
+        scene BG st with fade
 
         "Wandering the town’s underbelly isn’t as exciting as I thought it would be."
 

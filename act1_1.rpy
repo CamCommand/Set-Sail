@@ -1,8 +1,16 @@
 ﻿label act1_1:
 
-        scene BG map at Pan((0,0), (2200,50), 55.0)
-        play music "audio/waves.ogg"
+        transform pan:# panning and looping the BG
+            xalign 1.0
+            linear 200.0 xalign 0.0# still does transition nicely
+            repeat
+
+        scene BG map at pan
+        play music "audio/waves.ogg" fadein 2.0
         nvl show dissolve
+
+        n "\n"
+
         n "\nPirating is older than recorded human history. Supply chains interrupted and intercepted by those with the might to steal large portions of materials."
 
         n "\nEvery stretch of water has seen one form or another of piracy. Normally, stealing large sums of profit is seen as immoral."
@@ -13,6 +21,8 @@
 
         nvl clear
 
+        n "\n"
+
         n "\nThe Pirate Code kept the good times alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle."
 
         n "\nMarching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea while some kept the old fashion {i}Jolly Roger{/i} casted."
@@ -21,12 +31,14 @@
 
         n "\nYou are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}."
 
+        stop music fadeout 3.0
         pause 1.5
         nvl clear
 
         scene BG MC_room
         with fade
         with fade
+        play music "audio/BelowDeck.mp3" volume 0.2 fadein 1.5
 
         "My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
 
@@ -96,7 +108,7 @@
 
         label choice_name_V:
 
-            MC "I'm feeling OK enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            MC "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
 
         label choice_name_O:
@@ -156,7 +168,7 @@
             th "[player_name] get yerr ass out from whatever gutter ye hiding under."
 
             $ pirate = "Ol' Two Hands"
-            "I think that’s [pirate] calling for me. I’m pretty sure I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shit."
+            "I think that’s [pirate] calling for me. I’m pretty sure I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
 
             "I’ll grab my bristoles and brush my teeth and hair. A delayed head rush from springing up too fast numbs me momentarily."
 
@@ -179,12 +191,15 @@
 
             "Snapping back into action I head for the top deck. It’s time to start moving for real. I could use a peaceful type of day. As peaceful as pirate life can be."
 
+            stop music fadeout 3.0
             with dissolve
             scene BG deckview
             show twohands at left
             show captain at right
 
             "Blinding heavenly light engulfs my face as I surface above deck. Men and women working hard, or at least pretending to while The Demonic Pirate Ricardo is watching."
+
+            play music "audio/waves.ogg"
 
             "Presumably most were slacking off before Two Hands was shouting his head off. The deck is actually pretty clean."
 
@@ -214,7 +229,7 @@
 
             hide twohands with moveoutleft
             show captain at center with move
-            # if I need transition heplp later https://www.renpy.org/doc/html/transitions.html?highlight=transitions#var-move
+            # if I need transition help later https://www.renpy.org/doc/html/transitions.html?highlight=transitions#var-move
 
             "Nobody in line of sight has been on this ship as long as I have. Of the Captain’s {i}Demon Moments{/i}, this wasn’t that bad, but I haven’t flinched during one of them since I was sixteen."
 
@@ -282,11 +297,14 @@
 
                 Cap "Alright lad, dismissed. Put on something nicer and don’t get arrested."
 
+            stop music fadeout 3.0
             hide captain with dissolve
             with dissolve
             scene BG MC_room
 
             "I wonder how long Captain planned this? No way Feno could change the work schedule as quickly as yesterday, or even a week ago."
+
+            play music "audio/BelowDeck.mp3" volume 0.18
 
             "If someone gets my work and they know it’s mine, they’ll definitely give me a hard time about it."
 
@@ -521,7 +539,7 @@
 
             "That’s why Captain said that thing about not needing anything from there anymore. Florida is where he picked up Mom all those years ago."
 
-            "Imagining this place as sentimental to him at all is difficult. The grizzled old pirate wouldn’t make special precautions for a port where literally zero people would fuck with them there."
+            "Imagining this place as sentimental to him at all is difficult. The grizzled old pirate wouldn’t make special precautions for a port where literally zero people would shite with them there."
 
             "We haven’t been to that state since Mom died. I don’t want to think about it too much right now. But maybe, maybe I’ll walk the same ground she once did."
 
@@ -535,7 +553,7 @@
                 MC "[lines]"
                 $ counter += 1
             else:
-                MC "Fuck!"
+                MC "shite!"
                 jump breakdown
             jump waiting
 
@@ -550,7 +568,7 @@
 
             "Getting the drunkards to stop yelling at me. Raising me better than the water ever has. I know the world of thieves more than anything else. More than myself."
 
-            "Shit, I wish you were still here."
+            "Shite, I wish you were still here."
 
             "How different would I be if swashbuckling didn’t envelope me after you left? Would you recognize me?"
 
@@ -562,7 +580,7 @@
 
             "Without you. I wouldn’t be anything. Or maybe I am nothing without your influence?"
 
-            play sound "audio/crysniff.wav"
+            play sound "audio/crysniff.wav" volume .5
 
             "..."
 
@@ -574,7 +592,7 @@
 
             "Like Dad said, you were the happiest on this ship."
 
-            stop music
+            stop music fadeout 3.0
             scene BG black
             with fade
             with fade
