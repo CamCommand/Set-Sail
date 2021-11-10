@@ -22,7 +22,9 @@ label act1_2:
 
     "Time to find out what land life has to offer."
 
-    "Would Captain get the hint if I asked to get him something unimportant so that I could escape without attracting any attention from the crew doing my work? It could be futile, Feno may have made the schedule change apparent and the pirates already know."
+    "Would Captain get the hint if I asked to get him something unimportant so that I could escape without attracting any attention from the crew doing my work?"
+
+    "It could be futile, Feno may have made the schedule change apparent and the pirates already know."
 
     "I might end up just having to bite the bullet on this if he doesn’t help."
 
@@ -38,10 +40,11 @@ label act1_2:
 
     "Plenty of pirate ships could come here, it might be commonplace. Let’s check if the Captain is on the quarterdeck."
 
-    show flavio at right
-    show captain at center
+    show flavio at right with dissolve
 
     fla "A postman handed me this upon our arrival Captain. It’s got your name on it. Well just your title actually."
+
+    show captain at center with dissolve
 
     Cap "\"To The Demonic Pirate Ricardo of The Red Plague\",  I don’t see a seal on it. Mustn’t be important. Wasn’t the Mayor supposed to make sure nobody would disturb us?"
 

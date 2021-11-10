@@ -23,14 +23,14 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = u'#0099cc'
+define gui.accent_color = u'#192A38'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = u'#888888'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = u'#aaaaaa'
+define gui.idle_small_color = u'#000000'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = u'#66c1e0'
@@ -48,7 +48,7 @@ define gui.muted_color = u'#003d51'
 define gui.hover_muted_color = u'#005b7a'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = u'#ffffff'
+define gui.text_color = u'#000000'
 define gui.interface_text_color = u'#ffffff'
 
 
@@ -79,7 +79,7 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## The size of the game's title.
-define gui.title_text_size = 100
+define gui.title_text_size = 150
 
 
 ## Main and Game Menus #########################################################
@@ -113,8 +113,8 @@ define gui.name_xalign = 0.0
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
-define gui.namebox_width = None
-define gui.namebox_height = None
+define gui.namebox_width = 300 # override in script.rpy
+define gui.namebox_height = 100
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
@@ -182,7 +182,7 @@ define gui.radio_button_borders = Borders(27, 6, 6, 6)
 
 define gui.check_button_borders = Borders(27, 6, 6, 6)
 
-define gui.confirm_button_text_xalign = 0.5
+define gui.confirm_button_text_xalign = .5
 
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 

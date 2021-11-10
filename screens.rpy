@@ -251,7 +251,7 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.5
-            yalign 1.0
+            yalign .97999
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
@@ -375,6 +375,8 @@ screen main_menu():
             style "main_menu_vbox"
 
             text "[config.name!t]":
+                xpos 1.0
+                ypos .0005
                 style "main_menu_title"
 
             text "[config.version]":
@@ -399,6 +401,7 @@ style main_menu_vbox:
     xmaximum 1200
     yalign 1.0
     yoffset -30
+    #outlines [ (3,"#000000",0,0) ]
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
