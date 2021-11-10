@@ -12,7 +12,7 @@ define n = nvl_narrator# Narrator
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ])# Ol' Two Hands
 define Cap = Character('Captain', color="#7F0505")# The Demonic Pirate Ricardo AKA Captain
-define fla = Character('Flavio', color="#BB64F2")# sir Flavio
+define fla = Character('Flavio', color="#BB64F2", who_outlines=[ (1, "#000000") ])# sir Flavio
 define woman = Character('Woman',dynamic=True, color="#07BB01")# Librarian
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])# crowd of people
 define m = Character('Short Woman', color="#F263E2")# woman at market
@@ -53,4 +53,19 @@ $ player_identity = "nb"
 # The game starts here baby!
 
 label start:
+
+    define gui.name_xpos = 0.1
+    define gui.name_ypos = .15
+    define gui.name_xalign = 0.2
+    define gui.name_yalign = 0.5
+
+    define gui.dialogue_xpos = 0.5# center dialogue in center of box
+    define gui.dialogue_text_xalign = 0.5
+
+    define gui.namebox_width = 800
+    define gui.namebox_height = 100
+
+    define gui.namebox_borders = Borders(15, 7, 15, 7)
+    define gui.namebox_tile = True
+
     jump act1_1
