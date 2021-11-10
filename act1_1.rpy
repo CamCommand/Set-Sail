@@ -5,6 +5,7 @@
             linear 200.0 xalign 0.0# still does transition nicely
             repeat
 
+        $ player_identity = "nb"# default identity if needed
         scene BG map at pan
         play music "audio/waves.ogg" fadein 2.0
         nvl show dissolve
@@ -50,21 +51,21 @@
 
                     $ player_identity = "f"
                     $ player_name = "Valerie"
-                    $ MC = Character('Valerie', color="FF4DA6")
+                    $ MC = Character('Valerie', color="FF4DA6", callback=voice)
                     jump choice_name_V
 
                 "{color=00AAFF}My name is Oscar{/color}":
 
                     $ player_identity = "m"
                     $ player_name = "Oscar"
-                    $ MC = Character('Oscar', color="00AAFF")
+                    $ MC = Character('Oscar', color="00AAFF", callback=voice)
                     jump choice_name_O
 
                 "{color=116600}My name is Reed{/color}":
 
                     $ player_identity = "nb"
                     $ player_name = "Reed"
-                    $ MC = Character('Reed', color="116600")
+                    $ MC = Character('Reed', color="116600", callback=voice)
                     jump choice_name_R
 
                 "What is my name?":
@@ -91,18 +92,18 @@
             "{color=FF4DA6}Female{/color}":
 
                 $ player_identity = "f"
-                $ MC = Character('[player_name]', color="FF4DA6")
+                $ MC = Character('[player_name]', color="FF4DA6", callback=voice)
                 jump choice_name_User
 
             "{color=00AAFF}Male{/color}":
 
-                $ MC = Character('[player_name]', color="00AAFF")
+                $ MC = Character('[player_name]', color="00AAFF", callback=voice)
                 $ player_identity = "m"
                 jump choice_name_User
 
             "{color=116600}Non Binary{/color}":
 
-                $ MC = Character('[player_name]', color="116600")
+                $ MC = Character('[player_name]', color="116600", callback=voice)
                 $ player_identity = "nb"
                 jump choice_name_User
 

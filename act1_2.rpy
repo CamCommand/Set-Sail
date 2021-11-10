@@ -152,6 +152,26 @@ label act1_2:
     scene BG black
     scene BG harbor with fade
 
+    "Wow."
+
+    "I’ve now seen more people in the last few hours than I have had all year on the ship. Even large vessels we’ve ravaged, most of the crew stayed hidden while we stole their goods and harassed their leaders."
+
+    "Some of the outfits out here look ridiculous. Is it because of brands or sales, I don’t know?"
+
+    "There was that police car that went by before. I wasn't as wary of the law as I should have been because that was the first car I’ve seen!"
+
+    "It was much smaller than I expected, books kinda assume you know what they look like already. They’ve been described to me by pirates with more land experience, but only enough to give me the general idea."
+
+    "If retiring is ever an option for me, selling my ship and buying a car might be a fun idea. Travel the roads of the world now that the seas are conquered."
+
+    "What a dumb dream."
+
+    "The ocean’s vastly more free, plus I know it already. If my car breaks down, I wouldn’t know how to fix it and oars wouldn’t be an alternative."
+
+    MC "Maybe instead of having pirates aboard I’ll hire a pit crew."
+
+    MC "Ha ha ha ha hargh!"
+
     "Alright, that's enough walking. Where should I go?"
 
     menu:

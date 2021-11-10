@@ -1,7 +1,7 @@
 ﻿# Cameron Drummond 2021
 
 # Main characters
-define MC = Character("[player_name]", dynamic=True, color="#990033")# Player Character
+define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
 define Fi = Character('Fiona', color="#E44D1A")
 define G = Character('Geraldine', color="#DFDABB")# Geraldine
 define As = Character('Astrid', color="#F236BD")
@@ -25,6 +25,8 @@ default Astrid_affinity = 0
 default Behati_affinity = 0
 default May_affinity = 0
 
+# voice tags
+
 # background images
 image BG MC_room ="background/bedroom.png"
 image BG deckview = "background/deckview.png"
@@ -46,25 +48,32 @@ image lib = "lady.png"
 image bartender = "bt1.png"
 image mm = "momlady.png"
 
-# default player name and identity
-$ player_name = "Default Pirate Person"
-$ player_identity = "nb"
-
 # The game starts here baby!
+
+init python:# define sound bleeps here
+    def voice(event, **kwargs):# voice for MC
+        if event == "show":
+            renpy.music.play("audio/blip1.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
 
 label start:
 
+    # position name of character speaking
     define gui.name_xpos = 0.1
     define gui.name_ypos = .15
     define gui.name_xalign = 0.2
     define gui.name_yalign = 0.5
 
-    define gui.dialogue_xpos = 0.5# center dialogue in center of box
+    # center dialogue in center of box
+    define gui.dialogue_xpos = 0.5
     define gui.dialogue_text_xalign = 0.5
 
+    # size of namebox on the left side of screen
     define gui.namebox_width = 800
     define gui.namebox_height = 100
 
+    # use of namebox
     define gui.namebox_borders = Borders(15, 7, 15, 7)
     define gui.namebox_tile = True
 
