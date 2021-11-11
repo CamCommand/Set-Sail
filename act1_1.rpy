@@ -154,6 +154,7 @@
 
             "So it was my birthday at some point and all I got was new pains. Sometimes Captain says a passing mention of it, but we’ve been out for a while so I doubt he knew."
 
+            $ th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands voice
             th "Wheres [player_name]!? Why arrrgh’t they on deck?"
 
             "That sounds like my call to action. I quickly throw myself out of bed. My shoes are at my feet, but how could I lose track of my shirt in here?"
@@ -208,7 +209,11 @@
 
             th "Aye, there thee are Captain, right were I thought thee were."
 
-            "Captain slowly turned around to look at me. His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from Ol’ Two Hands. He takes a step closer to Two Hands getting right in his face."
+            "Captain slowly turned around to look at me. His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from Ol’ Two Hands."
+
+            "Stepping closer to Two Hands his face, he looks really annoyed."
+            show captain with dissolve:
+                xpos 1500
 
             Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog. So you know there ain't no reason for a pirate to be screaming for another unless ther be danger."
 
@@ -302,6 +307,7 @@
             hide captain with dissolve
             with dissolve
             scene BG MC_room
+            play music "audio/BelowDeck.mp3" volume 0.2 fadein 1.5
 
             "I wonder how long Captain planned this? No way Feno could change the work schedule as quickly as yesterday, or even a week ago."
 
@@ -581,7 +587,7 @@
 
             "Without you. I wouldn’t be anything. Or maybe I am nothing without your influence?"
 
-            play sound "audio/crysniff.wav" volume .5
+            play sound "audio/crysniff.wav" volume .5# ya boi is crying
 
             "..."
 
@@ -593,7 +599,6 @@
 
             "Like Dad said, you were the happiest on this ship."
 
-            stop music fadeout 3.0
             scene BG black
             with fade
             with fade

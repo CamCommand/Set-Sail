@@ -1,7 +1,5 @@
 label act1_2:
 
-    #play sound "audio/ocean2.wav" fadein 2.0
-
     th "Land Ho!"
 
     if content_check == 0:
@@ -28,6 +26,7 @@ label act1_2:
 
     "I might end up just having to bite the bullet on this if he doesn’t help."
 
+    stop music fadeout 3.0
     scene BG topdeck with fade
 
     "Everyone is unloading from the ship onto a boardwalk."
@@ -125,7 +124,7 @@ label act1_2:
     "Let’s find out, hopefully my fake mainlander dialect can pass me through any doubt."
 
     show lib with dissolve
-    $ woman = Character('Woman',color="#07BB01")# Librarian
+    $ woman = Character('Woman',color="#07BB01", callback=lib_voice)# Librarian
 
     MC "Excuse me ma’am, could I bother you for today’s date?"
 
@@ -211,7 +210,7 @@ label act1_2:
         "Normally I’d just snag the first book I see that I haven’t read, but there are so many good looking ones. Which one would be best?"
 
         show lib with dissolve
-        $ woman = Character('Librarian',color="#07BB01")# Librarian
+        $ woman = Character('Librarian',color="#07BB01", callback=lib_voice)# Librarian
         woman "Excuse me, do you need help with something?"
 
         MC "Oh, um yeah I’m looking for a book."
@@ -600,7 +599,7 @@ label act1_2:
 
         MC "Like swiping gold from a drunk."
 
-        play sound "audio/apple1.mp3"
+        play sound "audio/apple3.wav"
         $ food_check = 1
 
         "There’s a bench with nobody sitting there. Relaxing and eating while listening to other conversations could be a benefit."
@@ -641,7 +640,7 @@ label act1_2:
 
         "What!?"
         pause 1.5
-        play sound "audio/apple2.mp3"
+        play sound "audio/apple3.wav"
 
         "I should leave before I start asking questions I don’t want the answers to."
 
@@ -676,7 +675,7 @@ label act1_2:
 
         "Damn this woman! Why is she asking so many questions? Is this so hard to just tell me?"
 
-        $ m = Character('Annoying Woman', color="#F263E2")# woman at market
+        $ m = Character('Annoying Woman', color="#F263E2", callback=rot_voice)# woman at market
 
         MC "Yup, that’s weird I know but that’s where they sent them."
 
@@ -694,7 +693,7 @@ label act1_2:
 
         m "The tests you took at your school got sent to another?"
 
-        $ m = Character('Nightmare', color="#F263E2")# woman at market
+        $ m = Character('Nightmare Woman', color="#F263E2", callback=rot_voice)# woman at market
 
         MC "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
 
@@ -808,6 +807,7 @@ label act1_2:
                 scene ar with fade
                 $ game_played = "Fly Guy"
 
+                play sound "audio/boom.ogg"
                 "That couldn’t have lasted longer than five minutes."
 
                 "I was shooting the little creatures pretty consistently until they overwhelmed me. They gave me three lives but the enemies didn’t reset at all and killed me the second I was back on the screen."
@@ -840,6 +840,7 @@ label act1_2:
                 scene ar with fade
                 $ game_played = "Monkey 2"
 
+                play sound "audio/monkeyded.ogg"
                 "That was amazingly ridiculous!"
 
                 "No idea what was happening, but it was amazing. Monkeys kept falling down from the top of the screen and hitting buttons randomly seemingly did nothing."
@@ -870,6 +871,7 @@ label act1_2:
                 scene ar with fade
                 $ game_played = "Dino Mission"
 
+                play sound "audio/dinoded.ogg"
                 "It feels as if an hour has flown by."
 
                 "The game flashes {color=#D91400}\"Game Over\"{/color} in blood red English with an ominous sound playing. The gameplay wasn’t the most captivating, but it sucked me in so well without me noticing."
