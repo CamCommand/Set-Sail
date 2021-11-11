@@ -54,16 +54,19 @@ init python:# define sound bleeps here
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
 define Fi = Character('Fiona', color="#E44D1A")
 define G = Character('Geraldine', color="#DFDABB")# Geraldine
-define As = Character('Astrid', color="#F236BD", callback=astrid_voice)
+define As = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True)
 define Be = Character('Behati', color="#5E0F60")
 define Ma = Character('May', color="#0A4AF6")
 define n = nvl_narrator# Narrator
+
+# Main charcter images
+image astrid_default = "Astrid.png"
 
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands
 define Cap = Character('Captain', color="#7F0505", callback=caps_voice)# The Demonic Pirate Ricardo AKA Captain
 define fla = Character('Flavio', color="#BB64F2", who_outlines=[ (1, "#000000") ], callback=fl_voice)# sir Flavio
-define woman = Character('Woman',dynamic=True, color="#07BB01", callback=lib_voice)# Librarian
+define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)# Librarian
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])# crowd of people
 define m = Character('Short Woman', color="#F263E2", callback=rot_voice)# woman at market
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)# bartender at arcade

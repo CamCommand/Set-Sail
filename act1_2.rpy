@@ -148,7 +148,7 @@ label act1_2:
 
     "I have to wonder how often some of these people even look at a hammar. I should keep my expectations low. Let’s dive in head first, walk around, see what I can do."
 
-    scene BG black
+    scene BG black with fade
     scene BG harbor with fade
 
     "Wow."
