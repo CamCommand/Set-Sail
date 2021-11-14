@@ -50,6 +50,13 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    if renpy.windows:
+        config.tts_voice = "Mark"
+    elif renpy.macintosh:
+        config.tts_voice = "Alex"
+    elif renpy.linux:
+        config.tts_voice = "english_rp"
+
 # Main characters
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
 define Fi = Character('Fiona', color="#E44D1A")
@@ -72,10 +79,10 @@ define m = Character('Short Woman', color="#F263E2", callback=rot_voice)# woman 
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)# bartender at arcade
 
 # Affinity of main characters
-default Fiona_affinity = 0
+default Fi_affinity = 0
 default G_affinity = 0
 default Astrid_affinity = 0
-default Behati_affinity = 0
+default Be_affinity = 0
 default May_affinity = 0
 
 # voice tags
@@ -101,8 +108,11 @@ image lib = "lady.png"
 image bartender = "bt1.png"
 image mm = "momlady.png"
 
-# The game starts here baby!
+# Menu Music
+define config.game_menu_music = "music/BelowDeck.mp3"
+# define config.main_menu_music
 
+# The game starts here baby!
 label start:
 
     # position name of character speaking

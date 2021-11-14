@@ -586,41 +586,39 @@ screen PC():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("Pirate Code"), scroll="viewport"):
-
-
+    use game_menu(_("{color=#fff}Pirate Code{/color}"), scroll="viewport"):
 
         vbox:
 
             hbox:
-                label _("Rule 1: ")
+                label _("{color=#fff}Rule 1: {/color}")
                 text _("All are equal aboard the ship to direct democracy and basic needs. Pleasantries can be had at any time except for battle or during a scarcity by a vote. \n")
             hbox:
-                label _("Rule 2: ")
+                label _("{color=#fff}Rule 2: {/color}")
                 text _("Everyone is entitled to their fair share of loot and clean clothes. Any act of theft against another or the company shall be marooned and forgotten. \n")
             hbox:
-                label _("Rule 3: ")
+                label _("{color=#fff}Rule 3:{/color} ")
                 text _("No gambling with the valuables of the company. \n")
             hbox:
-                label _("Rule 4: ")
+                label _("{color=#fff}Rule 4: {/color}")
                 text _("Lights out when the sun goes down. Any merriment after that can be done under moonlight. \n")
             hbox:
-                label _("Rule 5: ")
+                label _("{color=#fff}Rule 5: {/color}")
                 text _("It is everyone’s responsibility to keep their weaponry clean and ready at all times. \n")
             hbox:
-                label _("Rule 6: ")
+                label _("{color=#fff}Rule 6: {/color}")
                 text _("Anyone coercing the desired sex or minors onto the ship will suffer harsh punishment. \n")
             hbox:
-                label _("Rule 7: ")
+                label _("{color=#fff}Rule 7: {/color}")
                 text _("Those who avoid battle by their quarters will be at risk of marooning. \n")
             hbox:
-                label _("Rule 8: ")
+                label _("{color=#fff}Rule 8: {/color}")
                 text _("No physical altercations on the ship, but quarrels are to be dealt with by duels on land only. The Quartermaster shall officiate any such duel. \n")
             hbox:
-                label _("Rule 9: ")
+                label _("{color=#fff}Rule 9: {/color}")
                 text _("None shall abandon the pirate life until financially capable to do so. \n")
             hbox:
-                label _("Rule 10: ")
+                label _("{color=#fff}Rule 10: {/color}")
                 text _("Ranking members of the company get first shares of the loot. All members of the company are allowed three holidays of their choosing. \n")
 
 
@@ -831,7 +829,7 @@ screen preferences():
 
                     if config.has_sound:
 
-                        label _("Sound Volume")
+                        label _("Sound/Character Volume")
 
                         hbox:
                             bar value Preference("sound volume")
@@ -840,14 +838,14 @@ screen preferences():
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
+                    #if config.has_voice:
+                    #    label _("Voice Volume")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                    #    hbox:
+                    #        bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                    #        if config.sample_voice:
+                    #            textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing

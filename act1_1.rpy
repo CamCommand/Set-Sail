@@ -39,7 +39,7 @@
         scene BG MC_room
         with fade
         with fade
-        play music "audio/BelowDeck.mp3" volume 0.2 fadein 1.5
+        play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5
 
         "My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
 
@@ -307,11 +307,9 @@
             hide captain with dissolve
             with dissolve
             scene BG MC_room
-            play music "audio/BelowDeck.mp3" volume 0.2 fadein 1.5
+            play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5 volume 0.18
 
             "I wonder how long Captain planned this? No way Feno could change the work schedule as quickly as yesterday, or even a week ago."
-
-            play music "audio/BelowDeck.mp3" volume 0.18
 
             "If someone gets my work and they know it’s mine, they’ll definitely give me a hard time about it."
 
