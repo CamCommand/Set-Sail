@@ -212,7 +212,7 @@
             "Captain slowly turned around to look at me. His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from Ol’ Two Hands."
 
             "Stepping closer to Two Hands his face, he looks really annoyed."
-            show captain with dissolve:
+            show captain with dissolve:# stepping to Flavio
                 xpos 1500
 
             Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog. So you know there ain't no reason for a pirate to be screaming for another unless ther be danger."
