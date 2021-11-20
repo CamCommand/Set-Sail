@@ -138,7 +138,7 @@ label act1_2:
 
     "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday. Don’t know where that came from, but nevermind."
 
-    "The letter said this place was called Seaborough. Some of the signs on the eatteries confirm it."
+    "The letter said this place was called {color=#5FAFF6}Seaborough{/color}. Some of the signs on the eatteries confirm it."
 
     "Other than the more personal stuff Mom uses to tell me, I’ve heard some interesting things about Florida. Mainly how there’s a bunch of old and crazy people here who have given up on life."
 
@@ -539,7 +539,7 @@ label act1_2:
                 $ woman = Character('Yoko',color="#07BB01")# Librarian
                 MC "Yoko."
 
-                MC "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
+                MC "Could you give me directions to {color=#5FAFF6}Seaborough{/color} high school? I need to meet a friend there, but I’ve never been."
 
                 woman "Yeah sure. Don’t you have any kind of map app though?"
 
@@ -656,7 +656,7 @@ label act1_2:
 
         show mm with dissolve
 
-        m "Yes young lady."
+        ma "Yes young lady."
 
         if player_identity == "m" or player_identity == "nb":
 
@@ -665,43 +665,43 @@ label act1_2:
 
             "She doesn't sound annoyed, good start."
 
-        MC "Do you know where the Seaborough high school is?"
+        MC "Do you know where the {color=#5FAFF6}Seaborough{/color} high school is?"
 
-        m "Why aren’t you at school?"
+        ma "Why aren’t you at school?"
 
         MC "Because I graduated from another school. I need to pick something up from there."
 
-        m "You need to pick up something from another school?"
+        ma "You need to pick up something from another school?"
 
         "Damn this woman! Why is she asking so many questions? Is this so hard to just tell me?"
 
-        $ m = Character('Annoying Woman', color="#F263E2", callback=rot_voice)# woman at market
+        $ ma = Character('Annoying Woman', color="#F263E2", callback=rot_voice)# woman at market
 
         MC "Yup, that’s weird I know but that’s where they sent them."
 
-        m "Them what?"
+        ma "Them what?"
 
         "Poseidon drown this woman for me!"
 
         MC "Them my papers. Do you know where it is at all?"
 
-        m "Which papers?"
+        ma "Which papers?"
 
         "Do I just not pass as a high school graduate?"
 
         MC "My uh, test scores. They got sent to the wrong school by accident."
 
-        m "The tests you took at your school got sent to another?"
+        ma "The tests you took at your school got sent to another?"
 
-        $ m = Character('Nightmare Woman', color="#F263E2", callback=rot_voice)# woman at market
+        $ ma = Character('Nightmare Woman', color="#F263E2", callback=rot_voice)# woman at market
 
-        MC "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
+        MC "No, the tests I took somewhere else got sent to {color=#5FAFF6}Seaborough{/color}. Could you please just tell me where to go?"
 
-        m "Hmmm."
+        ma "Hmmm."
 
-        m "Okay."
+        ma "Okay."
 
-        m "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
+        ma "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
 
         MC "Thank you ma’am! Have a nice day!"
 
@@ -892,7 +892,7 @@ label act1_2:
 
         MC "Yeah it was great. Thanks for letting me play."
 
-        MC "Do you know how to get to Seaborough high school from here?"
+        MC "Do you know how to get to {color=#5FAFF6}Seaborough{/color} high school from here?"
 
         bt "Sure kid. Make a left when you exit and then take the next left. Follow the signs for the school zone and you won’t be able to miss it."
 
@@ -924,7 +924,7 @@ label act1_2:
 
         "Wandering the town’s underbelly isn’t as exciting as I thought it would be."
 
-        "Seaborough’s streets are mainly made up of housing and abandoned complexes once I made it past the harbor. It’s super depressing seeing all the wrecked and abandoned buildings."
+        "{color=#5FAFF6}Seaborough’s{/color} streets are mainly made up of housing and abandoned complexes once I made it past the harbor. It’s super depressing seeing all the wrecked and abandoned buildings."
 
         "When we destroy ships at least the sea takes care of their final resting place. Here, they just sit here and bake in the sun."
 
@@ -966,6 +966,6 @@ label act1_2:
 
         "Did I ever say I needed a map?"
 
-        "Look out Seaborough, The Demonic Pirate [player_name] is coming in for a special lecture."
+        "Look out {color=#5FAFF6}Seaborough{/color}, The Demonic Pirate [player_name] is coming in for a special lecture."
 
         jump act1_3

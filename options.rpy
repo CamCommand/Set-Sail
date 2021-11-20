@@ -14,18 +14,14 @@
 
 define config.name = _("Set Sail")
 
+## The version of the game.
 
+define config.version = ".43333"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
 define gui.show_name = True
-
-
-## The version of the game.
-
-define config.version = ".42"
-
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
@@ -45,6 +41,13 @@ One from the group recommends that you start from scratch and start your own cre
 Without anything else promising the girls a better future, they enthusiastically accept. Along with a strange but seemingly trustworthy woman who was eavesdropping, you'll get your affairs in order for a long journey ahead of you. Adventure, riches, and true friendship await when you set sail!
 """)
 
+# These extra centers are for showing four characters on screen at once
+
+transform centerleft:
+    xalign 0.25 yalign 0.0
+
+transform centerright:
+    xalign 0.75 yalign 0.0
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,

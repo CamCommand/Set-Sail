@@ -50,24 +50,21 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    if renpy.windows:
-        config.tts_voice = "Mark"
-    elif renpy.macintosh:
-        config.tts_voice = "Alex"
-    elif renpy.linux:
-        config.tts_voice = "english_rp"
-
 # Main characters
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
-define Fi = Character('Fiona', color="#E44D1A")
-define G = Character('Geraldine', color="#DFDABB")# Geraldine
-define As = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True)
-define Be = Character('Behati', color="#5E0F60")
-define Ma = Character('May', color="#0A4AF6")
+define f = Character('Fiona', color="#E44D1A")
+define g = Character('Geraldine', color="#DFDABB")# Geraldine
+define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True)
+define b = Character('Behati', color="#5E0F60")
+define m = Character('May', color="#0A4AF6")
 define n = nvl_narrator# Narrator
 
-# Main charcter images
-image astrid_default = "Astrid.png"
+# Main charcter resting images
+image a_d = "Astrid.png"
+image b_d = "behati.png"
+image f_d = "Fiona.png"
+image g_d = "G.png"
+image m_d = "Palmer.png"
 
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands
@@ -75,7 +72,7 @@ define Cap = Character('Captain', color="#7F0505", callback=caps_voice)# The Dem
 define fla = Character('Flavio', color="#BB64F2", who_outlines=[ (1, "#000000") ], callback=fl_voice)# sir Flavio
 define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)# Librarian
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])# crowd of people
-define m = Character('Short Woman', color="#F263E2", callback=rot_voice)# woman at market
+define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)# woman at market
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)# bartender at arcade
 
 # Affinity of main characters
@@ -84,8 +81,6 @@ default G_affinity = 0
 default Astrid_affinity = 0
 default Be_affinity = 0
 default May_affinity = 0
-
-# voice tags
 
 # background images
 image BG MC_room ="background/bedroom.png"
@@ -99,6 +94,8 @@ image BG school = "background/school.png"
 image BG market = "background/market_temp.jpg"
 image BG ar = "background/arcades.png"
 image BG st = "background/street.png"
+image BG hw = "background/hallway.png"
+image BG cr = "background/classroom.png"
 
 # Other characters images
 image twohands = "TwoHands.png"
