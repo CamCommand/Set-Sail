@@ -14,37 +14,55 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    def fiona_voice(event, **kwargs):# voice for Fiona
+        if event == "show":
+            renpy.music.play("audio/blip9.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+    def g_voice(event, **kwargs):# voice for G
+        if event == "show":
+            renpy.music.play("audio/blip10.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+    def b_voice(event, **kwargs):# voice for Behati
+        if event == "show":
+            renpy.music.play("audio/blip11.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
     def twohands_voice(event, **kwargs):# voice for TwoHands
         if event == "show":
             renpy.music.play("audio/blip3.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def caps_voice(event, **kwargs):# voice for TwoHands
+    def caps_voice(event, **kwargs):# voice for Captain
         if event == "show":
             renpy.music.play("audio/blip4.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def fl_voice(event, **kwargs):# voice for TwoHands
+    def fl_voice(event, **kwargs):# voice for Flavio
         if event == "show":
             renpy.music.play("audio/blip5.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def lib_voice(event, **kwargs):# voice for TwoHands
+    def lib_voice(event, **kwargs):# voice for librarain
         if event == "show":
             renpy.music.play("audio/blip6.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def rot_voice(event, **kwargs):# voice for TwoHands
+    def rot_voice(event, **kwargs):# voice for market woman
         if event == "show":
             renpy.music.play("audio/blip7.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def bar_voice(event, **kwargs):# voice for TwoHands
+    def bar_voice(event, **kwargs):# voice for bartender
         if event == "show":
             renpy.music.play("audio/blip8.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
@@ -52,10 +70,10 @@ init python:# define sound bleeps here
 
 # Main characters
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
-define f = Character('Fiona', color="#E44D1A")
-define g = Character('Geraldine', color="#DFDABB")# Geraldine
+define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+define g = Character('Geraldine', color="#DFDABB", callback=g_voice)# Geraldine
 define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True)
-define b = Character('Behati', color="#5E0F60")
+define b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
 define m = Character('May', color="#0A4AF6")
 define n = nvl_narrator# Narrator
 

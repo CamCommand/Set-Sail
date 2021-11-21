@@ -258,4 +258,174 @@
             show f_d at left
             MC "Yeah, I’m capable of that."
 
+            $ f_met = 0
+            $ g_met = 0
+            $ b_met = 0
+
+            menu:
+                "Be honest with them":
+
+                    MC "Hello everybody. My name is [player_name], but you already knew that. I’ve been a pirate my whole life and served on {color=#f00}The Red Plague{/color} during that time."
+
+                    MC "Most days at sea are treacherous and exhausting, but the life is free and can be very rewarding. I had to work my way towards  becoming the first mate in that time."
+
+                    MC "However, ranks only come with more responsibility on pirate ships. It doesn’t automatically earn you respect."
+
+                    "Someone is holding their hand above their head all of a sudden. Did I do something wrong? Is this a test?"
+
+                    "If I pause Astrid should get the hint."
+
+                    a "Oh!"
+
+                    a "That’s a high school thing. We raise our hands when we have a question as to not blurt them out when someone is talking."
+
+                    a "That’s Fiona, she’s our Vice President."
+
+                    hide g_d
+                    hide b_d
+                    show f_d at center with dissolve
+
+                    MC "What’s your question Fiona?"
+
+                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                    f "What earns you respect on pirate ships? Do you have to be a big strong man to get it?"
+
+                    "Her tone makes it sound like she already knows the answer. Captain does a similar trick."
+
+                    MC "What earns you respect?"
+
+                    MC "From my experience, it’s feats and age. I feel as if I’ve done some pretty heroic things for the greater crew, but I’m treated like I was kidnapped yesterday."
+
+                    MC "As for your second concern, our ship has had many prominent women figures throughout its voyage. And I’ve met a handful of retired female Captains in our travels."
+
+                    MC "On the sea, when you’re fighting for everything you got, the only thing that matters is your merit."
+
+                    f "{color=#50A23B}Well that’s a pleasant surprise.{/color}"
+
+                    MC "Being a pirate is all about how good you are at the job. There have been some amazing pirates who are unbearable to talk to and be around."
+
+                    MC "But when the going gets tough, a great pirate tightens their buckle and draws their sword."
+
+                    "The room rings with a  small wave of applause. I’ve never been clapped at before."
+
+                    $ Fi_affinty += 1
+                    $ f_met += 1
+                    jump classrooom_two
+
+                "Exaggerate to sound cool":
+
+                    MC "Ahoy everyone! I’m the Dreaded Pirate [player_name]."
+
+                    MC "{color=#f00}The Red Plague{/color} and I have been ruling the southern seas for over fifty years. I’ve seen the coolest things the world has to offer and I haven’t paid for a single thing in my entire life."
+
+                    MC "We steal exports, we swipe imports, we take minerals, products, people, and sink ships of anyone who offends our noses. Our brutal tactics made us a scourge of the Atalantic."
+
+                    "Some girl in front is raising her arm above her head. Is she calling me out? Does Astrid know what she’s doing?"
+
+                    a "Oh!"
+
+                    a "That’s a high school thing. We raise our hands when we have a question as to not blurt them out when someone is talking."
+
+                    a "That’s G, she’s our club’s Secretary."
+
+                    hide f_d
+                    hide b_d
+                    show g_d at center with dissolve
+
+                    MC "Aye lass, what’s yer question?"
+
+                    $ g = Character('G', color="#DFDABB", callback=g_voice)# Geraldine
+                    g "Hi [player_name], loving the accent by the way. Question."
+
+                    g "What’s the coolest thing you’ve seen while stealing something? Like anything wackier than the average haul?"
+
+                    "She called me out!"
+
+                    MC "Well, let me think on that. Hmmmmmmm."
+
+                    MC "It would have to be that time I saw Poseidon himself do his duty. We stole a Mexican vessel’s shipment full of beers and sodas."
+
+                    MC "Their boss begged the Captain on his hands and knees to spare their lives. He offered to share his best whiskey with the Captain to convince him."
+
+                    MC "The drink was so good that, according to the Demonic Pirate himself, he allowed them to pass his sea."
+
+                    MC "As we sailed away from the ship a storm started to shake up the waves. I turned towards the ship and one sailor was loading a rocket propelled grenade and aimed it at our tail."
+
+                    MC "Before I could brace for impact, an uncharacteristically powerful wave for that stage of the storm was knocked into the Mexican ship."
+
+                    MC "The sailor must have been hit hard because his ship exploded right as they got hit. And our lives were saved by his divine decision."
+
+                    g "That sounds so cool. Did the ship sink?"
+
+                    MC "Straight into Davy Jones."
+
+                    g "I feel so much better now that I know Poseidon is real. Did you guys know this and not tell me?"
+
+                    $ G_affinity += 1
+                    $ g_met += 1
+                    jump classrooom_two
+
+                "Scare them away from piracy":
+
+                    MC "Alright lassies here’s the dark truth from a subordinate of the Demonic Pirate Ricardo himself."
+
+                    MC "Piracy is incredibly dangerous. Our lives are on the line everyday. We could be shot at, thrown overboard, or starved at sea."
+
+                    MC "Constantly fighting for life and death just for a sliver of profits is a dreary way to live."
+
+                    MC "Our living quarters are dank and grim. I had to burn through skin and bones to get a proper bed when I was fifteen."
+
+                    MC "Pirates are the worst type of people. They’re remorseless thieves and you’re treated like dirt unless you’re in charge."
+
+                    "Some girl in front is raising her arm up in the air. Is she trying to question me? Does Astrid know what she wants me to do?"
+
+                    a "Oh! That’s a high school thing."
+
+                    a "We raise our hands when we have a question as to not blurt them out when someone is talking. That’s Behati, our club's Treasurer."
+
+                    hide g_d
+                    hide f_d
+                    show b_d at center with dissolve
+
+                    $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
+                    MC "Aye lass, what’s the problem?"
+
+                    b "Y-yes hello, [player_name] isn’t it true that eight-six to ninety-nine percent of total goods stolen are raw material exports that the government plans to lose in their budgets?"
+
+                    b "Ones that crews are instructed to not fight over and to protect themselves? Wouldn’t that make the act of piracy a part of the system as a whole and not an outlier?"
+
+                    "What is she even talking about?"
+
+                    MC "Do I look like someone who's familiar with your mainland statistics?"
+
+                    b "Well y-you can account for your own ship’s actions, r-right?"
+
+                    MC "Aye, well it’s true that American vessels tend to avoid us at all costs, others aren’t so cautious."
+
+                    MC "We don’t steal from just governments. Other pirates and pleasure cruises are prime targets for loot of all kinds."
+
+                    b "Are t-those unaccounted for in your main piracy focus?"
+
+                    b "B-because how would you know where another pirate ship is going to be?"
+
+                    b "Or if, if some oil millionaire’s kid is going on a joyride?"
+
+                    MC "Behati was it?"
+
+                    b "Yes that’s me."
+
+                    MC "Pirates don’t have quotas or missions."
+
+                    MC "We take advantage of opportunities and solve problems we come across with the tools at our disposal. The grand plan is wild riches and being free."
+
+                    MC "No matter the costs."
+
+                    b "T-thank you for your honesty. That’s a lot to consider."
+
+                    $ Be_affinity += 1
+                    $ b_met += 1
+                    jump classrooom_two
+
+        label classrooom_two:
+
     return
