@@ -71,7 +71,7 @@ init python:# define sound bleeps here
 # Main characters
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
 define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
-define g = Character('Geraldine', color="#DFDABB", callback=g_voice)# Geraldine
+define g = Character('Geraldine', color="#F0CD00", callback=g_voice)# Geraldine
 define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True)
 define b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
 define m = Character('May', color="#0A4AF6")
@@ -137,7 +137,7 @@ label start:
     define gui.name_yalign = 0.5
 
     # center dialogue in center of box
-    define gui.dialogue_xpos = 0.54
+    define gui.dialogue_xpos = 0.5
     define gui.dialogue_text_xalign = 0.5
 
     # size of namebox on the left side of screen

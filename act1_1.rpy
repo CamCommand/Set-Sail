@@ -329,50 +329,23 @@
             define counter = 0
 
             $ re_list = ["No, I don’t want to think about it.", "No! I want to have a clear head if I’m gonna talk to anyone.", "Poseidon please let my mind be clear for the journey ahead of me.", "Poseidon, give me the strength of a thousand earthquakes to devour the thoughts of my mind.", "0"]
-            # re_list[0]
+            # $ re_list[0]
 
         label waiting:
 
             $ content_check = 0
 
-            if clothing_check == 0 and daydream_check == 0:
-                menu:
-                    "Change clothing":
-                        jump clothes
-                    "Read a book":
-                        jump book
-                    "Relax some more":
-                        jump relax
-                    "Day dream":
-                        jump dream
-
-            elif clothing_check == 1 and daydream_check == 0:
-                menu:
-                    "Read a book":
-                        jump book
-                    "Relax some more":
-                        jump relax
-                    "Day dream":
-                        jump dream
-
-            elif daydream_check == 1 and clothing_check == 0:
-                menu:
-                    "Change clothing":
-                        jump clothes
-                    "Read a book":
-                        jump book
-                    "Relax some more":
-                        jump relax
-                    "...Mom":
-                        jump mom
-            elif daydream_check == 1 and clothing_check == 1:
-                menu:
-                    "Read a book":
-                        jump book
-                    "Relax some more":
-                        jump relax
-                    "...Mom":
-                        jump mom
+            menu:
+                "Change clothing" if clothing_check == 0:
+                    jump clothes
+                "Read a book":
+                    jump book
+                "Relax some more":
+                    jump relax
+                "Day dream" if daydream_check == 0:
+                    jump dream
+                "...Mom" if daydream_check == 1:
+                    jump mom
 
         label clothes:
             $ clothing_check = 1

@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".43333"
+define config.version = ".44"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
