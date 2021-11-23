@@ -744,7 +744,103 @@
                 jump social
 
         label fiona:
-            "testfiona"
+
+            show f_d at center with dissolve
+
+            if f_convo == 0:
+
+                if f_met == 0:
+                    MC "Hey, what's happening, cool club member?"
+
+                    $ f = Character('Tall Girl', color="#E44D1A", callback=fiona_voice)# Fiona
+                    f "You wanna try that again matey?"
+
+                    MC "{cps=20}Ugh, ummmmmmmm, I uh.{/cps} Hello, I’m [player_name], sorry. How are you today?"
+
+                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                    f "That’s better. I’m Fiona."
+
+                    f "You don’t have to try so hard to talk to us. You’re a fearsome pirate not a high schooler."
+
+                    MC "But I’m talking to high schoolers, not other pirates? How would you want one of your friends to greet you?"
+
+                    f "Sup cock sucker, what’s goin’ on?"
+
+                    f "Then I’d say \"who’s cock?\" and we’d all laugh and just move on with the conversation."
+
+                    MC "{cps=20}Uuuuuuuh. I ugh, don’t know how I’d.{/cps}"
+
+                    f "I’m joking dude relax. Tell me a pirating thing."
+
+                    MC "Umm, most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
+
+                    MC "The barnacles under the ship tearing their skin off, killing them slowly. You’d be lucky to drown."
+
+                    f "Okay first, very metal. Second, next time just say \"Hey what’s up?\"."
+
+                    $ f_met += 1
+
+                else:
+                    MC "Hey Fiona, what are you up to?"
+
+                    f "Just texting a friend, tell me a pirating thing I can share with them."
+
+                    MC "Yes, ummmm, you know most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
+
+                    MC "The barnacles under the ship tearing their skin off, killing them slowly. You’d be lucky to drown."
+
+                    f "Okay first, very metal. Second, next time just say “Hey what’s up?”."
+
+                "I’m having a hard time getting a read on Fiona. In a way she’s a lot like other female pirates I’ve met, but something is...funny."
+
+                MC "Yes next time I’ll be more relaxed about it."
+
+                f "No I mean like that was really hardcore. So what's your favorite part about being a pirate?"
+
+                MC "My favorite part?"
+
+                MC "I’d say it has to be the freedom. I don’t know any other lifestyle, but I feel the most like myself out at sea."
+
+                f "Feel most like yourself huh?"
+
+                f "That sounds really nice, on land we don’t always get that luxury. We have to fight tooth and nail just to do the simple stuff."
+
+                "Fiona’s gaze rolls around the room. I think I know why being a pirate is so appealing to her."
+
+                "Everything is about your merit, nobody is treated wrong based on their appearance if they can do the work. It's a true sense of freedom when everybody respects yours."
+
+                MC "Hey Fiona."
+
+                f "Yup?"
+
+                MC "The most important thing you can do is find where you are most comfortable."
+
+                MC "All I know is pirating, but if it made me feel bad and unappreciated, then it’d be time for a change. You know what I mean?"
+
+                f "Yeah, I get it. I appreciate that sentiment."
+
+                f "I don’t have a ton of options though. Just sort of hold out till college."
+
+                MC "Is college a good place for that?"
+
+                f "That’s what I’ve been told at least."
+
+                f "But I don’t mean to sound too down about it. I have good friends here. Astrid and I are gonna try getting into the same school."
+
+                MC "That sounds great Fiona. I hope it all works out. I wish you a bountiful haul in your future."
+
+                f "Ha ha. Aye aye Captain."
+
+                $ f_convo += 1
+                hide f_d with dissolve
+                jump social
+
+            if f_convo == 1:
+
+            if f_convo == 2:
+
+            else:
+
         label g:
             "testg"
         label astrid:
