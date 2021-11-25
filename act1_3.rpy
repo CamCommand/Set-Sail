@@ -835,16 +835,373 @@
                 hide f_d with dissolve
                 jump social
 
-            if f_convo == 1:
+            elif f_convo == 1:
+                f "What’s the magic words?"
 
-            if f_convo == 2:
+                MC "What’s up cock sucker?"
+
+                f "I don’t don’t know, depends on who’s cock?"
+
+                MC "That is a pretty fun introduction even if it makes me uneasy."
+
+                f "I know, right? I’m gonna normalize it as much as I can. Try to use it in a movie to get it to stick."
+
+                MC "I’d have to find a way to watch it then."
+
+                if book_choice = "nerdy":
+                    f "{color=#F0FF3F}You stole a book from us?{/color}"
+
+                    MC "What? No! You mean this thing?"
+
+                    MC "I stole this from a book store. It looked interesting, thought I’d read it later."
+
+                    f "Rune is pretty good."
+
+                    f "They’re always saying they’re gonna make a movie based on it but haven’t yet. If you stick with it I think you’d like it."
+
+                    MC "I read a little bit, not sure if it’s something that will stick with me."
+
+                    f "Well there’s lots of moving parts in the series and the light dark fantasy elements are super enticing. I don’t even read that much and I liked it."
+
+                    MC "Isn’t light dark fantasy a contradiction?"
+
+                    f "No, light as in not as heavy and dark as in, well it can be dark but it’s not too dark."
+
+                    f "They aren’t throwing dead babies at each other and saying the n-word but the themes are serious."
+
+                    MC "Okay that sounds cool. I’ll give Rune a chance."
+
+                    f "How nice of you to not immediately dismiss literary genius. Are all pirates as gracious as you?"
+
+                    MC "I’ve only known a few pirates who were brave enough to hold a book."
+
+                    f "It’s not like everyone our age is buried in a book."
+
+                    f "The disdain some of us have for reading makes me super comfortable. G said she didn’t finish a single novel until she was fourteen."
+
+                    MC "Really? Aren’t you required to read in school?"
+
+                    f "Yes! Yes we are supposed to read to get past the fifth grade!"
+
+                    show g_d at left with slide
+                    g "Reading is boring. Do cooler things like skateboarding and drugs."
+                    hide g_d with moveoutleft
+
+                    f "She’s insane. Watching her pay attention in class is like watching the five stages of grief in fifty-two minutes."
+
+                    $ f_convo += 1
+                    $ book_choice = "used"
+
+                f "Do you get time to watch any movies or read at all?"
+
+                MC "I know what a movie is, but have never seen one. When my work is done for the day I find reading eases me into a comfortable mindset."
+
+                f "You get to read what you want at least?"
+
+                MC "There’s nobody censoring my library, why would anyone do that?"
+
+                f "In school, there’s a thick list of books we aren’t allowed to read."
+
+                MC "Because they’re bad?"
+
+                f "Ha, yeah some, but no. Most of them are bullshit political pandering and some are seen as history that contradicts the propaganda they feed us here."
+
+                MC "You should read what you want to read Fiona, don’t let anyone stop you."
+
+                f "Spoken like a true pirate, I expected nothing less."
+
+                f "We’ve come further in the past decade with multicultural and sexually diverse reading topics, but this isn’t a great place to live as far as cutting edge comes."
+
+                f "Some of these frickin meatheads will just shit on you for no reason other than you’re different. It’s exhausting to be around these people. Not in the club at least."
+
+                MC "At least pirating and by association, this club, are very accepting. There’s a lot of violence when you’re a pirate."
+
+                MC "If you focus on it, life is bleak. Highlighting the good parts in your head really shifts your mood."
+
+                f "Yeeeeaaaaah. For the last thread of my mental health that sounds like the healthy thing to do."
+
+                f "Thanks [player_name], you didn’t need to talk me down there. The serious tone was helpful."
+
+                MC "Not a problem. You have the mentality of an aged pirate, I do that sometimes for the new crew members."
+                $ f_convo += 1
+                hide f_d with dissolve
+                jump social
+
+            elif f_convo == 2:
+                f "What's the magic intro?"
+
+                MC "What’s up cock sucker?"
+
+                f "I don’t know, depends on who’s cock? People will start to talk if we keep meeting like this."
+
+                "There’s like six people in this room, I don’t know what she means. What would Astrid say?"
+
+                MC "Will people spread bad rumors? I think my reputation in {color=#5FAFF6}Seaborough{/color} will survive."
+
+                f "If Astrid wasn’t so pretty and popular she might have been a social outcast by now."
+
+                f "She basically runs this club in secret. A hush hush sort of deal."
+
+                MC "I understand, it's an incognito type situation. As long as the Captain won’t punish you for it I get it."
+
+                f "I don’t think the principal cares what the students do if it doesn’t break the bylaws, but we are an officially sanctioned club. We got the whole package."
+
+                f "A faculty supervisor that doesn’t come to school anymore, at least three members, and an E-board. Enough to schedule meetings and have the room to ourselves."
+
+                MC "A pirate ship really only needs a Captain and people to make the vessel sail."
+
+                f "How many people does it take to make a ship go?"
+
+                MC "Four to five roughly. Depends how capable the crew is."
+
+                f "I’ll start assembling the sailors. See you on the high seas, you better watch out."
+
+                MC "I’ll keep my eye out for you, Fearsome Pirate Fiona."
+
+                f "I need to think of a ship name. Something to scare the people I want to scare. How about…"
+
+                f "The Queer Steer!"
+
+                MC "What about the…"
+
+                MC "Nude Spear of God!"
+
+                f "That is so perfectly extra, I love it."
+
+                f "Hehe, thanks for humoring me matey."
+
+                $ f_convo += 1
+                hide f_d with dissolve
+                jump social
+
+            else:
+                MC "Hey cock sucker."
+
+                f "Hey matey. I know I said to be more relaxed when saying hi, but you gotta mix it up too."
+
+                MC "If you think you’re tired of sex jokes you’re the one who has to let me know."
+
+                f "Very true. I’ll be hung before that happens."
+
+                hide f_d with dissolve
+                jump social
+
+        label g:
+
+            show f_d at center with dissolve
+
+            if f_convo == 0:
+
+                if g_met == 0:
+                    MC "How are you today lass?"
+
+                    $ g = Character('Unassuming Girl', color="#F0CD00", callback=g_voice)# Geraldine
+                    g "Awful, I failed a math exam today."
+
+                    MC "Oh, will you be flogged for your failure?"
+
+                    g "Nah man, I’ll just shove it under my bed with the rest of them."
+
+                    MC "You can simply hide your failures like that?"
+
+                    g "For sure, they won’t catch up to me that fast. And when they do I’ll figure it out."
+
+                    $ g = Character('G', color="#F0CD00", callback=g_voice)# Geraldine
+                    g "Behati helps me cram. I’m Geraldine by the way. I don’t know if you heard anyone say my name. My friends call me G."
+
+                    MC "Why only one letter?"
+
+                    g "It’s quicker and doesn’t make me sound like some heiress to a embroidered pillow fortune."
+
+                    MC "Your name is what you make it out to become, not what is expected it to be."
+
+                    g "Now that’s some pirate wisdom for yeah. Tell me more pirate stuff."
+
+                    $ g_met += 1
+
+                else:
+                    $ g = Character('G', color="#F0CD00", callback=g_voice)# Geraldine
+                    MC "Hello again G. How are you?"
+
+                    g "I failed a freaking math test today. Very unepic of me."
+
+                    MC "Oh, will you be flogged for your failure?"
+
+                    g "Nah man, I’ll just shove it under my bed with the rest of them."
+
+                    MC "You can simply hide your failures like that?"
+
+                    g "For sure, they won’t catch up to me that fast. And when they do I’ll figure it out."
+
+                    g "Behati helps me cram. She’s good like that."
+
+                    MC "You shouldn’t rely on others to bail you out of your mistakes, making improvements will show that you're worthy to help."
+
+                    g "That’s some pirate bull right there. Tell me some cool pirate stuff."
+
+                "Pirate stuff? Could she be more vague? She’s been smiling this whole time, maybe tell a funny story."
+
+                MC "So it’s against pirate code to coerce your preferred gender onto the ship. It won’t get you killed but you’ll be punished harshly."
+
+                MC "One time these two new pirates, both really burly looking guys were sneaking some prostitutes onboard and the Captain and I caught them red handed."
+
+                g "Uh oh, tough luck for them."
+
+                MC "Here's what happened next. We still have to officially accuse them of the code violation, even if it’s obvious."
+
+                MC "So when we did that they denied the crime and claimed they were kicking them off. The story was they were stowaways."
+
+                g "Really? That’s what they went with?"
+
+                MC "We weren’t buying it and the Captain was getting increasingly upset at them. Our growing skepticism could only be squashed by one thing."
+
+                MC "To prove that they didn’t care about the woman, that way, they slowly brought their faces closer."
+
+                g "No Fucking Way!"
+
+                MC "Yeah, it was slow painful and super weird to watch. They clearly weren’t into it as they were going at it."
+
+                MC "The Captain kept staring them down so it lasted almost two minutes. But it felt like two hours just watching them."
+
+                g "That is so unbelievably funny!"
+
+                MC "They proved themselves enough so we let them get away with it. From then on they avoided each other as much as possible."
+
+                MC "Even to the point of eating their meals on different decks. Although, strangely they both left the crew at the same time."
+
+                g "I smell a best selling pirate romance novel in the works. I’m a big fan of of just the raunchiest gay fanfics I can find."
+
+                MC "Is that a popular genre on land?"
+
+                g "Let’s just say there are plenty of options to wet your palette with here. I’ll text you some links later."
+
+                MC "Alright, I’ll text you too G."
+
+                $ g_convo += 1
+                hide g_d with dissolve
+                jump social
+
+            elif f_convo == 1:
+                MC "Hello again G."
+
+                g "What’s the haps pirate pal?"
+
+                MC "Everyone here is super nice. I’ve been told pirates were treated poorly in normal society. Is high school different?"
+
+                g "It's a high school man, what the heck were you actually expecting?"
+
+                g "This isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but shit happens."
+
+                if book_choice = "funny":
+                    g "{color=#F0FF3F}Whatcha got there?{/color}"
+
+                    MC "Oh this? I found this book on the streets and I thought I’d keep it for novelty purposes."
+
+                    g "Right on the street. And my phone fell off the back of a truck."
+
+                    g "Oh my God!"
+
+                    g "A Pirate carrying around a pirate joke book? Now that’s the start of a bad joke. Which you seem loaded with there."
+
+                    MC "Yeah maybe you’re right. You want to hear some terrible pirate jokes?"
+
+                    g "Hit me."
+
+                    play sound "audio/pages.wav"
+                    MC "\"Why is pirating so addictive?\""
+
+                    g "The free oppium?"
+
+                    MC "No, that stuff’s expensive."
+
+                    MC "\"When you lose your first hand, you get hooked!\""
+
+                    g "That was wonderfully cringe, my body will nourish that for years to come. Do pirates actually use hook hands?"
+
+                    MC "Some do, most who lose hands get a hook. They’ve come a long way now. Most are equipped with extra features like blades and spoons."
+
+                    g "Blades and spoons, that’s an entire arsenal right there."
+
+                    MC "Exactly."
+
+                    play sound "audio/pages.wav"
+                    MC "Can you explain this one to me? I don't get it."
+
+                    g "Yeah sure what’s it say?"
+
+                    MC "\"How does a pirate call his mate? On his aye phone.\""
+
+                    MC "If my phonics are correct then I don’t know what an {i}I Phone{/i} is?"
+
+                    "G snickers behind her hands and pulls one of the screen devices everyone has from her pocket."
+
+                    g "Phones are what these are. Everyone has one. This specific brand is called an iPhone."
+
+                    MC "So this pirate joke wasn’t actually aimed at pirates then?"
+
+                    g "Well I don’t see why they would do that. You’d just steal them, they’d make no money."
+
+                    MC "A fair point, still feels silly."
+
+                    g "Best not to think about a joke book too seriously. Or else you’ll miss the punchline."
+
+                    "She digs into my arm with a swift jab and turns away. Her iPhone starts to vibrate."
+
+                    $ G_affinity += 1
+
+                else:
+                    MC "Is it really bad here?"
+
+                    g "I’m sure it’s not as violent as a pirate ship. But you have a choice at least. We’re forced to come here."
+
+                    "She thinks I have a choice. After eighteen years I’ve been given permission to prace around the land without a care."
+
+                    "Leaving on my own accord would have been a death sentence. It might be the same here, I don’t know?"
+
+                    MC "Can’t be all bad. You can choose your friends, go home at the end of the day, weekends off sounds nice?"
+
+                    g "Do you not get weekends?"
+
+                    MC "I didn’t know what the days of the week were until I was ten. Doesn’t matter too much at sea when there’s work that needs to be done."
+
+                    g "Do you have any spare time?"
+
+                    MC "Oh yeah, pirates hate doing work. There’s just so much work to be done or we all die."
+
+                    MC "But when that’s done there’s plenty of time in the day to yourself. Enjoy your hobbies, casual conversation, whatever you want really within code."
+
+                    g "Must be nice. My parents make me work in their deli after I’m done with school work."
+
+                    g "I barely have time for anything. The club’s a small reprieve from all that, but still."
+
+                    "That sounds really sad. Admiring the pirate life because yours is without freedom."
+
+                    MC "Arrrrgh. Well aye hope aye made today salty enough for ye lass."
+
+                    g "Haha. Yeah this was fun, I appreciate you coming down matey."
+
+                    "She digs into my arm with a swift jab and turns away. Her device started to vibrate.
+                    
+                $ g_convo += 1
+                hide g_d with dissolve
+                jump social
+
+            elif f_convo == 2:
 
             else:
 
-        label g:
-            "testg"
         label astrid:
-            "testastrid"
+
+            show a_d at center with dissolve
+
+            if a_convo == 0:
+
+            elif a_convo == 1:
+
+            elif a_convo == 2:
+
+            else:
+
         label food:
             "testfood"
         label washroom:
