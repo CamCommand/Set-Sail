@@ -1181,14 +1181,135 @@
                     g "Haha. Yeah this was fun, I appreciate you coming down matey."
 
                     "She digs into my arm with a swift jab and turns away. Her device started to vibrate.
-                    
+
                 $ g_convo += 1
                 hide g_d with dissolve
                 jump social
 
             elif f_convo == 2:
+                MC "What’s going on with your phone?"
 
+                g "Oh, I got a notification for a game I was playing. Have to do the dailys."
+
+                if game_played != "":
+                    MC "Sounds cool. I played my first video games today before coming here."
+
+                    g "{color=#F0FF3F}Oh yeah? What did you play?{/color}"
+
+                    MC "I played the [game_played] game."
+
+                    g "Damn that’s retro. Did you go to that arcade by the harbor?"
+
+                    MC "Yes I did, why? Is that bad?"
+
+                    g "Not explicitly, I can’t believe that was your first experience. Here, wait one second."
+
+                    "G pulls out her backpack and rummages around for a few seconds. She shows me another device with two screens instead of one."
+
+                    g "Let me run you a classic game that hasn’t aged like dogshit."
+
+                    MC "What’s it called?"
+
+                    g "Don’t worry about it, just follow the onscreen directions and play for a couple of minutes."
+
+                    MC "Aye, sure thing."
+
+                    g "You don’t say aye aye?"
+
+                    MC "I said yes already why would I say it twice?"
+
+                    g "For historical accuracy."
+
+                    MC "Not sure that’s right."
+
+                    #throw a DS Character on screen real bigger
+                    #make new gaming sound
+                    "The font of the title is too weird for me to make it out. However, the game is really fun."
+
+                    "I’m a little jet flying and spinning around the sky shooting shapes."
+
+                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they sound so mad?"
+
+                    "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
+
+                    MC "That was fun, I think I’m really starting to like video games."
+
+                    g "Of course you are. You’re one of us now."
+
+                    MC "What do you mean?"
+
+                    g "{cps=60}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+
+                    "Her repetition is getting slower and hands grow closer to my face. Backing away slowly she stopped and laughed to herself for a good while."
+
+                    $ G_affinity += 1
+                    $ g_convo += 1
+                    hide g_d with dissolve
+                    jump social
+
+                else:
+                    g "You ever played a video game before?"
+
+                    MC "No never. I’ve heard of them, but never had a chance to."
+
+                    g "Well this is a good chance. I can’t believe I get to coordinate your first experience. Here, wait one second."
+
+                    "G pulls out her backpack and rummages around for a few seconds. She shows me another device with two screens instead of one."
+
+                    g "Let me run you a classic game that hasn’t aged like dogshit."
+
+                    MC "What’s it called?"
+
+                    g "Don’t worry about it, just follow the onscreen directions and play for a couple of minutes."
+
+                    MC "Aye, sure thing."
+
+                    g "You don’t say aye aye?"
+
+                    MC "I said yes already why would I say it twice?"
+
+                    g "For historical accuracy."
+
+                    MC "Not sure that’s right."
+
+                    #throw a DS Character on screen real bigger
+                    #make new gaming sound
+                    "The font of the title is too weird for me to make it out. However, the game is really fun."
+
+                    "I’m a little jet flying and spinning around the sky shooting shapes."
+
+                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they sound so mad?"
+
+                    "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
+
+                    MC "That was fun, I think I’m really starting to like video games."
+
+                    g "Of course you are. You’re one of us now."
+
+                    MC "What do you mean?"
+
+                    g "{cps=60}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+
+                    "Her repetition is getting slower and hands grow closer to my face. Backing away slowly she stopped and laughed to herself for a good while."
+
+                    g "I’ll make a gamer out of you if you give me the chance. Don’t tempt me!"
+
+                    $ g_convo += 1
+                    hide g_d with dissolve
+                    jump social
             else:
+                g "Have you assimilated yet pirate pal?"
+
+                MC "I’m not sure. People seem to be fine with me."
+
+                g "Not good enough, go talk to more people. Become one with the pirate culture club."
+
+                MC "But I’m already a-"
+
+                g "{cps=60}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+
+                hide g_d with dissolve
+                jump social
 
         label astrid:
 
