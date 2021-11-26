@@ -503,7 +503,7 @@
                 "The unassuming girl" if g_met == 0:
                     jump g
 
-                "Astrid" if a_convo < 4:
+                "Astrid" if a_convo < 3:
                     jump astrid
 
                 "No wait":
@@ -1316,12 +1316,180 @@
             show a_d at center with dissolve
 
             if a_convo == 0:
+                    MC "Hey Astrid? How’d you like my intro?"
+
+                    a "It was something for sure. You should go talk to some other club members though."
+
+                    MC "But I’m here to talk to you. Is that a problem?"
+
+                    a "I guess not. I don’t want people to think the President is hogging all the pirate for herself."
+
+                    MC "They could easily walk up to me and say hi as much as I can."
+
+                    a "Approaching a veteran pirate might not be as easy for my friends as it is for you."
+
+                    MC "That would make sense, I do speak their language. Did you want to ask me any questions?"
+
+                    a "Yeah I had a bunch if you wouldn’t mind me asking a few. Like don’t take this wrong but can you tell me what your Captain’s like?"
+
+                    MC "My Captain, right."
+
+                    MC "He’s earned the title The Demonic Pirate a hundred times over in my lifetime alone."
+
+                    a "I heard he sinks ships on a whim and leaves no survivors."
+
+                    MC "No, he’s more tactical than that. You have to leave survivors sometimes to spread fear across the world."
+
+                    MC "Personally I think it's wasteful when we sink ships, but instills fear at any distance when we fire at the top deck."
+
+                    MC "The bigger the crew, the scarier it is to see ten or twenty men fall in one shot."
+
+                    a "How does he treat his crew?"
+
+                    MC "Like how a cruel and powerful God treats their subjects."
+
+                    a "What does that even mean?"
+
+                    MC "It means he’s strong and old and you think he’d swing his weight around too much."
+
+                    MC "Because he knows he can but every once and a while he has to come down to demonstrate why he’s in charge."
+
+                    a "I’m sorry I called your accurate description into question. It sounds like the Greek Gods starting wars amounsgt their subjects over petty arguments."
+
+                    MC "Don’t worry about it. I’d die for that man, he’s the type of Captain that will go down with the ship."
+
+                    MC "That’s the sign of a person to follow into the Underworld. And no Greek God would do that for anyone mortal."
+
+                    a "I’d like to not be the type of President that is compared to Greek tragedies, but we don’t often engage in life or death combat so I might be safe."
+
+                    MC "Not often?"
+
+                    a "No, not very often. Don’t bring up {i}The Great Budget Meeting of ‘16{/i} to anyone though."
+
+                    MC "Some battles are meant not to be retold, they live in the survivor’s hearts and scars."
+
+                    $ a_convo += 1
+                    hide a_d with dissolve
+                    jump social
 
             elif a_convo == 1:
+                a "Did you talk to the others yet?"
+
+                MC "Don’t worry President, I’ll make sure nobody spreads any nasty rumors about us."
+
+                a "No, you’re supposed to spread the pirate-ness to the Pirate Culture Club, not prevent rumors about us"
+
+                a "You aren’t getting aggressive with anyone are you?"
+
+                MC "People can hear us from right here. We’re all in the same room after all, have you seen me threaten anyone?"
+
+                a "That’s true, but you don’t really act like a pirate of the plague would."
+
+                MC "You wouldn’t want me to act like I must onboard the ship."
+
+                MC "We only tolerate bad behavior because we’d die without the work everyone puts into the crew."
+
+                if book_choice == "exciting":
+                    a "{color=#F0FF3F}By the way, what’s that you have under your shirt?{/color}"
+
+                    MC "Oh, I took this book from a store before coming here. Thought it might look good in my humble collection."
+
+                    a "You like the Parry Baxton series? The movies are so fun to rewatch."
+
+                    MC "I ummm, I’m not sure yet. I only read the first bits so far. Seems good."
+
+                    a "I’ve seen the movies so many times. My parents run a movie theater so I watch a lot of movies."
+
+                    MC "I’ve never seen one before, how exactly do they work? How do the movies, move?"
+
+                    a "The short explanation is we project a moving image onto a wall and people pay us to do that."
+
+                    MC "That is definitely something I’d like to experience one day."
+
+                    a "Would you like to come by and see one after this is done?"
+
+                    MC "I’d, I ummmm. I would love to ummm."
+
+                    "Poseidon’s holy trident, I’ve never been asked to do anything without the subtext of having to do it. Not ever to do a fun sounding activity as well."
+
+                    MC "Going to a movie theater with you sounds like fun Astrid. But I have to return to my ship after this or they might leave me behind."
+
+                    a "Yeah, that’s fine of course you have to do that. I don’t know what I was expecting."
+
+                    MC "But, if I’m ever back here again I could sneak off and we could all see a movie together? I want to see the most popular film out that year."
+
+                    a "Awesome, bet. I’m totally down for that."
+
+                    $ Astrid_affinity += 1
+
+                a "So ummm, have you ever wanted to captain your own ship?"
+
+                MC "Wow, that’s uh,"
+
+                MC "I’ve never really thought about it before. I can’t imagine my Captain ever retiring so..."
+
+                a "Is he one of those guys you just look at and think that they will live forever?"
+
+                MC "Something like that, yes."
+
+                MC "He has that kind of salty sea aura to him. Like he’s already a specter of the high seas that's there to torment anyone in his waters."
+
+                a "That’s some eerie imagery. Might have dodged a bullet there by getting you to come instead."
+
+                MC "Thanks I appreciate that."
+
+                a "No, I mean it. It’s been cool having you here today."
+
+                MC "Ha, I wasn’t being sarcastic. I’ve been scolded at because it isn’t a very good look for a serious pirate, whatever that means."
+
+                a "Well what jerk decides that? Sarcasm is our generation's life blood. You use it as much as you want [player_name]."
+
+                MC "Thanks, I was on my hands and knees waiting for your permission Madame President."
+
+                a "There you freaking go! That’s the youthful disregard we all have inside of us."
+
+                $ a_convo += 1
+                hide a_d with dissolve
+                jump social
 
             elif a_convo == 2:
+                a "Okay {player_name], what’s your favorite thing to steal?"
 
-            else:
+                MC "That’s the easy one."
+
+                MC "Well yeah, that’s it actually. Whatever is easiest to steal."
+
+                MC "Something I want and they won’t miss. I like when I’m not risking my life over something we are just going to end up selling."
+
+                a "Oh, wow. That’s a more serious answer than I was expecting. I was hoping you’d say diamonds or something."
+
+                MC "No, people will kill for those and I’d rather not be on the receiving end of that intention if possible."
+
+                a "I really like stealing movies. I’ll sit in the free movies I get from my parent’s theater and record them on video tapes and upload them online."
+
+                MC "Do you make money on that?"
+
+                a "I wouldn’t charge people for that! But the industry takes a small hit and that's where the rush comes from."
+
+                a "My folks get hella mad at me for it, it’s really amusing watching their heads explode over a 720p recording of some cheapo horror film."
+
+                MC "Rebel where you can I guess. No job is worth losing your skin over, make sure you’re careful."
+
+                MC "I don’t know how serious that is here, but it doesn’t sound worth losing your freedom over a seven twenty pee."
+
+                a "Yeah my vast amount of freedom, full of my own choices and self determination."
+
+                MC "Florida must be nice if it has all that."
+
+                "Astrid rolls her eyes at me and cracks a small smile."
+
+                a "I’m gonna get some more food. Please make sure you talk to the other club members. Do it for me please?"
+
+                MC "Aye President. I’ll spread the good word of cannon cleaning techniques in your name."
+
+                $ a_convo += 1
+                hide a_d with dissolve
+                jump social
 
         label food:
             "testfood"
