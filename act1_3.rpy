@@ -452,18 +452,18 @@
 
         label classroom_choice:
 
-        menu:
-            "Socialize":
-                jump social
+            menu:
+                "Socialize":
+                    jump social
 
-            "Get some food" if food_ate == 0:
-                jump food
+                "Get some food" if food_ate == 0:
+                    jump food
 
-            "Use the bathroom" if b_check == 0:
-                jump washroom
+                "Use the bathroom" if b_check == 0:
+                    jump washroom
 
-            "Leave" if activity_check == 3:
-                jump leave
+                "Leave" if activity_check >= 3:
+                    jump leave
 
         label social:
 
@@ -719,6 +719,7 @@
 
                     $ book_choice = "used"# just to know when the variable is used
                     $ b_convo += 1
+                    $ activity_check += 1
                     jump social
 
                 else:
@@ -737,6 +738,7 @@
                     b "Thanks, that’s good advice."
 
                     $ b_convo += 1
+                    $ activity_check += 1
                     jump social
 
             else:
@@ -971,6 +973,7 @@
                 f "Hehe, thanks for humoring me matey."
 
                 $ f_convo += 1
+                $ activity_check += 1
                 hide f_d with dissolve
                 jump social
 
@@ -1180,7 +1183,7 @@
 
                     g "Haha. Yeah this was fun, I appreciate you coming down matey."
 
-                    "She digs into my arm with a swift jab and turns away. Her device started to vibrate.
+                    "She digs into my arm with a swift jab and turns away. Her device started to vibrate."
 
                 $ g_convo += 1
                 hide g_d with dissolve
@@ -1295,6 +1298,7 @@
                     g "I’ll make a gamer out of you if you give me the chance. Don’t tempt me!"
 
                     $ g_convo += 1
+                    $ activity_check += 1
                     hide g_d with dissolve
                     jump social
             else:
@@ -1488,13 +1492,441 @@
                 MC "Aye President. I’ll spread the good word of cannon cleaning techniques in your name."
 
                 $ a_convo += 1
+                $ activity_check += 1
                 hide a_d with dissolve
                 jump social
 
-        label food:
-            "testfood"
         label washroom:
-            "testwashroom"
+            "My stomach is hurting suddenly. Does my stomach feel the incoming social anxiety or was it something I ate?"
+
+            "Hopefully the washrooms are cleaner here then on the ship. Keeping the latrine clean for more than three days on the Plague would take God-like abilities."
+
+            show a_d at center with dissolve
+            MC "Hey Astrid, where is the nearest washroom from here?"
+
+            a "There’s one in this wing. Take a left and they’re the two wider doors across the hall."
+
+            MC "Thank you very much."
+
+            hide a_d with dissolve
+            scene BG hw with fade
+
+            "The wider doors are easily visible right out of the classroom."
+
+            pause 1.5
+            scene BG wc1 with fade
+            $ activity_check += 1 # to complicated to put after every jump after the fact
+            $ b_check += 0        # also this
+
+            MC "{cps=20}Ummmm. I’m not so, what does?{/cps}"
+
+            "What are these symbols? One is a person but the other is a triangle person? What’s the difference?"
+
+            "I don’t want to get kicked out for using the wrong one, or more likely be put in an awkward situation. Think [player_name], think."
+
+            "Am I a triangle person or a slim person? I feel slim but does this shirt make me look more triangular? Does this have to be so difficult?"
+
+            if f_met == 0:
+                $ f = Character('Tall Girl', color="#E44D1A", callback=fiona_voice)# Fiona
+                show f_d at left with dissolve
+
+                f "You having a problem matey?"
+
+                MC "Oh yeah, I am. Please excuse my lack of land iconography but what do these symbols mean?"
+
+                MC "Do they stop me from entering them?"
+
+                f "You’re on the right track there. One’s for boys and the other’s for girls. Is that a problem for you?"
+
+                MC "Hmmmmmm…"
+
+                if player_identity == "m":
+                    MC "No, I’ll use the men's one. Thank you."
+
+                    MC "You were in the club room right?"
+
+                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                    $ f_met += 1
+                    f "Yeah, my name’s Fiona. See you back in there."
+
+                    hide f_d with dissolve
+                    "Fiona pushes past me and goes into the girls bathroom."
+                    scene BG wc2 with fade
+
+                    "Surprisingly, there are multiple facilities inside the huge room on the boys' side. I must have picked the best one, the smell of lemons hits my face like a morning breeze."
+
+                    "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
+
+                    #play toilet flushing sound
+                    scene BG hw with fade
+                    scene BG cr with fade
+                    jump classroom_choice
+
+                elif player_identity == "f":
+                    MC "No, I’ll use the girl’s one. Thank you."
+
+                    MC "You were in the club room right?"
+
+                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                    $ f_met += 1
+                    f "Yeah, my name’s Fiona. Come with me, I’ll be there if we run into anymore gendered symbols."
+
+                    hide f_d with dissolve
+                    "Fiona pushes past me and goes into the girl's bathroom."
+                    scene BG wc3 with fade
+
+                    "I follow behind her, confused by what she meant by that. To my surprise, there are multiple facilities inside this huge washroom."
+
+                    "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+
+                    show f_d at right with dissolve
+                    MC "Are all of them this big?"
+
+                    f "All of what?"
+
+                    MC "All washrooms on land?"
+
+                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
+
+                    MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
+
+                    MC "I’m sure someone with an artificial leg could fit in one of these. Can not every gender use the girl’s room? Is that taboo?"
+
+                    f "Doubly wrong matey."
+
+                    f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
+
+                    f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
+
+                    MC "I see. That is strange."
+
+                    MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
+
+                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    MC "Cis shit?"
+
+                    f "Nevermind, just do your business so we can get back to everyone."
+                    hide f_d with dissolve
+
+                    "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
+
+                    "If this is what all washrooms are like on land then I shall remember them fondly."
+
+                    #play toilet flushing sound
+                    scene BG hw with fade
+                    scene BG cr with fade
+                    jump classroom_choice
+
+                else:
+                    MC "Yes, sort of. I still don’t know which one to use. Do you understand?"
+
+                    f "Yeah I get it. This stupid het norm school fucking sucks."
+
+                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                    $ f_met += 1
+                    f "I know you don’t know me, Fiona by the way, but come in the girls room with me I’ll make sure nobody bugs us."
+
+                    MC "Thank you Fiona. I appreciate that."
+
+                    hide f_d with dissolve
+                    "Fiona pushes past me and goes into the girl's bathroom."
+                    scene BG wc3 with fade
+
+                    "I follow behind her, confused by what she meant by that. To my surprise, there are multiple facilities inside this huge washroom."
+
+                    "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+
+                    show f_d at right with dissolve
+                    MC "Are all of them this big?"
+
+                    f "All of what?"
+
+                    MC "All washrooms on land?"
+
+                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
+
+                    MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
+
+                    MC "I’m sure someone with an artificial leg could fit in one of these. Can not every gender use the girl’s room? Is that taboo?"
+
+                    f "Doubly wrong matey."
+
+                    f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
+
+                    f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
+
+                    MC "I see. That is strange."
+
+                    MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
+
+                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    MC "Cis shit?"
+
+                    f "Nevermind, just do your business so we can get back to everyone."
+                    hide f_d with dissolve
+
+                    "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
+
+                    "If this is what all washrooms are like on land then I shall remember them fondly."
+
+                    #play toilet flushing sound
+                    scene BG hw with fade
+                    scene BG cr with fade
+                    jump classroom_choice
+
+            else:
+                $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                show f_d at left with dissolve
+
+                f "You having a problem matey?"
+
+                MC "Oh, hello Fiona"
+
+                MC "Could you please excuse my lack of land iconography but what do these symbols mean? Do they stop me from entering them?"
+
+                f "You’re on the right track there. One’s for boys and the other’s for girls. Is that a problem for you?"
+
+                MC "Hmmmmmm…"
+
+                if player_identity == "m":
+                    MC "No, I’ll use the men's one. Thanks Fiona."
+
+                    f "No problemo matey. See you back at the party."
+
+                    hide f_d with dissolve
+                    "Fiona pushes past me and goes into the girls bathroom."
+                    scene BG wc2 with fade
+
+                    "Surprisingly, there are multiple facilities inside the huge room on the boys' side. I must have picked the best one, the smell of lemons hits my face like a morning breeze."
+
+                    "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
+
+                    #play toilet flushing sound
+                    scene BG hw with fade
+                    scene BG cr with fade
+                    jump classroom_choice
+
+                elif player_identity == "f":
+                    MC "No, I’ll use the girl’s one. Thanks for the help Fiona."
+
+                    hide f_d with dissolve
+                    "Fiona pushes past me and goes into the girl's bathroom."
+                    scene BG wc3 with fade
+
+                    "I follow behind her, confused by what she meant by that. To my surprise, there are multiple facilities inside this huge washroom."
+
+                    "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+
+                    show f_d at right with dissolve
+                    MC "Are all of them this big?"
+
+                    f "All of what?"
+
+                    MC "All washrooms on land?"
+
+                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
+
+                    MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
+
+                    MC "I’m sure someone with an artificial leg could fit in one of these. Can not every gender use the girl’s room? Is that taboo?"
+
+                    f "Doubly wrong matey."
+
+                    f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
+
+                    f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
+
+                    MC "I see. That is strange."
+
+                    MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
+
+                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    MC "Cis shit?"
+
+                    f "Nevermind, just do your business so we can get back to everyone. I got to use it."
+                    hide f_d with dissolve
+
+                    "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
+
+                    "If this is what all washrooms are like on land then I shall remember them fondly."
+
+                    #play toilet flushing sound
+                    scene BG hw with fade
+                    scene BG cr with fade
+                    jump classroom_choice
+
+                else:
+                    MC "Yes, sort of. I still don’t know which one to use. Do you understand what I mean Fiona?"
+
+                    f "Yeah I get it. This stupid het norm school fucking sucks."
+
+                    f "I know you don’t know me that well, but come in the girls room with me I’ll make sure nobody bugs us."
+
+                    MC "Thank you Fiona. I appreciate that."
+
+                    hide f_d with dissolve
+                    "Fiona pushes past me and goes into the girl's bathroom."
+                    scene BG wc3 with fade
+
+                    "I follow behind her, confused by what she meant by that. To my surprise, there are multiple facilities inside this huge washroom."
+
+                    "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+
+                    show f_d at right with dissolve
+                    MC "Are all of them this big?"
+
+                    f "All of what?"
+
+                    MC "All washrooms on land?"
+
+                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
+
+                    MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
+
+                    MC "I’m sure someone with an artificial leg could fit in one of these. Can not every gender use the girl’s room? Is that taboo?"
+
+                    f "Doubly wrong matey."
+
+                    f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
+
+                    f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
+
+                    MC "I see. That is strange."
+
+                    MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
+
+                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    MC "Cis shit?"
+
+                    f "Nevermind, just do your business so we can get back to everyone."
+                    hide f_d with dissolve
+
+                    "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
+
+                    "If this is what all washrooms are like on land then I shall remember them fondly."
+
+                    #play toilet flushing sound
+                    scene BG hw with fade
+                    scene BG cr with fade
+                    jump classroom_choice
+
+        label food:
+            MC "I can’t turn down free food. What kind of pirate would I be?"
+
+            "The people who burst towards the food after I spoke have left. Apparently they weren’t as interested as the club heads."
+
+            "A side table by the window is laid out with plastic wrapped food. My eye is drawn to the..."
+
+            menu:
+                "Grilled Chicken":
+                    jump chicken
+
+                "Really Long Sandwich":
+                    jump sandwich
+
+                "Fresh Fruits":
+                    jump fruits
+
+            label chicken:
+                "The grilled chicken breasts look so good. I can’t tell if it's warm or cold but I want to eat it super bad."
+
+                "There are little plastic plates to put the food on. Are these easier to clean?"
+
+                "Only the ranked crew members get the metal plates, the rest of the crew use the wooden ones. Not that we even had enough metal ones for everyone."
+
+                "They’re terrible to wash but can’t easily break and can be recycled from old planks on the ship."
+
+                show g_d at center with dissolve
+
+                if g_met == 0:
+                    $ g = Character('Girl', color="#F0CD00", callback=g_voice)# Geraldine
+
+                g "You liking the food?"
+
+                MC "Yeah this is great. You make it?"
+
+                g "No, I just took it from my parent’s deli."
+
+                MC "So this was stolen and I didn’t have to do anything? That makes it taste even better!"
+
+                g "It does? I sort of feel guilty. I think some of this stuff was supposed to go to someone’s Bat Mitzvah."
+
+                MC "I don’t know what that is? Is it like a celebration of some kind?"
+
+                g "Something like that..."
+
+                if g_met == 0:
+                    $ g = Character('G', color="#F0CD00", callback=g_voice)# Geraldine
+
+                    g "I’m Geraldine by the way. I don’t know if you heard anyone say my name. My friends call me G."
+
+                MC "I actually knew a pirate named Geraldine."
+
+                g "Really? What was she like?"
+
+                "Swallowing the last of what remained on my plate, I try to recall the most flattering memory of ol Geraldine."
+
+                MC "She was the biggest woman I’ve ever seen."
+
+                g "What!?"
+
+                MC "She was built like a mighty killer whale. And killed like one too."
+
+                MC "Unapologetically ruthless, when she served her special slop mix to us some sailors would try to insult her looks and she would say terrible things about their mothers."
+
+                g "Haaah ahh a! Yeah like what?"
+
+                MC "She’d say horrible things. Like when they called her fat she would say something like,"
+
+                MC "\"At least if I gave birth to an ugly fuck like yerself I’d have the decency to eat ya and save me the trouble of looking like I passed around a goat.\""
+
+                "G’s mouth is left wide open, food still unchewed is visible on her tongue."
+
+                g "BWAHahahahahaha! That fucking hilarious. And she’d do that how often?"
+
+                "She almost choked trying to get that out. Her entire body has gone limp from laughter."
+
+                "Other students join in the laughter but are drowned out by G’s roars. If I recall correctly, some books I read implied teenagers find being mean really funny."
+
+                "I can’t disagree in most cases."
+
+                MC "Almost every night she’d bring a pirate on the verge of tears. Once someone threw a punch at her and she caught his hand and put it in the boiling hot soup."
+
+                g "Oh my God I can picture it. One time,"
+
+                g "augh, I told my mom to eat my dick after she yelled at me for being on my phone and I got grounded for a week. I wish I could be that tough."
+
+                g "This Geraldine is now the me I will strive to be. Minus the whale part."
+
+                MC "She was an inspiring woman, I guess."
+
+                g "I have to go tell Behati about this, she’ll flip."
+                hide g_d with moveoutleft
+
+                "Before I could ask what she meant my \"flip\" G shuffled to another table to talk to her friend."
+
+                $ G_affinity += 1
+                $ activity_check += 1
+                $ food_ate += 1
+                jump classroom_choice
+
+            label sandwich:
+                "test"
+            label fruits:
+                "test"
+            $ food_ate += 1
         label leave:
             "testleave"
     return

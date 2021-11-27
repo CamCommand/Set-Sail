@@ -114,6 +114,9 @@ image BG ar = "background/arcades.png"
 image BG st = "background/street.png"
 image BG hw = "background/hallway.png"
 image BG cr = "background/classroom.png"
+image BG wc1 = "background/wc.png"# change me when pic is found
+image BG wc2 = "background/wc2.png"# change me when pic is found
+image BG wc3 = "background/wc2.png"# change me when pic is found
 
 # Other characters images
 image twohands = "TwoHands.png"
