@@ -68,6 +68,19 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    def Crashsound_test(event, **kwargs):# noise to play when everone yells
+        if event == "show":
+            renpy.music.play("audio/crash.mp3 ", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+transform wiggle:
+    linear 0.1 xoffset -4 yoffset 4
+    linear 0.1 xoffset 6 yoffset -6
+    linear 0.1 xoffset 4 yoffset -4
+    linear 0.1 xoffset -6 yoffset 6
+    linear 0.1 xoffset 0 yoffset 0
+
 # Main characters
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
 define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
@@ -76,6 +89,7 @@ define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=T
 define b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
 define m = Character('May', color="#0A4AF6")
 define n = nvl_narrator# Narrator
+define ev = Character('Everyone', color="#000000", callback=Crashsound_test)
 
 # Main charcter resting images
 image a_d = "Astrid.png"
@@ -129,6 +143,11 @@ image mm = "momlady.png"
 # Menu Music
 define config.game_menu_music = "music/BelowDeck.mp3"
 # define config.main_menu_music
+
+# colors used reference
+# #F0FF3F when your previous choice comes back
+# #50A23B a good choice
+# #f00 a bad choice
 
 # The game starts here baby!
 label start:

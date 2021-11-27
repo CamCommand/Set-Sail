@@ -566,7 +566,7 @@ label act1_2:
     label market:
 
         # need crowd character and people sounds+crunch sounds
-        $ food_check = 0 # This will be used later to determine if MC is hungry at school
+        define food_check = 0 # This will be used later to determine if MC is hungry at school
         # $ crowd = ["Tall Man"]
 
         MC "Something to eat sounds nice. I’m sure nobody will miss one apple."

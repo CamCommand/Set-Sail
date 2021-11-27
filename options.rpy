@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".44"
+define config.version = ".50"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -44,10 +44,10 @@ Without anything else promising the girls a better future, they enthusiastically
 # These extra centers are for showing four characters on screen at once
 
 transform centerleft:
-    xalign 0.25 yalign 0.0
+    xalign 0.35 yalign 1.0
 
 transform centerright:
-    xalign 0.75 yalign 0.0
+    xalign 0.65 yalign 1.0
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,

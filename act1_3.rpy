@@ -332,7 +332,7 @@
 
                     MC "Aye lass, what’s yer question?"
 
-                    $ g = Character('G', color="#F0CD00", callback=g_voice)# Geraldine
+                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
                     g "Hi [player_name], loving the accent by the way. Question."
 
                     g "What’s the coolest thing you’ve seen while stealing something? Like anything wackier than the average haul?"
@@ -462,7 +462,7 @@
                 "Use the bathroom" if b_check == 0:
                     jump washroom
 
-                "Leave" if activity_check >= 3:
+                "Leave" if activity_check >= 2 and g_met >= 1 and b_met >= 1 and f_met >= 1:
                     jump leave
 
         label social:
@@ -474,33 +474,33 @@
             $ a_convo = 0
 
             # Leaving menu list of respones
-            $ leave["Maybe not right now.", "Wait a second.", "Not just yet."]
+            define leave = ["Maybe not right now.", "Wait a second.", "Not just yet."]
             $ rand1 = renpy.random.randint(0, 2)
 
             # just a check to do an intro line
             $ x = 0
-            if x = 0:
+            if x == 0:
                 "This is what I wanted to do on land. Talk to people my own age, I should take advantage of this moment."
                 $ x += 1
             "Who should I talk to?"
 
             menu:
-                "Behati" if b_met == 1:
+                "Behati" if b_met >= 1:
                     jump behati
 
                 "Girl with large spectacles" if b_met == 0:
                     jump behati
 
-                "Fiona" if f_met == 1:
+                "Fiona" if f_met >= 1:
                     jump fiona
 
                 "Taller girl" if f_met == 0:
                     jump fiona
 
-                "G" if g_met == 1:
+                "G" if g_met >= 1:
                     jump g
 
-                "The unassuming girl" if g_met == 0:
+                "Pale girl" if g_met == 0:
                     jump g
 
                 "Astrid" if a_convo < 3:
@@ -614,6 +614,7 @@
                 b "Nevermind, if you think of anything let me know."
 
                 $ b_convo += 1
+                $ activity_check += 1
                 hide b_d with dissolve
                 jump social
 
@@ -791,7 +792,7 @@
 
                     MC "The barnacles under the ship tearing their skin off, killing them slowly. You’d be lucky to drown."
 
-                    f "Okay first, very metal. Second, next time just say “Hey what’s up?”."
+                    f "Okay first, very metal. Second, I can't text them that."
 
                 "I’m having a hard time getting a read on Fiona. In a way she’s a lot like other female pirates I’ve met, but something is...funny."
 
@@ -834,6 +835,7 @@
                 f "Ha ha. Aye aye Captain."
 
                 $ f_convo += 1
+                $ activity_check += 1
                 hide f_d with dissolve
                 jump social
 
@@ -991,14 +993,14 @@
 
         label g:
 
-            show f_d at center with dissolve
+            show g_d at center with dissolve
 
             if f_convo == 0:
 
                 if g_met == 0:
                     MC "How are you today lass?"
 
-                    $ g = Character('Unassuming Girl', color="#F0CD00", callback=g_voice)# Geraldine
+                    $ g = Character('Pale Girl', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
                     g "Awful, I failed a math exam today."
 
                     MC "Oh, will you be flogged for your failure?"
@@ -1009,7 +1011,7 @@
 
                     g "For sure, they won’t catch up to me that fast. And when they do I’ll figure it out."
 
-                    $ g = Character('G', color="#F0CD00", callback=g_voice)# Geraldine
+                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
                     g "Behati helps me cram. I’m Geraldine by the way. I don’t know if you heard anyone say my name. My friends call me G."
 
                     MC "Why only one letter?"
@@ -1023,7 +1025,7 @@
                     $ g_met += 1
 
                 else:
-                    $ g = Character('G', color="#F0CD00", callback=g_voice)# Geraldine
+                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
                     MC "Hello again G. How are you?"
 
                     g "I failed a freaking math test today. Very unepic of me."
@@ -1081,6 +1083,7 @@
                 MC "Alright, I’ll text you too G."
 
                 $ g_convo += 1
+                $ activity_check += 1
                 hide g_d with dissolve
                 jump social
 
@@ -1373,6 +1376,7 @@
                     MC "Some battles are meant not to be retold, they live in the survivor’s hearts and scars."
 
                     $ a_convo += 1
+                    $ activity_check += 1
                     hide a_d with dissolve
                     jump social
 
@@ -1516,7 +1520,7 @@
             pause 1.5
             scene BG wc1 with fade
             $ activity_check += 1 # to complicated to put after every jump after the fact
-            $ b_check += 0        # also this
+            $ b_check += 1        # also this
 
             MC "{cps=20}Ummmm. I’m not so, what does?{/cps}"
 
@@ -1851,7 +1855,7 @@
                 show g_d at center with dissolve
 
                 if g_met == 0:
-                    $ g = Character('Girl', color="#F0CD00", callback=g_voice)# Geraldine
+                    $ g = Character('Girl', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
 
                 g "You liking the food?"
 
@@ -1868,7 +1872,7 @@
                 g "Something like that..."
 
                 if g_met == 0:
-                    $ g = Character('G', color="#F0CD00", callback=g_voice)# Geraldine
+                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
 
                     g "I’m Geraldine by the way. I don’t know if you heard anyone say my name. My friends call me G."
 
@@ -1917,16 +1921,318 @@
 
                 "Before I could ask what she meant my \"flip\" G shuffled to another table to talk to her friend."
 
+                $ g_met += 1
                 $ G_affinity += 1
                 $ activity_check += 1
                 $ food_ate += 1
                 jump classroom_choice
 
             label sandwich:
-                "test"
+                "Poseidon help me that sandwich is half my size."
+
+                "Oh?"
+
+                "It’s cut into slices others are taking. Was it too presumptuous to think it was all a gift for the Captain? I’d totally expect him to eat it all."
+
+                if b_met == 0:
+                    show b_d at center with dissolve
+                    $ b = Character('Girl with Glasses', color="#5E0F60", callback=b_voice)# Behati
+
+                    b "Do y-you like the sandwiches?"
+
+                    "This girl with large spectacles appeared behind me almost making me drop my slice."
+
+                    "She seems nervous to talk to me, couldn’t imagine what she’d be like if the Captain show’d up."
+
+                    MC "Yes this tastes great. I’ve never had anything like it."
+
+                    b "That’s g-g-good. Do you w-want anything to d-drink?"
+
+                    MC "Well I was told there was no alcohol, so do you have water at least, ummm? What’s your name?"
+
+                    $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
+                    $ b_met +=1
+                    b "{cps=100}I’m Behati here’s some water we took from the tap and put in a pitcher!{/cps}"
+
+                    show b_d at wiggle
+                    "She pours me a cup of water as fast as she said that, spilling a fair amount of it on the table."
+
+                else:
+                    show b_d at center with dissolve
+                    $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
+
+                    b "Do y-you like the sandwiches?"
+
+                    "It’s that Behati girl. Her questions were very data driven, wonder if that’s how she’s like?"
+
+                    "I really don’t know all of the ships' intakes and outputs (besides how many ships we sink). Flavio mostly takes care of the number stuff."
+
+                    MC "Yes this tastes great. I’ve never had anything like it."
+
+                    if b_convo >= 1:
+                        b "That’s good. Do you want anything to drink?"
+
+                        MC "Water if you have it."
+
+                        b "Let me pour you some, here’s some water we took from the tap and put in a pitcher!"
+
+                        show b_d with wiggle
+                        "She pours me a cup of water as fast as she said that, spilling a little bit on the table."
+
+                    else:
+                        b "That’s g-g-good. Do you w-want anything to d-drink?"
+
+                        MC "Water if you have it. Are you alright? You sound worried about something."
+
+                        b "{cps=100}Worried? Why would I be worried? Here’s some water we took from the tap and put in a pitcher!{/cps}"
+
+                        show b_d with wiggle
+                        "She pours me a cup of water as fast as she said that, spilling a little bit on the table."
+
+                MC "{cps=20}Ummmm Beh-{/cps}"
+
+                b "{cps=85}Did you know our school is the closest in the district with the amount of lead legally allowed in the tap water by zero point zero zero two percent parts-per-billion?{/cps}"
+
+                MC "No, I didn’t know that. I just got here, remember?"
+
+                b "Yeah of course, totally, duh, that was a stupid question."
+
+                "She takes a long and shaky sip from her plastic cup. This girl is more on edge than I was."
+
+                "Maybe I was too commanding during my introduction. I should try to calm her down and get to know what’s happening better."
+
+                MC "Behati, tell me what it’s like in the Pirate Culture Club."
+
+                b "Well. It’s a great time, really."
+
+                b "Astrid is a great President and we don’t have much of a budget so a Treasurer doesn’t have much to worry about. So I do very little work."
+
+                b "I spend the extra time either doing mine or G’s homework."
+
+                MC "Do you make a lot of friends here?"
+
+                b "No no no. Not really."
+
+                b "We’re all friends on the E-board. This is the only time I ever see G during school now."
+
+                b "People used to call us G and B when we hung out. Ha ha. But now only Jack does to tease me."
+
+                MC "Which one is Jack?"
+
+                b "Jack was sitting next to me during your introduction. But after you were done he took two pieces of chicken and bailed."
+
+                b "Probably won’t see him again till Monday."
+
+                MC "Everyone here seems pretty nice. I might look around some more before I leave."
+
+                b "If you have any questions just let me know. I know all about the school."
+
+                b "I also know a lot about pirates that came from Seaborough, but not everything. Maybe you could fill in my gaps?"
+
+                hide b_d with dissolve
+                "Behati does a weird thing with her eyes and walks away."
+
+                $ b_met += 1
+                $ Be_affinity += 1
+                $ activity_check += 1
+                $ food_ate += 1
+                jump classroom_choice
+
             label fruits:
-                "test"
-            $ food_ate += 1
+                if food_check == 1:
+                    "{color=#F0FF3F}They have more fruits!{/color}"
+
+                    "That apple I took left me wanting more. Plus I can sneak some of these out of here for later."
+                else:
+                    "A pirate can’t risk avoiding their fruits. Don’t want history to repeat itself."
+
+                show a_d at center with dissolve
+                a "You’re only taking the fruit? Is that a pirate thing?"
+
+                a "Avoiding the dreaded skurvy?"
+
+                MC "What? No."
+
+                MC "Well, yes."
+
+                MC "Scurvy is still a common problem because we can’t keep fruits on the ship for very long. I get maybe one lemon or something a month."
+
+                a "Well take as many as you’d like. It doesn’t seem like anyone wants them anyway."
+
+                MC "Normally if nobody wants something a pirate won’t take it. This is a notable exception."
+
+                a "You don’t steal fruit being sold from ships?"
+
+                MC "If we can tell that a shipment contains perishable foods we don’t take it."
+
+                MC "Those are harder to sell because nobody wants to buy’em from pirates. It takes longer to sell on top of them having an expiration date."
+
+                a "Why don’t you sell them to other pirates?"
+
+                MC "That is...definitely an option I had not considered."
+
+                a "Historically I know that pirates steal anything that’s valuable, but I have to ask. How often do you steal gold or treasure?"
+
+                "Astrid’s eyes are almost sparkling at the question. Does she think gold comes from the sea?"
+
+                "Who’s just sailing around with treasure and gold? It’ll get stolen easily if it ever got close to us."
+
+                MC "Ummmmmm, sometimes when we steal from arcistorats that have nice stuff we’ll pawn."
+
+                a "So no gold?"
+
+                MC "I can’t recall ever finding any gold, no, sorry. Is that expected of us?"
+
+                a "Well like, in the movies pirates are always finding buried treasure and gold coins to bury on a deserted island."
+
+                MC "Well Astrid, when was the last time you saw gold?"
+
+                a "There’s a pawn shop downtown, so every time I walk by it."
+
+                MC "Is a pirate supposed to walk up to some dinky pawn shop and sell a heap of gold they stole? Would that be worth our time?"
+
+                a "Gold is valuable so I don’t see why not?"
+
+                "She isn’t wrong but I haven’t seen any gold so I don’t know what we’d do with it if we had any."
+
+                MC "We tend to sell our booty to either the intended buyer at a higher price or to businesses that need the material."
+
+                a "Do you at least store the good stuff in treasure chests?"
+
+                MC "Being a pirate isn’t so cut and dry. We’re very adaptable, as much as we try to keep a scheduled ship, things break or weather happens."
+
+                MC "We have to be fluid like the water and do the best we can with what’s presented to us."
+
+                a "Yeah I knew that. But this is why I asked you to come."
+
+                a "We wanted to learn more from a real pirate. I was just hoping some of the stuff from movies were true."
+
+                a "Just to keep the fantasy up a while longer."
+
+                MC "It’s just that, well. What else do movie pirate’s do?"
+
+                a "Ummmmm. Do you have a sword?"
+
+                a "One which often clashes with other pirates is manly conflicts."
+
+                MC "Not at the moment. I was messing around on the top deck and a wave slammed my hand on the bow and knocked it into the water."
+
+                MC "I have a gun though."
+
+                a "You do?! What kind? Can I see it?"
+
+                MC "I left it on the ship for legal reasons. It’s an old Smith and Wesson model. 32. calibur with real ivory grip."
+
+                MC "I stole it from some Latin guy’s yacht."
+
+                a "Really? That sounds so cool. Something with ivory would be worth thousands. If it’s old it would be even more."
+
+                MC "Well I can’t sell it or I’d be without a weapon."
+
+                a "But you could buy more weapons."
+
+                MC "What if I used my gun to steal more guns and money instead?"
+
+                a "Because you could only fire six shots and the guns you could buy or steal can fire lots more way faster."
+
+                MC "I’m pretty good at stealing things Astrid."
+
+                a "You haven’t met the gun nuts around here have you?"
+
+                a "You pull a pistol on them you’d hit the floor faster than sodas exploding in my car."
+
+                MC "Ha ha ha. Maybe you’re right lass."
+
+                MC "I’ve shot plenty of people if that fits your movie pirate persona."
+
+                "She smiles at me and puts down her empty plate. We both look around and the club has mostly finished eating."
+
+                a "It does. Thank you [player_name], you’re a young Bobby Tepp."
+
+                hide a_d with dissolve
+                $ Astrid_affinity += 1
+                $ activity_check += 1
+                $ food_ate += 1
+                jump classroom_choice
+
         label leave:
-            "testleave"
+            MC "Hey Astrid, I think I’m going to leave. It’s getting late and I’m under threat of being left behind if the ship leaves without me."
+
+            show a_d at centerleft with dissolve
+            a "That’s alright, we aren’t holding you hostage."
+
+            show g_d at centerright with dissolve
+            g "Speak for yourself, [player_name] stay here and be our new club advisor."
+
+            show b_d at left with dissolve
+            b "G, they’re not a teacher. Advisors have to work here."
+
+            g "Theft of identity! Pretend like you went to Florida State and are super qualified to work here."
+
+            a "We’re letting [player_name] go. Stop messing around."
+
+            show f_d at right with dissolve
+            f "I agree. Our advisor is deathly sick and can only come into work once a week."
+            f "Well, she’s actually forced to but that’s another problem."
+
+            MC "Lasses, my calling is the sea. It’s up to you to change your own situations."
+
+            a "Well said. I can’t thank you enough for coming to talk with us. We all appreciate it."
+
+            g "Yeah she’s right. Thanks for coming to talk to us. It was really cool meeting a real pirate."
+
+            MC "It was my pleasure G, I…"
+
+            b "{cps=90}Thank You For Teaching Me More About Pirates [player_name]! I’ll Never Forget This!{/cps}"
+
+            f "Woah."
+
+            a "Behati! Inside voice please."
+
+            b "I’m sorry, I’m sorry. I’m just so thankful for you coming here. I’ve ever met anyone as worldly as a real pirate."
+
+            f "You don’t get enough worldly from the Florida common man?"
+
+            b "Haha, hardly."
+
+            b "You’ve shifted my views on how pirates perceive themselves and given me more context for the data out there."
+
+            MC "No problem Behati. I’m glad my lack of information was useful information."
+
+            f "Thanks for showing up. I can imagine a bunch of seaside teenagers didn’t hold your attention this afternoon."
+
+            MC "Fiona this was better than anticipated. You all taught me a lot as well."
+
+            f "That’s nice to know."
+
+            g "Next time you’re sinking a ship think of us, okay?"
+
+            MC "With pleasure G. I’ll make your name an omen of misfortune."
+
+            g "Hell yes! That sounds perfect, my mythos begins now."
+
+            b "You best go before we start writing a sea shanty for you."
+
+            a "Oh my God I forgot to ask you about my shanties!"
+
+            hide a_d with moveoutleft
+            ev "GO NOW, QUICKLY!"
+            play sound "audio/crash.mp3"
+
+            MC "Alright I’m gone! Fare thee well mateys!"
+
+            if Be_affinity > Astrid_affinity and Be_affinity > G_affinity and Be_affinity > Fi_affinity:
+                b "{color=#F0FF3F}See ya sea cowboy.{/color}"
+
+            elif G_affinity > Astrid_affinity and G_affinity > Be_affinity and G_affinity > Fi_affinity:
+                g "{color=#F0FF3F}Next time I see you it’ll be at the end of my sword.{/color}"
+
+            elif Fi_affinity > Astrid_affinity and Fi_affinity > Be_affinity and Fi_affinity > G_affinity:
+                f "{color=#F0FF3F}Back to a life of swashbuckling for them and exams for us.{/color}"
+
+            elif Astrid_affinity > Fi_affinity and Astrid_affinity > Be_affinity and Astrid_affinity > G_affinity:
+                show a_d at centerleft with moveinleft
+                a "{color=#F0FF3F}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
+
+            "End of current build."
     return

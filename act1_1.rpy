@@ -128,6 +128,8 @@
             jump opening
 
         label opening:
+            if player_name == "Steve":# temp skip
+                jump act1_3
 
             $ pirate = "Pirate"
             "Sunlight pours into my eyes through the cracks in the old boards."
