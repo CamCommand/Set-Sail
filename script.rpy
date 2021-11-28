@@ -139,6 +139,7 @@ image fla = "flavio.png"
 image lib = "lady.png"
 image bartender = "bt1.png"
 image mm = "momlady.png"
+image ds = "3ds.png"
 
 # Menu Music
 define config.game_menu_music = "music/BelowDeck.mp3"

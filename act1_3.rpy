@@ -1249,6 +1249,7 @@
 
                     #throw a DS Character on screen real bigger
                     #make new gaming sound
+                    show ds at ds_slide
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
@@ -1257,6 +1258,7 @@
 
                     "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
 
+                    hide ds with moveoutbottom
                     MC "That was fun, I think I’m really starting to like video games."
 
                     g "Of course you are. You’re one of us now."
@@ -1299,6 +1301,7 @@
 
                     #throw a DS Character on screen real bigger
                     #make new gaming sound
+                    show ds at ds_slide
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
@@ -1307,6 +1310,7 @@
 
                     "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
 
+                    hide ds with moveoutdown
                     MC "That was fun, I think I’m really starting to like video games."
 
                     g "Of course you are. You’re one of us now."

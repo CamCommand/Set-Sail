@@ -5,6 +5,10 @@
             linear 200.0 xalign 0.0# still does transition nicely
             repeat
 
+        transform ds_slide:# slideing ds infront of screen
+            xalign 0.5 yalign 10.0
+            ease 1.5 truecenter
+
         $ player_identity = "nb"# default identity if needed
         scene BG map at pan
         play music "audio/waves.ogg" fadein 2.0
