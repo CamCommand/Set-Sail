@@ -4,6 +4,9 @@
     scene BG school with fade
     define astrid_temp = "Girl"
 
+    # I got to do a REAL job of going through an labeling where to put expression images
+    # maybe do when they're done
+
     "Found it!"
 
     "This place is massive, are all schools like this?"
@@ -37,11 +40,11 @@
     MC "Uh, hello. You waiting for me lass?"
 
     # I redefine Astrid so much to change her name per the situation
-    # I will also use the what_outline parameter to show feedback for positive choices
+    # Insert sound for positive/negative feedback
+    # suprised astrid
     $ a = Character('Girl', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
     a "{cps=80}Ahhoooo{/cps}{cps=5}OOOOOOOOOOOO{/cps}{cps=50}oooooy Matey!{/cps}"
 
-    #$ astrid_temp = "Astrid of Bellewood"
     $ a = Character('Astrid of Bellewood', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
     a "{cps=75}I’m Officer Astrid of Bellewood at {color=#5FAFF6}Seaborough{/color} High School! Permission To Speak Easy Captain, Sir?!{/cps}"
 
@@ -63,6 +66,7 @@
 
             MC "Fine Astrid, you can simply call me [player_name] no need to use titles like that on land."
 
+            # happy astrid
             a "Aye aye [player_name]!"
 
             jump school_entry
@@ -78,7 +82,7 @@
             #{color=#00ff00}{/color}
             #play good boy points sound effect
 
-            MC "It sure did sailor."
+            MC "It sure did sailor. I'm ready to go."
 
             jump school_entry
 
@@ -95,7 +99,8 @@
 
             MC "I’d agree. You can just call me [player_name]."
 
-            #$ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])# turn outline off
+            # $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])# turn outline off
+            # happy astrid
             a "Aye aye Captain [player_name]!"
 
             jump school_entry
@@ -105,6 +110,7 @@
             MC "Have you acquired brian rot sailor?"
 
             $ Astrid_affinity -= 3
+            # sad astrid
             a "{color=#f00}No Captain, Sir!{/color}"
             # play bad boy sound effect
 
@@ -178,6 +184,7 @@
 
                 MC "Wait Astrid."
 
+                # quizative astrid
                 a "Yeah? What’s up?"
 
                 jump classroom_hesitation
@@ -298,6 +305,7 @@
 
                     MC "On the sea, when you’re fighting for everything you got, the only thing that matters is your merit."
 
+                    # happy fiona
                     f "{color=#50A23B}Well that’s a pleasant surprise.{/color}"
 
                     MC "Being a pirate is all about how good you are at the job. There have been some amazing pirates who are unbearable to talk to and be around."
@@ -357,6 +365,7 @@
 
                     MC "Straight into Davy Jones."
 
+                    # happy g
                     g "I feel so much better now that I know Poseidon is real. Did you guys know this and not tell me?"
 
                     $ G_affinity += 1
@@ -402,6 +411,7 @@
 
                     MC "We don’t steal from just governments. Other pirates and pleasure cruises are prime targets for loot of all kinds."
 
+                    # quizative behati
                     b "Are t-those unaccounted for in your main piracy focus?"
 
                     b "B-because how would you know where another pirate ship is going to be?"
@@ -418,6 +428,7 @@
 
                     MC "No matter the costs."
 
+                    # happy behati
                     b "{color=#50A23B}T-thank you for your honesty. That’s a lot to digest, I’ll adjust my data points accordingly.{/color}"
 
                     $ Be_affinity += 1
@@ -521,6 +532,7 @@
 
                     MC "Hello, it’s nice to meet you young lady. Are you a valued member of the club or just came to see a pirate?"
 
+                    # nervous behati
                     b "Y-yes hi I am. I’m B-behati. T-thank you for c-coming t-today."
 
                     MC "Are you nervous about something Behati?"
@@ -565,6 +577,7 @@
 
                 MC "What’s a \"wiki dive\"?"
 
+                # suprised behati
                 b "Oh my God, does your ship not get wi-fi? A generator for a mi-fi box even?"
 
                 MC "Since those words mean nothing to me, I’ll say no."
@@ -583,6 +596,7 @@
 
                 MC "So like a really long book?"
 
+                # nervous behati
                 "She exhales loudly into her hands. How long would she have kept going if I didn’t stop her?"
 
                 b "Think the biggest encyclopedia ever."
@@ -756,6 +770,7 @@
                     MC "Hey, what's happening, cool club member?"
 
                     $ f = Character('Tall Girl', color="#E44D1A", callback=fiona_voice)# Fiona
+                    # annoyed fiona
                     f "You wanna try that again matey?"
 
                     MC "{cps=20}Ugh, ummmmmmmm, I uh.{/cps} Hello, I’m [player_name], sorry. How are you today?"
@@ -767,6 +782,7 @@
 
                     MC "But I’m talking to high schoolers, not other pirates? How would you want one of your friends to greet you?"
 
+                    # smirk fiona
                     f "Sup cock sucker, what’s goin’ on?"
 
                     f "Then I’d say \"who’s cock?\" and we’d all laugh and just move on with the conversation."
@@ -995,7 +1011,7 @@
 
             show g_d at center with dissolve
 
-            if f_convo == 0:
+            if g_convo == 0:
 
                 if g_met == 0:
                     MC "How are you today lass?"
@@ -1028,6 +1044,7 @@
                     $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
                     MC "Hello again G. How are you?"
 
+                    # happy g
                     g "I failed a freaking math test today. Very unepic of me."
 
                     MC "Oh, will you be flogged for your failure?"
@@ -1087,7 +1104,7 @@
                 hide g_d with dissolve
                 jump social
 
-            elif f_convo == 1:
+            elif g_convo == 1:
                 MC "Hello again G."
 
                 g "What’s the haps pirate pal?"
@@ -1166,6 +1183,7 @@
 
                     MC "Can’t be all bad. You can choose your friends, go home at the end of the day, weekends off sounds nice?"
 
+                    # quizative g
                     g "Do you not get weekends?"
 
                     MC "I didn’t know what the days of the week were until I was ten. Doesn’t matter too much at sea when there’s work that needs to be done."
@@ -1192,7 +1210,7 @@
                 hide g_d with dissolve
                 jump social
 
-            elif f_convo == 2:
+            elif g_convo == 2:
                 MC "What’s going on with your phone?"
 
                 g "Oh, I got a notification for a game I was playing. Have to do the dailys."
@@ -1208,6 +1226,7 @@
 
                     MC "Yes I did, why? Is that bad?"
 
+                    # gamer g
                     g "Not explicitly, I can’t believe that was your first experience. Here, wait one second."
 
                     "G pulls out her backpack and rummages around for a few seconds. She shows me another device with two screens instead of one."
@@ -1414,6 +1433,7 @@
 
                     MC "That is definitely something I’d like to experience one day."
 
+                    # quizative astrid
                     a "Would you like to come by and see one after this is done?"
 
                     MC "I’d, I ummmm. I would love to ummm."
