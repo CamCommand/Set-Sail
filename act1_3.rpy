@@ -7,14 +7,14 @@
     # I got to do a REAL job of going through an labeling where to put expression images
     # maybe do when they're done
 
+    play sound "audio/chattering.mp3"
+    show crowd at center with dissolve
+
     "Found it!"
 
     "This place is massive, are all schools like this?"
 
     "The large entrance doors are dwarfed by the humongous stone columns lining the front of the building. People are flooding out and filling the parking lot."
-
-    play sound "audio/chattering.mp3"
-    # add the crowd png when made
 
     "Other than narrowly avoiding leaving cars, nobody is staring at me."
 
@@ -28,6 +28,7 @@
 
     with fade
     stop sound fadeout 2.0
+    hide crowd with dissolve
 
     "Standing alone on the sidewalk, it takes about fifteen minutes for the clumps of students and faculty to disperse."
 
@@ -332,7 +333,7 @@
 
                     a "That’s a high school thing. We raise our hands when we have a question as to not blurt them out when someone is talking."
 
-                    a "That’s G, she’s our club’s Secretary."
+                    a "That’s Geraldine, she’s our club’s Secretary."
 
                     hide f_d
                     hide b_d
@@ -341,7 +342,7 @@
                     MC "Aye lass, what’s yer question?"
 
                     $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
-                    g "Hi [player_name], loving the accent by the way. Question."
+                    g "Hi [player_name], you can call me G. Love the accent by the way. Question..."
 
                     g "What’s the coolest thing you’ve seen while stealing something? Like anything wackier than the average haul?"
 
@@ -462,6 +463,12 @@
             jump classroom_choice
 
         label classroom_choice:
+            define x = 0
+            # keeps track of conversation moments
+            $ b_convo = 0
+            $ f_convo = 0
+            $ g_convo = 0
+            $ a_convo = 0
 
             menu:
                 "Socialize":
@@ -478,18 +485,11 @@
 
         label social:
 
-            # keeps track of conversation moments
-            $ b_convo = 0
-            $ f_convo = 0
-            $ g_convo = 0
-            $ a_convo = 0
-
             # Leaving menu list of respones
             define leave = ["Maybe not right now.", "Wait a second.", "Not just yet."]
             $ rand1 = renpy.random.randint(0, 2)
 
             # just a check to do an intro line
-            $ x = 0
             if x == 0:
                 "This is what I wanted to do on land. Talk to people my own age, I should take advantage of this moment."
                 $ x += 1
@@ -541,7 +541,7 @@
 
                     MC "It’s alright, I’m not going to hurt you in any way."
 
-                    MC "I was just trying to show everyone that being a pirate isn’t what you think it might be. Trying to be realistic, you know?"
+                    MC "I was just trying to show everyone that being a pirate has it's glory but it is very dangerous. Trying to be realistic, you know?"
 
                     b "It’s okay, I’m fine. I just need to breathe."
 
@@ -732,6 +732,7 @@
 
                     "All I learn out at sea is how to be a pirate. Here is where I think the most knowledge lies."
 
+                    hide b_d with dissolve
                     $ book_choice = "used"# just to know when the variable is used
                     $ b_convo += 1
                     $ activity_check += 1
@@ -752,12 +753,15 @@
 
                     b "Thanks, that’s good advice."
 
+                    hide b_d with dissolve
                     $ b_convo += 1
                     $ activity_check += 1
                     jump social
 
             else:
                 "Behati is vigorously reading her device. I don’t know if she could hear me even if I tried. I should get one of those if they’re as cool as she says."
+
+                hide b_d with dissolve
                 jump social
 
         label fiona:
@@ -858,7 +862,11 @@
             elif f_convo == 1:
                 f "What’s the magic words?"
 
-                MC "What’s up cock sucker?"
+                MC "What’s up...?"
+
+                f "What's up cock sucker?"
+
+                MC "What's up cock sucker?"
 
                 f "I don’t don’t know, depends on who’s cock?"
 
@@ -868,7 +876,7 @@
 
                 MC "I’d have to find a way to watch it then."
 
-                if book_choice = "nerdy":
+                if book_choice == "nerdy":
                     f "{color=#F0FF3F}You stole a book from us?{/color}"
 
                     MC "What? No! You mean this thing?"
@@ -952,7 +960,9 @@
 
                 MC "What’s up cock sucker?"
 
-                f "I don’t know, depends on who’s cock? People will start to talk if we keep meeting like this."
+                f "I don’t know, depends on who’s cock?"
+
+                f "People will start to talk if we keep meeting like this."
 
                 "There’s like six people in this room, I don’t know what she means. What would Astrid say?"
 
@@ -1115,7 +1125,7 @@
 
                 g "This isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but shit happens."
 
-                if book_choice = "funny":
+                if book_choice == "funny":
                     g "{color=#F0FF3F}Whatcha got there?{/color}"
 
                     MC "Oh this? I found this book on the streets and I thought I’d keep it for novelty purposes."
@@ -1310,7 +1320,7 @@
 
                     "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
 
-                    hide ds with moveoutdown
+                    hide ds with moveoutbottom
                     MC "That was fun, I think I’m really starting to like video games."
 
                     g "Of course you are. You’re one of us now."
@@ -1485,7 +1495,7 @@
                 jump social
 
             elif a_convo == 2:
-                a "Okay {player_name], what’s your favorite thing to steal?"
+                a "Okay [player_name], what’s your favorite thing to steal?"
 
                 MC "That’s the easy one."
 

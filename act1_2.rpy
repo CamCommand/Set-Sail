@@ -22,11 +22,12 @@ label act1_2:
 
     "Would Captain get the hint if I asked to get him something unimportant so that I could escape without attracting any attention from the crew doing my work?"
 
-    "It could be futile, Feno may have made the schedule change apparent and the pirates already know."
+    "It could be futile, Flavio may have made the schedule change apparent and the pirates already know."
 
     "I might end up just having to bite the bullet on this if he doesn’t help."
 
     stop music fadeout 3.0
+    play music "music/waves.ogg"
     scene BG topdeck with fade
 
     "Everyone is unloading from the ship onto a boardwalk."
@@ -89,11 +90,11 @@ label act1_2:
 
     n "{font=Cursive_Option.ttf}Word around Seaborough is that The Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them.{/font}"
 
-    n "{font=Cursive_Option.ttf}It is the wish of ours at the Pirate Culture club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea. Your freedom and lifestyle has inspired many students here past{/font}"
+    n "{font=Cursive_Option.ttf}It is the wish of ours at the Pirate Culture club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea. Your freedom and lifestyle has inspired many students here past the threat you could wreak. {/font}"
 
-    n "{font=Cursive_Option.ttf}the threat you could wreak. We can provide food and drink (non alcoholic unfortunately) to those that are willing to share your adventures with us. A club representative will be waiting for you outside the school main entrance located at:{/font}"
+    n "{font=Cursive_Option.ttf}We can provide food and drink (non alcoholic unfortunately) to those that are willing to share your adventures with us. A club representative will be waiting for you outside the school main entrance located at:{/font}"
 
-    n "{font=Cursive_Option.ttf}232 Sunkissed Drive \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ We eagerly await your arrival \ Captain. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sincerely, \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The Pirate Culture Club <3{/font}"
+    n "{font=Cursive_Option.ttf}124 Swift Street \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ We eagerly await your arrival \ Captain. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sincerely, \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The Pirate Culture Club <3{/font}"
 
     pause 1.5
     nvl clear
@@ -115,7 +116,9 @@ label act1_2:
     "Let’s get off the ship and have a look around first. At this point everyone looks so busy loading supplies I can slip by easily without them noticing."
 
     scene BG harbor with fade
-    #play sound "audio/chattering.mp3" fadeout 2.0
+    show crowd with dissolve
+    stop music fadeout 2.0
+    play sound "audio/chattering.mp3" fadeout 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
 
@@ -171,6 +174,8 @@ label act1_2:
 
     MC "Ha ha ha ha hargh!"
 
+    hide crowd with dissolve
+    stop sound fadeout 2.0
     "Alright, that's enough walking. Where should I go?"
 
     menu:
@@ -405,12 +410,14 @@ label act1_2:
 
                 "That’s a strange total."
 
+                play sound "audio/pages.wav"
                 "\"How do pirates like to communicate?\""
 
                 "\"Aye to aye!\""
 
                 "I don’t get it."
 
+                play sound "audio/pages.wav"
                 "\"What’s a pirate’s favorite fish?\""
 
                 "Personally I like tuna the best."
@@ -536,7 +543,7 @@ label act1_2:
 
                 "I didn't notice her nametage."
 
-                $ woman = Character('Yoko',color="#07BB01")# Librarian
+                $ woman = Character('Yoko',color="#07BB01", callback=lib_voice)# Librarian
                 MC "Yoko."
 
                 MC "Could you give me directions to {color=#5FAFF6}Seaborough{/color} high school? I need to meet a friend there, but I’ve never been."
@@ -567,12 +574,15 @@ label act1_2:
 
         # need crowd character and people sounds+crunch sounds
         define food_check = 0 # This will be used later to determine if MC is hungry at school
-        # $ crowd = ["Tall Man"]
 
         MC "Something to eat sounds nice. I’m sure nobody will miss one apple."
 
         scene BG market with fade
         pause 2.0
+
+        stop sound fadeout 2.0
+        show crowd at center with dissolve
+        play sound "audio/chattering.mp3" fadeout 2.0
 
         "A few business buildings widen away from each other to reveal a brick path. There's a whole side street with tons of vendors lined up."
 
@@ -639,7 +649,6 @@ label act1_2:
         cr "...with his feet over his head he split open both coconuts with his thighs."
 
         "What!?"
-        pause 1.5
         play sound "audio/apple3.wav"
 
         "I should leave before I start asking questions I don’t want the answers to."
@@ -647,6 +656,8 @@ label act1_2:
         "Where is this school anyway? Maybe there is a map around here somewhere?"
 
         "Breaking up a conversation to ask for directions doesn’t feel like something I feasibly accomplish."
+
+        hide crowd with dissolve
 
         MC "No, that’s dumb. You can do it sailor."
 
@@ -719,7 +730,7 @@ label act1_2:
 
     label arcade:
 
-        $ game_played = "" # for storing game played in arcade
+        define game_played = "" # for storing game played in arcade
 
         MC "Oh! That place had those video games Merigold told me about. Checking those out is a must."
 

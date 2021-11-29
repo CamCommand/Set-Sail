@@ -1214,7 +1214,7 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton _("Yes") action yes_action
+                textbutton _("Aye") action yes_action
                 textbutton _("No") action no_action
 
     ## Right-click and escape answer "no".
@@ -1226,6 +1226,10 @@ style confirm_prompt is gui_prompt
 style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
+init python:
+
+    renpy.register_style_preference("font","new_prompt",style.confirm_prompt_text,"color","#000000")
+    renpy.set_style_preference("font","new_prompt")
 
 style confirm_frame:
     background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)

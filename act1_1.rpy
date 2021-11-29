@@ -11,8 +11,9 @@
 
         $ player_identity = "nb"# default identity if needed
         scene BG map at pan
-        play music "audio/waves.ogg" fadein 2.0
-        nvl show dissolve
+        play music "music/waves.ogg" fadein 2.0
+
+        nvl show
 
         n "\n"
 
@@ -36,16 +37,19 @@
 
         n "\nYou are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}."
 
-        stop music fadeout 3.0
-        pause 1.5
+        pause 1.0
         nvl clear
 
-        scene BG MC_room
-        with fade
-        with fade
-        play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5
+        stop music fadeout 3.0
 
-        "My eyes flutter open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
+        pause 1.0
+        window hide
+        scene BG black with fade
+        scene BG MC_room with fade
+
+        "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
+
+        play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5
 
         "Morning to me..."
 
@@ -233,7 +237,7 @@
 
             th "No Captain. Ye have mighty powerful pipes."
 
-            Cap "Aye agree. So if I hear ye flagging a false alarm on me ship again I’ll have Quartermaster Feno give you [player_name]’s jobs for thee rest of thee week!"
+            Cap "Aye agree. So if I hear ye flagging a false alarm on me ship again I’ll have Quartermaster Flavio give you [player_name]’s jobs for thee rest of thee week!"
 
             th "Aye Aye Captain"
 
@@ -273,7 +277,7 @@
 
             Cap "Gave me when I became a man. But aye, aye don’t have it yet. It’sa gonna be loaded up at the port. I mainly wanted to say to ye is don’t worry about yer usual duties at port."
 
-            Cap "I got Feno to rearrange the grunt work so you could enjoy some of the fruits of land life."
+            Cap "I got Flavio to rearrange the grunt work so you could enjoy some of the fruits of land life."
 
             MC "Oh, thank you Captain. This is pleasantly unexpected."
 
@@ -315,7 +319,7 @@
             scene BG MC_room
             play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5 volume 0.18
 
-            "I wonder how long Captain planned this? No way Feno could change the work schedule as quickly as yesterday, or even a week ago."
+            "I wonder how long Captain planned this? No way Flavio could change the work schedule as quickly as yesterday, or even a week ago."
 
             "If someone gets my work and they know it’s mine, they’ll definitely give me a hard time about it."
 
@@ -436,7 +440,7 @@
 
             "This book is supposedly about a dystopian world where people live in this virtual world instead of dealing with the hellscape they find themselves in."
 
-            "The main character lives in Mexico and is so good at the virtual game they upstart a revolution inside the game. Merigold said it was selling really well in the US so I asked to read it"
+            "The main character lives in Mexico and is so good at the virtual game they upstart a revolution inside the game. Merigold said it was selling really well in the US so I asked to read it."
 
             "Maybe I can pick up some mainland lingo. Although, I can’t tell which slang is real and which is made up for the book."
 
