@@ -74,7 +74,7 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-transform wiggle:
+transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset -4 yoffset 4
     linear 0.1 xoffset 6 yoffset -6
     linear 0.1 xoffset 4 yoffset -4
@@ -83,13 +83,13 @@ transform wiggle:
 
 # Main characters
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
-define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
-define g = Character('Geraldine', color="#F0CD00", callback=g_voice)# Geraldine
-define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True)
-define b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
-define m = Character('May', color="#0A4AF6")
-define n = nvl_narrator# Narrator
-define ev = Character('Everyone', color="#000000", callback=Crashsound_test)
+define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)                 # Fiona
+define g = Character('Geraldine', color="#F0CD00", callback=g_voice)                 # Geraldine
+define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True) # Astird
+define b = Character('Behati', color="#5E0F60", callback=b_voice)                    # Behati
+define m = Character('May', color="#0A4AF6")                                         # May
+define n = nvl_narrator                                                              # Narrator
+define ev = Character('Everyone', color="#000000", callback=Crashsound_test)         # Everyone at once
 
 # Main charcter resting images
 image a_d = "Astrid.png"
@@ -100,12 +100,12 @@ image m_d = "Palmer.png"
 
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands
-define Cap = Character('Captain', color="#7F0505", callback=caps_voice)# The Demonic Pirate Ricardo AKA Captain
-define fla = Character('Flavio', color="#BB64F2", who_outlines=[ (1, "#000000") ], callback=fl_voice)# sir Flavio
-define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)# Librarian
-define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])# crowd of people
-define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)# woman at market
-define bt = Character('Bartender', color="#748DA3", callback=bar_voice)# bartender at arcade
+define Cap = Character('Captain', color="#7F0505", callback=caps_voice)                                     # The Demonic Pirate Ricardo AKA Captain
+define fla = Character('Flavio', color="#BB64F2", who_outlines=[ (1, "#000000") ], callback=fl_voice)       # sir Flavio
+define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # Librarian
+define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])                        # crowd of people
+define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)                                   # woman at market
+define bt = Character('Bartender', color="#748DA3", callback=bar_voice)                                     # bartender at arcade
 
 # Affinity of main characters
 default Fi_affinity = 0
@@ -119,7 +119,8 @@ image BG MC_room ="background/bedroom.png"
 image BG deckview = "background/deckview.png"
 image BG topdeck = "background/topdeck.png"
 image BG black = "background/black.png"
-image BG harbor = "background/harbortemp.png"
+image BG harbor = "background/walk1png"
+image BG bogwalk = "background/bogwalk.png"
 image BG map = "background/maplayered.png"
 image BG bstore = "background/bstore.png"
 image BG school = "background/school.png"
@@ -130,7 +131,7 @@ image BG hw = "background/hallway.png"
 image BG cr = "background/classroom.png"
 image BG wc1 = "background/wc.png"# change me when pic is found
 image BG wc2 = "background/wc2.png"# change me when pic is found
-image BG wc3 = "background/wc2.png"# change me when pic is found
+image BG wc3 = "background/wc3.png"# change me when pic is found
 
 # Other characters images
 image twohands = "TwoHands.png"
@@ -147,7 +148,7 @@ define config.game_menu_music = "music/BelowDeck.mp3"
 # define config.main_menu_music
 
 # colors used reference
-# #F0FF3F when your previous choice comes back
+# #2150E7 when your previous choice comes back
 # #50A23B a good choice
 # #f00 a bad choice
 

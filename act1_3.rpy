@@ -714,7 +714,7 @@
 
                 if book_choice == "smart":
                     # use this color when a previous choice has paid off
-                    b "{color=#F0FF3F}Hey [player_name]. What’s sticking in your waistband? Is that a book or something?{/color}"
+                    b "{color=#2150E7}Hey [player_name]. What’s sticking in your waistband? Is that a book or something?{/color}"
 
                     "How did she notice, she didn’t even glance at me, seemingly."
 
@@ -877,7 +877,7 @@
                 MC "I’d have to find a way to watch it then."
 
                 if book_choice == "nerdy":
-                    f "{color=#F0FF3F}You stole a book from us?{/color}"
+                    f "{color=#2150E7}You stole a book from us?{/color}"
 
                     MC "What? No! You mean this thing?"
 
@@ -1126,7 +1126,7 @@
                 g "This isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but shit happens."
 
                 if book_choice == "funny":
-                    g "{color=#F0FF3F}Whatcha got there?{/color}"
+                    g "{color=#2150E7}Whatcha got there?{/color}"
 
                     MC "Oh this? I found this book on the streets and I thought I’d keep it for novelty purposes."
 
@@ -1228,7 +1228,7 @@
                 if game_played != "":
                     MC "Sounds cool. I played my first video games today before coming here."
 
-                    g "{color=#F0FF3F}Oh yeah? What did you play?{/color}"
+                    g "{color=#2150E7}Oh yeah? What did you play?{/color}"
 
                     MC "I played the [game_played] game."
 
@@ -1431,7 +1431,7 @@
                 MC "We only tolerate bad behavior because we’d die without the work everyone puts into the crew."
 
                 if book_choice == "exciting":
-                    a "{color=#F0FF3F}By the way, what’s that you have under your shirt?{/color}"
+                    a "{color=#2150E7}By the way, what’s that you have under your shirt?{/color}"
 
                     MC "Oh, I took this book from a store before coming here. Thought it might look good in my humble collection."
 
@@ -2074,7 +2074,7 @@
 
             label fruits:
                 if food_check == 1:
-                    "{color=#F0FF3F}They have more fruits!{/color}"
+                    "{color=#2150E7}They have more fruits!{/color}"
 
                     "That apple I took left me wanting more. Plus I can sneak some of these out of here for later."
                 else:
@@ -2250,23 +2250,23 @@
             a "Oh my God I forgot to ask you about my shanties!"
 
             hide a_d with moveoutleft
-            ev "GO NOW, QUICKLY!"
+            ev "{cps=35}GO NOW, QUICKLY!{/cps}"
             play sound "audio/crash.mp3"
 
             MC "Alright I’m gone! Fare thee well mateys!"
 
             if Be_affinity > Astrid_affinity and Be_affinity > G_affinity and Be_affinity > Fi_affinity:
-                b "{color=#F0FF3F}See ya sea cowboy.{/color}"
+                b "{color=#2150E7}See ya sea cowboy.{/color}"
 
             elif G_affinity > Astrid_affinity and G_affinity > Be_affinity and G_affinity > Fi_affinity:
-                g "{color=#F0FF3F}Next time I see you it’ll be at the end of my sword.{/color}"
+                g "{color=#2150E7}Next time I see you it’ll be at the end of my sword.{/color}"
 
             elif Fi_affinity > Astrid_affinity and Fi_affinity > Be_affinity and Fi_affinity > G_affinity:
-                f "{color=#F0FF3F}Back to a life of swashbuckling for them and exams for us.{/color}"
+                f "{color=#2150E7}Back to a life of swashbuckling for them and exams for us.{/color}"
 
             elif Astrid_affinity > Fi_affinity and Astrid_affinity > Be_affinity and Astrid_affinity > G_affinity:
                 show a_d at centerleft with moveinleft
-                a "{color=#F0FF3F}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
+                a "{color=#2150E7}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
 
             "End of current build."
     return

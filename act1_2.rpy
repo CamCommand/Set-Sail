@@ -152,13 +152,15 @@ label act1_2:
     "I have to wonder how often some of these people even look at a hammar. I should keep my expectations low. Let’s dive in head first, walk around, see what I can do."
 
     scene BG black with fade
-    scene BG harbor with fade
+    scene BG bogwalk with fade
 
-    "Wow."
+    "I'm at some kind of bog now? Sort of wandered away from where all the shops and people were."
 
-    "I’ve now seen more people in the last few hours than I have had all year on the ship. Even large vessels we’ve ravaged, most of the crew stayed hidden while we stole their goods and harassed their leaders."
+    "That was all really interesting to see! It feels so weird to taking it all in like that."
 
-    "Some of the outfits out here look ridiculous. Is it because of brands or sales, I don’t know?"
+    "I saw more people in the last few hours than I have had all year on the ship. Even large vessels we’ve ravaged, most of the crew stayed hidden while we stole their goods and harassed their leaders."
+
+    "Some of the outfits out here look ridiculous. Is it because of mainland brands or what's fashionable, how could I tell?"
 
     "There was that police car that went by before. I wasn't as wary of the law as I should have been because that was the first car I’ve seen!"
 
