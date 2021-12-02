@@ -2269,4 +2269,5 @@
                 a "{color=#2150E7}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
 
             "End of current build."
+            # through all paths explore Total Game Time here is about37 minutes
     return

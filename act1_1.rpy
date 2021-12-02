@@ -144,11 +144,17 @@
 
             "I get up from my cot and scan through my room. It’s a small closet under the stairs to the top deck with barely enough room for anything extra beyond my necessities."
 
-            "I am lucky to have it, one of the only perks I’ve gotten from being the Captain's child. The privacy is amazing, and the smells of the common area don’t leak into my nose from here."
+            "I am lucky to have it, one of the only perks I’ve gotten from being the Captain's child."
 
-            "I’d like to think I earned this spot, but realistically, it was the only spot on the ship to keep a young person without anyone getting to them. Either way I appreciated the forethought."
+            "The privacy is amazing, and the smells of the common area don’t leak into my nose from here."
 
-            "I was supposed to clean the cannons this morning, but I did it last night so I could sleep in. The Code says lights out after sun down, but I’ve cleaned them so many times I need only muscle memory for the job."
+            "I’d like to think I earned this spot, but realistically, it was the only spot on the ship to keep a young person without anyone getting to them."
+
+            "Either way I appreciated the forethought."
+
+            "I was supposed to clean the cannons this morning, but I did it last night so I could sleep in."
+
+            "The Code says lights out after sun down, but I’ve cleaned them so many times I need only muscle memory for the job."
 
             "Nobody has brought it up yet, if they even noticed."
 
@@ -156,11 +162,15 @@
 
             MC "Ahhhh!"
 
-            "I bend in every direction I can, but the stretching doesn’t alleviate the pain in my shoulders. If we are close to a port, maybe I can snag an extra pillow from a cafe or something."
+            "I bend in every direction I can, but the stretching doesn’t alleviate the pain in my shoulders."
+
+            "If we are close to a port, maybe I can snag an extra pillow from a cafe or something."
 
             "I don’t remember having these pains before. Maybe I’m just getting old, I think eighteen is the appropriate age to start thinking that, right?"
 
-            "I heard a new pirate say he hopes May has better weather so I assume April has passed. New guys always have a better sense of the date since they got onboard not too long ago."
+            "I heard a new pirate say he hopes May has better weather so I assume April has passed."
+
+            "New guys always have a better sense of the date since they got onboard not too long ago."
 
             "So it was my birthday at some point and all I got was new pains. Sometimes Captain says a passing mention of it, but we’ve been out for a while so I doubt he knew."
 
@@ -184,7 +194,9 @@
 
             "I’ll grab my bristoles and brush my teeth and hair. A delayed head rush from springing up too fast numbs me momentarily."
 
-            "Staring back at me, my cracked reflection shows a blank expression. My salty hair won’t straighten no matter how much I brush and my skin is damaged beyond its original color."
+            "Staring back at me, my cracked reflection shows a blank expression."
+
+            "My salty hair won’t straighten no matter how much I brush and my skin is damaged beyond its original color."
 
             "I make note over my other features quite harshly to myself. My next thought flickers from the back of my mind."
 
@@ -225,7 +237,9 @@
             show captain with dissolve:# stepping to Flavio
                 xpos 1500
 
-            Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog. So you know there ain't no reason for a pirate to be screaming for another unless ther be danger."
+            Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog."
+
+            Cap "So you know there ain't no reason for a pirate to be screaming for another unless ther be danger."
 
             th "Of course Captain."
 
@@ -325,7 +339,9 @@
 
             "This time off might be more of a double edged blade than Captain knows. However, he might expect me to hold my own at this point."
 
-            "He’s right, but it’s best to reduce conflict with other pirates, if not to save my own skin, then for the morale of the crew. We have to have each other's backs in a fire fight, no matter how one sided we might make them."
+            "He’s right, but it’s best to reduce conflict with other pirates, if not to save my own skin, then for the morale of the crew."
+
+            "We have to have each other's backs in a fire fight, no matter how one sided we might make them."
 
             "Another pirate ship hasn’t attacked {color=#f00}The Red Plague{/color} in years thanks to our rep. Yet sometimes crews will fight back when we are pillaging their exports."
 
@@ -562,13 +578,15 @@
 
             "You were the only person that cared for me, that I cared about. Dad gives me a day off of work and it’s the nicest thing anyone has done for me in years."
 
-            "I need more people like you in my or this life is gonna kill me slower than scurvy ever could. You didn’t own a single thing when you stepped on {color=#f00}The Red Plague{/color}."
+            "I need more people like you in my or this life is gonna kill me slower than scurvy ever could."
+
+            "You didn’t own a single thing when you stepped on {color=#f00}The Red Plague{/color}."
 
             "All you left me were stories of your old life. And the scars you helped treat when you were here. They’ve opened up without you."
 
             "Without you. I wouldn’t be anything. Or maybe I am nothing without your influence?"
 
-            play sound "audio/crysniff.wav" volume .5# ya boi is crying
+            play sound "audio/crysniff.wav" volume .5 # ya boi is crying
 
             "..."
 
