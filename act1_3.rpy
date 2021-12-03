@@ -2268,6 +2268,12 @@
                 show a_d at centerleft with moveinleft
                 a "{color=#2150E7}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
 
-            "End of current build."
+            hide a_d with moveoutleft
+            hide f_d with moveoutright
+            hide b_d with moveoutleft
+            hide g_d with moveoutright
+
+            pause 1.5
             # through all paths explore Total Game Time here is about37 minutes
+            jump act1_4
     return

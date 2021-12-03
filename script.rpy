@@ -119,7 +119,7 @@ image BG MC_room ="background/bedroom.png"
 image BG deckview = "background/deckview.png"
 image BG topdeck = "background/topdeck.png"
 image BG black = "background/black.png"
-image BG harbor = "background/walk1png"
+image BG harbor = "background/walk1.png"
 image BG bogwalk = "background/bogwalk.png"
 image BG map = "background/maplayered.png"
 image BG bstore = "background/bstore.png"
@@ -129,9 +129,11 @@ image BG ar = "background/arcades.png"
 image BG st = "background/street.png"
 image BG hw = "background/hallway.png"
 image BG cr = "background/classroom.png"
-image BG wc1 = "background/wc.png"# change me when pic is found
-image BG wc2 = "background/wc2.png"# change me when pic is found
-image BG wc3 = "background/wc3.png"# change me when pic is found
+image BG wc1 = "background/wc.png"
+image BG wc2 = "background/wc2.png"
+image BG wc3 = "background/wc3.png"
+image BG schoolan = "background/schoolafternoon.png"
+image BG 4 = "background/4.png"
 
 # Other characters images
 image twohands = "TwoHands.png"
@@ -154,6 +156,10 @@ define config.game_menu_music = "music/BelowDeck.mp3"
 
 # The game starts here baby!
 label start:
+
+    # for a cursor
+    # define config.mouse = { }
+    # define config.mouse['default'] = [ ( "gui/arrow.png", 0, 0) ]
 
     # position name of character speaking
     define gui.name_xpos = 0.1

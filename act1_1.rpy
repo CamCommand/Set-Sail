@@ -10,6 +10,7 @@
             ease 1.5 truecenter
 
         $ player_identity = "nb"# default identity if needed
+        default player_name = ""
         scene BG map at pan
         play music "music/waves.ogg" fadein 2.0
 
