@@ -158,8 +158,8 @@ define config.game_menu_music = "music/BelowDeck.mp3"
 label start:
 
     # for a cursor
-    # define config.mouse = { }
-    # define config.mouse['default'] = [ ( "gui/arrow.png", 0, 0) ]
+    define config.mouse = { }
+    define config.mouse['default'] = [ ( "gui/arrow.png", 0, 0) ]
 
     # position name of character speaking
     define gui.name_xpos = 0.1
