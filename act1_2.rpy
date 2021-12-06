@@ -178,24 +178,29 @@ label act1_2:
 
     hide crowd with dissolve
     stop sound fadeout 2.0
+    define activity_choice = "default"
     "Alright, that's enough walking. Where should I go?"
 
     menu:
         "Bookstore":
 
+            $ activity_choice = "bookstore"
             jump bs
 
         "Market":
 
-            jump market# take picture downtown
+            $ activity_choice = "market"
+            jump market
 
         "Arcade":
 
+            $ activity_choice = "arcade"
             jump arcade
 
         "School":
 
-            jump street# take picture on weekend
+            $ activity_choice = "school"
+            jump street
 
     label bs:
 
