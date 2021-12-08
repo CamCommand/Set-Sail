@@ -21,7 +21,7 @@ show BG schoolan with dissolve
 
 "All of that really puts my land confliction in perspective."
 
-# show BG sunset walk
+show BG walksunset with dissolve
 
 "There’s a quiet hum of the town through the trees."
 
@@ -53,9 +53,11 @@ show BG schoolan with dissolve
 
 show BG black with dissolve
 pause 3.0
+play sound "audio/thunder.ogg"
 show BG 4 with hpunch
-# thunder
+play music "audio/storm1.mp3" loop
 pause 5.0
+# show new boat scene
 "gabbagool"
 
 return

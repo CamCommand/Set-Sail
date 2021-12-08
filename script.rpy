@@ -68,6 +68,12 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    def jj_voice(event, **kwargs):# voice for joejoe
+        if event == "show":
+            renpy.music.play("audio/blip12.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
     def Crashsound_test(event, **kwargs):# noise to play when everone yells
         if event == "show":
             renpy.music.play("audio/crash.mp3 ", channel="sound", loop=True)
@@ -106,6 +112,7 @@ define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_vo
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])                        # crowd of people
 define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)                                   # woman at market
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)                                     # bartender at arcade
+define jj = Character('JoeJoe', color = "#0015BC", callback=jj_voice)                                       # JoeJoe
 
 # Affinity of main characters
 default Fi_affinity = 0
@@ -134,6 +141,10 @@ image BG wc2 = "background/wc2.png"
 image BG wc3 = "background/wc3.png"
 image BG schoolan = "background/schoolafternoon.png"
 image BG 4 = "background/4.png"
+image BG walksunset = "background/walksunset.png"
+image BG nighdeck1 = "background/nightdeck1.png"
+image BG nighdeck2 = "background/nightdeck2.png"
+image BG nighdeck3 = "background/nightdeck3.png"
 
 # Other characters images
 image twohands = "TwoHands.png"

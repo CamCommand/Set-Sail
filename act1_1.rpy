@@ -47,6 +47,8 @@
         window hide
         scene BG black with fade
         scene BG MC_room with fade
+        with fade
+        with fade
 
         "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
 
@@ -344,7 +346,7 @@
 
             "We have to have each other's backs in a fire fight, no matter how one sided we might make them."
 
-            "Another pirate ship hasn’t attacked {color=#f00}The Red Plague{/color} in years thanks to our rep. Yet sometimes crews will fight back when we are pillaging their exports."
+            "Another pirate ship hasn’t attacked The Red Plague in years thanks to our rep. Yet sometimes crews will fight back when we are pillaging their exports."
 
             "Numerous times I’ve had to cut the hand of a sailor who was looking to take a cheap shot at someone taking their spices. It'd be over for me if someone didn’t return the favor."
 
@@ -397,7 +399,7 @@
 
             "Feeling the smooth finish of wood resin, I pull out a good sized cigar box I converted into an emergency provisions safe."
 
-            "JoJo gave it to me after he finished his smokes and stole a better box of cubans from another Captain."
+            "JoeJoe gave it to me after he finished his smokes and stole a better box of cubans from another Captain."
 
             "Anything perishable or fragile I steal that might be better to save goes in here. Sometimes fruits, candy, soap, and if memory serves."
 
@@ -581,7 +583,7 @@
 
             "I need more people like you in my or this life is gonna kill me slower than scurvy ever could."
 
-            "You didn’t own a single thing when you stepped on {color=#f00}The Red Plague{/color}."
+            "You didn’t own a single thing when you stepped on The Red Plague."
 
             "All you left me were stories of your old life. And the scars you helped treat when you were here. They’ve opened up without you."
 

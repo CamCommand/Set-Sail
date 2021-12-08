@@ -34,7 +34,7 @@ label act1_2:
 
     "The port is partially empty. Maybe the town warned everyone of our arrival?"
 
-    "I can see people by the market. All sorts of types trying to avoid eye contact with {color=#f00}The Red Plague{/color}. It’s towering over the stands and buildings lining the end of the harbor."
+    "I can see people by the market. All sorts of types trying to avoid eye contact with The Red Plague. It’s towering over the stands and buildings lining the end of the harbor."
 
     "As if a sea monster poked it’s gigantic head out of the water to eye it’s next meal and everyone ignored it thinking it would shield them. I could be overthinking this."
 
@@ -141,7 +141,7 @@ label act1_2:
 
     "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday. Don’t know where that came from, but nevermind."
 
-    "The letter said this place was called {color=#5FAFF6}Seaborough{/color}. Some of the signs on the eatteries confirm it."
+    "The letter said this place was called Seaborough. Some of the signs on the eatteries confirm it."
 
     "Other than the more personal stuff Mom uses to tell me, I’ve heard some interesting things about Florida. Mainly how there’s a bunch of old and crazy people here who have given up on life."
 
@@ -553,7 +553,7 @@ label act1_2:
                 $ woman = Character('Yoko',color="#07BB01", callback=lib_voice)# Librarian
                 MC "Yoko."
 
-                MC "Could you give me directions to {color=#5FAFF6}Seaborough{/color} high school? I need to meet a friend there, but I’ve never been."
+                MC "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
 
                 woman "Yeah sure. Don’t you have any kind of map app though?"
 
@@ -683,7 +683,7 @@ label act1_2:
 
             "She doesn't sound annoyed, good start."
 
-        MC "Do you know where the {color=#5FAFF6}Seaborough{/color} high school is?"
+        MC "Do you know where the Seaborough high school is?"
 
         ma "Why aren’t you at school?"
 
@@ -713,7 +713,7 @@ label act1_2:
 
         $ ma = Character('Nightmare Woman', color="#F263E2", callback=rot_voice)# woman at market
 
-        MC "No, the tests I took somewhere else got sent to {color=#5FAFF6}Seaborough{/color}. Could you please just tell me where to go?"
+        MC "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
 
         ma "Hmmm."
 
@@ -754,7 +754,7 @@ label act1_2:
 
         "It could be that people name their business like pirates name their ships."
 
-        "{color=#f00}The Red Plague{/color} is an actual disease, but the ship causes horror and pain as the sickness would."
+        "The Red Plague is an actual disease, but the ship causes horror and pain as the sickness would."
 
         "If gaming happens here, then why not call it a street."
 
@@ -910,7 +910,7 @@ label act1_2:
 
         MC "Yeah it was great. Thanks for letting me play."
 
-        MC "Do you know how to get to {color=#5FAFF6}Seaborough{/color} high school from here?"
+        MC "Do you know how to get to Seaborough high school from here?"
 
         bt "Sure kid. Make a left when you exit and then take the next left. Follow the signs for the school zone and you won’t be able to miss it."
 
@@ -984,6 +984,6 @@ label act1_2:
 
         "Did I ever say I needed a map?"
 
-        "Look out {color=#5FAFF6}Seaborough{/color}, The Demonic Pirate [player_name] is coming in for a special lecture."
+        "Look out Seaborough, The Demonic Pirate [player_name] is coming in for a special lecture."
 
         jump act1_3

@@ -47,7 +47,7 @@
     a "{cps=80}Ahhoooo{/cps}{cps=5}OOOOOOOOOOOO{/cps}{cps=50}oooooy Matey!{/cps}"
 
     $ a = Character('Astrid of Bellewood', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
-    a "{cps=75}I’m Officer Astrid of Bellewood at {color=#5FAFF6}Seaborough{/color} High School! Permission To Speak Easy Captain, Sir?!{/cps}"
+    a "{cps=75}I’m Officer Astrid of Bellewood at Seaborough High School! Permission To Speak Easy Captain, Sir?!{/cps}"
 
     "Poseidon help me this girl is..."
 
@@ -131,9 +131,9 @@
     label school_entry:
 
         $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
-        a "Welcome to {color=#5FAFF6}Seaborough{/color} high school."
+        a "Welcome to Seaborough high school."
 
-        a "I’m the current president of the Pirate Culture Club here. I’ll assume from your breezy shirt and filthy pants you’re a pirate of {color=#f00}The Red Plague{/color}."
+        a "I’m the current president of the Pirate Culture Club here. I’ll assume from your breezy shirt and filthy pants you’re a pirate of The Red Plague."
 
         "Are my pants filthy?"
 
@@ -239,7 +239,7 @@
 
         label classrooom_one:
 
-            #open door sounds
+            play sound "audio/doorclose.ogg"
             scene BG cr with fade
 
             "The door opens to a barren classroom with no more than eight people in it. There are some skulls and hearts drawn on the whiteboard, yet the rest of the room has been thoroughly cleaned."
@@ -251,11 +251,11 @@
             a "{cps=80}Everyone! Attention!{/cps}"
 
             if player_identity == "f":
-                a "This is [player_name]. She’s a member of {color=#f00}The Red Plague{/color} pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
+                a "This is [player_name]. She’s a member of The Red Plague pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
             elif player_identity == "m":
-                a "This is [player_name]. He’s a member of {color=#f00}The Red Plague{/color} pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
+                a "This is [player_name]. He’s a member of The Red Plague pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
             else:
-                a "This is [player_name]. They're a member of {color=#f00}The Red Plague{/color} pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
+                a "This is [player_name]. They're a member of The Red Plague pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
 
             a "Why don’t you introduce yourself [player_name]? Say a little about yourself too."
             hide a_d with dissolve
@@ -271,7 +271,7 @@
             menu:
                 "Be honest with them":
 
-                    MC "Hello everybody. My name is [player_name], but you already knew that. I’ve been a pirate my whole life and served on {color=#f00}The Red Plague{/color} during that time."
+                    MC "Hello everybody. My name is [player_name], but you already knew that. I’ve been a pirate my whole life and served on The Red Plague during that time."
 
                     MC "Most days at sea are treacherous and exhausting, but the life is free and can be very rewarding. I had to work my way towards  becoming the first mate in that time."
 
@@ -323,7 +323,7 @@
 
                     MC "Ahoy everyone! I’m the Dreaded Pirate [player_name]."
 
-                    MC "{color=#f00}The Red Plague{/color} and I have been ruling the southern seas for over fifty years. I’ve seen the coolest things the world has to offer and I haven’t paid for a single thing in my entire life."
+                    MC "The Red Plague and I have been ruling the southern seas for over fifty years. I’ve seen the coolest things the world has to offer and I haven’t paid for a single thing in my entire life."
 
                     MC "We steal exports, we swipe imports, we take minerals, products, people, and sink ships of anyone who offends our noses. Our brutal tactics made us a scourge of the Atalantic."
 
@@ -603,7 +603,7 @@
 
                 MC "That definitely sounds great for everyone."
 
-                b "There’s even a page on {color=#f00}The Red Plague{/color}. It’s not well documented because a lot of historic pirating is told through legal documents after they’ve been hanged or died."
+                b "There’s even a page on The Red Plague. It’s not well documented because a lot of historic pirating is told through legal documents after they’ve been hanged or died."
 
                 b "However, your ship is often recorded as the reason for lost products publicly for some companies. I wonder why there’s only a few?"
 
@@ -966,7 +966,7 @@
 
                 "There’s like six people in this room, I don’t know what she means. What would Astrid say?"
 
-                MC "Will people spread bad rumors? I think my reputation in {color=#5FAFF6}Seaborough{/color} will survive."
+                MC "Will people spread bad rumors? I think my reputation in Seaborough will survive."
 
                 f "If Astrid wasn’t so pretty and popular she might have been a social outcast by now."
 
@@ -1257,15 +1257,19 @@
 
                     MC "Not sure that’s right."
 
-                    #throw a DS Character on screen real bigger
-                    #make new gaming sound
                     show ds at ds_slide
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
+                    play sound "audio/laser1.wav"
+                    play sound "audio/laser1.wav"
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
 
+                    play sound "audio/laser2.wav"
+                    play sound "audio/laser1.wav"
                     "There’s little animals yelling at me to do better but this is my first time so I don’t know why they sound so mad?"
 
+                    play sound "audio/laser2.wav"
+                    play sound "audio/laser2.wav"
                     "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
 
                     hide ds with moveoutbottom
@@ -1309,15 +1313,19 @@
 
                     MC "Not sure that’s right."
 
-                    #throw a DS Character on screen real bigger
-                    #make new gaming sound
                     show ds at ds_slide
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
+                    play sound "audio/laser1.wav"
+                    play sound "audio/laser1.wav"
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
 
+                    play sound "audio/laser2.wav"
+                    play sound "audio/laser1.wav"
                     "There’s little animals yelling at me to do better but this is my first time so I don’t know why they sound so mad?"
 
+                    play sound "audio/laser2.wav"
+                    play sound "audio/laser2.wav"
                     "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
 
                     hide ds with moveoutbottom
@@ -1595,7 +1603,7 @@
 
                     "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    #play toilet flushing sound
+                    play sound "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1653,7 +1661,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    #play toilet flushing sound
+                    play sound "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1713,7 +1721,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    #play toilet flushing sound
+                    play sound "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1745,7 +1753,7 @@
 
                     "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    #play toilet flushing sound
+                    play sound "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1797,7 +1805,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    #play toilet flushing sound
+                    play sound "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1855,7 +1863,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    #play toilet flushing sound
+                    play sound "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
