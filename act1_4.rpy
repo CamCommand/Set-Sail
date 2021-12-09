@@ -57,7 +57,63 @@ play sound "audio/thunder.ogg"
 show BG 4 with hpunch
 play music "audio/storm1.mp3" loop
 pause 5.0
-# show new boat scene
-"gabbagool"
+jump ship_start
+
+label ship_start:
+
+    show BG nightdeck1 with dissolve
+
+    # JoeJoe freaking dies the movie
+    # show joejoe dying quickly
+    jj "{cps=70}Ahhhhgrrrrh!{/cps}"
+
+    jj "{cps=55}[player_name], get out of here! Find the Captain!{/cps}"
+
+    jj "{cps=55}Find the Captain!{/cps}"
+
+    jj "{cps=70}Ahhhhhhhhhhhhhgggggguuuuuuuuuuu!{/cps}"
+    # hide JoeJoe after death
+
+    mc "JoeJoe no! Don’t stop fighting!"
+
+    mc "JoeJoe...is..."
+
+    "This can’t be happening. Where did these other pirates come from?"
+
+    "They came out of nowhere, how did they board the ship without anyone noticing in time?"
+
+    "Crawling from below the deck and from the sides of the boat. It’s like an infestation."
+
+    "This storm is the perfect cover for a raid. These pirates aren’ taking some pot shot, this was a well coordinated attack. "
+
+    show sword at sword
+    play sound "audio/sworddraw.ogg"
+
+    "My gun is disassembled in my room, this will have to do."
+
+    "I have to find out who’s still fighting. There’s no telling how many of these lunatics got onboard."
+
+    "We need to band together to protect whoever is steering the ship."
+
+    "Hopefully the Captain has a handle on the situation."
+
+    show pirate1 at center with dissolve
+
+    p "Well look at ye."
+
+    p "It’s some punk who-!"
+    play sound "audio/swipe.mp3"# why isn't this playing???
+
+    show pirate1 slash at wiggle
+
+    p "Ahhrggggghh!"
+
+    hide pirate1 slash
+
+    "There isn’t enough intel, I don't know how many of them there are or if I could kill them all."
+
+    "Getting surrounded is an easy possibility when you don’t know how many enemies you have. Especially when you don’t know everywhere they’re coming from."
+
+    "Poseidon appears to not be on our side tonight."
 
 return
