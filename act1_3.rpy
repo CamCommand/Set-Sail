@@ -242,7 +242,9 @@
             play sound "audio/doorclose.ogg"
             scene BG cr with fade
 
-            "The door opens to a barren classroom with no more than eight people in it. There are some skulls and hearts drawn on the whiteboard, yet the rest of the room has been thoroughly cleaned."
+            "The door opens to a barren classroom with no more than eight people in it."
+
+            "There are some skulls and hearts drawn on the whiteboard, yet the rest of the room has been thoroughly cleaned."
 
             "Or at least has been kept this clean intentionally. It reminds me of how the ship looked with none of the supplies on it when."
 
@@ -271,7 +273,11 @@
             menu:
                 "Be honest with them":
 
+                    $ quick_menu = False
+
                     MC "Hello everybody. My name is [player_name], but you already knew that. I’ve been a pirate my whole life and served on The Red Plague during that time."
+
+                    $ quick_menu = True
 
                     MC "Most days at sea are treacherous and exhausting, but the life is free and can be very rewarding. I had to work my way towards  becoming the first mate in that time."
 
@@ -321,7 +327,11 @@
 
                 "Exaggerate to sound cool":
 
+                    $ quick_menu = False
+
                     MC "Ahoy everyone! I’m the Dreaded Pirate [player_name]."
+
+                    $ quick_menu = True
 
                     MC "The Red Plague and I have been ruling the southern seas for over fifty years. I’ve seen the coolest things the world has to offer and I haven’t paid for a single thing in my entire life."
 
@@ -375,7 +385,11 @@
 
                 "Scare them away from piracy":
 
+                    $ quick_menu = False
+
                     MC "Alright lassies here’s the dark truth from a subordinate of the Demonic Pirate Ricardo himself."
+
+                    $ quick_menu = True
 
                     MC "Piracy is incredibly dangerous. Our lives are on the line everyday. We could be shot at, thrown overboard, or starved at sea."
 
@@ -496,6 +510,7 @@
             "Who should I talk to?"
 
             menu:
+
                 "Behati" if b_met >= 1:
                     jump behati
 
@@ -2281,7 +2296,6 @@
             hide b_d with moveoutleft
             hide g_d with moveoutright
 
-            pause 1.5
-            # through all paths explore Total Game Time here is about37 minutes
+            # through all paths explore Total Game Time here is about 37 minutes
             jump act1_4
     return

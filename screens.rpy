@@ -311,8 +311,6 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
-
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
@@ -321,13 +319,16 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
+        textbutton _("Preferences") action ShowMenu("preferences")
+
         textbutton _("Pirate Code") action ShowMenu("PC")
-        textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            textbutton _("Controls") action ShowMenu("controls")
+
+        textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc"):
 
@@ -1477,7 +1478,7 @@ screen quick_menu():
 
     zorder 100
 
-    if quick_menu:
+    if quick_menu and not renpy.get_screen('choice'):
 
         hbox:
             style_prefix "quick"

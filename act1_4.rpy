@@ -65,13 +65,13 @@ label ship_start:
 
     # JoeJoe freaking dies the movie
     # show joejoe dying quickly
-    jj "{cps=70}Ahhhhgrrrrh!{/cps}"
+    jj "{cps=20}Ahhhhgrrrrh!{/cps}"
 
-    jj "{cps=55}[player_name], get out of here! Find the Captain!{/cps}"
+    jj "{cps=25}[player_name], get out of here! Find the Captain!{/cps}"
 
-    jj "{cps=55}Find the Captain!{/cps}"
+    jj "{cps=25}Find the Captain!{/cps}"
 
-    jj "{cps=70}Ahhhhhhhhhhhhhgggggguuuuuuuuuuu!{/cps}"
+    jj "{cps=20}Ahhhhhhhhhhhhhgggggguuuuuuuuuuu!{/cps}"
     # hide JoeJoe after death
 
     mc "JoeJoe no! Don’t stop fighting!"
@@ -97,23 +97,226 @@ label ship_start:
 
     "Hopefully the Captain has a handle on the situation."
 
-    show pirate1 at center with dissolve
+    show pirate1 with dissolve
+    # sword sounds stop here
+    p "Well look at ye. They let kids roam 'round a graveyard?"
 
-    p "Well look at ye."
+    p "Hey boys, we got another-!"
 
-    p "It’s some punk who-!"
-    play sound "audio/swipe.mp3"# why isn't this playing???
+    jump pirate_fight1
 
-    show pirate1 slash at wiggle
+    label pirate_fight1:
 
-    p "Ahhrggggghh!"
+        $ quick_menu = False
 
-    hide pirate1 slash
+        menu:
+
+            "Swing right!":
+
+                play sound "audio/sword_swing.mp3"
+
+                show BG nightdeck1 with flash
+                show pirate1 slash at wiggle
+
+                p "Ahhrggggghh!"
+
+                hide pirate1 slash
+
+            "Swing left!":
+
+                play sound "audio/sword_clash.ogg"
+                show BG nightdeck1 with flash
+                p "Arrrgh, not good enough!"
+
+                jump pirate_fight1
+
+            "Go for the legs!":
+
+                play sound "audio/sword_clash.ogg"
+                show BG nightdeck1 with flash
+                p "Arrrgh, goin' fer me legs, ah?"
+
+                jump pirate_fight1
+
+    $ quick_menu = True
 
     "There isn’t enough intel, I don't know how many of them there are or if I could kill them all."
 
     "Getting surrounded is an easy possibility when you don’t know how many enemies you have. Especially when you don’t know everywhere they’re coming from."
 
     "Poseidon appears to not be on our side tonight."
+
+    show pirate2 with dissolve
+
+    p "Yer a dead man matey!"
+
+    define matey = 0 # to determine if another pirate joins the fray
+    define x_naut = 0 # additional dialoge check
+    define pirate1_x = 1 # alive status
+    define pirate2_x = 1 # alive status
+
+    # Leaving menu list of respones
+    define dying = ["I have to thin their numbers or I'll be turned into drift wood.", "Need to take'em out!", "I should avoid being dog piled."]
+    $ rand2 = renpy.random.randint(0, 2)
+
+    jump pirate_fight2
+
+    label pirate_fight2:
+
+        $ quick_menu = False
+        if matey >= 2 and matey != 4:
+
+            if x_naut == 0:
+                show pirate3 at left with moveinleft
+
+                p "Mind if I CUT in?"
+                $ x_naut += 1
+
+            $ notded = dying[rand2]
+            mc "[notded]"
+
+            menu:
+
+                "Swing right at the first one!" if pirate1_x == 1:
+
+                    play sound "audio/sword_swing.mp3"
+
+                    show BG nightdeck1 with flash
+                    show pirate2 slash at wiggle
+
+                    p "Ahhhhh, damn ye!"
+
+                    hide pirate2 slash
+                    show pirate3 at center with ease
+                    $ pirate1_x -= 1
+
+                    if pirate1_x == 0 and pirate2_x == 0:
+                        jump final_bout
+                    else:
+                        jump pirate_fight2
+
+                "Swing left at the first one!" if pirate1_x == 1:
+
+                    play sound "audio/sword_clash.ogg"
+                    show BG nightdeck1 with flash
+                    p "Not on yer life!"
+
+                    $ matey += 1
+
+                    jump pirate_fight2
+
+                "Take out the legs of the first one!" if pirate1_x == 1:
+
+                    play sound "audio/sword_clash.ogg"
+                    show BG nightdeck1 with flash
+                    p "Can't have those!"
+
+                    $ matey += 1
+
+                    jump pirate_fight2
+
+                "Swing right at the second one!" if pirate2_x == 1:
+
+                    play sound "audio/sword_clash.ogg"
+                    show BG nightdeck1 with flash
+                    p "Can't have those!"
+
+                    $ matey += 1
+
+                    jump pirate_fight2
+
+                "Swing left at the second one!" if pirate2_x == 1:
+
+                    play sound "audio/sword_clash.ogg"
+                    show BG nightdeck1 with flash
+                    p "Not on yer life!"
+
+                    $ matey += 1
+
+                    jump pirate_fight2
+
+                "Take out the legs of the second one!" if pirate2_x == 1:
+
+                    play sound "audio/sword_swing.mp3"
+
+                    show BG nightdeck1 with flash
+                    show pirate3 slash at wiggle
+
+                    p "Curse yeeeeee!"
+
+                    hide pirate3 slash
+                    $ pirate2_x -= 1
+
+                    if pirate1_x == 0 and pirate2_x == 0:
+                        jump final_bout
+                    else:
+                        jump pirate_fight2
+
+        elif matey == 4:
+
+            play sound "audio/sword_swing.mp3"
+            show BG nightdeck1 with deathflash
+
+            mc "Uh no, I didn't get to save,"
+
+            mc "Father, forgive me..."
+
+            jump game_over
+
+        menu:
+
+            "Swing right!":
+
+                play sound "audio/sword_swing.mp3"
+
+                show BG nightdeck1 with flash
+                show pirate2 slash at wiggle
+
+                p "Ahhhhh, damn ye!"
+
+                hide pirate2 slash
+
+            "Swing left!":
+
+                play sound "audio/sword_clash.ogg"
+                show BG nightdeck1 with flash
+                p "Not on yer life!"
+
+                $ matey += 1
+
+                jump pirate_fight2
+
+            "Take out the legs!":
+
+                play sound "audio/sword_clash.ogg"
+                show BG nightdeck1 with flash
+                p "Can't have those!"
+
+                $ matey += 1
+
+                jump pirate_fight2
+
+
+    label final_bout:
+
+        $ quick_menu = True
+
+        "Where is everyone? There must be someone around to help."
+
+        "There is no way anyone has stopped fighting!"
+
+        "The Plague isn’t made up of pushovers."
+
+        "What kind of pirates are these people to pull off such a direct attack?"
+
+        show pirate3 at center with dissolve# change this pirate
+        p "Say a prayer sea dog!"
+
+        show fla at leftbottom with dissolve
+
+        fla "No wait I-"
+        play sound "audio/bam.ogg"
+
+        mc "{cps=10}Flavio!{/cps}"
 
 return

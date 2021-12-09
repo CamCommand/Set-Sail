@@ -74,6 +74,12 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    def pirate_voice(event, **kwargs):# voice for pirate man billy bob
+        if event == "show":
+            renpy.music.play("audio/blippirate.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
     def Crashsound_test(event, **kwargs):# noise to play when everone yells
         if event == "show":
             renpy.music.play("audio/crash.mp3 ", channel="sound", loop=True)
@@ -86,6 +92,16 @@ transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset 4 yoffset -4
     linear 0.1 xoffset -6 yoffset 6
     linear 0.1 xoffset 0 yoffset 0
+
+define flash = Fade(.15, 0.0, .25, color="#fff") # for making the sword cut sound working idk why
+define deathflash = Fade(.15, 0.0, .25, color="#F25555")
+
+screen game_over_screen:
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        text _("{size=156}Game Over{/size}")
+        textbutton _("\n\n\n   Return to Main Menu") action Return()
 
 # Main characters
 define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
@@ -113,6 +129,7 @@ define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF"
 define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)                                   # woman at market
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)                                     # bartender at arcade
 define jj = Character('JoeJoe', color = "#0015BC", callback=jj_voice)                                       # JoeJoe
+define p = Character('Enemy Pirate', color = "#0015BC", callback=pirate_voice)
 
 # Affinity of main characters
 default Fi_affinity = 0
@@ -142,9 +159,9 @@ image BG wc3 = "background/wc3.png"
 image BG schoolan = "background/schoolafternoon.png"
 image BG 4 = "background/4.png"
 image BG walksunset = "background/walksunset.png"
-image BG nighdeck1 = "background/nightdeck1.png"
-image BG nighdeck2 = "background/nightdeck2.png"
-image BG nighdeck3 = "background/nightdeck3.png"
+image BG nightdeck1 = "background/nightdeck1.png"
+image BG nightdeck2 = "background/nightdeck2.png"
+image BG nightdeck3 = "background/nightdeck3.png"
 
 # Other characters images
 image twohands = "TwoHands.png"
@@ -155,6 +172,13 @@ image bartender = "bt1.png"
 image mm = "momlady.png"
 image ds = "3ds.png"
 image crowd = "crowd.png"
+image sword = "tempsword.png"
+image pirate1 = "pirate 1.png"
+image pirate1 slash = "pirate 11.png"
+image pirate2 = "pirate 2.png"
+image pirate2 slash = "pirate 22.png"
+image pirate3 = "pirate 3.png"
+image pirate3 slash = "pirate 33.png"
 
 # Menu Music
 define config.game_menu_music = "music/BelowDeck.mp3"
