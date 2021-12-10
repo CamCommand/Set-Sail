@@ -54,7 +54,9 @@
     menu:# MC's different reactions to first meeting Astrid
         "She’s Enthusiastic":
 
+            $ quick_menu = False
             MC "Are you alright?"
+            $ quick_menu = True
 
             MC "No need to yell at me, Astrid of Bellewood."
 
@@ -74,7 +76,9 @@
 
         "She’s Amazing":
 
+            $ quick_menu = False
             MC "That’s incredible, at ease Astrid of Bellewood."
+            $ quick_menu = True
 
             $ Astrid_affinity += 1
 
@@ -89,7 +93,9 @@
 
         "She’s Beautiful":
 
+            $ quick_menu = False
             "She’s stunningly beautiful!"
+            $ quick_menu = True
 
             $ Astrid_affinity += 3
             MC "Umm, at ease Astrid of Bellewood."
@@ -108,7 +114,9 @@
 
         "{i}She has brain rot{/i}":
 
+            $ quick_menu = False
             MC "Have you acquired brian rot sailor?"
+            $ quick_menu = True
 
             $ Astrid_affinity -= 3
             # sad astrid
@@ -1901,7 +1909,10 @@
                     jump fruits
 
             label chicken:
+
+                $ quick_menu = False
                 "The grilled chicken breasts look so good. I can’t tell if it's warm or cold but I want to eat it super bad."
+                $ quick_menu = True
 
                 "There are little plastic plates to put the food on. Are these easier to clean?"
 
@@ -1985,7 +1996,10 @@
                 jump classroom_choice
 
             label sandwich:
+
+                $ quick_menu = False
                 "Poseidon help me that sandwich is half my size."
+                $ quick_menu = True
 
                 "Oh?"
 
@@ -2096,12 +2110,17 @@
                 jump classroom_choice
 
             label fruits:
+
                 if food_check == 1:
+                    $ quick_menu = False
                     "{color=#2150E7}They have more fruits!{/color}"
+                    $ quick_menu = True
 
                     "That apple I took left me wanting more. Plus I can sneak some of these out of here for later."
                 else:
+                    $ quick_menu = False
                     "A pirate can’t risk avoiding their fruits. Don’t want history to repeat itself."
+                    $ quick_menu = True
 
                 show a_d at center with dissolve
                 a "You’re only taking the fruit? Is that a pirate thing?"

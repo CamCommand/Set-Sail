@@ -50,7 +50,9 @@
         with fade
         with fade
 
-        "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port. Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
+        "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port."
+
+        "Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
 
         play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5
 
@@ -121,29 +123,32 @@
         label choice_name_V:
 
             MC "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            $ quick_menu = False
             jump opening
 
         label choice_name_O:
 
             MC "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            $ quick_menu = False
             jump opening
 
         label choice_name_R:
 
             MC "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            $ quick_menu = False
             jump opening
 
         label choice_name_User:
 
             MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            $ quick_menu = False
             jump opening
 
         label opening:
-            if player_name == "Steve":# temp skip
-                jump act1_3
 
             $ pirate = "Pirate"
             "Sunlight pours into my eyes through the cracks in the old boards."
+            $ quick_menu = True
 
             "I get up from my cot and scan through my room. It’s a small closet under the stairs to the top deck with barely enough room for anything extra beyond my necessities."
 
@@ -180,7 +185,9 @@
             $ th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands voice
             th "Wheres [player_name]!? Why arrrgh’t they on deck?"
 
-            "That sounds like my call to action. I quickly throw myself out of bed. My shoes are at my feet, but how could I lose track of my shirt in here?"
+            "That sounds like my call to action. Quickly throwing myself out of bed shakes the boards beneath me."
+
+            "My shoes are at my feet, but how could I lose track of my shirt in here?"
 
             "Scanning my small abode, it evades my glance. It must be under something."
 
@@ -220,7 +227,7 @@
 
             stop music fadeout 3.0
             with dissolve
-            scene BG deckview
+            scene BG deckview with dissolve
             show twohands at left
             show captain at right
 
@@ -333,7 +340,7 @@
             stop music fadeout 3.0
             hide captain with dissolve
             with dissolve
-            scene BG MC_room
+            scene BG MC_room with dissolve
             play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5 volume 0.18
 
             "I wonder how long Captain planned this? No way Flavio could change the work schedule as quickly as yesterday, or even a week ago."

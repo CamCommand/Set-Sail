@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".58"
+define config.version = ".60"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -43,18 +43,26 @@ Without anything else promising the girls a better future, they enthusiastically
 
 # These extra centers are for showing four characters on screen at once
 
-transform centerleft:
+transform centerleft: # for girls
     xalign 0.35 yalign 1.0
 
-transform centerright:
+transform centerright: # for girls
     xalign 0.65 yalign 1.0
 
 transform leftbottom:
     xalign 0.1 yalign 1.5
 
+transform centerlefter:
+    xalign 0.20 yalign 1.0
+
+transform centerrighter:
+    xalign 0.80 yalign 1.0
+
 # This is for the bloody sword
 transform sword:
-    xalign 0.85 yalign 1.0
+    xalign 1.0 yalign 1.0
+
+define config.layers = [ 'master', 'transient', 'screens', 'overlay']
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,

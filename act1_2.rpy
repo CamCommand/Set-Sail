@@ -204,7 +204,9 @@ label act1_2:
 
     label bs:
 
+        $ quick_menu = False
         MC "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
+        $ quick_menu = True
 
         stop sound fadeout 2.0
 
@@ -532,8 +534,9 @@ label act1_2:
 
     label bstore_end:
 
+                $ quick_menu = False
                 MC "Excuse miss?"
-
+                $ quick_menu = True
                 show lib with dissolve
 
                 woman "Yes, hello again. Did you decide on a book?"
@@ -579,10 +582,10 @@ label act1_2:
 
     label market:
 
-        # need crowd character and people sounds+crunch sounds
         define food_check = 0 # This will be used later to determine if MC is hungry at school
-
+        $ quick_menu = False
         MC "Something to eat sounds nice. I’m sure nobody will miss one apple."
+        $ quick_menu = True
 
         scene BG market with fade
         pause 2.0
@@ -739,7 +742,9 @@ label act1_2:
 
         define game_played = "" # for storing game played in arcade
 
+        $ quick_menu = False
         MC "Oh! That place had those video games Merigold told me about. Checking those out is a must."
+        $ quick_menu = True
 
         "They’re supposed to be old and fun and she said I could pick them up easily."
 
@@ -812,7 +817,9 @@ label act1_2:
 
             "{color=#F93A22}Fly Guy{/color}":
 
+                $ quick_menu = False
                 "The red wrapped machine has drawings of a little person with wings shooting strange creatures with a harpoon and then pumping them with air until they fall to their death."
+                $ quick_menu = True
 
                 "After the coin goes into the machine it says {color=#F93A22}\"Player One\"{/color} can start. At hand level there is only a stick and one red button."
 
@@ -838,7 +845,9 @@ label act1_2:
 
             "{color=#F9F222}Monkey 2{/color}":
 
+                $ quick_menu = False
                 "This machine appears as if it was painted over black recently."
+                $ quick_menu = True
 
                 "Different pictures of cartoon monkeys in distinct styles cover every inch of it. There are two sets of sticks and dozens of buttons as controls."
 
@@ -873,7 +882,9 @@ label act1_2:
 
             "{color=#232AFA}Dinosaur Mission IX: Kingdom Royale Finale{/color}":
 
+                $ quick_menu = False
                 "The only part of this machine’s instructions that are in English is the title. Everything else is in Japanese, including what the button inputs do."
+                $ quick_menu = True
 
                 "The character that keeps appearing on the screen sort of looks like me, so I sort of want to try it. Paragraphs of text are scrolling by, none of which is understandable."
 

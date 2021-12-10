@@ -172,13 +172,22 @@ image bartender = "bt1.png"
 image mm = "momlady.png"
 image ds = "3ds.png"
 image crowd = "crowd.png"
-image sword = "tempsword.png"
+
+image sword = "sword1.png"
+image sword swing = "sword2.png"
+
 image pirate1 = "pirate 1.png"
 image pirate1 slash = "pirate 11.png"
 image pirate2 = "pirate 2.png"
 image pirate2 slash = "pirate 22.png"
 image pirate3 = "pirate 3.png"
 image pirate3 slash = "pirate 33.png"
+image pirate4 = "pirate 4.png"
+image pirate4 slash = "pirate 44.png"
+image pirate5 = "pirate 5.png"
+image pirate5 slash = "pirate 55.png"
+image pirate6 = "pirate 6.png"
+image pirate6 slash = "pirate 66.png"
 
 # Menu Music
 define config.game_menu_music = "music/BelowDeck.mp3"

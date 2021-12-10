@@ -208,6 +208,7 @@ screen choice(items):
     style_prefix "choice"
 
     vbox:
+        spacing 20
         for i in items:
             textbutton i.caption action i.action
 
