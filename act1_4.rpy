@@ -152,6 +152,8 @@ label ship_start:
 
     "Getting surrounded is an easy possibility when you don’t know how many enemies you have. Especially when you don’t know where they’re coming from."
 
+    show BG nightdeck2 with dissolve
+
     "Poseidon appears to not be on our side tonight."
 
     show pirate2 with dissolve
@@ -682,8 +684,123 @@ label ship_start:
 
     label down_with_the_ship:
 
-        "testline"
+        hide sword
+        mc "Flavio, say something matey."
         $ quick_menu = True
-        "testline2"
+
+        "The bullet went clean through his head."
+
+        "The horror still stained on Flavio’s face tells me more than that he just lost a duel. His arms and torso have slash marks all over them."
+
+        if matey2 >= 2:
+            "Just like now, he was ganged up on. I couldn’t have save him."
+        else:
+            "He was ganged up on. I couldn’t have save him."
+
+        "He was never the greatest fighter, but this wasn’t fair."
+
+        mc "We’ll get out of this Flavio, you rest here."
+
+        # play fire crackling sound
+
+        "Hopefully the Captain is holding out alright."
+
+        "Is that a crackling?"
+
+        "A fire!"
+
+        "Where is it coming from?"
+
+        "Above?"
+
+        "Top deck is too wet to start one. But below..."
+
+        "Right below our noses, they're snuffing us out!"
+
+        "The storm won’t put anything out if the ship’s a charred mess of driftwood."
+
+        "These bastards. They aren’t here to rob us, they’re taking out the Plague for good."
+
+        "Our crimes have come back to damn us like a vengeful revenant."
+
+        show pirate7 with dissolve
+
+        p "Ye-"
+
+        mc "Get out of my way!"
+
+        show sword swing at sword with ease
+        play sound "audio/sword_swing.mp3"
+
+        show BG nightdeck1 with flash
+        show pirate7 slash at wiggle
+
+        show sword at sword with ease
+        hide pirate7 slash with dissolve
+
+        th "[player_name] behind ye!"
+
+        show pirate7 at left with dissolve
+
+        show sword swing at sword with ease
+        play sound "audio/sword_clash.ogg"
+        show BG nightdeck1 with flash
+        show sword at sword with ease
+
+        show sword swing at sword with ease
+        play sound "audio/sword_swing.mp3"
+        show BG nightdeck1 with flash
+        show pirate7 slash with dissolve
+
+        show sword at sword with ease
+        hide pirate7 slash with dissolve
+
+        mc "Two Hands! Are you alright?"
+
+        mc "Have both your hands? Where’s the Captain?"
+
+        show twohands with dissolve
+
+        if player_identity == "f":
+            th "Aye lass I’ll live a little longer!"
+        else:
+            th "Aye lad I’ll live a little longer!"
+
+        th "Both claws intact as you can see."
+
+        th "Da Captains fighting to steer thee ship."
+
+        mc "Is anyone else still fighting? Who’s alive?"
+
+        th "Arrrrrrggghh."
+
+        th "I’ve seen more corpses den pirates now. I don’t know whos still kicking."
+
+        th "It may be just you and me now."
+
+        mc "We have to help the Captain and regain control of the ship."
+
+        if player_identity == "f":
+            th "Aye lass, I’ll clear the way of remaining renegades."
+        else:
+            th "Aye lad, I’ll clear the way of remaining renegades."
+
+        th "Time to take our ship back."
+
+        mc "Thank you Two Hands. I will."
+
+        th "Fight me you cowards!"
+        hide twohands with moveoutleft
+        th "Arrrrrgh!"
+
+        "Without a shred of hesitation, Two Hands rushes on ahead."
+
+        "Were there never a pirate braver him?"
+
+        th "...I’ll cut yer throats..."
+
+        "I won’t let his sacrifice lay dead at sea."
+
+        show BG nightdeck3 with dissolve
 
 return
