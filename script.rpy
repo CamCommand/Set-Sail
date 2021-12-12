@@ -1,7 +1,8 @@
 ﻿# Cameron Drummond 2021
 
 
-init python:# define sound bleeps here
+init python:
+
     def voice(event, **kwargs):# voice for MC
         if event == "show":
             renpy.music.play("audio/blip1.ogg", channel="sound", loop=True)
@@ -86,6 +87,9 @@ init python:# define sound bleeps here
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    # USE this for sound effects bc voices play over them
+    renpy.music.register_channel("effect","voice", loop = False, tight=True)
+
 transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset -4 yoffset 4
     linear 0.1 xoffset 6 yoffset -6
@@ -93,7 +97,17 @@ transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset -6 yoffset 6
     linear 0.1 xoffset 0 yoffset 0
 
+transform zoom:
+    xalign 0.05 yalign 0.3
+    ease 1.0 zoom 1.7
+    pause 2.0
+
+transform redo:
+    xalign 0.5 yalign 0.5
+    ease 1.0 zoom 1.0
+
 define flash = Fade(.15, 0.0, .25, color="#fff") # for making the sword cut sound working idk why
+define flash_lighting = Fade(.15, 0.0, .25, color="#AFDBF2") # for making the sword cut sound working idk why
 define deathflash = Fade(.15, 0.0, .25, color="#F25555")
 
 screen game_over_screen:
@@ -162,6 +176,7 @@ image BG walksunset = "background/walksunset.png"
 image BG nightdeck1 = "background/nightdeck1.png"
 image BG nightdeck2 = "background/nightdeck2.png"
 image BG nightdeck3 = "background/nightdeck3.png"
+image BG escape = "background/dingy.png"
 
 # Other characters images
 image twohands = "TwoHands.png"
@@ -188,6 +203,8 @@ image pirate5 = "pirate 5.png"
 image pirate5 slash = "pirate 55.png"
 image pirate6 = "pirate 6.png"
 image pirate6 slash = "pirate 66.png"
+image pirate7 = "pirate 7.png"
+image pirate7 slash = "pirate 77.png"
 
 # Menu Music
 define config.game_menu_music = "music/BelowDeck.mp3"

@@ -199,7 +199,7 @@
 
             th "[player_name] get yerr ass out from whatever gutter ye hiding under."
 
-            $ pirate = "Ol' Two Hands"
+            $ pirate = "ol'Two Hands"
             "I think that’s [pirate] calling for me. I’m pretty sure I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
 
             "I’ll grab my bristoles and brush my teeth and hair. A delayed head rush from springing up too fast numbs me momentarily."
@@ -390,7 +390,7 @@
 
             "I can’t walk through the streets looking like a dirty pirate. There has to be a clean shirt I kept somewhere in here."
 
-            play sound "audio/rummaging_sound.wav"
+            play effect "audio/rummaging_sound.wav"
 
             "It’s not under the books and it’s not on my bed so there aren’t a lot of other possibilities."
 
@@ -416,7 +416,7 @@
 
             "With this shirt and a quick shoe shine I should be looking moderately normal, or at least cleaner."
 
-            play sound "audio/cloth_shine.wav"
+            play effect "audio/cloth_shine.wav"
 
             pause 3.5
 
@@ -470,7 +470,7 @@
 
             "Maybe I can pick up some mainland lingo. Although, I can’t tell which slang is real and which is made up for the book."
 
-            play sound "audio/pages.wav"
+            play effect "audio/pages.wav"
 
             "..."
 
@@ -491,7 +491,7 @@
 
             "As nice as Elysium sounds, I’d be perfectly content with the Underworlds bleak nothingness for eternity. Sounds more peaceful than worshiping forever in Cloud World for no reason."
 
-            play sound "audio/pages.wav"
+            play effect "audio/pages.wav"
 
             "..."
 
@@ -510,7 +510,7 @@
 
             "Not enough to find out first hand, but that’s why books are so great. I can live a life that I could only sparsely imagine."
 
-            play sound "audio/pages.wav"
+            play effect "audio/pages.wav"
 
             "..."
 
@@ -596,7 +596,7 @@
 
             "Without you. I wouldn’t be anything. Or maybe I am nothing without your influence?"
 
-            play sound "audio/crysniff.wav" volume .5 # ya boi is crying
+            play effect "audio/crysniff.wav" volume .5 # ya boi is crying
 
             "..."
 

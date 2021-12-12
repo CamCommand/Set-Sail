@@ -53,7 +53,7 @@ show BG walksunset with dissolve
 
 show BG black with dissolve
 pause 3.0
-play sound "audio/thunder.ogg"
+play effect "audio/thunder.ogg"
 show BG 4 with hpunch
 play music "audio/storm1.mp3" loop
 pause 5.0
@@ -87,7 +87,7 @@ label ship_start:
     "This storm is the perfect cover for a raid. These pirates aren’ taking some pot shot, this was a well coordinated attack. "
 
     show sword at sword
-    play sound "audio/sworddraw.ogg"
+    play effect "audio/sworddraw.ogg"
 
     "My gun is disassembled in my room, this will have to do."
 
@@ -98,7 +98,6 @@ label ship_start:
     "Hopefully the Captain has a handle on the situation."
 
     show pirate1 with dissolve
-    # sword sounds stop here
     p "Well look at ye. They let kids roam 'round a graveyard?"
 
     p "Hey boys, we got another-!"
@@ -114,7 +113,7 @@ label ship_start:
             "Swing right!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_swing.mp3"
+                play effect "audio/sword_swing.mp3"
 
                 show BG nightdeck1 with flash
                 show pirate1 slash at wiggle
@@ -127,7 +126,7 @@ label ship_start:
             "Swing left!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_clash.ogg"
+                play effect "audio/sword_clash.ogg"
                 show BG nightdeck1 with flash
 
                 show sword at sword with ease
@@ -138,7 +137,7 @@ label ship_start:
             "Go for the legs!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_clash.ogg"
+                play effect "audio/sword_clash.ogg"
                 show BG nightdeck1 with flash
 
                 show sword at sword with ease
@@ -187,9 +186,9 @@ label ship_start:
                 "Swing right at the first one!" if pirate1_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_swing.mp3"
+                    play effect "audio/sword_swing.mp3"
 
-                    show BG nightdeck1 with flash
+                    show BG nightdeck2 with flash
                     show pirate2 slash at wiggle
 
                     show sword at sword with ease
@@ -207,8 +206,8 @@ label ship_start:
                 "Swing left at the first one!" if pirate1_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Not on yer life!"
@@ -220,8 +219,8 @@ label ship_start:
                 "Take out the legs of the first one!" if pirate1_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Can't have those!"
@@ -233,8 +232,8 @@ label ship_start:
                 "Swing right at the second one!" if pirate2_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Can't have those!"
@@ -246,8 +245,8 @@ label ship_start:
                 "Swing left at the second one!" if pirate2_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Not on yer life!"
@@ -259,9 +258,9 @@ label ship_start:
                 "Take out the legs of the second one!" if pirate2_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_swing.mp3"
+                    play effect "audio/sword_swing.mp3"
 
-                    show BG nightdeck1 with flash
+                    show BG nightdeck2 with flash
                     show pirate3 slash at wiggle
 
                     show sword at sword with ease
@@ -278,8 +277,8 @@ label ship_start:
         elif matey == 4:
 
             show sword swing at sword with ease
-            play sound "audio/sword_swing.mp3"
-            show BG nightdeck1 with deathflash
+            play effect "audio/sword_swing.mp3"
+            show BG nightdeck2 with deathflash
 
             show sword at sword with ease
             mc "Uh no, I didn't get to save,"
@@ -293,9 +292,9 @@ label ship_start:
             "Swing right!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_swing.mp3"
+                play effect "audio/sword_swing.mp3"
 
-                show BG nightdeck1 with flash
+                show BG nightdeck2 with flash
                 show pirate2 slash at wiggle
 
                 show sword at sword with ease
@@ -306,8 +305,8 @@ label ship_start:
             "Swing left!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_clash.ogg"
-                show BG nightdeck1 with flash
+                play effect "audio/sword_clash.ogg"
+                show BG nightdeck2 with flash
 
                 show sword at sword with ease
                 p "Not on yer life!"
@@ -319,8 +318,8 @@ label ship_start:
             "Take out the legs!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_clash.ogg"
-                show BG nightdeck1 with flash
+                play effect "audio/sword_clash.ogg"
+                show BG nightdeck2 with flash
 
                 show sword at sword with ease
                 p "Can't have those!"
@@ -355,8 +354,8 @@ label ship_start:
 
         fla "No wait I-"
 
-        play sound "audio/bam.ogg"
-        show BG nightdeck1 with flash
+        play effect "audio/bam.ogg"
+        show BG nightdeck2 with flash
         show fla with ease: # Flavio gets shot off screen
             xpos -1000 ypos 2000
 
@@ -391,8 +390,8 @@ label ship_start:
                 "Swing right at the first one!" if pirate3_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Har har harrr!"
@@ -404,9 +403,9 @@ label ship_start:
                 "Swing left at the first one!" if pirate3_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_swing.mp3"
+                    play effect "audio/sword_swing.mp3"
 
-                    show BG nightdeck1 with flash
+                    show BG nightdeck2 with flash
                     show pirate4 slash at wiggle
 
                     show sword at sword with ease
@@ -423,8 +422,8 @@ label ship_start:
                 "Take out the legs of the first one!" if pirate3_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Try and take'em!"
@@ -436,8 +435,8 @@ label ship_start:
                 "Swing right at the second one!" if pirate4_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Yurr a dead man!"
@@ -449,8 +448,8 @@ label ship_start:
                 "Swing left at the second one!" if pirate4_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Why'duncha giv'er up?"
@@ -462,15 +461,15 @@ label ship_start:
                 "Take out the legs of the second one!" if pirate4_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_swing.mp3"
+                    play effect "audio/sword_swing.mp3"
 
-                    show BG nightdeck1 with flash
-                    show pirate4 slash at wiggle
+                    show BG nightdeck2 with flash
+                    show pirate5 slash at wiggle
 
                     show sword at sword with ease
                     p "I'll see you in Hell!"
 
-                    hide pirate4 slash with dissolve
+                    hide pirate5 slash with dissolve
                     $ pirate4_x -= 1
 
                     if pirate3_x == 0 and pirate4_x == 0 and pirate5_x:
@@ -495,8 +494,8 @@ label ship_start:
                 "Swing right at the first one!" if pirate3_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Har har harrr!"
@@ -508,9 +507,9 @@ label ship_start:
                 "Swing left at the first one!" if pirate3_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_swing.mp3"
+                    play effect "audio/sword_swing.mp3"
 
-                    show BG nightdeck1 with flash
+                    show BG nightdeck2 with flash
                     show pirate4 slash at wiggle
 
                     show sword at sword with ease
@@ -527,8 +526,8 @@ label ship_start:
                 "Take out the legs of the first one!" if pirate3_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Try and take'em!"
@@ -540,8 +539,8 @@ label ship_start:
                 "Swing right at the second one!" if pirate4_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Yurr a dead man!"
@@ -553,8 +552,8 @@ label ship_start:
                 "Swing left at the second one!" if pirate4_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Why'duncha giv'er up?"
@@ -566,9 +565,9 @@ label ship_start:
                 "Take out the legs of the second one!" if pirate4_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_swing.mp3"
+                    play effect "audio/sword_swing.mp3"
 
-                    show BG nightdeck1 with flash
+                    show BG nightdeck2 with flash
                     show pirate5 slash at wiggle
 
                     show sword at sword with ease
@@ -585,9 +584,9 @@ label ship_start:
                 "Swing right at the third one!" if pirate5_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_swing.mp3"
+                    play effect "audio/sword_swing.mp3"
 
-                    show BG nightdeck1 with flash
+                    show BG nightdeck2 with flash
                     show pirate6 slash at wiggle
 
                     show sword at sword with ease
@@ -604,8 +603,8 @@ label ship_start:
                 "Swing left at the third one!" if pirate5_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Nice try!"
@@ -617,8 +616,8 @@ label ship_start:
                 "Take out the legs of the third one!" if pirate5_x == 1:
 
                     show sword swing at sword with ease
-                    play sound "audio/sword_clash.ogg"
-                    show BG nightdeck1 with flash
+                    play effect "audio/sword_clash.ogg"
+                    show BG nightdeck2 with flash
 
                     show sword at sword with ease
                     p "Try and take'em!"
@@ -630,8 +629,8 @@ label ship_start:
         elif matey2 == 6:
 
             show sword swing at sword with ease
-            play sound "audio/sword_swing.mp3"
-            show BG nightdeck1 with deathflash
+            play effect "audio/sword_swing.mp3"
+            show BG nightdeck2 with deathflash
 
             show sword at sword with ease
             mc "Uh crap, I didn't get a chance to,"
@@ -645,8 +644,8 @@ label ship_start:
             "Swing right!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_clash.ogg"
-                show BG nightdeck1 with flash
+                play effect "audio/sword_clash.ogg"
+                show BG nightdeck2 with flash
 
                 show sword at sword with ease
                 p "Noice try numbskull."
@@ -658,9 +657,9 @@ label ship_start:
             "Swing left!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_swing.mp3"
+                play effect "audio/sword_swing.mp3"
 
-                show BG nightdeck1 with flash
+                show BG nightdeck2 with flash
                 show pirate4 slash at wiggle
 
                 show sword at sword with ease
@@ -672,8 +671,8 @@ label ship_start:
             "Take out the legs!":
 
                 show sword swing at sword with ease
-                play sound "audio/sword_clash.ogg"
-                show BG nightdeck1 with flash
+                play effect "audio/sword_clash.ogg"
+                show BG nightdeck2 with flash
 
                 show sword at sword with ease
                 p "Try'in to take me boot?"
@@ -701,7 +700,7 @@ label ship_start:
 
         mc "We’ll get out of this Flavio, you rest here."
 
-        # play fire crackling sound
+        play effect "audio/fire.ogg" loop
 
         "Hopefully the Captain is holding out alright."
 
@@ -730,9 +729,9 @@ label ship_start:
         mc "Get out of my way!"
 
         show sword swing at sword with ease
-        play sound "audio/sword_swing.mp3"
+        play effect "audio/sword_swing.mp3"
 
-        show BG nightdeck1 with flash
+        show BG nightdeck2 with flash
         show pirate7 slash at wiggle
 
         show sword at sword with ease
@@ -743,13 +742,13 @@ label ship_start:
         show pirate7 at left with dissolve
 
         show sword swing at sword with ease
-        play sound "audio/sword_clash.ogg"
-        show BG nightdeck1 with flash
+        play effect "audio/sword_clash.ogg"
+        show BG nightdeck2 with flash
         show sword at sword with ease
 
         show sword swing at sword with ease
-        play sound "audio/sword_swing.mp3"
-        show BG nightdeck1 with flash
+        play effect "audio/sword_swing.mp3"
+        show BG nightdeck2 with flash
         show pirate7 slash with dissolve
 
         show sword at sword with ease
@@ -759,6 +758,7 @@ label ship_start:
 
         mc "Have both your hands? Where’s the Captain?"
 
+        hide sword with ease
         show twohands with dissolve
 
         if player_identity == "f":
@@ -801,6 +801,143 @@ label ship_start:
 
         "I won’t let his sacrifice lay dead at sea."
 
+        stop effect fadeout 3.0
         show BG nightdeck3 with dissolve
+
+        "Avoiding the sounds of gunshots and clashing swords I’m able to get to the poop deck undetected."
+
+        "If I make it out of this, Two Hands can have any of my sweets for the rest of the year."
+
+        "The rest of my life, if he makes it back too."
+
+        "There’s a pile of bodies stacked up by the wheel with one person sitting up against it."
+
+        "The figure is struggling to hold their gun straight."
+
+        mc "Captain is that you?"
+
+        show captain with dissolve
+
+        "One, two, five, how many bodies are there?"
+
+        "All these pirates flocked to the wheel?"
+
+        mc "Did you kill them all Captain?"
+
+        if player_identity == "f":
+            Cap "Aye lass it’s me. And I did."
+        else:
+            Cap "Aye lad it’s me. And I did."
+
+        Cap "Looks like they got the jump on us aye?"
+
+        play effect "audio/cough.ogg"
+        pause 5.25
+
+        mc "You’ve been shot!"
+
+        "Multiple holes and lashes all over his body as if he jumped on an entire army."
+
+        "His coat is soaked in blood and most of it looks like his. I don’t know if he’s gonna make it."
+
+        mc "Captain hang on, Two Hands will be here soon and we’ll finish this."
+
+        Cap "Aye don’t think so matey. At least six men got past me, well armed too."
+
+        Cap "I’m afraid Two Hands is as good as gone. Unless he found some more hands?"
+
+        Cap "Har har haaaa!"
+        play effect "audio/cough2.ogg"
+        pause 3.25
+
+        mc "Captain, what do you do? What should I do?"
+
+        Cap "It appears like arrr sun is setting."
+
+        Cap "The Red Plague will not see the calm after this storm."
+
+        mc "This can’t be how it ends Captain. We can keep fighting!"
+
+        Cap "[player_name] look at me!"
+
+        Cap " Look at me my child!"
+
+        Cap "This is the end for me, for the Plague. But this ain't where yer story ends."
+
+        Cap "Look behind me. Take it and go."
+
+        show BG nightdeck3 at zoom
+        hide captain
+        mc "A dingy"
+
+        show BG nightdeck3 at redo with ease
+        show captain
+
+        Cap "Take it and go [player_name]."
+        play effect "audio/cough2.ogg"
+        pause 3.25
+
+        Cap "There ain't much time left. Keep the legend alive."
+
+        Cap "Become the pirate ye were born te be."
+
+        "The wind is stirring up the smoke. It’s only a matter of time before the ship meets its end."
+
+        "If I stay I’ll either be roasted by the flames or buried under the sea floor."
+
+        mc "Captain come with me, we can escape tog-"
+        play effect "audio/thunder.ogg"
+        show BG nightdeck3 with flash_lighting
+        Cap "Ar Ye Daft?!"
+
+        Cap "A Captain goes down with his ship! Ye know that by now!"
+
+        Cap "Besides, I’ll be dead weight before ye hit the water."
+
+        Cap "Go [player_name], live, I believe ye."
+
+        mc "Captain I can’t go, I just-"
+
+        p "Over here! I hear'em."
+
+        p "Get to the helm now!"
+
+        Cap "I’m not asking ye. This is an order."
+
+        Cap "Go now!"
+
+        mc "Aye Captain. I’ll go."
+
+        mc "It was an honor serving in your crew. Thank you for everything Father,"
+
+        mc "you’ll be with Mother soon-"
+
+        Cap "… … … … …"
+
+        mc "Farewell Captain. May you torment the Underworld for eternity."
+
+        hide sword # incase its still there in some cases or my save skumming is catching up
+
+        hide captain with dissolve
+        show BG black with dissolve
+        play effect "audio/splash.ogg"
+
+        show BG escape with dissolve
+        play effect "audio/fire.ogg" loop volume 5.0
+        pause 5.0
+
+        "A pirate’s dream of absolute freedom only dies when they are all good and dead. Every ounce of gunpowder or barrel of cannonballs couldn't kill this dream."
+
+        "Some broken planks and burnt sails are just that. Nothing more than trash to let me engulf by the sea."
+
+        play effect "audio/thunder.ogg"
+        show BG escape with flash_lighting
+
+        "Nothing stays where you left it. But isn't that exciting?"
+
+        pause 10.0
+
+        show BG black with dissolve
+        jump act1_5
 
 return

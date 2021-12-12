@@ -3,7 +3,7 @@ label act1_2:
     th "Land Ho!"
 
     if content_check == 0:
-        play sound "audio/bookclose.wav"
+        play effect "audio/bookclose.wav"
 
         MC "The rest of this book is probably going to be barnacles. Maybe I do need new books."
 
@@ -13,7 +13,7 @@ label act1_2:
         MC "May have not been the cure my shoulders were looking for, but that still felt good."
 
     else:
-        play sound "audio/crysniff2.wav" volume .5
+        play effect "audio/crysniff2.wav" volume .5
 
         MC "Get it together, you're a pirate not a swabbie."
 
@@ -80,7 +80,7 @@ label act1_2:
 
     "It would be amazing if I could meet them. The Captain wouldn’t mind me looking through his trash, especially if he didn’t look at it."
 
-    play sound "audio/letteropen.wav"
+    play effect "audio/letteropen.wav"
 
     "The outside may have been crude, but the handwriting is beautiful. Compared to my sea scratch it almost looks printed."
 
@@ -118,7 +118,7 @@ label act1_2:
     scene BG harbor with fade
     show crowd with dissolve
     stop music fadeout 2.0
-    play sound "audio/chattering.mp3" fadeout 2.0
+    play effect "audio/chattering.mp3" fadeout 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
 
@@ -177,7 +177,7 @@ label act1_2:
     MC "Ha ha ha ha hargh!"
 
     hide crowd with dissolve
-    stop sound fadeout 2.0
+    stop effect fadeout 2.0
     define activity_choice = "default"
     "Alright, that's enough walking. Where should I go?"
 
@@ -208,7 +208,7 @@ label act1_2:
         MC "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
         $ quick_menu = True
 
-        stop sound fadeout 2.0
+        stop effect fadeout 2.0
 
         scene BG bstore with fade
         pause 2.0
@@ -289,7 +289,7 @@ label act1_2:
 
                 "That sounds interesting, although, if they get mythos wrong will that make me mad? I’ll read the first chapter, see how it makes me feel."
 
-                play sound "audio/pages.wav"
+                play effect "audio/pages.wav"
 
                 with fade
 
@@ -355,7 +355,7 @@ label act1_2:
 
                 "I’ll read the first chapter, see what I think."
 
-                play sound "audio/pages.wav"
+                play effect "audio/pages.wav"
 
                 with fade
 
@@ -419,14 +419,14 @@ label act1_2:
 
                 "That’s a strange total."
 
-                play sound "audio/pages.wav"
+                play effect "audio/pages.wav"
                 "\"How do pirates like to communicate?\""
 
                 "\"Aye to aye!\""
 
                 "I don’t get it."
 
-                play sound "audio/pages.wav"
+                play effect "audio/pages.wav"
                 "\"What’s a pirate’s favorite fish?\""
 
                 "Personally I like tuna the best."
@@ -437,9 +437,9 @@ label act1_2:
 
                 "Wouldn’t other people call them Marlins? These are just so bad I can’t take it."
 
-                play sound "audio/pages.wav"
-                play sound "audio/pages.wav" # play mutliple times for comedy
-                play sound "audio/pages.wav"
+                play effect "audio/pages.wav"
+                play effect "audio/pages.wav" # play mutliple times for comedy
+                play effect "audio/pages.wav"
 
                 with fade
 
@@ -514,7 +514,7 @@ label act1_2:
 
                 "The prologue is close to eighty pages. I feel an info dump coming up."
 
-                play sound "audio/pages.wav"
+                play effect "audio/pages.wav"
 
                 with fade
 
@@ -590,9 +590,9 @@ label act1_2:
         scene BG market with fade
         pause 2.0
 
-        stop sound fadeout 2.0
+        stop effect fadeout 2.0
         show crowd at center with dissolve
-        play sound "audio/chattering.mp3" fadeout 2.0
+        play effect "audio/chattering.mp3" fadeout 2.0
 
         "A few business buildings widen away from each other to reveal a brick path. There's a whole side street with tons of vendors lined up."
 
@@ -615,11 +615,11 @@ label act1_2:
         "I thought the mainlanders were more sanitary. With all this business, they wouldn’t miss one apple."
 
         with fade
-        play sound "audio/swipe.mp3"
+        play effect "audio/swipe.mp3"
 
         MC "Like swiping gold from a drunk."
 
-        play sound "audio/apple3.wav"
+        play effect "audio/apple3.wav"
         $ food_check = 1
 
         "There’s a bench with nobody sitting there. Relaxing and eating while listening to other conversations could be a benefit."
@@ -659,7 +659,7 @@ label act1_2:
         cr "...with his feet over his head he split open both coconuts with his thighs."
 
         "What!?"
-        play sound "audio/apple3.wav"
+        play effect "audio/apple3.wav"
 
         "I should leave before I start asking questions I don’t want the answers to."
 
@@ -763,7 +763,7 @@ label act1_2:
 
         "If gaming happens here, then why not call it a street."
 
-        play sound "audio/entrybeep.mp3"
+        play effect "audio/entrybeep.mp3"
 
         "The inside is illuminated by multicolored lights on the floors and ceiling. Layers of large machines with screens are backed up against the walls."
 
@@ -797,7 +797,7 @@ label act1_2:
 
         bt "I see, well here. Have a game on me. You put one of these into the machine and follow the directions."
 
-        play sound "audio/coin.mp3"
+        play effect "audio/coin.mp3"
 
         "He flicks a coin in my direction from his thumb."
 
@@ -825,14 +825,14 @@ label act1_2:
 
                 "Seems simple enough, hopefully easy to play."
 
-                play sound "audio/flyguy.mp3"
+                play effect "audio/flyguy.mp3"
                 "..."
 
                 scene BG black
                 scene ar with fade
                 $ game_played = "Fly Guy"
 
-                play sound "audio/boom.ogg"
+                play effect "audio/boom.ogg"
                 "That couldn’t have lasted longer than five minutes."
 
                 "I was shooting the little creatures pretty consistently until they overwhelmed me. They gave me three lives but the enemies didn’t reset at all and killed me the second I was back on the screen."
@@ -859,7 +859,7 @@ label act1_2:
 
                 "Let's see if it has more cool songs."
 
-                play sound "audio/monkey.mp3"
+                play effect "audio/monkey.mp3"
 
                 "..."
 
@@ -867,7 +867,7 @@ label act1_2:
                 scene ar with fade
                 $ game_played = "Monkey 2"
 
-                play sound "audio/monkeyded.ogg"
+                play effect "audio/monkeyded.ogg"
                 "That was amazingly ridiculous!"
 
                 "No idea what was happening, but it was amazing. Monkeys kept falling down from the top of the screen and hitting buttons randomly seemingly did nothing."
@@ -892,7 +892,7 @@ label act1_2:
 
                 "I don’t have any previous experience, my preconceived notions are being challenged as my character swings their sword in between enemies spousing meaty dialogue at me."
 
-                play sound "audio/dino.mp3"
+                play effect "audio/dino.mp3"
 
                 "..."
 
@@ -900,7 +900,7 @@ label act1_2:
                 scene ar with fade
                 $ game_played = "Dino Mission"
 
-                play sound "audio/dinoded.ogg"
+                play effect "audio/dinoded.ogg"
                 "It feels as if an hour has flown by."
 
                 "The game flashes {color=#D91400}\"Game Over\"{/color} in blood red English with an ominous sound playing. The gameplay wasn’t the most captivating, but it sucked me in so well without me noticing."

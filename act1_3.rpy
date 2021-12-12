@@ -7,7 +7,7 @@
     # I got to do a REAL job of going through an labeling where to put expression images
     # maybe do when they're done
 
-    play sound "audio/chattering.mp3"
+    play effect "audio/chattering.mp3"
     show crowd at center with dissolve
 
     "Found it!"
@@ -27,7 +27,7 @@
     "You’d think they’d be put into weight groups so the bigger ones don’t demolish the tiny children."
 
     with fade
-    stop sound fadeout 2.0
+    stop effect fadeout 2.0
     hide crowd with dissolve
 
     "Standing alone on the sidewalk, it takes about fifteen minutes for the clumps of students and faculty to disperse."
@@ -247,7 +247,7 @@
 
         label classrooom_one:
 
-            play sound "audio/doorclose.ogg"
+            play effect "audio/doorclose.ogg"
             scene BG cr with fade
 
             "The door opens to a barren classroom with no more than eight people in it."
@@ -630,7 +630,7 @@
 
                 b "However, your ship is often recorded as the reason for lost products publicly for some companies. I wonder why there’s only a few?"
 
-                MC "Thats so great. It sounds wrong, but just true enough to keep the mythos alive."
+                MC "Thats so great. It feels wrong, but just true enough to keep the mythos alive."
 
                 b "Yeah it’s pretty cool, I wish there was more info though."
 
@@ -1163,7 +1163,7 @@
 
                     g "Hit me."
 
-                    play sound "audio/pages.wav"
+                    play effect "audio/pages.wav"
                     MC "\"Why is pirating so addictive?\""
 
                     g "The free oppium?"
@@ -1180,7 +1180,7 @@
 
                     MC "Exactly."
 
-                    play sound "audio/pages.wav"
+                    play effect "audio/pages.wav"
                     MC "Can you explain this one to me? I don't get it."
 
                     g "Yeah sure what’s it say?"
@@ -1282,17 +1282,17 @@
 
                     show ds at ds_slide
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
-                    play sound "audio/laser1.wav"
-                    play sound "audio/laser1.wav"
+                    play effect "audio/laser1.wav"
+                    play effect "audio/laser1.wav"
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
 
-                    play sound "audio/laser2.wav"
-                    play sound "audio/laser1.wav"
-                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they sound so mad?"
+                    play effect "audio/laser2.wav"
+                    play effect "audio/laser1.wav"
+                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are yelling ay me?"
 
-                    play sound "audio/laser2.wav"
-                    play sound "audio/laser2.wav"
+                    play effect "audio/laser2.wav"
+                    play effect "audio/laser2.wav"
                     "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
 
                     hide ds with moveoutbottom
@@ -1338,17 +1338,17 @@
 
                     show ds at ds_slide
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
-                    play sound "audio/laser1.wav"
-                    play sound "audio/laser1.wav"
+                    play effect "audio/laser1.wav"
+                    play effect "audio/laser1.wav"
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
 
-                    play sound "audio/laser2.wav"
-                    play sound "audio/laser1.wav"
-                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they sound so mad?"
+                    play effect "audio/laser2.wav"
+                    play effect "audio/laser1.wav"
+                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are screaming at me?"
 
-                    play sound "audio/laser2.wav"
-                    play sound "audio/laser2.wav"
+                    play effect "audio/laser2.wav"
+                    play effect "audio/laser2.wav"
                     "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
 
                     hide ds with moveoutbottom
@@ -1626,7 +1626,7 @@
 
                     "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    play sound "audio/flush.ogg"
+                    play effect "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1684,7 +1684,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    play sound "audio/flush.ogg"
+                    play effect "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1744,7 +1744,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    play sound "audio/flush.ogg"
+                    play effect "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1776,7 +1776,7 @@
 
                     "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    play sound "audio/flush.ogg"
+                    play effect "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1828,7 +1828,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    play sound "audio/flush.ogg"
+                    play effect "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -1886,7 +1886,7 @@
 
                     "If this is what all washrooms are like on land then I shall remember them fondly."
 
-                    play sound "audio/flush.ogg"
+                    play effect "audio/flush.ogg"
                     scene BG hw with fade
                     scene BG cr with fade
                     jump classroom_choice
@@ -2293,7 +2293,7 @@
 
             hide a_d with moveoutleft
             ev "{cps=35}GO NOW, QUICKLY!{/cps}"
-            play sound "audio/crash.mp3"
+            play effect "audio/crash.mp3"
 
             MC "Alright I’m gone! Fare thee well mateys!"
 

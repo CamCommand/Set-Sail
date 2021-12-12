@@ -327,7 +327,7 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Controls") action ShowMenu("controls")
+            textbutton _("Controls") action ShowMenu("help")
 
         textbutton _("About") action ShowMenu("about")
 
@@ -829,9 +829,15 @@ screen preferences():
                         hbox:
                             bar value Preference("music volume")
 
+                    if config.has_voice:
+                        label _("Sound Effect Volume")
+
+                        hbox:
+                            bar value Preference("voice volume")
+
                     if config.has_sound:
 
-                        label _("Sound/Character Volume")
+                        label _("Character Volume")
 
                         hbox:
                             bar value Preference("sound volume")
