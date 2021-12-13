@@ -154,7 +154,7 @@ label act1_2:
     scene BG black with fade
     scene BG bogwalk with fade
 
-    "I'm at some kind of bog now? Sort of wandered away from where all the shops and people were."
+    "I'm at some kind of bog now? No, it's by the sea so it's a marsh. Accidentally wandered away from where all the shops and people were."
 
     "That was all really interesting to see! It feels so weird to taking it all in like that."
 

@@ -177,6 +177,8 @@ image BG nightdeck1 = "background/nightdeck1.png"
 image BG nightdeck2 = "background/nightdeck2.png"
 image BG nightdeck3 = "background/nightdeck3.png"
 image BG escape = "background/dingy.png"
+image BG shore = "background/shore_after.png"
+image BG shore_sword = "background/shore_after_sword.png"
 
 # Other characters images
 image twohands = "TwoHands.png"
@@ -205,6 +207,8 @@ image pirate6 = "pirate 6.png"
 image pirate6 slash = "pirate 66.png"
 image pirate7 = "pirate 7.png"
 image pirate7 slash = "pirate 77.png"
+image pirate8 = "pirate 8.png"
+image pirate8 slash = "pirate 88.png"
 
 # Menu Music
 define config.game_menu_music = "music/BelowDeck.mp3"

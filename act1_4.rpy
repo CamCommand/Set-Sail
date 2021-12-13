@@ -722,7 +722,7 @@ label ship_start:
 
         "Our crimes have come back to damn us like a vengeful revenant."
 
-        show pirate7 with dissolve
+        show pirate8 with dissolve
 
         p "Ye-"
 
@@ -732,14 +732,14 @@ label ship_start:
         play effect "audio/sword_swing.mp3"
 
         show BG nightdeck2 with flash
-        show pirate7 slash at wiggle
+        show pirate8 slash at wiggle
 
         show sword at sword with ease
-        hide pirate7 slash with dissolve
+        hide pirate8 slash with dissolve
 
         th "[player_name] behind ye!"
 
-        show pirate7 at left with dissolve
+        show pirate8 at left with dissolve
 
         show sword swing at sword with ease
         play effect "audio/sword_clash.ogg"
@@ -749,10 +749,10 @@ label ship_start:
         show sword swing at sword with ease
         play effect "audio/sword_swing.mp3"
         show BG nightdeck2 with flash
-        show pirate7 slash with dissolve
+        show pirate8 slash with dissolve
 
         show sword at sword with ease
-        hide pirate7 slash with dissolve
+        hide pirate8 slash with dissolve
 
         mc "Two Hands! Are you alright?"
 
