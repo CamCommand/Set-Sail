@@ -170,6 +170,7 @@ label ship_start:
     label pirate_fight2:
 
         $ quick_menu = False
+        define notded = dying[rand2]
         if matey >= 2 and matey != 4:
 
             if x_naut == 0:
