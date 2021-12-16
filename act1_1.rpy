@@ -199,7 +199,7 @@
 
             th "[player_name] get yerr ass out from whatever gutter ye hiding under."
 
-            $ pirate = "ol'Two Hands"
+            $ pirate = "Ol'Two Hands"
             "I think that’s [pirate] calling for me. I’m pretty sure I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
 
             "I’ll grab my bristoles and brush my teeth and hair. A delayed head rush from springing up too fast numbs me momentarily."
@@ -228,7 +228,7 @@
             stop music fadeout 3.0
             with dissolve
             scene BG deckview with dissolve
-            show twohands at left
+            show twohands angry at centerleft
             show captain at right
 
             "Blinding heavenly light engulfs my face as I surface above deck. Men and women working hard, or at least pretending to while The Demonic Pirate Ricardo is watching."
@@ -244,8 +244,9 @@
             "Captain slowly turned around to look at me. His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from Ol’ Two Hands."
 
             "Stepping closer to Two Hands his face, he looks really annoyed."
-            show captain with dissolve:# stepping to Flavio
-                xpos 1500
+
+            show captain at centerright with moveinright
+            show twohands scared with ease
 
             Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog."
 
@@ -263,13 +264,13 @@
 
             Cap "Aye agree. So if I hear ye flagging a false alarm on me ship again I’ll have Quartermaster Flavio give you [player_name]’s jobs for thee rest of thee week!"
 
-            th "Aye Aye Captain"
+            th "Aye Captain! Aye Captain!"
 
             Cap "Now get lost ye scurvy dog!"
 
-            hide twohands with moveoutleft
+            show twohands scared flip with ease
+            hide twohands scared flip with moveoutleft
             show captain at center with move
-            # if I need transition help later https://www.renpy.org/doc/html/transitions.html?highlight=transitions#var-move
 
             "Nobody in line of sight has been on this ship as long as I have. Of the Captain’s {i}Demon Moments{/i}, this wasn’t that bad, but I haven’t flinched during one of them since I was sixteen."
 
