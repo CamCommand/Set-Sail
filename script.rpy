@@ -1,11 +1,16 @@
 ﻿# Cameron Drummond 2021
 
-
 init python:
 
     def voice(event, **kwargs):# voice for MC
         if event == "show":
             renpy.music.play("audio/blip1.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+    def may_voice(event, **kwargs):# voice for May
+        if event == "show":
+            renpy.music.play("audio/blip15.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
@@ -87,6 +92,19 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    def hobo_voice(event, **kwargs):# voice for hob lady
+        if event == "show":
+            renpy.music.play("audio/blip13.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+
+    def crowd_voice(event, **kwargs):# voice for crowd
+        if event == "show":
+            renpy.music.play("audio/blip14.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
     # USE this for sound effects bc voices play over them
     renpy.music.register_channel("effect","voice", loop = False, tight=True)
 
@@ -123,7 +141,7 @@ define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)            
 define g = Character('Geraldine', color="#F0CD00", callback=g_voice)                 # Geraldine
 define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True) # Astird
 define b = Character('Behati', color="#5E0F60", callback=b_voice)                    # Behati
-define m = Character('May', color="#0A4AF6")                                         # May
+define m = Character('May', color="#0A4AF6",  callback=may_voice)                    # May
 define n = nvl_narrator                                                              # Narrator
 define ev = Character('Everyone', color="#000000", callback=Crashsound_test)         # Everyone at once
 
@@ -139,11 +157,12 @@ define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF")
 define Cap = Character('Captain', color="#7F0505", callback=caps_voice)                                     # The Demonic Pirate Ricardo AKA Captain
 define fla = Character('Flavio', color="#BB64F2", who_outlines=[ (1, "#000000") ], callback=fl_voice)       # sir Flavio
 define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # Librarian
-define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ])                        # crowd of people
+define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ], callback=crowd_voice)  # crowd of people
 define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)                                   # woman at market
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)                                     # bartender at arcade
 define jj = Character('JoeJoe', color = "#0015BC", callback=jj_voice)                                       # JoeJoe
-define p = Character('Enemy Pirate', color = "#0015BC", callback=pirate_voice)
+define p = Character('Enemy Pirate', color = "#0015BC", callback=pirate_voice)                              # attacking Pirates
+define dl = Character('Lady', color = "#740E86", callback=hobo_voice)                                       # Doll the hobo
 
 # Affinity of main characters
 default Fi_affinity = 0
@@ -179,19 +198,39 @@ image BG nightdeck3 = "background/nightdeck3.png"
 image BG escape = "background/dingy.png"
 image BG shore = "background/shore_after.png"
 image BG shore_sword = "background/shore_after_sword.png"
+image BG streetpost = "background/streetpost.png"
+image BG schoolpost = "background/schoolpost.png"
+image BG dollcorner = "background/dollcorner.png"
+image BG signcorner = "background/signcorner.png"
+image BG nobook = "background/nobook.png"
+image BG insidestore = "background/insidestore.png"
 
 # Other characters images
-image twohands = "TwoHands.png"
+image twohands = "ol_ two hands neutral.png"
+image twohands angry = "ol_ two hands angry.png"
+image twohands angry dark = "ol_ two hands angry dark.png"
+image twohands angry flip = im.Flip("images/ol_ two hands angry.png", horizontal="True") # flipped image to run out left
+image twohands angry dark flip = im.Flip("images/ol_ two hands angry dark.png", horizontal="True")
+image twohands scared = "ol_ two hands scared.png"
+image twohands scared dark = "ol_ two hands scared dark.png"
+image twohands scared flip = im.Flip("images/ol_ two hands scared.png", horizontal="True") # flipped image to run out left
+image twohands sweaty = "ol_ two hands sweaty.png"
+image twohands sweaty dark = "ol_ two hands sweaty dark.png"
+
+image flavio = "flavio neutral.png"
+image flavio scared = "flavio horrified dark.png"
+
 image captain = "captain.png"
-image fla = "flavio.png"
 image lib = "lady.png"
 image bartender = "bt1.png"
 image mm = "momlady.png"
 image ds = "3ds.png"
 image crowd = "crowd.png"
+image doll = "doll.png"
 
 image sword = "sword1.png"
 image sword swing = "sword2.png"
+image tome = "tome.png"
 
 image pirate1 = "pirate 1.png"
 image pirate1 slash = "pirate 11.png"
@@ -239,6 +278,7 @@ label start:
     # size of namebox on the left side of screen
     define gui.namebox_width = 800
     define gui.namebox_height = 100
+    #define gui.namebox_borders = Borders(5, 5, 5, 5)
 
     # use of namebox
     define gui.namebox_borders = Borders(15, 7, 15, 7)

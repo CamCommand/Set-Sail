@@ -138,7 +138,7 @@ label act1_5:
 
             "It wouldn’t seem clean to dry one off from the ground. Maybe an anti-anti-vaxx shop could give me one."
 
-            # scene transition
+            show BG dollcorner with dissolve
 
             jump mask
 
@@ -152,7 +152,7 @@ label act1_5:
 
             "I’ll stick to the stronger side of the animal fights."
 
-            # scene transition
+            show BG signcorner with dissolve
 
             jump nomask
 
@@ -167,6 +167,8 @@ label act1_5:
             "Getting one off the ground would defeat the medical purpose of one."
 
             "Maybe an anti-anti-vaxx shop could give me one."
+
+            show BG dollcorner with dissolve
 
             jump mask
 
@@ -199,7 +201,7 @@ label act1_5:
 
         dl "Oh really now? I was just playing."
 
-        dl "Yeah kid there was a big sick, thee ol’ black plague part 2, a crippling pandemic."
+        dl "Yeah kid there was a big sick, thee ol’ black plague part 2, a crippling pandemic if you will."
 
         dl "No pun intended or somethin’."
 
@@ -220,7 +222,7 @@ label act1_5:
 
         dl "One second sweetheart."
 
-        #show doll at wiggle with her backpack
+        show doll at wiggle
 
         "Doll swings her backpack around to her stomach and opens it up. She pulls out a plastic sealed white mask."
 
@@ -410,6 +412,12 @@ label act1_5:
 
                     hide m_d with dissolve
 
+                    "That’s my cue to leave."
+
+                    "They aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+
+                    "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
+
                 "I'm a teacher":
 
                     mc "I’m a teacher here, who are you?"
@@ -450,6 +458,12 @@ label act1_5:
                     m "Maybe we’ll be coworkers. See you soon."
 
                     hide m_d with dissolve
+
+                    "That’s my cue to leave."
+
+                    "They aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+
+                    "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
 
                 "Flip it on her":
 
@@ -544,11 +558,11 @@ label act1_5:
 
                     hide m_d with dissolve
 
-                "That’s my cue to leave."
+                    "That’s my cue to leave."
 
-                "They aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+                    "They aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
 
-                "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
+                    "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
 
         else:
 
@@ -572,12 +586,331 @@ label act1_5:
 
                     jump market2
 
+        jump post_choice1
 
     label bookstore2:
+
+        "I’ll return to the bookstore!"
+
+        "If I’ve learned anything else about this world that wasn’t from pirates, it was from books."
+
+        "Even what a bookstore actually was from the labels on the spines of my first few volumes."
+
+        if activity_choice == "bookstore":
+
+            show BG nobook with dissolve
+
+            "That’s where I went first, I met that librarian who let me steal that book."
+
+            "Or did I just steal by myself alone?"
+
+            "What was her name? Yomo? Yacko?"
+
+            "Either way, the answer’s I’m looking for could be there. Maybe a clue to the next step of my journey?"
+
+            "Who knows? Maybe there will be clean clothes if luck will spare some."
+
+            show BG nobook with dissolve
+
+            "This can’t be it."
+
+            "There’s nothing here, the sign and books are gone. It can’t be closed."
+
+            "All the closed businesses look alike, but the faded remains of the shop’s raven logo are too familiar."
+
+            "A peek inside shows the shelves have been stripped clean of their contents. Thick layers of dust indicate it’s been closed for a long time now."
+
+            mc "Damn it all, this can’t be it!"
+
+            "Is this COVID’s doing?"
+
+            play effect "audio/banging.ogg" loop
+
+            "If I was to find it closed down, what is there to discover? There’s no way the door could be-"
+
+            stop effect
+            play effect "audio/dooropen.ogg"
+
+            mc "Well, that’ll do the trick."
+
+            show BG insidestore with dissolve
+
+            "My view from the windows shielded my nose from the unknown stench that now lives in the abandoned building."
+
+            "Dust mixes horribly with wet sewage dripping from pipes pooling on the floor. Puddles of the liquid find dips on the ground all throughout the store."
+
+            "The only illumination comes from the sun barely sneaking behind the clouds, leaking through the windows."
+
+            mc "There’s nothing left."
+
+            "The sanded wood panels that once held such amazing works of literature have been lost to the darkness."
+
+            mc "Except..."
+
+            "What is this doing here?"
+
+            show tome at bottom with dissolve
+
+            define tome_choice = 1
+
+            "How could something so large be left behind?"
+
+            $ may_name = "Girl Voice"
+            m "Excuse me, who’s in here?"
+
+            $ may_position = "theif"
+
+            "Oh barnacles!"
+
+            "Do old buildings still count as trespassing? This could get bad."
+
+            m "I saw you go in here. This place looks empty as Hell, not much to steal."
+
+            "She’s right, there’s nothing in here."
+
+            "She doesn’t sound hostile. How should I approach this?"
+
+            hide tome with ease
+
+            jump choice_emptystore
+
+        else:
+
+            mc "Wait!"
+
+            "I don’t remember actually going in there at all."
+
+            "There was a long walk before heading to the school, but entering the bookstore never happened. I just walked past it."
+
+            if activity_choice == "school":
+
+                "Making my way towards the club might be the best course of action. The girls could still be there, or they need my help."
+
+                "Whatever is thrown at me can be handled, as long as I stay focused."
+
+                jump school2
+
+            elif activity_choice == "arcade":
+
+                "Instead, I chose to go to the arcade first then found my way to the school."
+
+                "I’ll run back there, something relevant to my journey has to appear there. If not, then I’m sleeping on a bench tonight."
+
+                jump arcade2
+
+            else:
+
+                "Instead, I chose to go to the market first then found my way to the school."
+
+                "I’ll run back there, something relevant to my journey has to appear there. If not, then I’m sleeping on a bench tonight."
+
+                jump market2
+
+label choice_emptystore:
+
+    menu:
+
+        "Engage":
+
+            jump engage
+
+        "Hide":
+
+            jump hideing
+
+        "The book" if tome_choice == 1:
+
+            jump ARG
+
+    label engage:
+
+        $ quick_menu = False
+
+        "Let’s try to diffuse the situation. Talking my way out of stealing nothing shouldn’t be hard."
+
+        $ quick_menu = True
+
+        mc "Hello, yes you caught me."
+
+        mc "But nothing is happening. Could I just leave now?"
+
+        show m_d with dissolve
+        "Revealing myself to the voice, a tall woman is standing in the doorway."
+
+        "She looks exacerbated by something she was doing previously."
+
+        "None of her clothing indicated she is of an authority, but the lighting hides the possibility of a weapon."
+
+        m "There doesn’t seem to be anything here worth taking or am I just late to the party?"
+
+        mc "No, there’s nothing here."
+
+        mc "I visited this store a long time ago and was just sad to see it gone."
+
+        m "I see. So I’m guessing they aren’t hiring?"
+
+        mc "Afraid not."
+
+        m "Well, if there’s nothing here then I don’t know why I’m here."
+
+        m "Wait a second…"
+
+        show m_d at centerleft with moveinleft
+        play effect "audio/metalcrash.ogg"
+        "The woman moves behind the counter and starts hitting the rusty register with some metal pole."
+
+        mc "What are you doing?"
+
+        m "Checking for some chump change."
+
+        m "If you ain't stealing nothing then I’m gonna try."
+
+        mc "Not that it looks like it’s going to open, but why would they leave any money in there?"
+
+        m "Not looking to win the lottery. But a cup of coffee sounds nice."
+
+        "She raises the pole over her head and smashes the top of the machine with it. From the smile on her face it must have cracked open."
+
+        m "Aaaaaaaaand that’s a buck fifty."
+
+        m "See? You don’t know till you break it."
+
+        mc "You wouldn’t happen to want to split that with me would you?"
+
+        m "And why would I do that?"
+
+        mc "Because I’m an accomplice?"
+
+        m "That’s right, you’re associated with the crime of the century."
+
+        m "Best be paid off before you turn me in for this heinous crime."
+
+        mc "Really? That’d be great!"
+
+        m "Afraid not sweetie."
+
+        hide m_d with dissolve
+
+        mc "What a weird lady. Can’t believe I didn’t check the register myself though."
+
+        mc "That cup of coffee could have been mine."
+
+        "Lost opportunity aside, there doesn’t seem to be a reason to hang around any longer."
+
+        "If that was the authorities I would have had nothing to go off of."
+
+        "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood around the shore somewhere."
+
+        jump post_choice1
+
+    label hiding:
+
+        $ quick_menu = False
+
+        "I should lay low. That was the original plan, right?"
+
+        $ quick_menu = True
+
+        m "{cps=20}Heeeeelloooooooooo?{/cps}"
+
+        m "Unless you weasled your way into a crack in the wall I saw you come in here."
+
+        m "No? Oh well, more for me."
+
+        "Footsteps go along the front of the store but stop by the counter."
+
+        "Everything is silent, did she find m-"
+
+        play effect "audio/metalcrash.ogg" loop
+
+        "What is she doing!?"
+        pause 1.5
+        stop effect
+
+        m "Ha ha!"
+
+        m "Easy money comes to those with the brains to harness it."
+
+        "The rushed body quickly exits the building without another word."
+
+        "I’m lucky that it was some lunatic instead of a police officer or something."
+
+        "Did she say easy money? Was there cash in here all along?"
+
+        "On the counter there’s a busted metal box I didn’t notice before."
+
+        "That must have been a secret treasure chest of some kind. There could have been thousands in this, it's so large."
+
+        "That woman stole what Poseidon laid out for me to find, damn it all!"
+
+        "I should just leave before I squander another opportunity."
+
+        "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood around the shore somewhere."
+
+        jump post_choice1
+
+    label ARG:
+
+        $ quick_menu = False
+        define tome_title = "KeyError: FileCannotParse"
+
+        "What about that book? Why was this book left behind?"
+
+        $ quick_menu = True
+
+        "Calling it a book might not be appropriate."
+
+        "It’s a dark purple like I’ve never seen before for a cover. Leathery like older books, it’s more like a tome."
+
+        "t’s pages are wrinkly yet it’s as heavy as a cannonball."
+
+        "And there's no title or author on the cover or spine."
+
+        "I can’t date it, how old is this thing?"
+
+        "Should I even open it?"
+
+        menu:
+
+            "Open it":
+
+                $ quick_menu = False
+
+                mc "Now I’m too curious. Could this be an ancient Greek tome?"
+
+                $ quick_menu = True
+
+                mc "[tome_title]."
+                #open file and read line per line while inserting “”-lower the brightness of BG to match the length of reading it
+
+                ""
+
+                return
+
+            "Leave it":
+
+                $ quick_menu = False
+
+                "No, I don’t think so. I have to make sure this voice doesn’t get me in trouble."
+
+                $ quick_menu = True
+
+                "This book is obviously cursed or something awfully evil."
+
+                "Not like reading some ruined old book will get me a meal tonight."
+
+                "Even Poseidon would have picked something more obviously helpful."
+
+                jump choice_emptystore
 
     label market2:
 
     label arcade2:
 
+    label post_choice1:
+
+        #have if prepared for if May hangs out
+
+        "testing hoes"
 
 return

@@ -169,6 +169,10 @@ label ship_start:
 
     label pirate_fight2:
 
+        # list of respones between slashes
+        define dying = ["I have to thin their numbers or I'll be turned into drift wood.", "Need to take'em out!", "I should avoid being dog piled.", "I have to cut their numbers down for everyone's sake."]
+        define rand2 = renpy.random.randint(0, 3)
+
         $ quick_menu = False
         define notded = dying[rand2]
         if matey >= 2 and matey != 4:
@@ -351,13 +355,13 @@ label ship_start:
         show pirate4 at center with dissolve# change this pirate
         p "Say a prayer sea dog!"
 
-        show fla at leftbottom with dissolve
+        show flavio scared at leftbottom with dissolve
 
         fla "No wait I-"
 
         play effect "audio/bam.ogg"
         show BG nightdeck2 with flash
-        show fla with ease: # Flavio gets shot off screen
+        show flavio scared with ease: # Flavio gets shot off screen
             xpos -1000 ypos 2000
 
         mc "{cps=10}Flavio!{/cps}"
@@ -367,10 +371,6 @@ label ship_start:
         jump pirate_fight3
 
     label pirate_fight3:
-
-        # list of respones between slashes
-        define dying = ["I have to thin their numbers or I'll be turned into drift wood.", "Need to take'em out!", "I should avoid being dog piled.", "I have to cut their numbers down for everyone's sake."]
-        $ rand2 = renpy.random.randint(0, 3)
 
         $ quick_menu = False
 
@@ -755,17 +755,19 @@ label ship_start:
         show sword at sword with ease
         hide pirate8 slash with dissolve
 
+        hide sword with ease
+        show twohands scared dark with dissolve
+
         mc "Two Hands! Are you alright?"
 
         mc "Have both your hands? Where’s the Captain?"
-
-        hide sword with ease
-        show twohands with dissolve
 
         if player_identity == "f":
             th "Aye lass I’ll live a little longer!"
         else:
             th "Aye lad I’ll live a little longer!"
+
+        show twohands sweaty dark with ease
 
         th "Both claws intact as you can see."
 
@@ -774,6 +776,8 @@ label ship_start:
         mc "Is anyone else still fighting? Who’s alive?"
 
         th "Arrrrrrggghh."
+
+        show twohands dark with ease
 
         th "I’ve seen more corpses den pirates now. I don’t know whos still kicking."
 
@@ -786,12 +790,26 @@ label ship_start:
         else:
             th "Aye lad, I’ll clear the way of remaining renegades."
 
+        show twohands angry dark with ease
+
         th "Time to take our ship back."
 
-        mc "Thank you Two Hands. I will."
+        mc "Let me help."
 
+        th "Not on yer life!"
+
+        th "Help thee Captain and steer us outta dis storm."
+
+        mc "You can't tell me what to do!"
+
+        th "Aye, I'm telling ye now!"
+
+        show twohands angry dark flip with ease
         th "Fight me you cowards!"
-        hide twohands with moveoutleft
+
+        mc "Thank you Hans"
+
+        hide twohands angry dark flip with moveoutleft
         th "Arrrrrgh!"
 
         "Without a shred of hesitation, Two Hands rushes on ahead."

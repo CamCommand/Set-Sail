@@ -509,7 +509,8 @@
 
             # Leaving menu list of respones
             define leave = ["Maybe not right now.", "Wait a second.", "Not just yet."]
-            $ rand1 = renpy.random.randint(0, 2)
+            define rand1 = renpy.random.randint(0, 2)
+            define bye = ""
 
             # just a check to do an intro line
             if x == 0:
