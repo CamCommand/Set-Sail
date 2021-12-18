@@ -105,6 +105,8 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+
+
     # USE this for sound effects bc voices play over them
     renpy.music.register_channel("effect","voice", loop = False, tight=True)
 
