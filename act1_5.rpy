@@ -60,8 +60,6 @@ label act1_5:
 
     n "This saying shortens our lifespan but enhances our lives. This was a sacrifice we all took on willingly. My comrades paid the ultimate price for their choices, and in the end, I bet they were happy."
 
-    nvl clear
-
     n "They achieved the happiness they sought out for, is that not a reason to celebrate their lives? Celebrate the lives of the freest people on both sides of the equator?"
 
     n "Simply believing that is true wouldn’t suffice if I hadn't lived it along with them. I will live the rest of my life, celebrating theirs."
@@ -70,9 +68,7 @@ label act1_5:
 
     n "Everytime I draw a pistol I’ll remember Iron Hip, who could empty a gun into an enemy's chest faster than anyone I ever knew."
 
-    n " I’ll never forget how ol’ Two Hands used both his hands in every task he did, no matter the risks. His efficiency was immeasurable."
-
-    nvl clear
+    n "I’ll never forget how ol’ Two Hands used both his hands in every task he did, no matter the risks. His efficiency was immeasurable."
 
     n "And most of all, I’ll remember my Captain and his ideology of brutal honor down to his very last moment. I will take the lessons you all taught me and carry them to my own end."
 
@@ -286,7 +282,7 @@ label act1_5:
         define may_position = ""      # what May is from MC's view
         define may_name = "Woman"     # Whatever fake name May gives MC
 
-        $ activity_choice = "school"  # for testing purposesRR
+        #$ activity_choice = "school"  # for testing purposesRR
 
         $ m = Character('[may_name]', color="#0A4AF6",  callback=may_voice)
 
@@ -362,7 +358,11 @@ label act1_5:
 
                 "I'm a student":
 
+                    $ quick_menu = False
+
                     mc "I’m a student here, who are you?"
+
+                    $ quick_menu = True
 
                     "She looks disheveled and tired. In addition to the fact that she's in front of the school and not in it, she can’t be a teacher."
 
@@ -380,7 +380,7 @@ label act1_5:
 
                     "She smells like she just came off a ship herself and she’s accusing me of being out of place?"
 
-                    mc "Finishing up the gym class now. I’m sweaty because of all the running."
+                    mc "Finishing up the exercise class now. I’m sweaty because of all the running."
 
                     m "Well I’m the new gym teacher, and that’s why I’m also sweaty."
 
@@ -388,7 +388,7 @@ label act1_5:
 
                     $ may_name = "Mrs. Paul"
 
-                    m "I’m Mrs. Paul, could you remind me which way the gymnasium is because I’m new?"
+                    m "I’m Mrs. Paul, nice to meet you. Could you remind me which way the gymnasium is because I’m new?"
 
                     mc "Sure Mrs. Paul, it’s around the back on the right."
 
@@ -420,7 +420,11 @@ label act1_5:
 
                 "I'm a teacher":
 
+                    $ quick_menu = False
+
                     mc "I’m a teacher here, who are you?"
+
+                    $ quick_menu = True
 
                     "She doesn’t look like anyone’s parent based on how tired and frazzled she looks."
 
@@ -453,9 +457,65 @@ label act1_5:
 
                     m "Oh, thank you Dr. [player_name]."
 
-                    #zoom May in
+                    "I think I gained her trust. Flexing authority got me unearned respect."
 
-                    m "Maybe we’ll be coworkers. See you soon."
+                    "As long as I don’t claim a role that requires identification, this might open golden opportunities."
+
+                    show m_d at zoom_may
+
+                    m "Maybe we’ll be coworkers. I’d love for you to show me around."
+
+                    m "What number is your classroom?"
+
+                    mc "I’m number…"
+
+                    define num = 0
+
+                    menu:
+
+                        "9":
+
+                            $ num = 9
+
+                            $ quick_menu = False
+
+                            mc "I'm room [num], I’ll be there after school if I get held up there."
+
+                        "130":
+
+                            $ num = 130
+
+                            $ quick_menu = False
+
+                            mc "I'm room [num], I’ll be there after school if I get held up there."
+
+                        "266":
+
+                            $ num = 266
+
+                            $ quick_menu = False
+
+                            mc "I'm room [num], I’ll be there after school if I get held up there."
+
+                        "1010":
+
+                            $ num = 1010
+
+                            $ quick_menu = False
+
+                            mc "I'm room [num], I’ll be there after school if I get held up there."
+
+                    show m_d at redochar
+
+                    m "I thought you were the gym teacher, why do you have a classroom?"
+
+                    "Uh oh!"
+
+                    mc "Do gym teachers not have classrooms where you're from?"
+
+                    m "{cps=20}Hmmmmmmmm.{/cps}"
+
+                    m "Alrighty, see you soon then."
 
                     hide m_d with dissolve
 
@@ -467,7 +527,11 @@ label act1_5:
 
                 "Flip it on her":
 
+                    $ quick_menu = False
+
                     mc "I can be here. Should you be here?"
+
+                    $ quick_menu = True
 
                     "Compared to everyone I saw around town or at school she is the most out of place."
 
@@ -598,9 +662,7 @@ label act1_5:
 
         if activity_choice == "bookstore":
 
-            show BG nobook with dissolve
-
-            "That’s where I went first, I met that librarian who let me steal that book."
+            "That's where I went first, I met that librarian who let me steal that book."
 
             "Or did I just steal by myself alone?"
 
@@ -610,6 +672,8 @@ label act1_5:
 
             "Who knows? Maybe there will be clean clothes if luck will spare some."
 
+            show BG black with dissolve
+            pause 1.0
             show BG nobook with dissolve
 
             "This can’t be it."
@@ -630,6 +694,7 @@ label act1_5:
 
             stop effect
             play effect "audio/dooropen.ogg"
+            pause 0.75
 
             mc "Well, that’ll do the trick."
 
@@ -662,6 +727,10 @@ label act1_5:
 
             "Oh barnacles!"
 
+            play effect "audio/duck.ogg"
+
+            "I duck behind some debris, there's no chance anyone can see me in this lighting."
+
             "Do old buildings still count as trespassing? This could get bad."
 
             m "I saw you go in here. This place looks empty as Hell, not much to steal."
@@ -669,8 +738,6 @@ label act1_5:
             "She’s right, there’s nothing in here."
 
             "She doesn’t sound hostile. How should I approach this?"
-
-            hide tome with ease
 
             jump choice_emptystore
 
@@ -716,7 +783,7 @@ label choice_emptystore:
 
         "Hide":
 
-            jump hideing
+            jump hiding
 
         "The book" if tome_choice == 1:
 
@@ -724,6 +791,7 @@ label choice_emptystore:
 
     label engage:
 
+        hide tome with dissolve
         $ quick_menu = False
 
         "Let’s try to diffuse the situation. Talking my way out of stealing nothing shouldn’t be hard."
@@ -805,6 +873,7 @@ label choice_emptystore:
 
     label hiding:
 
+        hide tome with dissolve
         $ quick_menu = False
 
         "I should lay low. That was the original plan, right?"
@@ -862,7 +931,7 @@ label choice_emptystore:
 
         "It’s a dark purple like I’ve never seen before for a cover. Leathery like older books, it’s more like a tome."
 
-        "t’s pages are wrinkly yet it’s as heavy as a cannonball."
+        "It’s pages are wrinkly yet it’s as heavy as a cannonball."
 
         "And there's no title or author on the cover or spine."
 
@@ -880,12 +949,10 @@ label choice_emptystore:
 
                 $ quick_menu = True
 
-                mc "[tome_title]."
-                #open file and read line per line while inserting “”-lower the brightness of BG to match the length of reading it
+                $ tome_choice -= 1
 
-                ""
-
-                return
+                hide tome with dissolve
+                jump act1_0
 
             "Leave it":
 
@@ -901,6 +968,9 @@ label choice_emptystore:
 
                 "Even Poseidon would have picked something more obviously helpful."
 
+                $ tome_choice -= 1
+
+                hide tome with dissolve
                 jump choice_emptystore
 
     label market2:

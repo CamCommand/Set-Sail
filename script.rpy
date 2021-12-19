@@ -117,18 +117,26 @@ transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset -6 yoffset 6
     linear 0.1 xoffset 0 yoffset 0
 
-transform zoom:
+transform zoom: # zoom into dingy specifically
     xalign 0.05 yalign 0.3
-    ease 1.0 zoom 1.7
+    ease 1.0 zoom 1.5
     pause 2.0
 
-transform redo:
+transform redo: # return from any zoom
     xalign 0.5 yalign 0.5
     ease 1.0 zoom 1.0
 
+transform redochar:
+    xalign 0.5 yalign 1.0
+    ease 1.0 zoom 1.0
+
+transform zoom_may:
+    ease 1.0 zoom 1.2
+
 define flash = Fade(.15, 0.0, .25, color="#fff") # for making the sword cut sound working idk why
 define flash_lighting = Fade(.15, 0.0, .25, color="#AFDBF2") # for making the sword cut sound working idk why
-define deathflash = Fade(.15, 0.0, .25, color="#F25555")
+define deathflash = Fade(.15, 0.0, .25, color="#F25555") # for when character dies
+define slowfade = Dissolve(20)
 
 screen game_over_screen:
     vbox:
@@ -150,7 +158,13 @@ define ev = Character('Everyone', color="#000000", callback=Crashsound_test)    
 # Main charcter resting images
 image a_d = "Astrid.png"
 image b_d = "behati.png"
-image f_d = "Fiona.png"
+
+image fiona = "Fiona.png"
+image fiona angry = "Fiona angry.png"
+image fiona laugh = "Fiona laugh.png"
+image fiona sad = "Fiona sad.png"
+image fiona frown = "Fiona frown.png"
+
 image g_d = "G.png"
 image m_d = "Palmer.png"
 
@@ -222,8 +236,10 @@ image twohands sweaty dark = "ol_ two hands sweaty dark.png"
 image flavio = "flavio neutral.png"
 image flavio scared = "flavio horrified dark.png"
 
+image lib = "Yoko.png"
+image lib smile = "Yoko Giggly.png"
+
 image captain = "captain.png"
-image lib = "lady.png"
 image bartender = "bt1.png"
 image mm = "momlady.png"
 image ds = "3ds.png"
@@ -233,6 +249,9 @@ image doll = "doll.png"
 image sword = "sword1.png"
 image sword swing = "sword2.png"
 image tome = "tome.png"
+
+image c = "Untitled.png"
+image c flip = im.Flip("images/Untitled.png", horizontal="True")
 
 image pirate1 = "pirate 1.png"
 image pirate1 slash = "pirate 11.png"

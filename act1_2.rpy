@@ -118,7 +118,7 @@ label act1_2:
     scene BG harbor with fade
     show crowd with dissolve
     stop music fadeout 2.0
-    play effect "audio/chattering.mp3" fadeout 2.0
+    play effect "audio/chattering.mp3" fadein 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
 
@@ -151,6 +151,7 @@ label act1_2:
 
     "I have to wonder how often some of these people even look at a hammar. I should keep my expectations low. Let’s dive in head first, walk around, see what I can do."
 
+    stop effect fadeout 2.0
     scene BG black with fade
     scene BG bogwalk with fade
 
@@ -241,8 +242,11 @@ label act1_2:
         $ book_choice = "" # to determine type of book chosen for future reference at the school
 
         menu:
+
             "Exciting":
+
                 $ book_choice = "Exciting"
+
                 "What kind of action adventures do landlubbers think is good for a book? My life is already full of life threatening events, so I required vastly less escapism than someone in high school."
 
                 "Yet there are so many frontiers I’ve never thought to explore that could provide me with more relatable desires. Like space or something, I don’t know?"
@@ -250,6 +254,8 @@ label act1_2:
                 "Of course one book isn’t going to transform me into a different person. I’m overthinking this easy question."
 
                 MC "Do you have any exciting action books?"
+
+                show lib smile with dissolve
 
                 woman "Hehe."
 
@@ -259,7 +265,7 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide lib with moveoutright
+                hide lib smile with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
                 show lib with easeinright
@@ -310,6 +316,7 @@ label act1_2:
                 jump bstore_end
 
             "Smart":
+
                 $ book_choice = "Smart"
 
                 "A science book could be enthralling. As long as it’s not a straight textbook."
@@ -317,6 +324,8 @@ label act1_2:
                 "I’ve read one of those and I retained zero facts from it. Even the title escapes to me."
 
                 MC "Do you have any good science books?"
+
+                show lib smile with dissolve
 
                 woman "Hehe."
 
@@ -326,7 +335,7 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide lib with moveoutright
+                hide lib smile with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
                 show lib with moveinright
@@ -376,6 +385,7 @@ label act1_2:
                 jump bstore_end
 
             "Funny":
+
                 $ book_choice = "Funny"
 
                 "What if the kids start making fun of me? Even worse, what if they do and I don't know it?"
@@ -386,6 +396,8 @@ label act1_2:
 
                 MC "Do you have any comedy books?"
 
+                show lib smile with dissolve
+
                 woman "Hehe."
 
                 "She laughed at me!"
@@ -394,7 +406,7 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide lib with moveoutright
+                hide lib smile with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
                 show lib with moveinright
@@ -463,8 +475,6 @@ label act1_2:
 
             "Nerdy":
 
-                ""
-
                 $ book_choice = "Nerdy"
 
                 "The books back in my room don’t look like they’re going to be any pleasant entertainment at all."
@@ -472,6 +482,8 @@ label act1_2:
                 "I want something meaty and wondrous, those are the types of books that lead me to reread them."
 
                 MC "Do you have any good fantasy books?"
+
+                show lib smile with dissolve
 
                 woman "Hehe."
 
@@ -481,7 +493,7 @@ label act1_2:
 
                 "I hope I didn’t say that too weirdly."
 
-                hide lib with moveoutright
+                hide lib smile with moveoutright
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
                 show lib with moveinright

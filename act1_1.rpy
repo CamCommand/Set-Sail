@@ -59,6 +59,7 @@
         "Morning to me..."
 
         label input:
+            
             menu:
                 "{color=FF4DA6}My name is Valerie{/color}":
 

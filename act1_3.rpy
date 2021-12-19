@@ -4,9 +4,6 @@
     scene BG school with fade
     define astrid_temp = "Girl"
 
-    # I got to do a REAL job of going through an labeling where to put expression images
-    # maybe do when they're done
-
     play effect "audio/chattering.mp3"
     show crowd at center with dissolve
 
@@ -271,7 +268,7 @@
             hide a_d with dissolve
             show b_d at right
             show g_d at center
-            show f_d at left
+            show fiona at left
             MC "Yeah, I’m capable of that."
 
             $ f_met = 0
@@ -279,6 +276,7 @@
             $ b_met = 0
 
             menu:
+
                 "Be honest with them":
 
                     $ quick_menu = False
@@ -303,11 +301,12 @@
 
                     hide g_d
                     hide b_d
-                    show f_d at center with dissolve
+                    show fiona sad at center with dissolve
 
                     MC "What’s your question Fiona?"
 
-                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)
+
                     f "What earns you respect on pirate ships? Do you have to be a big strong man to get it?"
 
                     "Her tone makes it sound like she already knows the answer. Captain does a similar trick."
@@ -320,7 +319,8 @@
 
                     MC "On the sea, when you’re fighting for everything you got, the only thing that matters is your merit."
 
-                    # happy fiona
+                    show fiona with dissolve
+
                     f "{color=#50A23B}Well that’s a pleasant surprise.{/color}"
 
                     MC "Being a pirate is all about how good you are at the job. There have been some amazing pirates who are unbearable to talk to and be around."
@@ -353,7 +353,7 @@
 
                     a "That’s Geraldine, she’s our club’s Secretary."
 
-                    hide f_d
+                    hide fiona
                     hide b_d
                     show g_d at center with dissolve
 
@@ -414,7 +414,7 @@
                     a "We raise our hands when we have a question as to not blurt them out when someone is talking. That’s Behati, our club's Treasurer."
 
                     hide g_d
-                    hide f_d
+                    hide fiona
                     show b_d at center with dissolve
 
                     $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
@@ -459,13 +459,14 @@
                     jump classrooom_two
 
         label classrooom_two:
+
             # activity variables for menu
             $ activity_check = 0
             $ food_ate = 0
             $ b_check = 0
 
             hide g_d
-            hide f_d
+            hide fiona with dissolve
             hide b_d
             show a_d at center with dissolve
 
@@ -485,6 +486,7 @@
             jump classroom_choice
 
         label classroom_choice:
+
             define x = 0
             # keeps track of conversation moments
             $ b_convo = 0
@@ -790,34 +792,47 @@
 
         label fiona:
 
-            show f_d at center with dissolve
+            show fiona sad at center with dissolve
 
             if f_convo == 0:
 
                 if f_met == 0:
+
                     MC "Hey, what's happening, cool club member?"
 
                     $ f = Character('Tall Girl', color="#E44D1A", callback=fiona_voice)# Fiona
-                    # annoyed fiona
+
+                    show fiona angry with dissolve
+
                     f "You wanna try that again matey?"
 
                     MC "{cps=20}Ugh, ummmmmmmm, I uh.{/cps} Hello, I’m [player_name], sorry. How are you today?"
 
                     $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+
+                    show fiona with dissolve
+
                     f "That’s better. I’m Fiona."
 
                     f "You don’t have to try so hard to talk to us. You’re a fearsome pirate not a high schooler."
 
                     MC "But I’m talking to high schoolers, not other pirates? How would you want one of your friends to greet you?"
 
-                    # smirk fiona
+                    show fiona laugh with dissolve
+
                     f "Sup cock sucker, what’s goin’ on?"
+
+                    show fiona with dissolve
 
                     f "Then I’d say \"who’s cock?\" and we’d all laugh and just move on with the conversation."
 
                     MC "{cps=20}Uuuuuuuh. I ugh, don’t know how I’d.{/cps}"
 
+                    show fiona laugh with dissolve
+
                     f "I’m joking dude relax. Tell me a pirating thing."
+
+                    show fiona with dissolve
 
                     MC "Umm, most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
 
@@ -828,13 +843,18 @@
                     $ f_met += 1
 
                 else:
+
                     MC "Hey Fiona, what are you up to?"
+
+                    show fiona sad with dissolve
 
                     f "Just texting a friend, tell me a pirating thing I can share with them."
 
                     MC "Yes, ummmm, you know most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
 
                     MC "The barnacles under the ship tearing their skin off, killing them slowly. You’d be lucky to drown."
+
+                    show fiona with dissolve
 
                     f "Okay first, very metal. Second, I can't text them that."
 
@@ -850,6 +870,8 @@
 
                 f "Feel most like yourself huh?"
 
+                show fiona frown with dissolve
+
                 f "That sounds really nice, on land we don’t always get that luxury. We have to fight tooth and nail just to do the simple stuff."
 
                 "Fiona’s gaze rolls around the room. I think I know why being a pirate is so appealing to her."
@@ -858,11 +880,15 @@
 
                 MC "Hey Fiona."
 
+                show fiona sad with dissolve
+
                 f "Yup?"
 
                 MC "The most important thing you can do is find where you are most comfortable."
 
                 MC "All I know is pirating, but if it made me feel bad and unappreciated, then it’d be time for a change. You know what I mean?"
+
+                show fiona with dissolve
 
                 f "Yeah, I get it. I appreciate that sentiment."
 
@@ -880,15 +906,18 @@
 
                 $ f_convo += 1
                 $ activity_check += 1
-                hide f_d with dissolve
+                hide fiona with dissolve
                 jump social
 
             elif f_convo == 1:
+
                 f "What’s the magic words?"
 
                 MC "What’s up...?"
 
-                f "What's up cock sucker?"
+                show fiona laugh with dissolve
+
+                f "What's up cock sucker!"
 
                 MC "What's up cock sucker?"
 
@@ -896,16 +925,23 @@
 
                 MC "That is a pretty fun introduction even if it makes me uneasy."
 
+                show fiona with dissolve
+
                 f "I know, right? I’m gonna normalize it as much as I can. Try to use it in a movie to get it to stick."
 
                 MC "I’d have to find a way to watch it then."
 
                 if book_choice == "nerdy":
+
+                    show fiona sad with dissolve
+
                     f "{color=#2150E7}You stole a book from us?{/color}"
 
                     MC "What? No! You mean this thing?"
 
                     MC "I stole this from a book store. It looked interesting, thought I’d read it later."
+
+                    show fiona with dissolve
 
                     f "Rune is pretty good."
 
@@ -917,11 +953,15 @@
 
                     MC "Isn’t light dark fantasy a contradiction?"
 
+                    show fiona angry with dissolve
+
                     f "No, light as in not as heavy and dark as in, well it can be dark but it’s not too dark."
 
                     f "They aren’t throwing dead babies at each other and saying the n-word but the themes are serious."
 
                     MC "Okay that sounds cool. I’ll give Rune a chance."
+
+                    show fiona with dissolve
 
                     f "How nice of you to not immediately dismiss literary genius. Are all pirates as gracious as you?"
 
@@ -929,9 +969,13 @@
 
                     f "It’s not like everyone our age is buried in a book."
 
+                    show fiona frown with dissolve
+
                     f "The disdain some of us have for reading makes me super comfortable. G said she didn’t finish a single novel until she was fourteen."
 
                     MC "Really? Aren’t you required to read in school?"
+
+                    show fiona with dissolve
 
                     f "Yes! Yes we are supposed to read to get past the fifth grade!"
 
@@ -952,13 +996,23 @@
 
                 MC "There’s nobody censoring my library, why would anyone do that?"
 
+                show fiona frown with dissolve
+
                 f "In school, there’s a thick list of books we aren’t allowed to read."
 
                 MC "Because they’re bad?"
 
-                f "Ha, yeah some, but no. Most of them are bullshit political pandering and some are seen as history that contradicts the propaganda they feed us here."
+                show fiona laugh with dissolve
+
+                f "Ha, yeah some, but no."
+
+                show fiona angry with dissolve
+
+                f "Most of them are bullshit political pandering and some are seen as history that contradicts the propaganda they feed us here."
 
                 MC "You should read what you want to read Fiona, don’t let anyone stop you."
+
+                show fiona with dissolve
 
                 f "Spoken like a true pirate, I expected nothing less."
 
@@ -970,21 +1024,31 @@
 
                 MC "If you focus on it, life is bleak. Highlighting the good parts in your head really shifts your mood."
 
+                show fiona sad with dissolve
+
                 f "Yeeeeaaaaah. For the last thread of my mental health that sounds like the healthy thing to do."
+
+                show fiona with dissolve
 
                 f "Thanks [player_name], you didn’t need to talk me down there. The serious tone was helpful."
 
                 MC "Not a problem. You have the mentality of an aged pirate, I do that sometimes for the new crew members."
+
                 $ f_convo += 1
-                hide f_d with dissolve
+                hide fiona with dissolve
                 jump social
 
             elif f_convo == 2:
+
                 f "What's the magic intro?"
 
                 MC "What’s up cock sucker?"
 
+                show fiona laugh with dissolve
+
                 f "I don’t know, depends on who’s cock?"
+
+                show fiona with dissolve
 
                 f "People will start to talk if we keep meeting like this."
 
@@ -998,17 +1062,23 @@
 
                 MC "I understand, it's an incognito type situation. As long as the Captain won’t punish you for it I get it."
 
+                show fiona angry with dissolve
+
                 f "I don’t think the principal cares what the students do if it doesn’t break the bylaws, but we are an officially sanctioned club. We got the whole package."
 
                 f "A faculty supervisor that doesn’t come to school anymore, at least three members, and an E-board. Enough to schedule meetings and have the room to ourselves."
 
                 MC "A pirate ship really only needs a Captain and people to make the vessel sail."
 
+                show fiona sad with dissolve
+
                 f "How many people does it take to make a ship go?"
 
                 MC "Four to five roughly. Depends how capable the crew is."
 
-                f "I’ll start assembling the sailors. See you on the high seas, you better watch out."
+                show fiona with dissolve
+
+                f "I’ll start assembling the sailors. See you on the high seas, we'll be the best dressed pirates."
 
                 MC "I’ll keep my eye out for you, Fearsome Pirate Fiona."
 
@@ -1020,17 +1090,22 @@
 
                 MC "Nude Spear of God!"
 
+                show fiona laugh with dissolve
+
                 f "That is so perfectly extra, I love it."
 
                 f "Hehe, thanks for humoring me matey."
 
                 $ f_convo += 1
                 $ activity_check += 1
-                hide f_d with dissolve
+                hide fiona laugh with dissolve
                 jump social
 
             else:
+
                 MC "Hey cock sucker."
+
+                show fiona sad with dissolve
 
                 f "Hey matey. I know I said to be more relaxed when saying hi, but you gotta mix it up too."
 
@@ -1038,7 +1113,9 @@
 
                 f "Very true. I’ll be hung before that happens."
 
-                hide f_d with dissolve
+                show fiona with dissolve
+
+                hide fiona with dissolve
                 jump social
 
         label g:
@@ -1567,6 +1644,7 @@
                 jump social
 
         label washroom:
+
             "My stomach is hurting suddenly. Does my stomach feel the incoming social anxiety or was it something I ate?"
 
             "Hopefully the washrooms are cleaner here then on the ship. Keeping the latrine clean for more than three days on the Plague would take God-like abilities."
@@ -1597,8 +1675,10 @@
             "Am I a triangle person or a slim person? I feel slim but does this shirt make me look more triangular? Does this have to be so difficult?"
 
             if f_met == 0:
-                $ f = Character('Tall Girl', color="#E44D1A", callback=fiona_voice)# Fiona
-                show f_d at left with dissolve
+
+                $ f = Character('Tall Girl', color="#E44D1A", callback=fiona_voice)
+
+                show fiona sad at left with dissolve
 
                 f "You having a problem matey?"
 
@@ -1606,20 +1686,24 @@
 
                 MC "Do they stop me from entering them?"
 
+                show fiona with dissolve
+
                 f "You’re on the right track there. One’s for boys and the other’s for girls. Is that a problem for you?"
 
                 MC "Hmmmmmm…"
 
                 if player_identity == "m":
+
                     MC "No, I’ll use the men's one. Thank you."
 
                     MC "You were in the club room right?"
 
                     $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
                     $ f_met += 1
+
                     f "Yeah, my name’s Fiona. See you back in there."
 
-                    hide f_d with dissolve
+                    hide fiona with dissolve
                     "Fiona pushes past me and goes into the girls bathroom."
                     scene BG wc2 with fade
 
@@ -1633,15 +1717,17 @@
                     jump classroom_choice
 
                 elif player_identity == "f":
+
                     MC "No, I’ll use the girl’s one. Thank you."
 
                     MC "You were in the club room right?"
 
                     $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
                     $ f_met += 1
+
                     f "Yeah, my name’s Fiona. Come with me, I’ll be there if we run into anymore gendered symbols."
 
-                    hide f_d with dissolve
+                    hide fiona with dissolve
                     "Fiona pushes past me and goes into the girl's bathroom."
                     scene BG wc3 with fade
 
@@ -1649,16 +1735,21 @@
 
                     "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
 
-                    show f_d at right with dissolve
+                    show fiona at right with dissolve
+
                     MC "Are all of them this big?"
 
                     f "All of what?"
 
                     MC "All washrooms on land?"
 
+                    show fiona sad with dissolve
+
                     f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
 
                     MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    show fiona angry with dissolve
 
                     f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
 
@@ -1668,18 +1759,23 @@
 
                     f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
 
+                    show fiona frown with dissolve
+
                     f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
 
                     MC "I see. That is strange."
 
                     MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
 
+                    show fiona angry with dissolve
+
                     f "That's the way it should be. Cis shit here is unbearable sometimes."
 
                     MC "Cis shit?"
 
                     f "Nevermind, just do your business so we can get back to everyone."
-                    hide f_d with dissolve
+
+                    hide fiona angry with dissolve
 
                     "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
 
@@ -1691,17 +1787,23 @@
                     jump classroom_choice
 
                 else:
+
                     MC "Yes, sort of. I still don’t know which one to use. Do you understand?"
+
+                    show fiona angry with dissolve
 
                     f "Yeah I get it. This stupid het norm school fucking sucks."
 
-                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
+                    $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)
                     $ f_met += 1
+
+                    show fiona sad with dissolve
+
                     f "I know you don’t know me, Fiona by the way, but come in the girls room with me I’ll make sure nobody bugs us."
 
                     MC "Thank you Fiona. I appreciate that."
 
-                    hide f_d with dissolve
+                    hide fiona sad with dissolve
                     "Fiona pushes past me and goes into the girl's bathroom."
                     scene BG wc3 with fade
 
@@ -1709,16 +1811,21 @@
 
                     "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
 
-                    show f_d at right with dissolve
+                    show fiona at right with dissolve
+
                     MC "Are all of them this big?"
 
                     f "All of what?"
 
                     MC "All washrooms on land?"
 
+                    show fiona sad with dissolve
+
                     f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
 
                     MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    show fiona angry with dissolve
 
                     f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
 
@@ -1728,18 +1835,24 @@
 
                     f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
 
+                    show fiona frown with dissolve
+
                     f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
 
                     MC "I see. That is strange."
 
                     MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
 
+                    show fiona angry with dissolve
+
                     f "That's the way it should be. Cis shit here is unbearable sometimes."
 
                     MC "Cis shit?"
 
+                    show fiona sad with dissolve
+
                     f "Nevermind, just do your business so we can get back to everyone."
-                    hide f_d with dissolve
+                    hide fiona sad with dissolve
 
                     "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
 
@@ -1751,12 +1864,13 @@
                     jump classroom_choice
 
             else:
-                $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)# Fiona
-                show f_d at left with dissolve
+
+                $ f = Character('Fiona', color="#E44D1A", callback=fiona_voice)
+                show fiona sad at left with dissolve
 
                 f "You having a problem matey?"
 
-                MC "Oh, hello Fiona"
+                MC "Oh, hello again Fiona."
 
                 MC "Could you please excuse my lack of land iconography but what do these symbols mean? Do they stop me from entering them?"
 
@@ -1765,11 +1879,14 @@
                 MC "Hmmmmmm…"
 
                 if player_identity == "m":
+
                     MC "No, I’ll use the men's one. Thanks Fiona."
+
+                    show fiona with dissolve
 
                     f "No problemo matey. See you back at the party."
 
-                    hide f_d with dissolve
+                    hide fiona with dissolve
                     "Fiona pushes past me and goes into the girls bathroom."
                     scene BG wc2 with fade
 
@@ -1783,9 +1900,10 @@
                     jump classroom_choice
 
                 elif player_identity == "f":
+
                     MC "No, I’ll use the girl’s one. Thanks for the help Fiona."
 
-                    hide f_d with dissolve
+                    hide fiona with dissolve
                     "Fiona pushes past me and goes into the girl's bathroom."
                     scene BG wc3 with fade
 
@@ -1793,16 +1911,21 @@
 
                     "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
 
-                    show f_d at right with dissolve
+                    show fiona at right with dissolve
+
                     MC "Are all of them this big?"
 
                     f "All of what?"
 
                     MC "All washrooms on land?"
 
+                    show fiona sad with dissolve
+
                     f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
 
                     MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    show fiona angry with dissolve
 
                     f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
 
@@ -1812,18 +1935,23 @@
 
                     f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
 
+                    show fiona frown with dissolve
+
                     f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
 
                     MC "I see. That is strange."
 
                     MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
 
+                    show fiona angry with dissolve
+
                     f "That's the way it should be. Cis shit here is unbearable sometimes."
 
                     MC "Cis shit?"
 
-                    f "Nevermind, just do your business so we can get back to everyone. I got to use it."
-                    hide f_d with dissolve
+                    f "Nevermind, just do your business so we can get back to everyone."
+
+                    hide fiona angry with dissolve
 
                     "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
 
@@ -1835,7 +1963,10 @@
                     jump classroom_choice
 
                 else:
+
                     MC "Yes, sort of. I still don’t know which one to use. Do you understand what I mean Fiona?"
+
+                    show fiona angry with dissolve
 
                     f "Yeah I get it. This stupid het norm school fucking sucks."
 
@@ -1843,7 +1974,7 @@
 
                     MC "Thank you Fiona. I appreciate that."
 
-                    hide f_d with dissolve
+                    hide fiona angry with dissolve
                     "Fiona pushes past me and goes into the girl's bathroom."
                     scene BG wc3 with fade
 
@@ -1851,16 +1982,21 @@
 
                     "I must have picked the best one, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
 
-                    show f_d at right with dissolve
+                    show fiona at right with dissolve
+
                     MC "Are all of them this big?"
 
                     f "All of what?"
 
                     MC "All washrooms on land?"
 
+                    show fiona sad with dissolve
+
                     f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
 
                     MC "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
+
+                    show fiona angry with dissolve
 
                     f "Yeah, but there’s only one diabled stall in this entire building and no gender neutral options."
 
@@ -1870,18 +2006,24 @@
 
                     f "I mean like people in wheelchairs or mobility scooters. There’s three students who need that accommodation."
 
+                    show fiona frown with dissolve
+
                     f "We aren’t allowed to use which room we are most comfortable with. People get weirdly mad about that."
 
                     MC "I see. That is strange."
 
                     MC "On ships and pirate islands we just have the one type of door. Sometimes it has a W.C. on it or a toilet carving."
 
+                    show fiona angry with dissolve
+
                     f "That's the way it should be. Cis shit here is unbearable sometimes."
 
                     MC "Cis shit?"
 
+                    show fiona sad with dissolve
+
                     f "Nevermind, just do your business so we can get back to everyone."
-                    hide f_d with dissolve
+                    hide fiona sad with dissolve
 
                     "She’s right, it feels weird being in a gendered room and for a whole conversation to happen in one."
 
@@ -1893,6 +2035,7 @@
                     jump classroom_choice
 
         label food:
+
             MC "I can’t turn down free food. What kind of pirate would I be?"
 
             "The people who burst towards the food after I spoke have left. Apparently they weren’t as interested as the club heads."
@@ -2233,6 +2376,7 @@
                 jump classroom_choice
 
         label leave:
+
             MC "Hey Astrid, I think I’m going to leave. It’s getting late and I’m under threat of being left behind if the ship leaves without me."
 
             show a_d at centerleft with dissolve
@@ -2248,8 +2392,10 @@
 
             a "We’re letting [player_name] go. Stop messing around."
 
-            show f_d at right with dissolve
+            show fiona frown at right with dissolve
+
             f "I agree. Our advisor is deathly sick and can only come into work once a week."
+
             f "Well, she’s actually forced to but that’s another problem."
 
             MC "Lasses, my calling is the sea. It’s up to you to change your own situations."
@@ -2261,6 +2407,8 @@
             MC "It was my pleasure G, I…"
 
             b "{cps=90}Thank You For Teaching Me More About Pirates [player_name]! I’ll Never Forget This!{/cps}"
+
+            show fiona sad with dissolve
 
             f "Woah."
 
@@ -2275,6 +2423,8 @@
             b "You’ve shifted my views on how pirates perceive themselves and given me more context for the data out there."
 
             MC "No problem Behati. I’m glad my lack of information was useful information."
+
+            show fiona with dissolve
 
             f "Thanks for showing up. I can imagine a bunch of seaside teenagers didn’t hold your attention this afternoon."
 
@@ -2299,23 +2449,29 @@
             MC "Alright I’m gone! Fare thee well mateys!"
 
             if Be_affinity > Astrid_affinity and Be_affinity > G_affinity and Be_affinity > Fi_affinity:
+
                 b "{color=#2150E7}See ya sea cowboy.{/color}"
 
             elif G_affinity > Astrid_affinity and G_affinity > Be_affinity and G_affinity > Fi_affinity:
+
                 g "{color=#2150E7}Next time I see you it’ll be at the end of my sword.{/color}"
 
             elif Fi_affinity > Astrid_affinity and Fi_affinity > Be_affinity and Fi_affinity > G_affinity:
+
                 f "{color=#2150E7}Back to a life of swashbuckling for them and exams for us.{/color}"
 
             elif Astrid_affinity > Fi_affinity and Astrid_affinity > Be_affinity and Astrid_affinity > G_affinity:
+
                 show a_d at centerleft with moveinleft
+
                 a "{color=#2150E7}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
 
             hide a_d with moveoutleft
-            hide f_d with moveoutright
+            hide fiona with moveoutright
             hide b_d with moveoutleft
             hide g_d with moveoutright
 
             # through all paths explore Total Game Time here is about 37 minutes
             jump act1_4
+
     return
