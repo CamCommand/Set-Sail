@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".75"
+define config.version = ".80"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -86,7 +86,7 @@ define config.layers = [ 'master', 'transient', 'screens', 'overlay']
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Set Sail"
+define build.name = "SetSail"
 
 
 ## Sounds and music ############################################################
