@@ -303,6 +303,8 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
+            #imagebutton auto "gui/mm_start_%s.png" xpos 15 ypos 968 focus_mask True action Start() hovered [Play("effect", "audio/click.ogg")]
+
 
         else:
 
@@ -311,6 +313,7 @@ screen navigation():
             textbutton _("Save") action ShowMenu("save")
 
         textbutton _("Load") action ShowMenu("load")
+        #imagebutton auto "gui/mm_load_%s.png" xpos 209 ypos 966 focus_mask True action ShowMenu("load") hovered [Play("effect", "audio/click.ogg")]
 
         if _in_replay:
 
@@ -321,21 +324,26 @@ screen navigation():
             textbutton _("Main Menu") action MainMenu()
 
         textbutton _("Preferences") action ShowMenu("preferences")
+        #imagebutton auto "gui/mm_pref_%s.png" xpos 403 ypos 967 focus_mask True action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
 
         textbutton _("Pirate Code") action ShowMenu("PC")
+        #imagebutton auto "gui/mm_pc_%s.png" xpos 794 ypos 960 focus_mask True action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
             textbutton _("Controls") action ShowMenu("help")
+            #imagebutton auto "gui/mm_controls_%s.png" xpos 1188 ypos 965 focus_mask True action ShowMenu("help") hovered [Play("effect", "audio/click.ogg")]
 
         textbutton _("About") action ShowMenu("about")
+        #imagebutton auto "gui/mm_about_%s.png" xpos 1503 ypos 964 focus_mask True action ShowMenu("about") hovered [Play("effect", "audio/click.ogg")]
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
+            #imagebutton auto "gui/mm_quit_%s.png" xpos 1762 ypos 960 focus_mask True action ShowMenu(confirm=not main_menu) hovered [Play("effect", "audio/click.ogg")]
 
 
 style navigation_button is gui_button
@@ -364,12 +372,66 @@ screen main_menu():
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    #frame:
+        #style "main_menu_frame"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    #use navigation
+
+    fixed:
+        style_prefix "navigation"
+
+        #xpos gui.navigation_xpos
+        #yalign 0.5
+
+        spacing gui.navigation_spacing
+
+        if main_menu:
+
+            # textbutton _("Start") action Start()
+            imagebutton auto "gui/mm_start_%s.png" xpos 15 ypos 968 focus_mask True action Start() hovered [Play("effect", "audio/click.ogg")]
+
+
+        else:
+
+            textbutton _("History") action ShowMenu("history")
+
+            textbutton _("Save") action ShowMenu("save")
+
+        # textbutton _("Load") action ShowMenu("load")
+        imagebutton auto "gui/mm_load_%s.png" xpos 209 ypos 966 focus_mask True action ShowMenu("load") hovered [Play("effect", "audio/click.ogg")]
+
+        if _in_replay:
+
+            textbutton _("End Replay") action EndReplay(confirm=True)
+
+        elif not main_menu:
+
+            textbutton _("Main Menu") action MainMenu()
+
+        # textbutton _("Preferences") action ShowMenu("preferences")
+        imagebutton auto "gui/mm_pref_%s.png" xpos 403 ypos 967 focus_mask True action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
+
+        # textbutton _("Pirate Code") action ShowMenu("PC")
+        imagebutton auto "gui/mm_pc_%s.png" xpos 794 ypos 960 focus_mask True action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
+
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+            ## Help isn't necessary or relevant to mobile devices.
+            # textbutton _("Controls") action ShowMenu("help")
+            imagebutton auto "gui/mm_controls_%s.png" xpos 1188 ypos 965 focus_mask True action ShowMenu("help") hovered [Play("effect", "audio/click.ogg")]
+
+        # textbutton _("About") action ShowMenu("about")
+        imagebutton auto "gui/mm_about_%s.png" xpos 1503 ypos 964 focus_mask True action ShowMenu("about") hovered [Play("effect", "audio/click.ogg")]
+
+        if renpy.variant("pc"):
+
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            # textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton auto "gui/mm_quit_%s.png" xpos 1762 ypos 960 focus_mask True action Quit(confirm=not main_menu) hovered [Play("effect", "audio/click.ogg")]
+
 
     if gui.show_name:
 
@@ -377,12 +439,14 @@ screen main_menu():
             style "main_menu_vbox"
 
             text "[config.name!t]":
-                xpos 1.0
-                ypos .0005
+                xpos 0.95
+                ypos -5.1
+                outlines [ (absolute(4), "#ad9fed", absolute(0), absolute(0)) ]
+                font "FORTE.ttf"
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            # text "[config.version]":
+                # style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -513,6 +577,8 @@ style game_menu_outer_frame:
 style game_menu_navigation_frame:
     xsize 420
     yfill True
+
+
 
 style game_menu_content_frame:
     left_margin 60

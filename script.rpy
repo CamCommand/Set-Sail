@@ -126,11 +126,11 @@ transform redo: # return from any zoom
     xalign 0.5 yalign 0.5
     ease 1.0 zoom 1.0
 
-transform redochar:
+transform redochar: # zooming out of May's oversteps
     xalign 0.5 yalign 1.0
     ease 1.0 zoom 1.0
 
-transform zoom_may:
+transform zoom_may: # zooming in for May getting flirty
     ease 1.0 zoom 1.2
 
 define flash = Fade(.15, 0.0, .25, color="#fff") # for making the sword cut sound working idk why
@@ -217,9 +217,11 @@ image BG shore_sword = "background/shore_after_sword.png"
 image BG streetpost = "background/streetpost.png"
 image BG schoolpost = "background/schoolpost.png"
 image BG dollcorner = "background/dollcorner.png"
+image BG dollcorner2 = "background/dollcorner2.png"
 image BG signcorner = "background/signcorner.png"
 image BG nobook = "background/nobook.png"
 image BG insidestore = "background/insidestore.png"
+image BG marketpost = "background/marketpost.png"
 
 # Other characters images
 image twohands = "ol_ two hands neutral.png"

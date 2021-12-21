@@ -2,14 +2,18 @@ init python:
 
     def getSplit(s):
 
-        s1 = s[:len(s)//2]
-        s2 = s[len(s)//2:]
+        s = player_name
+        a = len(s)
+        s1 = slice(0,len(s)//2)
+        s2 = slice(len(s)//2, len(s))
+        s3 = s[s2].capitalize()
 
-        return s1 + "and the other one" + s2
+        return s[s1] + " and the other " + s3
 
 
 label act1_5:
 
+    define menuflag = False
     show BG shore with dissolve
     play music "audio/shore.ogg"
 
@@ -55,6 +59,7 @@ label act1_5:
 
     show BG black with dissolve
     show BG shore_sword with dissolve
+    $ menuflag = True
 
     # play some slow song here?
     pause 3.0
@@ -145,6 +150,8 @@ label act1_5:
 
             "It wouldn’t seem clean to dry one off from the ground. Maybe an anti-anti-vaxx shop could give me one."
 
+            show BG black with dissolve
+            pause 1.5
             show BG dollcorner with dissolve
 
             jump mask
@@ -159,6 +166,8 @@ label act1_5:
 
             "I’ll stick to the stronger side of the animal fights."
 
+            show BG black with dissolve
+            pause 1.5
             show BG signcorner with dissolve
 
             jump nomask
@@ -175,6 +184,8 @@ label act1_5:
 
             "Maybe an anti-anti-vaxx shop could give me one."
 
+            show BG black with dissolve
+            pause 1.5
             show BG dollcorner with dissolve
 
             jump mask
@@ -210,7 +221,7 @@ label act1_5:
 
         dl "Oh really now? I was just playing."
 
-        dl "Yeah kid there was a big sick, thee ol’ black plague part 2, a crippling pandemic if you will."
+        dl "Yeah kid there was a big sick, thee ol’ black plague part two, a crippling pandemic if you will."
 
         dl "No pun intended or somethin’."
 
@@ -295,7 +306,7 @@ label act1_5:
         define may_position = ""      # what May is from MC's view
         define may_name = "Woman"     # Whatever fake name May gives MC
 
-        #$ activity_choice = "school"  # for testing purposesRR
+        $ activity_choice = "arcade"  # for testing purposesRR
 
         $ m = Character('[may_name]', color="#0A4AF6",  callback=may_voice)
 
@@ -309,7 +320,11 @@ label act1_5:
 
             "The Schoolhouse":
 
+                $ quick_menu = False
+
                 "The school! I should go see if the girls are still there."
+
+                $ quick_menu = True
 
                 "They’d still be in high school right?"
 
@@ -421,7 +436,7 @@ label act1_5:
 
                     mc "I won’t. Bye now."
 
-                    m "Bye."
+                    m "Yeah, bye."
 
                     hide m_d with dissolve
 
@@ -669,7 +684,11 @@ label act1_5:
 
     label bookstore2:
 
+        $ quick_menu = False
+
         "I’ll return to the bookstore!"
+
+        $ quick_menu = True
 
         "If I’ve learned anything else about this world that wasn’t from pirates, it was from books."
 
@@ -790,7 +809,11 @@ label act1_5:
 
     label arcade2:
 
+        $ quick_menu = False
+
         "Back to the arcade!"
+
+        $ quick_menu = True
 
         "Is that where I went back then? Maybe technology has evolved to the point where video games can help me guide my life?"
 
@@ -804,7 +827,7 @@ label act1_5:
 
             show BG black with dissolve
             pause 1.5
-            show BG dollcorner with dissolve
+            show BG dollcorner2 with dissolve
 
             "Seemingly endless strips of vacant and boarded up shops blend into each other."
 
@@ -848,7 +871,7 @@ label act1_5:
                 $ dl = Character('Doll ', color = "#740E86", callback=hobo_voice)
                 $ m = Character('Lady', color="#0A4AF6",  callback=may_voice)
 
-                mc "Oh, hello again Doll. Seems I’ve wandered in a circle."
+                mc "Nice to see you again Doll. Seems like I’ve wandered in a circle."
 
                 dl "Hey sweetheart, what’s up?"
 
@@ -895,7 +918,7 @@ label act1_5:
 
             m "Awe, thanks hun. Well aren’t you sweeter than sugar?"
 
-            show m_d at may_zoom
+            show m_d at zoom_may
 
             m "Even with the baby belly, it’s best to keep my figure looking good no matter what."
 
@@ -1022,13 +1045,17 @@ label act1_5:
 
                         m "I'll name one [namesplit]. Bye bye ~ <3"
 
-                        mc "Bye."
+                        mc "Bye?"
+
+                        hide m_d with dissolve
 
                         if doll_met == 1:
 
                             dl "Oh sweetheart, you’re too kind."
 
                             dl "But I don’t know if that was smart, but you'll get a legacy out of it."
+
+                            dl "Hehehehe!"
 
                         else:
 
@@ -1050,6 +1077,10 @@ label act1_5:
 
 
                         dl "See you around sweetheart. Don’t lose your pants or somethin’."
+
+
+                        show BG black with dissolve
+                        pause 1.5
 
                         jump post_choice1
 
@@ -1222,8 +1253,11 @@ label act1_5:
     label market2:
 
         define may_talk = 0 # in this scene May could walk MC to the cafe
+        $ quick_menu = False
 
         "Maybe the market is around here somewhere? I could use a quick bite to eat."
+
+        $ quick_menu = True
 
         "It’s about midday, the stands should still be open."
 
@@ -1235,14 +1269,15 @@ label act1_5:
 
             "A full stomach might bring me closer to whatever Poseidon wants me to do. Gods willing at least."
 
-            # scene transition
             show BG black with dissolve
+            pause 1.5
+            show BG marketpost with dissolve
 
-            "I’m almost positive this is the strip where the market was."
+            "I’m almost positive this is the lot where the market was."
 
             "This looks like the only place it could be unless it was on a street that slipped my mind."
 
-            " There are scratches and scuffs on the concrete. Coupled with trashed masks dripped on the edges of the sidewalk, I’ll assume there isn’t anything left of the market."
+            "There are scratches and scuffs on the concrete. Coupled with trashed masks dripped on the edges of the sidewalk, I’ll assume there isn’t anything left of the market."
 
             "Is it not here all the time, or is this COVID’s fault?"
 
@@ -1316,9 +1351,6 @@ label act1_5:
 
             mc "I’ve had it sparingly, but I’ll drink it. What’s your name by the way?"
 
-            show dollcorner with dissolve
-            pause 1.5
-
             $ m = Character('Hann', color="#0A4AF6",  callback=may_voice)
 
             m "My name? It’s uhhh, Hanna. You can just call me Hann or whatever."
@@ -1382,6 +1414,15 @@ label act1_5:
             m "Well I doubt it’ll be in this dinky cafe, but I hope you find it soon."
 
             m "It ain't easy out there for sure. But coffee makes you feel better."
+
+            hide m_d with dissolve
+
+            show BG black with dissolve
+            pause 1.5
+            #show BG dollcorner with dissolve
+            #show cafe front
+
+            show m_d with dissolve
 
             jump post_choice1
 

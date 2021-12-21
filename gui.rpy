@@ -86,6 +86,11 @@ define gui.title_text_size = 150
 
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
+
+if menuflag == True:
+
+    define gui.main_menu_background = "gui/main_menu_sword.png"
+
 define gui.game_menu_background = "gui/game_menu.png"
 
 
