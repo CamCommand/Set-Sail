@@ -44,7 +44,7 @@ label act1_2:
 
     fla "A postman handed me this upon our arrival Captain. It’s got your name on it. Well just your title actually."
 
-    show captain at center with dissolve
+    show cap at center with dissolve
 
     Cap "\"To The Demonic Pirate Ricardo of The Red Plague\",  I don’t see a seal on it. Mustn’t be important. Wasn’t the Mayor supposed to make sure nobody would disturb us?"
 
@@ -55,6 +55,7 @@ label act1_2:
     fla "Aye aye Captain!"
 
     hide flavio with moveoutleft
+    hide cap with dissolve
     scene BG deckview with fade
     show flavio with moveinright
 

@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".81"
+define config.version = ".82"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -54,6 +54,9 @@ transform leftbottom:
 
 transform bottom: # to show the tome
     xalign 0.68 yalign .55
+
+transform ground:
+    xalign 0.5 yalign 0.2
 
 transform centerlefter:
     xalign 0.20 yalign 1.0

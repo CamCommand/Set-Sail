@@ -105,12 +105,11 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-
-
     # USE this for sound effects bc voices play over them
-    renpy.music.register_channel("effect","voice", loop = False, tight=True)
+    renpy.music.register_channel("effect","voice", loop = False, tight = True)
 
 transform wiggle: # To shake the characters a little bit, use at
+
     linear 0.1 xoffset -4 yoffset 4
     linear 0.1 xoffset 6 yoffset -6
     linear 0.1 xoffset 4 yoffset -4
@@ -171,7 +170,7 @@ image m_d = "Palmer.png"
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands
 define Cap = Character('Captain', color="#7F0505", callback=caps_voice)                                     # The Demonic Pirate Ricardo AKA Captain
-define fla = Character('Flavio', color="#BB64F2", who_outlines=[ (1, "#000000") ], callback=fl_voice)       # sir Flavio
+define fla = Character('Flavio', color="#BB64F2", callback=fl_voice)       # sir Flavio
 define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # Librarian
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ], callback=crowd_voice)  # crowd of people
 define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)                                   # woman at market
@@ -236,12 +235,17 @@ image twohands sweaty = "ol_ two hands sweaty.png"
 image twohands sweaty dark = "ol_ two hands sweaty dark.png"
 
 image flavio = "flavio neutral.png"
+image flavio flip = im.Flip("images/flavio neutral.png", horizontal = "True")
 image flavio scared = "flavio horrified dark.png"
 
 image lib = "Yoko.png"
 image lib smile = "Yoko Giggly.png"
 
-image captain = "captain.png"
+image cap = "Ricardo neutral.png"
+image cap yelling = "Ricardo yelling.png"
+image cap yelling bloody = "Ricardo yelling bloody.png"
+image cap bloody = "Ricardo neutral bloody.png"
+
 image bartender = "bt1.png"
 image mm = "momlady.png"
 image ds = "3ds.png"

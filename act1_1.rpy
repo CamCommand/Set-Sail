@@ -59,7 +59,7 @@
         "Morning to me..."
 
         label input:
-            
+
             menu:
                 "{color=FF4DA6}My name is Valerie{/color}":
 
@@ -228,13 +228,14 @@
 
             stop music fadeout 3.0
             with dissolve
-            scene BG deckview with dissolve
-            show twohands angry at centerleft
-            show captain at right
-
-            "Blinding heavenly light engulfs my face as I surface above deck. Men and women working hard, or at least pretending to while The Demonic Pirate Ricardo is watching."
-
+            scene BG topdeck with dissolve
+            show twohands angry at centerleft with dissolve
+            show cap at right with dissolve
             play music "audio/waves.ogg"
+
+            "Blinding heavenly light engulfs my face as I surface above deck."
+
+            "Men and women working hard, or at least pretending to while The Demonic Pirate Ricardo is watching."
 
             "Presumably most were slacking off before Two Hands was shouting his head off. The deck is actually pretty clean."
 
@@ -242,11 +243,13 @@
 
             th "Aye, there thee are Captain, right were I thought thee were."
 
-            "Captain slowly turned around to look at me. His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from Ol’ Two Hands."
+            "Captain slowly turned around to look at me."
+
+            "His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from Ol’ Two Hands."
 
             "Stepping closer to Two Hands his face, he looks really annoyed."
 
-            show captain at centerright with moveinright
+            show cap yelling at centerright with moveinright
             show twohands scared with ease
 
             Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog."
@@ -256,9 +259,11 @@
             th "Of course Captain."
 
             if player_identity == "f":
+
                 Cap "When I asked you to fetch me lass, I expected ye to do the searching and not be screaming. Ye’ve heard me in battle, am I incapable of hollering?"
 
             elif player_identity == "m" or player_identity == "nb":
+
                 Cap "When I asked you to fetch me lad, I expected ye to do the searching and not be screaming. Ye’ve heard me in battle, am I incapable of hollering?"
 
             th "No Captain. Ye have mighty powerful pipes."
@@ -271,9 +276,11 @@
 
             show twohands scared flip with ease
             hide twohands scared flip with moveoutleft
-            show captain at center with move
+            show cap at center with move
 
-            "Nobody in line of sight has been on this ship as long as I have. Of the Captain’s {i}Demon Moments{/i}, this wasn’t that bad, but I haven’t flinched during one of them since I was sixteen."
+            "Nobody in line of sight has been on this ship as long as I have."
+
+            "Of the Captain’s {i}Demon Moments{/i}, this wasn’t that bad, but I haven’t flinched during one of them since I was sixteen."
 
             "The intimidation tactics keep the crew in line and his reputation secured."
 
@@ -281,27 +288,49 @@
 
             if player_identity == "f":
 
-                Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lass. But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
+                Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lass."
+
+                show cap yelling with dissolve
+
+                Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
-                Cap "Aye lass, I remember. That scallywag fell flat on their arse and we prodded dem every night. Haha ha! What happened to Crookshaw after that?"
+                show cap with dissolve
+
+                Cap "Aye lass, I remember. That scallywag fell flat on their arse and we prodded dem every night."
 
             elif player_identity == "m" or player_identity == "nb":
 
-                Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lad. But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
+                Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lad."
+
+                show cap yelling with dissolve
+
+                Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
-                Cap "Aye lad, I remember. That scallywag fell flat on their arse and we prodded dem every night. Haha ha! What happened to Crookshaw after that?"
+                show cap with dissolve
+
+                Cap "Aye lad, I remember. That scallywag fell flat on their arse and we prodded dem every night."
+
+            Cap "What happened to Crookshaw after that?"
 
             MC "He tried to flee his service from embarrassment and you obliged by marooning him."
 
-            Cap "Oh, that be right. Ha ha, ahhh. Nevertheless I wanted to give ye something. I got something made for ye, something I wish my."
+            show cap yelling with dissolve
+
+            Cap "Oh, that be right. Ha ha, ahhh."
+
+            show cap with dissolve
+
+            Cap "Nevertheless I wanted to give ye something. I got something made for ye, something I wish my."
 
             Cap "Captain"
 
-            Cap "Gave me when I became a man. But aye, aye don’t have it yet. It’sa gonna be loaded up at the port. I mainly wanted to say to ye is don’t worry about yer usual duties at port."
+            Cap "Gave me when I became a man. But aye, aye don’t have it yet. It’sa gonna be loaded up at the port."
+
+            Cap "I mainly wanted to say to ye is don’t worry about yer usual duties at port."
 
             Cap "I got Flavio to rearrange the grunt work so you could enjoy some of the fruits of land life."
 
@@ -311,13 +340,19 @@
 
             MC "No, it’s wonderful and thoughtful gift. I will use it wisely. Do you need me to get you anything?"
 
-            Cap "No, no, nothing for me. There be nothing else I’ll ever need from this port ever again. Personally that is. We’re gonna need a lot more cannonballs of course."
+            Cap "No, no, nothing for me. There be nothing else I’ll ever need from this port ever again."
+
+            Cap "Personally that is. We’re gonna need a lot more cannonballs of course."
+
+            show cap yelling with dissolve
 
             Cap "Hahahaha ha!"
 
             MC "Ha ha."
 
             MC "Yes Captain I guess we always need more of those."
+
+            show cap with dissolve
 
             Cap "Don’t be telling the crew where ye going. Don’t want dem thinking The Demonic Pirate Ricardo has gotten soft."
 
@@ -339,9 +374,69 @@
 
                 Cap "Alright lad, dismissed. Put on something nicer and don’t get arrested."
 
+            hide cap with dissolve
+
+            # add scene with two hands
+            scene BG deckview with fade
+            show twohands angry with dissolve
+
+            th "Yee got some fuck’en nerve doin’ that te me infront of thee Captain!"
+
+            MC "Fuck off Two Hands I outrank you!"
+
+            th "Aye, but a rank doesn’t stop me from order’n ye around."
+
+            th "So when I say yer job is-"
+
+            MC "My job was already done ye salty wet rag!"
+
+            MC "I just didn’t do it when you wanted me to is all!"
+
+            th "Which there lies thee problem."
+
+            MC "Your problem, not mine!"
+
+            show twohands angry at wiggle
+            th "Yer dead wrong!"
+
+            th "Tis yer problem if ye aren’t where ye supposed to be."
+
+            MC "The job is done so why don’t you go boss around someone else with bleeding ears!"
+
+            th "Why I outta throw ye overboard fer shark bait!"
+
+            $ fla = Character('Flavio', color="#BB64F2", callback=fl_voice)
+            show flavio at centerrighter with moveinright
+
+            fla "Hey Two Hands why don’t yuh help me with the ropes, they need um, knotting."
+
+            show twohands sweaty with dissolve
+            th "Not now Flavio!"
+
+            fla "Knot now?"
+
+            fla "Aye, let’s go then."
+
+            fla "Bye [player_name], thanks for getting the canons clean so early."
+
+            MC "Thanks Flavio."
+
+            MC "Make sure you get’em nice and tight Mr. Two Whole Hands!"
+
+            show twohands angry with dissolve
+            hide twohands angry with moveoutright
+            show flavio flip with dissolve
+            hide flavio with moveoutright
+
+            "That guy is unbelievable sometimes."
+
+            "There isn’t a nicer, more studious pirate on this ship and he still has to give me a hard time."
+
+            "Captain made me learn the hard way a long time ago, that if shit didn’t get done, we’d pay the price."
+
+            "The easiest lesson to learn, and it’s still not good enough for some of these bastards. At least the Captain recognizes my service."
+
             stop music fadeout 3.0
-            hide captain with dissolve
-            with dissolve
             scene BG MC_room with dissolve
             play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5 volume 0.18
 
