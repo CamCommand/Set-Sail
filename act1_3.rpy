@@ -1,10 +1,11 @@
 ﻿label act1_3:
 
     pause 1.5
+    scene BG black with fade
     scene BG school with fade
     define astrid_temp = "Girl"
 
-    play effect "audio/chattering.mp3"
+    play effect "audio/chattering.mp3" volume 3.5
     show crowd at center with dissolve
 
     "Found it!"
@@ -23,7 +24,6 @@
 
     "You’d think they’d be put into weight groups so the bigger ones don’t demolish the tiny children."
 
-    with fade
     stop effect fadeout 2.0
     hide crowd with dissolve
 

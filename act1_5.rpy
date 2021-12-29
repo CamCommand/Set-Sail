@@ -198,7 +198,7 @@ label act1_5:
 
         mc "What happened here?"
 
-        show doll with dissolve
+        show doll mad with dissolve
 
         $ doll_met = 1
 
@@ -208,12 +208,13 @@ label act1_5:
 
         "Some street urchin peaked behind a pillar to say that. That’s kind of freaky."
 
-        mc "Hi, hello, yes."
+        mc "Hello, um, yes."
 
         mc "Why are all these buildings closed off?"
 
         $ dl = Character('Street Urchin', color = "#740E86", callback=hobo_voice)
-        dl "Ha haha!"
+        show doll at wiggle with dissolve
+        dl "{cps=10}Ha haha!{/cps}"
 
         dl "Have you been at sea for a long time or somethin’?"
 
@@ -225,7 +226,9 @@ label act1_5:
 
         dl "No pun intended or somethin’."
 
-        dl "Hehehehehehe!"
+        show doll at wiggle
+
+        dl "{cps=10}Hehehehehehe!{/cps}"
 
         "She lifts up her left leg and it falls limp as she makes her joke."
 
@@ -265,6 +268,8 @@ label act1_5:
         mc "Wait what did you say? That name?"
 
         dl "You’re in Seaborough sweetheart. Welcome to Florida, don’t catch the rona."
+
+        show doll at wiggle
 
         dl "Hehehehehe!"
 
@@ -846,7 +851,7 @@ label act1_5:
             "Maybe these women know if the store moved or not?"
 
             show m_d at center with dissolve
-            show doll at left with dissolve
+            show doll mad at left with dissolve
             $ dl = Character('Lady 2', color = "#740E86", callback=hobo_voice)
             $ m = Character('Lady 1', color="#0A4AF6",  callback=may_voice)
 
@@ -864,6 +869,8 @@ label act1_5:
 
                 else:
 
+                    show doll with dissolve
+
                     dl "Nothing like that’s still open sweetheart."
 
             else:
@@ -872,6 +879,8 @@ label act1_5:
                 $ m = Character('Lady', color="#0A4AF6",  callback=may_voice)
 
                 mc "Nice to see you again Doll. Seems like I’ve wandered in a circle."
+
+                show doll with dissolve
 
                 dl "Hey sweetheart, what’s up?"
 
@@ -901,6 +910,8 @@ label act1_5:
             m "Would you lend me some money?"
 
             mc "You’re expecting…a baby?"
+
+            show doll at wiggle
 
             if doll_met == 1:
 

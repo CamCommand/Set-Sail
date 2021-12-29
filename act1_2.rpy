@@ -604,8 +604,8 @@ label act1_2:
         pause 2.0
 
         stop effect fadeout 2.0
-        show crowd at center with dissolve
-        play effect "audio/chattering.mp3" fadeout 2.0
+        show crowd with dissolve
+        play effect "audio/chattering.mp3" loop
 
         "A few business buildings widen away from each other to reveal a brick path. There's a whole side street with tons of vendors lined up."
 
@@ -630,7 +630,7 @@ label act1_2:
         with fade
         play effect "audio/swipe.mp3"
 
-        MC "Like swiping gold from a drunk."
+        MC "Like seperating a drunk from his money."
 
         play effect "audio/apple3.wav"
         $ food_check = 1
@@ -680,8 +680,6 @@ label act1_2:
 
         "Breaking up a conversation to ask for directions doesn’t feel like something I feasibly accomplish."
 
-        hide crowd with dissolve
-
         MC "No, that’s dumb. You can do it sailor."
 
         "Just need to walk up to someone who looks like a mom. They’ll know where it is."
@@ -709,7 +707,7 @@ label act1_2:
 
         "Damn this woman! Why is she asking so many questions? Is this so hard to just tell me?"
 
-        $ ma = Character('Annoying Woman', color="#F263E2", callback=rot_voice)# woman at market
+        $ ma = Character('Annoying Woman', color="#FF793B", callback=rot_voice)
 
         MC "Yup, that’s weird I know but that’s where they sent them."
 
@@ -727,7 +725,7 @@ label act1_2:
 
         ma "The tests you took at your school got sent to another?"
 
-        $ ma = Character('Nightmare Woman', color="#F263E2", callback=rot_voice)# woman at market
+        $ ma = Character('Nightmare', color="#FF793B", callback=rot_voice)
 
         MC "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
 
@@ -735,9 +733,27 @@ label act1_2:
 
         ma "Okay."
 
+        ma "But I'm not entirely sure. Let me ask that nice police officer if they know."
+
+        MC "Ma’am please, I’m sure someone like yourself knows the general direction from here."
+
+        MC "I’ve been told the woman of Seaborough knows the streets very well."
+
+        "You think she bought my cheap bouquet of flattery?"
+
+        ma "{cps=10}Hmmmmmmm.{/cps}"
+
+        ma "Yes of course, you know my husband never thinks I’m good with directions."
+
+        ma "He’s such a rude man you wouldn’t believe it."
+
+        MC "You deserve someone who treats you like the smart independent woman you are."
+
+        "If this was any other person I would believe that line."
+
         ma "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
 
-        MC "Thank you ma’am! Have a nice day!"
+        MC "Thank you Ma’am! Have a nice day!"
 
         hide mm with dissolve
 
@@ -748,6 +764,8 @@ label act1_2:
         "If I see a mom picking their kid up it’s best to avoid them. This will be useful information."
 
         "Let's focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
+
+        stop effect fadeout 2.0
 
         jump act1_3
 

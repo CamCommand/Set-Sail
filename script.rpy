@@ -173,7 +173,7 @@ define Cap = Character('Captain', color="#7F0505", callback=caps_voice)         
 define fla = Character('Flavio', color="#BB64F2", callback=fl_voice)       # sir Flavio
 define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # Librarian
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ], callback=crowd_voice)  # crowd of people
-define ma = Character('Short Woman', color="#F263E2", callback=rot_voice)                                   # woman at market
+define ma = Character('Short Woman', color="#FF793B", callback=rot_voice)                                   # woman at market
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)                                     # bartender at arcade
 define jj = Character('JoeJoe', color = "#0015BC", callback=jj_voice)                                       # JoeJoe
 define p = Character('Enemy Pirate', color = "#0015BC", callback=pirate_voice)                              # attacking Pirates
@@ -246,11 +246,13 @@ image cap yelling = "Ricardo yelling.png"
 image cap yelling bloody = "Ricardo yelling bloody.png"
 image cap bloody = "Ricardo neutral bloody.png"
 
-image bartender = "bt1.png"
-image mm = "momlady.png"
+image bartender = "bartender.png"
+image mm = "evil mom.png"
 image ds = "3ds.png"
 image crowd = "crowd.png"
+
 image doll = "doll.png"
+image doll mad = "doll mad.png"
 
 image sword = "sword1.png"
 image sword swing = "sword2.png"

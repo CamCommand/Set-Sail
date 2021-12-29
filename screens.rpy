@@ -302,47 +302,47 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start() hovered [Play("effect", "audio/click.ogg")]
             #imagebutton auto "gui/mm_start_%s.png" xpos 15 ypos 968 focus_mask True action Start() hovered [Play("effect", "audio/click.ogg")]
 
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("History") action ShowMenu("history") hovered [Play("effect", "audio/click.ogg")]
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Save") action ShowMenu("save") hovered [Play("effect", "audio/click.ogg")]
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Load") action ShowMenu("load") hovered [Play("effect", "audio/click.ogg")]
         #imagebutton auto "gui/mm_load_%s.png" xpos 209 ypos 966 focus_mask True action ShowMenu("load") hovered [Play("effect", "audio/click.ogg")]
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("End Replay") action EndReplay(confirm=True) hovered [Play("effect", "audio/click.ogg")]
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Main Menu") action MainMenu() hovered [Play("effect", "audio/click.ogg")]
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferences") action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
         #imagebutton auto "gui/mm_pref_%s.png" xpos 403 ypos 967 focus_mask True action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
 
-        textbutton _("Pirate Code") action ShowMenu("PC")
+        textbutton _("Pirate Code") action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
         #imagebutton auto "gui/mm_pc_%s.png" xpos 794 ypos 960 focus_mask True action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Controls") action ShowMenu("help")
+            textbutton _("Controls") action ShowMenu("help") hovered [Play("effect", "audio/click.ogg")]
             #imagebutton auto "gui/mm_controls_%s.png" xpos 1188 ypos 965 focus_mask True action ShowMenu("help") hovered [Play("effect", "audio/click.ogg")]
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("About") action ShowMenu("about") hovered [Play("effect", "audio/click.ogg")]
         #imagebutton auto "gui/mm_about_%s.png" xpos 1503 ypos 964 focus_mask True action ShowMenu("about") hovered [Play("effect", "audio/click.ogg")]
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quit") action Quit(confirm=not main_menu) hovered [Play("effect", "audio/click.ogg")]
             #imagebutton auto "gui/mm_quit_%s.png" xpos 1762 ypos 960 focus_mask True action ShowMenu(confirm=not main_menu) hovered [Play("effect", "audio/click.ogg")]
 
 
@@ -545,7 +545,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     use navigation
 
     textbutton _("Return"):
-        style "return_button"
+        style "return_button" hovered [Play("effect", "audio/click.ogg")]
 
         action Return()
 
@@ -781,19 +781,19 @@ screen file_slots(title):
 
                 spacing gui.page_spacing
 
-                textbutton _("<") action FilePagePrevious()
+                textbutton _("<") action FilePagePrevious() hovered [Play("effect", "audio/click.ogg")]
 
                 if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
+                    textbutton _("{#auto_page}A") action FilePage("auto") hovered [Play("effect", "audio/click.ogg")]
 
                 if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
+                    textbutton _("{#quick_page}Q") action FilePage("quick") hovered [Play("effect", "audio/click.ogg")]
 
                 ## range(1, 10) gives the numbers from 1 to 9.
                 for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
+                    textbutton "[page]" action FilePage(page) hovered [Play("effect", "audio/click.ogg")]
 
-                textbutton _(">") action FilePageNext()
+                textbutton _(">") action FilePageNext() hovered [Play("effect", "audio/click.ogg")]
 
 
 style page_label is gui_label
@@ -1288,8 +1288,8 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton _("Aye") action yes_action
-                textbutton _("No") action no_action
+                textbutton _("Aye") action yes_action hovered [Play("effect", "audio/click.ogg")]
+                textbutton _("No") action no_action hovered [Play("effect", "audio/click.ogg")]
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
