@@ -1,15 +1,15 @@
 ﻿label act1_1:
 
-        transform pan:# panning and looping the BG
+        transform pan:                       # panning and looping the BG
             xalign 1.0
-            linear 200.0 xalign 0.0# still does transition nicely
+            linear 200.0 xalign 0.0          # still does transition nicely
             repeat
 
-        transform ds_slide:# slideing ds infront of screen
+        transform ds_slide:                  # slideing ds infront of screen
             xalign 0.5 yalign 10.0
             ease 1.5 truecenter
 
-        $ player_identity = "nb"# default identity if needed
+        $ player_identity = "nb"             # default identity if needed
         default player_name = ""
         scene BG map at pan
         play music "music/waves.ogg" fadein 2.0
@@ -45,16 +45,16 @@
 
         pause 1.0
         window hide
-        scene BG black with fade
+        scene BG MC_room with fade
         scene BG MC_room with fade
         with fade
         with fade
 
+        play music "music/BelowDeck.mp3" volume 0.5 fadein 1.5
+
         "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port."
 
         "Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
-
-        play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5
 
         "Morning to me..."
 
@@ -181,7 +181,9 @@
 
             "New guys always have a better sense of the date since they got onboard not too long ago."
 
-            "So it was my birthday at some point and all I got was new pains. Sometimes Captain says a passing mention of it, but we’ve been out for a while so I doubt he knew."
+            "So it was my birthday at some point and all I got was new pains."
+
+            "Sometimes Captain says a passing mention of it, but we’ve been out for a while so I doubt he knew."
 
             $ th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands voice
             th "Wheres [player_name]!? Why arrrgh’t they on deck?"
@@ -201,7 +203,9 @@
             th "[player_name] get yerr ass out from whatever gutter ye hiding under."
 
             $ pirate = "Ol'Two Hands"
-            "I think that’s [pirate] calling for me. I’m pretty sure I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
+            "I think that’s [pirate] calling for me."
+
+            "Last time I checked I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
 
             "I’ll grab my bristoles and brush my teeth and hair. A delayed head rush from springing up too fast numbs me momentarily."
 
@@ -212,12 +216,15 @@
             "I make note over my other features quite harshly to myself. My next thought flickers from the back of my mind."
 
             if player_identity == "f":
+
                 MC "Could I ever be a woman of the land?"
 
             elif player_identity == "m":
+
                 MC "Could I ever be a man of the land?"
 
             else:
+
                 MC "Could I ever be someone of the land?"
 
             th "Damn ye [player_name]. I’ll flog ye later for this."
@@ -226,12 +233,9 @@
 
             "Snapping back into action I head for the top deck. It’s time to start moving for real. I could use a peaceful type of day. As peaceful as pirate life can be."
 
-            stop music fadeout 3.0
-            with dissolve
             scene BG topdeck with dissolve
             show twohands angry at centerleft with dissolve
             show cap at right with dissolve
-            play music "audio/waves.ogg"
 
             "Blinding heavenly light engulfs my face as I surface above deck."
 
@@ -376,7 +380,6 @@
 
             hide cap with dissolve
 
-            # add scene with two hands
             scene BG deckview with fade
             show twohands angry with dissolve
 
@@ -436,9 +439,7 @@
 
             "The easiest lesson to learn, and it’s still not good enough for some of these bastards. At least the Captain recognizes my service."
 
-            stop music fadeout 3.0
             scene BG MC_room with dissolve
-            play music "music/BelowDeck.mp3" volume 0.2 fadein 1.5 volume 0.18
 
             "I wonder how long Captain planned this? No way Flavio could change the work schedule as quickly as yesterday, or even a week ago."
 
@@ -469,18 +470,24 @@
             $ content_check = 0
 
             menu:
+
                 "Change clothing" if clothing_check == 0:
                     jump clothes
+
                 "Read a book":
                     jump book
+
                 "Relax some more":
                     jump relax
+
                 "Day dream" if daydream_check == 0:
                     jump dream
+
                 "...Mom" if daydream_check == 1:
                     jump mom
 
         label clothes:
+
             $ clothing_check = 1
 
             MC  "Wait don’t I have a nicer set of clothes somewhere?"
@@ -548,6 +555,7 @@
             MC "So what should I start?"
 
             menu:
+
                 "Gamer Uno":
                     jump book1
 
@@ -659,16 +667,22 @@
             jump waiting
 
         label mom:
+
             if counter != 4:
+
                 $ lines = re_list[counter]
                 MC "[lines]"
                 $ counter += 1
+
             else:
+
                 MC "shite!"
                 jump breakdown
+
             jump waiting
 
         label breakdown:
+
             $ content_check = 2
 
             "Mom."
@@ -709,6 +723,7 @@
             with fade
             with fade
             scene BG MC_room
+            stop music fadeout 1.0
             jump act1_2
 
 return

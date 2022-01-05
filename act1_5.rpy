@@ -661,7 +661,7 @@ label act1_5:
 
                     "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
 
-                    jump post_choice1
+                    jump act1_6
 
         else:
 
@@ -685,7 +685,7 @@ label act1_5:
 
                     jump market2
 
-        jump post_choice1
+        jump act1_6
 
     label bookstore2:
 
@@ -973,6 +973,7 @@ label act1_5:
 
                     $ earrings -= 1
 
+                    play effect "audio/good.mp3"
                     m "{color=#50A23B}Oh my gosh, thank you so much, God bless you!{/color}"
 
                     m "There’s a pawn shop around the corner. I’m gonna go see how much I can get for them."
@@ -1086,14 +1087,13 @@ label act1_5:
 
                             mc "Nice talking to you."
 
-
                         dl "See you around sweetheart. Don’t lose your pants or somethin’."
 
 
                         show BG black with dissolve
                         pause 1.5
 
-                        jump post_choice1
+                        jump act1_6
 
                 "Can't spare anything":
 
@@ -1105,6 +1105,7 @@ label act1_5:
 
                     $ May_affinity -= 1
 
+                    play effect "audio/bad.mp3"
                     m "{cps=20}Ahhhhhhh, really?{/cps}"
 
                     m "I’d take anything you’d be willing to part with, nothin’ to pawn?"
@@ -1226,7 +1227,7 @@ label act1_5:
 
                     "But if I ever see her again there will be Hell to pay."
 
-                    jump post_choice1
+                    jump act1_6
 
 
         elif activity_choice == "bookstore":
@@ -1362,7 +1363,7 @@ label act1_5:
 
             mc "I’ve had it sparingly, but I’ll drink it. What’s your name by the way?"
 
-            $ m = Character('Hann', color="#0A4AF6",  callback=may_voice)
+            $ m = Character('Hanna', color="#0A4AF6",  callback=may_voice)
 
             m "My name? It’s uhhh, Hanna. You can just call me Hann or whatever."
 
@@ -1430,12 +1431,10 @@ label act1_5:
 
             show BG black with dissolve
             pause 1.5
-            #show BG dollcorner with dissolve
-            #show cafe front
 
             show m_d with dissolve
 
-            jump post_choice1
+            jump act1_6
 
         else:
 
@@ -1567,7 +1566,7 @@ label choice_emptystore:
 
         "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood around the shore somewhere."
 
-        jump post_choice1
+        jump act1_6
 
     label hiding:
 
@@ -1614,7 +1613,7 @@ label choice_emptystore:
 
         "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood around the shore somewhere."
 
-        jump post_choice1
+        jump act1_6
 
     label ARG:
 
@@ -1670,13 +1669,5 @@ label choice_emptystore:
 
                 hide tome with dissolve
                 jump choice_emptystore
-
-
-label post_choice1:
-
-    # have if prepared for if May hangs out
-    # show BG cafe outside
-
-    "End of script- going into final scene"
 
 return

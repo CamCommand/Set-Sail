@@ -835,7 +835,8 @@ label ship_start:
 
         mc "Captain is that you?"
 
-        show captain with dissolve
+        hide sword
+        show cap bloody at ground with dissolve
 
         "One, two, five, how many bodies are there?"
 
@@ -844,14 +845,21 @@ label ship_start:
         mc "Did you kill them all Captain?"
 
         if player_identity == "f":
+
             Cap "Aye lass it’s me. And I did."
+
         else:
+
             Cap "Aye lad it’s me. And I did."
 
         Cap "Looks like they got the jump on us aye?"
 
+        show cap bloody yelling with dissolve
+
         play effect "audio/cough.ogg"
         pause 5.25
+
+        show cap bloody with dissolve
 
         mc "You’ve been shot!"
 
@@ -865,9 +873,14 @@ label ship_start:
 
         Cap "I’m afraid Two Hands is as good as gone. Unless he found some more hands?"
 
+        show cap bloody yelling with dissolve
+
         Cap "Har har haaaa!"
+
         play effect "audio/cough2.ogg"
         pause 3.25
+
+        show cap bloody with dissolve
 
         mc "Captain, what do you do? What should I do?"
 
@@ -877,24 +890,32 @@ label ship_start:
 
         mc "This can’t be how it ends Captain. We can keep fighting!"
 
+        show cap bloody yelling with dissolve
+
         Cap "[player_name] look at me!"
 
-        Cap " Look at me my child!"
+        Cap "Look at me my child!"
 
         Cap "This is the end for me, for the Plague. But this ain't where yer story ends."
 
         Cap "Look behind me. Take it and go."
 
         show BG nightdeck3 at zoom
-        hide captain
+        hide cap bloody yelling
+
         mc "A dingy"
 
         show BG nightdeck3 at redo with ease
-        show captain
+        show cap bloody
 
         Cap "Take it and go [player_name]."
+
+        show cap bloody yelling with dissolve
+
         play effect "audio/cough2.ogg"
         pause 3.25
+
+        show cap bloody with dissolve
 
         Cap "There ain't much time left. Keep the legend alive."
 
@@ -905,8 +926,12 @@ label ship_start:
         "If I stay I’ll either be roasted by the flames or buried under the sea floor."
 
         mc "Captain come with me, we can escape tog-"
+
         play effect "audio/thunder.ogg"
         show BG nightdeck3 with flash_lighting
+
+        show cap bloody yelling with dissolve
+
         Cap "Ar Ye Daft?!"
 
         Cap "A Captain goes down with his ship! Ye know that by now!"
@@ -925,6 +950,8 @@ label ship_start:
 
         Cap "Go now!"
 
+        show cap bloody with dissolve
+
         mc "Aye Captain. I’ll go."
 
         mc "It was an honor serving in your crew. Thank you for everything Father,"
@@ -937,25 +964,28 @@ label ship_start:
 
         hide sword # incase its still there in some cases or my save skumming is catching up
 
-        hide captain with dissolve
+        hide cap with dissolve
         show BG black with dissolve
         play effect "audio/splash.ogg"
+        pause 1.5
 
         show BG escape with dissolve
-        play effect "audio/fire.ogg" loop volume 5.0
-        pause 5.0
+
+        play effect "audio/thunder.ogg"
+        show BG escape with flash_lighting
+        pause 2.5
+
+        play effect "audio/fire.ogg" fadein 2.0 loop volume 5.0
 
         "A pirate’s dream of absolute freedom only dies when they are all good and dead. Every ounce of gunpowder or barrel of cannonballs couldn't kill this dream."
 
         "Some broken planks and burnt sails are just that. Nothing more than trash to let me engulf by the sea."
 
-        play effect "audio/thunder.ogg"
-        show BG escape with flash_lighting
-
         "Nothing stays where you left it. But isn't that exciting?"
 
         pause 10.0
 
+        stop effect
         show BG black with dissolve
         jump act1_5
 

@@ -3,16 +3,19 @@ label act1_2:
     th "Land Ho!"
 
     if content_check == 0:
+
         play effect "audio/bookclose.wav"
 
         MC "The rest of this book is probably going to be barnacles. Maybe I do need new books."
 
     elif content_check == 1:
+
         MC  "Ahhh"
 
         MC "May have not been the cure my shoulders were looking for, but that still felt good."
 
     else:
+
         play effect "audio/crysniff2.wav" volume .5
 
         MC "Get it together, you're a pirate not a swabbie."

@@ -38,17 +38,18 @@
     MC "Uh, hello. You waiting for me lass?"
 
     # I redefine Astrid so much to change her name per the situation
-    # Insert sound for positive/negative feedback
     # suprised astrid
     $ a = Character('Girl', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
     a "{cps=80}Ahhoooo{/cps}{cps=5}OOOOOOOOOOOO{/cps}{cps=50}oooooy Matey!{/cps}"
 
-    $ a = Character('Astrid of Bellewood', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
-    a "{cps=75}I’m Officer Astrid of Bellewood at Seaborough High School! Permission To Speak Easy Captain, Sir?!{/cps}"
+    $ a = Character('\nOfficer Astrid \n of Bellewood', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
+    a "{cps=75} I’m Officer Astrid of Bellewood at Seaborough High School!{/cps}"
+    a "Welcome To Our School! Permission To Speak Easy Captain, Sir?!"
 
     "Poseidon help me this girl is..."
 
-    menu:# MC's different reactions to first meeting Astrid
+    menu: # MC's different reactions to first meeting Astrid
+
         "She’s Enthusiastic":
 
             $ quick_menu = False
@@ -78,11 +79,10 @@
             $ quick_menu = True
 
             $ Astrid_affinity += 1
+            play effect "audio/good.mp3"
 
             $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (1, "#000000") ])
             a "{color=#50A23B}Thank you Captain. Bellewood is actually my last name, I just thought it would sound cooler.{/color}"
-            #{color=#00ff00}{/color}
-            #play good boy points sound effect
 
             MC "It sure did sailor. I'm ready to go."
 
@@ -97,28 +97,29 @@
             $ Astrid_affinity += 3
             MC "Umm, at ease Astrid of Bellewood."
 
+            play effect "audio/good.mp3"
+
             $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice)
             a "{color=#50A23B}Thank you Captain. Bellewood is actually my last name, I just thought it would sound cooler said like that.{/color}"
-            #play good boy points sound effect
 
             MC "I’d agree. You can just call me [player_name]."
 
-            # $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])# turn outline off
             # happy astrid
             a "Aye aye Captain [player_name]!"
 
             jump school_entry
 
-        "{i}She has brain rot{/i}":
+        "{i}Is her brain rotting?{/i}":
 
             $ quick_menu = False
+
             MC "Have you acquired brian rot sailor?"
             $ quick_menu = True
 
             $ Astrid_affinity -= 3
-            # sad astrid
+            play effect "audio/bad.mp3"
+
             a "{color=#f00}No Captain, Sir!{/color}"
-            # play bad boy sound effect
 
             MC "Then why are you screaming bloody murder at me?"
 
@@ -321,13 +322,15 @@
 
                     show fiona with dissolve
 
-                    f "{color=#50A23B}Well that’s a pleasant surprise.{/color}"
+                    f "Well that’s a pleasant surprise."
 
                     MC "Being a pirate is all about how good you are at the job. There have been some amazing pirates who are unbearable to talk to and be around."
 
                     MC "But when the going gets tough, a great pirate tightens their buckle and draws their sword."
 
                     "The room rings with a  small wave of applause. I’ve never been clapped at before."
+
+                    hide fiona with moveoutbottom
 
                     $ Fi_affinity += 1
                     $ f_met += 1
@@ -387,6 +390,7 @@
                     # happy g
                     g "I feel so much better now that I know Poseidon is real. Did you guys know this and not tell me?"
 
+                    hide g_d with moveoutbottom
                     $ G_affinity += 1
                     $ g_met += 1
                     jump classrooom_two
@@ -422,7 +426,9 @@
 
                     b "Y-yes hello, [player_name] isn’t it true that eight-six to ninety-nine percent of total goods stolen are raw material exports that the government plans to lose in their budgets?"
 
-                    b "Ones that crews are instructed to not fight over and to protect themselves? Wouldn’t that make the act of piracy a part of the system as a whole and not an outlier?"
+                    b "Ones that crews are instructed to not fight over and to protect themselves?"
+
+                    b "Wouldn’t that make the act of piracy a part of the system as a whole and not an outlier?"
 
                     "What is she even talking about?"
 
@@ -452,7 +458,8 @@
                     MC "No matter the costs."
 
                     # happy behati
-                    b "{color=#50A23B}T-thank you for your honesty. That’s a lot to digest, I’ll adjust my data points accordingly.{/color}"
+                    b "T-thank you for your honesty. That’s a lot to digest, I’ll adjust my data points accordingly."
+                    hide b_d with moveoutbottom
 
                     $ Be_affinity += 1
                     $ b_met += 1
@@ -1707,7 +1714,9 @@
                     "Fiona pushes past me and goes into the girls bathroom."
                     scene BG wc2 with fade
 
-                    "Surprisingly, there are multiple facilities inside the huge room on the boys' side. I must have picked the best one, the smell of lemons hits my face like a morning breeze."
+                    "Surprisingly, there are multiple facilities inside the huge room on the boys' side."
+
+                    "I must have picked the best one, the smell of lemons hits my face like a morning breeze."
 
                     "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
 
@@ -1890,7 +1899,9 @@
                     "Fiona pushes past me and goes into the girls bathroom."
                     scene BG wc2 with fade
 
-                    "Surprisingly, there are multiple facilities inside the huge room on the boys' side. I must have picked the best one, the smell of lemons hits my face like a morning breeze."
+                    "Surprisingly, there are multiple facilities inside the huge room on the boys' side."
+
+                    "I must have picked the best one, the smell of lemons hits my face like a morning breeze."
 
                     "I should just do my business and return to the clubroom. If this is what all washrooms are like on land then I shall remember them fondly."
 
@@ -2173,6 +2184,7 @@
                     "She pours me a cup of water as fast as she said that, spilling a fair amount of it on the table."
 
                 else:
+
                     show b_d at center with dissolve
                     $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
 
