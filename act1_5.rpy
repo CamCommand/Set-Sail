@@ -13,7 +13,6 @@ init python:
 
 label act1_5:
 
-    define menuflag = False
     show BG shore with dissolve
     play music "audio/shore.ogg"
 
@@ -42,6 +41,7 @@ label act1_5:
     "JoJo easily could overpower three grown adults, but based on Flavio’s..."
 
     pause 2.0
+
     "Based on how I found Flavio I don’t think they were playing fair."
 
     "Yet nobody but me will remember their last moments. Their crimes will be revered but them as people will be forgotten."
@@ -59,9 +59,13 @@ label act1_5:
 
     show BG black with dissolve
     show BG shore_sword with dissolve
-    $ menuflag = True
 
-    # play some slow song here?
+    $ persistent.menuflag = 1
+
+    if persistent.menuflag_count == 1:
+
+        $ persistent.menuflag_count += 1
+
     pause 3.0
     nvl show
 
@@ -108,6 +112,7 @@ label act1_5:
 
     show BG streetpost with dissolve
     stop music fadeout 2.0
+    play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
 
     "The coastline’s piles of trash hinted towards this being the mainland and not an island."
 
@@ -539,6 +544,8 @@ label act1_5:
                             mc "I'm room [num], I’ll be there after school if I get held up there."
 
                     show m_d at redochar
+
+                    $ quick_menu = True
 
                     m "I thought you were the gym teacher, why do you have a classroom?"
 

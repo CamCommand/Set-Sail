@@ -1,5 +1,8 @@
 label act1_6:
 
+stop music fadeout 1.0
+play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
+
 scene BG black with fade
 scene BG cafeoutside with fade
 
@@ -154,9 +157,10 @@ elif may_talk == 1:
 
         m "I said I was going to, didn’t I?"
 
-        $ w = Character('Waitress', color="#FF793B", callback=rot_voice) # resuing the market woman for the waitress
+$ w = Character('Waitress', color="#FF793B", callback=rot_voice) # resuing the market woman for the waitress
 
-
+# transition to inside cafe
+# play inside music
 
 if mask == 1:
 
@@ -204,7 +208,7 @@ a "That’s pretty dramatic, but I guess that fits."
 
 a "Are you dehydrated or what?"
 
-if may_talks == 1:
+if may_talk == 1:
 
     m "Um hello?"
 
@@ -218,7 +222,7 @@ if may_talks == 1:
 
 a "We are all actually catching up right now."
 
-if may_talks == 1:
+if may_talk == 1:
 
     a "Do you both want to join us?"
 
@@ -267,3 +271,12 @@ b "What are the odds you’d show up again?"
 g "No freaking way man, and I almost didn’t show up today."
 
 mc "It’s good to see you’re all as lively as I remembered you."
+
+
+$ persistent.menuflag = 2
+$ persistent.menuflag_count = 3 # testing
+if persistent.menuflag_count == 3:
+
+    $ persistent.menuflag_count += 1
+
+return

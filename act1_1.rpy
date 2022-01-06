@@ -10,9 +10,15 @@
             ease 1.5 truecenter
 
         $ player_identity = "nb"             # default identity if needed
-        default player_name = ""
+        define player_name = ""
         scene BG map at pan
         play music "music/waves.ogg" fadein 2.0
+
+        $ persistent.menuflag = 0
+
+        if persistent.menuflag_count == 0:
+
+            $ persistent.menuflag_count += 1
 
         nvl show
 
@@ -45,7 +51,6 @@
 
         pause 1.0
         window hide
-        scene BG MC_room with fade
         scene BG MC_room with fade
         with fade
         with fade

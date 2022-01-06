@@ -1,5 +1,7 @@
 label act1_2:
 
+    play music "music/BelowDeck.mp3" volume 0.5 fadein 1.5
+
     th "Land Ho!"
 
     if content_check == 0:
@@ -29,8 +31,8 @@ label act1_2:
 
     "I might end up just having to bite the bullet on this if he doesn’t help."
 
-    stop music fadeout 3.0
-    play music "music/waves.ogg"
+    #stop music fadeout 3.0
+    #play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
     scene BG topdeck with fade
 
     "Everyone is unloading from the ship onto a boardwalk."
@@ -121,7 +123,8 @@ label act1_2:
 
     scene BG harbor with fade
     show crowd with dissolve
-    stop music fadeout 2.0
+    stop music fadeout 1.0
+    play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
     play effect "audio/chattering.mp3" fadein 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
@@ -978,6 +981,8 @@ label act1_2:
         jump act1_3
 
     label street:
+
+        # add more stuff here
 
         "I should go to the school while I’m thinking about it. There’s no need to waste a ton of time there."
 

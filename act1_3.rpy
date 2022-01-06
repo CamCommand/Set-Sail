@@ -1,5 +1,8 @@
 ﻿label act1_3:
 
+    stop music fadeout 1.0
+    # start school music here
+
     pause 1.5
     scene BG black with fade
     scene BG school with fade
@@ -2484,6 +2487,7 @@
             hide g_d with moveoutright
 
             # through all paths explore Total Game Time here is about 37 minutes
+            stop music fadeout 1.0
             jump act1_4
 
     return

@@ -86,20 +86,20 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def Crashsound_test(event, **kwargs):# noise to play when everone yells
+    def Crashsound_test(event, **kwargs):# noise to play when everyone yells
         if event == "show":
             renpy.music.play("audio/crash.mp3 ", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def hobo_voice(event, **kwargs):# voice for hob lady
+    def hobo_voice(event, **kwargs):# voice for Doll
         if event == "show":
             renpy.music.play("audio/blip13.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
 
-    def crowd_voice(event, **kwargs):# voice for crowd
+    def crowd_voice(event, **kwargs):# voice for a crowd
         if event == "show":
             renpy.music.play("audio/blip14.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
@@ -107,6 +107,7 @@ init python:
 
     # USE this for sound effects bc voices play over them
     renpy.music.register_channel("effect","voice", loop = False, tight = True)
+
 
 transform wiggle: # To shake the characters a little bit, use at
 
@@ -116,7 +117,7 @@ transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset -6 yoffset 6
     linear 0.1 xoffset 0 yoffset 0
 
-transform zoom: # zoom into dingy specifically
+transform zoom: # zoom into dingy specifically in act1_4
     xalign 0.05 yalign 0.3
     ease 1.0 zoom 1.5
     pause 2.0
@@ -125,20 +126,22 @@ transform redo: # return from any zoom
     xalign 0.5 yalign 0.5
     ease 1.0 zoom 1.0
 
-transform redochar: # zooming out of May's oversteps
+transform redochar: # zooming out of May's oversteps [needs work when May art is done]
     xalign 0.5 yalign 1.0
     ease 1.0 zoom 1.0
 
-transform zoom_may: # zooming in for May getting flirty
+transform zoom_may: # zooming in for May getting flirty [needs work when May art is done]
     ease 1.0 zoom 1.2
 
-define flash = Fade(.15, 0.0, .25, color="#fff") # for making the sword cut sound working idk why
-define flash_lighting = Fade(.15, 0.0, .25, color="#AFDBF2") # for making the sword cut sound working idk why
-define deathflash = Fade(.15, 0.0, .25, color="#F25555") # for when character dies
-define slowfade = Dissolve(20)
+define flash = Fade(.15, 0.0, .25, color="#fff")             # for flashy sword effect
+define flash_lighting = Fade(.15, 0.0, .25, color="#AFDBF2") # for flashy lighting effect
+define deathflash = Fade(.15, 0.0, .25, color="#F25555")     # for when character dies
+define slowfade = Dissolve(20)                               # for fading out in death
 
-screen game_over_screen:
+screen game_over_screen: # Game over screen
+
     vbox:
+
         xalign 0.5
         yalign 0.5
         text _("{size=156}Game Over{/size}")
@@ -154,9 +157,11 @@ define m = Character('May', color="#0A4AF6",  callback=may_voice)               
 define n = nvl_narrator                                                              # Narrator
 define ev = Character('Everyone', color="#000000", callback=Crashsound_test)         # Everyone at once
 
-# Main charcter resting images
+# Main charcter images pre timeskip
 image a_d = "Astrid.png"
 image b_d = "behati.png"
+image g_d = "G.png"
+image m_d = "Palmer.png"
 
 image fiona = "Fiona.png"
 image fiona angry = "Fiona angry.png"
@@ -164,13 +169,10 @@ image fiona laugh = "Fiona laugh.png"
 image fiona sad = "Fiona sad.png"
 image fiona frown = "Fiona frown.png"
 
-image g_d = "G.png"
-image m_d = "Palmer.png"
-
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands
 define Cap = Character('Captain', color="#7F0505", callback=caps_voice)                                     # The Demonic Pirate Ricardo AKA Captain
-define fla = Character('Flavio', color="#BB64F2", callback=fl_voice)       # sir Flavio
+define fla = Character('Flavio', color="#BB64F2", callback=fl_voice)                                        # sir Flavio
 define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # Librarian
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ], callback=crowd_voice)  # crowd of people
 define ma = Character('Short Woman', color="#FF793B", callback=rot_voice)                                   # woman at market
@@ -180,14 +182,14 @@ define p = Character('Enemy Pirate', color = "#0015BC", callback=pirate_voice)  
 define dl = Character('Lady', color = "#740E86", callback=hobo_voice)                                       # Doll the hobo
 
 # Affinity of main characters
-default Fi_affinity = 0
-default G_affinity = 0
-default Astrid_affinity = 0
-default Be_affinity = 0
-default May_affinity = 0
+define Fi_affinity = 0
+define G_affinity = 0
+define Astrid_affinity = 0
+define Be_affinity = 0
+define May_affinity = 0
 
 # background images
-image BG MC_room ="background/bedroom.png"
+image BG MC_room = "background/bedroom.png"
 image BG deckview = "background/deckview.png"
 image BG topdeck = "background/topdeck.png"
 image BG black = "background/black.png"
@@ -221,6 +223,7 @@ image BG signcorner = "background/signcorner.png"
 image BG nobook = "background/nobook.png"
 image BG insidestore = "background/insidestore.png"
 image BG marketpost = "background/marketpost.png"
+image BG cafeoutside = "background/cafe.png"
 
 # Other characters images
 image twohands = "ol_ two hands neutral.png"
@@ -279,18 +282,35 @@ image pirate8 = "pirate 8.png"
 image pirate8 slash = "pirate 88.png"
 
 # Menu Music
-define config.game_menu_music = "music/BelowDeck.mp3"
+define config.game_menu_music = "music/BelowDeck.mp3" # subject to change
 # define config.main_menu_music
+
+$ persistent.menuflag = 0       # for the changing main menu
+$ persistent.menuflag_count = 0 # for knowing if the player has reached a menu before
+
+if persistent.menuflag == 1:
+
+    $ gui.main_menu_background = "gui/main_menu_sword.png"
+
+elif persistent.menuflag == 2:
+
+    $ gui.main_menu_background = "gui/main_menu_end.png"
+
+else:
+
+    $ gui.main_menu_background = "gui/main_menu.png"
 
 # colors used reference
 # #2150E7 when your previous choice comes back
 # #50A23B a good choice
 # #f00 a bad choice
 
-# The game starts here baby!
+# The Start of Game
 label start:
 
-    # for a cursor
+    $ menuflag = False
+
+    # for the custom cursor
     define config.mouse = { }
     define config.mouse['default'] = [ ( "gui/arrow.png", 0, 0) ]
 
