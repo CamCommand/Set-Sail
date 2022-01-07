@@ -42,10 +42,10 @@
 
     # I redefine Astrid so much to change her name per the situation
     # suprised astrid
-    $ a = Character('Girl', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
+    $ a = Character('Girl', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ], who_outlines=[ (1, "#FFFFFF")])
     a "{cps=80}Ahhoooo{/cps}{cps=5}OOOOOOOOOOOO{/cps}{cps=50}oooooy Matey!{/cps}"
 
-    $ a = Character('\nOfficer Astrid \n of Bellewood', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
+    $ a = Character('\nOfficer Astrid \n of Bellewood', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ], who_outlines=[ (1, "#FFFFFF")])
     a "{cps=75} I’m Officer Astrid of Bellewood at Seaborough High School!{/cps}"
     a "Welcome To Our School! Permission To Speak Easy Captain, Sir?!"
 
@@ -64,7 +64,7 @@
             a "Thank you Captain. Bellewood is actually my last name, I just thought it would sound cooler in my introduction."
 
             MC "Can I just call you Astrid?"
-            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice)
+            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")])
 
             a "Aye aye Captain!"
 
@@ -84,7 +84,7 @@
             $ Astrid_affinity += 1
             play effect "audio/good.mp3"
 
-            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (1, "#000000") ])
+            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (1, "#000000") ], who_outlines=[ (1, "#FFFFFF")])
             a "{color=#50A23B}Thank you Captain. Bellewood is actually my last name, I just thought it would sound cooler.{/color}"
 
             MC "It sure did sailor. I'm ready to go."
@@ -102,7 +102,7 @@
 
             play effect "audio/good.mp3"
 
-            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice)
+            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")])
             a "{color=#50A23B}Thank you Captain. Bellewood is actually my last name, I just thought it would sound cooler said like that.{/color}"
 
             MC "I’d agree. You can just call me [player_name]."
@@ -132,14 +132,14 @@
 
             a "Aye aye Captain [player_name]!"
 
-            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice)
+            $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")])
             a "You can call me Astrid, Captain [player_name]."
 
             jump school_entry
 
     label school_entry:
 
-        $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ])
+        $ a = Character('Astrid', color="#FF79E6", callback=astrid_voice, what_outlines=[ (0, "#000000") ], who_outlines=[ (1, "#FFFFFF")])
         a "Welcome to Seaborough high school."
 
         a "I’m the current president of the Pirate Culture Club here. I’ll assume from your breezy shirt and filthy pants you’re a pirate of The Red Plague."

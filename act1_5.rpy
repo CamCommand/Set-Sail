@@ -318,7 +318,7 @@ label act1_5:
 
         $ activity_choice = "arcade"  # for testing purposesRR
 
-        $ m = Character('[may_name]', color="#0A4AF6",  callback=may_voice)
+        $ m = Character("[may_name]", color="#0A4AF6",  callback=may_voice)
 
         "I’m back in that town!"
 
@@ -390,8 +390,6 @@ label act1_5:
 
             mc "I- ummmm."
 
-            $ may_position = "school attendant"
-
             menu:
 
                 "I'm a student":
@@ -425,6 +423,8 @@ label act1_5:
                     "This woman is lying to me too!"
 
                     $ may_name = "Mrs. Paul"
+
+                    $ may_position = "\"teacher\""
 
                     m "I’m Mrs. Paul, nice to meet you. Could you remind me which way the gymnasium is because I’m new?"
 
@@ -471,6 +471,7 @@ label act1_5:
                     m "Oh, excuse me then."
 
                     $ may_name = "Mrs. Padilla"
+                    $ may_position = "\"teacher\""
                     m "My name is Mrs. Padilla. I’m a recent graduate and am here to drop off my resume for the teaching job here."
 
                     mc "That’s fine, no harm done."
@@ -578,6 +579,7 @@ label act1_5:
                     "I’d bet she’s trying to intimidate something out of me."
 
                     $ may_name = "Mrs. Panza"
+                    $ may_position = "\"nurse\""
                     m "Excuse me! I’m the school’s nurse Mrs. Panza."
 
                     m "Who are you?"
@@ -860,7 +862,8 @@ label act1_5:
             show m_d at center with dissolve
             show doll mad at left with dissolve
             $ dl = Character('Lady 2', color = "#740E86", callback=hobo_voice)
-            $ m = Character('Lady 1', color="#0A4AF6",  callback=may_voice)
+            $ may_name = "Lady 1"
+            $ m = Character([may_name], color="#0A4AF6",  callback=may_voice)
 
             mc "Excuse me ladies."
 
@@ -883,7 +886,8 @@ label act1_5:
             else:
 
                 $ dl = Character('Doll ', color = "#740E86", callback=hobo_voice)
-                $ m = Character('Lady', color="#0A4AF6",  callback=may_voice)
+                $ may_name = "Lady"
+                $ m = Character([may_name], color="#0A4AF6",  callback=may_voice)
 
                 mc "Nice to see you again Doll. Seems like I’ve wandered in a circle."
 
@@ -1141,7 +1145,7 @@ label act1_5:
 
                         m "Are you sure?"
 
-                        show m_d with zoom_may
+                        show m_d at zoom_may
 
                         m "If my pregnancy isn't sufficient enough to convince you, is there anything I could interest you in?"
 
@@ -1151,7 +1155,7 @@ label act1_5:
 
                         "This person has barely met me and she’s coming onto me like her life depends on it. I should let her down easy and walk away."
 
-                    show m_d with redochar
+                    show m_d at redochar
 
                     mc "Sorry Miss, there’s nothing you can do for me right now."
 
@@ -1159,7 +1163,7 @@ label act1_5:
 
                     m "What about a little taste of what I can do?"
 
-                    show m_d with may_zoom # make a closer zoom
+                    show m_d at zoom_may # make a closer zoom
 
                     mc "{cps=90}Ahhhhhhhh! Step off me!{/cps}"
 
@@ -1169,7 +1173,7 @@ label act1_5:
 
                     "What’s she trying to do to me?!"
 
-                    show m_d with redochar
+                    show m_d at redochar
 
                     mc "That wasn’t called for lady!"
 
@@ -1215,7 +1219,7 @@ label act1_5:
 
                     "I’m gonna-,"
 
-                    "do nothing."
+                    "Do nothing."
 
                     "There’s nothing I can do now, she could be anywhere. I’m too tired to have to enact some form of pirate’s wrath on her or whatever I’d do."
 
