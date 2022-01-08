@@ -111,10 +111,10 @@ init python:
 
 transform wiggle: # To shake the characters a little bit, use at
 
-    linear 0.1 xoffset -4 yoffset 4
-    linear 0.1 xoffset 6 yoffset -6
-    linear 0.1 xoffset 4 yoffset -4
-    linear 0.1 xoffset -6 yoffset 6
+    linear 0.1 xoffset -5 yoffset 0
+    linear 0.1 xoffset 7 yoffset 0
+    linear 0.1 xoffset 5 yoffset 0
+    linear 0.1 xoffset -7 yoffset 0
     linear 0.1 xoffset 0 yoffset 0
 
 transform zoom: # zoom into dingy specifically in act1_4
@@ -148,14 +148,14 @@ screen game_over_screen: # Game over screen
         textbutton _("\n\n\n   Return to Main Menu") action Return()
 
 # Main characters
-define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)# Player Character
-define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)                 # Fiona
-define g = Character('Geraldine', color="#F0CD00", callback=g_voice)                 # Geraldine
-define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, dynamic=True) # Astird
-define b = Character('Behati', color="#5E0F60", callback=b_voice)                    # Behati
-define m = Character('May', color="#0A4AF6",  callback=may_voice)                    # May
-define n = nvl_narrator                                                              # Narrator
-define ev = Character('Everyone', color="#000000", callback=Crashsound_test)         # Everyone at once
+define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)                   # Player Character
+define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)                                    # Fiona
+define g = Character('Geraldine', color="#F0CD00", callback=g_voice)                                    # Geraldine
+define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")])  # Astird
+define b = Character('Behati', color="#5E0F60", callback=b_voice)                                       # Behati
+define m = Character('May', color="#0A4AF6", callback=may_voice)                                        # May
+define n = nvl_narrator                                                                                 # Narrator
+define ev = Character('Everyone', color="#000000", callback=Crashsound_test)                            # Everyone at once
 
 # Main charcter images pre timeskip
 image a_d = "Astrid.png"
@@ -224,6 +224,7 @@ image BG nobook = "background/nobook.png"
 image BG insidestore = "background/insidestore.png"
 image BG marketpost = "background/marketpost.png"
 image BG cafeoutside = "background/cafe.png"
+image BG cafeinside = "background/cafeinside.png"
 
 # Other characters images
 image twohands = "ol_ two hands neutral.png"

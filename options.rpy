@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".86"
+define config.version = ".90"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -27,18 +27,10 @@ define gui.show_name = True
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-In 2017, pirating hasn’t lost it’s vigor. You play through the eyes of the protagonist who’s the child of the scourge of Cuba’s northern water, {i}The Demonic Pirate Ricardo{/i}.  \n
-Quickly docked in Florida for supplies, your ship receives a letter from the local high school asking if a representative (preferably the Captain) of the Red Plague could give a talk about being a pirate to the Pirate Culture Club.  \n
-The bitter old Captain throws the letter away in disgust. You, the player, have never been to a high school, only ever knowing the seas as your teacher.  \n
-Wanting to teach the naive students why being a pirate is nothing to glorify, you decide to go and give a talk, prepping some of the worst stories imaginable to share.  \n
-Once you arrive, you are greeted by the pleasantly hospitable e-board of the club. Their questions are more humbling and inquisitive than you anticipate.  \n
-You end up having the most pleasant social experience of your life with the girls of the club, retailing fun pirating stories and inspiring some young pirates.  \n
-A four year time skip occurs and you are at sea in a losing battle against a new pirate ship. Your father, who has never lost a battle and seemingly never cared about you that much, sends you off in the last escape dingy.  \n
-You presume that your father and crew are all lost in battle. Washing up on a familiar shore line, you wander the mainland pondering your next move in between mourning your comrades.  \n
-You then lock eyes through a cafe window with a group of familiar girls. The old members of the Pirate Culture Club are meeting for drinks and invite you to join them.  \n
-The 2020 pandemic ruined each of their plans for the future and they have fallen on hard times. They ask of your adventures to inspire them, but you can only recall the recent bad news.  \n
-One from the group recommends that you start from scratch and start your own crew. They could be your first recruits! Elated by the idea to have a new crew around the same age as them, you humbly ask them to join his pirate crew.  \n
-Without anything else promising the girls a better future, they enthusiastically accept. Along with a strange but seemingly trustworthy woman who was eavesdropping, you'll get your affairs in order for a long journey ahead of you. Adventure, riches, and true friendship await when you set sail!
+Set Sail is western visual novel set in the modern day where the Golden Age of Pirating never properly ended. The player takes the role of a young pirate who has lived their entire life sheltered on a famous pirate ship known as The Red Plague, captained by The Demonic Pirate Ricardo. Everything they know about life on the mainland is from heresy from newer pirates or their mother who is mysteriously absent. Regardless of the struggles at sea, the main character is thankful for the freedom that comes with pirating. Even if they sometimes wonder if the grass is greener on the other side.\n
+Through a first person perspective, once they turn eighteen, the main character is given some leeway to explore mainland Florida, USA. While engaging with colorful bystanders you end up attending a meeting of the local high school’s Pirate Culture Club. There is where the main character’s misconceptions of how people their age are supposedly like shatter. Getting to know the four female eboard members of the club reinvigorate the life path they are on.\n
+Jumping to the year 2021, the main character finds themself unfortunately in charge of their own destiny. The current pandemic ravishing the world has led the you back to the members of the eboard you met some time ago. After some deliberation, you, the former eboard, and a mysterious new woman tread the paths of their new shared destinies together.\n
+Set Sail is currently in it’s demo phase. The first act of the game is to give players a taste of what is trying to be accomplished with this project. It is currently being developed by a small number of people. If you’d like to support the creators you can by checking out the Kickstarter. If that is complete, you can go to the creator’s Patreon. Thank you for downloading the demo, enjoy the high seas.
 """)
 
 # These extra centers are for showing four characters on screen at once

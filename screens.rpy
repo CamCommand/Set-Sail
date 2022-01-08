@@ -868,7 +868,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Happily made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
@@ -886,7 +886,7 @@ screen PC():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("{color=#fff}Pirate Code{/color}"), scroll="viewport"):
+    use game_menu(_("Pirate Code"), scroll="viewport"):
 
         vbox:
 
@@ -1422,7 +1422,7 @@ screen keyboard_help():
 
     hbox:
         label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+        text _("Toggles assistive self-voicing.")
 
 
 screen mouse_help():

@@ -273,6 +273,7 @@
             show b_d at right
             show g_d at center
             show fiona at left
+            with dissolve
             MC "Yeah, I’m capable of that."
 
             $ f_met = 0

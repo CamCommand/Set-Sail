@@ -256,9 +256,10 @@ mc "Of course, I’d love to hear what you’ve all been up to."
 scene BG cafeinside at cafe
 pause 1.0
 
-show fiona at truecenter with dissolve
-show b_d at centerrighter with dissolve
-show g_d at right with dissolve
+show fiona at truecenter
+show b_d at centerrighter
+show g_d at right
+with dissolve
 
 # excitable G
 
@@ -826,10 +827,805 @@ else:
 
     mc "Behati, is that a real place?"
 
-$ persistent.menuflag = 2
+    b "It’s a top school that produces the best doctors in the state."
 
-if persistent.menuflag_count == 3:
+    b "Or that’s what recruiters imply in forum posts about it."
 
-    $ persistent.menuflag_count += 1
+    f "That may be lady, but how is [player_name] supposed to trust you?"
+
+    f "You admitted to using a fake name and won’t even tell us your real name?"
+
+    m "It isn’t a matter of trust, it’s simply tit for tat."
+
+    if player_identity == "m":
+
+        m "That’s the way pirates operate, I’m sure he knows nothing comes for free in this world better then all of us."
+
+    elif player_identity == "f":
+
+        m "That’s the way pirates operate, I’m sure she knows nothing comes for free in this world better then all of us."
+
+    else:
+
+        m "That’s the way pirates operate, I’m sure they knows nothing comes for free in this world better then all of us."
+
+    b "That may be, but the odds of that working on [player_name] I put at about ten percent. It’s a tall order."
+
+    f " It’s stupid of you to even try making this work. You don’t scream \"pirate material\" to me."
+
+    g "Yeah, that’s what we scream-"
+
+    mc "I can’t let you on the ship."
+
+    m "Oh please [player_name]. Don’t make me ask twice darling."
+
+    mc "Because there isn’t a ship to go back to."
+
+a "What do you mean by that [player_name]?"
+
+mc "I mean that The Red Plague burned a whole through the ocean last night. There were no survivors, other than me."
+
+m "How’d something like that happen to the feared ship of the Demonic Pirate Ricardo?"
+
+mc "Not sure yet. We were boarded during a storm."
+
+mc "There was no telling by how many pirates there were, but it was enough to disarm and destroy the majority of our crew in a matter of minutes."
+
+b "How’d you escape?"
+
+mc "The Captain helped me. He begged me to leave and let him go down with the ship."
+
+mc "I almost didn’t let him. But he was very persuasive."
+
+a "[player_name], I’m so sorry. That all sounds so terrible."
+
+mc "It wasn’t fun for sure, I washed up on shore this morning, not really knowing what to do with myself."
+
+mc "I thought leaving it up to the Gods would be a good idea, but that might have been wishful thinking."
+
+mc "Seeing you in the window just now made me think I was right to think that way, but to learn that all your lives got as crippled as mine, makes me feel like there isn’t much hope."
+
+# everyone look sad
+
+a "You know, rock bottom isn’t always bad."
+
+mc "How’s that so Astrid?"
+
+a "There’s comradery to be found in misery. If everyone around you is doing bad, then it takes the edge off of yourself."
+
+a "It isn’t a personal failing when everything is down, and it’s easier to pull yourself back up with friends. That’s what you guys have been doing for me."
+
+g "You mean us?"
+
+a "Yes, you idiots. Always trying to get me out of my house when I doomer post online."
+
+a "Coming over with movies to watch, because even though the theater couldn’t stay open, you all knew movies make me happy."
+
+f "Well of course we did those things, you’re our friend."
+
+b "It’s like you just said, feeling down isn’t as bad when you’re with others. We wouldn’t let you feel down without us."
+
+g "Celebrate the victories and the losses together I guess."
+
+mc "That’s helpful to think about Astrid, thank you for the extra perspective."
+
+# happy astrid
+
+w "Here’s your food, will there be anything else?"
+
+if may_talk == 0:
+
+    a "Could we get another plate of fries please?"
+
+    w "Absolutely. I’ll put them in now."
+
+"The food came out to them looking so hot and delicious. I remember the first time I got to enjoy food hot."
+
+"It was once I contributed to my first ship raid that I was allowed to eat before the ship hands and get the food before it cooled off."
+
+"It was inconceivable to me that Geraldine’s porridge was better warm."
+
+if may_talk == 0:
+
+    f "Here’s the soup dude."
+
+    mc "Thank you Fiona. What kind is it?"
+
+    f "Tomato, you can have the crackers too."
+
+    a "Take these fries now, I’ll eat the next order."
+
+    mc "You’re all great, this should do me some good."
+
+    "Astrid slides the plate of food in front of me. Fiona also hands me her bowl, but the warm salty goodness envelops my senses."
+
+    "The plate of crispy fries are ten folds better than anything I’ve ever had. Who knew potatoes could be prepared in such an immaculate fashion?"
+
+    f "You good matey?"
+
+    mc "These are amazing, are they like, the greatest in the world here?"
+
+    f "No, that’s just how they’re made everywhere here."
+
+    b "Air fryers have come a long way. Much better than deep fryers, wouldn’t you agree?"
+
+    mc "Whatever fried these fries are a gift from Ambrosia in my book."
+
+    g "I don’t know Be, deep fryers still have their uses."
+
+    b "I guess the whole hoagie won’t fit in the air fryer."
+
+    g "Sometimes I need them crispier. You should try it."
+
+else:
+
+    mc "Could I have some of those fries Astrid?"
+
+    a "Yeah, sure matey. Have you ever had them before?"
+
+    mc "Cooked potato strips, I’ve had before."
+
+    mc "I didn’t know that’s what mainlanders called them until recently though."
+
+    a "Oh yeah? How’d you learn that?"
+
+    mc "From some pirate friends with more experience with land folks than I."
+
+    g "More experience than you? That’s impossible, you went to high school for a day."
+
+    mc "Huhhuha, yeah,"
+
+    mc "I’m very cultured as you all know."
+
+    b "You’ve seen more of the world then us."
+
+    f "Lots of culture to be found in the sea water."
+
+    mc "Oh plenty of it and even more to find."
+
+    mc "I bet \"Hanna\" over here knows what I mean by that."
+
+m "Heh heh,"
+
+m "You all seem like real good friends."
+
+f "Um, yeah, sure."
+
+g "Are you still here?"
+
+g "Why don’t you go find some happy people whose lives you can worsen?"
+
+m "You all are really cramping the good mood you just fixed. You’ll get wrinkles before you’re twenty five that way."
+
+f "You mean the mood you were trying to take advantage of [may_nane]?"
+
+m "Okay I’m sick of being called that already, it’s May."
+
+b "No it’s not it’s November."
+
+m "No little Miss Sarcasm, that’s my name."
+
+$ m = Character('May', color="#0A4AF6", callback=may_voice)
+
+m "My real name is May Palmer, I’m a real ship doctor, I have been for a while."
+
+m "But due to the pandemic I’ve been unable to work. Running around this port town for almost three days now trying to figure something out."
+
+m "Felt as if there was no more time left to do anything rational. So that’s why I took my shot with [player_name]."
+
+g "Yeah right, like we’d believe you now."
+
+b "[player_name] surely you aren’t taking her seriously at this point?"
+
+b "You met her today and she admitted to her lies."
+
+if earrings == 0:
+
+    g "And she took your earrings!"
+
+    a "Not cool."
+
+define may_trust1 = 0
+
+menu:
+
+    "Believe her":
+
+        $ may_trust1 = 1
+        jump mAYbe
+
+    "Doubt her":
+
+        $ may_trust1 = 2
+        jump mAYbe
+
+label mAYbe:
+
+    if may_trust1 == 1:
+
+        mc "I believe you May. You’ve lied to me before, but I see it in your eyes."
+
+        mc "You aren’t out here lying for some temporary gain, you don’t know what you’re doing anymore either."
+
+        if earrings == 0:
+
+            mc "How desperate do you have to be to steal someone’s studs?"
+
+            mc "Those aren’t the actions of someone who has a lot of options."
+
+            m "Yeah, sorry about that, I couldn’t get much for them anyway so I feel worse about it now."
+
+        mc "I think we’re all feeling a little lost, let’s ease off her."
+
+        mc "Astrid’s whole comrade speech can extend to someone else who needs it for just a little bit, right?"
+
+        f "Sure, whatever."
+
+        b "I’m sorry May, I was just trying to be protective."
+
+        g "We still got our eyes on you, but you’re cool. I like your hair."
+
+        $ May_affinity += 3
+        play effect "audio/good.mp3"
+        m "{color=#50A23B}Thank you girls. And [player_name], that means a lot.{/color}"
+
+    else:
+
+        mc "I don’t trust you as far as I’m concerned. Your story has some holes that can’t be overlooked."
+
+        mc "But you do seem to have it as rough as we do right now. Why else would you resort to blackmailing someone you just met?"
+
+        if earrings == 0:
+
+            mc "I would like my earrings back though."
+
+            m "Sorry, I sold them."
+
+            mc "Really? Come on May."
+
+            mc "They were all I had left except the shirt on my back."
+
+            m "I’m sorry, I didn't get that much anyway. I feel about it now I guess."
+
+            mc "Disregarding that slight."
+
+        mc "Whatever your real deal is, let’s ease off her."
+
+        mc "Astrid’s whole comrade speech can extend to someone else who needs it for just a little bit, right?"
+
+        f "Even if you don’t fully trust her?"
+
+        mc "I’m not feeling particularly hostile today, if you could believe it."
+
+        b "I’m sorry May, I was just being protective."
+
+        b "You have really pretty eyes."
+
+        g "I suppose your hair is cool too."
+
+        g "But we got our sensors pointed at you."
+
+        b "Did you mean radar?"
+
+        g "{cps=100}Maybe{/cps}"
+
+        m "That’s very nice of you girls."
+
+        $ May_affinity = 0
+        play effect "audio/bad.mp3"
+        m "{color=#f00}Well, I can’t say I trust you all either, I’d get nothing out of being crude to you now.{/color}"
+
+    f "So congratulations, we’re all sad girls now, but we’re together. What do we do about it Astrid?"
+
+    a "I don’t know, what do you think I would do right now?"
+
+    f "Well, you already did your speech, so now you’d come up with some plan involving all of us that is risky and could get us in trouble if done poorly."
+
+    a "Is that what I do?"
+
+    g "Yes."
+
+    b "Most of your plans involve precise movements and timing."
+
+    f "Remember when you wanted to play the Pirates of Honduras theme song during graduation and somehow involved all of us?"
+
+    a "Oh yeah, I remember that."
+
+    mc "What happened?"
+
+    b "You had G distract Mike in the sound booth so I could get in and play the song when you walked."
+
+    f "The confusion on Vice Principal Rowan’s face was worth it to me."
+
+    f "But you planned the entire scheme in like a day."
+
+    mc "That sounds hilarious."
+
+    # focused astrid
+
+    "I wonder which pirates in Honduras have their own theme song? I had no idea they were so coordinated."
+
+    "While the girls are reminiscing, Astrid’s eyes are focused thinking about something else."
+
+    a "[player_name]!"
+
+    a "So you said you’re the only survivor of The Red Plague?"
+
+    mc "Not that I want to go into details, but everyone else was either slain or went down with the ship."
+
+    a "If your Captain told you to escape, why do you think that is?"
+
+    mc "I’m still trying to figure out why he did. Where are you going with this?"
+
+    a "[player_name], he wants you to continue the legacy!"
+
+    mc "Excuse me?"
+
+    a "You were solely trusted to keep the dream alive, that must be it. You like being a pirate don’t you?"
+
+    mc "I do, but why wouldn’t he have just said that?"
+
+    a "You tell me, I have a feeling it’s supposed to act like a cryptic way for you to come to that conclusion yourself."
+
+    a "Pirates are always leaving clues to their treasure. But their legacy must be more important than that."
+
+    f "Astrid, don’t you think this is too soon?"
+
+    f "They just lost everyone they knew to the pirate equivalent of a sucker punch."
+
+    a "Not everyone, that’s where we come in."
+
+    f "Oh no."
+
+    b "You aren’t going where I think you’re going?"
+
+    if player_identity == "m":
+
+        a "He was lucky to find us, wasn’t he?"
+
+    elif player_identity == "f":
+
+        a "She was lucky to find us, wasn’t she?"
+
+    else:
+
+        a "They were lucky to find us, weren't they?"
+
+    a "We can become the new crew!"
+
+    g "Now that’s the Astrid I remember!"
+
+    g "Just like {i}The Great Budget Meeting of ‘16{/i}, we’re taking control of our own destinies!"
+
+    f "We can’t just drop everything and become pirates Astrid."
+
+    a "Why not Fiona? What’s there left for us here?"
+
+    f "You’re just using this as an opportunity to escape your own problems."
+
+    a "Exactly! Were you not a member of the Pirate Culture Club?"
+
+    a "That’s why people become pirates in the first place. For economic liberty, where stealing is their only option left."
+
+    f "Yeah, during the start to the Golden Age of Piracy maybe when it was lucrative."
+
+    f "Nowadays people only do it to roleplay or if they’re born into it."
+
+    b "Actually, recent surveys show more and more people are rejecting modernity and returning to a simpler time of sailing the high seas."
+
+    b "It’s almost a direct correlation to the growth in the gap in income inequality in America and other countries."
+
+    g "Yeah! What Behati said, this is a great idea."
+
+    b "I didn’t say that. I’m not even on board, pun not intended."
+
+    b "Even if I really want to, what can we do? We’ve never been to sea and have zero privateering experience."
+
+    a "What are you talking about no experience?"
+
+    a "Besides the fact we studied this stuff all the time in high school, we each have something valuable we can use. I bet [player_name] sees it too."
+
+    f "[player_name], you can’t be on the same page Astrid turned is?"
+
+    mc "Well, considering what I know about you all."
+
+    # to determine if their job was purposed by Astrid and Reed
+    define f_job = 0
+    define b_job = 0
+    define g_job = 0
+    define m_job = 0
+    # to know when to stop looping back to label pirate_position
+    define job_counter = 0
+
+    jump pirate_position
+
+label pirate_position:
+
+    if job_counter < 4:
+
+        menu:
+
+            "Fiona" if f_job == 0:
+
+                mc "Fiona, you said you were doing math in college?"
+
+                f "Yeah? What’s your point?"
+
+                mc "An important role on a ship is the navigator. Most of what that entails is math and direction."
+
+                f "You have to be kidding me, I have a terrible sense of direction anyway."
+
+                g "That isn’t even kinda true."
+
+                g "We all got lost in the city during the prom after party and Fiona, having never been to the city, not only got us to the party on time."
+
+                g "But afterwards found this amazing burger place and found the bus station from there."
+
+                f "But I was just reading signs, that isn’t proof-"
+
+                a "You also memorized the layout of high school in one day. You had to spin me around multiple times that first week."
+
+                f "But-"
+
+                b "And you’re the only person better at remembering street names than I am."
+
+                f "That’s because I got my license before you."
+
+                f "You’re all just being nice, I couldn’t navigate a pirate ship!"
+
+                a "Looks like you’re the minority here Fiona. Looks like you're a navigator now."
+
+                f "Don’t go there Astrid, this is supposed to be my choice."
+
+                a "You look me in the eyes and tell me you couldn’t do it."
+
+                pause 1.5
+
+                f "…"
+
+                f "That’s not fair, you know that gets me to do whatever you want."
+
+                a "And?"
+
+                f "Fine, whatever. Maybe I could be a navigator. Hypothetically, in some other universe."
+
+                a "We all know you could be."
+
+                $ f_job += 1
+                $ job_counter += 1
+
+            "Behati" if b_job == 0:
+
+                mc "Behati, you know how to use guns other than the one that you didn’t know?"
+
+                b "Pistols were all I could afford. If it was made in the last hundred years I can fire it, with pretty good accuracy I don’t mean to brag."
+
+                mc "Anything else?"
+
+                b "Functionally I know how cannons and mounted machine guns work, I’ve just never used them."
+
+                mc "You would make a good gunner then."
+
+                mc "Someone in charge of the ships fire power and the best marksmen."
+
+                b "Okay, but I’m not so sure you should trust me with all that weaponry, what if I blow it?"
+
+                mc "I would need someone else to teach the others to use a gun. I’d guide you and you’d help me help the ship."
+
+                f "You’re more careful than you give yourself credit for Be."
+
+                f "You got me to hold a gun properly, even after I swore I’d never touch one of those things."
+
+                g "And I watched you at the range. You smoke’em so hard the gang bangers on 5th street nod when you walk by."
+
+                b "That is all taken out of context."
+
+                a "Behati, it’d be a perfect job for you."
+
+                a "You also can be learning about pirate stuff first hand like you’ve always wanted to. And I know you still want to."
+
+                b "That’s {cps=90}ummmmm,{/cps} not at all. But I guess. It seems like a plausible idea. I’d give it a sixty percent chance of happening."
+
+                b "Under the right circumstances obviously."
+
+                a "I know you’d be great at it Be."
+
+                $ b_job += 1
+                $ job_counter += 1
+
+            "Geraldine" if g_job == 0:
+
+                mc "G, you’ve been working at your family’s restaurant this whole time?"
+
+                g "Other than my whole life, yes, even more recently. What are you getting at?"
+
+                mc "Every ship needs a chef."
+
+                g "Oh no! You aren’t putting me behind some big ol pot of stew while everyone takes all the action away from me!"
+
+                a "G, the chef isn’t like the school cafeteria."
+
+                a "They are an important part of the crew and they get just as much action as others because you aren’t allowed to skip battles."
+
+                a "Right [player_name]?"
+
+                mc "That’s right, the chefs are the most beloved part of the crew too."
+
+                mc "They make the saltiest of pirates happy with what they make and have to keep the malnutrition on the low."
+
+                g "Most beloved you say? How are they feared though?"
+
+                mc "You control the food, if someone gets on your bad side, they can kiss their taste buds goodbye."
+
+                if player_name == "Seymour":
+
+                    g "How delightfully devilish [player_name]."
+
+                g "I’d like to have that kind of power."
+
+                g "Okay I’m in. Call me Master Chef G, better start working on my pot belly."
+
+                f "G you can’t be serious?"
+
+                g "Even though I’m skinny I think spiritually I’ve always had one, so yeah."
+
+                f "No, I meant about becoming a pirate."
+
+                g "If Astrid thinks it’s what we should do, I’ll follow her."
+
+                g "She’s never led us astray before. Have a little faith you guys."
+
+                a "Exactly, thank you G."
+
+                $ g_job += 1
+                $ job_counter += 1
+
+            "May" if m_job == 0:
+
+                mc "May, this would be the time for some confidence building for us. Are you a doctor or not?"
+
+                m "Would you care for a live demonstration?"
+
+                m "Lift up your shirt kindly, please and thank you."
+
+                mc "Don’t touch me, okay, we could use a ship doctor."
+
+                mc "I have no experience with medical stuff, so you’d be taking full reign on that operation."
+
+                m "Only if your potential crew trusts me enough to dig a bullet out of their leg."
+
+                f "..."
+
+                b "..."
+
+                g "Maybe we start with a splitter?"
+
+                a "Guys come on, it’d be too big of a gamble to claim to be a doctor and not be one."
+
+                a "She knows if we went out at sea and caught onto her fraudulence we’d maroon her. So on that count, I trust you May Palmer."
+
+                m "Thank you Astrid of Bellewood. I promise to show you all the level of care I’d treat my own family with."
+
+                if player_identity == "m":
+
+                    m "We can all be a big crew of sisters and a cute older brother."
+
+                else:
+
+                    m "We can all be a big crew of sisters. Doesn’t that sound nice?"
+
+                b "I don’t know if I need another older sibling."
+
+                f "Family isn’t always reliable either."
+
+                m "Oh come on, cut me some slack like [player_name] said."
+
+                m "If I can’t convince you, I’m sure [player_name] knows how important my role is."
+
+                if player_identity == "m":
+
+                    m "I need the help of a big strong man to get the young ones to agree with me."
+
+                    mc "Girls I think you should give May a fair shake if we’re going to try this."
+
+                else:
+
+                    m "I need your help getting the kids to agree. If you do, I promise to help you out as well in any way I can."
+
+                    mc "Ladies I think you should give May a fair shake if we’re going to try this."
+
+                mc "Plenty members of a crew are freelanced right off the docks. Personal trust comes afterwards."
+
+                a "Please be cool for now."
+
+                g "If you can convince Fiona then I’m down."
+
+                b "If we don’t all vibe, what’s the point?"
+
+                f "Astrid, I just don’t think-"
+
+                a "{cps=100}Pleeeeeease{/cps} be cool Fiona. If you want, I could patch you up instead?"
+
+                f "Fine fine fine, no need for that."
+
+                f "Okay May, you can be on our hypothetical pirate crew."
+
+                m "I’m sure we’ll get along wonderfully Fiona. Might I add you have such a beautiful complexion."
+
+                f "Yeah, thanks. You too."
+
+                $ m_job += 1
+                $ job_counter += 1
+
+    else:
+
+        jump act1_end:
+
+label act1_end:
+
+    a "See! You’re all so qualified it’s like you’re begging to be a pirate right now."
+
+    f "But we aren’t."
+
+    mc "There is still your job Astrid."
+
+    a "Me? Oh, um, I guess I could swab the decks or something."
+
+    a "Don’t think watching pirate movies and being depressed all day are useful skills."
+
+    mc "No, that doesn’t sound like anything. But your friends trust you and you’ve convinced them this might be possible."
+
+    mc "You were also the president of the pirate club. I think you’d make a good Quartermaster."
+
+    a "Me! The Quartermaster!"
+
+    a "I couldn’t, isn’t that like a ton of responsibility?"
+
+    mc "If I was the Captain, you’d also be second in command."
+
+    a "If you’d be the Captain?"
+
+    a "Does that mean you think this is a good idea? You’ll do it?"
+
+    mc "While ignoring a ton of the smaller and finer details not mentioned, yes, I think I would do this."
+
+    mc "You all showed interest in being pirates when I met you, but back then you had futures on land."
+
+    mc "I didn’t want you to become pirates when you had opportunities to become something else."
+
+    b "We don’t have much going on now."
+
+    mc "I wouldn’t just ship you off on the first vessel that came into port. You all couldn’t pass for hardened pirates, but maybe"
+
+    mc "With the proper guidance,"
+
+    f "You don’t really think that."
+
+    mc "-you could become amazing pirates."
+
+    a "Proper guidance? Does that mean you’ll?"
+
+    mc "I’ll only agree to this if everyone is okay with me being the Captain."
+
+    mc "If a pirate isn’t happy with leadership, they’re allowed to challenge it at any time."
+
+    b "There’s so much historic evidence of pirates being brutally democratic. Is this what they meant?"
+
+    a "I vote for [player_name] to lead as our pirate Captain. All in favor?"
+
+    g "Aye aye!"
+
+    m "Yes Captain, you can order me around as much as you want."
+
+    b "I’d have to go get my guns, but aye aye. Count me in."
+
+    f "{cps=100}...{/cps}"
+
+    f "{cps=80}This is crazy.{/cps}"
+
+    a "Fiona, come on. Can you really say no at this point"
+
+    f "I could, with zero problems."
+
+    a "And leave us all out there without you? You want G anywhere near a cannon without your supervision?"
+
+    f "You’re all adults, you don’t need me."
+
+    g "Yeah we do."
+
+    b "This is a highly non-traditional career path. We’d rather all do it together."
+
+    f "When was that decided?"
+
+    a "Right now, come on Fiona. Don’t make us beg."
+
+    pause 2.0
+
+    f "Okay, fine, fine, fine, relax, I’m in. I’m just thinking about the logistics."
+
+    a "Why don’t we let Captain [player_name] worry about that?"
+
+    f "You want to tell my parents I’m going out to sea with some random sea dog to risk my life for Mexican exports? Go right ahead."
+
+    mc "I can if you need me to."
+
+    f "Huh ha."
+
+    f "It’s funny to know you’d try. Don’t worry I’ll take care of them."
+
+    a "So it’s settled? Red Plague part two electric boogaloo?"
+
+    b "Maybe a name that won’t remind Captain of their dead comrades?"
+
+    a "Oh right, sorry. How about…the?"
+
+    mc "How about we worry about a name once we have a ship?"
+
+    a "That’s a good idea. We should first come up with cool pirate nicknames for each other instead."
+
+    mc "How about we-"
+
+    g "Oh oh oh! I call using \"the Terrible\" in mine."
+
+    b "I want to be Behati the Beautiful."
+
+    f "You’re gonna be Behati the Blind if you are just gonna declare yourself the prettiest."
+
+    b "But why can’t I be? The alliteration is so nice to say. You can be Fiona the Fearless."
+
+    f "I might as well be Fiona the Barely Fuckable if \"The Beautiful\" is already taken."
+
+    b "{cps=80}What! Noooooooo!{/cps} Fine, you can have \"beautiful\"."
+
+    f "Nope, I’m sticking with that now."
+
+    b "Astrid make her change her name."
+
+    a "Fiona why not pick something that will strike fear, not half chubs."
+
+    f "You guys are no fun. If G made that joke you’d be all for it."
+
+    g "I am for it. I wish I did say it."
+
+    m "Are you really going to make yourself that available? Those wild men at sea sometimes forget about consent after being at sea for so long."
+
+    mc "That won’t be a problem on my ship. But we should really focus on getting a ship first before we come up with names."
+
+    m "Well aren’t you an honorable Captain so far. Here I thought it was going to be hard to tell."
+
+    mc "My base comes from the Pirate Code first and then the Gods."
+
+    g "What’s the Pirate Code?"
+
+    a "It’s the rules pirates abide by, G there was a poster with them in the club room."
+
+    g "Was it next to the French class word collage? Because my eyes steered clear of that mess."
+
+    b "Um, guys."
+
+    w "Excuse me. Here’s the check, take care of it when you can."
+
+    a "That’s our cue. Let's get started, shall we?"
+
+    mc "The sooner the better."
+
+    m "Whatever the Captain says ~ <3"
+
+    b "G would you help carry my guns from home?"
+
+    g "Only if you help me steal the ladle from my mom’s kitchen."
+
+    a "Lets move out ladies. It’s time to set sail!"
+
+    $ persistent.menuflag = 2
+
+    if persistent.menuflag_count == 3:
+
+        $ persistent.menuflag_count += 1
+
+    # stop music fadeout 3.0
+    pause 3.0
+
+    # fade to credits video
 
 return
