@@ -50,7 +50,7 @@ show BG walksunset with dissolve
 "Who knows? Let’s see what life hurls at me next."
 
 "The next few years may be my best yet."
-
+window hide
 show BG black with dissolve
 pause 3.0
 play effect "audio/thunder.ogg"
@@ -61,10 +61,11 @@ jump ship_start
 
 label ship_start:
 
+    define pirate_lines = ["Arrrgh, not good enough!", "Arrrgh, where ye goin', ah?", "Har har harrr!", "Yurr a dead man!"]
+    define random_line = renpy.random.randint(0, 3)
+
     show BG nightdeck1 with dissolve
 
-    # JoeJoe freaking dies the movie
-    # show joejoe dying quickly
     jj "{cps=20}Ahhhhgrrrrh!{/cps}"
 
     jj "{cps=25}[player_name], get out of here! Find the Captain!{/cps}"
@@ -72,7 +73,6 @@ label ship_start:
     jj "{cps=25}Find the Captain!{/cps}"
 
     jj "{cps=20}Ahhhhhhhhhhhhhgggggguuuuuuuuuuu!{/cps}"
-    # hide JoeJoe after death
 
     mc "JoeJoe no! Don’t stop fighting!"
 
@@ -102,48 +102,35 @@ label ship_start:
 
     p "Hey boys, we got another-!"
 
-    jump pirate_fight1
+    call screen pirate_fight1_0
+
+    label pirate_fight1_re:
+
+        show sword swing at sword with ease
+        play effect "audio/sword_clash.ogg"
+        show BG nightdeck1 with flash
+
+        show sword at sword with ease
+        $ p_line = pirate_lines[random_line]
+        p "[p_line]"
+        call screen pirate_fight1_0
+
 
     label pirate_fight1:
 
         $ quick_menu = False
 
-        menu:
+        show sword swing at sword with ease
+        play effect "audio/sword_swing.mp3"
 
-            "Swing right!":
+        show BG nightdeck1 with flash
+        show pirate1 slash at wiggle
 
-                show sword swing at sword with ease
-                play effect "audio/sword_swing.mp3"
+        show sword at sword with ease
+        p "Ahhrggggghh!"
 
-                show BG nightdeck1 with flash
-                show pirate1 slash at wiggle
+        hide pirate1 slash with dissolve
 
-                show sword at sword with ease
-                p "Ahhrggggghh!"
-
-                hide pirate1 slash with dissolve
-
-            "Swing left!":
-
-                show sword swing at sword with ease
-                play effect "audio/sword_clash.ogg"
-                show BG nightdeck1 with flash
-
-                show sword at sword with ease
-                p "Arrrgh, not good enough!"
-
-                jump pirate_fight1
-
-            "Go for the legs!":
-
-                show sword swing at sword with ease
-                play effect "audio/sword_clash.ogg"
-                show BG nightdeck1 with flash
-
-                show sword at sword with ease
-                p "Arrrgh, goin' fer me legs, ah?"
-
-                jump pirate_fight1
 
     $ quick_menu = True
 
@@ -160,187 +147,137 @@ label ship_start:
     p "Yer a dead man matey!"
 
     define matey = 0 # to determine if another pirate joins the fray
+    define death_count = 3 # count for death in the second fight
     define x_naut = 0 # additional dialoge check
-    define pirate1_x = 1 # alive status
-    define pirate2_x = 1 # alive status
+    define pirate1_x = 2 # alive status
+    define pirate2_x = 2 # alive status
 
+    # list of respones between slashes
+    define dying = ["I have to thin their numbers or I'll be turned into drift wood.", "Need to take'em out!", "I should avoid being dog piled.", "I have to cut their numbers down for everyone's sake."]
+    define rand2 = renpy.random.randint(0, 3)
 
-    jump pirate_fight2
+    call screen pirate_fight2_0
 
-    label pirate_fight2:
-
-        # list of respones between slashes
-        define dying = ["I have to thin their numbers or I'll be turned into drift wood.", "Need to take'em out!", "I should avoid being dog piled.", "I have to cut their numbers down for everyone's sake."]
-        define rand2 = renpy.random.randint(0, 3)
+    label pirate_fight2_re: # loop when character clashes swords with pirates second fight
 
         $ quick_menu = False
-        define notded = dying[rand2]
-        if matey >= 2 and matey != 4:
+        $ notded = dying[rand2]
 
-            if x_naut == 0:
-                show pirate3 at left with moveinleft
+        if death_count == 0:
 
-                p "Mind if I CUT in?"
-                $ x_naut += 1
+                jump game_over
 
-            $ notded = dying[rand2]
-            mc "[notded]"
+        if matey < 2 and death_count != 0: # only the first pirate is here
 
-            menu:
+            if pirate1_x == 3:
 
-                "Swing right at the first one!" if pirate1_x == 1:
+                show sword swing at sword with ease
+                play effect "audio/sword_clash.ogg"
+                show BG nightdeck2 with flash
 
-                    show sword swing at sword with ease
-                    play effect "audio/sword_swing.mp3"
+                show sword at sword with ease
+                $ random_line = renpy.random.randint(0, 3)
+                $ p_line = pirate_lines[random_line]
+                p "[p_line]"
 
-                    show BG nightdeck2 with flash
-                    show pirate2 slash at wiggle
+                $ matey += 1
+                $ death_count -= 1
 
-                    show sword at sword with ease
-                    p "Ahhhhh, damn ye!"
+                if x_naut == 0 and matey == 2: # appearence of 2nd pirate
 
-                    hide pirate2 slash with dissolve
-                    show pirate3 at center with ease
-                    $ pirate1_x -= 1
+                    show pirate3 at left with moveinleft
 
-                    if pirate1_x == 0 and pirate2_x == 0:
-                        jump final_bout
-                    else:
-                        jump pirate_fight2
+                    p "Mind if I CUT in?"
+                    $ x_naut += 1
+                    call screen pirate_fight2_1
 
-                "Swing left at the first one!" if pirate1_x == 1:
+                call screen pirate_fight2_0
 
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
+            if matey >= 2 and matey != 4:
 
-                    show sword at sword with ease
-                    p "Not on yer life!"
+                jump pirate_fight2_re
 
-                    $ matey += 1
+            else:
 
-                    jump pirate_fight2
+                call screen pirate_fight2_0
 
-                "Take out the legs of the first one!" if pirate1_x == 1:
+        elif matey >= 2 and death_count != 0: # second pirate appears
 
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
+            if pirate1_x == 3 or pirate2_x == 3:
 
-                    show sword at sword with ease
-                    p "Can't have those!"
+                show sword swing at sword with ease
+                play effect "audio/sword_clash.ogg"
+                show BG nightdeck2 with flash
 
-                    $ matey += 1
+                show sword at sword with ease
+                $ random_line = renpy.random.randint(0, 3)
+                $ p_line = pirate_lines[random_line]
+                p "[p_line]"
 
-                    jump pirate_fight2
+                $ matey += 1
+                $ death_count -= 1
 
-                "Swing right at the second one!" if pirate2_x == 1:
+                call screen pirate_fight2_1
 
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
+    label pirate_fight2_1: # when pirate 1 of the fight dies
 
-                    show sword at sword with ease
-                    p "Can't have those!"
-
-                    $ matey += 1
-
-                    jump pirate_fight2
-
-                "Swing left at the second one!" if pirate2_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Not on yer life!"
-
-                    $ matey += 1
-
-                    jump pirate_fight2
-
-                "Take out the legs of the second one!" if pirate2_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_swing.mp3"
-
-                    show BG nightdeck2 with flash
-                    show pirate3 slash at wiggle
-
-                    show sword at sword with ease
-                    p "Curse yeeeeee!"
-
-                    hide pirate3 slash with dissolve
-                    $ pirate2_x -= 1
-
-                    if pirate1_x == 0 and pirate2_x == 0:
-                        jump final_bout
-                    else:
-                        jump pirate_fight2
-
-        elif matey == 4:
+        if pirate1_x == 1:
 
             show sword swing at sword with ease
             play effect "audio/sword_swing.mp3"
-            show BG nightdeck2 with deathflash
+
+            show BG nightdeck2 with flash
+            show pirate2 slash at wiggle
 
             show sword at sword with ease
-            mc "Uh no, I didn't get to save,"
+            p "Ahhhhh, damn ye!"
 
-            mc "Father, forgive me..."
+            hide pirate2 slash with dissolve
 
-            jump game_over
+            $ pirate1_x = 0
+            $ death_count += 1
 
-        menu:
+            if pirate1_x == 0 and pirate2_x == 0:
+                jump final_bout
+            elif matey < 2:
+                jump final_bout
+            else:
+                show pirate3 at center with moveinleft
+                call screen pirate_fight2_2
 
-            "Swing right!":
 
-                show sword swing at sword with ease
-                play effect "audio/sword_swing.mp3"
+    label pirate_fight2_2: # if and when pirate 2 of the fight dies
 
-                show BG nightdeck2 with flash
-                show pirate2 slash at wiggle
+        if pirate2_x == 1:
 
-                show sword at sword with ease
-                p "Ahhhhh, damn ye!"
+            show sword swing at sword with ease
+            play effect "audio/sword_swing.mp3"
 
-                hide pirate2 slash with dissolve
+            show BG nightdeck2 with flash
+            show pirate3 slash at wiggle
 
-            "Swing left!":
+            show sword at sword with ease
+            p "Curse yeeeeee!"
 
-                show sword swing at sword with ease
-                play effect "audio/sword_clash.ogg"
-                show BG nightdeck2 with flash
+            hide pirate3 slash with dissolve
 
-                show sword at sword with ease
-                p "Not on yer life!"
+            $ pirate2_x = 0
+            $ death_count += 1
 
-                $ matey += 1
-
-                jump pirate_fight2
-
-            "Take out the legs!":
-
-                show sword swing at sword with ease
-                play effect "audio/sword_clash.ogg"
-                show BG nightdeck2 with flash
-
-                show sword at sword with ease
-                p "Can't have those!"
-
-                $ matey += 1
-
-                jump pirate_fight2
+            if pirate1_x == 0 and pirate2_x == 0:
+                jump final_bout
+            else:
+                call screen pirate_fight2_0
 
     label final_bout:
 
         define matey2 = 0 # to determine if another pirate joins the fray
         define x_nautz = 0 # additional dialoge check
         define x_nautzz = 0 # additional dialoge check
-        define pirate3_x = 1 # alive status
-        define pirate4_x = 1 # alive status
-        define pirate5_x = 1 # alive status
+        define pirate3_x = 2 # alive status
+        define pirate4_x = 2 # alive status
+        define pirate5_x = 2 # alive status
+        $ death_count = 5 # count for death in the third fight
 
         $ quick_menu = True
 
@@ -368,319 +305,248 @@ label ship_start:
 
         p "Ye wanna try me now scumbag?"
 
-        jump pirate_fight3
+        call screen pirate_fight3_0
 
-    label pirate_fight3:
+    label pirate_fight3_re: # loop when character clashes swords with pirates last fight
 
         $ quick_menu = False
+        $ notded = dying[rand2]
 
-        if matey2 >= 1 and matey2 < 3:
+        if death_count == 0:
 
-            if x_nautz == 0:
+                jump game_over
 
-                show pirate5 at centerlefter with moveinleft
+        if matey2 == 0 and death_count != 0: # only 1st first pirate is here
+
+            show sword swing at sword with ease
+            play effect "audio/sword_clash.ogg"
+            show BG nightdeck2 with flash
+
+            show sword at sword with ease
+            $ random_line = renpy.random.randint(0, 3)
+            $ p_line = pirate_lines[random_line]
+            p "[p_line]"
+
+            $ matey2 += 1
+            $ death_count -= 1
+
+            if x_nautz == 0 and matey2 == 1: # appearence of 2nd pirate
+
+                show pirate5 at left with moveinleft
 
                 p "Need a hand?"
                 $ x_nautz += 1
+                call screen pirate_fight3_1
 
-            $ notded = dying[rand2]
-            mc "[notded]"
+        elif matey2 >= 1 and death_count != 0: # only 2 pirates are here
 
-            menu:
+            show sword swing at sword with ease
+            play effect "audio/sword_clash.ogg"
+            show BG nightdeck2 with flash
 
-                "Swing right at the first one!" if pirate3_x == 1:
+            show sword at sword with ease
+            $ random_line = renpy.random.randint(0, 3)
+            $ p_line = pirate_lines[random_line]
+            p "[p_line]"
 
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
+            $ matey2 += 1
+            $ death_count -= 1
 
-                    show sword at sword with ease
-                    p "Har har harrr!"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Swing left at the first one!" if pirate3_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_swing.mp3"
-
-                    show BG nightdeck2 with flash
-                    show pirate4 slash at wiggle
-
-                    show sword at sword with ease
-                    p "I regret nothing..."
-
-                    hide pirate4 slash with dissolve
-                    $ pirate3_x -= 1
-
-                    if pirate3_x == 0 and pirate4_x == 0 and pirate5_x:
-                        jump down_with_the_ship
-                    else:
-                        jump pirate_fight3
-
-                "Take out the legs of the first one!" if pirate3_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Try and take'em!"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Swing right at the second one!" if pirate4_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Yurr a dead man!"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Swing left at the second one!" if pirate4_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Why'duncha giv'er up?"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Take out the legs of the second one!" if pirate4_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_swing.mp3"
-
-                    show BG nightdeck2 with flash
-                    show pirate5 slash at wiggle
-
-                    show sword at sword with ease
-                    p "I'll see you in Hell!"
-
-                    hide pirate5 slash with dissolve
-                    $ pirate4_x -= 1
-
-                    if pirate3_x == 0 and pirate4_x == 0 and pirate5_x:
-                        jump down_with_the_ship
-                    else:
-                        jump pirate_fight3
-
-        elif matey2 >= 3:
-
-            if x_nautzz == 0:
+            if x_nautzz == 0 and matey2 == 3: # appearence of 3rd pirate
 
                 show pirate6 at centerrighter behind sword with moveinbottom
 
                 p "Time to meet Davey Jones!"
                 $ x_nautzz += 1
+                call screen pirate_fight3_2
 
-            $ notded = dying[rand2]
-            mc "[notded]"
+            call screen pirate_fight3_1
 
-            menu:
+        elif matey2 >= 3 and death_count != 0: # only 3 pirates are here
 
-                "Swing right at the first one!" if pirate3_x == 1:
+            show sword swing at sword with ease
+            play effect "audio/sword_clash.ogg"
+            show BG nightdeck2 with flash
 
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
+            show sword at sword with ease
+            $ random_line = renpy.random.randint(0, 3)
+            $ p_line = pirate_lines[random_line]
+            p "[p_line]"
 
-                    show sword at sword with ease
-                    p "Har har harrr!"
+            $ matey2 += 1
+            $ death_count -= 1
 
-                    $ matey2 += 1
+            jump pirate_fight3_re
 
-                    jump pirate_fight3
+    label pirate_fight3_1:
 
-                "Swing left at the first one!" if pirate3_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_swing.mp3"
-
-                    show BG nightdeck2 with flash
-                    show pirate4 slash at wiggle
-
-                    show sword at sword with ease
-                    p "I regret nothing..."
-
-                    hide pirate4 slash with dissolve
-                    $ pirate3_x -= 1
-
-                    if pirate3_x == 0 and pirate4_x == 0 and pirate5_x == 0:
-                        jump down_with_the_ship
-                    else:
-                        jump pirate_fight3
-
-                "Take out the legs of the first one!" if pirate3_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Try and take'em!"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Swing right at the second one!" if pirate4_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Yurr a dead man!"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Swing left at the second one!" if pirate4_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Why'duncha giv'er up?"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Take out the legs of the second one!" if pirate4_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_swing.mp3"
-
-                    show BG nightdeck2 with flash
-                    show pirate5 slash at wiggle
-
-                    show sword at sword with ease
-                    p "I'll see you in Hell!"
-
-                    hide pirate5 slash with dissolve
-                    $ pirate4_x -= 1
-
-                    if pirate3_x == 0 and pirate4_x == 0 and pirate5_x == 0:
-                        jump down_with_the_ship
-                    else:
-                        jump pirate_fight3
-
-                "Swing right at the third one!" if pirate5_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_swing.mp3"
-
-                    show BG nightdeck2 with flash
-                    show pirate6 slash at wiggle
-
-                    show sword at sword with ease
-                    p "Shannon, farewell."
-
-                    hide pirate6 slash with dissolve
-                    $ pirate5_x -= 1
-
-                    if pirate3_x == 0 and pirate4_x == 0 and pirate5_x == 0:
-                        jump down_with_the_ship
-                    else:
-                        jump pirate_fight3
-
-                "Swing left at the third one!" if pirate5_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Nice try!"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-                "Take out the legs of the third one!" if pirate5_x == 1:
-
-                    show sword swing at sword with ease
-                    play effect "audio/sword_clash.ogg"
-                    show BG nightdeck2 with flash
-
-                    show sword at sword with ease
-                    p "Try and take'em!"
-
-                    $ matey2 += 1
-
-                    jump pirate_fight3
-
-        elif matey2 == 6:
+        if pirate3_x == 1 and matey2 >= 3:
 
             show sword swing at sword with ease
             play effect "audio/sword_swing.mp3"
-            show BG nightdeck2 with deathflash
+
+            show BG nightdeck2 with flash
+            show pirate4 slash at wiggle
 
             show sword at sword with ease
-            mc "Uh crap, I didn't get a chance to,"
+            p "Ahhhhh, damn ye!"
 
-            mc "Father, please forgive..."
+            hide pirate4 slash with dissolve
 
-            jump game_over
+            $ pirate3_x = 0
+            $ death_count += 1
 
-        menu:
+            if pirate3_x == 0 and pirate4_x == 0 and pirate5_x == 0:
 
-            "Swing right!":
-
-                show sword swing at sword with ease
-                play effect "audio/sword_clash.ogg"
-                show BG nightdeck2 with flash
-
-                show sword at sword with ease
-                p "Noice try numbskull."
-
-                $ matey2 += 1
-
-                jump pirate_fight3
-
-            "Swing left!":
-
-                show sword swing at sword with ease
-                play effect "audio/sword_swing.mp3"
-
-                show BG nightdeck2 with flash
-                show pirate4 slash at wiggle
-
-                show sword at sword with ease
-                p "Fack'en ell!"
-
-                hide pirate4 slash with dissolve
                 jump down_with_the_ship
 
-            "Take out the legs!":
+            elif matey2 == 0:
 
-                show sword swing at sword with ease
-                play effect "audio/sword_clash.ogg"
-                show BG nightdeck2 with flash
+                jump down_with_the_ship
 
-                show sword at sword with ease
-                p "Try'in to take me boot?"
+            elif pirate4_x != 0 and pirate5_x != 0: # pirate 4 and 5 are alive
 
-                $ matey2 += 1
+                call screen pirate_fight3_3
 
-                jump pirate_fight3
+            elif pirate4_x != 0 and pirate5_x == 0: # pirate 4 is alive
+
+                call screen pirate_fight3_4
+
+            elif pirate4_x == 0 and pirate5_x != 0: # pirate 5 is alive
+
+                call screen pirate_fight3_5
+
+        else:
+
+            show sword swing at sword with ease
+            play effect "audio/sword_swing.mp3"
+
+            show BG nightdeck2 with flash
+            show pirate4 slash at wiggle
+
+            show sword at sword with ease
+            p "Ahhhhh, damn ye!"
+
+            hide pirate4 slash with dissolve
+
+            $ pirate3_x = 0
+            $ death_count += 1
+
+            if pirate3_x == 0 and pirate4_x == 0: # pirate 3 and 4 are dead without 5
+
+                jump down_with_the_ship
+
+            elif pirate3_x == 0 and pirate4_x != 0: # pirate 3 is dead and 4 is alive without 5
+
+                call screen pirate_fight3_4
+
+            elif pirate3_x != 0 and pirate4_x == 0: # pirate 4 is dead and 3 is alive wthout 5
+
+                call screen pirate_fight3_0
+
+    label pirate_fight3_2:
+
+        if pirate4_x == 1 and matey2 >= 3:
+
+            show sword swing at sword with ease
+            play effect "audio/sword_swing.mp3"
+
+            show BG nightdeck2 with flash
+            show pirate5 slash at wiggle
+
+            show sword at sword with ease
+            p "I'll see ye in Hell!"
+
+            hide pirate5 slash with dissolve
+
+            $ pirate4_x = 0
+            $ death_count += 1
+
+            if pirate3_x == 0 and pirate4_x == 0 and pirate5_x == 0:
+
+                jump down_with_the_ship
+
+            elif pirate3_x != 0 and pirate4_x != 0 and pirate5_x == 0:
+
+                call screen pirate_fight3_1
+
+            elif pirate3_x == 0 and pirate4_x != 0 and pirate5_x != 0:
+
+                call screen pirate_fight3_3
+
+            elif pirate3_x == 0 and pirate4_x == 0 and pirate5_x != 0:
+
+                call screen pirate_fight3_5
+
+            elif pirate3_x != 0 and pirate5_x != 0: # pirate 3 and 5 are alive
+
+                call screen pirate_fight3_6
+
+            elif pirate3_x != 0 and pirate5_x == 0: # pirate 3 is alive
+
+                call screen pirate_fight3_0
+
+            elif pirate3_x == 0 and pirate5_x != 0: # pirate 5 is alive
+
+                call screen pirate_fight3_5
+
+        else:
+
+            show sword swing at sword with ease
+            play effect "audio/sword_swing.mp3"
+
+            show BG nightdeck2 with flash
+            show pirate5 slash at wiggle
+
+            show sword at sword with ease
+            p "I'll see ye in Hell!"
+
+            hide pirate5 slash with dissolve
+
+            $ pirate4_x = 0
+            $ death_count += 1
+
+            if pirate3_x == 0 and pirate4_x == 0: # pirate 3 and 4 are dead without 5
+
+                jump down_with_the_ship
+
+            elif pirate3_x == 0 and pirate4_x != 0: # pirate 3 is dead and 4 is alive without 5
+
+                call screen pirate_fight3_4
+
+            elif pirate3_x != 0 and pirate4_x == 0: # pirate 4 is dead and 3 is alive wthout 5
+
+                call screen pirate_fight3_0
+
+    label pirate_fight3_3:
+
+        if pirate5_x == 1:
+
+            show sword swing at sword with ease
+            play effect "audio/sword_swing.mp3"
+
+            show BG nightdeck2 with flash
+            show pirate6 slash at wiggle
+
+            show sword at sword with ease
+            p "Shannon, farewell."
+
+            hide pirate6 slash with dissolve
+
+            $ pirate5_x = 0
+            $ death_count += 1
+
+            if pirate3_x == 0 and pirate4_x == 0 and pirate5_x == 0:
+
+                jump down_with_the_ship
+
+            elif pirate3_x != 0 and pirate4_x != 0: # pirate 3 and 4 are alive
+
+                call screen pirate_fight3_1
+
+            elif pirate3_x == 0 and pirate4_x != 0: # pirate 4 is alive
+
+                call screen pirate_fight3_4
 
     label down_with_the_ship:
 

@@ -1459,7 +1459,7 @@ label pirate_position:
 
     else:
 
-        jump act1_end:
+        jump act1_end
 
 label act1_end:
 
