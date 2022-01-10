@@ -246,7 +246,7 @@ label act1_2:
 
         MC "What kind of book? I want something,"
 
-        $ book_choice = "" # to determine type of book chosen for future reference at the school
+        define book_choice = "" # to determine type of book chosen for future reference at the school
 
         menu:
 

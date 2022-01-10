@@ -169,6 +169,13 @@ image fiona laugh = "Fiona laugh.png"
 image fiona sad = "Fiona sad.png"
 image fiona frown = "Fiona frown.png"
 
+image be = "behati.png"
+image be happy = "behati happy.png"
+image be emb = "behati emb.png"
+image be quiz = "behati quiz.png"
+image be shocked= "behati shocked.png"
+image be skeptical = "behati skeptical.png"
+
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands
 define Cap = Character('Captain', color="#7F0505", callback=caps_voice)                                     # The Demonic Pirate Ricardo AKA Captain
@@ -305,6 +312,7 @@ else:
 # #2150E7 when your previous choice comes back
 # #50A23B a good choice
 # #f00 a bad choice
+
 
 # The Start of Game
 label start:

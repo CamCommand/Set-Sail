@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".91"
+define config.version = ".912"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -35,7 +35,8 @@ Set Sail is currently in it’s demo phase. The first act of the game is to give
 
 # These extra centers are for showing four characters on screen at once
 
-
+transform sitting: # for sitting
+    xalign 0.5 yalign -1
 
 transform centerleft: # for girls
     xalign 0.35 yalign 1.0

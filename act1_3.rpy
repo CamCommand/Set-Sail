@@ -262,23 +262,30 @@
             a "{cps=80}Everyone! Attention!{/cps}"
 
             if player_identity == "f":
+
                 a "This is [player_name]. She’s a member of The Red Plague pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
+
             elif player_identity == "m":
+
                 a "This is [player_name]. He’s a member of The Red Plague pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
+
             else:
+
                 a "This is [player_name]. They're a member of The Red Plague pirate ship that terrorizes the Gulf of Mexico and all the surrounding waters."
 
             a "Why don’t you introduce yourself [player_name]? Say a little about yourself too."
+
             hide a_d with dissolve
-            show b_d at right
+            show be at right
             show g_d at center
             show fiona at left
             with dissolve
             MC "Yeah, I’m capable of that."
 
-            $ f_met = 0
-            $ g_met = 0
-            $ b_met = 0
+            # check is characters have met yet
+            define f_met = 0
+            define g_met = 0
+            define b_met = 0
 
             menu:
 
@@ -290,7 +297,9 @@
 
                     $ quick_menu = True
 
-                    MC "Most days at sea are treacherous and exhausting, but the life is free and can be very rewarding. I had to work my way towards  becoming the first mate in that time."
+                    MC "Most days at sea are treacherous and exhausting, but the life is free and can be very rewarding."
+
+                    MC "I had to work my way towards becoming the first mate in that time."
 
                     MC "However, ranks only come with more responsibility on pirate ships. It doesn’t automatically earn you respect."
 
@@ -305,8 +314,9 @@
                     a "That’s Fiona, she’s our Vice President."
 
                     hide g_d
-                    hide b_d
-                    show fiona sad at center with dissolve
+                    hide be
+                    with dissolve
+                    show fiona sad at center with moveinright
 
                     MC "What’s your question Fiona?"
 
@@ -334,7 +344,7 @@
 
                     "The room rings with a  small wave of applause. I’ve never been clapped at before."
 
-                    hide fiona with moveoutbottom
+                    hide fiona with moveoutleft
 
                     $ Fi_affinity += 1
                     $ f_met += 1
@@ -361,7 +371,8 @@
                     a "That’s Geraldine, she’s our club’s Secretary."
 
                     hide fiona
-                    hide b_d
+                    hide be
+                    with dissolve
                     show g_d at center with dissolve
 
                     MC "Aye lass, what’s yer question?"
@@ -381,7 +392,9 @@
 
                     MC "The drink was so good that, according to the Demonic Pirate himself, he allowed them to pass his sea."
 
-                    MC "As we sailed away from the ship a storm started to shake up the waves. I turned towards the ship and one sailor was loading a rocket propelled grenade and aimed it at our tail."
+                    MC "As we sailed away from the ship a storm started to shake up the waves."
+
+                    MC "I turned towards the ship and one sailor was loading a rocket propelled grenade and aimed it at our tail."
 
                     MC "Before I could brace for impact, an uncharacteristically powerful wave for that stage of the storm was knocked into the Mexican ship."
 
@@ -423,12 +436,17 @@
 
                     hide g_d
                     hide fiona
-                    show b_d at center with dissolve
+                    with dissolve
+                    show be at center with moveinleft
 
                     $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
                     MC "Aye lass, what’s the problem?"
 
-                    b "Y-yes hello, [player_name] isn’t it true that eight-six to ninety-nine percent of total goods stolen are raw material exports that the government plans to lose in their budgets?"
+                    b "Y-yes hello, [player_name]."
+
+                    show be quiz with dissolve
+
+                    b "Isn’t it true that eighty-six to ninety-nine percent of total goods stolen are raw material exports that the government plans to lose in their budgets?"
 
                     b "Ones that crews are instructed to not fight over and to protect themselves?"
 
@@ -438,13 +456,16 @@
 
                     MC "Do I look like someone who's familiar with your mainland statistics?"
 
+                    show be skeptical with dissolve
+
                     b "Well y-you can account for your own ship’s actions, r-right?"
 
                     MC "Aye, well it’s true that American vessels tend to avoid us at all costs, others aren’t so cautious."
 
                     MC "We don’t steal from just governments. Other pirates and pleasure cruises are prime targets for loot of all kinds."
 
-                    # quizative behati
+                    show be quiz with dissolve
+
                     b "Are t-those unaccounted for in your main piracy focus?"
 
                     b "B-because how would you know where another pirate ship is going to be?"
@@ -452,6 +473,8 @@
                     b "Or if, if some oil millionaire’s kid is going on a joyride?"
 
                     MC "Behati was it?"
+
+                    show be emb with dissolve
 
                     b "Yes that’s me."
 
@@ -461,9 +484,10 @@
 
                     MC "No matter the costs."
 
-                    # happy behati
+                    show be with dissolve
+
                     b "T-thank you for your honesty. That’s a lot to digest, I’ll adjust my data points accordingly."
-                    hide b_d with moveoutbottom
+                    hide be with moveoutleft
 
                     $ Be_affinity += 1
                     $ b_met += 1
@@ -477,15 +501,16 @@
             $ b_check = 0
 
             hide g_d
-            hide fiona with dissolve
-            hide b_d
+            hide fiona
+            hide be
+            with dissolve
             show a_d at center with dissolve
 
             a "That was a pretty good introduction. Thank you [player_name], I think we all learned a little more from that."
 
             a "Why don’t we eat some of the food that G brought and we can kinda just talk some more. You can spread the culture on us as thick as you want."
 
-            hide a_d
+            hide a_d with dissolve
 
             "The people not paying attention perked up for the food to rush the table. I expected to monologue more, guess it’s less pressure on me now."
 
@@ -494,18 +519,21 @@
             "Well, his \"speeches\" are more like screaming matches, but still. What should I do now?"
 
             "Do they want me to socialize and answer more questions?"
+
             jump classroom_choice
 
         label classroom_choice:
 
             define x = 0
+
             # keeps track of conversation moments
-            $ b_convo = 0
-            $ f_convo = 0
-            $ g_convo = 0
-            $ a_convo = 0
+            define b_convo = 0
+            define f_convo = 0
+            define g_convo = 0
+            define a_convo = 0
 
             menu:
+
                 "Socialize":
                     jump social
 
@@ -527,49 +555,63 @@
 
             # just a check to do an intro line
             if x == 0:
+
                 "This is what I wanted to do on land. Talk to people my own age, I should take advantage of this moment."
+
                 $ x += 1
+
             "Who should I talk to?"
 
             menu:
 
                 "Behati" if b_met >= 1:
+
                     jump behati
 
                 "Girl with large spectacles" if b_met == 0:
+
                     jump behati
 
                 "Fiona" if f_met >= 1:
                     jump fiona
 
                 "Taller girl" if f_met == 0:
+
                     jump fiona
 
                 "G" if g_met >= 1:
+
                     jump g
 
                 "Pale girl" if g_met == 0:
+
                     jump g
 
                 "Astrid" if a_convo < 3:
+
                     jump astrid
 
                 "No wait":
+
                     $ bye = leave[rand1]
                     "[bye]"
                     jump classroom_choice
 
         label behati:
 
-            show b_d at center with dissolve
-
             if b_convo == 0:
 
                 if b_met == 0:
 
+                    show be at center with dissolve
+                    $ quick_menu = False
+
                     MC "Hello, it’s nice to meet you young lady. Are you a valued member of the club or just came to see a pirate?"
 
-                    # nervous behati
+                    $ quick_menu = True
+
+                    show be emb with dissolve
+
                     b "Y-yes hi I am. I’m B-behati. T-thank you for c-coming t-today."
 
                     MC "Are you nervous about something Behati?"
@@ -580,6 +622,8 @@
 
                     MC "I was just trying to show everyone that being a pirate has it's glory but it is very dangerous. Trying to be realistic, you know?"
 
+                    show be shocked with dissolve
+
                     b "It’s okay, I’m fine. I just need to breathe."
 
                     b "But, you’re not giving the Pirate Culture Club enough credit. We aren’t just a bunch of weebs, we appreciate the life you live. It’s admirable."
@@ -588,34 +632,54 @@
 
                 else:
 
+                    show be at center with dissolve
+                    $ quick_menu = False
+
                     MC "Well, what did you think of my opening Behati?"
+
+                    $ quick_menu = True
 
                     MC "Maybe I said a little too much. It was to show everyone that being a pirate isn’t what you think it might be."
 
                     b "Hey [player_name]."
 
-                    b "That was definitely a shock, but you shouldn’t underestimate us. We aren’t just a bunch of weebs, we appreciate the life you live. It’s admirable."
+                    b "That was definitely a shock, but you shouldn’t underestimate us."
+
+                    b "We aren’t just a bunch of weebs, we appreciate the life you live. It’s admirable."
 
                 MC "What do you mean?"
+
+                show be emb with dissolve
 
                 b "I mean we all love something about being a pirate that we can’t fully enjoy in our own lives."
 
                 MC "Like what?"
 
+                show be emb at wiggle
+
                 b "I don’t want to speak for anyone else here other than myself. There’s a ninety percent chance they’ll tell you themselves."
 
                 MC "That’s alright, but what about you Behati? What do you think about pirates?"
 
+                show be quiz with dissolve
+
                 b "{cps=15} M-me? I ummmmmmm. I am.{/cps}"
 
-                b "I’m used to figuring out stuff I like pretty fast. When I was younger I saw one movie about Somlian pirates and was swept up by everything pirates are."
+                b "I’m used to figuring out stuff I like pretty fast."
 
-                b "The open seas, stealing to survive, all the interesting uses of old and new technology. It’s such a rich history, I’ve been wiki diving on new pirate stuff almost every month for the past two years."
+                b "When I was younger I saw one movie about Somlian pirates and was swept up by everything pirates are."
+
+                show be with dissolve
+
+                b "The open seas, stealing to survive, all the interesting uses of old and new technology."
+
+                b "It’s such a rich history, I’ve been wiki diving on new pirate stuff almost every month for the past two years."
 
                 MC "What’s a \"wiki dive\"?"
 
-                # suprised behati
-                b "Oh my God, does your ship not get wi-fi? A generator for a mi-fi box even?"
+                show be shocked with dissolve
+
+                b "Oh my God, does your ship not get wi-fi? A generator to charge a mi-fi box even?"
 
                 MC "Since those words mean nothing to me, I’ll say no."
 
@@ -623,9 +687,13 @@
 
                 MC "I have a vague understanding. It’s like videos and music right?"
 
-                "Behait’s face shows some sign of relief. I should have had a better definition prepared, knowing that the internet is important to people our age."
+                show be skeptical with dissolve
+
+                "Behait’s face seems worried. I should have had a better definition prepared, knowing that the internet is important to people our age."
 
                 b "Well yes but there’s so much more. Movies, music, videos, games, the solar system of information!"
+
+                show be with dissolve
 
                 b "But it also has something called a wiki. It’s like all the information we have on super easy to read pages all linked together."
 
@@ -633,12 +701,15 @@
 
                 MC "So like a really long book?"
 
-                # nervous behati
+                show be skeptical with dissolve
+
                 "She exhales loudly into her hands. How long would she have kept going if I didn’t stop her?"
 
                 b "Think the biggest encyclopedia ever."
 
                 MC "That definitely sounds great for everyone."
+
+                show be with dissolve
 
                 b "There’s even a page on The Red Plague. It’s not well documented because a lot of historic pirating is told through legal documents after they’ve been hanged or died."
 
@@ -646,9 +717,13 @@
 
                 MC "Thats so great. It feels wrong, but just true enough to keep the mythos alive."
 
+                show be quiz with dissolve
+
                 b "Yeah it’s pretty cool, I wish there was more info though."
 
                 MC "Cool. Yes that's cool."
+
+                show be with dissolve
 
                 b "Heh ha, very cool."
 
@@ -656,24 +731,37 @@
 
                 MC "I could write a book?"
 
+                show be skeptical with dissolve
+
                 b "Well you can edit your ship’s wiki page, sure. Help fill out the page but keep the details ambiguous so you’re still scary."
 
                 MC "I’ll think of stuff to add and get back to you. Thanks Behati."
 
+                show be emb with dissolve
+
                 b "No, I can't do anything unless you have public docu-"
+
+                show be with dissolve
 
                 b "Nevermind, if you think of anything let me know."
 
                 $ b_convo += 1
                 $ activity_check += 1
-                hide b_d with dissolve
+                hide be emb with dissolve
                 jump social
 
             elif b_convo == 1:
 
-                b "Hey [player_name], did you think of anything you wanted to add to your page?"
+                show be at center with dissolve
+                $ quick_menu = False
+
+                b "Hey [player_name], did you think of anything you wanted to add to your wiki page?"
+
+                $ quick_menu = True
 
                 MC "Yes! Something very cool."
+
+                show be quiz with dissolve
 
                 b "What is it?"
 
@@ -681,17 +769,23 @@
 
                 MC "The heroics of harvesting it’s resources against our own lives, the whole crew pitched in  this one and a lifetime-"
 
+                show be skeptical with dissolve
+
                 b "{cps=15}Ummmmm. But, that’s n-not.{/cps}"
 
                 MC "What you don’t think it’s true?"
 
                 b "No it’s just that, this isn’t a book."
 
+                show be with dissolve
+
                 b "Wikis are supposed to be informational. They aren’t the place for hearsay stories or non formative tales."
 
                 MC "Alright, even though this is entirely a formative tale, I know what you mean."
 
                 "That's really disappointing. I thought I could get a scribe to tell our tales for free. Most scribes aren’t worth the ink they charge us for."
+
+                show be quiz with dissolve
 
                 b "Something like, how many pirates are on the ship?"
 
@@ -701,7 +795,11 @@
 
                 MC "What are you talking about?"
 
-                b "Okay so some of us are also weebs, don’t worry about it. Both my brothers left for college last year, so I’ve been able to use the big T.V. after school for anime."
+                show be emb with dissolve
+
+                b "Okay so some of us are also weebs, don’t worry about it."
+
+                b "Both my brothers left for college last year, so I’ve been able to use the big T.V. after school for anime."
 
                 "What is she trying to say? I think the whale story may have made things weird."
 
@@ -709,23 +807,35 @@
 
                 MC "Your brothers are seeking higher education? That’s interesting, do you want to do the same?"
 
+                show be with dissolve
+
                 b "Yeah, I want to do the same."
 
                 b "Jack and Tye both went to New York to study business, but I think I’ll stay in state. Try to become a teacher."
+
+                show be quiz with dissolve
 
                 b "Not sure what kind of teacher yet, so many subjects interest me. It’s not like I could choose the curriculum myself. That part sucks."
 
                 MC "There are lots of illiterate pirates, if you want you could teach language on a pirate ship. Plenty of ships would pay for less stupid help."
 
+                show be shocked with dissolve
+
                 b "Oh my, being on a pirate ship sounds overwhelming. I’d want to do so much learning by myself. I’ve never even shot a gun before."
 
                 MC "Do you want to?"
 
+                show be emb with dissolve
+
                 b "Really badly yes. Is that weird?"
+
+                show be quiz with dissolve
 
                 b "I’ve read so much about older and new pistols. The mechanisms are so fascinating to me."
 
                 MC "Is there a lot you gravitate towards about the pirate culture?"
+
+                show be with dissolve
 
                 b "The club has been a big influence on me, but yeah, it all seems so cool."
 
@@ -733,29 +843,44 @@
 
                 MC "Ha hahaha! Be sure they aren’t loaded at least."
 
+                show be skeptical with dissolve
+
                 b "No way, I’m firing it. I read that old flintlocks make sounds louder than desert eagles. I have to know if that’s true."
 
                 MC "I can confirm they are very loud."
 
+                show be quiz with dissolve
+
                 b "Something might be louder actually. I have to look this up."
+
+                show be quiz at sitting with ease
 
                 "Behati pulls out her device I’ve seen her look at before and begins tapping furiously. It seems like I’ve lost her to the wikis."
 
                 $ b_convo += 1
-                hide b_d with dissolve
+                hide be quiz with dissolve
                 jump social
 
             elif b_convo == 2:
 
+                show be quiz at sitting with dissolve
+                $ quick_menu = False
+
                 "Behati is vigorously reading her device. I don’t know if she could hear me even if I tried."
 
+                $ quick_menu = True
+
                 if book_choice == "smart":
-                    # use this color when a previous choice has paid off
+
+                    show be quiz at center with ease
+
                     b "{color=#2150E7}Hey [player_name]. What’s sticking in your waistband? Is that a book or something?{/color}"
 
                     "How did she notice, she didn’t even glance at me, seemingly."
 
                     MC "Yes, it’s a book. I grabbed this book from a store after I got off the ship. Thought it could be an interesting read."
+
+                    show be shocked with dissolve
 
                     b "Oh! It’s a Gail Mcryson book!"
 
@@ -763,42 +888,87 @@
 
                     MC "Well, I’m not entirely sure yet. This could be the deciding factor."
 
+                    show be with dissolve
+
                     b "Then I think you’re gonna become obsessed like me after reading it."
 
-                    "Behati grows a big grin and then gets flushed after she holds it for too long. She’s clearly passionate about her interests but not the most prideful of them."
+                    show be emb with dissolve
+
+                    "She’s clearly passionate about her interests but I can tell she's not the most prideful of them."
 
                     "All I learn out at sea is how to be a pirate. Here is where I think the most knowledge lies."
 
-                    hide b_d with dissolve
-                    $ book_choice = "used"# just to know when the variable is used
+                    b "Maybe we'll talk later? Kay?"
+
+                    MC "Alright, sure thing Behati."
+
+                    show be skeptical with dissolve
+
+                    b "I got some more homework to, uh, work on."
+
+                    hide be skeptical with dissolve
+
+                    $ book_choice = "used" # just to know when the variable is used
                     $ b_convo += 1
                     $ activity_check += 1
                     jump social
 
                 else:
+
+                    show be quiz at center with ease
+
                     b "I’m checking online if I could reasonably get an old timey gun."
 
                     MC "That’s cool. Need my advice?"
 
                     b "I mean. I don’t know what would work or be better if I could get one."
 
+                    show be shocked with dissolve
+
                     b "But it looks like they are all really expensive and I’m not sure yet how legal it would be for a minor to own one."
 
                     MC "That’s unfortunate."
 
-                    MC "To make the process cheaper, you should look for a gun that takes bullets. Straight gunpowder guns are a pain and finding raw materials for them is borderline impossible."
+                    MC "To make the process cheaper, you should look for a gun that takes bullets."
+
+                    MC "Straight gunpowder guns are a pain and finding raw materials for them is borderline impossible."
+
+                    show be happy with dissolve
 
                     b "Thanks, that’s good advice."
 
-                    hide b_d with dissolve
+                    show be with dissolve
+
+                    b "Maybe we'll talk later? Kay?"
+
+                    MC "Alright, sure thing Behati."
+
+                    show be skeptical with dissolve
+
+                    b "I got some more homework to, uh, work on."
+
+                    hide be skeptical with dissolve
+
+                    hide be skeptical with dissolve
                     $ b_convo += 1
                     $ activity_check += 1
                     jump social
 
             else:
-                "Behati is vigorously reading her device. I don’t know if she could hear me even if I tried. I should get one of those if they’re as cool as she says."
 
-                hide b_d with dissolve
+                show be quiz at sitting with dissolve
+
+                $ quick_menu = False
+
+                "Behati is vigorously reading her device and checking her papers."
+
+                $ quick_menu = True
+
+                "I don’t know if she could hear me even if I tried, she's so focused."
+
+                "Wonder if I should get one of those things if they’re as cool as she says."
+
+                hide be quiz with dissolve
                 jump social
 
         label fiona:
@@ -809,7 +979,11 @@
 
                 if f_met == 0:
 
+                    $ quick_menu = False
+
                     MC "Hey, what's happening, cool club member?"
+
+                    $ quick_menu = True
 
                     $ f = Character('Tall Girl', color="#E44D1A", callback=fiona_voice)# Fiona
 
@@ -855,7 +1029,11 @@
 
                 else:
 
+                    $ quick_menu = False
+
                     MC "Hey Fiona, what are you up to?"
+
+                    $ quick_menu = True
 
                     show fiona sad with dissolve
 
@@ -922,7 +1100,11 @@
 
             elif f_convo == 1:
 
+                $ quick_menu = False
+
                 f "What’s the magic words?"
+
+                $ quick_menu = True
 
                 MC "What’s up...?"
 
@@ -1051,7 +1233,11 @@
 
             elif f_convo == 2:
 
+                $ quick_menu = False
+
                 f "What's the magic intro?"
+
+                $ quick_menu = True
 
                 MC "What’s up cock sucker?"
 
@@ -1114,7 +1300,11 @@
 
             else:
 
+                $ quick_menu = False
+
                 MC "Hey cock sucker."
+
+                $ quick_menu = True
 
                 show fiona sad with dissolve
 
@@ -1136,7 +1326,12 @@
             if g_convo == 0:
 
                 if g_met == 0:
+
+                    $ quick_menu = False
+
                     MC "How are you today lass?"
+
+                    $ quick_menu = True
 
                     $ g = Character('Pale Girl', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
                     g "Awful, I failed a math exam today."
@@ -1163,8 +1358,13 @@
                     $ g_met += 1
 
                 else:
+
+                    $ quick_menu = False
                     $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
+
                     MC "Hello again G. How are you?"
+
+                    $ quick_menu = True
 
                     # happy g
                     g "I failed a freaking math test today. Very unepic of me."
@@ -1227,7 +1427,12 @@
                 jump social
 
             elif g_convo == 1:
+
+                $ quick_menu = False
+
                 MC "Hello again G."
+
+                $ quick_menu = True
 
                 g "What’s the haps pirate pal?"
 
@@ -1333,11 +1538,17 @@
                 jump social
 
             elif g_convo == 2:
+
+                $ quick_menu = False
+
                 MC "What’s going on with your phone?"
+
+                $ quick_menu = True
 
                 g "Oh, I got a notification for a game I was playing. Have to do the dailys."
 
                 if game_played != "":
+
                     MC "Sounds cool. I played my first video games today before coming here."
 
                     g "{color=#2150E7}Oh yeah? What did you play?{/color}"
@@ -1401,7 +1612,12 @@
                     jump social
 
                 else:
+
+                    $ quick_menu = False
+
                     g "You ever played a video game before?"
+
+                    $ quick_menu = True
 
                     MC "No never. I’ve heard of them, but never had a chance to."
 
@@ -1458,6 +1674,7 @@
                     hide g_d with dissolve
                     jump social
             else:
+
                 g "Have you assimilated yet pirate pal?"
 
                 MC "I’m not sure. People seem to be fine with me."
@@ -1476,7 +1693,12 @@
             show a_d at center with dissolve
 
             if a_convo == 0:
+
+                    $ quick_menu = False
+
                     MC "Hey Astrid? How’d you like my intro?"
+
+                    $ quick_menu = True
 
                     a "It was something for sure. You should go talk to some other club members though."
 
@@ -1534,7 +1756,12 @@
                     jump social
 
             elif a_convo == 1:
+
+                $ quick_menu = False
+
                 a "Did you talk to the others yet?"
+
+                $ quick_menu = True
 
                 MC "Don’t worry President, I’ll make sure nobody spreads any nasty rumors about us."
 
@@ -1551,6 +1778,7 @@
                 MC "We only tolerate bad behavior because we’d die without the work everyone puts into the crew."
 
                 if book_choice == "exciting":
+
                     a "{color=#2150E7}By the way, what’s that you have under your shirt?{/color}"
 
                     MC "Oh, I took this book from a store before coming here. Thought it might look good in my humble collection."
@@ -1615,7 +1843,12 @@
                 jump social
 
             elif a_convo == 2:
+
+                $ quick_menu = False
+
                 a "Okay [player_name], what’s your favorite thing to steal?"
+
+                $ quick_menu = True
 
                 MC "That’s the easy one."
 
@@ -1656,7 +1889,11 @@
 
         label washroom:
 
+            $ quick_menu = False
+
             "My stomach is hurting suddenly. Does my stomach feel the incoming social anxiety or was it something I ate?"
+
+            $ quick_menu = True
 
             "Hopefully the washrooms are cleaner here then on the ship. Keeping the latrine clean for more than three days on the Plague would take God-like abilities."
 
@@ -2051,17 +2288,22 @@
 
         label food:
 
+            $ quick_menu = False
+
             MC "I can’t turn down free food. What kind of pirate would I be?"
+
+            $ quick_menu = True
 
             "The people who burst towards the food after I spoke have left. Apparently they weren’t as interested as the club heads."
 
             "A side table by the window is laid out with plastic wrapped food. My eye is drawn to the..."
 
             menu:
+
                 "Grilled Chicken":
                     jump chicken
 
-                "Really Long Sandwich":
+                "Really Long Sandwich" if b_convo != 3:
                     jump sandwich
 
                 "Fresh Fruits":
@@ -2070,7 +2312,9 @@
             label chicken:
 
                 $ quick_menu = False
+
                 "The grilled chicken breasts look so good. I can’t tell if it's warm or cold but I want to eat it super bad."
+
                 $ quick_menu = True
 
                 "There are little plastic plates to put the food on. Are these easier to clean?"
@@ -2157,7 +2401,9 @@
             label sandwich:
 
                 $ quick_menu = False
+
                 "Poseidon help me that sandwich is half my size."
+
                 $ quick_menu = True
 
                 "Oh?"
@@ -2165,7 +2411,9 @@
                 "It’s cut into slices others are taking. Was it too presumptuous to think it was all a gift for the Captain? I’d totally expect him to eat it all."
 
                 if b_met == 0:
-                    show b_d at center with dissolve
+
+                    show be emb at sitting with dissolve
+
                     $ b = Character('Girl with Glasses', color="#5E0F60", callback=b_voice)# Behati
 
                     b "Do y-you like the sandwiches?"
@@ -2176,55 +2424,75 @@
 
                     MC "Yes this tastes great. I’ve never had anything like it."
 
+                    show be emb at wiggle
+
                     b "That’s g-g-good. Do you w-want anything to d-drink?"
 
                     MC "Well I was told there was no alcohol, so do you have water at least, ummm? What’s your name?"
 
                     $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
                     $ b_met +=1
+
                     b "{cps=100}I’m Behati here’s some water we took from the tap and put in a pitcher!{/cps}"
 
-                    show b_d at wiggle
+                    show be at wiggle
+
                     "She pours me a cup of water as fast as she said that, spilling a fair amount of it on the table."
+
+                    show be shocked with dissolve
 
                 else:
 
-                    show b_d at center with dissolve
+                    show be emb at center with dissolve
+
                     $ b = Character('Behati', color="#5E0F60", callback=b_voice)# Behati
 
                     b "Do y-you like the sandwiches?"
 
-                    "It’s that Behati girl. Her questions were very data driven, wonder if that’s how she’s like?"
+                    "It’s Behati. Her questions were very data driven, wonder if that’s how she’s like all the time?"
 
-                    "I really don’t know all of the ships' intakes and outputs (besides how many ships we sink). Flavio mostly takes care of the number stuff."
+                    "I really don’t know all of the ships' intakes and outputs (besides how many ships we sink)."
+
+                    "Flavio mostly takes care of the number stuff."
 
                     MC "Yes this tastes great. I’ve never had anything like it."
 
                     if b_convo >= 1:
+
+                        show be with dissolve
+
                         b "That’s good. Do you want anything to drink?"
 
                         MC "Water if you have it."
 
                         b "Let me pour you some, here’s some water we took from the tap and put in a pitcher!"
 
-                        show b_d with wiggle
+                        show be shocked with wiggle
                         "She pours me a cup of water as fast as she said that, spilling a little bit on the table."
 
                     else:
+
+                        show be emb with wiggle
+
                         b "That’s g-g-good. Do you w-want anything to d-drink?"
 
                         MC "Water if you have it. Are you alright? You sound worried about something."
 
                         b "{cps=100}Worried? Why would I be worried? Here’s some water we took from the tap and put in a pitcher!{/cps}"
 
-                        show b_d with wiggle
+                        show be shocked with wiggle
+
                         "She pours me a cup of water as fast as she said that, spilling a little bit on the table."
 
                 MC "{cps=20}Ummmm Beh-{/cps}"
 
-                b "{cps=85}Did you know our school is the closest in the district with the amount of lead legally allowed in the tap water by zero point zero zero two percent parts-per-billion?{/cps}"
+                show be emb at wiggle
+
+                b "{cps=80}Did you know our school is the closest in the district with the amount of lead legally allowed in the tap water by zero point zero zero two percent parts-per-billion?{/cps}"
 
                 MC "No, I didn’t know that. I just got here, remember?"
+
+                show be skeptical with dissolve
 
                 b "Yeah of course, totally, duh, that was a stupid question."
 
@@ -2234,7 +2502,11 @@
 
                 MC "Behati, tell me what it’s like in the Pirate Culture Club."
 
+                show be shocked with dissolve
+
                 b "Well. It’s a great time, really."
+
+                show be with dissolve
 
                 b "Astrid is a great President and we don’t have much of a budget so a Treasurer doesn’t have much to worry about. So I do very little work."
 
@@ -2242,7 +2514,11 @@
 
                 MC "Do you make a lot of friends here?"
 
+                show be skeptical with dissolve
+
                 b "No no no. Not really."
+
+                show be with dissolve
 
                 b "We’re all friends on the E-board. This is the only time I ever see G during school now."
 
@@ -2250,34 +2526,46 @@
 
                 MC "Which one is Jack?"
 
-                b "Jack was sitting next to me during your introduction. But after you were done he took two pieces of chicken and bailed."
+                b "Jack was sitting next to me during your introduction."
+
+                show be skeptical with dissolve
+
+                b "But after you were done he took two pieces of chicken and bailed."
 
                 b "Probably won’t see him again till Monday."
 
                 MC "Everyone here seems pretty nice. I might look around some more before I leave."
 
+                show be quiz with dissolve
+
                 b "If you have any questions just let me know. I know all about the school."
+
+                show be with dissolve
 
                 b "I also know a lot about pirates that came from Seaborough, but not everything. Maybe you could fill in my gaps?"
 
-                hide b_d with dissolve
+                hide be happy with dissolve
+
                 "Behati does a weird thing with her eyes and walks away."
 
                 $ b_met += 1
                 $ Be_affinity += 1
                 $ activity_check += 1
                 $ food_ate += 1
+
                 jump classroom_choice
 
             label fruits:
 
                 if food_check == 1:
+
                     $ quick_menu = False
                     "{color=#2150E7}They have more fruits!{/color}"
                     $ quick_menu = True
 
                     "That apple I took left me wanting more. Plus I can sneak some of these out of here for later."
                 else:
+
                     $ quick_menu = False
                     "A pirate can’t risk avoiding their fruits. Don’t want history to repeat itself."
                     $ quick_menu = True
@@ -2393,7 +2681,11 @@
 
         label leave:
 
+            $ quick_menu = False
+
             MC "Hey Astrid, I think I’m going to leave. It’s getting late and I’m under threat of being left behind if the ship leaves without me."
+
+            $ quick_menu = True
 
             show a_d at centerleft with dissolve
             a "That’s alright, we aren’t holding you hostage."
@@ -2401,10 +2693,12 @@
             show g_d at centerright with dissolve
             g "Speak for yourself, [player_name] stay here and be our new club advisor."
 
-            show b_d at left with dissolve
+            show be skeptical at left with dissolve
             b "G, they’re not a teacher. Advisors have to work here."
 
             g "Theft of identity! Pretend like you went to Florida State and are super qualified to work here."
+
+            show be with dissolve
 
             a "We’re letting [player_name] go. Stop messing around."
 
@@ -2422,6 +2716,8 @@
 
             MC "It was my pleasure G, I…"
 
+            show be emb with dissolve
+
             b "{cps=90}Thank You For Teaching Me More About Pirates [player_name]! I’ll Never Forget This!{/cps}"
 
             show fiona sad with dissolve
@@ -2434,7 +2730,11 @@
 
             f "You don’t get enough worldly from the Florida common man?"
 
+            show be skeptical with dissolve
+
             b "Haha, hardly."
+
+            show be happy with dissolve
 
             b "You’ve shifted my views on how pirates perceive themselves and given me more context for the data out there."
 
@@ -2460,11 +2760,15 @@
 
             hide a_d with moveoutleft
             ev "{cps=35}GO NOW, QUICKLY!{/cps}"
-            play effect "audio/crash.mp3"
 
             MC "Alright I’m gone! Fare thee well mateys!"
 
+            play effect "audio/doorclose.ogg"
+            pause 1.5
+
             if Be_affinity > Astrid_affinity and Be_affinity > G_affinity and Be_affinity > Fi_affinity:
+
+                show be happy with dissolve
 
                 b "{color=#2150E7}See ya sea cowboy.{/color}"
 
@@ -2482,10 +2786,11 @@
 
                 a "{color=#2150E7}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
 
-            hide a_d with moveoutleft
-            hide fiona with moveoutright
-            hide b_d with moveoutleft
-            hide g_d with moveoutright
+            hide a_d
+            hide be
+            hide fiona
+            hide g_d
+            with dissolve
 
             # through all paths explore Total Game Time here is about 37 minutes
             stop music fadeout 1.0
