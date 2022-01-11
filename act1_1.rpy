@@ -22,27 +22,27 @@
 
         nvl show
 
-        n "\n"
+        n "\n{nw}"
 
-        n "\nPirating is older than recorded human history. Supply chains interrupted and intercepted by those with the might to steal large portions of materials."
+        n "{cps=30}\nPirating is older than recorded human history. Supply chains interrupted and intercepted by those with the might to steal large portions of materials.{nw}"
 
-        n "\nEvery stretch of water has seen one form or another of piracy. Normally, stealing large sums of profit is seen as immoral."
+        n "{cps=30}\nEvery stretch of water has seen one form or another of piracy. Normally, stealing large sums of profit is seen as immoral.{nw}"
 
-        n "\nYet pirates are deified and revered throughout history. Its unique form of crime shook the world in a way nothing else could."
+        n "{cps=30}\nYet pirates are deified and revered throughout history. Its unique form of crime shook the world in a way nothing else could.{nw}"
 
-        n "\nThus began a code between these pirates. An honor amongst thieves to be upheld keeping the practice ruly in unruly times."
+        n "{cps=30}\nThus began a code between these pirates. An honor amongst thieves to be upheld keeping the practice ruly in unruly times."
 
         nvl clear
 
-        n "\n"
+        n "\n{nw}"
 
-        n "\nThe Pirate Code kept the good times alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle."
+        n "{cps=30}\nThe Pirate Code kept the good times alive throughout the centuries. There was seemingly no end in sight to the popularity of the lifestyle.{nw}"
 
-        n "\nMarching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea while some kept the old fashion {i}Jolly Roger{/i} casted."
+        n "{cps=30}\nMarching into the modern age, piracy has taken many forms. Many melded with the times to seek out the most profitable whales of the sea while some kept the old fashion {i}Jolly Roger{/i} casted.{nw}"
 
-        n "\nThousands are at sea breathing new life into pirating today."
+        n "{cps=30}\nThousands are at sea breathing new life into pirating today by their own means.{nw}"
 
-        n "\nYou are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}."
+        n "{cps=30}\nYou are someone who has known nothing other than the life. Your own adventure is about to {b}Set Sail{/b}."
 
         pause 1.0
         nvl clear
@@ -51,6 +51,7 @@
 
         pause 1.0
         window hide
+        scene BG black
         scene BG MC_room with fade
         with fade
         with fade
@@ -66,6 +67,7 @@
         label input:
 
             menu:
+
                 "{color=FF4DA6}My name is Valerie{/color}":
 
                     $ player_identity = "f"
@@ -108,6 +110,7 @@
         "How do I identify?"
 
         menu:
+
             "{color=FF4DA6}Female{/color}":
 
                 $ player_identity = "f"
@@ -128,26 +131,33 @@
 
         label choice_name_V:
 
-            MC "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             $ quick_menu = False
+
+            MC "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
 
         label choice_name_O:
 
-            MC "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             $ quick_menu = False
+
+            MC "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+
             jump opening
 
         label choice_name_R:
 
-            MC "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             $ quick_menu = False
+
+            MC "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+
             jump opening
 
         label choice_name_User:
 
-            MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             $ quick_menu = False
+
+            MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+
             jump opening
 
         label opening:
@@ -236,11 +246,16 @@
 
             Cap "Why are ye threatening a mate so loudly in me presence Two Hands?"
 
-            "Snapping back into action I head for the top deck. It’s time to start moving for real. I could use a peaceful type of day. As peaceful as pirate life can be."
+            "Snapping back into action I head for the top deck. It’s time to start moving for real. I could use a peaceful type of day."
 
-            scene BG topdeck with dissolve
-            show twohands angry at centerleft with dissolve
-            show cap at right with dissolve
+            "As peaceful as pirate life can be."
+
+            scene BG black with fade
+            scene BG topdeck with flash_lighting
+            pause 0.5
+            show twohands angry at centerleft
+            show cap at right
+            with dissolve
 
             "Blinding heavenly light engulfs my face as I surface above deck."
 
@@ -259,7 +274,7 @@
             "Stepping closer to Two Hands his face, he looks really annoyed."
 
             show cap yelling at centerright with moveinright
-            show twohands scared with ease
+            show twohands scared with dissolve
 
             Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog."
 
@@ -728,7 +743,7 @@
             with fade
             with fade
             scene BG MC_room
-            stop music fadeout 1.0
+            #stop music fadeout 1.0
             jump act1_2
 
 return
