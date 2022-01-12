@@ -24,7 +24,6 @@ style hyperlink_text:
 style gui_text:
     properties gui.text_properties("interface")
 
-
 style button:
     properties gui.button_properties("button")
 
@@ -208,7 +207,8 @@ screen choice(items):
     style_prefix "choice"
 
     vbox:
-        spacing 20
+        yalign 0.4
+        spacing 30
         for i in items:
             textbutton i.caption action i.action
 
@@ -442,6 +442,7 @@ screen main_menu1():
     add "gui/main_menu.png"
 
     fixed:
+
         style_prefix "navigation"
 
         #xpos gui.navigation_xpos
@@ -1078,6 +1079,26 @@ screen preferences():
             hbox:
                 box_wrap True
 
+                if main_menu:
+
+                    vbox:
+                        style_prefix "radio"
+                        label _("Main Menu")
+                        if persistent.menuflag_count <= 1:
+
+                            textbutton _("Beginning") action Show("main_menu1")
+
+                        if persistent.menuflag_count == 2:
+
+                            textbutton _("Beginning") action Show("main_menu1")
+                            textbutton _("Middle") action Show("main_menu2")
+
+                        if persistent.menuflag_count >= 3:
+
+                            textbutton _("Beginning") action Show("main_menu1")
+                            textbutton _("Middle") action Show("main_menu2")
+                            textbutton _("End") action Show("main_menu3")
+
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
@@ -1100,24 +1121,6 @@ screen preferences():
                     textbutton _("Unseen Text") action Preference("skip", "toggle")
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Main Menu")
-                    if persistent.menuflag_count <= 1:
-
-                        textbutton _("Menu 1") action Show("main_menu1")
-
-                    if persistent.menuflag_count == 2:
-
-                        textbutton _("Menu 1") action Show("main_menu1")
-                        textbutton _("Menu 2") action Show("main_menu2")
-
-                    if persistent.menuflag_count >= 3:
-
-                        textbutton _("Menu 1") action Show("main_menu1")
-                        textbutton _("Menu 2") action Show("main_menu2")
-                        textbutton _("Menu 3") action Show("main_menu3")
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -1145,22 +1148,21 @@ screen preferences():
 
                         hbox:
                             bar value Preference("music volume")
+                            textbutton _("") action Play("effect", "audio/flyguy.mp3")
 
                     if config.has_voice:
                         label _("Sound Effect Volume")
 
                         hbox:
                             bar value Preference("voice volume")
+                            textbutton _("*") action Play("effect", "audio/flyguy.mp3")
 
                     if config.has_sound:
-
                         label _("Character Volume")
 
                         hbox:
                             bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                            textbutton _("*") action Play("sound", "audio/blip3.ogg")
 
 
                     #if config.has_voice:
@@ -1429,7 +1431,7 @@ screen mouse_help():
 
     hbox:
         label _("Left Click")
-        text _("Advances dialogue and activates the interface.")
+        text _("Advances dialogue and activates the interface. You can also name pages on Load Screen.")
 
     hbox:
         label _("Middle Click")

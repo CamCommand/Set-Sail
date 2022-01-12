@@ -1,67 +1,105 @@
 label act1_2:
 
-    play music "music/BelowDeck.mp3" volume 0.5 fadein 1.5
+    # play music "music/BelowDeck.mp3" volume 0.5 fadein 1.5
 
     th "Land Ho!"
 
-    if content_check == 0:
+    if book_read == "gamer uno":
 
         play effect "audio/bookclose.wav"
+        pause 0.5
 
-        MC "The rest of this book is probably going to be barnacles. Maybe I do need new books."
+        "The rest of this book is probably going to be barnacles. Maybe I do need new books."
 
-    elif content_check == 1:
+        "The story seems fine, but even I can tell the characters are acting cheesy."
 
-        MC  "Ahhh"
+        "I also have no historical reference to anything they bring up fictitiously because I don't know what these games are."
+
+        "That's a shame."
+
+    elif book_read == "afterlife":
+
+        play effect "audio/bookclose.wav"
+        pause 0.5
+
+        "According to this kid, no ferry ride to the Underworld from Charon and no panel of judges."
+
+        "Just the one god and a bunch of fluffy angels."
+
+        "I wonder how many people on land think about this stuff on the day-to-day?"
+
+        "Oh well, what does a child know? I bet I've been closer to death then they were."
+
+    elif book_read == "stripes":
+
+        play effect "audio/bookclose.wav"
+        pause 0.5
+
+        "Flipping through some chapter titles I can start with the assumption that this isn’t a glamorous lifestyle."
+
+        "I would have never guessed living in a cell wasn't great."
+
+        "This is too depressing for me."
+
+    if content_check == 1:
+
+        MC "{cps=20}Ahhhhh!{/cps}"
 
         MC "May have not been the cure my shoulders were looking for, but that still felt good."
 
-    else:
+    elif content_check == 2:
 
-        play effect "audio/crysniff2.wav" volume .5
+        play effect "audio/crysniff2.wav" volume 0.5
 
         MC "Get it together, you're a pirate not a swabbie."
 
-
     "Time to find out what land life has to offer."
 
-    "Would Captain get the hint if I asked to get him something unimportant so that I could escape without attracting any attention from the crew doing my work?"
+    "Would Captain get the hint if I asked to get him something unimportant?"
+
+    "That I could escape without attracting any attention from the crew doing my work?"
 
     "It could be futile, Flavio may have made the schedule change apparent and the pirates already know."
 
     "I might end up just having to bite the bullet on this if he doesn’t help."
 
-    #stop music fadeout 3.0
-    #play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
-    scene BG topdeck with fade
+    show BG deckview2 with whiteflash
 
-    "Everyone is unloading from the ship onto a boardwalk."
-
-    "The port is partially empty. Maybe the town warned everyone of our arrival?"
-
-    "I can see people by the market. All sorts of types trying to avoid eye contact with The Red Plague. It’s towering over the stands and buildings lining the end of the harbor."
-
-    "As if a sea monster poked it’s gigantic head out of the water to eye it’s next meal and everyone ignored it thinking it would shield them. I could be overthinking this."
-
-    "Plenty of pirate ships could come here, it might be commonplace. Let’s check if the Captain is on the quarterdeck."
-
-    show flavio at right with dissolve
+    show flavio at right
+    show cap at center
+    with dissolve
 
     fla "A postman handed me this upon our arrival Captain. It’s got your name on it. Well just your title actually."
 
-    show cap at center with dissolve
+    Cap "\"To The Demonic Pirate Ricardo of The Red Plague\", I don’t see a seal on it."
 
-    Cap "\"To The Demonic Pirate Ricardo of The Red Plague\",  I don’t see a seal on it. Mustn’t be important. Wasn’t the Mayor supposed to make sure nobody would disturb us?"
+    Cap "Mustn’t be important. Wasn’t the Governer supposed to make sure nobody would disturb us?"
 
     fla "Well the landlubber was terrified just handing it to me. Mustn't be important Captain. Just a poor prank, sorry to bother ye."
 
-    Cap "Aye, don’t worry bout mere paper. Get rid of it and get what we came here for damn it!."
+    Cap "Aye, don’t worry bout mere paper. Get rid of it and get what we came here for damn it!"
 
     fla "Aye aye Captain!"
 
     hide flavio with moveoutleft
     hide cap with dissolve
-    scene BG deckview with fade
+
+    show BG topdeck with fade
+
+    "Everyone is unloading from the ship onto a boardwalk."
+
+    "The port is partially empty. Maybe the town warned everyone of our arrival?"
+
+    "I can see people by the market. All sorts of types trying to avoid eye contact with The Red Plague."
+
+    "It’s towering over the stands and buildings lining the end of the harbor."
+
+    "As if a sea monster poked it’s gigantic head out of the water to eye it’s next meal and everyone ignored it thinking it would shield them."
+
+    "I could be overthinking this."
+
+    "Plenty of pirate ships could come here, it might be commonplace. Let’s check if the Captain is on the quarterdeck."
+
     show flavio with moveinright
 
     MC "Oh Flavio, have you seen the Captain?"
@@ -70,7 +108,9 @@ label act1_2:
 
     MC "Whatcha got there?"
 
-    fla "Oh this? It was a letter to the Captain. It appears very crude so he wouldn’t open it. If it ain't from a noble or a politician why open it right?"
+    fla "Oh this? It was a letter to the Captain. It appears very crude so he wouldn’t open it."
+
+    fla "If it ain't from a noble or a politician why open it right?"
 
     MC "Yeah you’re right. Mind if I take a look though?"
 
@@ -79,6 +119,8 @@ label act1_2:
     MC "No problem Flavio."
 
     fla "Aye aye [player_name]. One less thing I have to do."
+
+    fla "Thanks matey."
 
     hide flavio with moveoutleft
 
@@ -92,15 +134,15 @@ label act1_2:
 
     nvl show dissolve
     # Im so sorry this nvl looks this way, I just wanted it to be formated a certain way and the spacing made no sense
-    n "{font=Cursive_Option.ttf}Dear The Demonic Pirate Ricardo,{/font}"
+    n "{font=Cursive_Option.ttf}Dear The Demonic Pirate Ricardo,{/font}{nw}"
 
-    n "{font=Cursive_Option.ttf}Word around Seaborough is that The Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them.{/font}"
+    n "{font=Cursive_Option.ttf}Word around Seaborough is that The Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them.{/font}{nw}"
 
-    n "{font=Cursive_Option.ttf}It is the wish of ours at the Pirate Culture club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea. Your freedom and lifestyle has inspired many students here past the threat you could wreak. {/font}"
+    n "{font=Cursive_Option.ttf}It is the wish of ours in The Pirate Culture Club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea. Your freedom and lifestyle has inspired many students here past the threat you could wreak.{/font}{nw}"
 
-    n "{font=Cursive_Option.ttf}We can provide food and drink (non alcoholic unfortunately) to those that are willing to share your adventures with us. A club representative will be waiting for you outside the school main entrance located at:{/font}"
+    n "{font=Cursive_Option.ttf}We can provide food and drink (non alcoholic unfortunately) to those that are willing to share tales of adventures with us. A club representative will be waiting for you outside the school main entrance located at:{/font}{nw}"
 
-    n "{font=Cursive_Option.ttf}124 Swift Street \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ We eagerly await your arrival \ Captain. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sincerely, \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The Pirate Culture Club <3{/font}"
+    n "{font=Cursive_Option.ttf}125 Swift Street, Seaborough, Florida \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ We eagerly await your arrival \ Captain. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sincerely, {i}The Pirate Culture Club{/i}{/font}"
 
     pause 1.5
     nvl clear
@@ -111,27 +153,54 @@ label act1_2:
 
     "They asked the most fearsome pirate this side of Cuba to come over and talk? What do these kids think would happen to them?"
 
-    "I can’t believe I thought this would be something important. Captain has good instincts for this type of thing. I should dispose of it as ordered."
+    "I can’t believe I thought this would be something important. Captain has good instincts for this type of thing."
 
-    "Although, this is an invitation to a school. Where best to learn about people my age then a building full of them?"
+    "I should dispose of it as ordered."
+
+    "Although, this is an invitation to a school."
+
+    "Where best to learn about people my age then a building full of them?"
 
     "It would be my pleasure to set these weirdos straight about being a pirate as well. I don’t see why I shouldn’t go."
 
-    "If they think being a pirate is all glamour and riches these guys have another thing coming. I’ll give them enough horror stories so that they’ll never set foot in Posidon’s territory again."
+    "If they think being a pirate is all glamour and riches these guys have another thing coming."
+
+    "I’ll give them enough horror stories so that they’ll never set foot in Poseidon’s territory again."
 
     "Let’s get off the ship and have a look around first. At this point everyone looks so busy loading supplies I can slip by easily without them noticing."
 
-    scene BG harbor with fade
-    show crowd with dissolve
+    show BG harbor
+    show crowd
+    with dissolve
     stop music fadeout 1.0
-    play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
-    play effect "audio/chattering.mp3" fadein 2.0
+    play music "music/PirateTimes.mp3" volume 1 fadein 1.5
+    play effect "audio/chattering.mp3" volume 1.1 fadein 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
 
-    "Hopefully my cleaner outfit separates me from the seakissed pirates so that blending in isn’t a hurdle. Although, people seem to be wearing t-shirts and shorts so I might look a little odd."
+    if clothing_check == 1:
 
-    "Let’s find out, hopefully my fake mainlander dialect can pass me through any doubt."
+        "Hopefully my cleaner outfit separates me from the seakissed pirates so that blending in isn’t a hurdle."
+
+        "Although, people seem to be wearing t-shirts and shorts so I might look a little odd."
+
+    else:
+
+        "And now that I'm off the ship I remember that I didn't change clothes."
+
+        "My work shirt looks like I treat it like a spare rag."
+
+        "This isn't good, everyone's going to think I'm a pirate or worse,"
+
+        "A sailor."
+
+        "Wait, people are wearing all sorts of clothes. There isn't a conformist way of dressing."
+
+        "Despit the fact that it's hot here, people are even wearing layers."
+
+        "Thank Poseidon I can pass this mess off as fashionable. Land dwellers aren't all bad."
+
+    "Let’s test that, hopefully my fake mainlander dialect can keep me passing."
 
     show lib with dissolve
     $ woman = Character('Woman',color="#07BB01", callback=lib_voice)# Librarian
@@ -142,11 +211,11 @@ label act1_2:
 
     hide lib with moveoutleft
 
-    "Wow, she rushed away faster than what she was walking before. She didn’t scream or anything so I assume that counts as a win."
+    "Wow, she rushed away faster than she was walking before. She didn’t scream or anything so I'll assume I'm normal enough."
 
-    MC "The 28th. Hmmmm."
+    MC "The 28th, {cps=20}hmmmmmmmm.{/cps}"
 
-    "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday. Don’t know where that came from, but nevermind."
+    "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday."
 
     "The letter said this place was called Seaborough. Some of the signs on the eatteries confirm it."
 
@@ -154,29 +223,44 @@ label act1_2:
 
     "So I got to keep an eye out for lunatics, but also not to hurt anyone. Leaving my pistol onboard was a good idea, even if it leaves me naked."
 
-    "All the manual labor has me in good physical condition. In a fight I can take care of myself, but losing the ship’s annual arm wrestling contest keeps me humble."
+    if clothing_check == 0:
 
-    "I have to wonder how often some of these people even look at a hammar. I should keep my expectations low. Let’s dive in head first, walk around, see what I can do."
+        "Still can't believe I forgot to change. Must have been too excited."
 
-    stop effect fadeout 2.0
-    scene BG black with fade
-    scene BG bogwalk with fade
+    "All my manual labor keeps me in good physical condition. In a fight I can take care of myself, but losing the ship’s annual arm wrestling contest keeps me humble."
 
-    "I'm at some kind of bog now? No, it's by the sea so it's a marsh. Accidentally wandered away from where all the shops and people were."
+    "I have to wonder how often some of these people even look at a hammar, nonetheless do real labor."
 
-    "That was all really interesting to see! It feels so weird to taking it all in like that."
+    "I should keep my expectations low and definitely not fight anybody."
 
-    "I saw more people in the last few hours than I have had all year on the ship. Even large vessels we’ve ravaged, most of the crew stayed hidden while we stole their goods and harassed their leaders."
+    "Let’s dive in head first, walk around the harbor and see what there is to do."
 
-    "Some of the outfits out here look ridiculous. Is it because of mainland brands or what's fashionable, how could I tell?"
+    hide crowd
+    show BG black with fade
+    show BG bogwalk
+    with fade
+
+    "I'm at some kind of bog now?"
+
+    "No, it's by the sea so it's a marsh."
+
+    "Accidentally wandered away from where all the shops and people were, thought it would last longer."
+
+    "That was all really interesting to see. It feels so weird to taking it all in like that so quickly."
+
+    "I saw more people in the last few hours than I have had all year on the ship. Even large vessels we’ve ravaged, most of the crew stayed hidden while we stole their stuff."
+
+    "Some of the outfits out here look ridiculous. Hats and attires I've never seen before. All with different symbols."
 
     "There was that police car that went by before. I wasn't as wary of the law as I should have been because that was the first car I’ve seen!"
 
-    "It was much smaller than I expected, books kinda assume you know what they look like already. They’ve been described to me by pirates with more land experience, but only enough to give me the general idea."
+    "It was much smaller than I expected, books kinda assume you know what they look like already."
 
-    "If retiring is ever an option for me, selling my ship and buying a car might be a fun idea. Travel the roads of the world now that the seas are conquered."
+    "They’ve been described to me by pirates with more land experience, but only enough to give me the general idea."
 
-    "What a dumb dream."
+    "If retiring is ever an option for me, selling my ship and buying a car might be a fun idea. Travel the roads of the world now that the seas are conquered. Getting into car fights and run ins with the law."
+
+    "What a dumb idea though."
 
     "The ocean’s vastly more free, plus I know it already. If my car breaks down, I wouldn’t know how to fix it and oars wouldn’t be an alternative."
 
@@ -184,12 +268,11 @@ label act1_2:
 
     MC "Ha ha ha ha hargh!"
 
-    hide crowd with dissolve
-    stop effect fadeout 2.0
     define activity_choice = "default"
-    "Alright, that's enough walking. Where should I go?"
+    "Alright, that's enough walking. What should I go back and see with more detail?"
 
     menu:
+
         "Bookstore":
 
             $ activity_choice = "bookstore"
@@ -213,26 +296,34 @@ label act1_2:
     label bs:
 
         $ quick_menu = False
+
         MC "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
+
         $ quick_menu = True
 
-        stop effect fadeout 2.0
-
-        scene BG bstore with fade
+        show BG black with fade
+        show BG harbor with fade
         pause 2.0
 
-        "Books cover the aged wooden walls from top to bottom. A large logo with a black bird displays its name, the Raven’s Nest. For some reason it’s spelt \"Raven’s Nezt\"."
+        "A large logo with a black bird displays its name, the Raven’s Nest. For some reason it’s spelt \"Raven’s Nezt\"."
 
-        "No need to ask anybody about that, it’s probably a trendy land custom."
+        "No need to ask anybody about that, it’s probably a trendy land spelling."
+
+        play effect "audio/dooropen.ogg"
+        show BG bstore with fade
+
+        "Books cover the aged wooden walls from top to bottom."
 
         "Everything is so wonderfully neat and organized. It makes my collection look like a pirate's booze cabinet after a successful plunder."
 
         "Tolstoy, Shakespear, Orwell, Twain, there are so many great authors all collected in one spot."
 
-        "Normally I’d just snag the first book I see that I haven’t read, but there are so many good looking ones. Which one would be best?"
+        "Normally I’d just snag the first book I see that I haven’t read, but there are so many good looking ones."
+
+        "Which one would be perfect?"
 
         show lib with dissolve
-        $ woman = Character('Librarian',color="#07BB01", callback=lib_voice)# Librarian
+        $ woman = Character('Clerk', color="#07BB01", callback=lib_voice)# Store clerk
         woman "Excuse me, do you need help with something?"
 
         MC "Oh, um yeah I’m looking for a book."
@@ -241,7 +332,6 @@ label act1_2:
 
         "Or maybe she doesn’t and wants to help me? Let’s not over think this, I am going to steal a book from here anyway. Don’t want to look suspicious."
 
-        $ lib = "Librarian"
         woman "What kind of book?"
 
         MC "What kind of book? I want something,"
@@ -254,15 +344,21 @@ label act1_2:
 
                 $ book_choice = "Exciting"
 
-                "What kind of action adventures do landlubbers think is good for a book? My life is already full of life threatening events, so I required vastly less escapism than someone in high school."
+                $ quick_menu = False
+
+                "What kind of action adventures do landlubbers think is good for a book?"
+
+                $ quick_menu = True
+
+                "My life is already full of life threatening events, so I required vastly less escapism than someone in land school."
 
                 "Yet there are so many frontiers I’ve never thought to explore that could provide me with more relatable desires. Like space or something, I don’t know?"
 
-                "Of course one book isn’t going to transform me into a different person. I’m overthinking this easy question."
+                "Of course one book isn’t going to transform me into a different person. This isn't a difficult choice."
 
                 MC "Do you have any exciting action books?"
 
-                show lib smile with dissolve
+                show lib smile
 
                 woman "Hehe."
 
@@ -288,23 +384,26 @@ label act1_2:
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
-                "I’m capable of reading a summary of a book, so why ask for someone to explain it to me."
+                "I’m capable of reading a book summary, so why ask for someone to explain it to me."
 
-                "{i}Parry Baxton{/i}, it’s part of a series."
+                "{i}Parry Baxton{/i}, it seems to be part of a series."
 
                 "I should stray away from young adult fiction at this point, it’s giving me bad ideas about young people. Plus bad ideas in general."
 
-                MC "Hmmm?"
+                MC "{cps=20}Hmmmmmmmmmmm?{/cps}"
 
-                "It’s about the Gods!"
+                "Wait is this right? It’s about the Gods!"
 
-                "The main character is the half blood daughter of Hades. They are trying to earn their place amongst the Gods."
+                "The main character is the half blood daughter of Hades. They're trying to earn their place amongst the Gods."
 
-                "That sounds interesting, although, if they get mythos wrong will that make me mad? I’ll read the first chapter, see how it makes me feel."
+                "That sounds interesting, although, if they get mythos wrong will that make me mad?"
+
+                "I’ll read the first chapter, see how it makes me feel."
 
                 play effect "audio/pages.wav"
 
-                with fade
+                show BG black with fade
+                show BG bstore with fade
 
                 "..."
 
@@ -314,7 +413,9 @@ label act1_2:
 
                 "Maybe these authors are right, maybe at this age, people of the land are simply barnacle heads until adulthood."
 
-                "I’ll keep it either way, no reason not to at this point. Where is that woman? I don’t want anyone to catch me."
+                "I’ll keep it either way, no reason not to at this point."
+
+                "Where is that woman? I don’t want anyone to catch me."
 
                 "Nobody sees me, the store is practically empty. The woman is reading behind the counter. An easy swipe for me."
 
@@ -326,13 +427,19 @@ label act1_2:
 
                 $ book_choice = "Smart"
 
+                $ quick_menu = False
+
                 "A science book could be enthralling. As long as it’s not a straight textbook."
 
-                "I’ve read one of those and I retained zero facts from it. Even the title escapes to me."
+                $ quick_menu = True
+
+                "I’ve read one of those and I retained zero facts from it. Can't even remember the title."
+
+                "Modern Biology something something."
 
                 MC "Do you have any good science books?"
 
-                show lib smile with dissolve
+                show lib smile
 
                 woman "Hehe."
 
@@ -359,7 +466,7 @@ label act1_2:
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
-                "I’m capable of reading a summary of a book, so why ask for someone to explain it to me."
+                "I’m capable of reading a book summary, so why ask for someone to explain it to me."
 
                 "{i}The Night Sky{/i}, by Gail Mcryson."
 
@@ -373,7 +480,8 @@ label act1_2:
 
                 play effect "audio/pages.wav"
 
-                with fade
+                show BG black with fade
+                show BG bstore with fade
 
                 "..."
 
@@ -395,7 +503,11 @@ label act1_2:
 
                 $ book_choice = "Funny"
 
+                $ quick_menu = False
+
                 "What if the kids start making fun of me? Even worse, what if they do and I don't know it?"
+
+                $ quick_menu = True
 
                 "How could I be certain what I’ve read and experienced has prepared me for the subtle ridicule of others?"
 
@@ -403,7 +515,7 @@ label act1_2:
 
                 MC "Do you have any comedy books?"
 
-                show lib smile with dissolve
+                show lib smile
 
                 woman "Hehe."
 
@@ -422,7 +534,7 @@ label act1_2:
 
                 MC "Yeah, why not? What’s your best joke book?"
 
-                woman "Hmmmm."
+                woman "{cps=20}Hmmmmmmmmmmm?{/cps}"
 
                 woman "I don’t know if any joke books are good? This one is pirate themed if you’re into that sort of thing."
 
@@ -460,7 +572,8 @@ label act1_2:
                 play effect "audio/pages.wav" # play mutliple times for comedy
                 play effect "audio/pages.wav"
 
-                with fade
+                show BG black with fade
+                show BG bstore with fade
 
                 "..."
 
@@ -484,13 +597,17 @@ label act1_2:
 
                 $ book_choice = "Nerdy"
 
+                $ quick_menu = False
+
                 "The books back in my room don’t look like they’re going to be any pleasant entertainment at all."
+
+                $ quick_menu = True
 
                 "I want something meaty and wondrous, those are the types of books that lead me to reread them."
 
                 MC "Do you have any good fantasy books?"
 
-                show lib smile with dissolve
+                show lib smile
 
                 woman "Hehe."
 
@@ -501,6 +618,7 @@ label act1_2:
                 "I hope I didn’t say that too weirdly."
 
                 hide lib smile with moveoutright
+
                 "She flew behind the front counter quickly and started shuffling through books. Is she trying to get rid of me or is she looking for a specific book?"
 
                 show lib with moveinright
@@ -517,9 +635,11 @@ label act1_2:
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
-                "I’m capable of reading a summary of a book, so why ask for someone to explain it to me."
+                "I’m capable of reading a book summary, so why ask for someone to explain it to me."
 
-                "{i}Rune{/i}, by Ron John. That pen name is a dud."
+                "{i}Rune{/i}, by Ron John."
+
+                "What a boring pen name."
 
                 "It’s an apocalypse fantasy with wizards in the desert."
 
@@ -535,15 +655,16 @@ label act1_2:
 
                 play effect "audio/pages.wav"
 
-                with fade
+                show BG black with fade
+                show BG bstore with fade
 
                 "..."
 
                 "I still have no clue what this book is about. Did it confuse me more or has it numbed my brain?"
 
-                "Looks like this one could be a multiple reread type of book. I’ll take all the content a book can give me."
+                "Looks like this one could be a multiple reread type of book. I’ll take all the content I can get."
 
-                "Hopefully it’ll sail with me better after the first read. It barely fits in my pants without being noticable, no reason not to take it at this point."
+                "Hopefully it’ll sit with me better after the first read. It barely fits in my pants without being noticable, no reason not to take it at this point."
 
                 "Nobody sees me, the store is practically empty. The woman is reading behind the counter. An easy swipe for me."
 
@@ -553,9 +674,8 @@ label act1_2:
 
     label bstore_end:
 
-                $ quick_menu = False
                 MC "Excuse miss?"
-                $ quick_menu = True
+
                 show lib with dissolve
 
                 woman "Yes, hello again. Did you decide on a book?"
@@ -603,17 +723,18 @@ label act1_2:
 
         define food_check = 0 # This will be used later to determine if MC is hungry at school
         $ quick_menu = False
+
         MC "Something to eat sounds nice. I’m sure nobody will miss one apple."
+
         $ quick_menu = True
 
-        scene BG market with fade
-        pause 2.0
-
-        stop effect fadeout 2.0
+        show BG black with fade
+        show BG market with fade
         show crowd with dissolve
+
         play effect "audio/chattering.mp3" loop
 
-        "A few business buildings widen away from each other to reveal a brick path. There's a whole side street with tons of vendors lined up."
+        "A few business buildings widen away from each other to reveal an alley path. There's a whole side street with tons of vendors lined up."
 
         "Mostly foods, but some of this stuff is weird to me to sell by fish and vegetables."
 
@@ -621,7 +742,9 @@ label act1_2:
 
         "Someone explained what \"dot com\" meant to me, but it has not been saved to memory."
 
-        "I don’t understand how someone could make a living off of cartoon print earrings. Yet, being a pirate doesn’t give me the best business sense so can I really judge?"
+        "I don’t understand how someone could make a living off of these say, cartoon print earrings, weird."
+
+        "Yet, being a pirate doesn’t give me the best business sense so can I really judge?"
 
         "People are gathering around fruit stands. I could easily snag a snack without anyone noticing."
 
@@ -631,14 +754,16 @@ label act1_2:
 
         "Is this how everyone gets their food? If there is a better way for them then I don’t understand why’d they go through this."
 
-        "I thought the mainlanders were more sanitary. With all this business, they wouldn’t miss one apple."
+        "I thought the mainlanders were more sanitary. Oh well,"
 
+        "With all this business, I'm sure they wouldn’t miss one apple."
+
+        play sound "audio/swipe.mp3" # make these sounds so chattering can continue
         with fade
-        play effect "audio/swipe.mp3"
 
         MC "Like seperating a drunk from his money."
 
-        play effect "audio/apple3.wav"
+        play sound "audio/apple3.wav"
         $ food_check = 1
 
         "There’s a bench with nobody sitting there. Relaxing and eating while listening to other conversations could be a benefit."
@@ -678,15 +803,15 @@ label act1_2:
         cr "...with his feet over his head he split open both coconuts with his thighs."
 
         "What!?"
-        play effect "audio/apple3.wav"
+        play sound "audio/apple3.wav"
 
         "I should leave before I start asking questions I don’t want the answers to."
 
         "Where is this school anyway? Maybe there is a map around here somewhere?"
 
-        "Breaking up a conversation to ask for directions doesn’t feel like something I feasibly accomplish."
+        "Breaking up a conversation to ask for directions doesn’t feel like something I could feasibly accomplish."
 
-        MC "No, that’s dumb. You can do it sailor."
+        MC "No, that’s dumb. You can do it matey."
 
         "Just need to walk up to someone who looks like a mom. They’ll know where it is."
 
@@ -706,6 +831,8 @@ label act1_2:
         MC "Do you know where the Seaborough high school is?"
 
         ma "Why aren’t you at school?"
+
+        "Uh oh."
 
         MC "Because I graduated from another school. I need to pick something up from there."
 
@@ -735,11 +862,11 @@ label act1_2:
 
         MC "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
 
-        ma "Hmmm."
+        ma "{cps=20}Uhhhhhhhh.{/cps}"
 
         ma "Okay."
 
-        ma "But I'm not entirely sure. Let me ask that nice police officer if they know."
+        ma "But I'm not entirely sure. Let me ask that nice police officer over there if they know."
 
         MC "Ma’am please, I’m sure someone like yourself knows the general direction from here."
 
@@ -759,7 +886,7 @@ label act1_2:
 
         ma "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
 
-        MC "Thank you Ma’am! Have a nice day!"
+        MC "Thank you ma’am! Have a nice day!"
 
         hide mm with dissolve
 
@@ -780,13 +907,15 @@ label act1_2:
         define game_played = "" # for storing game played in arcade
 
         $ quick_menu = False
+
         MC "Oh! That place had those video games Merigold told me about. Checking those out is a must."
+
         $ quick_menu = True
 
-        "They’re supposed to be old and fun and she said I could pick them up easily."
+        "She said arcades have old games so supposed I can pick them up easily."
 
-        scene BG ar with fade
-        pause 1.5
+        show BG black with fade
+        show BG harbor with fade
 
         "A dim neon sign lights up the doorway of the building."
 
@@ -796,9 +925,12 @@ label act1_2:
 
         "It could be that people name their business like pirates name their ships."
 
-        "The Red Plague is an actual disease, but the ship causes horror and pain as the sickness would."
+        "The Red Plague isn't an actual disease, but the ship causes horror and pain as the sickness would."
 
         "If gaming happens here, then why not call it a street."
+
+        play effect "audio/dooropen.ogg"
+        show BG ar with fade
 
         play effect "audio/entrybeep.mp3"
 
@@ -814,9 +946,11 @@ label act1_2:
 
         bt "People don’t normally come this close to opening. You want anything to drink?"
 
-        "I can’t exactly steal a drink from a bartender. How would one even play these games, nonetheless sneak them out the front door?"
+        "I can’t exactly steal a drink from a bartender."
 
-        MC "Um, no thank you."
+        "Nor could I sneak these huge games out the front door?"
+
+        MC "Uh, no thank you."
 
         MC "I was just wandering around. I’ve never seen an arcade before. I didn’t know they had bars in them."
 
@@ -832,7 +966,9 @@ label act1_2:
 
         MC "I have nothing on me, sorry. Like I said I was just wandering around."
 
-        bt "I see, well here. Have a game on me. You put one of these into the machine and follow the directions."
+        bt "I see, well here. Since you're the first customer today, have a game on me."
+
+        bt "You put one of these into the machine and follow the directions."
 
         play effect "audio/coin.mp3"
 
@@ -844,11 +980,13 @@ label act1_2:
 
         MC "Thanks matey."
 
-        "He mumbles something close to \"No problem\" under his breath staring at the floor."
+        "He mumbles something close to \"No problem\" under his breath still looking down."
 
         hide bartender with dissolve
 
-        "A free game is more than I expected walking in here. What machine looks fun?"
+        "A free game is more than I expected walking in here."
+
+        "What machine looks like something I could handle?"
 
         menu:
 
@@ -858,32 +996,38 @@ label act1_2:
                 "The red wrapped machine has drawings of a little person with wings shooting strange creatures with a harpoon and then pumping them with air until they fall to their death."
                 $ quick_menu = True
 
+                "That's pretty gruesome."
+
+                "My kind of game."
+
                 "After the coin goes into the machine it says {color=#F93A22}\"Player One\"{/color} can start. At hand level there is only a stick and one red button."
 
                 "Seems simple enough, hopefully easy to play."
 
                 play effect "audio/flyguy.mp3"
+
                 "..."
 
-                scene BG black
-                scene ar with fade
+                scene BG black with fade
+                scene BG ar with fade
                 $ game_played = "Fly Guy"
 
                 play effect "audio/boom.ogg"
+
                 "That couldn’t have lasted longer than five minutes."
 
-                "I was shooting the little creatures pretty consistently until they overwhelmed me. They gave me three lives but the enemies didn’t reset at all and killed me the second I was back on the screen."
+                "I was shooting the little creatures pretty consistently until they overwhelmed me."
+
+                "They gave me three lives but the enemies didn’t reset at all and killed me the second I was back on the screen."
 
                 "Turning back to the bartender it was obvious he was watching during my first life, but after my character was corner he returned to preparing for paying customers."
-
-                ""
 
                 jump ar_end
 
             "{color=#F9F222}Monkey 2{/color}":
 
                 $ quick_menu = False
-                "This machine appears as if it was painted over black recently."
+                "This machine appears as if it was painted over in black recently."
                 $ quick_menu = True
 
                 "Different pictures of cartoon monkeys in distinct styles cover every inch of it. There are two sets of sticks and dozens of buttons as controls."
@@ -892,16 +1036,24 @@ label act1_2:
 
                 "The music coming from the screen is noticeably joyful. Compared to the other machines it sounds much higher quality."
 
-                "If I suck then no big deal, the song is simply mesmerizing. It takes the one coin given to me with no issues."
+                "If I suck then no big deal, the song is simply mesmerizing."
 
-                "Let's see if it has more cool songs."
+                "Plus monkeys are cool. I've seen much older pirates with ones as pets."
+
+                "They always do little dances when songs are played."
+
+                "I saw one throw a knife once."
+
+                "The game takes my coin with no issues."
+
+                "Let's see if digital monkeys hold up to my high expectations."
 
                 play effect "audio/monkey.mp3"
 
                 "..."
 
-                scene BG black
-                scene ar with fade
+                scene BG black with fade
+                scene BG ar with fade
                 $ game_played = "Monkey 2"
 
                 play effect "audio/monkeyded.ogg"
@@ -911,7 +1063,9 @@ label act1_2:
 
                 "Yet the music, coupled with the monkey’s faces triggered something in my brain that forced a smile onto my face. That was incredibly fun."
 
-                "Ol’ Two Hands likes monkeys, I should tell him about it."
+                "JoeJoe was always saying he wanted a monkey."
+
+                "If I ever think I could tell him about today without getting hit, I'll mention this game."
 
                 "Turning back to the bartender I could tell he was watching me enjoying the game. He also has a big grin on his face."
 
@@ -923,26 +1077,34 @@ label act1_2:
                 "The only part of this machine’s instructions that are in English is the title. Everything else is in Japanese, including what the button inputs do."
                 $ quick_menu = True
 
-                "The character that keeps appearing on the screen sort of looks like me, so I sort of want to try it. Paragraphs of text are scrolling by, none of which is understandable."
+                "The character that keeps appearing on the screen sort of looks like me, so I sort of want to try it."
+
+                "Paragraphs of text are scrolling by, none of which is understandable."
 
                 "Who would wanna read this much while playing a game? Isn’t the point of video games the action?"
 
-                "I don’t have any previous experience, my preconceived notions are being challenged as my character swings their sword in between enemies spousing meaty dialogue at me."
+                "I don’t have any previous experience, but my preconceived notions are being challenged."
+
+                "My character swings their sword in between enemies spousing meaty lines of dialogue at me."
 
                 play effect "audio/dino.mp3"
 
                 "..."
 
-                scene BG black
-                scene ar with fade
+                scene BG black with fade
+                scene BG ar with fade
                 $ game_played = "Dino Mission"
 
                 play effect "audio/dinoded.ogg"
                 "It feels as if an hour has flown by."
 
-                "The game flashes {color=#D91400}\"Game Over\"{/color} in blood red English with an ominous sound playing. The gameplay wasn’t the most captivating, but it sucked me in so well without me noticing."
+                "The game flashes {color=#D91400}\"Game Over\"{/color} in blood red English with an ominous sound playing."
 
-                "People have started to wander in to play other games. The bartender is serving someone a dull looking drink with a pleasant expression."
+                "The gameplay wasn’t the most captivating, but it sucked me in so well without me noticing."
+
+                "People have started to wander into the arcade to play other games."
+
+                "The bartender is serving someone a dull looking drink with a pleasant expression."
 
                 jump ar_end
 
@@ -976,61 +1138,86 @@ label act1_2:
 
         "But if I don’t find any money then I can’t. There’s nothing to steal in an arcade though."
 
-        "This is good knowledge to hold onto. Better make my way to the school."
+        "This was an experience I would not have got at sea."
+
+        "Better make my way to the school now."
 
         jump act1_3
 
     label street:
 
-        # add more stuff here
-
         "I should go to the school while I’m thinking about it. There’s no need to waste a ton of time there."
 
         "If things move quickly, I can check out the rest of town. Hopefully this club won’t eat up the entire day."
 
-        scene BG st with fade
+        show BG black with fade
+        show BG st with fade
 
         "Wandering the town’s underbelly isn’t as exciting as I thought it would be."
 
-        "{color=#5FAFF6}Seaborough’s{/color} streets are mainly made up of housing and abandoned complexes once I made it past the harbor. It’s super depressing seeing all the wrecked and abandoned buildings."
+        "Seaborough’s streets are mainly made up of housing and abandoned complexes once I made it past the harbor."
 
-        "When we destroy ships at least the sea takes care of their final resting place. Here, they just sit here and bake in the sun."
+        "It’s super depressing seeing all the wrecked and abandoned buildings."
+
+        "When we destroy ships at least the sea takes care of their final resting place. Here, they just sit there and bake in the sun."
 
         "The desolate poverty surrounding the area is dampening my mood. Trash is plentiful and the air is thick with discomfort."
 
         "Speaking of the air, it’s much drier away from the ocean. It's making me sweat more than usual and I’ve only been walking for a few hours, I think."
 
-        "Looking for this school is taking too long, how much longer can I wander aimlessly? If I lose my way there’s no doubt the Captain will leave without me."
+        "Looking for this school is taking too long, how much longer can I wander aimlessly?"
+
+        "If I lose my way there’s no doubt the Captain will leave without me."
 
         "There’s nothing for me to swindle or survive off of here. I’d be dead in a week, max."
 
-        "My shirt is starting to show sweat marks. Is it going to make the high schoolers make fun of me?"
+        if clothing_check == 0:
+
+            "My shirt is starting to show sweat marks through the stains."
+
+        else:
+
+            "My nice shirt is starting to show sweat marks."
+
+        "I'm sure everyone here is use to it being hot, but will the high school people make fun of me for it?"
 
         MC "Oh no."
 
-        "This is going to be the first interaction with people my own age I’ve ever had. They might be a few years younger than me, but what if high schoolers are super mature?"
+        "It's starting to hit me."
+
+        "This is going to be the first interaction with people my own age I’ve ever had."
+
+        "They might be a few years younger than me, but what if high schoolers are super mature?"
 
         "I’ve got a lot of life experience. But they might not care what I say if I’m not the Captain."
 
         "Should I lie? Or come in as an aggressive hardy pirate to scare them stiff?"
 
-        MC "Poseidon, fuel my flame!"
+        "What should I do? Oh, damn it!"
 
-        "I can do this."
+        MC "Poseidon, fuel my flames!"
 
-        "I’m a bloody pirate for God’s sake!"
+        "I can do this. Screw the pressure."
 
-        "No more worrying about how people view me. A Pirate Culture Club wants to know what a pirate life is like. I’m going to show them what it’s really like."
+        "I’m a bloody pirate no matter what."
 
-        "Behaving on land is one thing, but I’ve cut the arms off of a man who called the Captain a dolphin breeder. Torn threw ships like it was stale bread."
+        "No more worrying about how people view me. A Pirate Culture Club wants to know what a pirate life is like."
+
+        "I’m going to show them what it’s really like."
+
+        "Behaving on land is one thing, but I’ve cut the arms off of a man who called the Captain a dolphin breeder."
+
+        "Torn threw ships like they were stale bread."
 
         "A third tough sounding thing that's happened to me!"
 
         "There’s no reason to worry. Once the way reveals itself to me, the Pirate Culture Club won’t know what hit them."
 
+        show BG street_sign with dissolve
+
         MC "Oh! And look what we got here."
 
-        "{b}School Zone Ahead{/b}"
+        "{b}SLOW STUDENT CORSSING{/b}"
 
         "Did I ever say I needed a map?"
 

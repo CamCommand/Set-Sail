@@ -56,11 +56,11 @@
         with fade
         with fade
 
-        play music "music/BelowDeck.mp3" volume 0.5 fadein 1.5
+        play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5
 
         "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port."
 
-        "Rolling my neck around, it cracks in multiple places, I’m incredibly sore."
+        "Rolling my neck around, it cracks in multiple places, feeling incredibly sore."
 
         "Morning to me..."
 
@@ -163,10 +163,10 @@
         label opening:
 
             $ pirate = "Pirate"
-            "Sunlight pours into my eyes through the cracks in the old boards."
+            "Sunlight pours into my eyes through the cracks in the old boards across the room."
             $ quick_menu = True
 
-            "I get up from my cot and scan through my room. It’s a small closet under the stairs to the top deck with barely enough room for anything extra beyond my necessities."
+            "I get up from my cot and scan through my room. It’s a small storage space under the stairs to the top deck with barely enough room for anything extra beyond my necessities."
 
             "I am lucky to have it, one of the only perks I’ve gotten from being the Captain's child."
 
@@ -176,53 +176,61 @@
 
             "Either way I appreciated the forethought."
 
-            "I was supposed to clean the cannons this morning, but I did it last night so I could sleep in."
+            "At the time..."
+
+            "I was supposed to clean the cannons this morning, but did it last night so I could sleep in."
 
             "The Code says lights out after sun down, but I’ve cleaned them so many times I need only muscle memory for the job."
 
-            "Nobody has brought it up yet, if they even noticed."
+            "They get dirty in the exact same spots anyway."
 
-            MC "Arrrgh!"
+            "Nobody has caught on yet, if they even care."
 
-            MC "Ahhhh!"
+            MC "{cps=20}Arrrgh!{/cps}"
 
-            "I bend in every direction I can, but the stretching doesn’t alleviate the pain in my shoulders."
+            MC "{cps=20}Ahhhh!{/cps}"
 
-            "If we are close to a port, maybe I can snag an extra pillow from a cafe or something."
+            "I bend in every direction possible, but the stretching doesn’t alleviate the pain in my shoulders."
+
+            "If we are close to a port, maybe I can snag an extra pillow from a vendor or something."
 
             "I don’t remember having these pains before. Maybe I’m just getting old, I think eighteen is the appropriate age to start thinking that, right?"
 
-            "I heard a new pirate say he hopes May has better weather so I assume April has passed."
+            "I heard a new pirate say he hopes May has better weather. Safe to assume April has passed."
 
             "New guys always have a better sense of the date since they got onboard not too long ago."
 
-            "So it was my birthday at some point and all I got was new pains."
+            "Apparently it was my birthday at some point and all I got was new pains. That sucks."
 
-            "Sometimes Captain says a passing mention of it, but we’ve been out for a while so I doubt he knew."
+            "Sometimes Captain says a passing mention of my birthday, but we’ve been out at sea for a while so I doubt he thought of it."
 
-            $ th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands voice
-            th "Wheres [player_name]!? Why arrrgh’t they on deck?"
+            $ th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)
+            th "Wheres [player_name]! Why arrrgh’t they on deck?"
 
             "That sounds like my call to action. Quickly throwing myself out of bed shakes the boards beneath me."
 
-            "My shoes are at my feet, but how could I lose track of my shirt in here?"
+            "My boots are at my feet, but how could I lose track of my shirt in here?"
 
             "Scanning my small abode, it evades my glance. It must be under something."
 
-            "Checking behind my stack of books on the floor, the answer slaps the tired right off my face. I was flattening it out after work last night."
+            "Checking behind my stack of books on the floor, the answer slaps the tired right off my face."
 
-            "I was attempting this technique to remove the wrinkles. A side character in a book I just finished did the same and I wanted to see if it would work."
+            "I was flattening it out after work last night. Attempting a technique to remove the wrinkles."
 
-            "Pulling the dirty shirt out from under the heap of literature it’s apparent it failed. A stark reminder to stop reading young adult fiction."
+            "A side character in a book I just finished did the same and I wanted to see if it would work."
+
+            "Pulling the dirty shirt out from under the heap of literature it’s apparent it failed. A stark reminder to stop reading young adult fiction at my age."
 
             th "[player_name] get yerr ass out from whatever gutter ye hiding under."
 
-            $ pirate = "Ol'Two Hands"
+            $ pirate = "ol'Two Hands"
             "I think that’s [pirate] calling for me."
 
             "Last time I checked I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
 
-            "I’ll grab my bristoles and brush my teeth and hair. A delayed head rush from springing up too fast numbs me momentarily."
+            "I’ll grab my bristoles and brush my teeth and hair before gracing him."
+
+            "A delayed head rush from springing up too fast numbs me momentarily."
 
             "Staring back at me, my cracked reflection shows a blank expression."
 
@@ -242,16 +250,16 @@
 
                 MC "Could I ever be someone of the land?"
 
-            th "Damn ye [player_name]. I’ll flog ye later for this."
+            th "Damn ye [player_name]! I’ll flog ye later for this!"
 
             Cap "Why are ye threatening a mate so loudly in me presence Two Hands?"
 
             "Snapping back into action I head for the top deck. It’s time to start moving for real. I could use a peaceful type of day."
 
-            "As peaceful as pirate life can be."
+            "As peaceful as pirate's life could be."
 
             scene BG black with fade
-            scene BG topdeck with flash_lighting
+            scene BG deckview with whiteflash
             pause 0.5
             show twohands angry at centerleft
             show cap at right
@@ -269,12 +277,10 @@
 
             "Captain slowly turned around to look at me."
 
-            "His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from Ol’ Two Hands."
-
-            "Stepping closer to Two Hands his face, he looks really annoyed."
+            "His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from ol’Two Hands."
 
             show cap yelling at centerright with moveinright
-            show twohands scared with dissolve
+            show twohands scared
 
             Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog."
 
@@ -284,15 +290,19 @@
 
             if player_identity == "f":
 
-                Cap "When I asked you to fetch me lass, I expected ye to do the searching and not be screaming. Ye’ve heard me in battle, am I incapable of hollering?"
+                Cap "When I asked ye to fetch me lass, I expected ye to do the searching and not be screaming."
 
             elif player_identity == "m" or player_identity == "nb":
 
-                Cap "When I asked you to fetch me lad, I expected ye to do the searching and not be screaming. Ye’ve heard me in battle, am I incapable of hollering?"
+                Cap "When I asked ye to fetch me lad, I expected ye to do the searching and not be screaming."
+
+            Cap "Ye’ve heard me in battle, am I incapable of hollering?"
 
             th "No Captain. Ye have mighty powerful pipes."
 
-            Cap "Aye agree. So if I hear ye flagging a false alarm on me ship again I’ll have Quartermaster Flavio give you [player_name]’s jobs for thee rest of thee week!"
+            Cap "Aye, agreed."
+
+            Cap "So if I hear ye flagging a false alarm on me ship again I’ll have Quartermaster Flavio give you [player_name]’s jobs for thee rest of ta week!"
 
             th "Aye Captain! Aye Captain!"
 
@@ -302,39 +312,45 @@
             hide twohands scared flip with moveoutleft
             show cap at center with move
 
-            "Nobody in line of sight has been on this ship as long as I have."
+            "Not many around has been on this ship as long as I have."
 
             "Of the Captain’s {i}Demon Moments{/i}, this wasn’t that bad, but I haven’t flinched during one of them since I was sixteen."
 
             "The intimidation tactics keep the crew in line and his reputation secured."
 
+            "Two Hands needs to rip the pole from his ass and get the idea, you don't mess around when there's work to be done."
+
             MC "You requested me Captain?"
 
             if player_identity == "f":
 
-                Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lass."
+                Cap "Aye [player_name]. Just wanted to talk to ye."
 
-                show cap yelling with dissolve
+                Cap "The mainland considers ye a real adult now lass."
+
+                show cap yelling
 
                 Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
-                show cap with dissolve
+                show cap
 
                 Cap "Aye lass, I remember. That scallywag fell flat on their arse and we prodded dem every night."
 
             elif player_identity == "m" or player_identity == "nb":
 
-                Cap "Aye [player_name]. Just wanted to talk to ye. The mainland considers ye a real adult now lad."
+                Cap "Aye [player_name]. Just wanted to talk to ye."
 
-                show cap yelling with dissolve
+                Cap "The mainland considers ye a real adult now lad."
+
+                show cap yelling
 
                 Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
-                show cap with dissolve
+                show cap
 
                 Cap "Aye lad, I remember. That scallywag fell flat on their arse and we prodded dem every night."
 
@@ -342,23 +358,27 @@
 
             MC "He tried to flee his service from embarrassment and you obliged by marooning him."
 
-            show cap yelling with dissolve
+            show cap yelling
 
             Cap "Oh, that be right. Ha ha, ahhh."
 
-            show cap with dissolve
+            show cap
 
             Cap "Nevertheless I wanted to give ye something. I got something made for ye, something I wish my."
 
             Cap "Captain"
 
-            Cap "Gave me when I became a man. But aye, aye don’t have it yet. It’sa gonna be loaded up at the port."
+            Cap "Gave me when I became a man."
+
+            Cap "{cps=20}But it's, uh, I don’t have it yet.{/cps} It’sa, gonna be loaded up at while we're at port."
 
             Cap "I mainly wanted to say to ye is don’t worry about yer usual duties at port."
 
             Cap "I got Flavio to rearrange the grunt work so you could enjoy some of the fruits of land life."
 
             MC "Oh, thank you Captain. This is pleasantly unexpected."
+
+            show cap yelling
 
             Cap "Argh, what you expected nothing from me?"
 
@@ -368,7 +388,7 @@
 
             Cap "Personally that is. We’re gonna need a lot more cannonballs of course."
 
-            show cap yelling with dissolve
+            show cap yelling
 
             Cap "Hahahaha ha!"
 
@@ -376,7 +396,7 @@
 
             MC "Yes Captain I guess we always need more of those."
 
-            show cap with dissolve
+            show cap
 
             Cap "Don’t be telling the crew where ye going. Don’t want dem thinking The Demonic Pirate Ricardo has gotten soft."
 
@@ -384,7 +404,9 @@
 
             if player_identity == "f":
 
-                Cap "Get it out of yer system now lass. If not fer me, member yer mudder. She gave up da land life fer da free sea. And she never looked back."
+                Cap "Get it out of yer system now lass. If not fer me, member yer mudder."
+
+                Cap "She gave up da land life fer da free sea. And she never looked back."
 
                 MC "Aye Captain. I’ll keep that fresh in my mind."
 
@@ -392,14 +414,17 @@
 
             elif player_identity == "m" or player_identity == "nb":
 
-                Cap "Get it out of yer system now lad. If not fer me, member yer mudder. She gave up da land life fer da free sea. And she never looked back."
+                Cap "Get it out of yer system now lad. If not fer me, member yer mudder."
+
+                Cap "She gave up da land life fer da free sea. And she never looked back."
 
                 MC "Aye Captain. I’ll keep that fresh in my mind."
 
                 Cap "Alright lad, dismissed. Put on something nicer and don’t get arrested."
 
-            hide cap with dissolve
+            hide cap with moveoutleft
 
+            pause 1.0
             scene BG deckview with fade
             show twohands angry with dissolve
 
@@ -431,9 +456,10 @@
             $ fla = Character('Flavio', color="#BB64F2", callback=fl_voice)
             show flavio at centerrighter with moveinright
 
-            fla "Hey Two Hands why don’t yuh help me with the ropes, they need um, knotting."
+            fla "Hey Two Hands why don’t yuh help me with the ropes, they need {cps=10}ummmmmm, knotting.{/cps}"
 
-            show twohands sweaty with dissolve
+            show twohands sweaty
+
             th "Not now Flavio!"
 
             fla "Knot now?"
@@ -446,22 +472,26 @@
 
             MC "Make sure you get’em nice and tight Mr. Two Whole Hands!"
 
-            show twohands angry with dissolve
+            show twohands angry
             hide twohands angry with moveoutright
-            show flavio flip with dissolve
+            show flavio flip with ease
             hide flavio with moveoutright
 
             "That guy is unbelievable sometimes."
 
-            "There isn’t a nicer, more studious pirate on this ship and he still has to give me a hard time."
+            "There isn’t a nicer, more studious pirate on this ship than I and he still has to give me a hard time."
 
-            "Captain made me learn the hard way a long time ago, that if shit didn’t get done, we’d pay the price."
+            "Captain made me learn the hard way a long time ago, that if shite didn’t get done, we’d pay the price."
 
-            "The easiest lesson to learn, and it’s still not good enough for some of these bastards. At least the Captain recognizes my service."
+            "The easiest lesson to learn, and it’s still not good enough for some of these bastards."
 
+            "At least the Captain recognizes my service."
+
+            show BG black with dissolve
+            pause 1.0
             scene BG MC_room with dissolve
 
-            "I wonder how long Captain planned this? No way Flavio could change the work schedule as quickly as yesterday, or even a week ago."
+            "I wonder how long Captain planned this? No way Flavio could have change the work schedule as quickly as yesterday, or even a week ago."
 
             "If someone gets my work and they know it’s mine, they’ll definitely give me a hard time about it."
 
@@ -471,23 +501,24 @@
 
             "We have to have each other's backs in a fire fight, no matter how one sided we might make them."
 
-            "Another pirate ship hasn’t attacked The Red Plague in years thanks to our rep. Yet sometimes crews will fight back when we are pillaging their exports."
+            "Another pirate ship hasn’t attacked The Red Plague in years thanks to our rep. Yet sometimes crews will fight back when we are raiding their hauls."
 
-            "Numerous times I’ve had to cut the hand of a sailor who was looking to take a cheap shot at someone taking their spices. It'd be over for me if someone didn’t return the favor."
+            "Numerous times I’ve had to cut the hand off a sailor who was looking to take a cheap shot at someone taking their valuables."
+
+            "It'd be over for me if someone didn’t return the favor."
 
             "Captain said we were close to port. If I don’t have any work I guess I have some time to kill."
 
-            $ mom_check = 0
-            $ clothing_check = 0
-            $ daydream_check = 0
-            define counter = 0
+            define clothing_check = 0   # if you change clothes
+            define daydream_check = 0   # if you've had a dozens
+            define counter = 0          # count through fighting the painful memories
 
             $ re_list = ["No, I don’t want to think about it.", "No! I want to have a clear head if I’m gonna talk to anyone.", "Poseidon please let my mind be clear for the journey ahead of me.", "Poseidon, give me the strength of a thousand earthquakes to devour the thoughts of my mind.", "0"]
             # $ re_list[0]
 
         label waiting:
 
-            $ content_check = 0
+            define content_check = 0
 
             menu:
 
@@ -522,9 +553,9 @@
 
             MC "Under my bed."
 
-            "Getting under there is a crapshoot already because I can barely squat in front of my bed, nevermind crawling under it."
+            "Getting under there is a crapshoot already because I can barely see that low to the floor."
 
-            "If I put these books on top of the bed and I can stick my arm under here."
+            "If I angle my arm right and moves these book, some light should reach the back..."
 
             MC "Got it!"
 
@@ -538,7 +569,7 @@
 
             "A folded black blouse barely fits in the recycled box. I stole it off a French Admiral’s son when he flipped me off as we were leaving their vessel."
 
-            "With this shirt and a quick shoe shine I should be looking moderately normal, or at least cleaner."
+            "With this shirt and a quick boot shine I should be looking moderately normal, or at least cleaner."
 
             play effect "audio/cloth_shine.wav"
 
@@ -550,27 +581,37 @@
 
         label book:
 
-            $ content_check = 0
+            define book_read = ""       # which book is picked if any
+
+            $ quick_menu = False
 
             MC "I guess I could read without getting too invested."
+
+            $ quick_menu = True
 
             "Most of these books aren’t actually stolen."
 
             "Obviously the first few were, but either at pirate ports or on the mainland, if there is ever a delay with the Plague leaving I go and find someone to do a swap with."
 
-            "Most of those interactions go smoothly if you know who to approach. Not to stereotype, but the muscle bound tattooed walls of meat don’t tend to be well read."
+            "Most of those interactions go smoothly if you know who to approach."
+
+            "Not to stereotype, but the muscle bound tattooed walls of meat don’t tend to be well read."
 
             "The more well dressed and young pirates normally have a novel or two they’d be willing to swap with me for one of mine."
 
-            "My mate Merigold in the Virgin Islands has a really nice collection and swaps with me what she wants me to read. Sometimes out of a sense of urgency with reading American classics."
+            "My mate Merigold in the Virgin Islands has a really nice collection and swaps with me what she wants me to experience."
 
-            "I prefer reading stuff that came out this decade. Most of my sociable insight of the mainland comes from young adult fiction."
+            "Sometimes out of a sense of urgency when she learns I haven't read any American classics."
 
-            "I believe smart enough to know the dialogue isn't one-to-one from someone my age, but it set a good groundwork for me since all I understand of conversation comes from pirates."
+            "I prefer reading stuff that came out this decade. Most of my social insight of the mainland comes from young adult fiction."
 
-            "Some of the least sociable people on Earth in my opinion. Very few pirates can have normal banter with me on something that isn't related to the life."
+            "I believe I'm smart enough to know the dialogue isn't one-to-one from someone my age, but it set a good groundwork for me since all I understand of conversation comes from pirates."
 
-            "I could use this day off to swap some books, but still have some to get through. As ample of an opportunity that this is, trying new things on the mainland could also be beneficial."
+            "Some of the least sociable people on Earth in my opinion. Very few pirates can have normal banter with me on something that isn't related to life at sea."
+
+            "I could use this day off to swap some books, but I still have some to get through first."
+
+            "As ample of an opportunity that this is, trying new things on the mainland could also be beneficial."
 
             MC "So what should I start?"
 
@@ -587,7 +628,13 @@
 
         label book1:
 
+            $ book_read = "gamer uno"
+
+            $ quick_menu = False
+
             "Merigold had to explain to me what a video game was when she swapped with me."
+
+            $ quick_menu = True
 
             "This book is supposedly about a dystopian world where people live in this virtual world instead of dealing with the hellscape they find themselves in."
 
@@ -599,39 +646,57 @@
 
             "..."
 
-            with fade
+            show BG black with fade
+            show BG MC_room with fade
             jump act1_2
 
         label book2:
 
+            $ book_read = "afterlife"
+
+            $ quick_menu = False
+
             "This is a nonfiction book?"
+
+            $ quick_menu = True
 
             "It’s about a kid who died and was revived with a miraculous story of his culture's version of heaven. Funny how that works."
 
             "His accounts of the afterlife perfectly match what he was told by adults and with punjuncent details for a six year old."
 
+            "Or that's what the back of it suggests."
+
             "I was taught the Greek myths. Knowing that they’re myths, but what happens to our souls seems so fair it gives me comfort in believing some of the stories for real."
 
             "The suffering described in Tartarus sounds like around the suffering someone who is sent there would deserve. Only the worst of the worst go there."
 
-            "As nice as Elysium sounds, I’d be perfectly content with the Underworlds bleak nothingness for eternity. Sounds more peaceful than worshiping forever in Cloud World for no reason."
+            "As nice as Elysium sounds, I’d be perfectly content with the Underworlds bleak nothingness for eternity."
+
+            "Sounds more peaceful than worshiping forever in Cloud World for no reason."
+
+            "But let's learn the wisdom from a not so dead kid. I'm sure it'll be insightful."
 
             play effect "audio/pages.wav"
 
             "..."
 
-            "According to this kid, no ferry ride to the Underworld from Charon and no panel of judges. Just the one guy and a bunch of fluffy angels."
-
-            "I wonder how many people on land think about this stuff on the day-to-day?"
-
-            with fade
+            show BG black with fade
+            show BG MC_room with fade
             jump act1_2
 
         label book3:
 
+            $ book_read = "stripes"
+
+            $ quick_menu = False
+
             "A book about a normal woman getting sentenced to prison time for her past way of life."
 
+            $ quick_menu = True
+
             "The juxtaposition sounds appealing. Pirates don’t get the luxury of sitting in a cell, but I always wondered what the lives are like of a bunch of criminals in the same building."
+
+            "As opposed to a bunch of criminals on a boat."
 
             "Not enough to find out first hand, but that’s why books are so great. I can live a life that I could only sparsely imagine."
 
@@ -639,9 +704,8 @@
 
             "..."
 
-            "Flipping through some chapter titles I can start with the assumption that this isn’t a glamorous lifestyle."
-
-            with fade
+            show BG black with fade
+            show BG MC_room with fade
             jump act1_2
 
         label relax:
@@ -650,37 +714,59 @@
 
             "Perhaps I should just relax some and enjoy the sway of the ocean."
 
-            MC "Arrrghhhh, did I just think the word “Perhaps”? I know I’m not as slimy as your average pirate, but I’ll be damned to Tatarus if I start acting like a British dandy royal."
+            MC "Arrrghhhh, did I just start a sentence with \"Perhaps\"?"
 
-            "I might be stressing out about this. I’ll just close my eyes and lie down."
+            "I know I’m not as slimy as your average pirate, but I’ll be damned to Tatarus if I start acting like a British dandy royal."
+
+            "I might be stressing out about this, it was just a thought, didn't actually say it."
+
+            "I’ll just close my eyes and lie down."
 
             "A good snooze should whip my inner monologue into shape. Or, at the very least not make me sound like I live in a palace."
 
-            "If the Captain heard me say something like outloud he’d probably throw all my books overboard. I’d rather him cut out my tongue, then I couldn’t slip up again."
+            "If the Captain heard me say something like that outloud he’d probably throw all my books overboard."
+
+            "I’d rather him cut out my tongue, then I wouldn’t slip up."
+
+            "Maybe it's stress? My first time roaming the mainland is a lot to consider."
+
+            "Anything can happen, unlike at sea where you either die or don't."
+
+            "I'm sure I'll be fine. Captain believes in me and that's enough."
 
             "..."
 
-            with fade
+            show BG black with fade
+            show BG MC_room with fade
             jump act1_2
 
         label dream:
 
             $ daydream_check = 1
-            $ content_check = 2
 
             MC "I wonder what I can do at this port? Is the town around it big?"
 
             "Wait a second. Captain didn’t tell me where we were docking. After the storm last night I don’t know if we changed trajectory from our usual routes or not."
 
-            "We were around Havana a couple of days ago. We might have turned north last night to avoid the worst of the storm. If that’s right then we are headed to."
+            "We were around Havana a couple of days ago. We might have turned north last night to avoid the worst of the storm."
+
+            "If that’s right then we are headed to-"
 
             "Florida."
 
             "That’s why Captain said that thing about not needing anything from there anymore. Florida is where he picked up Mom all those years ago."
 
-            "Imagining this place as sentimental to him at all is difficult. The grizzled old pirate wouldn’t make special precautions for a port where literally zero people would shite with them there."
+            "Imagining this place as sentimental to him at all is difficult."
 
-            "We haven’t been to that state since Mom died. I don’t want to think about it too much right now. But maybe, maybe I’ll walk the same ground she once did."
+            "The grizzled old pirate wouldn’t make special precautions for a port where zero people  give a shite that he's there."
+
+            "He'd apperciate the lack of attention and interpret it as fear."
+
+            "We haven’t been to that state since Mom died. We've been sailing around it for years."
+
+            "I don’t want to think about it too much right now. But maybe I’ll walk the same ground she once did."
+
+            "That would be nice."
 
             "..."
 
@@ -696,7 +782,7 @@
 
             else:
 
-                MC "shite!"
+                MC "Shite!"
                 jump breakdown
 
             jump waiting
@@ -705,13 +791,19 @@
 
             $ content_check = 2
 
-            "Mom."
+            "Mom,"
 
             "I miss you."
 
-            "Being a pirate is so hard without you. You were there to balance out the lifestyle. Telling me stories of your life to make me feel safer."
+            "Being a pirate is so hard without you. You were there to balance out the lifestyle."
 
-            "Getting the drunkards to stop yelling at me. Raising me better than the water ever has. I know the world of thieves more than anything else. More than myself."
+            "Telling me stories of your life to make me feel safer."
+
+            "Getting the drunkards to stop yelling at me."
+
+            "Raising me better than the water ever has."
+
+            "I know the world of thieves more than anything else. More than myself."
 
             "Shite, I wish you were still here."
 
@@ -723,27 +815,34 @@
 
             "You didn’t own a single thing when you stepped on The Red Plague."
 
-            "All you left me were stories of your old life. And the scars you helped treat when you were here. They’ve opened up without you."
+            "All you left me were stories of your old life. And the scars you helped treat when you were here."
+
+            "They’ve opened up without you."
 
             "Without you. I wouldn’t be anything. Or maybe I am nothing without your influence?"
 
-            play effect "audio/crysniff.wav" volume .5 # ya boi is crying
+            play effect "audio/crysniff.wav" volume .5
 
             "..."
 
-            MC " I think I should keep on pirating."
+            "But you aren't here anymore. So there's really only one thing I can do."
+
+            MC "Keep on pirating."
 
             "It’s what you would've wanted. It’s what I was taught."
 
             "I believe you would have wanted me to find my answers without you anyway. Just as you did for yourself."
 
-            "Like Dad said, you were the happiest on this ship."
+            "You dropped everything in your old life to start anew. It's crazy to think about."
 
-            scene BG black
-            with fade
-            with fade
-            scene BG MC_room
-            #stop music fadeout 1.0
+            "It's like Dad said, you were the happiest on this ship."
+
+            "That was clear as day when anyone looked into your eyes."
+
+            "I wish you could reassure me, just one more time."
+
+            show BG black with fade
+            show BG MC_room with fade
             jump act1_2
 
 return

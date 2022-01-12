@@ -133,6 +133,7 @@ transform redochar: # zooming out of May's oversteps [needs work when May art is
 transform zoom_may: # zooming in for May getting flirty [needs work when May art is done]
     ease 1.0 zoom 1.2
 
+define whiteflash = Fade(.95, 0.0, .55, color="#fff")        # for emerging topside
 define flash = Fade(.15, 0.0, .25, color="#fff")             # for flashy sword effect
 define flash_lighting = Fade(.15, 0.0, .25, color="#AFDBF2") # for flashy lighting effect
 define deathflash = Fade(.15, 0.0, .25, color="#F25555")     # for when character dies
@@ -198,6 +199,7 @@ define May_affinity = 0
 # background images
 image BG MC_room = "background/bedroom.png"
 image BG deckview = "background/deckview.png"
+image BG deckview2 = "background/deckview2.png"
 image BG topdeck = "background/topdeck.png"
 image BG black = "background/black.png"
 image BG harbor = "background/walk1.png"
@@ -208,6 +210,7 @@ image BG school = "background/school.png"
 image BG market = "background/market.png"
 image BG ar = "background/arcades.png"
 image BG st = "background/street.png"
+image BG street_sign = "background/street_post.png"
 image BG hw = "background/hallway.png"
 image BG cr = "background/classroom.png"
 image BG wc1 = "background/wc.png"
@@ -289,10 +292,6 @@ image pirate7 slash = "pirate 77.png"
 image pirate8 = "pirate 8.png"
 image pirate8 slash = "pirate 88.png"
 
-# Menu Music
-define config.game_menu_music = "music/BelowDeck.mp3" # subject to change
-# define config.main_menu_music
-
 $ persistent.menuflag = 0       # for the changing main menu
 $ persistent.menuflag_count = 0 # for knowing if the player has reached a menu before
 
@@ -312,7 +311,6 @@ else:
 # #2150E7 when your previous choice comes back
 # #50A23B a good choice
 # #f00 a bad choice
-
 
 # The Start of Game
 label start:
