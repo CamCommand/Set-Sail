@@ -1403,6 +1403,10 @@ screen keyboard_help():
         text _("Skips dialogue while held down.")
 
     hbox:
+        label _("Del")
+        text _("Delete a save state on the Load screen.")
+
+    hbox:
         label _("Tab")
         text _("Toggles dialogue skipping.")
 
