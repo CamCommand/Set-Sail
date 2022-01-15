@@ -1,7 +1,7 @@
 ﻿label act1_4:
 
-
-$ mc = Character("[player_name]", color="#990033", callback=voice)# redefine bc I want to deal with it
+# redefine bc I want to deal with it
+$ mc = Character("[player_name]", color="#990033", callback=voice)
 
 show BG schoolan with dissolve
 
@@ -50,11 +50,14 @@ show BG walksunset with dissolve
 "Who knows? Let’s see what life hurls at me next."
 
 "The next few years may be my best yet."
+
 window hide
 show BG black with dissolve
 pause 3.0
+
 play effect "audio/thunder.ogg"
 show BG 4 with hpunch
+
 play music "audio/storm1.mp3" loop
 pause 5.0
 jump ship_start
@@ -852,7 +855,7 @@ label ship_start:
         pause 10.0
 
         stop effect
-        show BG black with dissolve
+        show BG black with fade
         jump act1_5
 
 return

@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = ".92"
+define config.version = "0.925"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -27,7 +27,7 @@ define gui.show_name = True
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-Set Sail is western visual novel set in the modern day where the Golden Age of Pirating never properly ended. The player takes the role of a young pirate who has lived their entire life sheltered on a famous pirate ship known as The Red Plague, captained by The Demonic Pirate Ricardo. Everything they know about life on the mainland is from heresy from newer pirates or their mother who is mysteriously absent. Regardless of the struggles at sea, the main character is thankful for the freedom that comes with pirating. Even if they sometimes wonder if the grass is greener on the other side.\n
+Set Sail is a western visual novel set in the modern day where the Golden Age of Pirating never properly ended. The player takes the role of a young pirate who has lived their entire life sheltered on a famous pirate ship known as The Red Plague, captained by The Demonic Pirate Ricardo. Everything they know about life on the mainland is from heresy from newer pirates or their mother who is mysteriously absent. Regardless of the struggles at sea, the main character is thankful for the freedom that comes with pirating. Even if they sometimes wonder if the grass is greener on the other side.\n
 Through a first person perspective, once they turn eighteen, the main character is given some leeway to explore mainland Florida, USA. While engaging with colorful bystanders you end up attending a meeting of the local high school’s Pirate Culture Club. There is where the main character’s misconceptions of how people their age are supposedly like shatter. Getting to know the four female eboard members of the club reinvigorate the life path they are on.\n
 Jumping to the year 2021, the main character finds themself unfortunately in charge of their own destiny. The current pandemic ravishing the world has led the you back to the members of the eboard you met some time ago. After some deliberation, you, the former eboard, and a mysterious new woman tread the paths of their new shared destinies together.\n
 Set Sail is currently in it’s demo phase. The first act of the game is to give players a taste of what is trying to be accomplished with this project. It is currently being developed by a small number of people. If you’d like to support the creators you can by checking out the Kickstarter. If that is complete, you can go to the creator’s Patreon. Thank you for downloading the demo, enjoy the high seas.

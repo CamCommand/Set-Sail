@@ -1,7 +1,5 @@
 label act1_2:
 
-    # play music "music/BelowDeck.mp3" volume 0.5 fadein 1.5
-
     th "Land Ho!"
 
     if book_read == "gamer uno":
@@ -169,12 +167,15 @@ label act1_2:
 
     "Let’s get off the ship and have a look around first. At this point everyone looks so busy loading supplies I can slip by easily without them noticing."
 
+    stop music fadeout 2.0
+    pause 2.0
+
     show BG harbor
     show crowd
     with dissolve
-    stop music fadeout 1.0
-    play music "music/PirateTimes.mp3" volume 1 fadein 1.5
-    play effect "audio/chattering.mp3" volume 1.1 fadein 2.0
+
+    play music "music/PirateTimes.mp3" volume 1 fadein 2.5
+    play effect "audio/chattering.mp3" volume 0.9 fadein 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
 

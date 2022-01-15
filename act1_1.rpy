@@ -56,7 +56,7 @@
         with fade
         with fade
 
-        play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5
+        play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5 fadeout 1.5
 
         "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port."
 
@@ -163,7 +163,9 @@
         label opening:
 
             $ pirate = "Pirate"
+
             "Sunlight pours into my eyes through the cracks in the old boards across the room."
+
             $ quick_menu = True
 
             "I get up from my cot and scan through my room. It’s a small storage space under the stairs to the top deck with barely enough room for anything extra beyond my necessities."
@@ -280,7 +282,7 @@
             "His dry expression told me nothing of his mood, but I assume he is annoyed at the unnecessary shrill yelling from ol’Two Hands."
 
             show cap yelling at centerright with moveinright
-            show twohands scared
+            show twohands scared with Dissolve(0.1)
 
             Cap "Two Hands, there isn't a pirate saltier than I. But yer a strong second ye seadog."
 
@@ -308,7 +310,7 @@
 
             Cap "Now get lost ye scurvy dog!"
 
-            show twohands scared flip with ease
+            show twohands scared flip with Dissolve(0.1)
             hide twohands scared flip with moveoutleft
             show cap at center with move
 
@@ -328,13 +330,13 @@
 
                 Cap "The mainland considers ye a real adult now lass."
 
-                show cap yelling
+                show cap yelling with Dissolve(0.1)
 
                 Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
-                show cap
+                show cap with Dissolve(0.1)
 
                 Cap "Aye lass, I remember. That scallywag fell flat on their arse and we prodded dem every night."
 
@@ -344,13 +346,13 @@
 
                 Cap "The mainland considers ye a real adult now lad."
 
-                show cap yelling
+                show cap yelling with Dissolve(0.1)
 
                 Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
                 MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
-                show cap
+                show cap with Dissolve(0.1)
 
                 Cap "Aye lad, I remember. That scallywag fell flat on their arse and we prodded dem every night."
 
@@ -358,11 +360,11 @@
 
             MC "He tried to flee his service from embarrassment and you obliged by marooning him."
 
-            show cap yelling
+            show cap yelling with Dissolve(0.2)
 
             Cap "Oh, that be right. Ha ha, ahhh."
 
-            show cap
+            show cap with Dissolve(0.1)
 
             Cap "Nevertheless I wanted to give ye something. I got something made for ye, something I wish my."
 
@@ -378,7 +380,7 @@
 
             MC "Oh, thank you Captain. This is pleasantly unexpected."
 
-            show cap yelling
+            show cap yelling with Dissolve(0.1)
 
             Cap "Argh, what you expected nothing from me?"
 
@@ -388,7 +390,7 @@
 
             Cap "Personally that is. We’re gonna need a lot more cannonballs of course."
 
-            show cap yelling
+            show cap yelling with Dissolve(0.1)
 
             Cap "Hahahaha ha!"
 
@@ -396,7 +398,7 @@
 
             MC "Yes Captain I guess we always need more of those."
 
-            show cap
+            show cap with Dissolve(0.1)
 
             Cap "Don’t be telling the crew where ye going. Don’t want dem thinking The Demonic Pirate Ricardo has gotten soft."
 
@@ -458,7 +460,7 @@
 
             fla "Hey Two Hands why don’t yuh help me with the ropes, they need {cps=10}ummmmmm, knotting.{/cps}"
 
-            show twohands sweaty
+            show twohands sweaty with Dissolve(0.1)
 
             th "Not now Flavio!"
 
@@ -472,9 +474,10 @@
 
             MC "Make sure you get’em nice and tight Mr. Two Whole Hands!"
 
-            show twohands angry
+            show twohands angry with Dissolve(0.1)
+            pause 0.5
             hide twohands angry with moveoutright
-            show flavio flip with ease
+            show flavio flip with dissolve
             hide flavio with moveoutright
 
             "That guy is unbelievable sometimes."

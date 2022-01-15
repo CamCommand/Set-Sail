@@ -1626,6 +1626,8 @@ label act1_end:
     # stop music fadeout 3.0
     pause 3.0
 
+    show BG black with fade
+
     # fade to credits video
 
 return

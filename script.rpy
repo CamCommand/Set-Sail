@@ -160,9 +160,17 @@ define ev = Character('Everyone', color="#000000", callback=Crashsound_test)    
 
 # Main charcter images pre timeskip
 image a_d = "Astrid.png"
-image b_d = "behati.png"
 image g_d = "G.png"
+image b_d = "behati.png"
 image m_d = "Palmer.png"
+
+image ast = "Astrid.png"
+image ast conf = "Astrid conf.png"
+image ast emb = "Astrid emb.png"
+image ast happy = "Astrid happy.png"
+image ast sad = "Astrid sad.png"
+image ast smile = "Astrid smile.png"
+image ast sup = "Astrid sup.png"
 
 image fiona = "Fiona.png"
 image fiona angry = "Fiona angry.png"
@@ -339,5 +347,9 @@ label start:
     # use of namebox
     define gui.namebox_borders = Borders(15, 7, 15, 7)
     define gui.namebox_tile = True
+
+
+    define lefter = Position(xpos= -0.1, xanchor = 'left')
+    define righter = Position(xpos = 1.1, xanchor = 'right')
 
     jump act1_1
