@@ -1,5 +1,6 @@
 init python:
 
+    # splitting the mc's name in half
     def getSplit(s):
 
         s = player_name
@@ -14,31 +15,53 @@ init python:
 label act1_5:
 
     show BG shore with dissolve
-    play music "audio/shore.ogg"
+    play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5 fadeout 1.5
+    play effect "audio/shore.ogg" volume 0.8 fadeout 1.0
+
+    $ renpy.block_rollback()
+    $ quick_menu = False
 
     "Washing up on a rocky shore after that night doesn’t feel thematically appropriate."
 
-    "A part of me hoped the dingy would be shredded by a whirlpool in a reef somewhere. That way I wouldn’t have to come up with a plan"
+    $ quick_menu = True
 
-    "But here I am."
+    "A part of me hoped the dingy would be shredded by a whirlpool in a reef somewhere. That way I wouldn’t have to come up with a next step."
 
-    "On some beach somewhere."
+    "But here I am instead."
 
-    "Not sure where, but I hope it isn’t South America. I haven’t spoken Spanish in five years at least."
+    "On some beach."
 
-    "Although, if I’m in America, I could be arrested if I’m found out I’m from the Red Plague."
+    "In the middle of nowhere."
+
+    "Well, maybe not nowhere. I can faintly here some civilization behind me."
+
+    "Not sure where this \"where\" is, but I hope it isn’t South America. I haven’t spoken Spanish in five years at least."
+
+    "There was plenty of reason to use it, however the past eight years or so the number of Spanish speaking crew mates dwindled until it was just me and Captain."
+
+    "And he didn't exactly talk to me that much so really it's his..."
+
+    "..."
+
+    "Nevermind."
+
+    "If I’m in America, I could be arrested if I’m found out I’m the first mate of The Red Plague."
+
+    "I've never seen a wanted poster of myself, but alone I'm powerless on land."
+
+    "I have no crew, no influence, and no money to worm my way out of trouble."
 
     "Is there even a point acknowledging the worst night of my life?"
 
     "How long do I have to just sit with it before moving on?"
 
-    "Poseidon has brought me to shore, what is his plan for me? There’s nothing left."
+    "Poseidon has allowed me to touch land again, yet what is his plan for me? There’s nothing left for me to do."
 
     "I wonder if anyone else made it out?"
 
     "I heard Iron Hip yell first under the deck. He must have emptied the entire clip before his screams stopped."
 
-    "JoJo easily could overpower three grown adults, but based on Flavio’s..."
+    "JoeJoe easily could overpower three grown adults, but based on Flavio’s..."
 
     pause 2.0
 
@@ -46,19 +69,21 @@ label act1_5:
 
     "Yet nobody but me will remember their last moments. Their crimes will be revered but them as people will be forgotten."
 
+    stop effect fadeout 3.5
+
     "It’s unbelievable that the Captain saved me. Why would he let me go free?"
 
-    "He told me to keep pirating, but what does he want me to do? What is there left for me to do?"
+    "He told me to keep pirating, but what does that mean? There's nothing I can do in this state."
 
     play effect "audio/stomach.ogg"
     pause 2.0
 
-    "I wish I had grabbed some rations."
+    "I wish I had grabbed some rations. Haven't eaten anything since high rise yesturday."
 
-    "Before finding something to eat, there’s something that needs to be done."
+    "But before finding something to eat, there’s something that needs to be done."
 
-    show BG black with dissolve
-    show BG shore_sword with dissolve
+    show BG black with fade
+    show BG shore_sword with fade
 
     $ persistent.menuflag = 1
 
@@ -71,19 +96,23 @@ label act1_5:
 
     n "The most important tenets of Anarchy are as follows. Freedom, the rejection of hierarchies, and fairness for all."
 
-    n "These pillars stand proud in the Pirate Code. The rules every good pirate lived by and what every great pirate dies by. Where everyone gets a fair shake at life. This life. This way of being, it’s not an easy one."
+    n "These pillars stand proud in the Pirate Code. The rules every good pirate lived by and what every great pirate dies by. Where everyone gets a fair shake at life."
+
+    n "This life."
+
+    n "This way of being, it’s not an easy one."
 
     n "The world has rejected us pirates for thousands of years, but we kept fighting to stay alive and to stay free. We didn’t disappear into history books, we continued to cripple the legs of high society."
 
-    n "Enraging our enemies and strengthening our own bonds. \"A pirate’s life for me!\" is what we all said in unison in the face of a crazy world that didn’t make sense to us."
+    n "Enraging our enemies and strengthening our own bonds. \"A pirate’s life for me!\" is what we all said in unison in the face of a corrupt world that didn’t make sense to us."
 
     n "This saying shortens our lifespan but enhances our lives. This was a sacrifice we all took on willingly. My comrades paid the ultimate price for their choices, and in the end, I bet they were happy."
 
-    n "They achieved the happiness they sought out for, is that not a reason to celebrate their lives? Celebrate the lives of the freest people on both sides of the equator?"
+    n "They achieved the happiness they sought out for. Is that not a reason to celebrate their lives? Celebrate the lives of the freest people on both sides of the equator?"
 
     n "Simply believing that is true wouldn’t suffice if I hadn't lived it along with them. I will live the rest of my life, celebrating theirs."
 
-    n "Whenever I’m eating food that doesn’t taste like wood I’ll remember Donatello who could spice up a turd to make it a blessing from Gods"
+    n "Whenever I’m eating food that doesn’t taste like wood I’ll remember Donatello who could spice up a turd to make it a blessing from the Gods."
 
     n "Everytime I draw a pistol I’ll remember Iron Hip, who could empty a gun into an enemy's chest faster than anyone I ever knew."
 
@@ -91,40 +120,63 @@ label act1_5:
 
     n "And most of all, I’ll remember my Captain and his ideology of brutal honor down to his very last moment. I will take the lessons you all taught me and carry them to my own end."
 
-    n "Until Posideon deems it to be my final act, I will continue your legacy. May you all find be guided to the afterlife with safety and peace."
+    n "The freedom of this lawless lifestyle was not just a chaotic band of misfits committing crimes against the ruly. It was an organized fraternal bond that gave said misfits a place to call home."
 
-    n "This grave itself cannot express the size of the loss, but it represents more than anyone will ever understand. The Red Plague and it’s crew will power though into eternity by my hands. Thank you for everything Captain."
+    n "I realize that now more than ever."
+
+    n "Until Posideon deems it to be my final act, I will continue on all your legacies. May you all be guided to the afterlife safely and with peace in your souls."
+
+    n "This grave itself cannot express the size of our loss, but it represents more than anyone will ever understand. The Red Plague and it’s crew will be marked into eternity by my hands."
+
+    n " Thank you for everything Captain."
+
+    n "To The Red Plague and all who called it sanctuary."
 
     nvl clear
     hide window
 
-    "Hopefully this will be enough for them. Let's try to find out where I washed up."
+    pause 3.0
+
+    "Hopefully this will be enough for them."
+
+    "I don't exactly have the resources for a proper pirate funeral, but I think they'd apperciate this much."
+
+    "..."
+
+    "Time to find out where I washed up."
 
     "I should turn my shirt inside out, it just occurred to me how much blood has seeped into it."
 
-    "Don’t think any of it is mine, thankfully. Nobody will let me near food if I look this bad."
+    "Don’t think any of it is mine, thankfully. Nobody will let me near them if I look this bad."
 
-    "It may be time to sell my earrings for food. If they take earrings as payment still."
+    "It may be time to sell my earrings for something to ration. If they take earrings as payment still."
 
-    "That’s what pirates have them for, but I’ve never heard a story of anyone actually using them to get emergency funds."
+    "That sort of old pirate tradition might not be as viable today as it use to."
 
-    "If silver hasn’t gone down in price, at least one of my studs should get me a sandwich."
+    "I’ve never heard a story of anyone actually using them to get emergency funds or to barter for anything."
 
-    show BG streetpost with dissolve
+    "If silver hasn’t gone down in price, at least one of my studs should buy me a sandwich."
+
+    pause 2.0
+
+    show BG black with fade
+    show BG streetpost with fade
     stop music fadeout 2.0
-    play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
+    play music "music/PirateTimes.mp3" volume 1.0 fadein 1.5
 
     "The coastline’s piles of trash hinted towards this being the mainland and not an island."
 
     "Based on the candy wrappers and garbage bags my final guess is that I’m back in America."
 
-    "However, on the beach and since I’ve been walking I see these blue paper sheets everywhere."
+    "However, on the beach and since I’ve been walking I've been seeing these blue paper sheets everywhere."
 
     "Maybe I’m someplace else after all? Or more likely some useless product fell out of popularity."
 
     "There are a few people wearing them as masks that I’ve seen, but not enough compared to how many are on the ground."
 
-    "They aren’t very cool looking masks, so it could be a medical thing. Or everyone got really ugly in a couple of years."
+    "They aren’t very cool looking masks, so it could be a medical thing. Or everyone got really ugly in the past couple of years."
+
+    "No matter the reason concealing my face might be a good idea."
 
     mc "Excuse me fellas, why are you wearing masks today?"
 
@@ -134,18 +186,24 @@ label act1_5:
 
     mc "Two legged swines."
 
-    "They assumed I was an \"anti-vaxx\" so I guess it’s a new infighting group name."
+    "What is an \"anti-vaxx\"?"
+
+    "They assumed I was one, so I guess it’s a new infighting group thing."
+
+    "Like the Catholics and Protestants or Cowboys and Aliens."
 
     "The split must be the ones wearing the masks are anti-anti-vaxxers and the ones without are the anti-vaxxers."
 
     "Navigating between these groups could be difficult if I want to talk to anyone."
 
-    define mask = 0    # boolean for having a mask
-    define doll_met = 0# if the player meets Doll
+    "What side should I pick?"
+
+    define mask = 0     # boolean for having a mask
+    define doll_met = 0 # if the player meets Doll
 
     menu:
 
-        "Find a mask":
+        "Anti-anti-vaxxers":
 
             $ quick_menu = False
             $ renpy.block_rollback()
@@ -154,15 +212,16 @@ label act1_5:
 
             $ quick_menu = True
 
+            "Plus hiding my identity doesn't sound too bad either."
+
             "It wouldn’t seem clean to dry one off from the ground. Maybe an anti-anti-vaxx shop could give me one."
 
-            show BG black with dissolve
-            pause 1.5
-            show BG dollcorner with dissolve
+            show BG black with fade
+            show BG dollcorner with fade
 
             jump mask
 
-        "Keep moving":
+        "Anti-vaxxers":
 
             $ quick_menu = False
             $ renpy.block_rollback()
@@ -171,11 +230,10 @@ label act1_5:
 
             $ quick_menu = True
 
-            "I’ll stick to the stronger side of the animal fights."
+            "Best to stay with the winning team, if those passerbys were anything to go off of this sounds like a serious disagreement."
 
-            show BG black with dissolve
-            pause 1.5
-            show BG signcorner with dissolve
+            show BG black with fade
+            show BG signcorner with fade
 
             jump nomask
 
@@ -214,31 +272,34 @@ label act1_5:
 
         "Woah!"
 
-        "Some street urchin peaked behind a pillar to say that. That’s kind of freaky."
+        "Some street urchin peaked behind a pillar to say that. Freaked me out."
 
         mc "Hello, um, yes."
 
         mc "Why are all these buildings closed off?"
 
         $ dl = Character('Street Urchin', color = "#740E86", callback=hobo_voice)
-        show doll at wiggle with dissolve
+        show doll at wiggle with Dissolve(0.1)
+
         dl "{cps=10}Ha haha!{/cps}"
 
         dl "Have you been at sea for a long time or somethin’?"
+
+        "She doesn't appear to be hostile. Not that I trust her, but my guard doesn't have to be up so high."
 
         mc "Something like that. Could you fill me in?"
 
         dl "Oh really now? I was just playing."
 
+        show doll mad with Dissolve(0.1)
+
         dl "Yeah kid there was a big sick, thee ol’ black plague part two, a crippling pandemic if you will."
 
         dl "No pun intended or somethin’."
 
-        show doll at wiggle
+        show doll at wiggle with Dissolve(0.1)
 
         dl "{cps=10}Hehehehehehe!{/cps}"
-
-        "She lifts up her left leg and it falls limp as she makes her joke."
 
         mc "Miss, are you one of the anti-vaxx people?"
 
@@ -253,9 +314,17 @@ label act1_5:
 
         dl "One second sweetheart."
 
-        show doll at wiggle
+        show doll with ease:
+            ypos 1.05
 
-        "Doll swings her backpack around to her stomach and opens it up. She pulls out a plastic sealed white mask."
+        play effect "audio/rummage2.mp3"
+
+        "Doll swings her backpack around to her stomach and opens it up. I didn't notice she had one until now."
+
+        "She pulls out a plastic sealed white mask and offers it to me."
+
+        show doll with ease:
+            ypos 1.00
 
         mc "That looks really nice, thank you."
 
@@ -271,7 +340,7 @@ label act1_5:
 
         dl "Yeah yeah, I don’t need to be buttered up."
 
-        dl "Take it and have a good time in Seaborough. You don’t need to owe a debt to some old lady."
+        dl "Take it and have a good time in what's left of Seaborough. You don’t need to owe a debt to some old lady."
 
         mc "Wait what did you say? That name?"
 
@@ -279,7 +348,7 @@ label act1_5:
 
         show doll at wiggle
 
-        dl "Hehehehehe!"
+        dl "{cps=30}Hehehehehe!{/cps}"
 
         hide doll with dissolve
 
@@ -303,13 +372,19 @@ label act1_5:
 
         "Maybe they found it nineteen years ago? Am I supposed to know what a covid is?"
 
-        "What’s a kindergarten? I didn’t hear about any of this when I was in Seaborough."
+        "Also what’s a kindergarten?"
+
+        "The world seems to have changed a lot in a few years. No way I could have kept up."
+
+        "I should have asked more questions when I was in Seaborough."
 
         "Wait, Seaborough. How was that spelt again?"
 
         "What is that sign in the corner?"
 
         "\"Support your local business. Seaborough needs your support!\""
+
+        "I don't believe it."
 
         jump return2sender
 
@@ -319,24 +394,29 @@ label act1_5:
         define may_position = ""      # what May is from MC's view
         define may_name = "Woman"     # Whatever fake name May gives MC
 
-        $ activity_choice = "arcade"  # for testing purposesRR
-
         $ m = Character("[may_name]", color="#0A4AF6",  callback=may_voice)
 
         "I’m back in that town!"
 
-        "Four years ago I had the greatest time on land here and Poseidon has brought me back! This is a sign by the Gods that I need to do something here!"
+        "All those years ago I had the greatest time on the mainland and Poseidon has brought me back!"
 
-        "This is a sign by the Gods that I need to do something here! I should retrace my steps. Where did I go first back then?"
+        "This is a sign by the Gods that I need to do something here!"
+
+        "To figure out what it is I have to do I should retrace my steps."
+
+        "After walking around where did I go first?"
+        #$ activity_choice = "school"  # for testing purposes
 
         menu:
 
-            "The Schoolhouse":
+            "Schoolhouse":
 
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                "The school! I should go see if the girls are still there."
+                "The school!"
+
+                "I should go see if the girls are still there."
 
                 $ quick_menu = True
 
@@ -346,364 +426,466 @@ label act1_5:
 
                 "The school shouldn’t be that far from here. I’ll get there before the club meeting ends."
 
-                jump school2
+                "Then Posiedon will reveal to me what I should do next."
 
-            "Bookstore right?":
+                if activity_choice == "school":
+
+                    jump school2
+
+                else:
+
+                    "Wait, I didn’t go to the school first."
+
+                    "I stopped by the [activity_choice] first then found my way to the school."
+
+                    "There’s little chance any of the girls are there anyway."
+
+                    "I’ll run to the [activity_choice], something relevant to my journey has to appear there."
+
+                    "If not, then I’m sleeping on a bench tonight."
+
+                    if activity_choice == "bookstore":
+
+                            jump bookstore2
+
+                    elif activity_choice == "arcade":
+
+                            jump arcade2
+
+                    else:
+
+                            jump market2
+
+            "Bookstore":
 
                 jump bookstore2
 
-            "Some Market":
+            "The Market":
 
                 jump market2
 
-            "Arcade Store":
+            "Arcade Bar":
 
                 jump arcade2
 
     label school2:
 
-        show BG schoolpost with dissolve
+        show BG black with fade
+        show BG schoolpost with fade
 
-        "The school grounds are vacant. Give or take a few cars, I don’t hear anything either."
+        "The school grounds are vacant. Give or take a few cars, and I don’t hear anything either."
 
-        "Has everyone left or are they all still inside doing papers or whatever kids do?"
+        "Has everyone left or are they all still inside doing book papers things?"
 
         "I can’t remember when school let out last time and I shouldn’t just walk in there looking the way I do now."
 
-        "I’m still drenched in sea water and blood, they’ll call the police on me."
+        "I’m still drenched in sea water and blood, they’d sick the law on me."
 
-        "Should’ve stolen some clean clothes or something before coming here. Or a watch so I know school is out by now."
+        "Should’ve stolen some clean clothes before coming here. Not that there were clothing stores with loose security around."
 
-        if activity_choice == "school":
+        "Astrid was waiting for me on the stoop when I got here, but she has no reason to be here now."
 
-            "{color=#2150E7}Astrid was waiting for me on the stoop when I got here, but she has no reason to be here now.{/color}"
+        "So how do I get in? I wish there was some way to contact Astrid."
 
-            "She’s likely onto bigger and better things at this point, no reason to stick around. The rest of the eboard as well, four years might have been enough."
+        "She’s likely onto bigger and better things at this point, no reason for her to stick around."
 
-            "That afternoon with the Pirate Culture Club was fun, but I could tell they wanted to be somewhere else."
+        "The rest of the eboard as well. Staying four additional years here doesn't sound like something they'd all do."
 
-            "I hope they all got there."
+        "That afternoon with the Pirate Culture Club was fun, but I could tell they wanted to go somewhere else with their lives."
 
-            show m_d with dissolve
+        "I hope they all got there, wherever they are."
 
-            m "Hey you!"
+        show may with dissolve
 
-            mc "Yes? Do you need something?"
+        m "Hey you!"
 
-            m "This is school property, should you be here?"
+        mc "Me?"
 
-            mc "I- ummmm."
+        m "Yes you!"
 
-            menu:
+        mc "Do you need something?"
 
-                "I'm a student":
+        m "This is school property, should you be here?"
 
-                    $ quick_menu = False
-                    $ renpy.block_rollback()
+        mc "I {cps=15}ummmmmmmmm.{/cps}"
 
-                    mc "I’m a student here, who are you?"
+        menu:
 
-                    $ quick_menu = True
+            "I'm a student":
 
-                    "She looks disheveled and tired. In addition to the fact that she's in front of the school and not in it, she can’t be a teacher."
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-                    "I’ll call her bluff and see how she responds."
+                mc "I’m a student here, who are you?"
 
-                    m "Oh really?"
+                $ quick_menu = True
 
-                    m "Well how come you’re not in class right now?"
+                "She looks disheveled and tired. In addition to the fact that she's in front of the school and not in it, she can’t be a teacher."
 
-                    m "Why are you dressed like that?"
+                "I’ll call her bluff and see how she responds."
 
-                    "Why am I dressed like that?"
+                show may flip with Dissolve(0.3)
 
-                    "Why are you dressed like that?"
+                m "Oh really?"
 
-                    "She smells like she just came off a ship herself and she’s accusing me of being out of place?"
+                m "Well how come you’re not in class right now?"
 
-                    mc "Finishing up the exercise class now. I’m sweaty because of all the running."
+                m "Why are you dressed like that?"
 
-                    m "Well I’m the new gym teacher, and that’s why I’m also sweaty."
+                "Why am I dressed like that?"
 
-                    "This woman is lying to me too!"
+                "Why are you dressed like that?"
 
-                    $ may_name = "Mrs. Paul"
+                "She smells like she just came off a ship herself and she’s accusing me of being out of place?"
 
-                    $ may_position = "\"teacher\""
+                mc "Finishing up the exercise class now. I’m sweaty because of all the running."
 
-                    m "I’m Mrs. Paul, nice to meet you. Could you remind me which way the gymnasium is because I’m new?"
+                m "Well I’m the new gym teacher, and that’s why I’m also sweaty."
 
-                    mc "Sure Mrs. Paul, it’s around the back on the right."
+                "This woman is lying to me too!"
 
-                    mc "I have another lap to do so I’ll see you in there."
+                m "You don't look like you're in my class."
 
-                    m "Thanks, make sure you shower all that stuff off you when you’re done."
+                $ may_name = "Mrs. Paul"
 
-                    m "Wait, where are the other students?"
+                $ may_position = "\"teacher\""
 
-                    mc "Where are your students?"
+                mc "I'm not in your class. Who are you even?"
 
-                    "We silently stare each other down, neither of us making a single move."
+                mc "If you're new I haven't met you yet Miss..."
 
-                    mc "Have a nice day Mrs. Paul."
+                "Just need to catch her in the lie."
 
-                    m "You too. Don’t be late for class."
+                show may smile with Dissolve(0.3)
 
-                    mc "I won’t. Bye now."
+                m "I’m Mrs. Paul, nice to meet you."
 
-                    m "Yeah, bye."
+                m "Could you remind me which way the gymnasium is? Because like I mentioned, I’m new."
 
-                    hide m_d with dissolve
+                mc "Sure Mrs. Paul, it’s around the back on the right."
 
-                    "That’s my cue to leave."
+                "Well something is over there at least."
 
-                    "They aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+                mc "I have another lap to do so I’ll see you in there."
 
-                    "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
+                m "Thanks, make sure you shower when you’re done."
 
-                "I'm a teacher":
+                show may sad with Dissolve(0.1)
 
-                    $ quick_menu = False
-                    $ renpy.block_rollback()
+                m "Wait, where are the other students?"
 
-                    mc "I’m a teacher here, who are you?"
+                mc "What other students?"
 
-                    $ quick_menu = True
+                show may with Dissolve(0.1)
 
-                    "She doesn’t look like anyone’s parent based on how tired and frazzled she looks."
+                m "The ones in your other class."
 
-                    "If she was, she'd be at work or something, so let’s see if she calls my bluff or not."
+                "This is getting risky. I'll have to take one final shot to crush both our stories."
 
-                    m "Oh, excuse me then."
+                mc "I'm not sure where everyone is."
 
-                    $ may_name = "Mrs. Padilla"
-                    $ may_position = "\"teacher\""
-                    m "My name is Mrs. Padilla. I’m a recent graduate and am here to drop off my resume for the teaching job here."
+                mc "Maybe they're with your students?"
 
-                    mc "That’s fine, no harm done."
+                show may at wiggle
+                pause 1.0
 
-                    mc "I’m the sports teacher, I’m sweaty like this all the time. You can drop off your resume in the main office."
+                "We silently stare each other down, neither of us making a single move."
 
-                    m "You’re the gym teacher?"
+                "I've won."
 
-                    m "Where are your students?"
+                mc "Have a nice day Mrs. Paul."
 
-                    mc "They’re umm, running laps."
+                m "Yeah, you too. Don’t be late for class."
 
-                    m "There’s a track here?"
+                mc "I won’t. Bye now."
 
-                    mc "Yes, it’s on the other side."
+                m "Yeah, bye."
 
-                    m "Oh thank you, and you’re…"
+                hide may with dissolve
 
-                    mc "I’m Dr. [player_name]."
+                "I knew she was full of shite! There was no way she was really a teacher."
 
-                    "Why did I say doctor!?"
+                "I'll take this chance to leave as well."
 
-                    m "Oh, thank you Dr. [player_name]."
+                "The girls aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
 
-                    "I think I gained her trust. Flexing authority got me unearned respect."
+                "Normally giving up so easily isn't in my playbook, but I'm getting super hungry."
 
-                    "As long as I don’t claim a role that requires identification, this might open golden opportunities."
+                "A better solution might come to me after some calories."
 
-                    show m_d at zoom_may
+                "Time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
 
-                    m "Maybe we’ll be coworkers. I’d love for you to show me around."
+            "I'm a teacher":
 
-                    m "What number is your classroom?"
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-                    mc "I’m number…"
+                mc "I’m a teacher here, who are you?"
 
-                    define num = 0
+                $ quick_menu = True
 
-                    menu:
+                "She doesn’t look like anyone’s parent based on how tired and frazzled she looks."
 
-                        "9":
+                "If she was, she'd be at work or something, so let’s see if she calls my bluff or not."
 
-                            $ num = 9
+                show may smile with Dissolve(0.1)
 
-                            $ quick_menu = False
-                            $ renpy.block_rollback()
+                m "Oh, excuse me then."
 
-                            mc "I'm room [num], I’ll be there after school if I get held up there."
+                $ may_name = "Mrs. Padilla"
+                $ may_position = "\"teacher\""
 
-                        "130":
+                m "My name is Mrs. Padilla. I’m a recent graduate and am here to drop off my resume for the teaching job here."
 
-                            $ num = 130
+                mc "That’s fine, no harm done."
 
-                            $ quick_menu = False
-                            $ renpy.block_rollback()
+                mc "Excuse me, I’m the sports teacher. That's why I'm all sweaty."
 
-                            mc "I'm room [num], I’ll be there after school if I get held up there."
+                mc "You can drop off your resume in the main office."
 
-                        "266":
+                m "You’re the gym teacher?"
 
-                            $ num = 266
+                show may sad with Dissolve(0.1)
 
-                            $ quick_menu = False
-                            $ renpy.block_rollback()
+                m "Where are your students? And your whistle?"
 
-                            mc "I'm room [num], I’ll be there after school if I get held up there."
+                "Shite, she's flipping it on me now!"
 
-                        "1010":
+                mc "They’re {cps=5}uh,{/cps} running laps."
 
-                            $ num = 1010
+                m "There’s a track here?"
 
-                            $ quick_menu = False
-                            $ renpy.block_rollback()
+                mc "Yes, it’s on the other side of the school."
 
-                            mc "I'm room [num], I’ll be there after school if I get held up there."
+                show may smile with Dissolve(0.1)
 
-                    show m_d at redochar
+                m "Oh thank you for the help, and you’re..."
 
-                    $ quick_menu = True
+                mc "I’m Dr. [player_name]."
 
-                    m "I thought you were the gym teacher, why do you have a classroom?"
+                "Why did I say doctor!"
 
-                    "Uh oh!"
+                show may fl
 
-                    mc "Do gym teachers not have classrooms where you're from?"
+                m "Oh, thank you Dr. [player_name]."
 
-                    m "{cps=20}Hmmmmmmmm.{/cps}"
+                "I think I gained her trust. Flexing authority got me unearned respect."
 
-                    m "Alrighty, see you soon then."
+                "As long as I don’t claim a role that requires identification, this might open some golden opportunities."
 
-                    hide m_d with dissolve
+                "Swindle a idiot or two to make some money."
 
-                    "That’s my cue to leave."
+                show may fl at zoom_may
 
-                    "They aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+                m "Maybe we’ll be coworkers soon. I’d love for you to show me around sometime."
 
-                    "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
+                m "What number is your classroom?"
 
-                "Flip it on her":
+                mc "I’m number..."
 
-                    $ quick_menu = False
-                    $ renpy.block_rollback()
+                define num = 0
 
-                    mc "I can be here. Should you be here?"
+                menu:
 
-                    $ quick_menu = True
+                    "9":
 
-                    "Compared to everyone I saw around town or at school she is the most out of place."
+                        $ num = 9
 
-                    "I’d bet she’s trying to intimidate something out of me."
+                    "127":
 
-                    $ may_name = "Mrs. Panza"
-                    $ may_position = "\"nurse\""
-                    m "Excuse me! I’m the school’s nurse Mrs. Panza."
+                        $ num = 127
 
-                    m "Who are you?"
+                    "266":
 
-                    "Like Hell she’s a nurse!"
+                        $ num = 266
 
-                    "She must also think I’m suspicious. Let’s see who’s bluff lasts the longest."
+                    "1010":
 
-                    mc "You are? I’ve never met you?"
+                        $ num = 1010
 
-                    m "I’m only here on rotating days, it’s possible you’ve missed me."
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-                    mc "Which days?"
+                mc "I'm room [num], if I’m held up I'll be there after school."
 
-                    m "Mondays and Fridays."
+                $ quick_menu = True
 
-                    mc "Really?"
+                mc "Normally I get home before the other teachers."
 
-                    mc "Because I stopped by the nurse’s office on Friday and I didn’t see you there."
+                show may smile at redochar
 
-                    m "Last Friday?"
+                m "I thought you were the gym teacher, why do you have a classroom?"
 
-                    mc "Yes, last Friday."
+                "{cps=20}Uh oh.{/cps}"
 
-                    m "Why were you in school last Friday? We didn't have school."
+                mc "Do gym teachers not have classrooms where you're from?"
 
-                    mc "The student’s didn’t have school, faculty meeting, you had to be there."
+                show may sad
 
-                    m "That only applies to the teachers, not the nurses."
+                m "{cps=20}Hmmmmmmmm.{/cps}"
 
-                    mc "But we had a discussion set aside for supply budgeting, this included the nurses."
+                show may smile with Dissolve(0.1)
 
-                    m "Were you at a meeting or did you stop by the office?"
+                m "Alrighty, see you soon around then."
 
-                    m "Which is it?"
+                hide may with dissolve
 
-                    mc "It was both, I stopped by the office to look for Miss. Conners."
+                "Without another word she wanders off around the school."
 
-                    m "Miss Conners is on her honeymoon, she wouldn’t have been there."
+                "I'll take this chance to leave before she comes back. No idea if the track is back there or not."
 
-                    mc "Miss Conners and I don’t get along very well, I went to get her to strike up a conversation."
+                "The girls aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
 
-                    mc "She didn’t tell me she was gone."
+                "Normally giving up so easily isn't in my playbook, but I'm getting super hungry."
 
-                    m "Were you set to get her for the meeting?"
+                "A better solution might come to me after some calories."
 
-                    mc "Yes that’s how I know you weren’t there."
+                "Time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
 
-                    m "If you were sent to get Miss Conners then others should have known she wasn’t here."
+            "Flip it on her":
 
-                    mc "It was an honest mistake and I thought the nurses weren’t supposed to be at the school?"
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-                    m "At the school or at the meeting?"
+                mc "I'm allowed to stand in the car lot. You look more sketchy than me!"
 
-                    mc "At the meeting!"
+                $ quick_menu = True
 
-                    m "The one on Friday, the day that I don’t come!"
+                "Compared to everyone I saw around town or at school she is the most out of place."
 
-                    mc "Because you’re on your honeymoon!"
+                "She smells about as bad as I do and I doubt she's on a mission from Posiedon."
 
-                    m "Yes!"
+                "I’d bet she’s trying to intimidate something out of me. Well it isn't going to work lady."
 
-                    mc "So are you Miss Conners or Mrs. Panza?"
+                $ may_name = "Mrs. Panza"
+                $ may_position = "\"nurse\""
 
-                    m "Who’s Mrs. Panza? I’m just the substitute nurse!"
+                show may at wiggle
 
-                    mc "You said that was your name?"
+                m "Excuse me! I’m the school’s nurse Mrs. Panza."
 
-                    m "I didn’t tell you my name, I said I was a nurse."
+                m "Who are you?"
 
-                    mc "Yes you did!"
+                "Like Hell she’s a nurse!"
 
-                    m "Well that isn’t my name."
+                "She must also think I’m suspicious. Let’s see who’s bluff lasts the longest."
 
-                    $ May_affinity += 1
+                mc "You are? I’ve never met you?"
 
-                    "We silently stare each other down, neither of us making a single move. We both look more out of breath than when we got here."
+                show may flip with Dissolve(0.3)
 
-                    mc "I have to go to my next class."
+                m "I’m only here on rotating days, it’s possible you’ve missed me."
 
-                    m "I’m needed at my next appointment."
+                mc "Which days?"
 
-                    hide m_d with dissolve
+                m "Mondays and Fridays."
 
-                    "That’s my cue to leave."
+                mc "Really?"
 
-                    "They aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+                mc "Because I stopped by the nurse’s office on Friday and I didn’t see you there."
 
-                    "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
+                m "Last Friday?"
 
-                    jump act1_6
+                mc "Yes, last Friday."
 
-        else:
+                m "Why were you in school last Friday? We didn't have school."
 
-            "Wait, I didn’t go to the school first."
+                "That's a risky card to play Mrs. Panza, but I can counter it."
 
-            "I stopped by the [activity_choice] first then found my way to the school."
+                mc "The student’s didn’t have school, faculty meeting, you had to be there."
 
-            "There’s little chance any of the girls are here anyway. I’ll run back to the [activity_choice], something relevant to my journey has to appear there."
+                "So glad I remembered what faculty meetings are."
 
-            "If not, then I’m sleeping on a bench tonight."
+                m "That only applies to the teachers, not the nurses."
 
-            if activity_choice == "bookstore":
+                "Shite!"
 
-                    jump bookstore2
+                mc "But we had a discussion set aside for supply budgeting, this included the nurses."
 
-            elif activity_choice == "arcade":
+                m "Were you at a meeting or did you stop by the office?"
 
-                    jump arcade2
+                show may smile with Dissolve(0.3)
 
-            else:
+                m "Which is it?"
 
-                    jump market2
+                "Oh, you think you're so clever!"
+
+                mc "It was both, I stopped by the office to look for Miss. Conners."
+
+                "Throw another character in there, knock her off balance."
+
+                m "Miss Conners is on her honeymoon, she wouldn’t have been there."
+
+                "Yeah, like you know Miss Connners!"
+
+                mc "Miss Conners and I don’t get along very well, I went to get her and strike up a conversation."
+
+                mc "She didn’t tell me she was gone."
+
+                m "Weren't you sent to get her for the meeting?"
+
+                mc "Yes that’s how I know you weren’t there."
+
+                m "If you were sent to get Miss Conners then others should have known she wasn’t here."
+
+                mc "It was an honest mistake and I thought the nurses weren’t supposed to be at the school?"
+
+                m "At the school or at the meeting?"
+
+                mc "At the meeting!"
+
+                m "The one on Friday, the day that I don’t come!"
+
+                mc "Because you’re on your honeymoon!"
+
+                m "Yes!"
+
+                show may
+
+                "Got her!"
+
+                mc "So are you Miss Conners or Mrs. Panza?"
+
+                m "Who’s Mrs. Panza? I’m just the substitute nurse!"
+
+                mc "You said that was your name?"
+
+                m "I didn’t tell you my name, I said I was a nurse."
+
+                mc "Yes you did!"
+
+                m "Well that isn’t my name."
+
+                "..."
+
+                $ May_affinity += 1
+
+                "We silently stare each other down, neither of us making a single move. We both look more out of breath than when we got here."
+
+                mc "I have to go to my next class."
+
+                m "I’m needed at my next appointment."
+
+                show may at left with moveoutleft
+                show may smile with Dissolve(0.1)
+
+                play effect "audio/good.mp3"
+                m "{color=#50A23B}Hey kid, not bad.{/color}"
+
+                hide may with moveoutleft
+
+                "I'll take this chance to leave if she comes back."
+
+                "The girls aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+
+                "Normally giving up so easily isn't in my playbook, but I'm getting super hungry."
+
+                "A better solution might come to me after some calories."
+
+                "Time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood back by the shore."
+
+                jump act1_6
+
 
         jump act1_6
 
@@ -1376,7 +1558,7 @@ label act1_5:
 
             mc "My name is [player_name], why do you ask?"
 
-            m "I’ve scrounged up some change and you also look like you’ve had a tough day."
+            m "I scrounged up some change and you also look like you’ve had a tough day."
 
             m "There’s a cafe a few streets over I was planning on going to later. You want to come with me, I can get you a muffin or something cheap."
 

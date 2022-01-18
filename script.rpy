@@ -126,12 +126,11 @@ transform redo: # return from any zoom
     xalign 0.5 yalign 0.5
     ease 1.0 zoom 1.0
 
-transform redochar: # zooming out of May's oversteps [needs work when May art is done]
-    xalign 0.5 yalign 1.0
-    ease 1.0 zoom 1.0
+transform redochar: # zooming out of May's oversteps
+    ease 1.0 zoom 1.0 yalign 1.0
 
-transform zoom_may: # zooming in for May getting flirty [needs work when May art is done]
-    ease 1.0 zoom 1.2
+transform zoom_may: # zooming in for May getting flirty
+    ease 1.0 zoom 1.3 yalign 0.3
 
 define whiteflash = Fade(.95, 0.0, .55, color="#fff")        # for emerging topside
 define flash = Fade(.15, 0.0, .25, color="#fff")             # for flashy sword effect
@@ -158,12 +157,16 @@ define m = Character('May', color="#0A4AF6", callback=may_voice)                
 define n = nvl_narrator                                                                                 # Narrator
 define ev = Character('Everyone', color="#000000", callback=Crashsound_test)                            # Everyone at once
 
-# Main charcter images pre timeskip
-# image a_d = "Astrid.png"
-# image g_d = "G.png"
-# image b_d = "behati.png"
-# image m_d = "Palmer.png"
+# Main charcter images
+image may = "may.png"
+image may flip = im.Flip("images/may.png", horizontal="True")
+image may smug = "may smug.png"
+image may smile = "may smile.png"
+image may sad = "may sad.png"
+image may fl = "may fl.png"
 
+
+# pre time skip girls
 image ge = "g.png"
 image ge happy = "g happy.png"
 image ge mad = "g mad.png"
@@ -194,10 +197,10 @@ image be shocked= "behati shocked.png"
 image be skeptical = "behati skeptical.png"
 
 # Minor characters
-define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# Ol' Two Hands
+define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# ol' Two Hands
 define Cap = Character('Captain', color="#7F0505", callback=caps_voice)                                     # The Demonic Pirate Ricardo AKA Captain
 define fla = Character('Flavio', color="#BB64F2", callback=fl_voice)                                        # sir Flavio
-define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # Librarian
+define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # bookstore clerk
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ], callback=crowd_voice)  # crowd of people
 define ma = Character('Short Woman', color="#FF793B", callback=rot_voice)                                   # woman at market
 define bt = Character('Bartender', color="#748DA3", callback=bar_voice)                                     # bartender at arcade
@@ -257,7 +260,7 @@ image BG cafeinside = "background/cafeinside.png"
 image twohands = "ol_ two hands neutral.png"
 image twohands angry = "ol_ two hands angry.png"
 image twohands angry dark = "ol_ two hands angry dark.png"
-image twohands angry flip = im.Flip("images/ol_ two hands angry.png", horizontal="True") # flipped image to run out left
+image twohands angry flip = im.Flip("images/ol_ two hands angry.png", horizontal="True")  # flipped image to run out left
 image twohands angry dark flip = im.Flip("images/ol_ two hands angry dark.png", horizontal="True")
 image twohands scared = "ol_ two hands scared.png"
 image twohands scared dark = "ol_ two hands scared dark.png"
