@@ -5,18 +5,21 @@ screen pirate_fight1_0:
         ypos 0.3
         auto "gui/button/x_%s.png"
         action Jump("pirate_fight1")# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.45
         ypos 0.4
         auto "gui/button/x_%s.png"
         action Jump("pirate_fight1_re")
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.5
         ypos 0.6
         auto "gui/button/x_%s.png"
         action Jump("pirate_fight1_re")
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # 1st pirate alone in fight 2
 screen pirate_fight2_0:
@@ -26,18 +29,21 @@ screen pirate_fight2_0:
         ypos 0.34
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate1_x", 1), Jump("pirate_fight2_1")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.42
         ypos 0.44
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate1_x", 3), Jump("pirate_fight2_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.48
         ypos 0.64
         auto "gui/button/x_%s.png"
         action Jump("pirate_fight2_re")
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # both pirates in alive fight 2
 screen pirate_fight2_1:
@@ -49,18 +55,21 @@ screen pirate_fight2_1:
         ypos 0.34
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate1_x", 1), Jump("pirate_fight2_1")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.42
         ypos 0.44
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate1_x", 3), Jump("pirate_fight2_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.48
         ypos 0.64
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate1_x", 3), Jump("pirate_fight2_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # pirate 2
 
@@ -69,18 +78,21 @@ screen pirate_fight2_1:
         ypos 0.34
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate2_x", 3),Jump("pirate_fight2_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.02
         ypos 0.44
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate2_x", 3),Jump("pirate_fight2_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.10
         ypos 0.60
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate2_x", 1), Jump("pirate_fight2_2")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 
 screen pirate_fight2_2:
@@ -92,18 +104,21 @@ screen pirate_fight2_2:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action Jump("pirate_fight2_re")
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.40
         ypos 0.40
         auto "gui/button/x_%s.png"
         action Jump("pirate_fight2_re")
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.45
         ypos 0.60
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate2_x", 1), Jump("pirate_fight2_2")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 screen pirate_fight3_0:
 
@@ -112,18 +127,21 @@ screen pirate_fight3_0:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.42
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 1), Jump("pirate_fight3_1")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.46
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 screen pirate_fight3_1:
 
@@ -133,18 +151,21 @@ screen pirate_fight3_1:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.42
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 1), Jump("pirate_fight3_1")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.46
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # 2nd pirate in 3rd fight
     imagebutton:
@@ -152,18 +173,21 @@ screen pirate_fight3_1:
         ypos 0.34
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.04
         ypos 0.44
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.10
         ypos 0.65
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 1), Jump("pirate_fight3_2")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 screen pirate_fight3_2:
 
@@ -173,18 +197,21 @@ screen pirate_fight3_2:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.42
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 1), Jump("pirate_fight3_1")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.46
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # 2nd pirate in 3rd fight
     imagebutton:
@@ -192,18 +219,21 @@ screen pirate_fight3_2:
         ypos 0.34
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.04
         ypos 0.44
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.10
         ypos 0.65
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 1), Jump("pirate_fight3_2")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # 3rd pirate in 3rd fight
     imagebutton:
@@ -211,18 +241,21 @@ screen pirate_fight3_2:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 1), Jump("pirate_fight3_3")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.60
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.69
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 screen pirate_fight3_3:
 
@@ -232,18 +265,21 @@ screen pirate_fight3_3:
         ypos 0.34
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.04
         ypos 0.44
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.10
         ypos 0.65
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 1), Jump("pirate_fight3_2")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # 3rd pirate in 3rd fight
     imagebutton:
@@ -251,18 +287,21 @@ screen pirate_fight3_3:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 1), Jump("pirate_fight3_3")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.60
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.69
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 screen pirate_fight3_4:
 
@@ -272,18 +311,21 @@ screen pirate_fight3_4:
         ypos 0.34
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.04
         ypos 0.44
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 3),Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.10
         ypos 0.65
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate4_x", 1), Jump("pirate_fight3_2")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 screen pirate_fight3_5:
 
@@ -293,18 +335,21 @@ screen pirate_fight3_5:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 1), Jump("pirate_fight3_3")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.60
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.69
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 screen pirate_fight3_6:
 
@@ -314,18 +359,21 @@ screen pirate_fight3_6:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.42
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 1), Jump("pirate_fight3_1")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.46
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate3_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
 # 3rd pirate in 3rd fight
     imagebutton:
@@ -333,15 +381,18 @@ screen pirate_fight3_6:
         ypos 0.30
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 1), Jump("pirate_fight3_3")]# correct
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.60
         ypos 0.40
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
 
     imagebutton:
         xpos 0.69
         ypos 0.58
         auto "gui/button/x_%s.png"
         action [SetVariable("pirate5_x", 3), Jump("pirate_fight3_re")]
+        hovered [Play("effect", "audio/swordclick.mp3")]
