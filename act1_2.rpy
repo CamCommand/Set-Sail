@@ -297,6 +297,7 @@ label act1_2:
     label bs:
 
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         MC "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
 
@@ -346,6 +347,7 @@ label act1_2:
                 $ book_choice = "Exciting"
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "What kind of action adventures do landlubbers think is good for a book?"
 
@@ -429,6 +431,7 @@ label act1_2:
                 $ book_choice = "Smart"
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "A science book could be enthralling. As long as it’s not a straight textbook."
 
@@ -505,6 +508,7 @@ label act1_2:
                 $ book_choice = "Funny"
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "What if the kids start making fun of me? Even worse, what if they do and I don't know it?"
 
@@ -599,6 +603,7 @@ label act1_2:
                 $ book_choice = "Nerdy"
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "The books back in my room don’t look like they’re going to be any pleasant entertainment at all."
 
@@ -724,6 +729,7 @@ label act1_2:
 
         define food_check = 0 # This will be used later to determine if MC is hungry at school
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         MC "Something to eat sounds nice. I’m sure nobody will miss one apple."
 
@@ -908,6 +914,7 @@ label act1_2:
         define game_played = "" # for storing game played in arcade
 
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         MC "Oh! That place had those video games Merigold told me about. Checking those out is a must."
 
@@ -994,7 +1001,10 @@ label act1_2:
             "{color=#F93A22}Fly Guy{/color}":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
+
                 "The red wrapped machine has drawings of a little person with wings shooting strange creatures with a harpoon and then pumping them with air until they fall to their death."
+
                 $ quick_menu = True
 
                 "That's pretty gruesome."
@@ -1028,7 +1038,10 @@ label act1_2:
             "{color=#F9F222}Monkey 2{/color}":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
+
                 "This machine appears as if it was painted over in black recently."
+
                 $ quick_menu = True
 
                 "Different pictures of cartoon monkeys in distinct styles cover every inch of it. There are two sets of sticks and dozens of buttons as controls."
@@ -1075,7 +1088,10 @@ label act1_2:
             "{color=#232AFA}Dinosaur Mission IX: Kingdom Royale Finale{/color}":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
+
                 "The only part of this machine’s instructions that are in English is the title. Everything else is in Japanese, including what the button inputs do."
+
                 $ quick_menu = True
 
                 "The character that keeps appearing on the screen sort of looks like me, so I sort of want to try it."

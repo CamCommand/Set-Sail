@@ -132,6 +132,7 @@
         label choice_name_V:
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
@@ -139,6 +140,7 @@
         label choice_name_O:
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
@@ -147,6 +149,7 @@
         label choice_name_R:
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
@@ -155,6 +158,7 @@
         label choice_name_User:
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
@@ -587,6 +591,7 @@
             define book_read = ""       # which book is picked if any
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "I guess I could read without getting too invested."
 
@@ -634,6 +639,7 @@
             $ book_read = "gamer uno"
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "Merigold had to explain to me what a video game was when she swapped with me."
 
@@ -658,6 +664,7 @@
             $ book_read = "afterlife"
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "This is a nonfiction book?"
 
@@ -692,6 +699,7 @@
             $ book_read = "stripes"
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "A book about a normal woman getting sentenced to prison time for her past way of life."
 

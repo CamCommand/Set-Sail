@@ -159,10 +159,18 @@ define n = nvl_narrator                                                         
 define ev = Character('Everyone', color="#000000", callback=Crashsound_test)                            # Everyone at once
 
 # Main charcter images pre timeskip
-image a_d = "Astrid.png"
-image g_d = "G.png"
-image b_d = "behati.png"
-image m_d = "Palmer.png"
+# image a_d = "Astrid.png"
+# image g_d = "G.png"
+# image b_d = "behati.png"
+# image m_d = "Palmer.png"
+
+image ge = "g.png"
+image ge happy = "g happy.png"
+image ge mad = "g mad.png"
+image ge sad = "g sad.png"
+image ge smug = "g smug.png"
+image ge int = "g int.png"
+image ge smile = "g smile.png"
 
 image ast = "Astrid.png"
 image ast conf = "Astrid conf.png"
@@ -234,6 +242,7 @@ image BG escape = "background/dingy.png"
 image BG shore = "background/shore_after.png"
 image BG shore_sword = "background/shore_after_sword.png"
 image BG streetpost = "background/streetpost.png"
+image BG school2 = "background/school2.jpg"
 image BG schoolpost = "background/schoolpost.png"
 image BG dollcorner = "background/dollcorner.png"
 image BG dollcorner2 = "background/dollcorner2.png"
@@ -348,6 +357,7 @@ label start:
     define gui.namebox_borders = Borders(15, 7, 15, 7)
     define gui.namebox_tile = True
 
+    define sitting = Position(ypos = 1.25, yanchor = 'bottom')
 
     define lefter = Position(xpos= -0.1, xanchor = 'left')
     define righter = Position(xpos = 1.1, xanchor = 'right')

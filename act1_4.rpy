@@ -1,43 +1,60 @@
 ﻿label act1_4:
 
-# redefine bc I want to deal with it
+# redefine bc I want to just say mc and don't feel like replacing it
 $ mc = Character("[player_name]", color="#990033", callback=voice)
 
-show BG schoolan with dissolve
+stop music fadeout 2.0
+show BG school2 with dissolve
+pause 1.0
+play music "music/PirateTimes.mp3" volume 1 fadein 2.5
+
 
 "Coming out of the school the sun is starting to set. To see a sunset from land and not the sea is sort of, underwhelming."
 
-"Instead of the light reflecting off the pristine water, it’s bouncing on concrete and buildings."
+"Instead of the light reflecting off the pristine water, it’s bouncing off concrete and buildings."
 
-"The shadows of the trees are nice, but it’s just not the same."
+"The shadows of the trees are nice, but it’s just not the same as the majesty of the ocean."
 
 "That trip did not go as I had planned it."
 
-"I think I expected the {i}Admiral's son{/i} treatment from them, some pompous wannabes pretending to act like pirates."
+"I was expecting them to act like an Admiral's son or someone annoying like that."
 
-"A group of genuine people my age who wanted to know more about me and pirates, that was a shock."
+"Some pompous wannabes pretending to act like pirates, flexing how naive they are."
 
-"Talking about the life I live outside of my own bubble for an afternoon was humbling."
+"But instead they were a group of genuine people my age who wanted to know more about me and pirates."
 
-"All of that really puts my land confliction in perspective."
+"To say I was shocked is an understatement."
 
-show BG walksunset with dissolve
+"Discussing the life I live outside my own bubble for an afternoon was refreshing."
+
+"Not to mention hearing non pirate related problems for once."
+
+"All of that really puts my land confliction in perspective. I feel a bit more at ease after talking."
+
+show BG black with dissolve
+show BG walksunset with fade
 
 "There’s a quiet hum of the town through the trees."
 
-"Not like before with all the people around, a sleepy days end feeling."
+"It's not like before with all the people around, a busy day is coming to an end for Seaborough."
 
-"I assumed that since all the people were here that this place would never sleep."
+"I assumed that since all the people were here on the mainland, that places like this would never sleep."
 
 "Not like at sea, where the waves drown out any silence and storms grab your attention greater than any conversation would."
 
-"I belong out there, soaring on the ocean’s surface."
+"There's sset work times and random fights to boot. With barely ever a quiet moment."
 
-"Out there I’m needed and revered. Even if the whole crew doesn’t treat me like it, I know they need me."
+"..."
+
+"I still belong out there though, surfing on the endless waters."
+
+"Out there I trive and am revered. Even if the whole crew doesn’t treat me like it, I know they need me."
 
 "It’s the subtle things that keep the peace between everyone. A good deed here or there."
 
-"Getting a second serving of food, someone cleaning your pistol without asking, the way Ol’ Two Hands makes sure I get my work done on time so that he has someone to play chess with later."
+"Getting a second serving of food, someone cleaning your pistol without asking, the way ol’ Two Hands makes sure I get my work done on time so that he has someone to play chess with later."
+
+"Even if he deserved it, I shouldn't have blown up at him."
 
 "I have people in my life who already value me, there’s little need to look towards the mainland for alternatives."
 
@@ -45,12 +62,20 @@ show BG walksunset with dissolve
 
 "If the Captain acknowledges it, then there could be something down the line waiting for me."
 
-"One day I could have my own crew. I could be the next Demonic Pirate Captain."
+"Other then whatever he got me for my birthday, which heopefully isn't a hand-me-down. Who knows what's next out there?"
 
-"Who knows? Let’s see what life hurls at me next."
+"One day, I could have my own crew to command. Or control a second ship in the armada!"
 
-"The next few years may be my best yet."
+"Who cares, it's my fantasy! I could be the next Demonic Pirate Captain!"
 
+play effect "audio/seagulls.mp3"
+
+"The sound of the waves and seagulls closing in breaks me from my illusions."
+
+"I'm about to expereince my own golden age of piracy. Time to see what life hurls at me next."
+
+
+stop music fadeout 2.0
 window hide
 show BG black with dissolve
 pause 3.0
@@ -81,29 +106,37 @@ label ship_start:
 
     mc "JoeJoe...is..."
 
+    "You'll be alright I swear."
+
     "This can’t be happening. Where did these other pirates come from?"
 
-    "They came out of nowhere, how did they board the ship without anyone noticing in time?"
+    "There was no sign of an attack incoming, how did they board the ship without anyone noticing in time?"
 
-    "Crawling from below the deck and from the sides of the boat. It’s like an infestation."
+    "They're crawling from below the deck and the sides of the boat. It’s like an infestation!"
 
-    "This storm is the perfect cover for a raid. These pirates aren’ taking some pot shot, this was a well coordinated attack. "
+    "These pirates aren’t taking some pot shot, this was a well coordinated attack."
 
-    show sword at sword
+    "It started when the storm began, the perfect time for a night raid."
+
+    "My gun is disassembled in my room, not that shooting in the dark would be helpful."
+
+    show sword at sword with Dissolve(0.2)
     play effect "audio/sworddraw.ogg"
 
-    "My gun is disassembled in my room, this will have to do."
+    "The Ocean's Spike will do nicely. Hasn't failed me yet."
 
     "I have to find out who’s still fighting. There’s no telling how many of these lunatics got onboard."
 
     "We need to band together to protect whoever is steering the ship."
+
+    "One of us could steer out of the storm. Then we could fight off this attack easier."
 
     "Hopefully the Captain has a handle on the situation."
 
     show pirate1 with dissolve
     p "Well look at ye. They let kids roam 'round a graveyard?"
 
-    p "Hey boys, we got another-!"
+    p "Hey boys, we got another-"
 
     call screen pirate_fight1_0
 
@@ -122,6 +155,7 @@ label ship_start:
     label pirate_fight1:
 
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         show sword swing at sword with ease
         play effect "audio/sword_swing.mp3"
@@ -132,18 +166,27 @@ label ship_start:
         show sword at sword with ease
         p "Ahhrggggghh!"
 
-        hide pirate1 slash with dissolve
+        hide pirate1 slash with moveoutbottom
 
 
     $ quick_menu = True
 
     "There isn’t enough intel, I don't know how many of them there are or if I could kill them all."
 
-    "Getting surrounded is an easy possibility when you don’t know how many enemies you have. Especially when you don’t know where they’re coming from."
+    "Getting surrounded is a likely possibility when you don’t know how many enemies you have. Especially when you don’t know where they’re coming from."
+
+    "I should strike first and and not get overwhelmed."
 
     show BG nightdeck2 with dissolve
+    $ renpy.music.set_volume(1.50, delay=0, channel='music')
 
     "Poseidon appears to not be on our side tonight."
+
+    "The storm is only just starting. When it gets worse the attackers will have the perfect opportunity to finish us off."
+
+    "Unless the wind does the job first."
+
+    "I passed a few indiscernible bodies so far. Not enough to total our crew, so where is everyone?"
 
     show pirate2 with dissolve
 
@@ -164,6 +207,8 @@ label ship_start:
     label pirate_fight2_re: # loop when character clashes swords with pirates second fight
 
         $ quick_menu = False
+        $ renpy.block_rollback()
+
         $ notded = dying[rand2]
 
         if death_count == 0:
@@ -235,7 +280,7 @@ label ship_start:
             show sword at sword with ease
             p "Ahhhhh, damn ye!"
 
-            hide pirate2 slash with dissolve
+            hide pirate2 slash with moveoutbottom
 
             $ pirate1_x = 0
             $ death_count += 1
@@ -262,7 +307,7 @@ label ship_start:
             show sword at sword with ease
             p "Curse yeeeeee!"
 
-            hide pirate3 slash with dissolve
+            hide pirate3 slash with moveoutbottom
 
             $ pirate2_x = 0
             $ death_count += 1
@@ -284,15 +329,25 @@ label ship_start:
 
         $ quick_menu = True
 
-        "Where is everyone? There must be someone around to help."
+        "These guys finished off a few of our guys."
 
-        "There is no way anyone has stoppenotd fighting!"
+        "Markey and Maverick..."
 
-        "The Plague isn’t made up of pushovers."
+        "Their throats are gone."
 
-        "What kind of pirates are these people to pull off such a direct attack?"
+        "..."
 
-        show pirate4 at center with dissolve# change this pirate
+        "They were tasked with covering the cannons tonight, they didn't stand a chance against such a sneak attack."
+
+        "There must be someone around to who's still fighting?"
+
+        "There is no way we were all taken out in our sleep!"
+
+        "The Plague isn’t made up of a bunch of pushovers. We're the strongest crew this side of South America!"
+
+        "What kind of pirates do these people think they are to pull off such an indirect attack?"
+
+        show pirate4 at center with dissolve
         p "Say a prayer sea dog!"
 
         show flavio scared at leftbottom with dissolve
@@ -313,6 +368,8 @@ label ship_start:
     label pirate_fight3_re: # loop when character clashes swords with pirates last fight
 
         $ quick_menu = False
+        $ renpy.block_rollback()
+        
         $ notded = dying[rand2]
 
         if death_count == 0:
@@ -394,7 +451,7 @@ label ship_start:
             show sword at sword with ease
             p "Ahhhhh, damn ye!"
 
-            hide pirate4 slash with dissolve
+            hide pirate4 slash with moveoutbottom
 
             $ pirate3_x = 0
             $ death_count += 1
@@ -430,7 +487,7 @@ label ship_start:
             show sword at sword with ease
             p "Ahhhhh, damn ye!"
 
-            hide pirate4 slash with dissolve
+            hide pirate4 slash with moveoutbottom
 
             $ pirate3_x = 0
             $ death_count += 1
@@ -460,7 +517,7 @@ label ship_start:
             show sword at sword with ease
             p "I'll see ye in Hell!"
 
-            hide pirate5 slash with dissolve
+            hide pirate5 slash with moveoutbottom
 
             $ pirate4_x = 0
             $ death_count += 1
@@ -504,7 +561,7 @@ label ship_start:
             show sword at sword with ease
             p "I'll see ye in Hell!"
 
-            hide pirate5 slash with dissolve
+            hide pirate5 slash with moveoutbottom
 
             $ pirate4_x = 0
             $ death_count += 1
@@ -534,7 +591,7 @@ label ship_start:
             show sword at sword with ease
             p "Shannon, farewell."
 
-            hide pirate6 slash with dissolve
+            hide pirate6 slash with moveoutbottom
 
             $ pirate5_x = 0
             $ death_count += 1
@@ -553,8 +610,10 @@ label ship_start:
 
     label down_with_the_ship:
 
-        hide sword
+        hide sword with Dissolve(0.2)
+
         mc "Flavio, say something matey."
+
         $ quick_menu = True
 
         "The bullet went clean through his head."
@@ -562,8 +621,11 @@ label ship_start:
         "The horror still stained on Flavio’s face tells me more than that he just lost a duel. His arms and torso have slash marks all over them."
 
         if matey2 >= 2:
+
             "Just like now, he was ganged up on. I couldn’t have save him."
+
         else:
+
             "He was ganged up on. I couldn’t have save him."
 
         "He was never the greatest fighter, but this wasn’t fair."
@@ -574,6 +636,8 @@ label ship_start:
 
         "Hopefully the Captain is holding out alright."
 
+        "I'm not sure if the ship can go too much longer in this storm without someone at the helm."
+
         "Is that a crackling?"
 
         "A fire!"
@@ -582,15 +646,19 @@ label ship_start:
 
         "Above?"
 
-        "Top deck is too wet to start one. But below..."
+        "The top deck is too wet to start one. But below..."
 
         "Right below our noses, they're snuffing us out!"
 
-        "The storm won’t put anything out if the ship’s a charred mess of driftwood."
+        "The storm won’t put anything out if the ship’s already a charred mess of driftwood."
 
-        "These bastards. They aren’t here to rob us, they’re taking out the Plague for good."
+        "These bastards!"
 
-        "Our crimes have come back to damn us like a vengeful revenant."
+        "They aren’t here to rob us, they’re taking out the Plague for good."
+
+        "Our past crimes have come back to damn us like a vengeful revenant."
+
+        "There's no glory in this, we're done for at this rate."
 
         show pirate8 with dissolve
 
@@ -598,18 +666,18 @@ label ship_start:
 
         mc "Get out of my way!"
 
-        show sword swing at sword with ease
+        show sword swing at sword with Dissolve(0.1)
         play effect "audio/sword_swing.mp3"
 
         show BG nightdeck2 with flash
         show pirate8 slash at wiggle
 
         show sword at sword with ease
-        hide pirate8 slash with dissolve
+        hide pirate8 slash with moveoutbottom
 
         th "[player_name] behind ye!"
 
-        show pirate8 at left with dissolve
+        show pirate1 at left with dissolve
 
         show sword swing at sword with ease
         play effect "audio/sword_clash.ogg"
@@ -619,12 +687,14 @@ label ship_start:
         show sword swing at sword with ease
         play effect "audio/sword_swing.mp3"
         show BG nightdeck2 with flash
-        show pirate8 slash with dissolve
+        show pirate1 slash at wiggle
 
         show sword at sword with ease
-        hide pirate8 slash with dissolve
+        hide pirate1 slash with moveoutbottom
 
-        hide sword with ease
+        mc "Stay down ye wrinkly mutt!"
+
+        hide sword with Dissolve(0.1)
         show twohands scared dark with dissolve
 
         mc "Two Hands! Are you alright?"
@@ -632,11 +702,13 @@ label ship_start:
         mc "Have both your hands? Where’s the Captain?"
 
         if player_identity == "f":
+
             th "Aye lass I’ll live a little longer!"
         else:
+
             th "Aye lad I’ll live a little longer!"
 
-        show twohands sweaty dark with ease
+        show twohands sweaty dark
 
         th "Both claws intact as you can see."
 
@@ -646,8 +718,6 @@ label ship_start:
 
         th "Arrrrrrggghh."
 
-        show twohands dark with ease
-
         th "I’ve seen more corpses den pirates now. I don’t know whos still kicking."
 
         th "It may be just you and me now."
@@ -655,11 +725,14 @@ label ship_start:
         mc "We have to help the Captain and regain control of the ship."
 
         if player_identity == "f":
+
             th "Aye lass, I’ll clear the way of remaining renegades."
+
         else:
+
             th "Aye lad, I’ll clear the way of remaining renegades."
 
-        show twohands angry dark with ease
+        show twohands angry dark with Dissolve(0.1)
 
         th "Time to take our ship back."
 
@@ -673,28 +746,29 @@ label ship_start:
 
         th "Aye, I'm telling ye now!"
 
-        show twohands angry dark flip with ease
+        show twohands angry dark flip with Dissolve(0.1)
         th "Fight me you cowards!"
 
         mc "Thank you Hans"
 
         hide twohands angry dark flip with moveoutleft
-        th "Arrrrrgh!"
+        th "{cps=30}Arrrrrrrrrrrgggggggggggh!{/cps}"
 
         "Without a shred of hesitation, Two Hands rushes on ahead."
 
         "Were there never a pirate braver him?"
 
-        th "...I’ll cut yer throats..."
+        th "...I’ll cut yer throats!"
 
         "I won’t let his sacrifice lay dead at sea."
 
-        stop effect fadeout 3.0
+        stop effect fadeout 1.0
+        pause 1.0
         show BG nightdeck3 with dissolve
 
         "Avoiding the sounds of gunshots and clashing swords I’m able to get to the poop deck undetected."
 
-        "If I make it out of this, Two Hands can have any of my sweets for the rest of the year."
+        "If I make it out of this, Two Hands can have all my sweets for the rest of the year."
 
         "The rest of my life, if he makes it back too."
 
@@ -705,7 +779,7 @@ label ship_start:
         mc "Captain is that you?"
 
         hide sword
-        show cap bloody at ground with dissolve
+        show cap bloody at sitting with dissolve
 
         "One, two, five, how many bodies are there?"
 
@@ -723,12 +797,12 @@ label ship_start:
 
         Cap "Looks like they got the jump on us aye?"
 
-        show cap bloody yelling with dissolve
+        show cap bloody yelling with Dissolve(0.1)
 
         play effect "audio/cough.ogg"
         pause 5.25
 
-        show cap bloody with dissolve
+        show cap bloody with Dissolve(0.1)
 
         mc "You’ve been shot!"
 
@@ -742,16 +816,16 @@ label ship_start:
 
         Cap "I’m afraid Two Hands is as good as gone. Unless he found some more hands?"
 
-        show cap bloody yelling with dissolve
+        show cap bloody yelling
 
         Cap "Har har haaaa!"
 
         play effect "audio/cough2.ogg"
         pause 3.25
 
-        show cap bloody with dissolve
+        show cap bloody with Dissolve(0.1)
 
-        mc "Captain, what do you do? What should I do?"
+        mc "Captain, what do you think? What should I do?"
 
         Cap "It appears like arrr sun is setting."
 
@@ -759,7 +833,7 @@ label ship_start:
 
         mc "This can’t be how it ends Captain. We can keep fighting!"
 
-        show cap bloody yelling with dissolve
+        show cap bloody yelling
 
         Cap "[player_name] look at me!"
 
@@ -775,16 +849,16 @@ label ship_start:
         mc "A dingy"
 
         show BG nightdeck3 at redo with ease
-        show cap bloody
+        show cap bloody at sitting
 
         Cap "Take it and go [player_name]."
 
-        show cap bloody yelling with dissolve
+        show cap bloody yelling with Dissolve(0.1)
 
         play effect "audio/cough2.ogg"
         pause 3.25
 
-        show cap bloody with dissolve
+        show cap bloody with Dissolve(0.1)
 
         Cap "There ain't much time left. Keep the legend alive."
 
@@ -799,7 +873,7 @@ label ship_start:
         play effect "audio/thunder.ogg"
         show BG nightdeck3 with flash_lighting
 
-        show cap bloody yelling with dissolve
+        show cap bloody yelling
 
         Cap "Ar Ye Daft?!"
 
@@ -819,17 +893,15 @@ label ship_start:
 
         Cap "Go now!"
 
-        show cap bloody with dissolve
+        show cap bloody with Dissolve(0.1)
 
         mc "Aye Captain. I’ll go."
 
         mc "It was an honor serving in your crew. Thank you for everything Father,"
 
-        mc "you’ll be with Mother soon-"
+        Cap "{cps=15}… … … … …{/cps}"
 
-        Cap "… … … … …"
-
-        mc "Farewell Captain. May you torment the Underworld for eternity."
+        mc "Farewell Captain. May you torment the Underworld for eternity, you’ll be with Mother soon."
 
         hide sword # incase its still there in some cases or my save skumming is catching up
 
@@ -848,14 +920,16 @@ label ship_start:
 
         "A pirate’s dream of absolute freedom only dies when they are all good and dead. Every ounce of gunpowder or barrel of cannonballs couldn't kill this dream."
 
-        "Some broken planks and burnt sails are just that. Nothing more than trash to let me engulf by the sea."
+        "Some broken planks and burnt sails are just that. Nothing more than trash to let be engulf by the sea."
 
         "Nothing stays where you left it. But isn't that exciting?"
 
         pause 10.0
 
-        stop effect
-        show BG black with fade
+        stop effect fadeout 2.0
+        stop music fadeout 1.5
+        show BG black with dissolve
+        pause 1.0
         jump act1_5
 
 return

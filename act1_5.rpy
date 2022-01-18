@@ -148,6 +148,7 @@ label act1_5:
         "Find a mask":
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "If it’s a medical thing, I should find a mask to wear. Who knows what gross disease they’re trying to avoid."
 
@@ -164,6 +165,7 @@ label act1_5:
         "Keep moving":
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "There are more people here without masks than with, playing to the stronger side would be the safest thing to do."
 
@@ -180,6 +182,7 @@ label act1_5:
         "Play them both":
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "If I find a mask it might be beneficial to play both sides."
 
@@ -331,6 +334,7 @@ label act1_5:
             "The Schoolhouse":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "The school! I should go see if the girls are still there."
 
@@ -395,6 +399,7 @@ label act1_5:
                 "I'm a student":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     mc "I’m a student here, who are you?"
 
@@ -459,6 +464,7 @@ label act1_5:
                 "I'm a teacher":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     mc "I’m a teacher here, who are you?"
 
@@ -517,6 +523,7 @@ label act1_5:
                             $ num = 9
 
                             $ quick_menu = False
+                            $ renpy.block_rollback()
 
                             mc "I'm room [num], I’ll be there after school if I get held up there."
 
@@ -525,6 +532,7 @@ label act1_5:
                             $ num = 130
 
                             $ quick_menu = False
+                            $ renpy.block_rollback()
 
                             mc "I'm room [num], I’ll be there after school if I get held up there."
 
@@ -533,6 +541,7 @@ label act1_5:
                             $ num = 266
 
                             $ quick_menu = False
+                            $ renpy.block_rollback()
 
                             mc "I'm room [num], I’ll be there after school if I get held up there."
 
@@ -541,6 +550,7 @@ label act1_5:
                             $ num = 1010
 
                             $ quick_menu = False
+                            $ renpy.block_rollback()
 
                             mc "I'm room [num], I’ll be there after school if I get held up there."
 
@@ -569,6 +579,7 @@ label act1_5:
                 "Flip it on her":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     mc "I can be here. Should you be here?"
 
@@ -699,6 +710,7 @@ label act1_5:
     label bookstore2:
 
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         "I’ll return to the bookstore!"
 
@@ -824,6 +836,7 @@ label act1_5:
     label arcade2:
 
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         "Back to the arcade!"
 
@@ -1277,6 +1290,7 @@ label act1_5:
 
         define may_talk = 0 # in this scene May could walk MC to the cafe
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         "Maybe the market is around here somewhere? I could use a quick bite to eat."
 
@@ -1501,6 +1515,7 @@ label choice_emptystore:
 
         hide tome with dissolve
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         "Let’s try to diffuse the situation. Talking my way out of stealing nothing shouldn’t be hard."
 
@@ -1583,6 +1598,7 @@ label choice_emptystore:
 
         hide tome with dissolve
         $ quick_menu = False
+        $ renpy.block_rollback()
 
         "I should lay low. That was the original plan, right?"
 
@@ -1629,6 +1645,8 @@ label choice_emptystore:
     label ARG:
 
         $ quick_menu = False
+        $ renpy.block_rollback()
+
         define tome_title = "KeyError: FileCannotParse"
 
         "What about that book? Why was this book left behind?"
@@ -1652,6 +1670,7 @@ label choice_emptystore:
             "Open it":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 mc "Now I’m too curious. Could this be an ancient Greek tome?"
 
@@ -1665,6 +1684,7 @@ label choice_emptystore:
             "Leave it":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "No, I don’t think so. I have to make sure this voice doesn’t get me in trouble."
 

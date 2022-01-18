@@ -1032,11 +1032,19 @@ menu:
     "Believe her":
 
         $ may_trust1 = 1
+
+        $ quick_menu = False
+        $ renpy.block_rollback()
+
         jump mAYbe
 
     "Doubt her":
 
         $ may_trust1 = 2
+
+        $ quick_menu = False
+        $ renpy.block_rollback()
+
         jump mAYbe
 
 label mAYbe:
@@ -1044,6 +1052,8 @@ label mAYbe:
     if may_trust1 == 1:
 
         mc "I believe you May. You’ve lied to me before, but I see it in your eyes."
+
+        $ quick_menu = True
 
         mc "You aren’t out here lying for some temporary gain, you don’t know what you’re doing anymore either."
 
@@ -1072,6 +1082,8 @@ label mAYbe:
     else:
 
         mc "I don’t trust you as far as I’m concerned. Your story has some holes that can’t be overlooked."
+
+        $ quick_menu = True
 
         mc "But you do seem to have it as rough as we do right now. Why else would you resort to blackmailing someone you just met?"
 
@@ -1247,7 +1259,12 @@ label pirate_position:
 
             "Fiona" if f_job == 0:
 
+                $ quick_menu = False
+                $ renpy.block_rollback()
+
                 mc "Fiona, you said you were doing math in college?"
+
+                $ quick_menu = True
 
                 f "Yeah? What’s your point?"
 
@@ -1296,7 +1313,12 @@ label pirate_position:
 
             "Behati" if b_job == 0:
 
+                $ quick_menu = False
+                $ renpy.block_rollback()
+
                 mc "Behati, you know how to use guns other than the one that you didn’t know?"
+
+                $ quick_menu = True
 
                 b "Pistols were all I could afford. If it was made in the last hundred years I can fire it, with pretty good accuracy I don’t mean to brag."
 
@@ -1335,7 +1357,12 @@ label pirate_position:
 
             "Geraldine" if g_job == 0:
 
+                $ quick_menu = False
+                $ renpy.block_rollback()
+
                 mc "G, you’ve been working at your family’s restaurant this whole time?"
+
+                $ quick_menu = True
 
                 g "Other than my whole life, yes, even more recently. What are you getting at?"
 
@@ -1382,7 +1409,12 @@ label pirate_position:
 
             "May" if m_job == 0:
 
+                $ quick_menu = False
+                $ renpy.block_rollback()
+
                 mc "May, this would be the time for some confidence building for us. Are you a doctor or not?"
+
+                $ quikc_menu = True
 
                 m "Would you care for a live demonstration?"
 

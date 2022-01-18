@@ -93,6 +93,7 @@
         "She’s Enthusiastic":
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "Are you alright?"
 
@@ -123,6 +124,7 @@
         "She’s Amazing":
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "That’s incredible, at ease Astrid of Bellewood."
 
@@ -147,6 +149,7 @@
         "She’s Beautiful":
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "She’s stunning!"
 
@@ -177,6 +180,7 @@
         "{i}Is her brain rotting?{/i}":
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "Have you acquired brian rot sailor?"
 
@@ -297,6 +301,7 @@
             "As ready as I can be":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 MC "{cps=22}Arrrrrgh{/cps}, you bet Astrid."
 
@@ -311,6 +316,7 @@
             "No wait":
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 MC "Wait Astrid."
 
@@ -329,6 +335,7 @@
                 "Anything I should know?":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Anything I should know before going in?"
 
@@ -363,6 +370,7 @@
                 "Anything I should say?":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Anything I should say to them?"
 
@@ -401,6 +409,7 @@
                 "Is this a trap?":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Is all this a trap to lure me in and steal my secrets?"
 
@@ -455,7 +464,7 @@
 
             hide ast with dissolve
             show be at right
-            show g_d at center
+            show ge int at center
             show fiona at left
             with dissolve
 
@@ -471,6 +480,7 @@
                 "Be honest with them":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Hello everybody. My name is [player_name], but you already knew that. I’ve been a pirate my whole life and served on The Red Plague during that time."
 
@@ -492,7 +502,7 @@
 
                     a "That’s Fiona, she’s our Vice President."
 
-                    hide g_d
+                    hide ge
                     hide be
                     with dissolve
                     show fiona at center with moveinright
@@ -537,13 +547,19 @@
 
                     $ quick_menu = False
 
+                    $ renpy.block_rollback()
+
                     MC "Ahoy everyone! I’m the Dreaded Pirate [player_name]."
 
                     $ quick_menu = True
 
-                    MC "The Red Plague and I have been ruling the southern seas for over fifty years. I’ve seen the coolest things the world has to offer and I haven’t paid for a single thing in my entire life."
+                    MC "The Red Plague and I have been ruling the southern seas for over fifty years."
 
-                    MC "We steal exports, we swipe imports, we take minerals, products, people, and sink ships of anyone who offends our noses. Our brutal tactics made us a scourge of the Atalantic."
+                    MC "I’ve seen the coolest things the world has to offer and I haven’t paid for a single one of them my entire life."
+
+                    MC "We steal exports, we swipe imports, we take minerals, products, people, and sink ships of anyone who offends our noses."
+
+                    MC "Our brutal tactics made us a scourge of the Atlantic."
 
                     "Some girl in front is raising her arm above her head. Is she calling me out? Does Astrid know what she’s doing?"
 
@@ -556,41 +572,60 @@
                     hide fiona
                     hide be
                     with dissolve
-                    show g_d at center with dissolve
 
                     MC "Aye lass, what’s yer question?"
 
-                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
-                    g "Hi [player_name], you can call me G. Love the accent by the way. Question..."
+                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])
+
+                    show ge smile with Dissolve(0.1)
+
+                    g "Hi [player_name], you can call me G. Love the accent by the way. {cps=30}Question...{/cps}"
+
+                    show ge int with Dissolve(0.1)
 
                     g "What’s the coolest thing you’ve seen while stealing something? Like anything wackier than the average haul?"
 
-                    "She called me out!"
+                    "She's calling me out!"
 
-                    MC "Well, let me think on that. Hmmmmmmm."
+                    MC "Well, let me think on that, uhhhh."
 
-                    MC "It would have to be that time I saw Poseidon himself do his duty. We stole a Mexican vessel’s shipment full of beers and sodas."
+                    MC "It would have to be that time I saw Poseidon himself perform an act of God."
 
-                    MC "Their boss begged the Captain on his hands and knees to spare their lives. He offered to share his best whiskey with the Captain to convince him."
+                    MC "We stole a Mexican vessel’s shipment full of beers and sodas. And their boss begged the Captain on his hands and knees to spare their lives."
 
-                    MC "The drink was so good that, according to the Demonic Pirate himself, he allowed them to pass his sea."
+                    MC "He offered to share his best whiskey with the Captain to convince him they were worth sparing."
 
-                    MC "As we sailed away from the ship a storm started to shake up the waves."
+                    MC "The drink was so good, that according to the Demonic Pirate himself, he allowed them to pass his waters."
+
+                    MC "As we were sailing away from the ship a storm started to shake up the waves."
 
                     MC "I turned towards the ship and one sailor was loading a rocket propelled grenade and aimed it at our tail."
 
-                    MC "Before I could brace for impact, an uncharacteristically powerful wave for that stage of the storm was knocked into the Mexican ship."
+                    show ge smug with Dissolve(0.1)
 
-                    MC "The sailor must have been hit hard because his ship exploded right as they got hit. And our lives were saved by his divine decision."
+                    g "Pirates do have RPG's I knew it! You owe me five bucks Be."
 
-                    g "{color=#50A23B}That sounds so cool. Did the ship sink?{/color}"
+                    a "G let [player_name] finish."
 
-                    MC "Straight into Davy Jones."
+                    show ge int with Dissolve(0.1)
 
-                    # happy g
-                    g "I feel so much better now that I know Poseidon is real. Did you guys know this and not tell me?"
+                    g "Oh, sorry go on."
 
-                    hide g_d with moveoutbottom
+                    MC "Alright, before I could brace for impact, an uncharacteristically powerful wave for that stage of the storm knocked into the Mexican ship."
+
+                    MC "The sailor knocked over and their ship bursted into multiple explosions."
+
+                    MC "Our lives were saved by his divine decision."
+
+                    g "That sounds so cool. Did the rest of the ship sink?"
+
+                    MC "Whatever was left went straight to Davy Jones."
+
+                    show ge happy with Dissolve(0.1)
+
+                    g "I feel so much better now that I know Poseidon is real. Astrid, did you know that and not tell me?"
+
+                    hide ge happy with moveoutbottom
                     $ G_affinity += 1
                     $ g_met += 1
                     jump classrooom_two
@@ -598,6 +633,7 @@
                 "Scare them away from piracy":
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Alright lassies here’s the dark truth from a subordinate of the Demonic Pirate Ricardo himself."
 
@@ -619,7 +655,7 @@
 
                     a "That’s Behati, our club's Treasurer."
 
-                    hide g_d
+                    hide ge
                     hide fiona
                     with dissolve
                     show be at center with moveinleft
@@ -687,7 +723,7 @@
             $ food_ate = 0
             $ b_check = 0
 
-            hide g_d
+            hide ge
             hide fiona
             hide be
             with dissolve
@@ -722,15 +758,19 @@
             menu:
 
                 "Socialize":
+
                     jump social
 
                 "Get some food" if food_ate == 0:
+
                     jump food
 
                 "Use the bathroom" if b_check == 0:
+
                     jump washroom
 
                 "Leave" if activity_check >= 2 and g_met >= 1 and b_met >= 1 and f_met >= 1:
+
                     jump leave
 
         label social:
@@ -793,6 +833,7 @@
                     show be at center with dissolve
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Hello, it’s nice to meet you young lady. Are you a valued member of the club or just came to see a pirate?"
 
@@ -823,6 +864,7 @@
                     show be at center with dissolve
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Well, what did you think of my opening Behati?"
 
@@ -944,6 +986,7 @@
                 show be at center with dissolve
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 b "Hey [player_name], did you think of anything you wanted to add to your wiki page?"
 
@@ -1056,6 +1099,7 @@
                 show be quiz at sitting with dissolve
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "Behati is vigorously reading her device. I don’t know if she could hear me even if I tried."
 
@@ -1148,6 +1192,7 @@
                 show be quiz at sitting with dissolve
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "Behati is vigorously reading her device and checking her papers."
 
@@ -1169,6 +1214,7 @@
                 if f_met == 0:
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Hey, what's happening, cool club member?"
 
@@ -1219,6 +1265,7 @@
                 else:
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Hey Fiona, what are you up to?"
 
@@ -1292,6 +1339,7 @@
             elif f_convo == 1:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 f "What’s the magic words?"
 
@@ -1363,11 +1411,11 @@
 
                     f "Yes! Yes we are supposed to read to get past the fifth grade!"
 
-                    show g_d at left with slide
+                    show ge at left with slide
 
                     g "Reading is boring. Do cooler things like skateboarding and drugs."
 
-                    hide g_d with moveoutleft
+                    hide ge with moveoutleft
 
                     f "She’s insane. Watching her pay attention in class is like watching the five stages of grief in fifty-two minutes."
 
@@ -1427,6 +1475,7 @@
             elif f_convo == 2:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 f "What's the magic intro?"
 
@@ -1494,6 +1543,7 @@
             else:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 MC "Hey cock sucker."
 
@@ -1514,37 +1564,52 @@
 
         label g:
 
-            show g_d at center with dissolve
+            show ge at center with dissolve
 
             if g_convo == 0:
 
-                if g_met == 0:
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-                    $ quick_menu = False
+                if g_met == 0:
 
                     MC "How are you today lass?"
 
                     $ quick_menu = True
 
-                    $ g = Character('Pale Girl', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
+                    $ g = Character('Pale Girl', color = "#F0CD00", callback = g_voice, who_outlines = [ (1, "#000000") ])
+
+                    show ge happy with Dissolve(0.1)
+
                     g "Awful, I failed a math exam today."
 
                     MC "Oh, will you be flogged for your failure?"
 
-                    g "Nah man, I’ll just shove it under my bed with the rest of them."
+                    show ge smile with Dissolve(0.1)
+
+                    g "Nah man, I’ll just shove the test under my bed with the rest of them."
 
                     MC "You can simply hide your failures like that?"
 
+                    show ge with Dissolve(0.1)
+
                     g "For sure, they won’t catch up to me that fast. And when they do I’ll figure it out."
 
-                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
-                    g "Behati helps me cram. I’m Geraldine by the way. I don’t know if you heard anyone say my name. My friends call me G."
+                    $ g = Character('G', color = "#F0CD00", callback = g_voice, who_outlines = [ (1, "#000000") ])
+
+                    g "Behati helps me cram when it gets serious. I’m Geraldine by the way."
+
+                    g "I don’t know if you heard anyone say my name. My friends call me G."
 
                     MC "Why only one letter?"
 
+                    show ge happy with Dissolve(0.1)
+
                     g "It’s quicker and doesn’t make me sound like some heiress to a embroidered pillow fortune."
 
-                    MC "Your name is what you make it out to become, not what is expected it to be."
+                    MC "Your name is what you make it, not what is expected of it."
+
+                    show ge smile with Dissolve(0.1)
 
                     g "Now that’s some pirate wisdom for yeah. Tell me more pirate stuff."
 
@@ -1552,14 +1617,14 @@
 
                 else:
 
-                    $ quick_menu = False
-                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
+                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])
 
                     MC "Hello again G. How are you?"
 
                     $ quick_menu = True
 
-                    # happy g
+                    show ge happy with Dissolve(0.1)
+
                     g "I failed a freaking math test today. Very unepic of me."
 
                     MC "Oh, will you be flogged for your failure?"
@@ -1568,11 +1633,17 @@
 
                     MC "You can simply hide your failures like that?"
 
+                    show ge with Dissolve(0.1)
+
                     g "For sure, they won’t catch up to me that fast. And when they do I’ll figure it out."
+
+                    show ge smile with Dissolve(0.1)
 
                     g "Behati helps me cram. She’s good like that."
 
                     MC "You shouldn’t rely on others to bail you out of your mistakes, making improvements will show that you're worthy to help."
+
+                    show ge mad with Dissolve(0.2)
 
                     g "That’s some pirate bull right there. Tell me some cool pirate stuff."
 
@@ -1580,13 +1651,17 @@
 
                 MC "So it’s against pirate code to coerce your preferred gender onto the ship. It won’t get you killed but you’ll be punished harshly."
 
+                show ge with Dissolve(0.1)
+
                 MC "One time these two new pirates, both really burly looking guys were sneaking some prostitutes onboard and the Captain and I caught them red handed."
 
                 g "Uh oh, tough luck for them."
 
                 MC "Here's what happened next. We still have to officially accuse them of the code violation, even if it’s obvious."
 
-                MC "So when we did that they denied the crime and claimed they were kicking them off. The story was they were stowaways."
+                MC "So when we did that they denied the crime and claimed they were kicking them off. The story was that they were stowaways."
+
+                show ge int with Dissolve(0.1)
 
                 g "Really? That’s what they went with?"
 
@@ -1596,17 +1671,25 @@
 
                 g "No Fucking Way!"
 
-                MC "Yeah, it was slow painful and super weird to watch. They clearly weren’t into it as they were going at it."
+                MC "Yeah, it was slow, painful, and super weird to watch. They clearly weren’t into it while they're going at it."
 
                 MC "The Captain kept staring them down so it lasted almost two minutes. But it felt like two hours just watching them."
+
+                show ge happy with Dissolve(0.1)
 
                 g "That is so unbelievably funny!"
 
                 MC "They proved themselves enough so we let them get away with it. From then on they avoided each other as much as possible."
 
-                MC "Even to the point of eating their meals on different decks. Although, strangely they both left the crew at the same time."
+                MC "Even to the point of eating their meals on different decks."
 
-                g "I smell a best selling pirate romance novel in the works. I’m a big fan of of just the raunchiest gay fanfics I can find."
+                MC "Although, strangely they both left the crew at the same time."
+
+                g "I smell a best selling pirate romance novel in the works."
+
+                show ge smile with Dissolve(0.1)
+
+                g "I’m a big fan of of just the raunchiest gay fanfics I can find."
 
                 MC "Is that a popular genre on land?"
 
@@ -1616,42 +1699,81 @@
 
                 $ g_convo += 1
                 $ activity_check += 1
-                hide g_d with dissolve
+                hide ge with dissolve
+
+                "What does \"text\" mean?"
+
                 jump social
 
             elif g_convo == 1:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
+
+                MC "Hello again Geraldine."
+
+                $ quick_menu = True
+                show ge sad with Dissolve(0.1)
+
+                MC "Oh, my bad sorry."
 
                 MC "Hello again G."
 
-                $ quick_menu = True
+                show ge smile with Dissolve(0.1)
 
                 g "What’s the haps pirate pal?"
 
                 MC "Everyone here is super nice. I’ve been told pirates were treated poorly in normal society. Is high school different?"
 
+                show ge sad with Dissolve(0.1)
+
                 g "It's a high school man, what the heck were you actually expecting?"
 
-                g "This isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but shit happens."
+                show ge smile with Dissolve(0.1)
+
+                g "This club isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but shit happens."
+
+                show ge mad
+
+                g "The Spanish club is always testing my patience."
 
                 if book_choice == "funny":
+
+                    show ge int with Dissolve(0.1)
+
                     g "{color=#2150E7}Whatcha got there?{/color}"
 
-                    MC "Oh this? I found this book on the streets and I thought I’d keep it for novelty purposes."
+                    MC "Oh this? I found this book on the street and thought I’d keep it for novelty purposes."
+
+                    show ge smug with Dissolve(0.1)
 
                     g "Right on the street. And my phone fell off the back of a truck."
 
+                    show ge happy at wiggle with Dissolve(0.1)
+
                     g "Oh my God!"
 
-                    g "A Pirate carrying around a pirate joke book? Now that’s the start of a bad joke. Which you seem loaded with there."
+                    show ge smile
 
-                    MC "Yeah maybe you’re right. You want to hear some terrible pirate jokes?"
+                    g "A Pirate carrying around a pirate joke book? Now that’s the start of a bad joke."
+
+                    if player_identity == "m":
+
+                        g "Which you seem loaded with there big guy."
+
+                    else:
+
+                        g "Which you seem loaded with girl."
+
+                    MC "Yeah that is sort of funny. You want to hear some terrible pirate jokes?"
 
                     g "Hit me."
 
                     play effect "audio/pages.wav"
+
                     MC "\"Why is pirating so addictive?\""
+
+                    show ge int with Dissolve(0.1)
 
                     g "The free oppium?"
 
@@ -1659,7 +1781,13 @@
 
                     MC "\"When you lose your first hand, you get hooked!\""
 
-                    g "That was wonderfully cringe, my body will nourish that for years to come. Do pirates actually use hook hands?"
+                    show ge happy with Dissolve(0.1)
+
+                    g "That was wonderfully cringe, my body will nourish that for years to come."
+
+                    show ge int
+
+                    g "Do pirates actually use hook hands?"
 
                     MC "Some do, most who lose hands get a hook. They’ve come a long way now. Most are equipped with extra features like blades and spoons."
 
@@ -1670,13 +1798,19 @@
                     play effect "audio/pages.wav"
                     MC "Can you explain this one to me? I don't get it."
 
+                    show ge smile with Dissolve(0.1)
+
                     g "Yeah sure what’s it say?"
 
                     MC "\"How does a pirate call his mate? On his aye phone.\""
 
                     MC "If my phonics are correct then I don’t know what an {i}I Phone{/i} is?"
 
+                    show ge happy with Dissolve(0.1)
+
                     "G snickers behind her hands and pulls one of the screen devices everyone has from her pocket."
+
+                    show ge smile with Dissolve(0.1)
 
                     g "Phones are what these are. Everyone has one. This specific brand is called an iPhone."
 
@@ -1688,61 +1822,114 @@
 
                     g "Best not to think about a joke book too seriously. Or else you’ll miss the punchline."
 
-                    "She digs into my arm with a swift jab and turns away. Her iPhone starts to vibrate."
+                    # arm punch
+                    show ge smile with ease:
+                        xpos 0.53
+                    show ge smile with ease:
+                        xpos 0.5
+
+                    "She digs into my arm with a swift jab then grabs her iPhone."
+
+                    show ge
+
+                    g "One second, I got to respond to this."
 
                     $ G_affinity += 1
 
                 else:
+
                     MC "Is it really bad here?"
 
-                    g "I’m sure it’s not as violent as a pirate ship. But you have a choice at least. We’re forced to come here."
+                    show ge with Dissolve(0.1)
 
-                    "She thinks I have a choice. After eighteen years I’ve been given permission to prace around the land without a care."
+                    g "I’m sure it’s not as violent as a pirate ship. But you have a choice at least."
 
-                    "Leaving on my own accord would have been a death sentence. It might be the same here, I don’t know?"
+                    show ge sad with Dissolve(0.1)
+
+                    g "We’re forced to come to school."
+
+                    "She thinks I have a choice. After eighteen years I’ve only been given permission to prace around the land without a care."
+
+                    "Leaving on my own accord would have been a death sentence. It might be the same here, should I ask?"
 
                     MC "Can’t be all bad. You can choose your friends, go home at the end of the day, weekends off sounds nice?"
 
-                    # quizative g
+                    show ge int with Dissolve(0.1)
+
                     g "Do you not get weekends?"
 
                     MC "I didn’t know what the days of the week were until I was ten. Doesn’t matter too much at sea when there’s work that needs to be done."
 
                     g "Do you have any spare time?"
 
-                    MC "Oh yeah, pirates hate doing work. There’s just so much work to be done or we all die."
+                    MC "Oh yeah, pirates hate doing work. There’s just so much work to be done we have to finish or we all die."
 
-                    MC "But when that’s done there’s plenty of time in the day to yourself. Enjoy your hobbies, casual conversation, whatever you want really within code."
+                    show ge
 
-                    g "Must be nice. My parents make me work in their deli after I’m done with school work."
+                    MC "But when that’s done you can do whatever you want."
+
+                    MC "Enjoy your hobbies, casual conversation, anything you want really within Code."
+
+                    show ge int with Dissolve(0.1)
+
+                    g "The Pirate Code?"
+
+                    MC "Yes that exact one. We all have to follow it or nothing get's done and priacy becomes chaos."
+
+                    show ge sad with Dissolve(0.1)
+
+                    g "Must be nice. My parents force me work in their deli after I’m done with school work."
 
                     g "I barely have time for anything. The club’s a small reprieve from all that, but still."
 
                     "That sounds really sad. Admiring the pirate life because yours is without freedom."
 
-                    MC "Arrrrgh. Well aye hope aye made today salty enough for ye lass."
+                    "A pirate culture club isn't the worst form of escapism that exists. What was it that Astrid said I had to do?"
+
+                    MC "{cps=25}Arrrrrrgggggh.{/cps} Well aye hope aye made today salty enough for ye lass."
+
+                    show ge happy with Dissolve(0.1)
 
                     g "Haha. Yeah this was fun, I appreciate you coming down matey."
 
-                    "She digs into my arm with a swift jab and turns away. Her device started to vibrate."
+                    show ge smile
+
+                    g "I thought \"aye\" meant yes though?"
+
+                    MC "It does, but it sounds nice to say, right?"
+
+                    # arm punch
+                    show ge smile with ease:
+                        xpos 0.53
+                    show ge smile with ease:
+                        xpos 0.5
+
+                    "She digs into my arm with a swift jab then grabs her screen device."
+
+                    show ge
+
+                    g "One second, I got to respond to this."
 
                 $ g_convo += 1
-                hide g_d with dissolve
+                hide ge with dissolve
                 jump social
 
             elif g_convo == 2:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
-                MC "What’s going on with your phone?"
+                MC "What’s going on G?"
 
                 $ quick_menu = True
 
-                g "Oh, I got a notification for a game I was playing. Have to do the dailys."
+                g "Oh, I got a notification for a game I was playing. Have to do the dailys or else the anxiety kicks in."
 
                 if game_played != "":
 
                     MC "Sounds cool. I played my first video games today before coming here."
+
+                    show ge int with Dissolve(0.1)
 
                     g "{color=#2150E7}Oh yeah? What did you play?{/color}"
 
@@ -1752,10 +1939,21 @@
 
                     MC "Yes I did, why? Is that bad?"
 
-                    # gamer g
-                    g "Not explicitly, I can’t believe that was your first experience. Here, wait one second."
+                    show ge smug with Dissolve(0.1)
 
-                    "G pulls out her backpack and rummages around for a few seconds. She shows me another device with two screens instead of one."
+                    g "Not explicitly, I can’t believe that was your first experience."
+
+                    show ge smile with ease:
+                        ypos 1.05
+
+                    g "Here, wait one second."
+
+                    play effect "audio/rummage2.mp3"
+
+                    "G pulls out her backpack and rummages around for a few seconds. She pulls out another device with two screens instead of one."
+
+                    show ge smug with ease:
+                        ypos 1.00
 
                     g "Let me run you a classic game that hasn’t aged like dogshit."
 
@@ -1765,48 +1963,68 @@
 
                     MC "Aye, sure thing."
 
+                    show ge int with Dissolve(0.1)
+
                     g "You don’t say aye aye?"
 
                     MC "I said yes already why would I say it twice?"
+
+                    show ge smile
 
                     g "For historical accuracy."
 
                     MC "Not sure that’s right."
 
                     show ds at ds_slide
+                    pause 1.5
+                    play effect "audio/laser1.wav"
+
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
+
                     play effect "audio/laser1.wav"
-                    play effect "audio/laser1.wav"
+                    queue effect "audio/laser1.wav"
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
 
                     play effect "audio/laser2.wav"
-                    play effect "audio/laser1.wav"
+                    queue effect "audio/laser1.wav"
                     "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are yelling ay me?"
 
                     play effect "audio/laser2.wav"
+                    queue effect "audio/laser2.wav"
+                    "I keep getting shot from behind by enemies I miss."
+
                     play effect "audio/laser2.wav"
-                    "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
+                    queue effect "audio/laser2.wav"
+                    queue effect "audio/laser2.wav"
+                    "It's fun for a few minutes, but after I die three times I had to hand the device back to G."
 
                     hide ds with moveoutbottom
                     MC "That was fun, I think I’m really starting to like video games."
+
+                    show ge happy with Dissolve(0.1)
 
                     g "Of course you are. You’re one of us now."
 
                     MC "What do you mean?"
 
-                    g "{cps=60}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+                    g "{cps=40}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
 
-                    "Her repetition is getting slower and hands grow closer to my face. Backing away slowly she stopped and laughed to herself for a good while."
+                    "Her repetition gets slower and hands growing closer to my face."
+
+                    "After backing away slowly she stopped and laughed to herself for a good second."
 
                     $ G_affinity += 1
                     $ g_convo += 1
-                    hide g_d with dissolve
+                    hide ge happy with dissolve
                     jump social
 
                 else:
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
+
+                    show ge int
 
                     g "You ever played a video game before?"
 
@@ -1814,9 +2032,21 @@
 
                     MC "No never. I’ve heard of them, but never had a chance to."
 
-                    g "Well this is a good chance. I can’t believe I get to coordinate your first experience. Here, wait one second."
+                    show ge smile with Dissolve(0.1)
 
-                    "G pulls out her backpack and rummages around for a few seconds. She shows me another device with two screens instead of one."
+                    g "Well this is a good chance. I can’t believe I get to coordinate your first experience."
+
+                    show ge smile with ease:
+                        ypos 1.05
+
+                    g "Here, wait one second."
+
+                    play effect "audio/rummage2.mp3"
+
+                    "G pulls out her backpack and rummages around for a few seconds. She pulls out another device with two screens instead of one."
+
+                    show ge smug with ease:
+                        ypos 1.00
 
                     g "Let me run you a classic game that hasn’t aged like dogshit."
 
@@ -1826,59 +2056,132 @@
 
                     MC "Aye, sure thing."
 
+                    show ge int with Dissolve(0.1)
+
                     g "You don’t say aye aye?"
 
                     MC "I said yes already why would I say it twice?"
+
+                    show ge smile
 
                     g "For historical accuracy."
 
                     MC "Not sure that’s right."
 
                     show ds at ds_slide
+                    pause 1.5
+                    play effect "audio/laser1.wav"
+
                     "The font of the title is too weird for me to make it out. However, the game is really fun."
+
                     play effect "audio/laser1.wav"
-                    play effect "audio/laser1.wav"
+                    queue effect "audio/laser1.wav"
 
                     "I’m a little jet flying and spinning around the sky shooting shapes."
 
                     play effect "audio/laser2.wav"
-                    play effect "audio/laser1.wav"
-                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are screaming at me?"
+                    queue effect "audio/laser1.wav"
+                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are yelling ay me?"
 
                     play effect "audio/laser2.wav"
+                    queue effect "audio/laser2.wav"
+                    "I keep getting shot from behind by enemies I miss."
+
                     play effect "audio/laser2.wav"
-                    "I keep getting shot from behind by enemies I miss. After I die three times I hand the device back to G."
+                    queue effect "audio/laser2.wav"
+                    queue effect "audio/laser2.wav"
+                    "It's fun for a few minutes, but after I die three times I had to hand the device back to G."
 
                     hide ds with moveoutbottom
+
                     MC "That was fun, I think I’m really starting to like video games."
+
+                    show ge happy
 
                     g "Of course you are. You’re one of us now."
 
                     MC "What do you mean?"
 
-                    g "{cps=60}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+                    g "{cps=40}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
 
-                    "Her repetition is getting slower and hands grow closer to my face. Backing away slowly she stopped and laughed to herself for a good while."
+                    "Her repetition gets slower and hands growing closer to my face."
+
+                    show ge smug with Dissolve(0.1)
 
                     g "I’ll make a gamer out of you if you give me the chance. Don’t tempt me!"
 
+                    MC "I'll watch my step."
+
                     $ g_convo += 1
                     $ activity_check += 1
-                    hide g_d with dissolve
+                    hide ge smug with dissolve
                     jump social
-            else:
+
+            elif g_convo == 3:
 
                 g "Have you assimilated yet pirate pal?"
 
                 MC "I’m not sure. People seem to be fine with me."
 
-                g "Not good enough, go talk to more people. Become one with the pirate culture club."
+                show ge mad
+
+                g "Not good enough, go talk to more people. Become one with the Pirate Culture Club."
 
                 MC "But I’m already a-"
 
-                g "{cps=60}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+                show ge happy with Dissolve(0.1)
 
-                hide g_d with dissolve
+                g "{cps=30}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+
+                MC "You really like this club G?"
+
+                show ge int with Dissolve(0.1)
+
+                g "Yeah, duh. That's why I'm here all the time."
+
+                g "Why do you ask?"
+
+                MC "I had this club pegged all wrong. Didn't think you'd all be so friendly and not crazy."
+
+                show ge smile
+
+                g "Oh, for sure we're crazy dude."
+
+                MC "You all aren't that crazy."
+
+                MC "I've met people who thought they were the kings of the world while dancing around like monkeys."
+
+                show ge smug with Dissolve(0.1)
+
+                g "Well Fiona's pretty sure of herself."
+
+                MC "I disagree, you are all really cool. I'm glad I came."
+
+                show ge happy with Dissolve(0.1)
+
+                g "Yeah dude, you're cool too."
+
+                g "Enroll in our school and become one of us."
+
+                MC "Well I can't do that, I have to get back to my ship and-"
+
+                g "{cps=30}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+
+                hide ge happy with dissolve
+                $ g_convo += 1
+                jump social
+
+            else:
+
+                MC "G is there a-"
+
+                show ge happy with Dissolve(0.1)
+
+                g "{cps=30}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
+
+                MC "I see that you're busy being fake crazy."
+
+                hide ge happy with dissolve
                 jump social
 
         label astrid:
@@ -1888,6 +2191,7 @@
             if a_convo == 0:
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     MC "Hey Astrid? How’d you like my intro?"
 
@@ -1993,6 +2297,7 @@
             elif a_convo == 1:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 a "Did you talk to the others yet?"
 
@@ -2149,6 +2454,7 @@
             elif a_convo == 2:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 a "Fine [player_name], since my allure is so captivating tell me something."
 
@@ -2207,6 +2513,7 @@
         label washroom:
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             "My stomach is hurting suddenly. Does my stomach feel the incoming social anxiety or was it something I ate?"
 
@@ -2673,6 +2980,7 @@
         label food:
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "I can’t turn down free food. What kind of pirate would I be?"
 
@@ -2696,6 +3004,7 @@
             label chicken:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "The grilled chicken breasts look so good. I can’t tell if it's warm or cold but I want to eat it super bad."
 
@@ -2707,11 +3016,17 @@
 
                 "They’re terrible to wash but can’t easily break and can be recycled from old planks on the ship."
 
-                show g_d at center with dissolve
+                "..."
+
+                "The chicken is so juicy. I haven't had meat this good in a while."
+
+                "If everything today was a waste, this moment is worth the world."
+
+                show ge smile with dissolve
 
                 if g_met == 0:
 
-                    $ g = Character('Girl', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
+                    $ g = Character('Girl', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])
 
                 g "You liking the food?"
 
@@ -2721,6 +3036,8 @@
 
                 MC "So this was stolen and I didn’t have to do anything? That makes it taste even better!"
 
+                show ge sad with Dissolve(0.1)
+
                 g "It does? I sort of feel guilty. I think some of this stuff was supposed to go to someone’s Bat Mitzvah."
 
                 MC "I don’t know what that is? Is it like a celebration of some kind?"
@@ -2728,64 +3045,100 @@
                 g "Something like that..."
 
                 if g_met == 0:
-                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])# Geraldine
+
+                    $ g = Character('G', color="#F0CD00", callback=g_voice, who_outlines=[ (1, "#000000") ])
 
                     g "I’m Geraldine by the way. I don’t know if you heard anyone say my name. My friends call me G."
 
-                MC "I actually knew a pirate named Geraldine."
+                    MC "Really? I actually knew a pirate named Geraldine."
+
+                else:
+
+                    MC "You know G, I actually knew a pirate named Geraldine."
+
+                show ge int with Dissolve(0.1)
 
                 g "Really? What was she like?"
 
-                "Swallowing the last of what remained on my plate, I try to recall the most flattering memory of ol Geraldine."
+                "Swallowing the last of what remained on my plate, I try to recall the most flattering memory of ol'Geraldine."
 
                 MC "She was the biggest woman I’ve ever seen."
+
+                show ge mad with Dissolve(0.1)
 
                 g "What!?"
 
                 MC "She was built like a mighty killer whale. And killed like one too."
 
+                show ge
+
                 MC "Unapologetically ruthless, when she served her special slop mix to us some sailors would try to insult her looks and she would say terrible things about their mothers."
 
-                g "Haaah ahh a! Yeah like what?"
+                show ge happy
+
+                g "Haaah ahh ah! Yeah like what?"
 
                 MC "She’d say horrible things. Like when they called her fat she would say something like,"
 
                 MC "\"At least if I gave birth to an ugly fuck like yerself I’d have the decency to eat ya and save me the trouble of looking like I passed around a goat.\""
 
-                "G’s mouth is left wide open, food still unchewed is visible on her tongue."
+                show ge happy at wiggle
 
                 g "BWAHahahahahaha! That fucking hilarious. And she’d do that how often?"
 
                 "She almost choked trying to get that out. Her entire body has gone limp from laughter."
 
-                "Other students join in the laughter but are drowned out by G’s roars. If I recall correctly, some books I read implied teenagers find being mean really funny."
+                "A few students around us giggle along, but are drowned out by G’s roars."
 
-                "I can’t disagree in most cases."
+                "If I recall correctly, some books I read implied teenagers find being mean really funny."
+
+                "Can’t disagree, in most cases that's true."
 
                 MC "Almost every night she’d bring a pirate on the verge of tears. Once someone threw a punch at her and she caught his hand and put it in the boiling hot soup."
 
-                g "Oh my God I can picture it. One time,"
+                g "Oh my God I can picture it now."
 
-                g "augh, I told my mom to eat my dick after she yelled at me for being on my phone and I got grounded for a week. I wish I could be that tough."
+                g "One time,"
+
+                "She's trying to catch her breath."
+
+                show ge smile with Dissolve(0.1)
+
+                g "One time, I told my mom to eat my dick after she yelled at me for being on my phone and I got grounded for a week."
+
+                show ge sad
+
+                g "I wish I could be that tough more often."
+
+                show ge smile with Dissolve(0.1)
 
                 g "This Geraldine is now the me I will strive to be. Minus the whale part."
 
-                MC "She was an inspiring woman, I guess."
+                MC "She was definitely an inspiring woman."
 
                 g "I have to go tell Behati about this, she’ll flip."
-                hide g_d with moveoutleft
 
-                "Before I could ask what she meant my \"flip\" G shuffled to another table to talk to her friend."
+                hide ge smile with moveoutleft
+
+                if b_convo >= 1:
+
+                    "Before I could ask what she meant my \"flip\" G shuffled to another table to talk to Behati."
+
+                else:
+
+                    "Before I could ask what she meant my \"flip\" G shuffled to another table to talk to her friend."
 
                 $ g_met += 1
                 $ G_affinity += 1
                 $ activity_check += 1
                 $ food_ate += 1
+
                 jump classroom_choice
 
             label sandwich:
 
                 $ quick_menu = False
+                $ renpy.block_rollback()
 
                 "Poseidon help me that sandwich is half my size."
 
@@ -2945,6 +3298,7 @@
                 if food_check == 1:
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     "{color=#2150E7}They have more fruits!{/color}"
 
@@ -2955,6 +3309,7 @@
                 else:
 
                     $ quick_menu = False
+                    $ renpy.block_rollback()
 
                     "A pirate can’t risk avoiding their fruits. Don’t want history to repeat itself."
 
@@ -3122,27 +3477,29 @@
         label leave:
 
             $ quick_menu = False
+            $ renpy.block_rollback()
 
             MC "Hey Astrid, I think I’m going to leave. It’s getting late and I’m under threat of being left behind if the ship leaves without me."
 
             $ quick_menu = True
 
-            show ast at centerleft with dissolve
+            show ast at centerlefter with dissolve
             a "That’s alright, we aren’t holding you hostage."
 
-            show g_d at centerright with dissolve
+            show ge smile at g_school_right with dissolve
             g "Speak for yourself, [player_name] stay here and be our new club advisor."
 
-            show be skeptical at lefter with dissolve
+            show be skeptical at righter with dissolve
             b "G, they’re not a teacher. Advisors have to work here."
 
+            show ge smug with Dissolve(0.1)
             g "Theft of identity! Pretend like you went to Florida State and are super qualified to work here."
 
             show be with Dissolve(0.1)
 
             a "We’re letting [player_name] go. Stop messing around."
 
-            show fiona frown at righter with dissolve
+            show fiona frown at lefter with dissolve
 
             f "I agree. Our advisor is deathly sick and can only come into work once a week."
 
@@ -3154,6 +3511,8 @@
 
             a "Well said. I can’t thank you enough for coming to talk with us. We all appreciate it."
 
+            show ge smile with Dissolve(0.1)
+
             g "Yeah she’s right. Thanks for coming to talk to us. It was really cool meeting a real pirate."
 
             MC "It was my pleasure G, I…"
@@ -3164,6 +3523,7 @@
 
             show fiona sad
             show ast sup
+            show ge int
             with Dissolve(0.1)
 
             f "Woah."
@@ -3171,6 +3531,7 @@
             a "Behati! Inside voice please."
 
             show ast
+            show ge
 
             b "I’m sorry, I’m sorry. I’m just so thankful for you coming here. I’ve ever met anyone as worldly as a real pirate."
 
@@ -3180,7 +3541,7 @@
 
             b "Haha, hardly."
 
-            show be happy with Dissolve(0.1)
+            show be happy
 
             b "You’ve shifted my views on how pirates perceive themselves and given me more context for the data out there."
 
@@ -3194,11 +3555,15 @@
 
             f "That’s nice to know."
 
+            show ge happy with Dissolve(0.1)
+
             g "Next time you’re sinking a ship think of us, okay?"
 
             MC "With pleasure G. I’ll make your name an omen of misfortune."
 
             g "Hell yes! That sounds perfect, my mythos begins now."
+
+            show be with Dissolve(0.1)
 
             b "You best go before we start writing a sea shanty for you."
 
@@ -3209,7 +3574,7 @@
             hide ast sup with moveoutleft
             show fiona laugh
             show be shocked
-            # add G here
+            show ge int
             with Dissolve(0.1)
 
             ev "{cps=35}GO NOW, QUICKLY!{/cps}"
@@ -3221,15 +3586,19 @@
 
             if Be_affinity > Astrid_affinity and Be_affinity > G_affinity and Be_affinity > Fi_affinity:
 
-                show be happy with dissolve
+                show be happy with Dissolve(0.1)
 
                 b "{color=#2150E7}See ya sea cowboy.{/color}"
 
             elif G_affinity > Astrid_affinity and G_affinity > Be_affinity and G_affinity > Fi_affinity:
 
+                show ge smug with Dissolve(0.1)
+
                 g "{color=#2150E7}Next time I see you it’ll be at the end of my sword.{/color}"
 
             elif Fi_affinity > Astrid_affinity and Fi_affinity > Be_affinity and Fi_affinity > G_affinity:
+
+                show fiona sad with Dissolve(0.1)
 
                 f "{color=#2150E7}Back to a life of swashbuckling for them and exams for us.{/color}"
 
@@ -3239,10 +3608,10 @@
 
                 a "{color=#2150E7}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
 
-            hide ast sup
+            hide ast
             hide be
             hide fiona
-            hide g_d
+            hide ge
             with dissolve
 
             stop music fadeout 1.0
