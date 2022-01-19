@@ -30,7 +30,7 @@ label act1_0:
     # n "[line9]"
 
     if charcount == 1622 and match == "Curse":
-    #if True:
+
         jump secretending
 
     else:
@@ -39,11 +39,15 @@ label act1_0:
 
         "I can't read any of this, it doesn't even look like a real language."
 
+        "This tome must be cursed or something. I don't have the knowledge to decipher it."
+
         "This was a bad idea, this isn’t right and it's not going to help me."
 
         jump choice_emptystore
 
 label secretending:
+
+        # have music fadeout really slowly
 
         $ tome_title = "Curse: Beyond The Realm"
         show BG black with dissolve

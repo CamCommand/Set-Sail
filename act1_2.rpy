@@ -272,6 +272,8 @@ label act1_2:
     define activity_choice = "default"
     "Alright, that's enough walking. What should I go back and see with more detail?"
 
+    $ renpy.block_rollback()
+
     menu:
 
         "Bookstore":
@@ -339,6 +341,7 @@ label act1_2:
         MC "What kind of book? I want something,"
 
         define book_choice = "" # to determine type of book chosen for future reference at the school
+        $ renpy.block_rollback()
 
         menu:
 
@@ -995,6 +998,7 @@ label act1_2:
         "A free game is more than I expected walking in here."
 
         "What machine looks like something I could handle?"
+        $ renpy.block_rollback()
 
         menu:
 
@@ -1163,7 +1167,12 @@ label act1_2:
 
     label street:
 
+        $ quick_menu = False
+        $ renpy.block_rollback()
+
         "I should go to the school while I’m thinking about it. There’s no need to waste a ton of time there."
+
+        $ quick_menu = True
 
         "If things move quickly, I can check out the rest of town. Hopefully this club won’t eat up the entire day."
 

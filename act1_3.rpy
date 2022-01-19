@@ -88,6 +88,8 @@
     "Poseidon help me this girl is..."
 
     # MC's different reactions to first meeting Astrid
+    $ renpy.block_rollback()
+
     menu:
 
         "She’s Enthusiastic":
@@ -296,6 +298,8 @@
 
         a "Are you ready to meet everyone?"
 
+        $ renpy.block_rollback()
+
         menu:
 
             "As ready as I can be":
@@ -329,6 +333,8 @@
                 jump classroom_hesitation
 
         label classroom_hesitation:
+
+            $ renpy.block_rollback()
 
             menu:
 
@@ -475,6 +481,8 @@
             define g_met = 0
             define b_met = 0
 
+            $ renpy.block_rollback()
+
             menu:
 
                 "Be honest with them":
@@ -546,7 +554,6 @@
                 "Exaggerate to sound cool":
 
                     $ quick_menu = False
-
                     $ renpy.block_rollback()
 
                     MC "Ahoy everyone! I’m the Dreaded Pirate [player_name]."
@@ -755,6 +762,8 @@
             define g_convo = 0
             define a_convo = 0
 
+            $ renpy.block_rollback()
+
             menu:
 
                 "Socialize":
@@ -786,6 +795,8 @@
                 "This is what I wanted to do on land. Talk to people my own age, I should take advantage of this moment."
 
                 $ x += 1
+
+            $ renpy.block_rollback()
 
             "Who should I talk to?"
 

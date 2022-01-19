@@ -66,6 +66,8 @@
 
         label input:
 
+            $ renpy.block_rollback()
+
             menu:
 
                 "{color=FF4DA6}My name is Valerie{/color}":
@@ -108,6 +110,8 @@
                         # Add cheat menu to add to affinity variables
 
         "How do I identify?"
+
+        $ renpy.block_rollback()
 
         menu:
 
@@ -526,6 +530,7 @@
         label waiting:
 
             define content_check = 0
+            $ renpy.block_rollback()
 
             menu:
 
@@ -547,6 +552,7 @@
         label clothes:
 
             $ clothing_check = 1
+            $ renpy.block_rollback()
 
             MC  "Wait don’t I have a nicer set of clothes somewhere?"
 
@@ -622,6 +628,8 @@
             "As ample of an opportunity that this is, trying new things on the mainland could also be beneficial."
 
             MC "So what should I start?"
+
+            $ renpy.block_rollback()
 
             menu:
 
@@ -722,6 +730,7 @@
         label relax:
 
             $ content_check = 1
+            $ renpy.block_rollback()
 
             "Perhaps I should just relax some and enjoy the sway of the ocean."
 
@@ -754,6 +763,7 @@
         label dream:
 
             $ daydream_check = 1
+            $ renpy.block_rollback()
 
             MC "I wonder what I can do at this port? Is the town around it big?"
 
@@ -801,6 +811,7 @@
         label breakdown:
 
             $ content_check = 2
+            $ renpy.block_rollback()
 
             "Mom,"
 

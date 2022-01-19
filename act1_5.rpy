@@ -201,6 +201,8 @@ label act1_5:
     define mask = 0     # boolean for having a mask
     define doll_met = 0 # if the player meets Doll
 
+    $ renpy.block_rollback()
+
     menu:
 
         "Anti-anti-vaxxers":
@@ -405,7 +407,8 @@ label act1_5:
         "To figure out what it is I have to do I should retrace my steps."
 
         "After walking around where did I go first?"
-        #$ activity_choice = "school"  # for testing purposes
+        $ activity_choice = "bookstore"  # for testing purposes
+        $ renpy.block_rollback()
 
         menu:
 
@@ -426,7 +429,7 @@ label act1_5:
 
                 "The school shouldn’t be that far from here. I’ll get there before the club meeting ends."
 
-                "Then Posiedon will reveal to me what I should do next."
+                "Then Poseidon  will reveal to me what I should do next."
 
                 if activity_choice == "school":
 
@@ -458,7 +461,62 @@ label act1_5:
 
             "Bookstore":
 
-                jump bookstore2
+                $ quick_menu = False
+                $ renpy.block_rollback()
+
+                "I’ll return to the bookstore!"
+
+                $ quick_menu = True
+
+                "If I’ve learned anything else about this world that wasn’t from pirates, it was from books."
+
+                "Even learned what a bookstore actually was from the labels on the spines of my first few volumes I secured."
+
+                "Something might reveal itself there. Or at the very least a survival guide so I don't freeze to death tonight."
+
+                if activity_choice == "bookstore":
+
+                    jump bookstore2
+
+                else:
+
+                    mc "Wait!"
+
+                    "I don’t remember actually going in there at all."
+
+                    "There was a long walk before heading to the school, but I never went in the bookstore."
+
+                    if activity_choice == "school":
+
+                        "Making my way towards the club might be the best course of action."
+
+                        "The girls could still be there and they could help me."
+
+                        "Although, in the state I left them in that could be wishful thinking."
+
+                        "Whatever happens can be handled, as long as I stay focused."
+
+                        jump school2
+
+                    elif activity_choice == "arcade":
+
+                        "Instead, I chose to go to the arcade first then found my way to the school."
+
+                        "I’ll run back there, something relevant to my journey has to appear there."
+
+                        "If not, then I’m sleeping on a bench tonight."
+
+                        jump arcade2
+
+                    else:
+
+                        "Instead, I chose to go to the market first then found my way to the school."
+
+                        "I’ll run back there, something relevant to my journey has to appear there."
+
+                        "If not, then I might be sleeping on a bench tonight."
+
+                        jump market2
 
             "The Market":
 
@@ -508,6 +566,8 @@ label act1_5:
         m "This is school property, should you be here?"
 
         mc "I {cps=15}ummmmmmmmm.{/cps}"
+
+        $ renpy.block_rollback()
 
         menu:
 
@@ -684,6 +744,7 @@ label act1_5:
                 mc "I’m number..."
 
                 define num = 0
+                $ renpy.block_rollback()
 
                 menu:
 
@@ -753,7 +814,7 @@ label act1_5:
 
                 "Compared to everyone I saw around town or at school she is the most out of place."
 
-                "She smells about as bad as I do and I doubt she's on a mission from Posiedon."
+                "She smells about as bad as I do and I doubt she's on a mission from Poseidon ."
 
                 "I’d bet she’s trying to intimidate something out of me. Well it isn't going to work lady."
 
@@ -891,129 +952,91 @@ label act1_5:
 
     label bookstore2:
 
-        $ quick_menu = False
-        $ renpy.block_rollback()
+        "I met that woman who let me steal a book."
 
-        "I’ll return to the bookstore!"
+        "Or did I just steal by myself alone?"
 
-        $ quick_menu = True
+        "What was her name? Yomo? Yacko?"
 
-        "If I’ve learned anything else about this world that wasn’t from pirates, it was from books."
+        "I think it was somewhere back on that street I passed coming here."
 
-        "Even what a bookstore actually was from the labels on the spines of my first few volumes."
+        show BG black with fade
+        show BG nobook with fade
 
-        if activity_choice == "bookstore":
+        "This can’t be it."
 
-            "That's where I went first, I met that librarian who let me steal that book."
+        "There’s nothing here, everything is gone. Even the sign."
 
-            "Or did I just steal by myself alone?"
+        "All the closed businesses look alike, but the faded remains of the shop’s raven logo give it away."
 
-            "What was her name? Yomo? Yacko?"
+        "This was that store I went to."
 
-            "Either way, the answer’s I’m looking for could be there. Maybe a clue to the next step of my journey?"
+        mc "Shite!"
 
-            "Who knows? Maybe there will be clean clothes if luck will spare some."
+        "How could this happen? This is where I was supposed to go I just know it."
 
-            show BG black with dissolve
-            pause 1.0
-            show BG nobook with dissolve
+        "A peek inside shows the shelves have been stripped clean of their contents. Thick layers of dust tell me it's been closed for a long time now."
 
-            "This can’t be it."
+        mc "Damn it all, this can’t be it!"
 
-            "There’s nothing here, the sign and books are gone. It can’t be closed."
+        "Is this COVID’s doing?"
 
-            "All the closed businesses look alike, but the faded remains of the shop’s raven logo are too familiar."
+        play effect "audio/banging.ogg" loop
 
-            "A peek inside shows the shelves have been stripped clean of their contents. Thick layers of dust indicate it’s been closed for a long time now."
+        "If it's closed what am I going to do? What is there to learn from this?"
 
-            mc "Damn it all, this can’t be it!"
+        "There’s no way the door could be-"
 
-            "Is this COVID’s doing?"
+        stop effect
+        play effect "audio/dooropen.ogg"
+        pause 2.0
 
-            play effect "audio/banging.ogg" loop
+        mc "Well, that’ll do the trick."
 
-            "If I was to find it closed down, what is there to discover? There’s no way the door could be-"
+        stop music fadeout 1.5
+        show BG insidestore with fade
+        play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5
 
-            stop effect
-            play effect "audio/dooropen.ogg"
-            pause 0.75
+        "My view from the windows shielded my nose from the unknown stench that now lives in the abandoned building."
 
-            mc "Well, that’ll do the trick."
+        "Dust mixes horribly with wet sewage dripping from pipes pooling on the floor."
 
-            show BG insidestore with dissolve
+        "Puddles of the brown liquid are all over the ground throughout the room."
 
-            "My view from the windows shielded my nose from the unknown stench that now lives in the abandoned building."
+        "The only illumination comes from the sun barely sneaking behind the clouds, peaking through the windows."
 
-            "Dust mixes horribly with wet sewage dripping from pipes pooling on the floor. Puddles of the liquid find dips on the ground all throughout the store."
+        mc "There’s nothing left."
 
-            "The only illumination comes from the sun barely sneaking behind the clouds, leaking through the windows."
+        "The sanded wood panels that once held such amazing works of literature have been lost to time."
 
-            mc "There’s nothing left."
+        mc "Except..."
 
-            "The sanded wood panels that once held such amazing works of literature have been lost to the darkness."
+        "What is this doing here?"
 
-            mc "Except..."
+        show tome at bottom with dissolve
 
-            "What is this doing here?"
+        define tome_choice = 1
 
-            show tome at bottom with dissolve
+        "How could something so large be left behind?"
 
-            define tome_choice = 1
+        $ may_name = "Girl Voice"
+        m "Hey who’s in here?"
 
-            "How could something so large be left behind?"
+        "Oh barnacles!"
 
-            $ may_name = "Girl Voice"
-            m "Excuse me, who’s in here?"
+        play effect "audio/duck.ogg" volume 2.5
 
-            $ may_position = "theif"
+        "I duck behind some debris, there's no chance anyone can see me in this lighting."
 
-            "Oh barnacles!"
+        "Do old buildings still count as trespassing? This could get bad."
 
-            play effect "audio/duck.ogg"
+        m "I saw you go in here. This place looks empty as Hell, not much to steal."
 
-            "I duck behind some debris, there's no chance anyone can see me in this lighting."
+        "She’s right, there’s nothing in here."
 
-            "Do old buildings still count as trespassing? This could get bad."
+        "She doesn’t sound hostile. How should I approach this?"
 
-            m "I saw you go in here. This place looks empty as Hell, not much to steal."
-
-            "She’s right, there’s nothing in here."
-
-            "She doesn’t sound hostile. How should I approach this?"
-
-            jump choice_emptystore
-
-        else:
-
-            mc "Wait!"
-
-            "I don’t remember actually going in there at all."
-
-            "There was a long walk before heading to the school, but entering the bookstore never happened. I just walked past it."
-
-            if activity_choice == "school":
-
-                "Making my way towards the club might be the best course of action. The girls could still be there, or they need my help."
-
-                "Whatever is thrown at me can be handled, as long as I stay focused."
-
-                jump school2
-
-            elif activity_choice == "arcade":
-
-                "Instead, I chose to go to the arcade first then found my way to the school."
-
-                "I’ll run back there, something relevant to my journey has to appear there. If not, then I’m sleeping on a bench tonight."
-
-                jump arcade2
-
-            else:
-
-                "Instead, I chose to go to the market first then found my way to the school."
-
-                "I’ll run back there, something relevant to my journey has to appear there. If not, then I’m sleeping on a bench tonight."
-
-                jump market2
+        jump choice_emptystore
 
     label arcade2:
 
@@ -1163,11 +1186,18 @@ label act1_5:
 
                 $ dl = Character('Doll ', color = "#740E86", callback=hobo_voice)
 
+            $ renpy.block_rollback()
+
             menu:
 
                 "Sure Miss":
 
+                    $ quick_menu = False
+                    $ renpy.block_rollback()
+
                     "She’s probably lying, if she’s hitting up someone like me for money."
+
+                    $ quick_menu = True
 
                     "However, even if there’s a slim chance she probably needs it more than me. It’s sad, but I should help in some way."
 
@@ -1303,7 +1333,12 @@ label act1_5:
 
                 "Can't spare anything":
 
+                    $ quick_menu = False
+                    $ renpy.block_rollback()
+
                     "There’s no barnacle splitting way this woman is pregnant with twins!"
+
+                    $ quick_menu = True
 
                     "Not that I have any money to give her anyway. And like Hell is she getting my earrings."
 
@@ -1679,6 +1714,8 @@ label act1_5:
 
 label choice_emptystore:
 
+    $ renpy.block_rollback()
+
     menu:
 
         "Engage":
@@ -1695,7 +1732,7 @@ label choice_emptystore:
 
     label engage:
 
-        hide tome with dissolve
+        hide tome
         $ quick_menu = False
         $ renpy.block_rollback()
 
@@ -1705,20 +1742,27 @@ label choice_emptystore:
 
         mc "Hello, yes you caught me."
 
-        mc "But nothing is happening. Could I just leave now?"
+        mc "But there's nothing in here, I was just curious. Could I just leave now?"
 
-        show m_d with dissolve
-        "Revealing myself to the voice, a tall woman is standing in the doorway."
+        show may with dissolve
+        "Revealing myself to the voice, I see a tall woman is standing in the doorway."
 
         "She looks exacerbated by something she was doing previously."
 
-        "None of her clothing indicated she is of an authority, but the lighting hides the possibility of a weapon."
+        "Her clothing choices don't indicated authority, but the lighting could conceal a weapon."
 
-        m "There doesn’t seem to be anything here worth taking or am I just late to the party?"
+        $ may_name = "Woman"
+
+        m "There doesn’t seem to be anything here worth taking."
+
+        show may smile with Dissolve(0.1)
+        m "Or am I just late to the party?"
 
         mc "No, there’s nothing here."
 
         mc "I visited this store a long time ago and was just sad to see it gone."
+
+        show may sad with Dissolve(0.1)
 
         m "I see. So I’m guessing they aren’t hiring?"
 
@@ -1726,29 +1770,62 @@ label choice_emptystore:
 
         m "Well, if there’s nothing here then I don’t know why I’m here."
 
+        show may
+
         m "Wait a second…"
 
-        show m_d at centerleft with moveinleft
-        play effect "audio/metalcrash.ogg"
-        "The woman moves behind the counter and starts hitting the rusty register with some metal pole."
+        show may at left with moveinleft
 
         mc "What are you doing?"
 
+        show may smile with Dissolve(0.1)
+
+        m "Oh, me?"
+
         m "Checking for some chump change."
+
+        play effect "audio/metalcrash.ogg"
+        show may at wiggle with hpunch
+
+        pause 0.8
+
+        mc "Why are you smashing that box!"
 
         m "If you ain't stealing nothing then I’m gonna try."
 
-        mc "Not that it looks like it’s going to open, but why would they leave any money in there?"
+        play effect "audio/metalcrash.ogg"
+        show may at wiggle with hpunch
+
+        pause 0.8
+
+        mc "{cps=5}Steal what!{/cps}"
+
+        m "Money... duh."
+
+        play effect "audio/metalcrash.ogg"
+        show may at wiggle with hpunch
+
+        pause 0.8
+
+        mc "That doesn't look like it's going to budge, but why would they leave any money in there?"
 
         m "Not looking to win the lottery. But a cup of coffee sounds nice."
 
-        "She raises the pole over her head and smashes the top of the machine with it. From the smile on her face it must have cracked open."
+        play effect "audio/metalcrash.ogg"
+        show may at wiggle with hpunch
 
-        m "Aaaaaaaaand that’s a buck fifty."
+        pause 0.8
+        show may smile with Dissolve(0.1)
+
+        "As she slams the box on the ground again the smile on her face says it all."
+
+        m "{cps=20}Aaaaaaaaand{/cps} that’s a buck fifty."
 
         m "See? You don’t know till you break it."
 
         mc "You wouldn’t happen to want to split that with me would you?"
+
+        show may
 
         m "And why would I do that?"
 
@@ -1756,29 +1833,39 @@ label choice_emptystore:
 
         m "That’s right, you’re associated with the crime of the century."
 
-        m "Best be paid off before you turn me in for this heinous crime."
+        m "Best to pay you off before you turn me in for this heinous crime."
 
         mc "Really? That’d be great!"
 
         m "Afraid not sweetie."
 
-        hide m_d with dissolve
+        hide may with moveoutleft
+        play effect "audio/dooropen.ogg"
+        pause 1.5
 
-        mc "What a weird lady. Can’t believe I didn’t check the register myself though."
+        "What a weird lady. Can’t believe I didn’t check that box for money."
 
-        mc "That cup of coffee could have been mine."
+        "I guess that's what they kept it in while they were still open."
+
+        "Part of me wishes I could have seen all the books one last time."
 
         "Lost opportunity aside, there doesn’t seem to be a reason to hang around any longer."
 
-        "If that was the authorities I would have had nothing to go off of."
+        "If that was the authorities I would have had nothing to defend myself with."
 
-        "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood around the shore somewhere."
+        "Plus I'm half starving to death."
+
+        "It’s time to prioritize food before Posideon’s destiny can grasp me properly."
+
+        "There might be some cheap seafood around the shore somewhere."
+
+        "Hopefully..."
 
         jump act1_6
 
     label hiding:
 
-        hide tome with dissolve
+        hide tome
         $ quick_menu = False
         $ renpy.block_rollback()
 
@@ -1790,37 +1877,83 @@ label choice_emptystore:
 
         m "Unless you weasled your way into a crack in the wall I saw you come in here."
 
+        "Staying perfectly still is really hard when I'm so hungry. Trying my best not to tip over."
+
+        mc "{cps=20}... ... ... {/cps}"
+
         m "No? Oh well, more for me."
 
-        "Footsteps go along the front of the store but stop by the counter."
+        "Her footsteps slowly scan the store, stopping by the counter."
 
-        "Everything is silent, did she find m-"
+        "She isn't moving, does she see m-"
 
-        play effect "audio/metalcrash.ogg" loop
+        play effect "audio/metalcrash.ogg"
+        show BG insidestore with hpunch
+        pause 0.8
 
-        "What is she doing!?"
-        pause 1.5
-        stop effect
+        "What is she doing!"
 
-        m "Ha ha!"
+        play effect "audio/metalcrash.ogg"
+        show BG insidestore with hpunch
+        pause 0.8
+
+        "She's smashing something on the floor? Why?"
+
+        play effect "audio/metalcrash.ogg"
+        show BG insidestore with hpunch
+        pause 0.8
+
+        m "Ha ha! Excellent."
 
         m "Easy money comes to those with the brains to harness it."
 
-        "The rushed body quickly exits the building without another word."
+        m "You snooze you lose random person. Ciao!"
 
-        "I’m lucky that it was some lunatic instead of a police officer or something."
+        play effect "audio/dooropen.ogg"
+
+        "Did she find some money?"
+
+        "Before I could catch a glimpse of her she leaves without another word."
+
+        "That felt like a wasted opportunity."
+
+        "However, I’m lucky that it was some lunatic instead of a police officer or something."
+
+        "I would have been defenseless if they tried to charge me with trespassing."
+
+        "I'm feeling too woozy to escape on foot."
 
         "Did she say easy money? Was there cash in here all along?"
 
-        "On the counter there’s a busted metal box I didn’t notice before."
+        "On the floor where she was making all the noise there’s a busted metal box."
 
-        "That must have been a secret treasure chest of some kind. There could have been thousands in this, it's so large."
+        "That must have been a secret treasure chest of some kind. It looks specifically designed to hold money, I wonder how much she found?"
 
-        "That woman stole what Poseidon laid out for me to find, damn it all!"
+        "But if that's the case, then that woman stole what Poseidon laid out for me to find!"
 
-        "I should just leave before I squander another opportunity."
+        "Shite! How's that fair?"
 
-        "It’s time to prioritize food before Posideon’s destiny can grasp me properly. There might be some cheap seafood around the shore somewhere."
+        "I didn't even see her so I can't go after her."
+
+        "But..."
+
+        "It was definitely a woman's voice, maybe mid twenties."
+
+        "She must have been strong enough to smash this box open."
+
+        "And not only did I hear her voice, but I got her laugh too."
+
+        "That might just be enough to find her."
+
+        "I should go now before I squander another opportunity."
+
+        "But before I can track her down it’s time to prioritize food."
+
+        "Poseidon’s destiny can grasp me after I get some strength back."
+
+        "There might be some cheap seafood around the shore somewhere."
+
+        $ may_position = "theif"
 
         jump act1_6
 
@@ -1831,13 +1964,18 @@ label choice_emptystore:
 
         define tome_title = "KeyError: FileCannotParse"
 
-        "What about that book? Why was this book left behind?"
+        "What about that book? Why was it left behind?"
 
         $ quick_menu = True
 
+        hide tome
+        show tome2 at truecenterbook with dissolve
+
         "Calling it a book might not be appropriate."
 
-        "It’s a dark purple like I’ve never seen before for a cover. Leathery like older books, it’s more like a tome."
+        "The cover and pages are purple, I've never seen something like it before."
+
+        "It's leathery like older books, you could call it a tome even."
 
         "It’s pages are wrinkly yet it’s as heavy as a cannonball."
 
@@ -1847,6 +1985,8 @@ label choice_emptystore:
 
         "Should I even open it?"
 
+        $ renpy.block_rollback()
+
         menu:
 
             "Open it":
@@ -1854,8 +1994,8 @@ label choice_emptystore:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                mc "Now I’m too curious. Could this be an ancient Greek tome?"
-
+                "Now I’m too curious. Could this be an ancient Greek tome?"
+                play effect "audio/pages.wav" volume 2.0
                 $ quick_menu = True
 
                 $ tome_choice -= 1
@@ -1880,7 +2020,7 @@ label choice_emptystore:
 
                 $ tome_choice -= 1
 
-                hide tome with dissolve
+                hide tome2 with dissolve
                 jump choice_emptystore
 
 return

@@ -1026,6 +1026,7 @@ if earrings == 0:
     a "Not cool."
 
 define may_trust1 = 0
+$ renpy.block_rollback()
 
 menu:
 
@@ -1034,7 +1035,6 @@ menu:
         $ may_trust1 = 1
 
         $ quick_menu = False
-        $ renpy.block_rollback()
 
         jump mAYbe
 
@@ -1042,12 +1042,12 @@ menu:
 
         $ may_trust1 = 2
 
-        $ quick_menu = False
-        $ renpy.block_rollback()
-
         jump mAYbe
 
 label mAYbe:
+
+    $ quick_menu = False
+    $ renpy.block_rollback()
 
     if may_trust1 == 1:
 
@@ -1254,6 +1254,8 @@ label mAYbe:
 label pirate_position:
 
     if job_counter < 4:
+
+        $ renpy.block_rollback()
 
         menu:
 

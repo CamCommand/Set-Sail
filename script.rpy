@@ -291,6 +291,7 @@ image doll mad = "doll mad.png"
 image sword = "sword1.png"
 image sword swing = "sword2.png"
 image tome = "tome.png"
+image tome2 = "tomebig.png"
 
 image c = "Untitled.png"
 image c flip = im.Flip("images/Untitled.png", horizontal="True")
