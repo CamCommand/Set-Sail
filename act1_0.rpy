@@ -28,14 +28,15 @@ label act1_0:
     # $ line9 = script[44]
     # n "[charcount]"
     # n "[line9]"
+    #"[match]"
 
-    if charcount == 1622 and match == "Curse":
+    if charcount == 1623 and match == "Curse":
 
         jump secretending
 
     else:
 
-        "[tome_title]."
+        "{i}[tome_title]{/i}."
 
         "I can't read any of this, it doesn't even look like a real language."
 
@@ -47,10 +48,10 @@ label act1_0:
 
 label secretending:
 
-        # have music fadeout really slowly
+        stop music fadeout 10.0
 
         $ tome_title = "Curse: Beyond The Realm"
-        show BG black with dissolve
+        show BG insidestore2 with dissolve
 
         "The inside has a legible header,"
         "[tome_title]."
@@ -63,15 +64,20 @@ label secretending:
 
         nvl clear
 
+        show BG insidestore3 with dissolve
         mc "What is this tome? What is happening?"
 
         "Did this book just address me?"
 
         "The rest of the pages are unintelligible. What is Curse supposed to mean and how does it know I’m a pirate?"
 
-        "Fiction like this couldn't have existed when this was made, it’s too old. This tome cannot exist, unless it’s not from here?"
+        "Fiction like this couldn't have existed when this was made, it’s too old."
 
-        "Wait a second, is the voice still here?"
+        "This tome can't exist."
+
+        "Unless it’s not from here?"
+
+        "Wait a second, is the woman still here?"
 
         mc "Hello?"
 
@@ -83,7 +89,7 @@ label secretending:
 
         mc "I feel someone else is here. Where are you?"
 
-        "I can’t see anyone but yet, I still feel heard. Like an audience who isn’t responsive to my plight."
+        "I can’t see anyone, but yet, I still feel heard. Like there's an audience who isn’t responsive to my plight."
 
         "A weird feeling is running up and down my body. Beyond the silence, this feeling is like."
 
@@ -126,5 +132,8 @@ label secretending:
 
         mc "This isn’t real?"
 
-        hide c flip with dissolve
+        play effect "audio/end.ogg"
+        show c with ease:
+            ease 1.0 zoom 100
+        pause 2.0
         # cut to credits

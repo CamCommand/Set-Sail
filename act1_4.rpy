@@ -6,7 +6,7 @@ $ mc = Character("[player_name]", color="#990033", callback=voice)
 stop music fadeout 2.0
 show BG school2 with dissolve
 pause 1.0
-play music "music/PirateTimes.mp3" volume 1 fadein 2.5
+play music track2 volume 0.5 fadein 1.5 fadeout 1.5
 
 
 "Coming out of the school the sun is starting to set. To see a sunset from land and not the sea is sort of, underwhelming."
@@ -369,7 +369,7 @@ label ship_start:
 
         $ quick_menu = False
         $ renpy.block_rollback()
-        
+
         $ notded = dying[rand2]
 
         if death_count == 0:
@@ -493,6 +493,10 @@ label ship_start:
             $ death_count += 1
 
             if pirate3_x == 0 and pirate4_x == 0: # pirate 3 and 4 are dead without 5
+
+                jump down_with_the_ship
+
+            elif matey2 == 0:
 
                 jump down_with_the_ship
 

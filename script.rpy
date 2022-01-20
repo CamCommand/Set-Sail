@@ -110,7 +110,6 @@ init python:
 
 
 transform wiggle: # To shake the characters a little bit, use at
-
     linear 0.1 xoffset -5 yoffset 0
     linear 0.1 xoffset 7 yoffset 0
     linear 0.1 xoffset 5 yoffset 0
@@ -252,6 +251,8 @@ image BG dollcorner2 = "background/dollcorner2.png"
 image BG signcorner = "background/signcorner.png"
 image BG nobook = "background/nobook.png"
 image BG insidestore = "background/insidestore.png"
+image BG insidestore2 = "background/insidestore2.png"
+image BG insidestore3 = "background/insidestore3.png"
 image BG marketpost = "background/marketpost.png"
 image BG cafeoutside = "background/cafe.png"
 image BG cafeinside = "background/cafeinside.png"
@@ -335,6 +336,9 @@ else:
 
 # The Start of Game
 label start:
+
+    define track1 = "music/BelowDeck.ogg"
+    define track2 = "music/PirateTimes.ogg"
 
     $ menuflag = False
 

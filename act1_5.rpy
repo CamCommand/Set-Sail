@@ -15,7 +15,7 @@ init python:
 label act1_5:
 
     show BG shore with dissolve
-    play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5 fadeout 1.5
+    play music track1 volume 0.5 fadein 1.5 fadeout 1.5
     play effect "audio/shore.ogg" volume 0.8 fadeout 1.0
 
     $ renpy.block_rollback()
@@ -162,7 +162,7 @@ label act1_5:
     show BG black with fade
     show BG streetpost with fade
     stop music fadeout 2.0
-    play music "music/PirateTimes.mp3" volume 1.0 fadein 1.5
+    play music track2 volume 0.5 fadein 1.5 fadeout 1.5
 
     "The coastline’s piles of trash hinted towards this being the mainland and not an island."
 
@@ -995,7 +995,7 @@ label act1_5:
 
         stop music fadeout 1.5
         show BG insidestore with fade
-        play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5
+        play music track1 volume 0.5 fadein 1.5 fadeout 1.5
 
         "My view from the windows shielded my nose from the unknown stench that now lives in the abandoned building."
 
@@ -1994,13 +1994,20 @@ label choice_emptystore:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                "Now I’m too curious. Could this be an ancient Greek tome?"
-                play effect "audio/pages.wav" volume 2.0
+                "Now I’m too curious."
+
+                "Could this be an ancient Greek tome trying to guide me?"
+
                 $ quick_menu = True
+
+                show tome2 with ease:
+                    ease 3.5 zoom 50
+                hide tome2
+                play effect "audio/pages.wav" volume 2.0
 
                 $ tome_choice -= 1
 
-                hide tome with dissolve
+                hide tome2 with dissolve
                 jump act1_0
 
             "Leave it":

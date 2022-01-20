@@ -56,7 +56,7 @@
         with fade
         with fade
 
-        play music "music/BelowDeck.mp3" volume 1.0 fadein 1.5 fadeout 1.5
+        play music track1 volume 0.5 fadein 1.5 fadeout 1.5
 
         "My eyes peak open to the sound of small waves and seagulls crying. We must be close to a port."
 

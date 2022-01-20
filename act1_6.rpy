@@ -1,7 +1,7 @@
 label act1_6:
 
 stop music fadeout 1.0
-play music "music/PirateTimes.mp3" volume 0.5 fadein 1.5
+play music track1 volume 0.5 fadein 1.5 fadeout 1.5
 
 scene BG black with fade
 scene BG cafeoutside with fade

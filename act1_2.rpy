@@ -174,7 +174,7 @@ label act1_2:
     show crowd
     with dissolve
 
-    play music "music/PirateTimes.mp3" volume 1 fadein 2.5
+    play music track2 volume 0.5 fadein 1.5 fadeout 1.5
     play effect "audio/chattering.mp3" volume 0.9 fadein 2.0
 
     "Just as I saw from the top deck. There are so many people minding their own business as if their lives depend on it."
