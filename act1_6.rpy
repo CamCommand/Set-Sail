@@ -1,9 +1,10 @@
 label act1_6:
 
 stop music fadeout 1.0
-play music track1 volume 0.5 fadein 1.5 fadeout 1.5
+play music track1 volume 0.5 fadein 1.5 fadeout 1.5# start new track here
 
 scene BG black with fade
+pause 1.0
 scene BG cafeoutside with fade
 
 if may_talk == 0:
@@ -54,7 +55,7 @@ if may_talk == 0:
 
 elif may_talk == 1:
 
-    show m_d at left with dissolve
+    show may at left with dissolve
 
     "After some more small talk Hanna and I make it to the side of this small café."
 

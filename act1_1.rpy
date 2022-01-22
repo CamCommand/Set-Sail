@@ -74,6 +74,7 @@
 
                     $ player_identity = "f"
                     $ player_name = "Valerie"
+                    $ player_identity_voice = "f"
                     $ MC = Character('Valerie', color="FF4DA6", callback=voice)
                     jump choice_name_V
 
@@ -81,6 +82,7 @@
 
                     $ player_identity = "m"
                     $ player_name = "Oscar"
+                    $ player_identity_voice = "m"
                     $ MC = Character('Oscar', color="00AAFF", callback=voice)
                     jump choice_name_O
 
@@ -88,6 +90,7 @@
 
                     $ player_identity = "nb"
                     $ player_name = "Reed"
+                    $ player_identity_voice = "nb"
                     $ MC = Character('Reed', color="116600", callback=voice)
                     jump choice_name_R
 
@@ -138,6 +141,9 @@
             $ quick_menu = False
             $ renpy.block_rollback()
 
+            if renpy.windows:
+                $ config.tts_voice = "Zira"
+
             MC "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
 
@@ -145,6 +151,9 @@
 
             $ quick_menu = False
             $ renpy.block_rollback()
+
+            if renpy.windows:
+                $ config.tts_voice = "Mark"
 
             MC "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
@@ -155,6 +164,9 @@
             $ quick_menu = False
             $ renpy.block_rollback()
 
+            if renpy.windows:
+                $ config.tts_voice = "David"
+
             MC "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
             jump opening
@@ -163,6 +175,18 @@
 
             $ quick_menu = False
             $ renpy.block_rollback()
+
+            if renpy.windows and player_identity == "f":
+                
+                $ config.tts_voice = "Zira"
+
+            elif renpy.windows and player_identity_voice == "m":
+
+                config.tts_voice = "Mark"
+
+            else:
+
+                config.tts_voice = "David"
 
             MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 

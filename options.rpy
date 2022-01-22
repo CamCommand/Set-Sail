@@ -16,7 +16,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = "0.949"
+define config.version = "0.95"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -80,6 +80,16 @@ transform truestzoom:
 transform truestzoom2:
     xalign 0.5 yalign 0.5
     ease 1.0 zoom 4.0
+
+transform bounce:
+    pause .15
+    yoffset 0
+    easein .175 yoffset -10
+    easeout .175 yoffset 0
+    easein .175 yoffset -4
+    easeout .175 yoffset 0
+    yoffset 0
+
 
 define config.layers = [ 'master', 'transient', 'screens', 'overlay']
 

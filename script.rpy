@@ -2,6 +2,28 @@
 
 init python:
 
+    player_identity_voice = "m"
+
+    if renpy.windows:
+        config.tts_voice = "Mark"
+
+        if player_identity_voice == "m":
+
+            config.tts_voice = "Mark"
+
+        elif player_identity_voice == "f":
+
+            config.tts_voice = "Zira"
+
+        else:
+
+            config.tts_voice = "David"
+
+    elif renpy.macintosh:
+        config.tts_voice = "Alex"
+    elif renpy.linux:
+        config.tts_voice = "english_rp"
+
     def voice(event, **kwargs):# voice for MC
         if event == "show":
             renpy.music.play("audio/blip1.ogg", channel="sound", loop=True)
@@ -131,6 +153,9 @@ transform redochar: # zooming out of May's oversteps
 transform zoom_may: # zooming in for May getting flirty
     ease 1.0 zoom 1.3 yalign 0.3
 
+transform zoomer_may:
+    ease 0.6 zoom 3.0 yalign 0.5
+
 define whiteflash = Fade(.95, 0.0, .55, color="#fff")        # for emerging topside
 define flash = Fade(.15, 0.0, .25, color="#fff")             # for flashy sword effect
 define flash_lighting = Fade(.15, 0.0, .25, color="#AFDBF2") # for flashy lighting effect
@@ -160,9 +185,12 @@ define ev = Character('Everyone', color="#000000", callback=Crashsound_test)    
 image may = "may.png"
 image may flip = im.Flip("images/may.png", horizontal="True")
 image may smug = "may smug.png"
+image may smug flip = im.Flip("images/may smug.png", horizontal = "True")
 image may smile = "may smile.png"
+image may smile flip = im.Flip("images/may smile.png", horizontal = "True")
 image may sad = "may sad.png"
 image may fl = "may fl.png"
+image may fl flip = im.Flip("images/may fl.png", horizontal = "True")
 
 
 # pre time skip girls
@@ -330,9 +358,9 @@ else:
     $ gui.main_menu_background = "gui/main_menu.png"
 
 # colors used reference
-# #2150E7 when your previous choice comes back
-# #50A23B a good choice
-# #f00 a bad choice
+#2150E7 when your previous choice comes back
+#50A23B a good choice
+#f00 a bad choice
 
 # The Start of Game
 label start:
@@ -341,6 +369,9 @@ label start:
     define track2 = "music/PirateTimes.ogg"
 
     $ menuflag = False
+
+    # change skip speed
+    define config.skip_delay = 50
 
     # for the custom cursor
     define config.mouse = { }

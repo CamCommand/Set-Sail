@@ -395,6 +395,8 @@ label act1_5:
         define earrings = 1           # if you still have your earrings
         define may_position = ""      # what May is from MC's view
         define may_name = "Woman"     # Whatever fake name May gives MC
+        define may_v = 0              # if mc thinks they can track May down
+        define may_talk = 0           # in this scene May could walk MC to the cafe
 
         $ m = Character("[may_name]", color="#0A4AF6",  callback=may_voice)
 
@@ -407,7 +409,7 @@ label act1_5:
         "To figure out what it is I have to do I should retrace my steps."
 
         "After walking around where did I go first?"
-        $ activity_choice = "bookstore"  # for testing purposes
+        $ activity_choice = "market"  # for testing purposes
         $ renpy.block_rollback()
 
         menu:
@@ -520,11 +522,125 @@ label act1_5:
 
             "The Market":
 
-                jump market2
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-            "Arcade Bar":
+                "I went to that market!"
 
-                jump arcade2
+                $ quick_menu = True
+
+                "Maybe it's around here somewhere. I could eat anything right now."
+
+                "It’s about midday, the stands should still be open."
+
+                if activity_choice == "market":
+
+                    jump market2
+
+                else:
+
+                    "No wait, there isn’t time for a snack. It doesn’t matter how hungry I feel."
+
+                    "I need to find where I went first off the ship."
+
+                    if activity_choice == "bookstore":
+
+                        "I went to the bookstore, then I found my way to the school."
+
+                        "If it’s relevant to my journey a sign has to appear, I feel it in my gut next to the hunger."
+
+                        "If not, then I’m sleeping on a bench and sucking on leather tonight."
+
+                        jump bookstore2
+
+                    elif activity_choice == "school":
+
+                        "I rushed straight towards the school when I got here. Let's go there first then get something to eat."
+
+                        if food_ate == 1:
+
+                            "Wasn't there food at the club too?"
+
+                            "Maybe they could spare me something to eat."
+
+                        "Making my way towards the club might be the best course. The girls could still be there, or they need my help."
+
+                        "Whatever is thrown at me can be handled, as long as I stay focused."
+
+                        jump school2
+
+                    else:
+
+                        "I went to the arcade, then I found my way to the school. I should go there first then get something to eat."
+
+                        "The arcade did have a bar, there could be bar food too."
+
+                        "If it’s relevant to my journey a sign has to appear, I feel it in my gut next to the hunger."
+
+                        "If not, then I’m sleeping on a bench and sucking on leather tonight."
+
+                        jump arcade2
+
+            "Arcade":
+
+                $ quick_menu = False
+                $ renpy.block_rollback()
+
+                "Back to that arcade place."
+
+                $ quick_menu = True
+
+                "Is that where I went back then?"
+
+                "Maybe technology has evolved to the point where video games can help guide my life?"
+
+                if activity_choice == "arcade":
+
+                    jump arcade2
+
+                elif activity_choice == "bookstore":
+
+                    "No, I can’t be playing games at a time like this. There wasn’t time for the arcade."
+
+                    "I skipped it and went to the bookstore, then found my way to the school. I should go there first."
+
+                    "Talk to that woman, Yooko."
+
+                    "Yacko?"
+
+                    "Whoever she was, something relevant to my journey has to appear there."
+
+                    "I feel it must be true. If not, then I’m sleeping on a bench by the shore tonight."
+
+                    jump bookstore2
+
+                elif activity_choice == "school":
+
+                    "No, I can’t be playing games at a time like this."
+
+                    "There wasn’t time for the arcade, I skipped it and went right to the school."
+
+                    "Making my way towards the club might be the best course. The girls could still be there, or they need my help."
+
+                    "Whatever is thrown at me can be handled, as long as I stay focused."
+
+                    jump school2
+
+                else:
+
+                    "No, I can’t be playing games at a time like this."
+
+                    "There wasn’t time for the arcade, I didn't go inside."
+
+                    "I went to the market instead, then found my way to the school."
+
+                    "I should find that first."
+
+                    "Something relevant to my journey has to appear there, I feel it must be true."
+
+                    "If not, then I’m sleeping on a bench by the shore tonight."
+
+                    jump market2
 
     label school2:
 
@@ -1040,420 +1156,344 @@ label act1_5:
 
     label arcade2:
 
-        $ quick_menu = False
-        $ renpy.block_rollback()
+        "The bartender might bestow some of his wisdom on my situation."
 
-        "Back to the arcade!"
+        "They didn’t seem like the type to rat out a pirate. If they even cared?"
 
-        $ quick_menu = True
+        "No matter the reason for it, Poseidon wants me to go back there."
 
-        "Is that where I went back then? Maybe technology has evolved to the point where video games can help me guide my life?"
+        "It shouldn’t be far from here. Somewhere on the street behind this one."
 
-        if activity_choice == "arcade":
+        show BG black with fade
+        show BG dollcorner2 with fade
 
-            "The bartender might bestow some of his wisdom on my situation."
+        "The seemingly endless strips of vacant and boarded up shops blend into each other."
 
-            "They didn’t seem like the type to rat out a pirate. No matter the reason for it, Poseidon wants me back to that place."
+        "A CVS, whatever that stands for, and a Burger King are the only open businesses that seem to be hanging on."
 
-            "The place shouldn’t be far from here."
+        "What services are those stores providing that's so important?"
 
-            show BG black with dissolve
-            pause 1.5
-            show BG dollcorner2 with dissolve
+        "Sandwiches and, {cps=20}ummmm{/cps}."
 
-            "Seemingly endless strips of vacant and boarded up shops blend into each other."
+        "Creamy Vegetable Soup?"
 
-            "A CVS, whatever that stands for, and Burger King are the only open businesses that seem to be hanging on."
+        "The video games were so cool, so why isn’t the place here anymore?"
 
-            "What services are those stores providing that are so important?"
+        "It must have been around this spot somewhere, but there’s nothing here anymore."
 
-            "Sandwiches and, um, creamy vegetable soup?"
+        "What was it called again?"
 
-            "The video games were so cool, so why isn’t it here anymore? The place must have been around here, but there’s nothing there anymore."
+        "Swift Street? Gamer Street? Street Bar?"
 
-            "I suppose video games aren’t as valuable as food."
+        "I suppose video games aren’t as valuable as food, but still."
 
-            "Damn, this COVID thing really took the fun out of land life. It doesn’t look like there’s any fun to have with all these shops closed up."
+        "Damn, this COVID thing really took the fun out of land life. It doesn’t look like there’s anything to enjoy with all these shops closed up and the people fighting each other."
 
-            "Maybe these women know if the store moved or not?"
+        "Maybe those women know if the store moved or not?"
 
-            show m_d at center with dissolve
-            show doll mad at left with dissolve
-            $ dl = Character('Lady 2', color = "#740E86", callback=hobo_voice)
-            $ may_name = "Lady 1"
-            $ m = Character([may_name], color="#0A4AF6",  callback=may_voice)
+        show may at centerrighter
+        show doll mad at centerlefter
+        with dissolve
 
-            mc "Excuse me ladies."
+        $ may_name = "Short Hair Woman"
+        $ m = Character("[may_name]", color="#0A4AF6",  callback=may_voice)
 
-            m "Uh yeah? What’s up?"
+        mc "Excuse me ladies."
 
-            if doll_met == 0:
+        show may at bounce
+        m "Uh yeah? What’s up?"
 
-                mc "Do you know if that arcade bar is still open or if it moved somewhere?"
+        if doll_met == 0:
 
-                if player_identity == "m":
+            $ dl = Character('Long Hair Woman', color = "#740E86", callback=hobo_voice)
 
-                    m "Doesn’t look like anything’s open hotstuff."
-
-                else:
-
-                    show doll with dissolve
-
-                    dl "Nothing like that’s still open sweetheart."
-
-            else:
-
-                $ dl = Character('Doll ', color = "#740E86", callback=hobo_voice)
-                $ may_name = "Lady"
-                $ m = Character([may_name], color="#0A4AF6",  callback=may_voice)
-
-                mc "Nice to see you again Doll. Seems like I’ve wandered in a circle."
-
-                show doll with dissolve
-
-                dl "Hey sweetheart, what’s up?"
-
-                mc "Do you know if that arcade bar is still open or if it moved somewhere?"
-
-                if player_identity == "m":
-
-                    m "Doesn’t look like anything’s open hotstuff."
-
-                else:
-
-                    dl "Nothing like that’s still open this late in the game sweetheart."
-
-            mc "Yeah, guess there isn’t anymore."
-
-            m "You looking for someone there?"
-
-            show m_d at zoom_may
-            $ may_position = "mom"
-
-            mc "Not, particularly. Can I help you, Miss?"
-
-            show m_d at redochar
-
-            m "You could. I’m actually expecting and need to buy some diapers. But they’re so expensive now."
-
-            m "Would you lend me some money?"
-
-            mc "You’re expecting…a baby?"
-
-            show doll at wiggle
-
-            if doll_met == 1:
-
-                dl "She was telling me somethin’ about it, the poor thing."
-
-            else:
-
-                dl "Somethin’ don’t feel right about poor girl like you without a baby daddy."
-
-            m "Doctor says it's twins."
-
-            mc "{cps=20}You don’t um,{/cps}"
-
-            mc "I mean you don’t look pregnant."
-
-            m "Awe, thanks hun. Well aren’t you sweeter than sugar?"
-
-            show m_d at zoom_may
-
-            m "Even with the baby belly, it’s best to keep my figure looking good no matter what."
-
-            m "You know, just in case ~ <3"
-
-            show m_d at redochar
-
-            mc "Right, just in case something important comes up."
+            mc "Do you know if that arcade bar is still open or if it moved somewhere?"
 
             if player_identity == "m":
 
-                m "So you could spare some money for a woman in desperate need of some masculine generosity?"
+                show may fl with Dissolve(0.1)
+
+                m "Doesn’t look like anything’s open hotstuff."
 
             else:
 
-                m "So you could spare some money for a mom in desperate need of some understanding generosity?"
+                show doll with Dissolve(0.1)
 
-            if doll_met == 1:
+                dl "Nothing like that’s still open sweetheart."
 
-                dl "Don't worry about me sweetheart, I’ll make it through somethin’ fine."
+        else:
+
+            $ dl = Character('Doll', color = "#740E86", callback=hobo_voice)
+            $ may_name = "Other Woman"
+            $ m = Character("[may_name]", color="#0A4AF6",  callback=may_voice)
+
+            mc "Oh Doll, didn't realize it was you."
+
+            mc "Nice to see you again. Seems like I’ve wandered in a circle."
+
+            show doll with Dissolve(0.1)
+
+            dl "Hey sweetheart, what’s up?"
+
+            mc "Do you know if that arcade bar is still open or if it moved somewhere?"
+
+            if player_identity == "m":
+
+                show may fl with Dissolve(0.1)
+
+                m "Doesn’t look like anything’s open hotstuff."
 
             else:
 
-                dl "If you’re giving, give to the mom sweetheart. Doll will make it somethin’ fine without it."
+                dl "Nothing like that’s still open this late in the game sweetheart."
 
-                $ dl = Character('Doll ', color = "#740E86", callback=hobo_voice)
+        mc "Yeah, guess there isn’t anymore."
 
-            $ renpy.block_rollback()
+        show may at zoom_may
 
-            menu:
+        m "You looking for someone there?"
 
-                "Sure Miss":
+        $ may_position = "mom"
 
-                    $ quick_menu = False
-                    $ renpy.block_rollback()
+        mc "Not, particularly."
 
-                    "She’s probably lying, if she’s hitting up someone like me for money."
+        mc "Unless you need something, could you take a step back please?"
 
-                    $ quick_menu = True
+        "She smells really strange."
 
-                    "However, even if there’s a slim chance she probably needs it more than me. It’s sad, but I should help in some way."
+        if doll_met == 1:
 
-                    $ May_affinity += 1
+            "Doll has an excuse, are you also living without soap?"
 
-                    mc "Sure, I could give you something. I don’t have any cash but I was going to sell my earrings."
+        else:
 
-                    mc "They’re solid silver, hopefully you can get something for them."
+            "These woman might not have soap, but they don't need to make me so aware of that."
 
-                    $ earrings -= 1
+        show may at redochar
 
-                    play effect "audio/good.mp3"
-                    m "{color=#50A23B}Oh my gosh, thank you so much, God bless you!{/color}"
+        m "You could do something. I’m actually expecting soon and need to buy some diapers for my new baby."
 
-                    m "There’s a pawn shop around the corner. I’m gonna go see how much I can get for them."
+        show may sad with Dissolve(0.1)
 
-                    if player_identity == "m":
+        m "But they’re so expensive now."
 
-                        m "Can you wait here for a few minutes?"
+        m "Would you lend me some money?"
 
-                        m "When I come back I’ll give you a well deserved reward ~ <3"
+        mc "You’re expecting... a baby?"
 
-                        mc "Uh, yeah, I can’t sit for a bit."
+        show doll mad at wiggle
 
-                        hide m_d with moveinleft
+        if doll_met == 1:
 
-                        "She makes a seductive motion with her hand and runs off."
+            dl "She was telling me somethin’ about it, the poor thing."
 
-                        "Maybe a reward isn’t so bad, sensual or not. I’ll take a seat and wait for her."
+        else:
 
-                        if doll_met == 1:
+            dl "Somethin’ don’t feel right about a poor girl like you without a baby daddy."
 
-                            dl "Oh sweetheart, you’re too kind."
+        m "Doctor says it's twins."
 
-                            dl "But I don’t know if that was smart."
+        mc "{cps=20}You don’t ummmmmmm.{/cps}"
 
-                        else:
+        mc "I mean you don’t look that pregnant."
 
-                            dl "Hehehehehe!"
+        show may smile with Dissolve(0.1)
 
-                            dl "Hook, line and sinker sweetheart."
+        m "Awe, thanks hun. Well aren’t you sweeter than sugar?"
 
-                        show BG black with dissolve
-                        pause 1.5
-                        show BG dollcorner with dissolve
+        m "Even with the baby on the way, it’s best to keep my figure looking good no matter what."
 
-                        dl "I don’t think she’s coming back sweetheart."
+        show may fl with Dissolve(0.1)
 
-                        "Scammed by a land woman. The boys would be ashamed of me."
+        m "You know, just in case."
 
-                        "Should I go after her?"
+        mc "Right, just in case something important comes up."
 
-                        "No, nothing that can be done about it now."
+        if player_identity == "m":
 
-                        "I’m too tired to be angry and too sad to pull out the pirate’s wrath."
+            show may fl at zoom_may
 
-                        "Hopefully she gets some use out of the money."
+            m "So you could spare some money for a woman in desperate need of some masculine generosity?"
 
-                        if doll_met == 1:
+        else:
 
-                            mc "See you around Doll, I’m needed elsewhere."
+            show may fl at zoom_may
 
-                            dl "Good luck out there sweetheart. Don’t lose your shirt next."
+            m "So you could spare some money for a mom in desperate need of some understanding generosity?"
 
-                        else:
+        if doll_met == 1:
 
-                            mc "Nice meeting you Doll, I’m needed elsewhere."
+            show doll
 
-                            dl "Good luck out their sweetheart. Don’t lose your shirt next."
+            dl "Don't worry about me sweetheart, I’ll make it through this week somethin’ fine."
 
+        else:
 
-                        "I should move along before I’m considered an easy mark by the locals."
+            show doll
 
-                    else:
+            dl "If you’re giving, give to the mom sweetheart. Doll will make it through this week somethin’ fine without it."
 
-                        m "You’re the best, I can’t thank you enough babe."
+            $ dl = Character('Doll', color = "#740E86", callback=hobo_voice)
 
-                        show m_d at zoom_may # make a closer zoom
+        "She's got this weird look in her eye. What should I do?"
 
-                        m "Thank you so so much, I’ll name the babies after you if you want."
+        $ renpy.block_rollback()
 
-                        mc "That’s alright, just get what you need."
+        menu:
 
-                        m "No that’s not alright. What is it?"
+            "Sure Miss":
 
-                        mc "It’s [player_name]."
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-                        m "Okay [player_name]."
+                "She’s probably lying if she’s hitting up someone like me for money."
 
-                        python: # splitting the player's name in half for May's baby joke
+                $ quick_menu = True
 
-                            namesplit = getSplit([player_name])
+                "However, even if there’s a slim chance she probably needs it more than me. It’s sad, but I should help in some way."
 
-                        m "I'll name one [namesplit]. Bye bye ~ <3"
+                mc "Sure, I could give you something. I don’t have any cash but I was going to sell my earrings."
 
-                        mc "Bye?"
+                mc "They’re solid silver, hopefully you can get something for them."
 
-                        hide m_d with dissolve
+                $ earrings -= 1
 
-                        if doll_met == 1:
+                play effect "audio/good.mp3"
+                show may smile at redochar
 
-                            dl "Oh sweetheart, you’re too kind."
+                m "{color=#50A23B}Oh my gosh, thank you so much, God bless you!{/color}"
+                $ May_affinity += 1
 
-                            dl "But I don’t know if that was smart, but you'll get a legacy out of it."
+                m "There’s a pawn shop around the corner. I’m gonna go see how much I can get for them."
 
-                            dl "Hehehehe!"
+                if player_identity == "m":
 
-                        else:
+                    m "Can you wait here for a few minutes?"
 
-                            dl "Hehehehehe!"
+                    show may fl with Dissolve(0.1)
 
-                            dl "Hook, line and stinkers. At least you'll get some babies out of this."
+                    m "When I come back I’ll give you a well deserved reward."
 
-                        "Hopefully that wasn’t a huge mistake. I’m too tired to have to enact some form of pirate’s wrath on her."
+                    mc "Uh, yeah, I can’t sit for a bit."
 
-                        "There is still a chance she was pregnant so either way I should move along before I’m considered an easy mark by the locals."
+                    hide may fl flip with moveoutright
 
-                        if doll_met == 1:
+                    "She makes a seductive motion with her hand and runs off."
 
-                            mc "Nice talking to you again."
-
-                        else:
-
-                            mc "Nice talking to you."
-
-                        dl "See you around sweetheart. Don’t lose your pants or somethin’."
-
-
-                        show BG black with dissolve
-                        pause 1.5
-
-                        jump act1_6
-
-                "Can't spare anything":
-
-                    $ quick_menu = False
-                    $ renpy.block_rollback()
-
-                    "There’s no barnacle splitting way this woman is pregnant with twins!"
-
-                    $ quick_menu = True
-
-                    "Not that I have any money to give her anyway. And like Hell is she getting my earrings."
-
-                    mc "Sorry, I don’t have any money so spare."
-
-                    $ May_affinity -= 1
-
-                    play effect "audio/bad.mp3"
-                    m "{cps=20}Ahhhhhhh, really?{/cps}"
-
-                    m "I’d take anything you’d be willing to part with, nothin’ to pawn?"
-
-                    mc "I don’t have anything myself. I got into town not long ago."
+                    "Maybe a reward isn’t so bad, sensual or not."
 
                     if doll_met == 1:
 
-                        mc "Doll here can attest to that."
+                        "I’ll take a seat next to Doll and wait for her to come back."
 
-                    if player_identity == "m":
+                        dl "Oh sweetheart, you’re too kind."
 
-                        m "Are you sure?"
-
-                        show m_d with zoom_may
-
-                        m "I could make it worth your while."
-
-                        "She’s making seductive motions with her hands at me. The desperation of this woman!"
-
-                        "I already said no."
-
-                        "As great as a quicke would be right now, she’s obviously bad news."
+                        dl "But I don’t know if that was smart."
 
                     else:
 
-                        m "Are you sure?"
+                        "I’ll take a seat and wait for her to come back."
 
-                        show m_d at zoom_may
+                        show doll at wiggle
 
-                        m "If my pregnancy isn't sufficient enough to convince you, is there anything I could interest you in?"
+                        dl "Hehehehehe!"
 
-                        m "Do you have any, alternative tastes I could wet?"
+                        dl "Hook, line and sinker sweetheart."
 
-                        "I’m not sure I’d be down with what she’s implying to do to me."
+                    show BG black with fade
+                    show BG dollcorner with fade
 
-                        "This person has barely met me and she’s coming onto me like her life depends on it. I should let her down easy and walk away."
+                    show doll mad with Dissolve(0.1)
 
-                    show m_d at redochar
+                    dl "I don’t think she’s coming back sweetheart."
 
-                    mc "Sorry Miss, there’s nothing you can do for me right now."
+                    "Scammed by a land woman. The boys would be ashamed of me."
 
-                    m "Right now?"
+                    "Should I go after her?"
 
-                    m "What about a little taste of what I can do?"
+                    "What would I even do if I found her?"
 
-                    show m_d at zoom_may # make a closer zoom
+                    "If this were at sea I'd either challenge her to a duel or just slice her."
 
-                    mc "{cps=90}Ahhhhhhhh! Step off me!{/cps}"
+                    "Can't risk the violence in the open out here."
 
-                    "She latched onto me!"
+                    "No, nothing that can be done about it now."
 
-                    "Her chest is intensely warm and there’s a pull on my collar, it’s choking me."
+                    "I’m too tired to act angry and too sad to pull out the pirate’s wrath."
 
-                    "What’s she trying to do to me?!"
+                    "Hopefully she gets some use out of the money."
 
-                    show m_d at redochar
+                    if doll_met == 1:
 
-                    mc "That wasn’t called for lady!"
+                        mc "See you around Doll, I’m needed elsewhere."
 
-                    mc "Stay the hell away from me!"
+                        show doll
 
-                    m "I’m sowry. I thought you’d like it like that."
+                        dl "Good luck out there sweetheart. Don’t lose your shirt next."
 
-                    m "Have a nice day anyway."
+                    else:
 
-                    hide m_d with moveoutleft
+                        mc "Nice meeting you Doll, I’m needed elsewhere."
 
-                    dl "Oh lord that was hectic."
+                        show doll
 
-                    dl "You see my hands? They’re shaking."
+                        dl "Good luck out their sweetheart. Don’t lose your shirt next."
 
-                    "That person was crazy!"
 
-                    "Begging me for money and trying to seduce me in one short conversation."
+                    "I should get out of here before I’m considered an easy mark by the locals."
 
-                    "Not that I had anything worth stealing, but come on. Do I like look I have anything of value on me?"
+                else:
 
-                    "I was lost at sea less than twelve hours ago, nothing but my earrings are worth the copper to you."
+                    m "You’re the best, I can’t thank you enough babe."
 
-                    dl "Missing somethin’ sweetheart?"
+                    show may smile flip at right with ease
 
-                    "Oh no, what did she?"
+                    m "Thank you so so much, I’ll name the babies after you if you want."
 
-                    $ earrings -= 1
+                    mc "That’s alright, just get what you need."
 
-                    "Where are my studs?"
+                    m "No that’s not alright. What's your name?"
 
-                    pause 1.5
+                    mc "It’s [player_name]."
 
-                    "She took my bloody earrings!"
+                    m "Okay [player_name]."
 
-                    "Where did she go! I’m gonna-"
+                    python: # splitting the player's name in half for May's baby joke
 
-                    dl "She’s gone sweetheart, and she isn't coming back with change."
+                        namesplit = getSplit([player_name])
 
-                    "Disappeared without a trace, it wasn’t my yelling that shook her. It was because she got what she wanted."
+                    show may smug flip
+                    m "I'll name one [namesplit]."
 
-                    "That unbelievable-,"
+                    m "Bye bye darlings."
 
-                    "I’m gonna-,"
+                    mc "Bye?"
 
-                    "Do nothing."
+                    hide may with moveoutright
 
-                    "There’s nothing I can do now, she could be anywhere. I’m too tired to have to enact some form of pirate’s wrath on her or whatever I’d do."
+                    if doll_met == 1:
 
-                    "And there’s no easy way to track her down without paying someone else. I should move on before I’m seen as an easy mark."
+                        dl "Oh sweetheart, you’re too kind."
+
+                        dl "But I don’t know if that was smart, but you'll get a legacy out of it."
+
+                        show doll at wiggle
+
+                        dl "Hehehehe!"
+
+                    else:
+
+                        show doll at wiggle
+
+                        dl "Hehehehehe!"
+
+                        dl "Hook, line and stinkers. At least you'll get some babies out of this."
+
+                        dl "That might not be what you want though."
+
+                    "Hopefully that wasn’t a huge mistake. I’m too tired to have to enact some form of pirate’s wrath on her."
+
+                    "There is still a chance she was pregnant so either way I should move along before I’m considered an easy mark by the locals."
 
                     if doll_met == 1:
 
@@ -1463,254 +1503,408 @@ label act1_5:
 
                         mc "Nice talking to you."
 
-
                     dl "See you around sweetheart. Don’t lose your pants or somethin’."
 
-                    "But if I ever see her again there will be Hell to pay."
+                    pause 1.5
 
                     jump act1_6
 
+            "Can't spare anything":
 
-        elif activity_choice == "bookstore":
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-            "No, I can’t be playing games at a time like this. There wasn’t time for the arcade, I skipped it way back when."
+                "There’s no barnacle splitting way this woman is pregnant with twins!"
 
-            "I went to the [activity_choice], then found my way to the school. I should go there first."
+                $ quick_menu = True
 
-            "Something relevant to my journey has to appear there, I feel it must be true. If not, then I’m sleeping on a bench by the shore tonight."
+                "Not that I have any money to give her anyway. And like Hell is she getting my earrings."
 
-            jump bookstore2
+                mc "Sorry, I don’t have any money so spare."
 
-        elif activity_choice == "school":
+                play effect "audio/bad.mp3"
 
-            "No, I can’t be playing games at a time like this. There wasn’t time for the arcade, I skipped it way back when."
+                show may sad at redochar
+                m "{cps=20}{color=#f00}Awwwwwwe, really?{/color}{/cps}"
+                $ May_affinity -= 1
 
-            "I rushed straight towards the school when we docked."
+                m "I’d take anything you’d be willing to part with, nothin’ to pawn?"
 
-            "Making my way towards the club might be the best course. The girls could still be there, or they need my help."
+                mc "I don’t have anything myself. I got into town not long ago."
 
-            "Whatever is thrown at me can be handled, as long as I stay focused."
+                if doll_met == 1:
 
-            jump school2
+                    mc "Doll here can attest to that."
 
-        else:
+                    dl "That's true or somethin'."
 
-            "No, I can’t be playing games at a time like this. There wasn’t time for the arcade, I skipped it way back when."
+                if player_identity == "m":
 
-            "I went to the [activity_choice], then found my way to the school. I should go there first."
+                    m "Are you sure?"
 
-            "Something relevant to my journey has to appear there, I feel it must be true. If not, then I’m sleeping on a bench by the shore tonight."
+                    show may fl with zoom_may
 
-            jump market2
+                    m "I could make it worth your while."
+
+                    "She’s making seductive motions with her hands at me. The desperation from this woman is unbelievable!"
+
+                    "I already said no, so I'm not backing down now."
+
+                    "As great as some release would be right now, she’s obviously bad news."
+
+                else:
+
+                    m "Are you sure?"
+
+                    show may sad at zoom_may
+
+                    m "If my pregnancy isn't sufficient enough to convince you, is there anything I could interest you in?"
+
+                    show may fl
+
+                    m "Do you have any, alternative tastes I could wet?"
+
+                    "I’m not sure I’d be down with what she’s implying to do with me."
+
+                    "This person has barely met me and she’s coming onto me like her life depends on it."
+
+                    "Or this is the con of the century and she just wants me alone to rob me."
+
+                    "I should let her down easy and walk away."
+
+                mc "Sorry Miss, there’s nothing you can do for me right now."
+
+                show may sad at redochar
+
+                m "Right now?"
+
+                show may fl
+
+                m "What about a little taste of what I can do?"
+
+                hide doll
+                show may smile at zoomer_may
+                with Dissolve(0.1)
+                pause 0.4
+
+                mc "{cps=90}Ahhhhhhhh! Step off me!{/cps}"
+
+                "She latched onto me!"
+
+                "Her chest is intensely warm and there’s a pull on my collar, it’s choking me."
+
+                "What’s she trying to do to me?!"
+
+                show may smile at redochar
+                pause 0.8
+                show doll at centerlefter with Dissolve(0.1)
+
+                mc "That wasn’t called for lady!"
+
+                mc "Stay the Hell away from me!"
+
+                show may sad
+
+                m "I’m sorry. I thought you’d like it like that."
+
+                m "Have a nice day anyway."
+
+                show may smile flip with ease
+                hide may smile flip with moveoutright
+
+                show doll at center with ease
+
+                dl "Oh lord that was hectic."
+
+                show doll at wiggle
+                dl "You see my hands? They’re shaking."
+
+                mc "That person was crazy!"
+
+                mc "Begging me for money and trying to seduce me in one short conversation."
+
+                mc "Not that I had anything worth stealing, but come on. Do I like look I have anything of value on me?"
+
+                "I was lost at sea less than twelve hours ago, nothing but my earrings are worth the copper to you."
+
+                dl "Missing somethin’ sweetheart?"
+
+                "Oh no, what did she?"
+
+                $ earrings -= 1
+
+                "Where are my studs?"
+
+                pause 1.0
+
+                with hpunch
+                "She took my bloody earrings!"
+
+                mc "Where did she go! I’m gonna-"
+
+                dl "She’s gone sweetheart, and she isn't coming back with change."
+
+                "Disappeared without a trace, it wasn’t my yelling that shook her. It was because she got what she wanted."
+
+                "That unbelievable-"
+
+                "I’m gonna-"
+
+                "Do nothing."
+
+                "She's probably far gone by now."
+
+                "There’s nothing I can do, she could be anywhere."
+
+                "I’m too tired to have to enact some form of pirate’s wrath on her or whatever I’d do."
+
+                "And there’s no easy way to track her down without paying someone else."
+
+                "Although."
+
+                "I do know her face and voice now. I could track her down myself."
+
+                "After getting something to eat I could use my new found energy to find her and get my earrings back."
+
+                "Not a terrible plan."
+
+                $ may_v = 1
+
+                "But first I should get out of here before I’m seen as an easy mark."
+
+                if doll_met == 1:
+
+                    mc "Nice talking to you again. I should get going."
+
+                else:
+
+                    mc "Nice talking to you. I should get going."
+
+                dl "See you around sweetheart. Don’t lose your pants or somethin’."
+
+                jump act1_6
 
     label market2:
 
-        define may_talk = 0 # in this scene May could walk MC to the cafe
-        $ quick_menu = False
-        $ renpy.block_rollback()
+        "The market had so many delicious looking options. It was so easy to snag a fruit."
 
-        "Maybe the market is around here somewhere? I could use a quick bite to eat."
+        "A full stomach might bring me closer to whatever Poseidon wants me to do. Gods willing at least."
 
-        $ quick_menu = True
+        show BG black with fade
+        show BG marketpost with fade
 
-        "It’s about midday, the stands should still be open."
+        "I’m almost positive this is the lot where the market was."
 
-        if activity_choice == "market":
+        "This looks like the only place it could be, unless it was on a street that slipped my mind."
 
-            $ may_talk += 1
+        "There are scratches and scuffs on the concrete. Coupled with trashed masks laid on the edges of the sidewalk, I’ll assume there isn’t anything left of the market."
 
-            "The market had so many delicious looking options. It was so easy to snag a fruit."
+        "Is it not here all the time, or is this COVID’s fault?"
 
-            "A full stomach might bring me closer to whatever Poseidon wants me to do. Gods willing at least."
+        play effect "audio/stomach.ogg"
 
-            show BG black with dissolve
-            pause 1.5
-            show BG marketpost with dissolve
+        "I’m starting to hurt more and there’s nothing to eat around here. Barren buildings and trashed streets, there’s also nothing to steal."
 
-            "I’m almost positive this is the lot where the market was."
+        "The wind going through the trees carries silence throughout the empty lot."
 
-            "This looks like the only place it could be unless it was on a street that slipped my mind."
+        "There’s no hum to Seaborough’s town at all and with little to no people walking around it all feels so dead."
 
-            "There are scratches and scuffs on the concrete. Coupled with trashed masks dripped on the edges of the sidewalk, I’ll assume there isn’t anything left of the market."
+        "It’s like a completely different place than the one I visited."
 
-            "Is it not here all the time, or is this COVID’s fault?"
+        "What happened to this town, it was so pleasant the first time I was here?"
 
-            play effect "audio/stomach.ogg"
+        "It could have been my rose tinted glasses from my first full main land experience, but clearly it’s gone downhill."
 
-            "I’m starting to hurt more and there’s nothing to eat around here. Barren buildings and trashed streets, there’s nothing here to steal."
+        mc "What am I supposed to do out here Poseidon!"
 
-            "The wind going through the trees carries silence throughout the empty lot."
+        $ m = Character('Woman', color="#0A4AF6",  callback=may_voice)
 
-            "There’s no hum of Seaborough’s town folks around me with little to no people walking around together."
+        show may with dissolve
+        $ may_talk += 1
 
-            "It’s like a completely different place than the one I visited."
+        m "Hey excuse me."
 
-            "What happened to this town, it was so pleasant the first time I was here?"
+        mc "Oh, hello, sorry for screaming. I didn't think anyone was near me."
 
-            "It could have been my rose tinted glasses from my first full land experience, but clearly it’s gone downhill."
+        m "It’s okay. I’m just wandering around and saw you standing alone."
 
-            mc "What am I supposed to do out here Poseidon!"
+        show may sad with Dissolve(0.1)
 
-            $ m = Character('Lady', color="#0A4AF6",  callback=may_voice)
+        m "Could you spare some change for a struggling mother?"
 
-            show m_d with dissolve
+        m "I don’t mean to bother you if you’re having a moment, but I don’t know if my family can eat tonight."
 
-            m "Hey excuse me."
+        $ may_position = "nice lady"
 
-            mc "Oh, hello, sorry for screaming. I didn't think anyone was near me."
+        mc "I’m not doing so well food wise myself, sorry. I don’t have anything to spare."
 
-            m "It’s okay. I’m just wandering around and saw you standing alone."
+        m "Oh, I’m sorry, my bad. I didn’t know."
 
-            m "Could you spare some change for a struggling mother?"
+        show may fl at zoom_may
 
-            m "I don’t mean to bother you if you’re having a moment, but I don’t know if my family can eat tonight."
+        m "Are you sure there’s nothing you could share?"
 
-            $ may_position = "nice lady"
+        "This woman is so forthcoming, but I'm too low on energy to care."
 
-            mc "I’m not doing so well food wise myself, sorry. I don’t have anything to spare."
+        mc "Do you have food to trade? Because if not I can’t help you."
 
-            m "Oh, I’m sorry, my bad. I didn’t know."
+        show may at redochar
 
-            m "Are you sure there’s nothing you could share?"
+        m "Do I look like I have anything on me either? You're really that hungry?"
 
-            mc "Do you have food to trade? Because if not I can’t help you."
+        m "You don’t look so hot too, are you okay sweetheart?"
 
-            m "Are you really hungry too? You don’t look so hot, are you okay sweetheart?"
+        "Her concern is nice. Maybe I shouldn’t be crass to a fellow human down on their luck. "
 
-            "For a beggar this woman is acting really nice. I shouldn’t be hard on a fellow human down on their luck."
+        mc "I’ll be alright, thanks. I don’t mean to come off agitated."
 
-            mc "I’ll be alright, thanks. I don’t mean to come off agitated."
+        mc "I’m just super hungry and thought a market would be here."
 
-            mc "I’m just super hungry and thought a market would be here."
+        m "Doesn’t look like any kind of market is here?"
 
-            m "Doesn’t look like any kind of market is here?"
+        mc "Well it was around last time I was here. But that was a long time ago."
 
-            mc "Well it was here last time I was here. But that was a long time ago."
+        show may sad with Dissolve(0.1)
 
-            m "Hey don’t worry about it too much kid. What’s your name?"
+        m "Hey don’t worry about it too much kid. I'm sure there's something to eat around here."
 
-            "Her tone shifted? She sounds a lot less deprived now."
+        show may
 
-            mc "My name is [player_name], why do you ask?"
+        m "What’s your name?"
 
-            m "I scrounged up some change and you also look like you’ve had a tough day."
+        "Her tone shifted? She sounds a lot less deprived now."
 
-            m "There’s a cafe a few streets over I was planning on going to later. You want to come with me, I can get you a muffin or something cheap."
+        mc "My name is [player_name], why do you ask?"
 
-            mc "That’s really kind of you Miss. That sounds lovely, will they let us in?"
+        m "I scrounged up some change and you also look like you’ve had a tough day."
 
-            m "If we got money I think the store won't care at this point. Best not to waste time then [player_name]"
+        show may smile with Dissolve(0.1)
 
-            m "You like coffee?"
+        m "There’s a café a few streets over I was planning on going to later. You want to come with me, I can get you a muffin or something cheap."
 
-            mc "I’ve had it sparingly, but I’ll drink it. What’s your name by the way?"
+        "This is unexpected."
 
-            $ m = Character('Hanna', color="#0A4AF6",  callback=may_voice)
+        mc "That’s really kind of you Miss. But I just met you and all, I don't want to-"
 
-            m "My name? It’s uhhh, Hanna. You can just call me Hann or whatever."
+        show may
 
-            mc "I appreciate the help Hann."
+        m "Just come with me while I'm being nice will ya?"
 
-            mc "You were right, it’s been a trying day. A coffee and a muffin would hit the spot."
+        mc "Alright, that sounds lovely thank you. Will they let us in though?"
 
-            m "Oh yeah? Wanna talk about it?"
+        m "If we got money I think the store won't care at this point."
 
-            mc "Hmmmmm. I’m not so sure that’s a good idea."
+        show may smile with Dissolve(0.1)
 
-            mc "A little too personal to say to someone I just met."
+        m "You like coffee [player_name]?"
 
-            m "That’s fair. I’ll do the same then."
+        mc "I’ve had it sparingly, but I’ll drink anything at this point."
 
-            m "So what do you want to talk about?"
+        mc "What’s your name by the way?"
 
-            mc "I’m sorry your kids are struggling. What’re their names or names?"
+        $ m = Character('Hanna', color="#0A4AF6",  callback=may_voice)
 
-            m "Their names are um."
+        show may
 
-            m "I just have one daughter, her name is Barbera."
+        m "My name? It’s {cps=20}uhhh{/cps}, Hanna. You can just call me Hann or whatever."
 
-            mc "Well Hanna, you tell Barbera from me that she has an amazing mom."
+        mc "I appreciate the help Hann."
 
-            m "Thanks, I will."
+        mc "You were right, it’s been a trying day. A coffee and a muffin would hit the spot."
 
-            m "You mentioned you weren’t from around here? Or you just got here?"
+        show may sad with Dissolve(0.1)
 
-            mc "Yeah, my uh. My family’s from Cuba on my Father's side."
+        m "Oh yeah? Wanna talk about it?"
 
-            m "Where are you from though?"
+        mc "{cps=20}Hmmmmm{/cps}a. I’m not so sure that’s a good idea."
 
-            mc "I said Cuba."
+        mc "A little too personal to say to someone I just met."
 
-            m "Yes but where in Cuba?"
+        show may smile
 
-            m "Havana, Santa Carla, the Sierra Maestra?"
+        m "That’s fair. I’ll do the same then."
 
-            mc "Well, I actually spent most of my time in the Bahamas."
+        m "So what do you want to talk about?"
 
-            mc "My Father has a…hotel there. I say Cuba because it’s easier."
+        mc "I’m sorry your kids are struggling. What’re their name or names?"
 
-            if player_identity == "f":
+        show may sad with Dissolve(0.1)
 
-                m "So what’s a rich gal from the Bahamas doing in the Florida slums post pandemic?"
+        m "Their names are ugh."
 
-            elif player_identity == "m":
+        show may
 
-                m "So what’s a rich guy from the Bahamas doing in the Florida slums post pandemic?"
+        m "I just have one daughter, her name is Barbera."
 
-            else:
+        mc "Well Hanna, you tell Barbera for me that she has an amazing mom."
 
-                m "So what’s a rich guy from the Bahamas doing in the Florida slums post pandemic?"
+        show may smile with Dissolve(0.1)
 
-                mc "Just rich person actually, but um..."
+        m "Thanks, I will."
 
-            mc "I’m not entirely here by choice, but I’m hoping to find my next big thing."
+        m "You mentioned you weren’t from around here? Or you just got here?"
 
-            m "Well I doubt it’ll be in this dinky cafe, but I hope you find it soon."
+        mc "Yeah, my uh. My family’s from Cuba on my Father's side."
 
-            m "It ain't easy out there for sure. But coffee makes you feel better."
+        "That isn't a lie, but I shouldn't reveal my identity to Hann just yet."
 
-            hide m_d with dissolve
+        m "Where are you from though?"
 
-            show BG black with dissolve
-            pause 1.5
+        mc "I said Cuba."
 
-            show m_d with dissolve
+        show may
 
-            jump act1_6
+        m "Yes but where in Cuba?"
+
+        m "Havana, Santa Carla, the Sierra Maestra?"
+
+        mc "Well, I actually spent most of my time in the Bahamas."
+
+        mc "My Father has a…hotel there. I say Cuba because it’s easier."
+
+        if player_identity == "f":
+
+            m "So what’s a rich gal from the Bahamas doing in the Florida slums during a pandemic?"
+
+        elif player_identity == "m":
+
+            m "So what’s a rich guy from the Bahamas doing in the Florida slums during a pandemic?"
 
         else:
 
-            "No wait, there isn’t time for a snack. It doesn’t matter how hungry I feel."
+            m "So what’s a rich guy from the Bahamas doing in the Florida slums during a pandemic?"
 
-            if activity_choice == "bookstore":
+            mc "Just rich person actually, {cps=20}but uh...{/cps}"
 
-                "I went to the [activity_choice], then I found my way to the school. I should go there first then get something to eat."
+        mc "I’m not entirely here by choice, but I’m hoping to find my next big thing."
 
-                "If it’s relevant to my journey a sign has to appear, I feel it in my gut next to the hunger."
+        m "Well I doubt it’ll be in this dinky cafe, but I hope you find it soon."
 
-                "If not, then I’m sleeping on a bench and sucking on leather tonight."
+        show may smile
 
-                jump bookstore2
+        m "It ain't easy out there for sure. But coffee makes you feel better."
 
-            elif activity_choice == "school":
+        mc "I'm sure it will, thanks again."
 
-                "I rushed straight towards the school when I got here. Let's go there first then get something to eat."
+        m "Have to show the foreigner some good ol' American hospitality."
 
-                "Making my way towards the club might be the best course. The girls could still be there, or they need my help."
+        mc "Really? I've never heard that expression."
 
-                "Whatever is thrown at me can be handled, as long as I stay focused."
+        show may sad
 
-                jump school2
+        m "Probs because I just made it up."
 
-            else:
+        show may smile with Dissolve(0.1)
 
-                "I went to the [activity_choice], then I found my way to the school. I should go there first then get something to eat."
+        m "Have to start sometime though."
 
-                "If it’s relevant to my journey a sign has to appear, I feel it in my gut next to the hunger."
+        show may smile at centerlefter with ease
 
-                "If not, then I’m sleeping on a bench and sucking on leather tonight."
+        m "Follow me, I know a shortcut. We'll be there in a few minutes max."
 
-                jump arcade2
+        hide may with moveoutleft
+
+        jump act1_6
 
 label choice_emptystore:
 
@@ -1944,6 +2138,8 @@ label choice_emptystore:
         "And not only did I hear her voice, but I got her laugh too."
 
         "That might just be enough to find her."
+
+        $ may_v = 2
 
         "I should go now before I squander another opportunity."
 
