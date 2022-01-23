@@ -189,6 +189,7 @@ image may smug flip = im.Flip("images/may smug.png", horizontal = "True")
 image may smile = "may smile.png"
 image may smile flip = im.Flip("images/may smile.png", horizontal = "True")
 image may sad = "may sad.png"
+image may sad flip = im.Flip("images/may sad.png", horizontal = "True")
 image may fl = "may fl.png"
 image may fl flip = im.Flip("images/may fl.png", horizontal = "True")
 
@@ -210,11 +211,24 @@ image ast sad = "Astrid sad.png"
 image ast smile = "Astrid smile.png"
 image ast sup = "Astrid sup.png"
 
+image ast post = "astrid post.png"
+image ast sad post = "astrid sad post.png"
+image ast conf post = "astrid conf post.png"
+image ast emb post = "astrid emb post.png"
+image ast sup post = "astrid sup post.png"
+image ast happy post = "astrid happy post.png"
+
 image fiona = "Fiona.png"
 image fiona angry = "Fiona angry.png"
 image fiona laugh = "Fiona laugh.png"
 image fiona sad = "Fiona sad.png"
 image fiona frown = "Fiona frown.png"
+
+image fi post = "fiona post.png"
+image fi mad post = "fiona mad post.png"
+image fi sad post = "fiona post.png"
+image fi happy post = "fiona happy post.png"
+image fi smile post = "fiona smile post.png"
 
 image be = "behati.png"
 image be happy = "behati happy.png"
@@ -283,6 +297,8 @@ image BG insidestore2 = "background/insidestore2.png"
 image BG insidestore3 = "background/insidestore3.png"
 image BG marketpost = "background/marketpost.png"
 image BG cafeoutside = "background/cafe.png"
+image BG cafeoutside ast = "background/café ast.png"
+image BG cafeoutside ast sup = "background/café ast sup.png"
 image BG cafeinside = "background/cafeinside.png"
 
 # Other characters images

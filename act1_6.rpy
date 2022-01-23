@@ -45,13 +45,13 @@ if may_talk == 0:
 
     "My stomach is in control of my eyes now, the soup’s holding onto my line of sight and not letting go."
 
-    # show astrid in the window wtih Dissolve
+    show BG cafeoutside ast with dissolve
 
     mc "Except that woman. Is that..."
 
     mc "Astrid?"
 
-    # show a suprised astrid
+    show BG cafeoutside ast sup with dissolve
 
     "I hardly believe my eyes."
 
@@ -153,11 +153,11 @@ elif may_talk == 1:
 
     "Perhaps these dishes are worth it to the type of people who’d brave this supposedly deadly disease?"
 
-    # show astrid in the window
+    show BG cafeoutside ast with dissolve
 
     mc "Is that?"
 
-    # show suprised astrid
+    show BG cafeoutside ast sup with dissolve
 
     show may flip with Dissolve(0.1)
 
@@ -210,7 +210,11 @@ transform cafe: # transition to other end of BG
     linear 2.0 xalign 1.0
 
 scene BG cafeinside at caf with fade
-show may at left with dissolve
+
+if may_talk == 1:
+
+    show may at left with dissolve
+    
 # was here
 
 if mask == 1:
