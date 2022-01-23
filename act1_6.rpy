@@ -9,9 +9,9 @@ scene BG cafeoutside with fade
 
 if may_talk == 0:
 
-    "After some more aimless wandering finally, a strip where everything isn’t closed."
+    "After some more aimless wandering, finally a strip where everything isn’t closed."
 
-    "Actually, most of these businesses look closed, but just because of the time according to the open hours on their windows."
+    "Actually, most of these businesses do look closed, but just because of the time according to the open hours signs on their windows."
 
     "There’s what looks like a small café coming up on the right."
 
@@ -19,7 +19,7 @@ if may_talk == 0:
 
     "It’s about time something other than pollution or sea water tickled my sense of smell."
 
-    "There are some people eating inside. This might be my best chance of getting some grub before I figure out where to go next."
+    "There are some people eating and drinking inside. This might be my best chance of getting some grub before I figure out where to go next."
 
     "I barely have energy to steal at this point. Begging them to take my earrings as payment is my only option."
 
@@ -31,37 +31,45 @@ if may_talk == 0:
 
         "How pathetic is that? Maybe if I’m fed my wrath will reawaken."
 
-    "Getting closer to the windows, people are being served sandwiches and soups. Nobody but the server is wearing a mask."
+    if may_v == 2:
 
-    "Apparently this COVID thing spreads through air but not food."
+        "I could have had some money if that woman didn't take it all for herself."
 
-    "My stomach is in control of my eyes, the soup’s holding onto my line of sight."
+        "If she only knew had desperate I am, maybe she would have spared me some change."
 
-    # show astrid in the window
+    "Getting closer to the windows, people are being served sandwiches and soups. Nobody but the server is wearing a mask though."
 
-    mc "Is that…"
+    "Apparently this COVID thing spreads through air but not food?"
 
-    mc "Astrid's soup?"
+    "Seems strange, but I've never suffered from anything worse than Ocean's Ear."
+
+    "My stomach is in control of my eyes now, the soup’s holding onto my line of sight and not letting go."
+
+    # show astrid in the window wtih Dissolve
+
+    mc "Except that woman. Is that..."
+
+    mc "Astrid?"
 
     # show a suprised astrid
 
-    "It’s unbelievable, this is it!"
+    "I hardly believe my eyes."
+
+    "It’s unbelievable, this is where I had to go!"
 
     "Astrid is who I was meant to find!"
 
-    "Thank you Gods, you’re gracious and benevolent, I’m sorry for ever doubting you were looking out for me."
-
-
+    "Thank you Gods, you’re gracious and benevolent, I’m sorry for ever doubting you weren't looking out for me."
 
 elif may_talk == 1:
 
-    show may at left with dissolve
+    show may flip at left with dissolve
 
-    "After some more small talk Hanna and I make it to the side of this small café."
+    "After some more small talk, Hann and I make it to the side of this small café."
 
-    "Strolling down the side of a large strip of closed shops, the strong smell of brew bubbles up into my nose unexpectedly."
+    "Strolling down the side of the large strip of closed shops, the strong smell of brew bubbles up into my nose unexpectedly."
 
-    "Finally, something to drown out the mix of sea water and trash."
+    "Finally, something to drown out the mix of sea water and dry trash."
 
     "There are a few people inside the café I can kind of see through the window."
 
@@ -73,54 +81,75 @@ elif may_talk == 1:
 
     if mask == 1:
 
-        mc "Yeah I got one from Doll."
+        mc "Yeah I got one from a street lady I met."
 
         mc "It was real nice of her, she didn’t even charge me."
 
-        m "I wasn’t talking to her for long, but she seemed real nice for a homeless lady."
+        show may flip at bounce
 
-        mc "Are all homeless ladies not nice?"
+        m "You took a mash from a random person on the street?"
 
-        m "I don’t want to get into this."
+        mc "Yeah? So what? It was sealed when she handed it to me."
+
+        m "Wait, was this lady kinda scraggly looking? Said \"somethin'\" a lot?"
+
+        mc "Yeah that's Doll."
+
+        show may smile flip with Dissolve(0.1)
+
+        m "Oh Doll! I've talked to her before. She seems really cool for a homeless person."
+
+        mc "Are all homeless people not nice?"
+
+        show may sad flip with Dissolve(0.1)
+
+        m "No, that's not what I meant."
+
+        m "Nevermind that, I don’t want to get into this."
 
     else:
 
-        mc "I never got one."
-
-        mc "People weren’t exactly being super nice to me about it."
+        mc "I never got one. People weren’t exactly being super nice to me about it."
 
         mc "Plus, nobody told me about this disease ruining everything cool."
 
-        m "It’s worse than that, a whole ass pandemic has been going around."
+        show may sad flip with Dissolve(0.1)
+
+        m "It’s worse than just a disease, a whole ass pandemic has been going around."
 
         m "Although, at this point people seem to act like it’s over."
 
         mc "You mean they cured it?"
 
+        show may flip
+
         m "No."
 
         mc "So how did they get over it? Did it die out?"
 
-        m " No, they just stopped caring. Some people needed a haircut."
+        m "No, they just stopped caring. Some people needed haircuts and stpuid shit like that."
 
-        mc "Oh… Well that’s one way to do it."
+        mc "Oh... Well that’s one way to do it."
 
         mc "Couldn’t they just give themselves a haircut?"
 
-        m "Haircuts are really important."
+        show may smile flip with Dissolve(0.1)
 
-        m "Why couldn’t back in the day they just ignored the Black Plague, I mean like come on?"
+        m "Haircuts are really important [player_name]."
 
-        mc "Exactly, it could have been over so much easier if the peasants just prayed harder."
+        mc "I wouldn't know, I just cut off my split ends once in a while."
 
-        m "You didn’t tell me you were a historian?"
+        m "Rich kid like you didn't have a ton of professional barbers lying around?"
 
-        m "Our hindsight is too good nowadays, we’d never let history repeat itself."
+        mc "Ugh, you live and learn I guess."
 
+        show may smug flip with Dissolve(0.1)
 
-    "Walking by the windows I start to make out some of the people in there."
+        m "Our hindsight is better every day isn't it?"
 
-    "Soup and coffee are being served to a table. My stomach has taken over my eyes, I can’t look away."
+    "Walking by the windows I start to make out some of the people inside."
+
+    "Soup and coffee are being served to a large table. My stomach has taken over my eyes, I can’t look away."
 
     "Perhaps these dishes are worth it to the type of people who’d brave this supposedly deadly disease?"
 
@@ -130,37 +159,45 @@ elif may_talk == 1:
 
     # show suprised astrid
 
+    show may flip with Dissolve(0.1)
+
     m "Do you know that girl?"
 
-    mc "Yeah, I do know her."
+    mc "Hann, she looks so much alike someone I use to know."
 
     m "You think she’d pay for the coffee?"
 
-    mc "No, I don’t think so. Hanna, can we sit with her?"
+    mc "No, I don’t think so. Hann, can we sit with her?"
 
-    mc "She’s who I’ve been looking for."
+    mc "I think she's an old friend of mine. She’s who I’ve been looking for today, I hope."
 
-    # flirty may
+    show may fl flip
 
-    m "Sure, I guess. What is she your little girlfriend?"
+    m "Sure, I guess. What is she your little ex girlfriend?"
 
     if astrid_affinity >= 3:
 
-        mc "{color=#2150E7}What?! No! I mean, like, I.{/color}"
+        mc "{color=#2150E7}What?! No! I mean, like, I don't think.{/color}"
 
-        mc "Look I know her alright, she’s a good omen."
+        show may fl flip at wiggle
+
+        mc "Look I just know her, alright? She’s a good omen."
 
         mc "Are you coming in with me or not?"
+
+        show may flip with Dissolve(0.1)
 
         m "Okay dude, sure thing. I said I was, didn't I?"
 
     else:
 
-        mc "{color=#2150E7}No, she’s a friend of mine.{/color}"
+        mc "No, quick teasing me. She’s a just friend of mine."
 
-        mc "This is a good omen, are you gonna sit down with me?"
+        mc "This is a good omen, are you goning to come sit down with me or not?"
 
-        m "I said I was going to, didn’t I?"
+        show may flip with Dissolve(0.1)
+
+        m "Chill dude, I said I was going to, didn’t I?"
 
 $ w = Character('Waitress', color="#FF793B", callback=rot_voice) # resuing the market woman for the waitress
 
@@ -173,8 +210,8 @@ transform cafe: # transition to other end of BG
     linear 2.0 xalign 1.0
 
 scene BG cafeinside at caf with fade
-show m_d at left with ease
-# play inside music
+show may at left with dissolve
+# was here
 
 if mask == 1:
 
