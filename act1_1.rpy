@@ -177,16 +177,16 @@
             $ renpy.block_rollback()
 
             if renpy.windows and player_identity == "f":
-                
+
                 $ config.tts_voice = "Zira"
 
             elif renpy.windows and player_identity_voice == "m":
 
-                config.tts_voice = "Mark"
+                $ config.tts_voice = "Mark"
 
             else:
 
-                config.tts_voice = "David"
+                $ config.tts_voice = "David"
 
             MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
