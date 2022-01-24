@@ -214,7 +214,7 @@ scene BG cafeinside at caf with fade
 if may_talk == 1:
 
     show may at left with dissolve
-    
+
 # was here
 
 if mask == 1:
@@ -1704,6 +1704,6 @@ label act1_end:
 
     show BG black with fade
 
-    # fade to credits video
+    $ renpy.movie_cutscene("video/credits.webm")
 
 return

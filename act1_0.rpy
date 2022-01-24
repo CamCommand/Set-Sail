@@ -136,4 +136,5 @@ label secretending:
         show c with ease:
             ease 1.0 zoom 100
         pause 2.0
-        # cut to credits
+
+        return
