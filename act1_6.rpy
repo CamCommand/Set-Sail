@@ -87,7 +87,7 @@ elif may_talk == 1:
 
         show may flip at bounce
 
-        m "You took a mash from a random person on the street?"
+        m "You took a mask from a random person on the street?"
 
         mc "Yeah? So what? It was sealed when she handed it to me."
 
@@ -172,12 +172,13 @@ elif may_talk == 1:
     mc "I think she's an old friend of mine. She’s who I’ve been looking for today, I hope."
 
     show may fl flip
+    $ m = Character('[may_name]', color="#2F2100",  callback=may_voice)
 
     m "Sure, I guess. What is she your little ex girlfriend?"
 
-    if astrid_affinity >= 3:
+    if Astrid_affinity >= 3:
 
-        mc "{color=#2150E7}What?! No! I mean, like, I don't think.{/color}"
+        mc "What?! No! I mean, like, I don't think."
 
         show may fl flip at wiggle
 
@@ -213,9 +214,7 @@ scene BG cafeinside at caf with fade
 
 if may_talk == 1:
 
-    show may at left with dissolve
-
-# was here
+    show may at lefter with dissolve
 
 if mask == 1:
 
@@ -233,23 +232,27 @@ else:
 
     w "Uh!"
 
-show a_d at center with dissolve
+show ast suppost at center with dissolve
 
 mc "Astrid of Bellewood? Is that you?"
 
 a "[player_name] oh my gosh it’s so good to see you."
 
-# laughing astrid
+show ast happypost with Dissolve(0.1)
 
-a "Yeah, it’s me, Astrid. People keep dropping the \"of Bellewood\" part, haha."
+a "Yeah, it’s me, Astrid. People keep dropping the \"of Bellewood\" part, but not you."
 
 a "Also I just changed my hair."
+
+show ast confpost
 
 a "What are you doing back here?"
 
 mc "That is such a long story, but I’m so glad to see you."
 
 mc "I feel as if I was destined to find you here."
+
+show ast happypost with Dissolve(0.1)
 
 a "Don’t get all sappy on me now. You were destined to find me?"
 
@@ -261,19 +264,21 @@ mc "No, I believe them to be as real as the waves that guide us."
 
 a "That’s pretty dramatic, but I guess that fits."
 
-# worried astrid
+show ast sadpost with Dissolve(0.1)
 
-a "Are you dehydrated or what?"
+a "Are you dehydrated or something? You don't look so good."
 
 if may_talk == 1:
 
-    # smiling May
+    show may smile with Dissolve(0.1)
 
     m "Um hello?"
 
     mc "Oh my bad. Astrid, this is Hanna."
 
     mc "She is showing me around and was going to buy me some food."
+
+    show ast post with Dissolve(0.1)
 
     a "Nice to meet you Hanna."
 
@@ -298,9 +303,9 @@ mc "Of course, I’d love to hear what you’ve all been up to."
 scene BG cafeinside at cafe
 pause 1.0
 
-show fiona at truecenter
-show b_d at centerrighter
-show g_d at right
+show fi post at leftist
+show be at rightwing
+show ge at righter
 with dissolve
 
 # excitable G
@@ -311,13 +316,13 @@ b "She has access to the best healthcare in her entire country."
 
 b "Women live on average longer than men. She is the most likely candidate to break the oldest age record."
 
-# pissed Fiona
+show fi sadpost
 
 f "I don’t believe the shit you’re spewing G."
 
 f "Why are you rooting for an old lady to die?"
 
-show a_d at centerlefter
+show ast post at leftiem with moveinleft
 
 a "Guys, you won’t believe what destiny swept in."
 
@@ -337,7 +342,7 @@ mc "It’s good to see you’re all as lively as I remembered you."
 
 if may_talk == 1:
 
-    show m_d at left with dissolve
+    show may at center behind fi with dissolve
 
     mc "Everyone, this is my new friend Hanna."
 
@@ -346,6 +351,8 @@ if may_talk == 1:
     f "No problem, welcome to the table."
 
     b "Nice to meet you."
+
+    show may smile with Dissolve(0.1)
 
     m "Hello hello, nice to meet you too."
 
@@ -665,9 +672,9 @@ mc "We took them to this island off of the Bahamas to get treated. So the Plague
 
 if may_talk == 0:
 
-    $ m = Character("[may_name]", color="#0A4AF6", callback=may_voice)
+    $ m = Character("[may_name]", color="#2F2100", callback=may_voice)
 
-    show m_d at left with moveinleft
+    show may at center with dissolve
 
     m "Excuse me, sorry to interrupt. But did you say \"The Plague\"?"
 
@@ -799,7 +806,7 @@ if may_talk == 0:
 
     g "If anyone gets to be on the ship it’s me!"
 
-    # zoom may
+    show may fl at zoom_may
 
     m "Oh come on. I’m asking very nicely."
 
@@ -811,7 +818,7 @@ if may_talk == 0:
 
     mc "Because there isn’t a ship to go back to."
 
-    # undo may zoom
+    show may at redochar
 
 else:
 
@@ -1039,15 +1046,15 @@ g "Why don’t you go find some happy people whose lives you can worsen?"
 
 m "You all are really cramping the good mood you just fixed. You’ll get wrinkles before you’re twenty five that way."
 
-f "You mean the mood you were trying to take advantage of [may_nane]?"
+f "You mean the mood you were trying to take advantage of [may_name]?"
 
 m "Okay I’m sick of being called that already, it’s May."
 
 b "No it’s not it’s November."
 
-m "No little Miss Sarcasm, that’s my name."
+$ m = Character('May', color="#2F2100", callback=may_voice)
 
-$ m = Character('May', color="#0A4AF6", callback=may_voice)
+m "No little Miss Sarcasm, that’s my name."
 
 m "My real name is May Palmer, I’m a real ship doctor, I have been for a while."
 
@@ -1195,7 +1202,7 @@ label mAYbe:
 
     mc "That sounds hilarious."
 
-    # focused astrid
+    show ast post with Dissolve(0.1)
 
     "I wonder which pirates in Honduras have their own theme song? I had no idea they were so coordinated."
 
@@ -1288,6 +1295,7 @@ label mAYbe:
     define b_job = 0
     define g_job = 0
     define m_job = 0
+
     # to know when to stop looping back to label pirate_position
     define job_counter = 0
 
@@ -1354,6 +1362,7 @@ label pirate_position:
 
                 $ f_job += 1
                 $ job_counter += 1
+                jump pirate_position
 
             "Behati" if b_job == 0:
 
@@ -1398,6 +1407,7 @@ label pirate_position:
 
                 $ b_job += 1
                 $ job_counter += 1
+                jump pirate_position
 
             "Geraldine" if g_job == 0:
 
@@ -1450,6 +1460,7 @@ label pirate_position:
 
                 $ g_job += 1
                 $ job_counter += 1
+                jump pirate_position
 
             "May" if m_job == 0:
 
@@ -1532,6 +1543,7 @@ label pirate_position:
 
                 $ m_job += 1
                 $ job_counter += 1
+                jump pirate_position
 
     else:
 
@@ -1595,7 +1607,7 @@ label act1_end:
 
     b "I’d have to go get my guns, but aye aye. Count me in."
 
-    f "{cps=100}...{/cps}"
+    f "{cps=100}... ... ...{/cps}"
 
     f "{cps=80}This is crazy.{/cps}"
 
@@ -1625,7 +1637,7 @@ label act1_end:
 
     mc "I can if you need me to."
 
-    f "Huh ha."
+    f "{cps=20}Huh ha ha.{/cps}"
 
     f "It’s funny to know you’d try. Don’t worry I’ll take care of them."
 
@@ -1685,7 +1697,7 @@ label act1_end:
 
     mc "The sooner the better."
 
-    m "Whatever the Captain says ~ <3"
+    m "Whatever the Captain says."
 
     b "G would you help carry my guns from home?"
 
@@ -1699,11 +1711,19 @@ label act1_end:
 
         $ persistent.menuflag_count += 1
 
-    # stop music fadeout 3.0
-    pause 3.0
+    # stop music fadeout 2.0
+    pause 1.5
+
+    hide ast posts
+    hide fi posts
+    hide may
+    hide be
+    hide ge
+    with dissolve
 
     show BG black with fade
+    pause 1.5
 
-    $ renpy.movie_cutscene("video/credits.webm")
+    $ renpy.movie_cutscene("video/creditsBG.webm")
 
 return

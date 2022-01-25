@@ -1120,7 +1120,7 @@
 
                     show be quiz at center with ease
 
-                    b "{color=#2150E7}Hey [player_name]. What’s sticking in your waistband? Is that a book or something?{/color}"
+                    b "Hey [player_name]. What’s sticking in your waistband? Is that a book or something?"
 
                     "How did she notice, she didn’t even glance at me, seemingly."
 
@@ -1378,7 +1378,7 @@
 
                     show fiona sad with Dissolve(0.1)
 
-                    f "{color=#2150E7}You stole a book from us?{/color}"
+                    f "You stole a book from us?"
 
                     MC "What? No! You mean this thing?"
 
@@ -1752,7 +1752,7 @@
 
                     show ge int with Dissolve(0.1)
 
-                    g "{color=#2150E7}Whatcha got there?{/color}"
+                    g "Whatcha got there?"
 
                     MC "Oh this? I found this book on the street and thought I’d keep it for novelty purposes."
 
@@ -1942,7 +1942,7 @@
 
                     show ge int with Dissolve(0.1)
 
-                    g "{color=#2150E7}Oh yeah? What did you play?{/color}"
+                    g "Oh yeah? What did you play?"
 
                     MC "I played the [game_played] game."
 
@@ -2374,7 +2374,7 @@
 
                     show ast with Dissolve(0.1)
 
-                    a "{color=#2150E7}By the way, what’s that you have under your shirt?{/color}"
+                    a "By the way, what’s that you have under your shirt?"
 
                     MC "Oh, I took this book from a store before coming here. Thought it might look good in my humble collection."
 
@@ -3311,7 +3311,7 @@
                     $ quick_menu = False
                     $ renpy.block_rollback()
 
-                    "{color=#2150E7}They have more fruits!{/color}"
+                    "They have more fruits!"
 
                     $ quick_menu = True
 
@@ -3599,25 +3599,25 @@
 
                 show be happy with Dissolve(0.1)
 
-                b "{color=#2150E7}See ya sea cowboy.{/color}"
+                b "See ya sea cowboy."
 
             elif G_affinity > Astrid_affinity and G_affinity > Be_affinity and G_affinity > Fi_affinity:
 
                 show ge smug with Dissolve(0.1)
 
-                g "{color=#2150E7}Next time I see you it’ll be at the end of my sword.{/color}"
+                g "Next time I see you it’ll be at the end of my sword."
 
             elif Fi_affinity > Astrid_affinity and Fi_affinity > Be_affinity and Fi_affinity > G_affinity:
 
                 show fiona sad with Dissolve(0.1)
 
-                f "{color=#2150E7}Back to a life of swashbuckling for them and exams for us.{/color}"
+                f "Back to a life of swashbuckling for them and exams for us."
 
             elif Astrid_affinity > Fi_affinity and Astrid_affinity > Be_affinity and Astrid_affinity > G_affinity:
 
                 show ast sup at centerleft with moveinleft
 
-                a "{color=#2150E7}Nooooo, did you let them leave? I wanted to sing something for them.{/color}"
+                a "}Nooooo, did you let them leave? I wanted to sing something for them."
 
             hide ast
             hide be

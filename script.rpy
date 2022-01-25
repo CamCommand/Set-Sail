@@ -212,11 +212,11 @@ image ast smile = "Astrid smile.png"
 image ast sup = "Astrid sup.png"
 
 image ast post = "astrid post.png"
-image ast sad post = "astrid sad post.png"
-image ast conf post = "astrid conf post.png"
-image ast emb post = "astrid emb post.png"
-image ast sup post = "astrid sup post.png"
-image ast happy post = "astrid happy post.png"
+image ast sadpost = "astrid sad post.png"
+image ast confpost = "astrid conf post.png"
+image ast embpost = "astrid emb post.png"
+image ast suppost = "astrid sup post.png"
+image ast happypost = "astrid happy post.png"
 
 image fiona = "Fiona.png"
 image fiona angry = "Fiona angry.png"
@@ -225,10 +225,10 @@ image fiona sad = "Fiona sad.png"
 image fiona frown = "Fiona frown.png"
 
 image fi post = "fiona post.png"
-image fi mad post = "fiona mad post.png"
-image fi sad post = "fiona post.png"
-image fi happy post = "fiona happy post.png"
-image fi smile post = "fiona smile post.png"
+image fi madpost = "fiona mad post.png"
+image fi sadpost = "fiona post.png"
+image fi happypost = "fiona happy post.png"
+image fi smilepost = "fiona smile post.png"
 
 image be = "behati.png"
 image be happy = "behati happy.png"
@@ -373,8 +373,8 @@ else:
 
     $ gui.main_menu_background = "gui/main_menu.png"
 
+
 # colors used reference
-#2150E7 when your previous choice comes back
 #50A23B a good choice
 #f00 a bad choice
 
@@ -416,5 +416,8 @@ label start:
 
     define lefter = Position(xpos= -0.1, xanchor = 'left')
     define righter = Position(xpos = 1.1, xanchor = 'right')
+    define leftiem = Position(xpos= -0.06, xanchor = 'left')
+    define leftist = Position(xpos= 0.11, xanchor = 'left')
+    define rightwing = Position(xpos = 0.95, xanchor = 'right')
 
     jump act1_1

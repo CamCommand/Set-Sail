@@ -11,6 +11,7 @@
 
         $ player_identity = "nb"             # default identity if needed
         define player_name = ""
+
         scene BG map at pan
         play music "music/waves.ogg" fadein 2.0
 
