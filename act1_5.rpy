@@ -398,7 +398,7 @@ label act1_5:
         define may_v = 0              # if mc thinks they can track May down
         define may_talk = 0           # in this scene May could walk MC to the cafe
 
-        $ m = Character("[may_name]", color="#2F2100",  callback=may_voice)
+        $ m = Character("[may_name]", color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
         "I’m back in that town!"
 
@@ -1196,7 +1196,7 @@ label act1_5:
         with dissolve
 
         $ may_name = "Short Hair Woman"
-        $ m = Character("[may_name]", color="#2F2100",  callback=may_voice)
+        $ m = Character("[may_name]", color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
         mc "Excuse me ladies."
 
@@ -1225,7 +1225,7 @@ label act1_5:
 
             $ dl = Character('Doll', color = "#740E86", callback=hobo_voice)
             $ may_name = "Other Woman"
-            $ m = Character("[may_name]", color="#2F2100",  callback=may_voice)
+            $ m = Character("[may_name]", color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
             mc "Oh Doll, didn't realize it was you."
 
@@ -1717,7 +1717,7 @@ label act1_5:
 
         mc "What am I supposed to do out here Poseidon!"
 
-        $ m = Character('Woman', color="#2F2100",  callback=may_voice)
+        $ m = Character('Woman', color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
         show may with dissolve
         $ may_talk += 1
@@ -1804,7 +1804,7 @@ label act1_5:
 
         $ may_name = "Hann"
 
-        $ m = Character('[may_name]', color="#2F2100",  callback=may_voice)
+        $ m = Character('[may_name]', color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
         show may
 

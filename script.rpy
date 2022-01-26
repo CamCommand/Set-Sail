@@ -168,16 +168,15 @@ screen game_over_screen: # Game over screen
 
         xalign 0.5
         yalign 0.5
-        text _("{size=156}Game Over{/size}")
-        textbutton _("\n\n\n   Return to Main Menu") action Return()
+        textbutton _("\n\n\n\n   Return to Main Menu") action Return()
 
 # Main characters
-define MC = Character("[player_name]", dynamic=True, color="#990033", callback=voice)                   # Player Character
-define f = Character('Fiona', color="#E44D1A", callback=fiona_voice)                                    # Fiona
-define g = Character('Geraldine', color="#F0CD00", callback=g_voice)                                    # Geraldine
-define a = Character('Astrid', color="#FF79E6", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")])  # Astird
-define b = Character('Behati', color="#5E0F60", callback=b_voice)                                       # Behati
-define m = Character('May', color="#0A4AF6", callback=may_voice)                                        # May
+define mc = Character("[player_name]", dynamic=True, color="#990033", callback=voice)                   # Player Character
+define f = Character('Fiona', color="#d1c1ff", callback=fiona_voice, who_outlines=[ (1, "#000000")])    # Fiona
+define g = Character('Geraldine', color="#2ef2f4", callback=g_voice, who_outlines=[ (1, "#000000")])    # Geraldine
+define a = Character('Astrid', color="#c83d32", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")])  # Astird
+define b = Character('Behati', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])       # Behati
+define m = Character('May', color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])        # May
 define n = nvl_narrator                                                                                 # Narrator
 define ev = Character('Everyone', color="#000000", callback=Crashsound_test)                            # Everyone at once
 
@@ -193,8 +192,6 @@ image may sad flip = im.Flip("images/may sad.png", horizontal = "True")
 image may fl = "may fl.png"
 image may fl flip = im.Flip("images/may fl.png", horizontal = "True")
 
-
-# pre time skip girls
 image ge = "g.png"
 image ge happy = "g happy.png"
 image ge mad = "g mad.png"
@@ -202,6 +199,12 @@ image ge sad = "g sad.png"
 image ge smug = "g smug.png"
 image ge int = "g int.png"
 image ge smile = "g smile.png"
+
+image ge post = "g post.png"
+image ge suppost = "g suppost.png"
+image ge smugpost = "g smug post.png"
+image ge madpost = "g mad post.png"
+image ge smilepost = "g smile post.png"
 
 image ast = "Astrid.png"
 image ast conf = "Astrid conf.png"
@@ -226,7 +229,7 @@ image fiona frown = "Fiona frown.png"
 
 image fi post = "fiona post.png"
 image fi madpost = "fiona mad post.png"
-image fi sadpost = "fiona post.png"
+image fi sadpost = "fi sad post.png"
 image fi happypost = "fiona happy post.png"
 image fi smilepost = "fiona smile post.png"
 
@@ -237,10 +240,16 @@ image be quiz = "behati quiz.png"
 image be shocked= "behati shocked.png"
 image be skeptical = "behati skeptical.png"
 
+image be post = "be post.png"
+image be confpost = "be conf post.png"
+image be suppost = "be sup post.png"
+image be happypost = "be happy post.png"
+image be quizpost = "be quiz post.png"
+
 # Minor characters
 define th = Character('[pirate]', color="#000000", who_outlines=[ (1, "#FFFFFF") ], callback=twohands_voice)# ol' Two Hands
-define Cap = Character('Captain', color="#7F0505", callback=caps_voice)                                     # The Demonic Pirate Ricardo AKA Captain
-define fla = Character('Flavio', color="#BB64F2", callback=fl_voice)                                        # sir Flavio
+define Cap = Character('Captain', color="#000000", callback=caps_voice, who_outlines=[ (1, "#6d3536")])     # The Demonic Pirate Ricardo AKA Captain
+define fla = Character('Flavio', color="#8957ba", callback=fl_voice)                                        # sir Flavio
 define woman = Character('Woman', dynamic=True, color="#07BB01", callback=lib_voice)                        # bookstore clerk
 define cr = Character('Passerbys', color="#000001", who_outlines=[ (1, "#FFFFFF") ], callback=crowd_voice)  # crowd of people
 define ma = Character('Short Woman', color="#FF793B", callback=rot_voice)                                   # woman at market
@@ -258,6 +267,7 @@ define May_affinity = 0
 
 # background images
 image BG MC_room = "background/bedroom.png"
+image BG gm = "background/gameover.png"
 image BG deckview = "background/deckview.png"
 image BG deckview2 = "background/deckview2.png"
 image BG topdeck = "background/topdeck.png"
@@ -373,7 +383,6 @@ else:
 
     $ gui.main_menu_background = "gui/main_menu.png"
 
-
 # colors used reference
 #50A23B a good choice
 #f00 a bad choice
@@ -415,7 +424,7 @@ label start:
     define sitting = Position(ypos = 1.25, yanchor = 'bottom')
 
     define lefter = Position(xpos= -0.1, xanchor = 'left')
-    define righter = Position(xpos = 1.1, xanchor = 'right')
+    define righter = Position(xpos = 1.12, xanchor = 'right')
     define leftiem = Position(xpos= -0.06, xanchor = 'left')
     define leftist = Position(xpos= 0.11, xanchor = 'left')
     define rightwing = Position(xpos = 0.95, xanchor = 'right')

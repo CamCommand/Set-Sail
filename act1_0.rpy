@@ -133,8 +133,10 @@ label secretending:
         mc "This isn’t real?"
 
         play effect "audio/end.ogg"
+
         show c with ease:
             ease 1.0 zoom 100
+
         pause 2.0
 
         return

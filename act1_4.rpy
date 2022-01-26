@@ -1,13 +1,9 @@
 ﻿label act1_4:
 
-# redefine bc I want to just say mc and don't feel like replacing it
-$ mc = Character("[player_name]", color="#990033", callback=voice)
-
 stop music fadeout 2.0
 show BG school2 with dissolve
 pause 1.0
 play music track2 volume 0.5 fadein 1.5 fadeout 1.5
-
 
 "Coming out of the school the sun is starting to set. To see a sunset from land and not the sea is sort of, underwhelming."
 
@@ -42,7 +38,7 @@ show BG walksunset with fade
 
 "Not like at sea, where the waves drown out any silence and storms grab your attention greater than any conversation would."
 
-"There's sset work times and random fights to boot. With barely ever a quiet moment."
+"There's back breaking work and random fights to boot. With barely ever a quiet moment."
 
 "..."
 
@@ -251,7 +247,7 @@ label ship_start:
 
         elif matey >= 2 and death_count != 0: # second pirate appears
 
-            if pirate1_x == 3 or pirate2_x == 3:
+            if pirate1_x == 3 and pirate2_x != 3:
 
                 show sword swing at sword with ease
                 play effect "audio/sword_clash.ogg"
@@ -265,9 +261,28 @@ label ship_start:
                 $ matey += 1
                 $ death_count -= 1
 
-                call screen pirate_fight2_1
+                call screen pirate_fight2_0
+
+            elif pirate1_x == 3 or pirate2_x == 3:
+
+                 show sword swing at sword with ease
+                 play effect "audio/sword_clash.ogg"
+                 show BG nightdeck2 with flash
+
+                 show sword at sword with ease
+                 $ random_line = renpy.random.randint(0, 3)
+                 $ p_line = pirate_lines[random_line]
+                 p "[p_line]"
+
+                 $ matey += 1
+                 $ death_count -= 1
+
+                 call screen pirate_fight2_1
 
     label pirate_fight2_1: # when pirate 1 of the fight dies
+
+        $ quick_menu = False
+        $ renpy.block_rollback()
 
         if pirate1_x == 1:
 
@@ -295,6 +310,9 @@ label ship_start:
 
 
     label pirate_fight2_2: # if and when pirate 2 of the fight dies
+
+        $ quick_menu = False
+        $ renpy.block_rollback()
 
         if pirate2_x == 1:
 
@@ -327,9 +345,12 @@ label ship_start:
         define pirate5_x = 2 # alive status
         $ death_count = 5 # count for death in the third fight
 
-        $ quick_menu = True
+        $ quick_menu = False
+        $ renpy.block_rollback()
 
         "These guys finished off a few of our guys."
+
+        $ quick_menu = True
 
         "Markey and Maverick..."
 
@@ -614,6 +635,9 @@ label ship_start:
 
     label down_with_the_ship:
 
+        $ quick_menu = False
+        $ renpy.block_rollback()
+
         hide sword with Dissolve(0.2)
 
         mc "Flavio, say something matey."
@@ -762,6 +786,9 @@ label ship_start:
 
         "Were there never a pirate braver him?"
 
+        play effect "audio/sword_clash.ogg" volume .5
+        queue effect "audio/sword_clash.ogg" volume .5
+        pause 0.3
         th "...I’ll cut yer throats!"
 
         "I won’t let his sacrifice lay dead at sea."

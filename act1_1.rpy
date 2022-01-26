@@ -76,7 +76,7 @@
                     $ player_identity = "f"
                     $ player_name = "Valerie"
                     $ player_identity_voice = "f"
-                    $ MC = Character('Valerie', color="FF4DA6", callback=voice)
+                    $ mc = Character('Valerie', color="FF4DA6", callback=voice)
                     jump choice_name_V
 
                 "{color=00AAFF}My name is Oscar{/color}":
@@ -84,7 +84,7 @@
                     $ player_identity = "m"
                     $ player_name = "Oscar"
                     $ player_identity_voice = "m"
-                    $ MC = Character('Oscar', color="00AAFF", callback=voice)
+                    $ mc = Character('Oscar', color="00AAFF", callback=voice)
                     jump choice_name_O
 
                 "{color=116600}My name is Reed{/color}":
@@ -92,13 +92,14 @@
                     $ player_identity = "nb"
                     $ player_name = "Reed"
                     $ player_identity_voice = "nb"
-                    $ MC = Character('Reed', color="116600", callback=voice)
+                    $ mc = Character('Reed', color="116600", callback=voice)
                     jump choice_name_R
 
                 "What is my name?":
 
                     $ player_name = renpy.input("Choose your name", length=15)
                     $ player_name = player_name.strip() #strip unused spaces
+                    $ player_name = player_name.capitalize()
 
                     if player_name == "":
 
@@ -122,18 +123,18 @@
             "{color=FF4DA6}Female{/color}":
 
                 $ player_identity = "f"
-                $ MC = Character('[player_name]', color="FF4DA6", callback=voice)
+                $ mc = Character('[player_name]', color="FF4DA6", callback=voice)
                 jump choice_name_User
 
             "{color=00AAFF}Male{/color}":
 
-                $ MC = Character('[player_name]', color="00AAFF", callback=voice)
+                $ mc = Character('[player_name]', color="00AAFF", callback=voice)
                 $ player_identity = "m"
                 jump choice_name_User
 
             "{color=116600}Non Binary{/color}":
 
-                $ MC = Character('[player_name]', color="116600", callback=voice)
+                $ mc = Character('[player_name]', color="116600", callback=voice)
                 $ player_identity = "nb"
                 jump choice_name_User
 
@@ -145,7 +146,7 @@
             if renpy.windows:
                 $ config.tts_voice = "Zira"
 
-            MC "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
             jump opening
 
         label choice_name_O:
@@ -156,7 +157,7 @@
             if renpy.windows:
                 $ config.tts_voice = "Mark"
 
-            MC "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
             jump opening
 
@@ -168,7 +169,7 @@
             if renpy.windows:
                 $ config.tts_voice = "David"
 
-            MC "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
             jump opening
 
@@ -189,7 +190,7 @@
 
                 $ config.tts_voice = "David"
 
-            MC "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
 
             jump opening
 
@@ -221,9 +222,9 @@
 
             "Nobody has caught on yet, if they even care."
 
-            MC "{cps=20}Arrrgh!{/cps}"
+            mc "{cps=20}Arrrgh!{/cps}"
 
-            MC "{cps=20}Ahhhh!{/cps}"
+            mc "{cps=20}Ahhhh!{/cps}"
 
             "I bend in every direction possible, but the stretching doesn’t alleviate the pain in my shoulders."
 
@@ -275,15 +276,15 @@
 
             if player_identity == "f":
 
-                MC "Could I ever be a woman of the land?"
+                mc "Could I ever be a woman of the land?"
 
             elif player_identity == "m":
 
-                MC "Could I ever be a man of the land?"
+                mc "Could I ever be a man of the land?"
 
             else:
 
-                MC "Could I ever be someone of the land?"
+                mc "Could I ever be someone of the land?"
 
             th "Damn ye [player_name]! I’ll flog ye later for this!"
 
@@ -355,7 +356,7 @@
 
             "Two Hands needs to rip the pole from his ass and get the idea, you don't mess around when there's work to be done."
 
-            MC "You requested me Captain?"
+            mc "You requested me Captain?"
 
             if player_identity == "f":
 
@@ -367,7 +368,7 @@
 
                 Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
-                MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
+                mc "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
                 show cap with Dissolve(0.1)
 
@@ -383,7 +384,7 @@
 
                 Cap "But I’ve been treating ye like that since ye could hold a scabbard. Hahaha!"
 
-                MC "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
+                mc "Aye Captain, but I didn’t get good with one until I beat Crookshaw."
 
                 show cap with Dissolve(0.1)
 
@@ -391,7 +392,7 @@
 
             Cap "What happened to Crookshaw after that?"
 
-            MC "He tried to flee his service from embarrassment and you obliged by marooning him."
+            mc "He tried to flee his service from embarrassment and you obliged by marooning him."
 
             show cap yelling with Dissolve(0.2)
 
@@ -411,13 +412,13 @@
 
             Cap "I got Flavio to rearrange the grunt work so you could enjoy some of the fruits of land life."
 
-            MC "Oh, thank you Captain. This is pleasantly unexpected."
+            mc "Oh, thank you Captain. This is pleasantly unexpected."
 
             show cap yelling with Dissolve(0.1)
 
             Cap "Argh, what you expected nothing from me?"
 
-            MC "No, it’s wonderful and thoughtful gift. I will use it wisely. Do you need me to get you anything?"
+            mc "No, it’s wonderful and thoughtful gift. I will use it wisely. Do you need me to get you anything?"
 
             Cap "No, no, nothing for me. There be nothing else I’ll ever need from this port ever again."
 
@@ -427,15 +428,15 @@
 
             Cap "Hahahaha ha!"
 
-            MC "Ha ha."
+            mc "Ha ha."
 
-            MC "Yes Captain I guess we always need more of those."
+            mc "Yes Captain I guess we always need more of those."
 
             show cap with Dissolve(0.1)
 
             Cap "Don’t be telling the crew where ye going. Don’t want dem thinking The Demonic Pirate Ricardo has gotten soft."
 
-            MC "No, never Captain."
+            mc "No, never Captain."
 
             if player_identity == "f":
 
@@ -443,7 +444,7 @@
 
                 Cap "She gave up da land life fer da free sea. And she never looked back."
 
-                MC "Aye Captain. I’ll keep that fresh in my mind."
+                mc "Aye Captain. I’ll keep that fresh in my mind."
 
                 Cap "Alright lass, dismissed. Put on something nicer and don’t get arrested."
 
@@ -453,11 +454,11 @@
 
                 Cap "She gave up da land life fer da free sea. And she never looked back."
 
-                MC "Aye Captain. I’ll keep that fresh in my mind."
+                mc "Aye Captain. I’ll keep that fresh in my mind."
 
                 Cap "Alright lad, dismissed. Put on something nicer and don’t get arrested."
 
-            hide cap with moveoutleft
+            hide cap with dissolve
 
             pause 1.0
             scene BG deckview with fade
@@ -465,30 +466,30 @@
 
             th "Yee got some fuck’en nerve doin’ that te me infront of thee Captain!"
 
-            MC "Fuck off Two Hands I outrank you!"
+            mc "Fuck off Two Hands I outrank you!"
 
             th "Aye, but a rank doesn’t stop me from order’n ye around."
 
             th "So when I say yer job is-"
 
-            MC "My job was already done ye salty wet rag!"
+            mc "My job was already done ye salty wet rag!"
 
-            MC "I just didn’t do it when you wanted me to is all!"
+            mc "I just didn’t do it when you wanted me to is all!"
 
             th "Which there lies thee problem."
 
-            MC "Your problem, not mine!"
+            mc "Your problem, not mine!"
 
             show twohands angry at wiggle
             th "Yer dead wrong!"
 
             th "Tis yer problem if ye aren’t where ye supposed to be."
 
-            MC "The job is done so why don’t you go boss around someone else with bleeding ears!"
+            mc "The job is done so why don’t you go boss around someone else with bleeding ears!"
 
             th "Why I outta throw ye overboard fer shark bait!"
 
-            $ fla = Character('Flavio', color="#BB64F2", callback=fl_voice)
+            $ fla = Character('Flavio', color="#8957ba", callback=fl_voice)
             show flavio at centerrighter with moveinright
 
             fla "Hey Two Hands why don’t yuh help me with the ropes, they need {cps=10}ummmmmm, knotting.{/cps}"
@@ -503,9 +504,9 @@
 
             fla "Bye [player_name], thanks for getting the canons clean so early."
 
-            MC "Thanks Flavio."
+            mc "Thanks Flavio."
 
-            MC "Make sure you get’em nice and tight Mr. Two Whole Hands!"
+            mc "Make sure you get’em nice and tight Mr. Two Whole Hands!"
 
             show twohands angry with Dissolve(0.1)
             pause 0.5
@@ -579,7 +580,7 @@
             $ clothing_check = 1
             $ renpy.block_rollback()
 
-            MC  "Wait don’t I have a nicer set of clothes somewhere?"
+            mc  "Wait don’t I have a nicer set of clothes somewhere?"
 
             "I can’t walk through the streets looking like a dirty pirate. There has to be a clean shirt I kept somewhere in here."
 
@@ -587,15 +588,15 @@
 
             "It’s not under the books and it’s not on my bed so there aren’t a lot of other possibilities."
 
-            MC "Wait wait wait."
+            mc "Wait wait wait."
 
-            MC "Under my bed."
+            mc "Under my bed."
 
             "Getting under there is a crapshoot already because I can barely see that low to the floor."
 
             "If I angle my arm right and moves these book, some light should reach the back..."
 
-            MC "Got it!"
+            mc "Got it!"
 
             "Feeling the smooth finish of wood resin, I pull out a good sized cigar box I converted into an emergency provisions safe."
 
@@ -603,7 +604,7 @@
 
             "Anything perishable or fragile I steal that might be better to save goes in here. Sometimes fruits, candy, soap, and if memory serves."
 
-            MC "That’s one soft shirt."
+            mc "That’s one soft shirt."
 
             "A folded black blouse barely fits in the recycled box. I stole it off a French Admiral’s son when he flipped me off as we were leaving their vessel."
 
@@ -624,7 +625,7 @@
             $ quick_menu = False
             $ renpy.block_rollback()
 
-            MC "I guess I could read without getting too invested."
+            mc "I guess I could read without getting too invested."
 
             $ quick_menu = True
 
@@ -652,7 +653,7 @@
 
             "As ample of an opportunity that this is, trying new things on the mainland could also be beneficial."
 
-            MC "So what should I start?"
+            mc "So what should I start?"
 
             $ renpy.block_rollback()
 
@@ -759,7 +760,7 @@
 
             "Perhaps I should just relax some and enjoy the sway of the ocean."
 
-            MC "Arrrghhhh, did I just start a sentence with \"Perhaps\"?"
+            mc "Arrrghhhh, did I just start a sentence with \"Perhaps\"?"
 
             "I know I’m not as slimy as your average pirate, but I’ll be damned to Tatarus if I start acting like a British dandy royal."
 
@@ -790,7 +791,7 @@
             $ daydream_check = 1
             $ renpy.block_rollback()
 
-            MC "I wonder what I can do at this port? Is the town around it big?"
+            mc "I wonder what I can do at this port? Is the town around it big?"
 
             "Wait a second. Captain didn’t tell me where we were docking. After the storm last night I don’t know if we changed trajectory from our usual routes or not."
 
@@ -823,12 +824,12 @@
             if counter != 4:
 
                 $ lines = re_list[counter]
-                MC "[lines]"
+                mc "[lines]"
                 $ counter += 1
 
             else:
 
-                MC "Shite!"
+                mc "Shite!"
                 jump breakdown
 
             jump waiting
@@ -874,7 +875,7 @@
 
             "But you aren't here anymore. So there's really only one thing I can do."
 
-            MC "Keep on pirating."
+            mc "Keep on pirating."
 
             "It’s what you would've wanted. It’s what I was taught."
 

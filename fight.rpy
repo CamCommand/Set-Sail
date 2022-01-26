@@ -42,7 +42,7 @@ screen pirate_fight2_0:
         xpos 0.48
         ypos 0.64
         auto "gui/button/x_%s.png"
-        action Jump("pirate_fight2_re")
+        action [SetVariable("pirate1_x", 3), Jump("pirate_fight2_re")]
         hovered [Play("effect", "audio/swordclick.mp3")]
 
 # both pirates in alive fight 2

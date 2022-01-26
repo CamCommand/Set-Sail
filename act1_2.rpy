@@ -41,15 +41,15 @@ label act1_2:
 
     if content_check == 1:
 
-        MC "{cps=20}Ahhhhh!{/cps}"
+        mc "{cps=20}Ahhhhh!{/cps}"
 
-        MC "May have not been the cure my shoulders were looking for, but that still felt good."
+        mc "May have not been the cure my shoulders were looking for, but that still felt good."
 
     elif content_check == 2:
 
         play effect "audio/crysniff2.wav" volume 0.5
 
-        MC "Get it together, you're a pirate not a swabbie."
+        mc "Get it together, you're a pirate not a swabbie."
 
     "Time to find out what land life has to offer."
 
@@ -61,7 +61,8 @@ label act1_2:
 
     "I might end up just having to bite the bullet on this if he doesn’t help."
 
-    show BG deckview2 with whiteflash
+    scene BG black with fade
+    scene BG deckview2 with whiteflash
 
     show flavio at right
     show cap at center
@@ -100,21 +101,21 @@ label act1_2:
 
     show flavio with moveinright
 
-    MC "Oh Flavio, have you seen the Captain?"
+    mc "Oh Flavio, have you seen the Captain?"
 
     fla "The Captain wishes for us to get what we came here for [player_name]."
 
-    MC "Whatcha got there?"
+    mc "Whatcha got there?"
 
     fla "Oh this? It was a letter to the Captain. It appears very crude so he wouldn’t open it."
 
     fla "If it ain't from a noble or a politician why open it right?"
 
-    MC "Yeah you’re right. Mind if I take a look though?"
+    mc "Yeah you’re right. Mind if I take a look though?"
 
     fla "He told me to get rid of it. Ye take care of that for me?"
 
-    MC "No problem Flavio."
+    mc "No problem Flavio."
 
     fla "Aye aye [player_name]. One less thing I have to do."
 
@@ -145,7 +146,7 @@ label act1_2:
     pause 1.5
     nvl clear
 
-    MC "You have to be kidding me."
+    mc "You have to be kidding me."
 
     "A pirate culture club. Seriously?"
 
@@ -206,15 +207,15 @@ label act1_2:
     show lib with dissolve
     $ woman = Character('Woman',color="#07BB01", callback=lib_voice)# Librarian
 
-    MC "Excuse me ma’am, could I bother you for today’s date?"
+    mc "Excuse me ma’am, could I bother you for today’s date?"
 
     woman "Umm yeah, it’s the 28th."
 
-    hide lib with moveoutleft
+    hide lib with Dissolve(0.3)
 
     "Wow, she rushed away faster than she was walking before. She didn’t scream or anything so I'll assume I'm normal enough."
 
-    MC "The 28th, {cps=20}hmmmmmmmm.{/cps}"
+    mc "The 28th, {cps=20}hmmmmmmmm.{/cps}"
 
     "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday."
 
@@ -236,12 +237,12 @@ label act1_2:
 
     "Let’s dive in head first, walk around the harbor and see what there is to do."
 
-    hide crowd
+    hide crowd with dissolve
     show BG black with fade
     show BG bogwalk
     with fade
 
-    "I'm at some kind of bog now?"
+    "Is this some kind of bog?"
 
     "No, it's by the sea so it's a marsh."
 
@@ -265,9 +266,9 @@ label act1_2:
 
     "The ocean’s vastly more free, plus I know it already. If my car breaks down, I wouldn’t know how to fix it and oars wouldn’t be an alternative."
 
-    MC "Maybe instead of having pirates aboard I’ll hire a pit crew."
+    mc "Maybe instead of having pirates aboard I’ll hire a pit crew."
 
-    MC "Ha ha ha ha hargh!"
+    mc "Ha ha ha ha hargh!"
 
     define activity_choice = "default"
     "Alright, that's enough walking. What should I go back and see with more detail?"
@@ -301,7 +302,7 @@ label act1_2:
         $ quick_menu = False
         $ renpy.block_rollback()
 
-        MC "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
+        mc "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
 
         $ quick_menu = True
 
@@ -330,7 +331,7 @@ label act1_2:
         $ woman = Character('Clerk', color="#07BB01", callback=lib_voice)# Store clerk
         woman "Excuse me, do you need help with something?"
 
-        MC "Oh, um yeah I’m looking for a book."
+        mc "Oh, um yeah I’m looking for a book."
 
         "It’s the woman who I asked the time from a few hours ago. Seems that she works here."
 
@@ -338,7 +339,7 @@ label act1_2:
 
         woman "What kind of book?"
 
-        MC "What kind of book? I want something,"
+        mc "What kind of book? I want something,"
 
         define book_choice = "" # to determine type of book chosen for future reference at the school
         $ renpy.block_rollback()
@@ -362,7 +363,7 @@ label act1_2:
 
                 "Of course one book isn’t going to transform me into a different person. This isn't a difficult choice."
 
-                MC "Do you have any exciting action books?"
+                mc "Do you have any exciting action books?"
 
                 show lib smile
 
@@ -380,11 +381,11 @@ label act1_2:
                 show lib with easeinright
                 woman "Have you read anything from the Parry Baxton series?"
 
-                MC "No I don’t think so. What’s it about?"
+                mc "No I don’t think so. What’s it about?"
 
                 woman "Why don’t you skim it and find out."
 
-                MC "Yes, I guess I can do that, thank you."
+                mc "Yes, I guess I can do that, thank you."
 
                 hide lib with easeoutright
 
@@ -396,7 +397,7 @@ label act1_2:
 
                 "I should stray away from young adult fiction at this point, it’s giving me bad ideas about young people. Plus bad ideas in general."
 
-                MC "{cps=20}Hmmmmmmmmmmm?{/cps}"
+                mc "{cps=20}Hmmmmmmmmmmm?{/cps}"
 
                 "Wait is this right? It’s about the Gods!"
 
@@ -444,7 +445,7 @@ label act1_2:
 
                 "Modern Biology something something."
 
-                MC "Do you have any good science books?"
+                mc "Do you have any good science books?"
 
                 show lib smile
 
@@ -463,11 +464,11 @@ label act1_2:
 
                 woman "Have you read The Night Sky yet?"
 
-                MC "No I don’t think so. What’s it about?"
+                mc "No I don’t think so. What’s it about?"
 
                 woman "Why don’t you skim it and find out."
 
-                MC "Yes, I guess I can do that, thank you."
+                mc "Yes, I guess I can do that, thank you."
 
                 hide lib with moveoutright
 
@@ -521,7 +522,7 @@ label act1_2:
 
                 "If I was able to make my own jokes, then it’s possible to even the playing field."
 
-                MC "Do you have any comedy books?"
+                mc "Do you have any comedy books?"
 
                 show lib smile
 
@@ -540,13 +541,13 @@ label act1_2:
 
                 woman "Do you want like, a joke book?"
 
-                MC "Yeah, why not? What’s your best joke book?"
+                mc "Yeah, why not? What’s your best joke book?"
 
                 woman "{cps=20}Hmmmmmmmmmmm?{/cps}"
 
                 woman "I don’t know if any joke books are good? This one is pirate themed if you’re into that sort of thing."
 
-                MC "I guess I’ll look at that one then."
+                mc "I guess I’ll look at that one then."
 
                 hide lib with moveoutright
 
@@ -614,7 +615,7 @@ label act1_2:
 
                 "I want something meaty and wondrous, those are the types of books that lead me to reread them."
 
-                MC "Do you have any good fantasy books?"
+                mc "Do you have any good fantasy books?"
 
                 show lib smile
 
@@ -634,11 +635,11 @@ label act1_2:
 
                 woman "Have you read Rune yet?"
 
-                MC "No I don’t think so. What’s it about?"
+                mc "No I don’t think so. What’s it about?"
 
                 woman "Why don’t you skim it and find out."
 
-                MC "Yes, I guess I can do that, thank you."
+                mc "Yes, I guess I can do that, thank you."
 
                 hide lib with moveoutright
 
@@ -683,17 +684,17 @@ label act1_2:
 
     label bstore_end:
 
-                MC "Excuse miss?"
+                mc "Excuse miss?"
 
                 show lib with dissolve
 
                 woman "Yes, hello again. Did you decide on a book?"
 
-                MC "Um, no. I liked what you recommended but I left my wallet at home."
+                mc "Um, no. I liked what you recommended but I left my wallet at home."
 
                 woman "Oh, well I can hold it on the side for you if you want."
 
-                MC "No that’s fine, I’ll come back later for it."
+                mc "No that’s fine, I’ll come back later for it."
 
                 "Hopefully she forgets about this and doesn’t keep the store open for my blatant lie. Is it still appropriate to ask for directions?"
 
@@ -702,19 +703,19 @@ label act1_2:
                 "I didn't notice her nametage."
 
                 $ woman = Character('Yoko',color="#07BB01", callback=lib_voice)# Librarian
-                MC "Yoko."
+                mc "Yoko."
 
-                MC "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
+                mc "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
 
                 woman "Yeah sure. Don’t you have any kind of map app though?"
 
                 "No, the letter didn’t come with a map unfortunately. Just tell me please."
 
-                MC "Uh no, I don’t have one. Is it far away?"
+                mc "Uh no, I don’t have one. Is it far away?"
 
                 woman "Not really. Going left out of the store, take the first left and it’s a mile up the road. You can’t miss it."
 
-                MC "Thank you Yoko. Have a nice afternoon."
+                mc "Thank you Yoko. Have a nice afternoon."
 
                 woman "You too. Please come again."
 
@@ -730,11 +731,11 @@ label act1_2:
 
     label market:
 
-        define food_check = 0 # This will be used later to determine if MC is hungry at school
+        define food_check = 0 # This will be used later to determine if mc is hungry at school
         $ quick_menu = False
         $ renpy.block_rollback()
 
-        MC "Something to eat sounds nice. I’m sure nobody will miss one apple."
+        mc "Something to eat sounds nice. I’m sure nobody will miss one apple."
 
         $ quick_menu = True
 
@@ -742,7 +743,7 @@ label act1_2:
         show BG market with fade
         show crowd with dissolve
 
-        play effect "audio/chattering.mp3" loop
+        play effect "audio/chattering.mp3" volume 1.5 loop
 
         "A few business buildings widen away from each other to reveal an alley path. There's a whole side street with tons of vendors lined up."
 
@@ -771,7 +772,7 @@ label act1_2:
         play sound "audio/swipe.mp3" # make these sounds so chattering can continue
         with fade
 
-        MC "Like seperating a drunk from his money."
+        mc "Like seperating a drunk from his money."
 
         play sound "audio/apple3.wav"
         $ food_check = 1
@@ -821,11 +822,11 @@ label act1_2:
 
         "Breaking up a conversation to ask for directions doesn’t feel like something I could feasibly accomplish."
 
-        MC "No, that’s dumb. You can do it matey."
+        mc "No, that’s dumb. You can do it matey."
 
         "Just need to walk up to someone who looks like a mom. They’ll know where it is."
 
-        MC "Excuse ma’am."
+        mc "Excuse ma’am."
 
         show mm with dissolve
 
@@ -838,13 +839,13 @@ label act1_2:
 
             "She doesn't sound annoyed, good start."
 
-        MC "Do you know where the Seaborough high school is?"
+        mc "Do you know where the Seaborough high school is?"
 
         ma "Why aren’t you at school?"
 
         "Uh oh."
 
-        MC "Because I graduated from another school. I need to pick something up from there."
+        mc "Because I graduated from another school. I need to pick something up from there."
 
         ma "You need to pick up something from another school?"
 
@@ -852,25 +853,25 @@ label act1_2:
 
         $ ma = Character('Annoying Woman', color="#FF793B", callback=rot_voice)
 
-        MC "Yup, that’s weird I know but that’s where they sent them."
+        mc "Yup, that’s weird I know but that’s where they sent them."
 
         ma "Them what?"
 
         "Poseidon drown this woman for me!"
 
-        MC "Them my papers. Do you know where it is at all?"
+        mc "Them my papers. Do you know where it is at all?"
 
         ma "Which papers?"
 
         "Do I just not pass as a high school graduate?"
 
-        MC "My uh, test scores. They got sent to the wrong school by accident."
+        mc "My uh, test scores. They got sent to the wrong school by accident."
 
         ma "The tests you took at your school got sent to another?"
 
         $ ma = Character('Nightmare', color="#FF793B", callback=rot_voice)
 
-        MC "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
+        mc "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
 
         ma "{cps=20}Uhhhhhhhh.{/cps}"
 
@@ -878,9 +879,9 @@ label act1_2:
 
         ma "But I'm not entirely sure. Let me ask that nice police officer over there if they know."
 
-        MC "Ma’am please, I’m sure someone like yourself knows the general direction from here."
+        mc "Ma’am please, I’m sure someone like yourself knows the general direction from here."
 
-        MC "I’ve been told the woman of Seaborough knows the streets very well."
+        mc "I’ve been told the woman of Seaborough knows the streets very well."
 
         "You think she bought my cheap bouquet of flattery?"
 
@@ -890,13 +891,13 @@ label act1_2:
 
         ma "He’s such a rude man you wouldn’t believe it."
 
-        MC "You deserve someone who treats you like the smart independent woman you are."
+        mc "You deserve someone who treats you like the smart independent woman you are."
 
         "If this was any other person I would believe that line."
 
         ma "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
 
-        MC "Thank you ma’am! Have a nice day!"
+        mc "Thank you ma’am! Have a nice day!"
 
         hide mm with dissolve
 
@@ -908,6 +909,7 @@ label act1_2:
 
         "Let's focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
 
+        hide crowd with dissolve
         stop effect fadeout 2.0
 
         jump act1_3
@@ -919,7 +921,7 @@ label act1_2:
         $ quick_menu = False
         $ renpy.block_rollback()
 
-        MC "Oh! That place had those video games Merigold told me about. Checking those out is a must."
+        mc "Oh! That place had those video games Merigold told me about. Checking those out is a must."
 
         $ quick_menu = True
 
@@ -961,9 +963,9 @@ label act1_2:
 
         "Nor could I sneak these huge games out the front door?"
 
-        MC "Uh, no thank you."
+        mc "Uh, no thank you."
 
-        MC "I was just wandering around. I’ve never seen an arcade before. I didn’t know they had bars in them."
+        mc "I was just wandering around. I’ve never seen an arcade before. I didn’t know they had bars in them."
 
         bt "Well the good ones do at least."
 
@@ -971,11 +973,11 @@ label act1_2:
 
         bt "You want to try a game?"
 
-        MC "I’d like to, I’ve never played."
+        mc "I’d like to, I’ve never played."
 
         bt "You have any cash on you?"
 
-        MC "I have nothing on me, sorry. Like I said I was just wandering around."
+        mc "I have nothing on me, sorry. Like I said I was just wandering around."
 
         bt "I see, well here. Since you're the first customer today, have a game on me."
 
@@ -989,7 +991,7 @@ label act1_2:
 
         "The bartender’s expression turns blank as he’s now staring at the floor."
 
-        MC "Thanks matey."
+        mc "Thanks matey."
 
         "He mumbles something close to \"No problem\" under his breath still looking down."
 
@@ -1139,19 +1141,19 @@ label act1_2:
 
         bt "You have a good time on that one?"
 
-        MC "Yeah it was great. Thanks for letting me play."
+        mc "Yeah it was great. Thanks for letting me play."
 
-        MC "Do you know how to get to Seaborough high school from here?"
+        mc "Do you know how to get to Seaborough high school from here?"
 
         bt "Sure kid. Make a left when you exit and then take the next left. Follow the signs for the school zone and you won’t be able to miss it."
 
-        MC "Thank you matey."
+        mc "Thank you matey."
 
         bt "No problem."
 
         bt "Come back with money for a drink later to thank me properly."
 
-        MC "Yeah, sure thing."
+        mc "Yeah, sure thing."
 
         hide bartender with dissolve
 
@@ -1207,7 +1209,7 @@ label act1_2:
 
         "I'm sure everyone here is use to it being hot, but will the high school people make fun of me for it?"
 
-        MC "Oh no."
+        mc "Oh no."
 
         "It's starting to hit me."
 
@@ -1221,7 +1223,7 @@ label act1_2:
 
         "What should I do? Oh, damn it!"
 
-        MC "Poseidon, fuel my flames!"
+        mc "Poseidon, fuel my flames!"
 
         "I can do this. Screw the pressure."
 
@@ -1241,7 +1243,7 @@ label act1_2:
 
         show BG street_sign with dissolve
 
-        MC "Oh! And look what we got here."
+        mc "Oh! And look what we got here."
 
         "{b}SLOW STUDENT CORSSING{/b}"
 
