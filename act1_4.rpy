@@ -1,5 +1,26 @@
 ﻿label act1_4:
 
+# thankfully this game runs smoothly and extra nesting doesn't visually effect runtime
+# I know the If-soup for the pirate fights are bad
+
+# But I had to redesign the fight after adding image buttons
+# also this fight was intended to be like this but it was too fun
+# think of the pirate#_x variables as dynamic HP
+# in the future, have the fight.rpy sections handle everything for the characters on screen
+# and this file will only call them when needed
+
+# for future reading purposes
+# matey and matey2 keep track of how many pirates should be on screen
+# pirate#_x variables are the "HP" or tracker for the pirates
+# pirate#-1_x and pirate#-1 slash is the image associated with pirate#_x
+# death_count is exactly what it sounds like
+# xnautz and xnautzz are for extra lines when pirates appear for intimidation
+# the labels pirate_fight#_# are for when a pirate dies (which would have been better handled on the fight.rpy)
+# fight.rpy is for reasigning vars to pirate#_x and determining to go to the looping labels of pirate_fight#_re
+# or to a label pirate_fight#_# to watch the mc defeat a pirate
+# the labels also check if the player can move on from that fight scene
+# and using death_count to call a game_over screen
+
 stop music fadeout 2.0
 show BG school2 with dissolve
 pause 1.0
@@ -414,12 +435,13 @@ label ship_start:
             if x_nautz == 0 and matey2 == 1: # appearence of 2nd pirate
 
                 show pirate5 at left with moveinleft
+                $ pirate4_x = 3
 
                 p "Need a hand?"
                 $ x_nautz += 1
                 call screen pirate_fight3_1
 
-        elif matey2 >= 1 and death_count != 0: # only 2 pirates are here
+        elif matey2 == 1 or matey2 == 2 and death_count != 0: # only 2 pirates are here
 
             show sword swing at sword with ease
             play effect "audio/sword_clash.ogg"
@@ -435,13 +457,24 @@ label ship_start:
 
             if x_nautzz == 0 and matey2 == 3: # appearence of 3rd pirate
 
+                $ pirate5_x = 3
                 show pirate6 at centerrighter behind sword with moveinbottom
 
                 p "Time to meet Davey Jones!"
                 $ x_nautzz += 1
                 call screen pirate_fight3_2
 
-            call screen pirate_fight3_1
+            if pirate3_x == 3 and pirate4_x == 3:
+
+                call screen pirate_fight3_1
+
+            elif pirate3_x != 3 and pirate4_x ==3:
+
+                call screen pirate_fight3_4
+
+            else:
+
+                call screen pirate_fight3_1
 
         elif matey2 >= 3 and death_count != 0: # only 3 pirates are here
 
@@ -457,7 +490,33 @@ label ship_start:
             $ matey2 += 1
             $ death_count -= 1
 
-            jump pirate_fight3_re
+            if pirate3_x == 3 and pirate4_x == 3 and pirate5_x == 3:
+
+                call screen pirate_fight3_2
+
+            if pirate3_x != 3 and pirate4_x == 3 and pirate5_x == 3:
+
+                call screen pirate_fight3_3
+
+            if pirate3_x != 3 and pirate4_x != 3 and pirate5_x == 3:
+
+                call screen pirate_fight3_5
+
+            if pirate3_x == 3 and pirate4_x != 3 and pirate5_x == 3:
+
+                call screen pirate_fight3_6
+
+            if pirate3_x == 3 and pirate4_x == 3 and pirate5_x != 3:
+
+                call screen pirate_fight3_1
+
+            if pirate3_x != 3 and pirate4_x == 3 and pirate5_x != 3:
+
+                call screen pirate_fight3_4
+
+            else:
+
+                jump pirate_fight3_re
 
     label pirate_fight3_1:
 
@@ -934,7 +993,7 @@ label ship_start:
 
         mc "Farewell Captain. May you torment the Underworld for eternity, you’ll be with Mother soon."
 
-        hide sword # incase its still there in some cases or my save skumming is catching up
+        hide sword # incase its still there in some cases or my save skumming is catching up with me
 
         hide cap with dissolve
         show BG black with dissolve
