@@ -1,4 +1,4 @@
-# Cameron Drummond 2021
+# Cameron Drummond 2021-2022
 label act1_1:
 
         transform pan:                       # panning and looping the BG
@@ -9,6 +9,9 @@ label act1_1:
         transform ds_slide:                  # slideing ds infront of screen
             xalign 0.5 yalign 10.0
             ease 1.5 truecenter
+
+        transform shirt_slide:
+            ease 1.0 xalign 0.1 yalign 1.0
 
         $ player_identity = "nb"             # default identity if needed
         define player_name = ""
@@ -258,7 +261,7 @@ label act1_1:
 
             "Pulling the dirty shirt out from under the heap of literature it’s apparent it failed. A stark reminder to stop reading young adult fiction at my age."
 
-            th "[player_name] get yerr ass out from whatever gutter ye hiding under."
+            th "[player_name] get yerr ass out from whatever gutter ye hiding under!"
 
             $ pirate = "ol'Two Hands"
             "I think that’s [pirate] calling for me."
@@ -605,11 +608,15 @@ label act1_1:
 
             "Anything perishable or fragile I steal that might be better to save goes in here. Sometimes fruits, candy, soap, and if memory serves."
 
+            show shirt with moveinbottom
+
             mc "That’s one soft shirt."
 
             "A folded black blouse barely fits in the recycled box. I stole it off a French Admiral’s son when he flipped me off as we were leaving their vessel."
 
             "With this shirt and a quick boot shine I should be looking moderately normal, or at least cleaner."
+
+            hide shirt with moveoutbottom
 
             play effect "audio/cloth_shine.wav"
 

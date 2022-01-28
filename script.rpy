@@ -1,4 +1,4 @@
-﻿# Cameron Drummond 2021
+﻿# Cameron Drummond 2021-2022
 
 init python:
 
@@ -338,6 +338,7 @@ image cap bloody = "Ricardo neutral bloody.png"
 image bartender = "bartender.png"
 image mm = "evil mom.png"
 image ds = "3ds.png"
+image shirt = "shirt.png"
 image crowd = "crowd.png"
 
 image doll = "doll.png"

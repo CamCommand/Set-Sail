@@ -1,4 +1,4 @@
-# Cameron Drummond 2021
+# Cameron Drummond 2021-2022
 label act1_4:
 
 # thankfully this game runs smoothly and extra nesting doesn't visually effect runtime
@@ -70,7 +70,7 @@ show BG walksunset with fade
 
 "It’s the subtle things that keep the peace between everyone. A good deed here or there."
 
-"Getting a second serving of food, someone cleaning your pistol without asking, the way ol’ Two Hands makes sure I get my work done on time so that he has someone to play chess with later."
+"Getting a second serving of food, someone cleaning your pistol without asking, the way ol’Two Hands makes sure I get my work done on time so that he has someone to play chess with later."
 
 "Even if he deserved it, I shouldn't have blown up at him."
 
@@ -369,7 +369,7 @@ label ship_start:
         $ quick_menu = False
         $ renpy.block_rollback()
 
-        "These guys finished off a few of our guys."
+        "These guys finished off a few of ours."
 
         $ quick_menu = True
 
@@ -987,7 +987,7 @@ label ship_start:
 
         mc "Aye Captain. I’ll go."
 
-        mc "It was an honor serving in your crew. Thank you for everything Father,"
+        mc "It was an honor serving in your crew. Thank you for everything Father."
 
         Cap "{cps=15}… … … … …{/cps}"
 
@@ -1013,6 +1013,8 @@ label ship_start:
         "Some broken planks and burnt sails are just that. Nothing more than trash to let be engulf by the sea."
 
         "Nothing stays where you left it. But isn't that exciting?"
+
+        "Who told me those words? I can't recall."
 
         pause 10.0
 

@@ -1,4 +1,4 @@
-# Cameron Drummond 2021
+# Cameron Drummond 2021-2022
 label act1_2:
 
     th "Land Ho!"
@@ -44,7 +44,7 @@ label act1_2:
 
         mc "{cps=20}Ahhhhh!{/cps}"
 
-        mc "May have not been the cure my shoulders were looking for, but that still felt good."
+        mc "That may have not been the cure my shoulders were looking for, but it still felt good."
 
     elif content_check == 2:
 
@@ -56,7 +56,7 @@ label act1_2:
 
     "Would Captain get the hint if I asked to get him something unimportant?"
 
-    "That I could escape without attracting any attention from the crew doing my work?"
+    "That way I could escape without attracting any attention from the crew doing my work?"
 
     "It could be futile, Flavio may have made the schedule change apparent and the pirates already know."
 
@@ -71,7 +71,7 @@ label act1_2:
 
     fla "A postman handed me this upon our arrival Captain. It’s got your name on it. Well just your title actually."
 
-    Cap "\"To The Demonic Pirate Ricardo of The Red Plague\", I don’t see a seal on it."
+    Cap "\"To The Demonic Pirate of The Red Plague\", I don’t see a seal on it."
 
     Cap "Mustn’t be important. Wasn’t the Governer supposed to make sure nobody would disturb us?"
 
@@ -112,13 +112,13 @@ label act1_2:
 
     fla "If it ain't from a noble or a politician why open it right?"
 
-    mc "Yeah you’re right. Mind if I take a look though?"
+    mc "You’re right matey. Mind if I take a look though?"
 
     fla "He told me to get rid of it. Ye take care of that for me?"
 
     mc "No problem Flavio."
 
-    fla "Aye aye [player_name]. One less thing I have to do."
+    fla "Aye [player_name]. One less thing I have to do."
 
     fla "Thanks matey."
 
@@ -134,13 +134,13 @@ label act1_2:
 
     nvl show dissolve
     # Im so sorry this nvl looks this way, I just wanted it to be formated a certain way and the spacing made no sense
-    n "{font=Cursive_Option.ttf}Dear The Demonic Pirate Ricardo,{/font}{nw}"
+    n "{font=Cursive_Option.ttf}Dear The Demonic Pirate,{/font}{nw}"
 
     n "{font=Cursive_Option.ttf}Word around Seaborough is that The Red Plague is coming to port this week. We welcome you with open arms and are honored that you have chosen to use our amenities instead of pillaging them.{/font}{nw}"
 
     n "{font=Cursive_Option.ttf}It is the wish of ours in The Pirate Culture Club at Seaborough High School that you would join us this afternoon to talk with our members about your life at sea. Your freedom and lifestyle has inspired many students here past the threat you could wreak.{/font}{nw}"
 
-    n "{font=Cursive_Option.ttf}We can provide food and drink (non alcoholic unfortunately) to those that are willing to share tales of adventures with us. A club representative will be waiting for you outside the school main entrance located at:{/font}{nw}"
+    n "{font=Cursive_Option.ttf}We can provide food and drink (non alcoholic unfortunately) to those that are willing to share tales of adventures with us. A club representative will be waiting for you outside the school main entrance located here;{/font}{nw}"
 
     n "{font=Cursive_Option.ttf}125 Swift Street, Seaborough, Florida \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ We eagerly await your arrival \ Captain. \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Sincerely, {i}The Pirate Culture Club{/i}{/font}"
 
@@ -161,7 +161,7 @@ label act1_2:
 
     "Where best to learn about people my age then a building full of them?"
 
-    "It would be my pleasure to set these weirdos straight about being a pirate as well. I don’t see why I shouldn’t go."
+    "It would be my pleasure to set those barnacle heads straight about being a pirate as well. I don’t see why I shouldn’t go."
 
     "If they think being a pirate is all glamour and riches these guys have another thing coming."
 
@@ -249,7 +249,7 @@ label act1_2:
 
     "Accidentally wandered away from where all the shops and people were, thought it would last longer."
 
-    "That was all really interesting to see. It feels so weird to taking it all in like that so quickly."
+    "That was all really interesting to see. It feels so weird taking it all in like that so quickly."
 
     "I saw more people in the last few hours than I have had all year on the ship. Even large vessels we’ve ravaged, most of the crew stayed hidden while we stole their stuff."
 

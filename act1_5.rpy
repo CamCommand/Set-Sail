@@ -1,4 +1,4 @@
-# Cameron Drummond 2021
+# Cameron Drummond 2021-2022
 init python:
 
     # splitting the mc's name in half
@@ -11,7 +11,6 @@ init python:
         s3 = s[s2].capitalize()
 
         return s[s1] + " and the other " + s3
-
 
 label act1_5:
 
@@ -117,7 +116,7 @@ label act1_5:
 
     n "Everytime I draw a pistol I’ll remember Iron Hip, who could empty a gun into an enemy's chest faster than anyone I ever knew."
 
-    n "I’ll never forget how ol’ Two Hands used both his hands in every task he did, no matter the risks. His efficiency was immeasurable."
+    n "I’ll never forget how ol’Two Hands used both his hands in every task he did, no matter the risks. His efficiency was immeasurable."
 
     n "And most of all, I’ll remember my Captain and his ideology of brutal honor down to his very last moment. I will take the lessons you all taught me and carry them to my own end."
 
@@ -428,7 +427,7 @@ label act1_5:
 
                 "They’d still be in high school right?"
 
-                "I wasn’t gone for that long, I’m sure they’re just chilling in the club room like last time I was there."
+                "I wasn’t gone for that long, I’m sure they’re just talking in the club room like last time I was there."
 
                 "The school shouldn’t be that far from here. I’ll get there before the club meeting ends."
 
@@ -664,7 +663,7 @@ label act1_5:
 
         "She’s likely onto bigger and better things at this point, no reason for her to stick around."
 
-        "The rest of the eboard as well. Staying four additional years here doesn't sound like something they'd all do."
+        "The rest of the E-board as well. Staying four additional years here doesn't sound like something they'd all do."
 
         "That afternoon with the Pirate Culture Club was fun, but I could tell they wanted to go somewhere else with their lives."
 

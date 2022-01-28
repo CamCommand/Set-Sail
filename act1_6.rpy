@@ -1,4 +1,4 @@
-# Cameron Drummond 2021
+# Cameron Drummond 2021-2022
 label act1_6:
 
 stop music fadeout 2.0
@@ -299,7 +299,7 @@ else:
 
     a "You want to join us?"
 
-mc "We? Like the eboard?"
+mc "We? Like the E-board?"
 
 show ast post at wiggle
 

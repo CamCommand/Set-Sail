@@ -1,4 +1,4 @@
-# Cameron Drummond 2021
+# Cameron Drummond 2021-2022
 label act1_3:
 
     show BG black with fade
@@ -347,7 +347,7 @@ label act1_3:
 
                     show ast with Dissolve(0.1)
 
-                    a "Don’t expect a big crowd. It’s like, just us on the e-board and a few straggling members who were in there before I went to get you."
+                    a "Don’t expect a big crowd. It’s like, just us on the E-board and a few straggling members who were in there before I went to get you."
 
                     show ast sad with Dissolve(0.1)
 
@@ -618,7 +618,7 @@ label act1_3:
 
                     mc "The sailor knocked over and their ship bursted into multiple explosions."
 
-                    mc "Our lives were saved by his divine decision."
+                    mc "Our lives were saved by His divine decision."
 
                     g "That sounds so cool. Did the rest of the ship sink?"
 
@@ -917,7 +917,7 @@ label act1_3:
 
                 show be shocked
 
-                b "Oh my God, does your ship not get wi-fi? A generator to charge a mi-fi box even?"
+                b "Oh my God, does your ship not get Wi-Fi? A generator to charge a Mi-Fi box even?"
 
                 mc "Since those words mean nothing to me, I’ll say no."
 
@@ -1007,7 +1007,7 @@ label act1_3:
 
                 mc "This great tale on how we ran over a blue whale from the bow of the ship."
 
-                mc "The heroics of harvesting it’s resources against our own lives, the whole crew pitched in  this one and a lifetime-"
+                mc "The heroics of harvesting it’s resources risking our own lives, the whole crew pitched in this once and a lifetime-"
 
                 show be skeptical with Dissolve(0.1)
 
@@ -1189,7 +1189,7 @@ label act1_3:
 
                     b "I got some more homework to, uh, work on."
 
-                    hide be skeptical
+                    hide be skeptical with dissolve
                     $ b_convo += 1
                     $ activity_check += 1
                     jump social
@@ -1280,9 +1280,17 @@ label act1_3:
 
                     show fiona sad with Dissolve(0.1)
 
-                    f "Just texting a friend, tell me a pirating thing I can share with them."
+                    f "Just texting my cock sucking friend, tell me a pirating thing I can share with them."
 
-                    mc "Yes, ummmm, you know most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
+                    mc "Is that a good thing to call your friend?"
+
+                    f "Sometimes, it is for me. You don't call other pirates that?"
+
+                    mc "I'd be risking my life if I did."
+
+                    f "So what's a big scary thing you guys do?"
+
+                    mc "Um, you know most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
 
                     mc "The barnacles under the ship tearing their skin off, killing them slowly. You’d be lucky to drown."
 
@@ -1459,13 +1467,17 @@ label act1_3:
 
                 f "We’ve come further in the past decade with multicultural and sexually diverse reading topics, but this isn’t a great place to live as far as cutting edge comes."
 
-                f "Some of these frickin meatheads will just shit on you for no reason other than you’re different. It’s exhausting to be around these people. Not in the club at least."
+                f "Some of these frickin meatheads will just shit on you for no reason other than you’re different."
+
+                show fiona sad with Dissolve(0.1)
+
+                f "It’s exhausting to be around these people. Not in the club at least."
 
                 mc "At least pirating and by association, this club, are very accepting. There’s a lot of violence when you’re a pirate."
 
                 mc "If you focus on it, life is bleak. Highlighting the good parts in your head really shifts your mood."
 
-                show fiona sad with Dissolve(0.1)
+                show fiona sad at wiggle
 
                 f "Yeeeeaaaaah. For the last thread of my mental health that sounds like the healthy thing to do."
 
@@ -1652,9 +1664,13 @@ label act1_3:
 
                     show ge mad with Dissolve(0.2)
 
-                    g "That’s some pirate bull right there. Tell me some cool pirate stuff."
+                    g "That’s some pirate bull right there. I can win anyone over with my perfect charm."
 
-                "Pirate stuff? Could she be more vague? She’s been smiling this whole time, maybe tell a funny story."
+                    show ge smile
+
+                    g" Tell me some cool pirate stuff."
+
+                "Pirate stuff? Could she be more vague? She’s been smiling a lot, maybe tell a funny story."
 
                 mc "So it’s against pirate code to coerce your preferred gender onto the ship. It won’t get you killed but you’ll be punished harshly."
 
@@ -1675,6 +1691,8 @@ label act1_3:
                 mc "We weren’t buying it and the Captain was getting increasingly upset at them. Our growing skepticism could only be squashed by one thing."
 
                 mc "To prove that they didn’t care about the woman, that way, they slowly brought their faces closer."
+
+                show ge int at bounce
 
                 g "No Fucking Way!"
 
@@ -1700,7 +1718,7 @@ label act1_3:
 
                 mc "Is that a popular genre on land?"
 
-                g "Let’s just say there are plenty of options to wet your palette with here. I’ll text you some links later."
+                g "Let’s just say there are plenty of options to wet your palette with. I’ll text you some links later."
 
                 mc "Alright, I’ll text you too G."
 
@@ -1885,13 +1903,13 @@ label act1_3:
 
                     show ge sad with Dissolve(0.1)
 
-                    g "Must be nice. My parents force me work in their deli after I’m done with school work."
+                    g "Must be nice. My parents force me to work in their deli after I’m done with school work."
 
                     g "I barely have time for anything. The club’s a small reprieve from all that, but still."
 
                     "That sounds really sad. Admiring the pirate life because yours is without freedom."
 
-                    "A pirate culture club isn't the worst form of escapism that exists. What was it that Astrid said I had to do?"
+                    "A pirate culture club isn't the worst form of escapism that exists. What would Astrid think is a good thing to say?"
 
                     mc "{cps=25}Arrrrrrgggggh.{/cps} Well aye hope aye made today salty enough for ye lass."
 
@@ -2220,7 +2238,7 @@ label act1_3:
 
                     a "Approaching a veteran pirate might not be as easy for my friends as it is for you."
 
-                    mc "That would make sense, I am basically the most relateable teen out there."
+                    mc "That would make sense, but I'm basically the most relateable teen out there."
 
                     show ast happy with Dissolve(0.1)
 
@@ -3271,11 +3289,11 @@ label act1_3:
 
                 b "We’re all friends on the E-board. This is the only time I ever see G during school now."
 
-                b "People used to call us G and B when we hung out. Ha ha. But now only Jack does to tease me."
+                b "People used to call us G and Be when we hung out. Ha ha. But now only Ash does to tease me."
 
-                mc "Which one is Jack?"
+                mc "Which one is Ash?"
 
-                b "Jack was sitting next to me during your introduction."
+                b "Ash was sitting next to me during your introduction."
 
                 show be skeptical with Dissolve(0.1)
 
@@ -3293,7 +3311,7 @@ label act1_3:
 
                 b "I also know a lot about pirates that came from Seaborough, but not everything. Maybe you could fill in my gaps?"
 
-                hide be happy with Dissolve(0.1)
+                hide be happy with dissolve
 
                 "Behati does a weird thing with her eyes and walks away."
 
@@ -3474,7 +3492,7 @@ label act1_3:
 
                 a "It does. Thank you [player_name], you’re a young Bobby Tepp."
 
-                show ast with Dissolve(0.1)
+                show ast with dissolve
 
                 a "I'm glad we got to meet today."
 
@@ -3570,7 +3588,7 @@ label act1_3:
 
             g "Next time you’re sinking a ship think of us, okay?"
 
-            mc "With pleasure G. I’ll make your name an omen of misfortune."
+            mc "With pleasure G. I’ll make your name's an omen of misfortune."
 
             g "Hell yes! That sounds perfect, my mythos begins now."
 
