@@ -1,3 +1,4 @@
+# Cameron Drummond 2021
 init python:
 
     # splitting the mc's name in half
@@ -409,7 +410,7 @@ label act1_5:
         "To figure out what it is I have to do I should retrace my steps."
 
         "After walking around where did I go first?"
-        $ activity_choice = "market"  # for testing purposes
+        #$ activity_choice = "market"  # for testing purposes
         $ renpy.block_rollback()
 
         menu:

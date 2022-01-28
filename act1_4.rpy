@@ -1,4 +1,5 @@
-﻿label act1_4:
+# Cameron Drummond 2021
+label act1_4:
 
 # thankfully this game runs smoothly and extra nesting doesn't visually effect runtime
 # I know the If-soup for the pirate fights are bad
@@ -90,7 +91,6 @@ play effect "audio/seagulls.mp3"
 "The sound of the waves and seagulls closing in breaks me from my illusions."
 
 "I'm about to expereince my own golden age of piracy. Time to see what life hurls at me next."
-
 
 stop music fadeout 2.0
 window hide

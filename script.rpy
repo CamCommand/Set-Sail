@@ -392,6 +392,7 @@ label start:
 
     define track1 = "music/BelowDeck.ogg"
     define track2 = "music/PirateTimes.ogg"
+    define track3 = "music/SchoolSucks.ogg"
 
     $ menuflag = False
 

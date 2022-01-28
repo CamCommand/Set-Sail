@@ -1,3 +1,4 @@
+# Cameron Drummond 2021
 init python in myworld:
 
     def getText():

@@ -1,3 +1,4 @@
+# Cameron Drummond 2021
 label act1_2:
 
     th "Land Ho!"

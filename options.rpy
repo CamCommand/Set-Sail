@@ -1,4 +1,5 @@
-﻿## This file contains options that can be changed to customize your game.
+# Cameron Drummond 2021
+## This file contains options that can be changed to customize your game.
 ##
 ## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
@@ -16,7 +17,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = "0.982"
+define config.version = "0.99"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.

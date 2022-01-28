@@ -1,4 +1,5 @@
-﻿label act1_3:
+# Cameron Drummond 2021
+label act1_3:
 
     show BG black with fade
     scene BG school with fade
@@ -86,7 +87,6 @@
 
     "Poseidon help me this girl is..."
 
-    # MC's different reactions to first meeting Astrid
     $ renpy.block_rollback()
 
     menu:
@@ -269,12 +269,12 @@
 
         hide ast smile with dissolve
 
-        stop music fadeout 1.0
+        stop music fadeout 2.0
         pause 0.5
         scene BG hw with fade
         pause 0.5
 
-        # play school music here
+        play music track3 volume 0.5 fadein 1.5 fadeout 1.5
 
         "Astrid is guiding me through a labyrinth of dull hallways."
 
@@ -3588,7 +3588,11 @@
             show ge int
             with Dissolve(0.1)
 
+            $ renpy.music.set_volume(0.00, delay=0, channel='music')
+
             ev "{cps=35}GO NOW, QUICKLY!{/cps}"
+
+            $ renpy.music.set_volume(1.00, delay=0, channel='music')
 
             mc "Alright I’m gone! Fare thee well mateys!"
 
@@ -3625,7 +3629,7 @@
             hide ge
             with dissolve
 
-            stop music fadeout 1.0
+            stop music fadeout 2.0
             jump act1_4
 
     return

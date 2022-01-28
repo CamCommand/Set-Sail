@@ -1,4 +1,5 @@
-﻿label act1_1:
+# Cameron Drummond 2021
+label act1_1:
 
         transform pan:                       # panning and looping the BG
             xalign 1.0
