@@ -78,7 +78,7 @@ label act1_5:
     play effect "audio/stomach.ogg"
     pause 2.0
 
-    "I wish I had grabbed some rations. Haven't eaten anything since high rise yesturday."
+    "I wish I had grabbed some rations. Haven't eaten anything since high rise yesterday."
 
     "But before finding something to eat, there’s something that needs to be done."
 
@@ -139,7 +139,7 @@ label act1_5:
 
     "Hopefully this will be enough for them."
 
-    "I don't exactly have the resources for a proper pirate funeral, but I think they'd apperciate this much."
+    "I don't exactly have the resources for a proper pirate funeral, but I think they'd appreciate this much."
 
     "..."
 
@@ -151,7 +151,7 @@ label act1_5:
 
     "It may be time to sell my earrings for something to ration. If they take earrings as payment still."
 
-    "That sort of old pirate tradition might not be as viable today as it use to."
+    "That sort of old pirate tradition might not be as viable today as it used to be."
 
     "I’ve never heard a story of anyone actually using them to get emergency funds or to barter for anything."
 
@@ -176,7 +176,7 @@ label act1_5:
 
     "They aren’t very cool looking masks, so it could be a medical thing. Or everyone got really ugly in the past couple of years."
 
-    "No matter the reason concealing my face might be a good idea."
+    "No matter the reason, concealing my face might be a good idea."
 
     mc "Excuse me fellas, why are you wearing masks today?"
 
@@ -232,7 +232,7 @@ label act1_5:
 
             $ quick_menu = True
 
-            "Best to stay with the winning team, if those passerbys were anything to go off of this sounds like a serious disagreement."
+            "Best to stay with the winning team, if those passersbys were anything to go off of this sounds like a serious disagreement."
 
             show BG black with fade
             show BG signcorner with fade
@@ -649,7 +649,7 @@ label act1_5:
 
         "The school grounds are vacant. Give or take a few cars, and I don’t hear anything either."
 
-        "Has everyone left or are they all still inside doing book papers things?"
+        "Has everyone left or are they all still inside doing book, papers, things?"
 
         "I can’t remember when school let out last time and I shouldn’t just walk in there looking the way I do now."
 
@@ -849,7 +849,7 @@ label act1_5:
 
                 "As long as I don’t claim a role that requires identification, this might open some golden opportunities."
 
-                "Swindle a idiot or two to make some money."
+                "Swindle an idiot or two to make some money."
 
                 show may fl at zoom_may
 
@@ -1089,7 +1089,7 @@ label act1_5:
 
         mc "Shite!"
 
-        "How could this happen? This is where I was supposed to go I just know it."
+        "How could this happen? This is where I was supposed to go, I just know it."
 
         "A peek inside shows the shelves have been stripped clean of their contents. Thick layers of dust tell me it's been closed for a long time now."
 
@@ -1099,7 +1099,7 @@ label act1_5:
 
         play effect "audio/banging.ogg" loop
 
-        "If it's closed what am I going to do? What is there to learn from this?"
+        "If it's closed, what am I going to do? What is there to learn from this?"
 
         "There’s no way the door could be-"
 
@@ -1136,7 +1136,7 @@ label act1_5:
         "How could something so large be left behind?"
 
         $ may_name = "Girl Voice"
-        m "Hey who’s in here?"
+        m "Hey, who’s in here?"
 
         "Oh barnacles!"
 
@@ -1160,7 +1160,7 @@ label act1_5:
 
         "They didn’t seem like the type to rat out a pirate. If they even cared?"
 
-        "No matter the reason for it, Poseidon wants me to go back there."
+        "No matter the, reason for it, Poseidon wants me to go back there."
 
         "It shouldn’t be far from here. Somewhere on the street behind this one."
 
@@ -1267,7 +1267,7 @@ label act1_5:
 
         else:
 
-            "These woman might not have soap, but they don't need to make me so aware of that."
+            "These women might not have soap, but they don't need to make me so aware of that."
 
         show may at redochar
 
@@ -1437,7 +1437,7 @@ label act1_5:
 
                         show doll
 
-                        dl "Good luck out their sweetheart. Don’t lose your shirt next."
+                        dl "Good luck out there sweetheart. Don’t lose your shirt next."
 
 
                     "I should get out of here before I’m considered an easy mark by the locals."
@@ -1623,7 +1623,7 @@ label act1_5:
 
                 mc "Begging me for money and trying to seduce me in one short conversation."
 
-                mc "Not that I had anything worth stealing, but come on. Do I like look I have anything of value on me?"
+                mc "Not that I had anything worth stealing, but come on. Do I look like I have anything of value on me?"
 
                 "I was lost at sea less than twelve hours ago, nothing but my earrings are worth the copper to you."
 
@@ -1713,7 +1713,7 @@ label act1_5:
 
         "What happened to this town, it was so pleasant the first time I was here?"
 
-        "It could have been my rose tinted glasses from my first full main land experience, but clearly it’s gone downhill."
+        "It could have been my rose tinted glasses from my first full mainland experience, but clearly it’s gone downhill."
 
         mc "What am I supposed to do out here Poseidon!"
 
@@ -1762,7 +1762,7 @@ label act1_5:
 
         m "Doesn’t look like any kind of market is here?"
 
-        mc "Well it was around last time I was here. But that was a long time ago."
+        mc "Well it was around the last time I was here. But that was a long time ago."
 
         show may sad with Dissolve(0.1)
 
@@ -1790,7 +1790,7 @@ label act1_5:
 
         m "Just come with me while I'm being nice will ya?"
 
-        mc "Alright, that sounds lovely thank you. Will they let us in though?"
+        mc "Alright, that sounds lovely, thank you. Will they let us in though?"
 
         m "If we got money I think the store won't care at this point."
 
@@ -1828,7 +1828,7 @@ label act1_5:
 
         m "So what do you want to talk about?"
 
-        mc "I’m sorry your kids are struggling. What’re their name or names?"
+        mc "I’m sorry your kids are struggling. What’re their names or name?"
 
         show may sad with Dissolve(0.1)
 
@@ -1941,11 +1941,11 @@ label choice_emptystore:
         mc "But there's nothing in here, I was just curious. Could I just leave now?"
 
         show may with dissolve
-        "Revealing myself to the voice, I see a tall woman is standing in the doorway."
+        "Revealing myself to the voice, I see a tall woman standing in the doorway."
 
         "She looks exacerbated by something she was doing previously."
 
-        "Her clothing choices don't indicated authority, but the lighting could conceal a weapon."
+        "Her clothing choices don't indicate authority, but the lighting could conceal a weapon."
 
         $ may_name = "Woman"
 

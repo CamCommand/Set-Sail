@@ -164,7 +164,7 @@ elif may_talk == 1:
 
     m "Do you know that girl?"
 
-    mc "Hann, she looks so much alike someone I use to know."
+    mc "Hann, she looks so much like someone I used to know."
 
     m "You think she’d pay for the coffee?"
 
@@ -175,7 +175,7 @@ elif may_talk == 1:
     show may fl flip
     $ m = Character('[may_name]', color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
-    m "Sure, I guess. What is she your little ex girlfriend?"
+    m "Sure, I guess. What is she your little ex-girlfriend?"
 
     if Astrid_affinity >= 3:
 
@@ -193,9 +193,9 @@ elif may_talk == 1:
 
     else:
 
-        mc "No, quick teasing me. She’s a just friend of mine."
+        mc "No, quick teasing me. She’s just a friend of mine."
 
-        mc "This is a good omen, are you goning to come sit down with me or not?"
+        mc "This is a good omen, are you going to come sit down with me or not?"
 
         show may flip with Dissolve(0.1)
 
@@ -1216,7 +1216,7 @@ else:
     show ge suppost
     with Dissolve(0.1)
 
-    mc "That’s funny not Hanna."
+    mc "That’s not funny Hanna."
 
     show may with Dissolve(0.1)
 
@@ -1286,7 +1286,7 @@ else:
 
     else:
 
-        m "That’s the way pirates operate, I’m sure they knows nothing comes for free in this world better then all of us."
+        m "That’s the way pirates operate, I’m sure they know nothing comes for free in this world better then all of us."
 
     show be confpost with Dissolve(0.1)
 
@@ -1477,7 +1477,7 @@ else:
 
     show be quizpost with Dissolve(0.1)
 
-    b "You’ve seen more of the world then us."
+    b "You’ve seen more of the world than us."
 
     show fi happypost with Dissolve(0.1)
 
@@ -1529,7 +1529,7 @@ else:
 
 show be confpost
 
-b "No it’s not it’s November."
+b "No it’s not, it’s November."
 
 $ m = Character('May', color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
@@ -1938,7 +1938,7 @@ label pirate_position:
 
                 g "We all got lost in the city during the prom after party and Fiona, having never been to the city, not only got us to the party on time."
 
-                g "But afterwards found this amazing burger place and found the bus station from there."
+                g "But afterwards, found this amazing burger place and found the bus station from there."
 
                 show fi sadpost
 

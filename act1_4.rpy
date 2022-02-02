@@ -66,7 +66,7 @@ show BG walksunset with fade
 
 "I still belong out there though, surfing on the endless waters."
 
-"Out there I trive and am revered. Even if the whole crew doesn’t treat me like it, I know they need me."
+"Out there I thrive and am revered. Even if the whole crew doesn’t treat me like it, I know they need me."
 
 "It’s the subtle things that keep the peace between everyone. A good deed here or there."
 
@@ -80,7 +80,7 @@ show BG walksunset with fade
 
 "If the Captain acknowledges it, then there could be something down the line waiting for me."
 
-"Other then whatever he got me for my birthday, which heopefully isn't a hand-me-down. Who knows what's next out there?"
+"Other than whatever he got me for my birthday, which hopefully isn't a hand-me-down. Who knows what's next out there?"
 
 "One day, I could have my own crew to command. Or control a second ship in the armada!"
 
@@ -90,7 +90,7 @@ play effect "audio/seagulls.mp3"
 
 "The sound of the waves and seagulls closing in breaks me from my illusions."
 
-"I'm about to expereince my own golden age of piracy. Time to see what life hurls at me next."
+"I'm about to experience my own golden age of piracy. Time to see what life hurls at me next."
 
 stop music fadeout 2.0
 window hide
@@ -192,7 +192,7 @@ label ship_start:
 
     "Getting surrounded is a likely possibility when you don’t know how many enemies you have. Especially when you don’t know where they’re coming from."
 
-    "I should strike first and and not get overwhelmed."
+    "I should strike first and not get overwhelmed."
 
     show BG nightdeck2 with dissolve
     $ renpy.music.set_volume(1.50, delay=0, channel='music')
@@ -381,7 +381,7 @@ label ship_start:
 
         "They were tasked with covering the cannons tonight, they didn't stand a chance against such a sneak attack."
 
-        "There must be someone around to who's still fighting?"
+        "There must be someone around who's still fighting?"
 
         "There is no way we were all taken out in our sleep!"
 
@@ -709,11 +709,11 @@ label ship_start:
 
         if matey2 >= 2:
 
-            "Just like now, he was ganged up on. I couldn’t have save him."
+            "Just like now, he was ganged up on. I couldn’t have saved him."
 
         else:
 
-            "He was ganged up on. I couldn’t have save him."
+            "He was ganged up on. I couldn’t have saved him."
 
         "He was never the greatest fighter, but this wasn’t fair."
 
@@ -927,7 +927,7 @@ label ship_start:
 
         Cap "[player_name] look at me!"
 
-        Cap "Look at me my child!"
+        Cap "Look at me, my child!"
 
         Cap "This is the end for me, for the Plague. But this ain't where yer story ends."
 
@@ -1010,7 +1010,7 @@ label ship_start:
 
         "A pirate’s dream of absolute freedom only dies when they are all good and dead. Every ounce of gunpowder or barrel of cannonballs couldn't kill this dream."
 
-        "Some broken planks and burnt sails are just that. Nothing more than trash to let be engulf by the sea."
+        "Some broken planks and burnt sails are just that. Nothing more than trash to let be engulfed by the sea."
 
         "Nothing stays where you left it. But isn't that exciting?"
 

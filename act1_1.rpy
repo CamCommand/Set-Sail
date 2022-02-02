@@ -29,13 +29,13 @@ label act1_1:
 
         n "\n{nw}"
 
-        n "{cps=30}\nPirating is older than recorded human history. Supply chains interrupted and intercepted by those with the might to steal large portions of materials.{nw}"
+        n "{cps=30}\nPirating is older than recorded human history. Goods are stolen and plundered by those with the talent to take them by any means.{nw}"
 
         n "{cps=30}\nEvery stretch of water has seen one form or another of piracy. Normally, stealing large sums of profit is seen as immoral.{nw}"
 
-        n "{cps=30}\nYet pirates are deified and revered throughout history. Its unique form of crime shook the world in a way nothing else could.{nw}"
+        n "{cps=30}\nYet pirates are deified and revered throughout history. This unique form of crime shook the world in a way nothing else could.{nw}"
 
-        n "{cps=30}\nThus began a code between these pirates. An honor amongst thieves to be upheld keeping the practice ruly in unruly times."
+        n "{cps=30}\nA code between these pirates appeared a long time ago. An honor amongst thieves that keeps the practice ruly in unruly times for each and every soul."
 
         nvl clear
 
@@ -276,7 +276,7 @@ label act1_1:
 
             "My salty hair won’t straighten no matter how much I brush and my skin is damaged beyond its original color."
 
-            "I make note over my other features quite harshly to myself. My next thought flickers from the back of my mind."
+            "I make note of my other features quite harshly to myself. My next thought flickers from the back of my mind."
 
             if player_identity == "f":
 
@@ -296,7 +296,7 @@ label act1_1:
 
             "Snapping back into action I head for the top deck. It’s time to start moving for real. I could use a peaceful type of day."
 
-            "As peaceful as pirate's life could be."
+            "As peaceful as a pirate's life could be."
 
             scene BG black with fade
             scene BG deckview with whiteflash
@@ -352,7 +352,7 @@ label act1_1:
             hide twohands scared flip with moveoutleft
             show cap at center with move
 
-            "Not many around has been on this ship as long as I have."
+            "Not many around have been on this ship as long as I have."
 
             "Of the Captain’s {i}Demon Moments{/i}, this wasn’t that bad, but I haven’t flinched during one of them since I was sixteen."
 
@@ -422,9 +422,11 @@ label act1_1:
 
             Cap "Argh, what you expected nothing from me?"
 
-            mc "No, it’s wonderful and thoughtful gift. I will use it wisely. Do you need me to get you anything?"
+            mc "No, it’s a wonderful and thoughtful gift Captain. I will use it wisely."
 
-            Cap "No, no, nothing for me. There be nothing else I’ll ever need from this port ever again."
+            mc "Do you need me to get you anything while I'm there?"
+
+            Cap "No, no, nothing for me child. There be nothing else I'll ever need from this port again."
 
             Cap "Personally that is. We’re gonna need a lot more cannonballs of course."
 
@@ -532,7 +534,7 @@ label act1_1:
             pause 1.0
             scene BG MC_room with dissolve
 
-            "I wonder how long Captain planned this? No way Flavio could have change the work schedule as quickly as yesterday, or even a week ago."
+            "I wonder how long Captain planned this? No way Flavio could have changed the work schedule as quickly as yesterday, or even a week ago."
 
             "If someone gets my work and they know it’s mine, they’ll definitely give me a hard time about it."
 
@@ -598,7 +600,7 @@ label act1_1:
 
             "Getting under there is a crapshoot already because I can barely see that low to the floor."
 
-            "If I angle my arm right and moves these book, some light should reach the back..."
+            "If I angle my arm right and move these book, some light should reach the back..."
 
             mc "Got it!"
 
@@ -801,7 +803,7 @@ label act1_1:
 
             mc "I wonder what I can do at this port? Is the town around it big?"
 
-            "Wait a second. Captain didn’t tell me where we were docking. After the storm last night I don’t know if we changed trajectory from our usual routes or not."
+            "Wait a second. Captain didn’t tell me where we were docking. After the storm last night I don’t know if we changed the trajectory from our usual routes or not."
 
             "We were around Havana a couple of days ago. We might have turned north last night to avoid the worst of the storm."
 
@@ -815,7 +817,7 @@ label act1_1:
 
             "The grizzled old pirate wouldn’t make special precautions for a port where zero people  give a shite that he's there."
 
-            "He'd apperciate the lack of attention and interpret it as fear."
+            "He'd appreciate the lack of attention and interpret it as fear."
 
             "We haven’t been to that state since Mom died. We've been sailing around it for years."
 

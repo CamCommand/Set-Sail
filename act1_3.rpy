@@ -35,7 +35,7 @@ label act1_3:
 
     "You’d think they’d be put them into weight groups so the bigger ones don’t demolish the smaller ones."
 
-    "If everyone is going home it might be easiest to wait out the crowd see if the writer makes themselves visable."
+    "If everyone is going home it might be easiest to wait out the crowd, see if the writer makes themselves visible."
 
     "I'll give it a few minutes."
 
@@ -239,7 +239,7 @@ label act1_3:
 
         "Damn me to Davey Jones', I thought these pants were a dark color on purpose."
 
-        "What color were my pants orignally?"
+        "What color were my pants originally"
 
         mc "Yes, that’s me. I’m the first mate."
 
@@ -470,7 +470,7 @@ label act1_3:
             show fiona at left
             with dissolve
 
-            mc "Alirght, I’m capable of that."
+            mc "Alright, I’m capable of that."
 
             # check is characters have met yet
             define f_met = 0
@@ -502,7 +502,7 @@ label act1_3:
 
                     a "Oh!"
 
-                    a "That’s a high school thing. We raise our hands when we have a question as to not blurt them out when someone is talking."
+                    a "That’s a high school thing. We raise our hands when we have a question so as to not blurt them out when someone is talking."
 
                     a "That’s Fiona, she’s our Vice President."
 
@@ -568,7 +568,7 @@ label act1_3:
 
                     a "Oh!"
 
-                    a "That’s a high school thing. We raise our hands when we have a question as to not blurt them out when someone is talking."
+                    a "That’s a high school thing. We raise our hands when we have a question so as to not blurt them out when someone is talking."
 
                     a "That’s Geraldine, she’s our club’s Secretary."
 
@@ -606,13 +606,13 @@ label act1_3:
 
                     show ge smug with Dissolve(0.1)
 
-                    g "Pirates do have RPG's I knew it! You owe me five bucks Be."
+                    g "Pirates do have RPGs I knew it! You owe me five bucks Be."
 
                     a "G let [player_name] finish."
 
                     show ge int with Dissolve(0.1)
 
-                    g "Oh, sorry go on."
+                    g "Oh, sorry, go on."
 
                     mc "Alright, before I could brace for impact, an uncharacteristically powerful wave for that stage of the storm knocked into the Mexican ship."
 
@@ -654,7 +654,7 @@ label act1_3:
 
                     a "Oh! That’s a high school thing."
 
-                    a "We raise our hands when we have a question as to not blurt them out when someone is talking."
+                    a "We raise our hands when we have a question so as to not blurt them out when someone is talking."
 
                     a "That’s Behati, our club's Treasurer."
 
@@ -702,7 +702,7 @@ label act1_3:
 
                     show be emb
 
-                    b "Yes that’s me."
+                    b "Yes, that’s me."
 
                     mc "Pirates don’t have quotas or missions."
 
@@ -856,7 +856,7 @@ label act1_3:
 
                     mc "It’s alright, I’m not going to hurt you in any way."
 
-                    mc "I was just trying to show everyone that being a pirate has it's glory but it is very dangerous. Trying to be realistic, you know?"
+                    mc "I was just trying to show everyone that being a pirate has its glory but it is very dangerous. Trying to be realistic, you know?"
 
                     show be shocked
 
@@ -953,7 +953,7 @@ label act1_3:
 
                 b "However, your ship is often recorded as the reason for lost products publicly for some companies. I wonder why there’s only a few?"
 
-                mc "Thats so great. It feels wrong, but just true enough to keep the mythos alive."
+                mc "That's so great. It feels wrong, but just true enough to keep the mythos alive."
 
                 show be quiz with Dissolve(0.1)
 
@@ -1019,7 +1019,7 @@ label act1_3:
 
                 show be with Dissolve(0.1)
 
-                b "Wikis are supposed to be informational. They aren’t the place for hearsay stories or non formative tales."
+                b "Wikis are supposed to be informational. They aren’t the place for hearsay stories or non-formative tales."
 
                 mc "Alright, even though this is entirely a formative tale, I know what you mean."
 
@@ -1300,7 +1300,7 @@ label act1_3:
 
                 "I’m having a hard time getting a read on Fiona. In a way she’s a lot like other female pirates I’ve met, but something is...funny."
 
-                mc "Yes next time I’ll be more relaxed about it."
+                mc "Alright, next time I’ll be more relaxed about it."
 
                 f "No I mean like that was really hardcore. So what's your favorite part about being a pirate?"
 
@@ -1524,7 +1524,7 @@ label act1_3:
 
                 f "I don’t think the principal cares what the students do if it doesn’t break the bylaws, but we are an officially sanctioned club. We got the whole package."
 
-                f "A faculty supervisor that doesn’t come to school anymore, at least three members, and an E-board. Enough to schedule meetings and have the room to ourselves."
+                f "A faculty supervisor that doesn’t come to school any more, at least three members, and an E-board. Enough to schedule meetings and have the room to ourselves."
 
                 mc "A pirate ship really only needs a Captain and people to make the vessel sail."
 
@@ -1624,7 +1624,7 @@ label act1_3:
 
                     show ge happy with Dissolve(0.1)
 
-                    g "It’s quicker and doesn’t make me sound like some heiress to a embroidered pillow fortune."
+                    g "It’s quicker and doesn’t make me sound like some heiress to an embroidered pillow fortune."
 
                     mc "Your name is what you make it, not what is expected of it."
 
@@ -1899,7 +1899,7 @@ label act1_3:
 
                     g "The Pirate Code?"
 
-                    mc "Yes that exact one. We all have to follow it or nothing get's done and priacy becomes chaos."
+                    mc "Yes, that exact one. We all have to follow it or nothing gets done and piracy becomes chaos."
 
                     show ge sad with Dissolve(0.1)
 
@@ -1992,7 +1992,7 @@ label act1_3:
 
                     g "You don’t say aye aye?"
 
-                    mc "I said yes already why would I say it twice?"
+                    mc "I said yes already, why would I say it twice?"
 
                     show ge smile
 
@@ -2013,7 +2013,7 @@ label act1_3:
 
                     play effect "audio/laser2.wav"
                     queue effect "audio/laser1.wav"
-                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are yelling ay me?"
+                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are yelling at me?"
 
                     play effect "audio/laser2.wav"
                     queue effect "audio/laser2.wav"
@@ -2022,7 +2022,7 @@ label act1_3:
                     play effect "audio/laser2.wav"
                     queue effect "audio/laser2.wav"
                     queue effect "audio/laser2.wav"
-                    "It's fun for a few minutes, but after I die three times I had to hand the device back to G."
+                    "It's fun for a few minutes, but after I died three times I had to hand the device back to G."
 
                     hide ds with moveoutbottom
                     mc "That was fun, I think I’m really starting to like video games."
@@ -2035,7 +2035,7 @@ label act1_3:
 
                     g "{cps=40}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
 
-                    "Her repetition gets slower and hands growing closer to my face."
+                    "Her repetition gets slower and hands grow closer to my face."
 
                     "After backing away slowly she stopped and laughed to herself for a good second."
 
@@ -2085,7 +2085,7 @@ label act1_3:
 
                     g "You don’t say aye aye?"
 
-                    mc "I said yes already why would I say it twice?"
+                    mc "I said yes already, why would I say it twice?"
 
                     show ge smile
 
@@ -2106,7 +2106,7 @@ label act1_3:
 
                     play effect "audio/laser2.wav"
                     queue effect "audio/laser1.wav"
-                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are yelling ay me?"
+                    "There’s little animals yelling at me to do better but this is my first time so I don’t know why they are yelling at me?"
 
                     play effect "audio/laser2.wav"
                     queue effect "audio/laser2.wav"
@@ -2115,7 +2115,7 @@ label act1_3:
                     play effect "audio/laser2.wav"
                     queue effect "audio/laser2.wav"
                     queue effect "audio/laser2.wav"
-                    "It's fun for a few minutes, but after I die three times I had to hand the device back to G."
+                    "It's fun for a few minutes, but after I died three times I had to hand the device back to G."
 
                     hide ds with moveoutbottom
 
@@ -2129,7 +2129,7 @@ label act1_3:
 
                     g "{cps=40}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
 
-                    "Her repetition gets slower and hands growing closer to my face."
+                    "Her repetition gets slower and hands grow closer to my face."
 
                     show ge smug with Dissolve(0.1)
 
@@ -2238,7 +2238,7 @@ label act1_3:
 
                     a "Approaching a veteran pirate might not be as easy for my friends as it is for you."
 
-                    mc "That would make sense, but I'm basically the most relateable teen out there."
+                    mc "That would make sense, but I'm basically the most relatable teen out there."
 
                     show ast happy with Dissolve(0.1)
 
@@ -2340,7 +2340,7 @@ label act1_3:
 
                 else:
 
-                    mc "I guess could spread out a little more, but I like talking to you too."
+                    mc "I guess I could spread out a little more, but I like talking to you too."
 
                     show ast emb with Dissolve(0.1)
 
@@ -2352,7 +2352,7 @@ label act1_3:
 
                 a "You aren't acting like I thought a pirate of the Red Plague would."
 
-                mc "What like a greasy monster?"
+                mc "What, like a greasy monster?"
 
                 show ast sup with Dissolve(0.1)
 
@@ -2366,7 +2366,7 @@ label act1_3:
 
                 show ast smile with Dissolve(0.1)
 
-                a "Oh, well I apperciate that."
+                a "Oh, well I appreciate that."
 
                 show ast happy
 
@@ -2452,11 +2452,11 @@ label act1_3:
 
                 a "That’s some eerie imagery. Might have dodged a bullet there by getting you to come instead."
 
-                mc "Thanks I appreciate that."
+                mc "Thanks, I appreciate that."
 
                 a "No, I mean it. It’s been cool having you here today."
 
-                mc "Ha, I wasn’t being sarcastic. I’ve been scolded at because it isn’t a very good look for a serious pirate, whatever that means."
+                mc "Ha, I wasn’t being sarcastic. I’ve been scolded because it isn’t a very good look for serious pirates, whatever that means."
 
                 a "Well what jerk decides that? Sarcasm is our generation's life blood. You use it as much as you want [player_name]."
 
@@ -2528,7 +2528,7 @@ label act1_3:
 
                 mc "Aye President. I’ll spread the good word of cannon cleaning techniques in your name."
 
-                a "Much apperciated, thank you. I'll be around if you need anything."
+                a "Much appreciated, thank you. I'll be around if you need anything."
 
                 $ a_convo += 1
                 $ activity_check += 1
@@ -2631,7 +2631,7 @@ label act1_3:
                     $ f = Character('Fiona', color="#d1c1ff", callback=fiona_voice, who_outlines=[ (1, "#000000")])
                     $ f_met += 1
 
-                    f "Yeah, my name’s Fiona. Come with me, I’ll be there if we run into anymore gendered symbols."
+                    f "Yeah, my name’s Fiona. Come with me, I’ll be there if we run into any more gendered symbols."
 
                     hide fiona with dissolve
 
@@ -2657,7 +2657,7 @@ label act1_3:
 
                     show fiona sad with Dissolve(0.1)
 
-                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as t hey look."
+                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
 
                     mc "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
 
@@ -2871,7 +2871,7 @@ label act1_3:
 
                     show fiona sad with Dissolve(0.1)
 
-                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as t hey look."
+                    f "No, but the school ones have to support a lot of people at once. They aren’t as accommodating as they look."
 
                     mc "What do you mean? There seems to be plenty of soap, multiple stalls, and enough wipe paper to kill a shark."
 
@@ -3199,7 +3199,7 @@ label act1_3:
                     $ b = Character('Behati', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])
                     $ b_met +=1
 
-                    b "{cps=100}I’m Behati here’s some water we took from the tap and put in a pitcher!{/cps}"
+                    b "{cps=100}I’m Behati. Here’s some water we took from the tap and put in a pitcher!{/cps}"
 
                     play effect "audio/water.ogg" volume .8
                     show be at wiggle
@@ -3384,7 +3384,7 @@ label act1_3:
 
                 "Astrid’s eyes are almost sparkling at the question. Does she think gold comes from the sea?"
 
-                "Who’s just sailing around with gold bars? It’ll get stolen easily if it ever got close to us."
+                "Who’s just sailing around with gold bars? It’ll get stolen easily if it ever stays with us longer than an hour."
 
                 mc "{cps=20}Ummmmmm{/cps}, sometimes when we steal from arcistorats that have nice stuff we can pawn."
 
@@ -3434,7 +3434,7 @@ label act1_3:
 
                 a "Uh, do you have a cool sword?"
 
-                a "One which often clashes with other pirates is manly conflicts?"
+                a "One which often clashes with other pirates in manly conflicts?"
 
                 mc "Not at the moment."
 
@@ -3480,7 +3480,7 @@ label act1_3:
 
                 a "You haven’t met the gun nuts around here have you?"
 
-                a "You pull a pistol on them you’d hit the floor faster than sodas exploding in my car."
+                a "You pull a pistol on them, you’d hit the floor faster than sodas exploding in my car."
 
                 mc "Ha ha haaaaa. You're saying I'd explode? Maybe you’re right lass."
 

@@ -27,7 +27,7 @@ label act1_2:
 
         "I wonder how many people on land think about this stuff on the day-to-day?"
 
-        "Oh well, what does a child know? I bet I've been closer to death then they were."
+        "Oh well, what does a child know? I bet I've been closer to death than they were."
 
     elif book_read == "stripes":
 
@@ -73,7 +73,7 @@ label act1_2:
 
     Cap "\"To The Demonic Pirate of The Red Plague\", I don’t see a seal on it."
 
-    Cap "Mustn’t be important. Wasn’t the Governer supposed to make sure nobody would disturb us?"
+    Cap "Mustn’t be important. Wasn’t the Gov'ner supposed to make sure nobody would disturb us?"
 
     fla "Well the landlubber was terrified just handing it to me. Mustn't be important Captain. Just a poor prank, sorry to bother ye."
 
@@ -199,7 +199,7 @@ label act1_2:
 
         "Wait, people are wearing all sorts of clothes. There isn't a conformist way of dressing."
 
-        "Despit the fact that it's hot here, people are even wearing layers."
+        "Despite the fact that it's hot here, people are even wearing layers."
 
         "Thank Poseidon I can pass this mess off as fashionable. Land dwellers aren't all bad."
 
@@ -247,7 +247,7 @@ label act1_2:
 
     "No, it's by the sea so it's a marsh."
 
-    "Accidentally wandered away from where all the shops and people were, thought it would last longer."
+    "Accidentally wandered away from where all the shops and people were. Thought it would last longer."
 
     "That was all really interesting to see. It feels so weird taking it all in like that so quickly."
 
@@ -261,7 +261,7 @@ label act1_2:
 
     "They’ve been described to me by pirates with more land experience, but only enough to give me the general idea."
 
-    "If retiring is ever an option for me, selling my ship and buying a car might be a fun idea. Travel the roads of the world now that the seas are conquered. Getting into car fights and run ins with the law."
+    "If retiring is ever an option for me, selling my ship and buying a car might be a fun idea. Travel the roads of the world now that the seas are conquered. Getting into car fights and run-ins with the law."
 
     "What a dumb idea though."
 
@@ -382,7 +382,7 @@ label act1_2:
                 show lib with easeinright
                 woman "Have you read anything from the Parry Baxton series?"
 
-                mc "No I don’t think so. What’s it about?"
+                mc "No, I don’t think so. What’s it about?"
 
                 woman "Why don’t you skim it and find out."
 
@@ -454,7 +454,7 @@ label act1_2:
 
                 "She laughed at me!"
 
-                woman "Yeah let me find something a labcoat like you would enjoy."
+                woman "Yeah let me find something a lab coat like you would enjoy."
 
                 "I hope I didn’t say that too weirdly."
 
@@ -465,7 +465,7 @@ label act1_2:
 
                 woman "Have you read The Night Sky yet?"
 
-                mc "No I don’t think so. What’s it about?"
+                mc "No, I don’t think so. What’s it about?"
 
                 woman "Why don’t you skim it and find out."
 
@@ -636,7 +636,7 @@ label act1_2:
 
                 woman "Have you read Rune yet?"
 
-                mc "No I don’t think so. What’s it about?"
+                mc "No, I don’t think so. What’s it about?"
 
                 woman "Why don’t you skim it and find out."
 
@@ -685,7 +685,7 @@ label act1_2:
 
     label bstore_end:
 
-                mc "Excuse miss?"
+                mc "Excuse me, miss?"
 
                 show lib with dissolve
 
@@ -701,9 +701,9 @@ label act1_2:
 
                 "Oh!"
 
-                "I didn't notice her nametage."
+                "I didn't notice her name tag."
 
-                $ woman = Character('Yoko',color="#07BB01", callback=lib_voice)# Librarian
+                $ woman = Character('Yoko',color="#07BB01", callback=lib_voice)
                 mc "Yoko."
 
                 mc "Could you give me directions to Seaborough high school? I need to meet a friend there, but I’ve never been."
@@ -754,13 +754,13 @@ label act1_2:
 
         "Someone explained what \"dot com\" meant to me, but it has not been saved to memory."
 
-        "I don’t understand how someone could make a living off of these say, cartoon print earrings, weird."
+        "I don’t understand how someone could make a living off of these, say those cartoon print earrings. They’re strange."
 
         "Yet, being a pirate doesn’t give me the best business sense so can I really judge?"
 
         "People are gathering around fruit stands. I could easily snag a snack without anyone noticing."
 
-        "Crates of fruits and vegetables are spread out along grey foldable tables."
+        "Crates of fruits and vegetables are spread out along gray foldable tables."
 
         "People are shoulder to shoulder picking them out, smelling them, squeezing them, all before putting it down or in their bags. Is this worth it?"
 
@@ -926,7 +926,7 @@ label act1_2:
 
         $ quick_menu = True
 
-        "She said arcades have old games so supposed I can pick them up easily."
+        "She said arcades have old games so I suppose I can pick them up easily."
 
         show BG black with fade
         show BG harbor with fade
@@ -1208,7 +1208,7 @@ label act1_2:
 
             "My nice shirt is starting to show sweat marks."
 
-        "I'm sure everyone here is use to it being hot, but will the high school people make fun of me for it?"
+        "I'm sure everyone here is used to it being hot, but will the high school people make fun of me for it?"
 
         mc "Oh no."
 
@@ -1246,7 +1246,7 @@ label act1_2:
 
         mc "Oh! And look what we got here."
 
-        "{b}SLOW STUDENT CORSSING{/b}"
+        "{b}SLOW STUDENT CROSSING{/b}"
 
         "Did I ever say I needed a map?"
 

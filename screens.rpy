@@ -1597,11 +1597,11 @@ screen skip_indicator():
         hbox:
             spacing 9
 
-            text _("Skipping")
+            text _("Skipping") color "#000000"
 
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
+            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle" color "#000000"
+            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle" color "#000000"
+            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle" color "#000000"
 
 
 ## This transform is used to blink the arrows one after another.
