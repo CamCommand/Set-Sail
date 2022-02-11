@@ -33,6 +33,8 @@ label act1_0:
 
     if charcount == 1623 and match == "Curse":
 
+        $ persistent.flg = 1
+
         jump secretending
 
     else:
@@ -136,6 +138,7 @@ label secretending:
         play effect "audio/end.ogg"
 
         show c with ease:
+
             ease 1.0 zoom 100
 
         pause 2.0

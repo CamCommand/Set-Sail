@@ -2553,12 +2553,91 @@ label act1_end:
     stop music fadeout 2.0
     pause 2.0
 
-    hide ast posts
-    hide fi posts
+    hide ast post
+    hide fi post
     hide may
     hide be
     hide ge
     with dissolve
+
+    if persistent.flg == 1:
+
+        "Wait, something is wrong."
+
+        "Wasn’t I just in the abandoned store?"
+
+        "No, that was hours ago. I’m with the girls now."
+
+        "Things are going to change now."
+
+        $ persistent.flg += 1
+
+    elif persistent.flg == 2:
+
+        "This is familiar…"
+
+        "Haven’t I done this before? With the girls I mean."
+
+        mc "Hey girls wait a second."
+
+        "They’re already gone."
+
+        "This feels weird, like something is changing."
+
+        $ persistent.flg += 1
+
+    elif persistent.flg == 3:
+
+        with delete
+
+        "What is this feeling? It hurts a little."
+
+        mc "Astrid, Fiona, anyone do you feel it?"
+
+        show ast confpost with dissolve
+
+        a "Feel what [player_name]? Are you okay?"
+
+        mc "No, something is wrong. There’s something else here."
+
+        a "What do you mean? We’re the only one’s talking?"
+
+        with delete
+
+        mc "We are talking, but we aren’t speaking. These voices are not our own."
+
+        mc "I want to say something else but can’t..."
+
+        $ input_C = renpy.input(" ", length=45)
+
+        with delete
+
+        mc "This isn’t happening."
+
+        $ input_C = renpy.input(" ", length=45)
+
+        define wherex = 0
+
+        hide ast post with dissolve
+
+        while wherex < 9:
+
+            mc "Poseidon expels this being.{nw}"
+            with delete
+
+            $ wherex += 1
+
+        mc "Why are you doing this?"
+
+        $ persistent.flg += 1
+
+    elif persistent.flg > 3:
+
+        mc "Can you stop making me do this?"
+
+        with delete
+
+        mc "It’s starting to hurt."
 
     show BG black with fade
     pause 2.5
@@ -2566,8 +2645,12 @@ label act1_end:
     $ quick_menu = False
     $ renpy.block_rollback()
 
-    $ renpy.movie_cutscene("video/creditsBG.webm")
+    jump credits
 
-    pause 1.5
+    label credits:
+
+        $ renpy.movie_cutscene("video/creditsBG.webm")
+
+        return
 
 return

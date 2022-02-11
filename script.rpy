@@ -161,6 +161,7 @@ define flash = Fade(.15, 0.0, .25, color="#fff")             # for flashy sword 
 define flash_lighting = Fade(.15, 0.0, .25, color="#AFDBF2") # for flashy lighting effect
 define deathflash = Fade(.15, 0.0, .25, color="#F25555")     # for when character dies
 define slowfade = Dissolve(20)                               # for fading out in death
+define delete = Fade(.11, 0.0, .25, color="#0E041F")
 
 screen game_over_screen: # Game over screen
 
@@ -371,6 +372,7 @@ image pirate8 slash = "pirate 88.png"
 
 $ persistent.menuflag = 0       # for the changing main menu
 $ persistent.menuflag_count = 0 # for knowing if the player has reached a menu before
+$ persistent.flg = 0            # you know what this is for ;)
 
 if persistent.menuflag == 1:
 
