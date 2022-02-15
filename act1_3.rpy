@@ -3639,7 +3639,7 @@ label act1_3:
 
                 show ast sup at centerleft with moveinleft
 
-                a "}Nooooo, did you let them leave? I wanted to sing something for them."
+                a "Nooooo, did you let them leave? I wanted to sing something for them."
 
             hide ast
             hide be
