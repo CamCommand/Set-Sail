@@ -114,9 +114,6 @@ label act1_1:
                         "Really? No jokes today, I can't take any more floggin'."
                         jump input
 
-                    # if player_name == "Cam":
-                        # $ player_name = "Cam"
-                        # Add cheat menu to add to affinity variables
 
         "How do I identify?"
 
