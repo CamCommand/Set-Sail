@@ -1533,6 +1533,18 @@ b "No it’s not, it’s November."
 
 $ m = Character('May', color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
+if persistent.name5 == 0:
+
+    $ persistent.name5 = 1
+    $ persistent.may_name_count += 1
+    $ achievement.progress("Jane Doe", persistent.may_name_count)
+
+if persistent.may_name_count == 5:
+
+    $ achievement.grant("Jane Doe")
+    $ achievement.sync()
+
+
 m "No little Miss Sarcasm, that’s my name."
 
 m "My real name is May Palmer, I’m a real ship doctor, I have been for a while."
@@ -2572,6 +2584,9 @@ label act1_end:
 
         $ persistent.flg += 1
 
+        $ achievement.grant("They Know")
+        $ achievement.sync()
+
     elif persistent.flg == 2:
 
         "This is familiar…"
@@ -2644,6 +2659,9 @@ label act1_end:
 
     $ quick_menu = False
     $ renpy.block_rollback()
+
+    $ achievement.grant("Set Sail")
+    $ achievement.sync()
 
     jump credits
 

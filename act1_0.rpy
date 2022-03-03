@@ -143,4 +143,7 @@ label secretending:
 
         pause 2.0
 
+        $ achievement.grant("Do They Know?")
+        $ achievement.sync()
+
         return

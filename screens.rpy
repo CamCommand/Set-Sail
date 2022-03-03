@@ -1167,6 +1167,8 @@ screen preferences():
                             textbutton _("*") action Play("sound", "audio/blip3.ogg")
 
 
+
+
                     #if config.has_voice:
                     #    label _("Voice Volume")
 
@@ -1180,7 +1182,8 @@ screen preferences():
                         null height gui.pref_spacing
 
                         textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
+                            action Preference("all mute", "toggle"), achievement.grant("Quiet Time"), achievement.sync()
+                            hovered [Play("effect", "audio/click.ogg")]
                             style "mute_all_button"
 
 

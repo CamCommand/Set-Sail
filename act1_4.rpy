@@ -157,7 +157,16 @@ label ship_start:
 
     call screen pirate_fight1_0
 
+    # to check if you perfectly slay each enemy b4 more can arrive for the Master Sword achievement
+    define pirate_perfect1 = 0
+    define pirate_perfect2 = 0
+    define pirate_perfect3 = 0
+
     label pirate_fight1_re:
+
+        if pirate_perfect1 == 0:
+
+            $ pirate_perfect1 += 1
 
         show sword swing at sword with ease
         play effect "audio/sword_clash.ogg"
@@ -167,7 +176,6 @@ label ship_start:
         $ p_line = pirate_lines[random_line]
         p "[p_line]"
         call screen pirate_fight1_0
-
 
     label pirate_fight1:
 
@@ -184,7 +192,6 @@ label ship_start:
         p "Ahhrggggghh!"
 
         hide pirate1 slash with moveoutbottom
-
 
     $ quick_menu = True
 
@@ -222,6 +229,10 @@ label ship_start:
     call screen pirate_fight2_0
 
     label pirate_fight2_re: # loop when character clashes swords with pirates second fight
+
+        if pirate_perfect2 == 0:
+
+            $ pirate_perfect2 += 1
 
         $ quick_menu = False
         $ renpy.block_rollback()
@@ -408,6 +419,10 @@ label ship_start:
         call screen pirate_fight3_0
 
     label pirate_fight3_re: # loop when character clashes swords with pirates last fight
+
+        if pirate_perfect3 == 0:
+
+            $ pirate_perfect3 += 1
 
         $ quick_menu = False
         $ renpy.block_rollback()
@@ -696,6 +711,11 @@ label ship_start:
 
         $ quick_menu = False
         $ renpy.block_rollback()
+
+        if pirate_perfect1 == 0 and pirate_perfect2 == 0 and pirate_perfect3 == 0:
+
+            $ achievement.grant("Master Sword")
+            $ achievement.sync()
 
         hide sword with Dissolve(0.2)
 

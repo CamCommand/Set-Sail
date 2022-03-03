@@ -785,6 +785,12 @@ label act1_3:
             define rand1 = renpy.random.randint(0, 2)
             define bye = ""
 
+            # for Woman Respecter achievement
+            define persistent.woman1 = 0
+            define persistent.woman2 = 0
+            define persistent.woman3 = 0
+            define persistent.woman4 = 0
+
             # just a check to do an intro line
             if x == 0:
 
@@ -1209,6 +1215,15 @@ label act1_3:
 
                 "Wonder if I should get one of those things if they’re as cool as she says."
 
+                if persistent.woman1 == 0:
+
+                    $ persistent.woman1 += 1
+
+                if persistent.woman1 == 1 and persistent.woman2 == 1 and persistent.woman3 == 1 and persistent.woman4 == 1:
+
+                    $ achievement.grant("Woman Respecter")
+                    $ achievement.sync()
+
                 hide be quiz with dissolve
                 jump social
 
@@ -1578,6 +1593,15 @@ label act1_3:
 
                 show fiona with Dissolve(0.1)
 
+                if persistent.woman2 == 0:
+
+                    $ persistent.woman2 += 1
+
+                if persistent.woman1 == 1 and persistent.woman2 == 1 and persistent.woman3 == 1 and persistent.woman4 == 1:
+
+                    $ achievement.grant("Woman Respecter")
+                    $ achievement.sync()
+
                 hide fiona with dissolve
                 jump social
 
@@ -1944,6 +1968,9 @@ label act1_3:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
+                # for Gamer Achievement
+                define persistent.game4_count = 0
+
                 mc "What’s going on G?"
 
                 $ quick_menu = True
@@ -2025,6 +2052,18 @@ label act1_3:
                     "It's fun for a few minutes, but after I died three times I had to hand the device back to G."
 
                     hide ds with moveoutbottom
+
+                    if persistent.game4_count == 0:
+
+                        $ persistent.game4_count = 1
+                        $ persistent.game_count += 1
+                        $ achievement.progress("G A M E R", persistent.game_count)
+
+                    if persistent.game_count == 4:
+
+                        $ achievement.grant("G A M E R")
+                        $ achievement.sync()
+
                     mc "That was fun, I think I’m really starting to like video games."
 
                     show ge happy with Dissolve(0.1)
@@ -2119,6 +2158,17 @@ label act1_3:
 
                     hide ds with moveoutbottom
 
+                    if persistent.game4_count == 0:
+
+                        $ persistent.game4_count += 1
+                        $ persistent.game_count += 1
+                        $ achievement.progress("G A M E R", persistent.book_count)
+
+                    if persistent.game_count == 4:
+
+                        $ achievement.grant("G A M E R")
+                        $ achievement.sync()
+
                     mc "That was fun, I think I’m really starting to like video games."
 
                     show ge happy
@@ -2205,6 +2255,15 @@ label act1_3:
                 g "{cps=30}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
 
                 mc "I see that you're busy being fake crazy."
+
+                if persistent.woman3 == 0:
+
+                    $ persistent.woman3 += 1
+
+                if persistent.woman1 == 1 and persistent.woman2 == 1 and persistent.woman3 == 1 and persistent.woman4 == 1:
+
+                    $ achievement.grant("Woman Respecter")
+                    $ achievement.sync()
 
                 hide ge happy with dissolve
                 jump social
@@ -2529,6 +2588,15 @@ label act1_3:
                 mc "Aye President. I’ll spread the good word of cannon cleaning techniques in your name."
 
                 a "Much appreciated, thank you. I'll be around if you need anything."
+
+                if persistent.woman4 == 0:
+
+                    $ persistent.woman4 += 1
+
+                if persistent.woman1 == 1 and persistent.woman2 == 1 and persistent.woman3 == 1 and persistent.woman4 == 1:
+
+                    $ achievement.grant("Woman Respecter")
+                    $ achievement.sync()
 
                 $ a_convo += 1
                 $ activity_check += 1
@@ -3623,11 +3691,17 @@ label act1_3:
 
                 b "See ya sea cowboy."
 
+                $ achievement.grant("Breathtaking Behati")
+                $ achievement.sync()
+
             elif G_affinity > Astrid_affinity and G_affinity > Be_affinity and G_affinity > Fi_affinity:
 
                 show ge smug with Dissolve(0.1)
 
                 g "Next time I see you it’ll be at the end of my sword."
+
+                $ achievement.grant("G The Great")
+                $ achievement.sync()
 
             elif Fi_affinity > Astrid_affinity and Fi_affinity > Be_affinity and Fi_affinity > G_affinity:
 
@@ -3635,11 +3709,17 @@ label act1_3:
 
                 f "Back to a life of swashbuckling for them and exams for us."
 
+                $ achievement.grant("Fab Fiona")
+                $ achievement.sync()
+
             elif Astrid_affinity > Fi_affinity and Astrid_affinity > Be_affinity and Astrid_affinity > G_affinity:
 
                 show ast sup at centerleft with moveinleft
 
                 a "Nooooo, did you let them leave? I wanted to sing something for them."
+
+                $ achievement.grant("#1 Fiona Fan")
+                $ achievement.sync()
 
             hide ast
             hide be

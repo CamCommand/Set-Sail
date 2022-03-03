@@ -5,6 +5,7 @@ init python:
     player_identity_voice = "m"
 
     if renpy.windows:
+
         config.tts_voice = "Mark"
 
         if player_identity_voice == "m":
@@ -120,16 +121,34 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-
     def crowd_voice(event, **kwargs):# voice for a crowd
         if event == "show":
             renpy.music.play("audio/blip14.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    # USE this for sound effects bc voices play over them
+    # Use this for sound effects bc voices play over them
     renpy.music.register_channel("effect","voice", loop = False, tight = True)
 
+    # Registering Achievements here
+    achievement.register("Cheeky Name")
+    achievement.register("They Know")
+    achievement.register("Do They Know?")
+    achievement.register("Set Sail")
+    achievement.register("Fluid", stat_max = 3)
+    achievement.register("Book Worm", stat_max = 3)
+    achievement.register("Book Worm Deluxe", stat_max = 7)
+    achievement.register("G A M E R", stat_max = 4)
+    achievement.register("Sticky Fingers", stat_max = 6)
+    achievement.register("Quiet Time")
+    achievement.register("Woman Respecter")
+    achievement.register("Breathtaking Behati")
+    achievement.register("G The Great")
+    achievement.register("Fab Fiona")
+    achievement.register("#1 Astrid Fan")
+    achievement.register("Master Sword")
+    achievement.register("Jane Doe", stat_max = 5)
+    achievement.register("Your Own Medicine")
 
 transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset -5 yoffset 0

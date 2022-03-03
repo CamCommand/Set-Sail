@@ -69,6 +69,12 @@ label act1_1:
 
         "Morning to me..."
 
+        # flagging Fluid achievement
+        define persistent.gender_count = 0
+        define persistent.female = 0
+        define persistent.male = 0
+        define persistent.nb = 0
+
         label input:
 
             $ renpy.block_rollback()
@@ -81,6 +87,18 @@ label act1_1:
                     $ player_name = "Valerie"
                     $ player_identity_voice = "f"
                     $ mc = Character('Valerie', color="FF4DA6", callback=voice)
+
+                    if persistent.female == 0:
+
+                        $ persistent.female = 1
+                        $ persistent.gender_count += 1
+                        $ achievement.progress("Fluid", persistent.gender_count)
+
+                    if persistent.gender_count == 3:
+
+                        $ achievement.grant("Fluid")
+                        $ achievement.sync()
+
                     jump choice_name_V
 
                 "{color=00AAFF}My name is Oscar{/color}":
@@ -89,6 +107,18 @@ label act1_1:
                     $ player_name = "Oscar"
                     $ player_identity_voice = "m"
                     $ mc = Character('Oscar', color="00AAFF", callback=voice)
+
+                    if persistent.male == 0:
+
+                        $ persistent.male= 1
+                        $ persistent.gender_count += 1
+                        $ achievement.progress("Fluid", persistent.gender_count)
+
+                    if persistent.gender_count == 3:
+
+                        $ achievement.grant("Fluid")
+                        $ achievement.sync()
+
                     jump choice_name_O
 
                 "{color=116600}My name is Reed{/color}":
@@ -97,12 +127,24 @@ label act1_1:
                     $ player_name = "Reed"
                     $ player_identity_voice = "nb"
                     $ mc = Character('Reed', color="116600", callback=voice)
+
+                    if persistent.nb == 0:
+
+                        $ persistent.nb = 1
+                        $ persistent.gender_count += 1
+                        $ achievement.progress("Fluid", persistent.gender_count)
+
+                    if persistent.gender_count == 3:
+
+                        $ achievement.grant("Fluid")
+                        $ achievement.sync()
+
                     jump choice_name_R
 
                 "What is my name?":
 
                     $ player_name = renpy.input("Choose your name", length=15)
-                    $ player_name = player_name.strip() #strip unused spaces
+                    $ player_name = player_name.strip() # strip unused spaces
                     $ player_name = player_name.capitalize()
 
                     if player_name == "":
@@ -111,9 +153,30 @@ label act1_1:
 
                     if player_name == "Blackbeard" or player_name == "black beard" or player_name == "Black Beard":
 
-                        "Really? No jokes today, I can't take any more floggin'."
+                        "Really? No jokes today, I can't take any more floggin' from Two Hands."
+
+                        $ achievement.grant("Cheeky Name") # Grant Achievement
+                        $ achievement.sync()
+
                         jump input
 
+                    if player_name == "Jack Sparrow" or player_name == "jack sparrow" or player_name == "Sparrow":
+
+                        "Wrong timelines dummy."
+
+                        $ achievement.grant("Cheeky Name") # Grant Achievement
+                        $ achievement.sync()
+
+                        jump input
+
+                    if player_name == "Anne Bonny" or player_name == "anne bonny" or player_name == "Mary Read" or player_name == "mary read":
+
+                        "Those girls were the finest vessels, but they aren't me."
+
+                        $ achievement.grant("Cheeky Name") # Grant Achievement
+                        $ achievement.sync()
+
+                        jump input
 
         "How do I identify?"
 
@@ -125,18 +188,54 @@ label act1_1:
 
                 $ player_identity = "f"
                 $ mc = Character('[player_name]', color="FF4DA6", callback=voice)
+
+                if persistent.female == 0:
+
+                    $ persistent.female = 1
+                    $ persistent.gender_count += 1
+                    $ achievement.progress("Fluid", persistent.gender_count)
+
+                if persistent.gender_count == 3:
+
+                    $ achievement.grant("Fluid")
+                    $ achievement.sync()
+
                 jump choice_name_User
 
             "{color=00AAFF}Male{/color}":
 
                 $ mc = Character('[player_name]', color="00AAFF", callback=voice)
                 $ player_identity = "m"
+
+                if persistent.male == 0:
+
+                    $ persistent.male = 1
+                    $ persistent.gender_count += 1
+                    $ achievement.progress("Fluid", persistent.gender_count)
+
+                if persistent.gender_count == 3:
+
+                    $ achievement.grant("Fluid")
+                    $ achievement.sync()
+
                 jump choice_name_User
 
             "{color=116600}Non Binary{/color}":
 
                 $ mc = Character('[player_name]', color="116600", callback=voice)
                 $ player_identity = "nb"
+
+                if persistent.nb == 0:
+
+                    $ persistent.nb = 1
+                    $ persistent.gender_count += 1
+                    $ achievement.progress("Fluid", persistent.gender_count)
+
+                if persistent.gender_count == 3:
+
+                    $ achievement.grant("Fluid")
+                    $ achievement.sync()
+
                 jump choice_name_User
 
         label choice_name_V:
@@ -629,6 +728,12 @@ label act1_1:
 
             define book_read = ""       # which book is picked if any
 
+            # for Book Worm achievement
+            define persistent.book_count = 0
+            define persistent.book1_count = 0
+            define persistent.book2_count = 0
+            define persistent.book3_count = 0
+
             $ quick_menu = False
             $ renpy.block_rollback()
 
@@ -679,6 +784,23 @@ label act1_1:
 
             $ book_read = "gamer uno"
 
+            if persistent.book1_count == 0:
+
+                $ persistent.book1_count = 1
+                $ persistent.book_count += 1
+                $ achievement.progress("Book Worm", persistent.book_count)
+                $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+
+            if persistent.book_count == 3:
+
+                $ achievement.grant("Book Worm")
+                $ achievement.sync()
+
+            if persistent.book_count == 7:
+
+                $ achievement.grant("Book Worm Deluxe")
+                $ achievement.sync()
+
             $ quick_menu = False
             $ renpy.block_rollback()
 
@@ -703,6 +825,23 @@ label act1_1:
         label book2:
 
             $ book_read = "afterlife"
+
+            if persistent.book2_count == 0:
+
+                $ persistent.book2_count = 1
+                $ persistent.book_count += 1
+                $ achievement.progress("Book Worm", persistent.book_count)
+                $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+
+            if persistent.book_count == 3:
+
+                $ achievement.grant("Book Worm")
+                $ achievement.sync()
+
+            if persistent.book_count == 7:
+
+                $ achievement.grant("Book Worm Deluxe")
+                $ achievement.sync()
 
             $ quick_menu = False
             $ renpy.block_rollback()
@@ -738,6 +877,23 @@ label act1_1:
         label book3:
 
             $ book_read = "stripes"
+
+            if persistent.book3_count == 0:
+
+                $ persistent.book3_count += 1
+                $ persistent.book_count += 1
+                $ achievement.progress("Book Worm", persistent.book_count)
+                $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+
+            if persistent.book_count == 3:
+
+                $ achievement.grant("Book Worm")
+                $ achievement.sync()
+
+            if persistent.book_count == 7:
+
+                $ achievement.grant("Book Worm Deluxe")
+                $ achievement.sync()
 
             $ quick_menu = False
             $ renpy.block_rollback()

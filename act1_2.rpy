@@ -303,6 +303,17 @@ label act1_2:
         $ quick_menu = False
         $ renpy.block_rollback()
 
+        # for the Book Worm Deluxe achievement
+        define persistent.book4_count = 0
+        define persistent.book5_count = 0
+        define persistent.book6_count = 0
+        define persistent.book7_count = 0
+
+        # for the Sticky Fingers achievement
+        define persistent.theft_count = 0
+        define persistent.apple_check = 0
+        define persistent.mask_check = 0
+
         mc "Wonder if they have any region specific books? Better question, do they have any books they wouldn’t notice go missing?"
 
         $ quick_menu = True
@@ -392,6 +403,25 @@ label act1_2:
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
+                if persistent.book4_count == 0:
+
+                    $ persistent.book4_count = 1
+                    $ persistent.book_count += 1
+                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+
+                    $ persistent.theft_count += 1
+                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+
+                if persistent.book_count == 7:
+
+                    $ achievement.grant("Book Worm Deluxe")
+                    $ achievement.sync()
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
+
                 "I’m capable of reading a book summary, so why ask for someone to explain it to me."
 
                 "{i}Parry Baxton{/i}, it seems to be part of a series."
@@ -475,6 +505,25 @@ label act1_2:
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
 
+                if persistent.book5_count == 0:
+
+                    $ persistent.book5_count = 1
+                    $ persistent.book_count += 1
+                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+
+                    $ persistent.theft_count += 1
+                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+
+                if persistent.book_count == 7:
+
+                    $ achievement.grant("Book Worm Deluxe")
+                    $ achievement.sync()
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
+
                 "I’m capable of reading a book summary, so why ask for someone to explain it to me."
 
                 "{i}The Night Sky{/i}, by Gail Mcryson."
@@ -553,6 +602,25 @@ label act1_2:
                 hide lib with moveoutright
 
                 "She hands me the thick book of pirate jokes and returns to her seat at the counter. Clearly trying to look busy, so maybe she can’t talk to me."
+
+                if persistent.book7_count == 0:
+
+                    $ persistent.book7_count = 1
+                    $ persistent.book_count += 1
+                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+
+                    $ persistent.theft_count += 1
+                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+
+                if persistent.book_count == 7:
+
+                    $ achievement.grant("Book Worm Deluxe")
+                    $ achievement.sync()
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
 
                 "I’m capable of finding my own book if this one sucks."
 
@@ -645,6 +713,25 @@ label act1_2:
                 hide lib with moveoutright
 
                 "She hands me the book and walks back to the counter. Clearly trying to look busy, so maybe she can’t talk to me."
+
+                if persistent.book6_count == 0:
+
+                    $ persistent.book6_count = 1
+                    $ persistent.book_count += 1
+                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+
+                    $ persistent.theft_count += 1
+                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+
+                if persistent.book_count == 7:
+
+                    $ achievement.grant("Book Worm Deluxe")
+                    $ achievement.sync()
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
 
                 "I’m capable of reading a book summary, so why ask for someone to explain it to me."
 
@@ -772,6 +859,17 @@ label act1_2:
 
         play sound "audio/swipe.mp3" # make these sounds so chattering can continue
         with fade
+
+        if persistent.apple_check == 0:
+
+            $ persistent.apple_check = 1
+            $ persistent.theft_count += 1
+            $ achievement.progress("Sticky Fingers", persistent.theft_count)
+
+        if persistent.theft_count == 6:
+
+            $ achievement.grant("Sticky Fingers")
+            $ achievement.sync()
 
         mc "Like seperating a drunk from his money."
 
@@ -919,6 +1017,12 @@ label act1_2:
 
         define game_played = "" # for storing game played in arcade
 
+        # for the Gamer Achievement
+        define persistent.game_count = 0
+        define persistent.game1_count = 0
+        define persistent.game2_count = 0
+        define persistent.game3_count = 0
+
         $ quick_menu = False
         $ renpy.block_rollback()
 
@@ -1032,6 +1136,17 @@ label act1_2:
 
                 play effect "audio/boom.ogg"
 
+                if persistent.game1_count == 0:
+
+                    $ persistent.game1_count = 1
+                    $ persistent.game_count += 1
+                    $ achievement.progress("G A M E R", persistent.game_count)
+
+                if persistent.game_count == 4:
+
+                    $ achievement.grant("G A M E R")
+                    $ achievement.sync()
+
                 "That couldn’t have lasted longer than five minutes."
 
                 "I was shooting the little creatures pretty consistently until they overwhelmed me."
@@ -1078,6 +1193,18 @@ label act1_2:
                 $ game_played = "Monkey 2"
 
                 play effect "audio/monkeyded.ogg"
+
+                if persistent.game2_count == 0:
+
+                    $ persistent.game2_count = 1
+                    $ persistent.game_count += 1
+                    $ achievement.progress("G A M E R", persistent.game_count)
+
+                if persistent.game_count == 4:
+
+                    $ achievement.grant("G A M E R")
+                    $ achievement.sync()
+
                 "That was amazingly ridiculous!"
 
                 "No idea what was happening, but it was amazing. Monkeys kept falling down from the top of the screen and hitting buttons randomly seemingly did nothing."
@@ -1120,6 +1247,18 @@ label act1_2:
                 $ game_played = "Dino Mission"
 
                 play effect "audio/dinoded.ogg"
+
+                if persistent.game3_count == 0:
+
+                    $ persistent.game3_count = 1
+                    $ persistent.game_count += 1
+                    $ achievement.progress("G A M E R", persistent.game_count)
+
+                if persistent.game_count == 4:
+
+                    $ achievement.grant("G A M E R")
+                    $ achievement.sync()
+
                 "It feels as if an hour has flown by."
 
                 "The game flashes {color=#D91400}\"Game Over\"{/color} in blood red English with an ominous sound playing."

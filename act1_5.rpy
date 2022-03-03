@@ -334,6 +334,17 @@ label act1_5:
 
         $ mask += 1
 
+        if persistent.mask_check == 0:
+
+            $ persistent.mask_check = 1
+            $ persistent.theft_count += 1
+            $ achievement.progress("Sticky Fingers", persistent.theft_count)
+
+        if persistent.theft_count == 6:
+
+            $ achievement.grant("Sticky Fingers")
+            $ achievement.sync()
+
         dl "Oh don’t worry ‘bout it sweetheart just take it."
 
         dl "Like I said, I don’t need’em."
@@ -397,6 +408,17 @@ label act1_5:
         define may_name = "Woman"     # Whatever fake name May gives MC
         define may_v = 0              # if mc thinks they can track May down
         define may_talk = 0           # in this scene May could walk MC to the cafe
+
+        # for the Jane Doe achievement
+        define persistent.may_name_count = 0
+        define persistent.name1 = 0
+        define persistent.name2 = 0
+        define persistent.name3 = 0
+        define persistent.name4 = 0
+        define persistent.name5 = 0
+
+        # for Your own Med achievement
+        define persistent.earring_check = 0
 
         $ m = Character("[may_name]", color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
@@ -724,6 +746,17 @@ label act1_5:
 
                 $ may_name = "Mrs. Paul"
 
+                if persistent.name1 == 0:
+
+                    $ persistent.name1 = 1
+                    $ persistent.may_name_count += 1
+                    $ achievement.progress("Jane Doe", persistent.may_name_count)
+
+                if persistent.may_name_count == 5:
+
+                    $ achievement.grant("Jane Doe")
+                    $ achievement.sync()
+
                 $ may_position = "\"teacher\""
 
                 mc "I'm not in your class. Who are you even?"
@@ -809,6 +842,19 @@ label act1_5:
                 m "Oh, excuse me then."
 
                 $ may_name = "Mrs. Padilla"
+
+                if persistent.name2 == 0:
+
+                    $ persistent.name2 = 1
+                    $ persistent.may_name_count += 1
+                    $ achievement.progress("Jane Doe", persistent.may_name_count)
+
+                if persistent.may_name_count == 5:
+
+                    $ achievement.grant("Jane Doe")
+                    $ achievement.sync()
+
+
                 $ may_position = "\"teacher\""
 
                 m "My name is Mrs. Padilla. I’m a recent graduate and am here to drop off my resume for the teaching job here."
@@ -935,6 +981,18 @@ label act1_5:
                 "I’d bet she’s trying to intimidate something out of me. Well it isn't going to work lady."
 
                 $ may_name = "Mrs. Panza"
+
+                if persistent.name3 == 0:
+
+                    $ persistent.name3 = 1
+                    $ persistent.may_name_count += 1
+                    $ achievement.progress("Jane Doe", persistent.may_name_count)
+
+                if persistent.may_name_count == 5:
+
+                    $ achievement.grant("Jane Doe")
+                    $ achievement.sync()
+
                 $ may_position = "\"nurse\""
 
                 show may at wiggle
@@ -1358,6 +1416,12 @@ label act1_5:
 
                 $ earrings -= 1
 
+                if persistent.earring_check == 0:
+
+                    $ persistent.earring_check = 1
+                    $ achievement.grant("Your Own Medicine")
+                    $ achievement.sync()
+
                 play effect "audio/good.mp3"
                 show may smile at redochar
 
@@ -1633,6 +1697,12 @@ label act1_5:
 
                 $ earrings -= 1
 
+                if persistent.earring_check == 0:
+
+                    $ persistent.earring_check = 1
+                    $ achievement.grant("Your Own Medicine")
+                    $ achievement.sync()
+
                 "Where are my studs?"
 
                 pause 1.0
@@ -1803,6 +1873,17 @@ label act1_5:
         mc "What’s your name by the way?"
 
         $ may_name = "Hann"
+
+        if persistent.name4 == 0:
+
+            $ persistent.name4 = 1
+            $ persistent.may_name_count += 1
+            $ achievement.progress("Jane Doe", persistent.may_name_count)
+
+        if persistent.may_name_count == 5:
+
+            $ achievement.grant("Jane Doe")
+            $ achievement.sync()
 
         $ m = Character('[may_name]', color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
 
