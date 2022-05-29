@@ -14,10 +14,11 @@
 ## The _() surrounding the string marks it as eligible for translation.
 
 define config.name = _("Set Sail")
+define config.developer = True
 
 ## The version of the game.
 
-define config.version = "1.0.2"
+define config.version = "1.0.26"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.

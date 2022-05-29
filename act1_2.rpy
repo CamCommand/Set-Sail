@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.26
 label act1_2:
 
     th "Land Ho!"
@@ -34,11 +35,11 @@ label act1_2:
         play effect "audio/bookclose.wav"
         pause 0.5
 
-        "Flipping through some chapter titles I can start with the assumption that this isn’t a glamorous lifestyle."
+        "Flipping ahead through some chapter titles I can start with the assumption that this isn’t a glamorous lifestyle."
 
         "I would have never guessed living in a cell wasn't great."
 
-        "This is too depressing for me."
+        "This is too depressing for me right now."
 
     if content_check == 1:
 
@@ -79,14 +80,14 @@ label act1_2:
 
     Cap "Aye, don’t worry bout mere paper. Get rid of it and get what we came here for damn it!"
 
-    fla "Aye aye Captain!"
+    fla "Aye aye Captain! Right away."
 
     hide flavio with moveoutleft
     hide cap with dissolve
 
     show BG topdeck with fade
 
-    "Everyone is unloading from the ship onto a boardwalk."
+    "Everyone is unloading from the ship onto the dock."
 
     "The port is partially empty. Maybe the town warned everyone of our arrival?"
 
@@ -96,21 +97,21 @@ label act1_2:
 
     "As if a sea monster poked it’s gigantic head out of the water to eye it’s next meal and everyone ignored it thinking it would shield them."
 
-    "I could be overthinking this."
+    "Plenty of pirate ships could come here, it might be commonplace."
 
-    "Plenty of pirate ships could come here, it might be commonplace. Let’s check if the Captain is on the quarterdeck."
+    "I'll check if the Captain is on the quarterdeck."
 
     show flavio with moveinright
 
     mc "Oh Flavio, have you seen the Captain?"
 
-    fla "The Captain wishes for us to get what we came here for [player_name]."
+    fla "Aye, the Captain wishes for us to get what we came here for [player_name]."
 
     mc "Whatcha got there?"
 
     fla "Oh this? It was a letter to the Captain. It appears very crude so he wouldn’t open it."
 
-    fla "If it ain't from a noble or a politician why open it right?"
+    fla "If it isn't from a noble or a politician why open it right?"
 
     mc "You’re right matey. Mind if I take a look though?"
 
@@ -120,13 +121,13 @@ label act1_2:
 
     fla "Aye [player_name]. One less thing I have to do."
 
-    fla "Thanks matey."
+    fla "Thanks matey. Have a good time today."
 
     hide flavio with moveoutleft
 
-    "What random person would write to the Captain? Maybe we have a relative here?"
+    "What random person would write to the Captain? Maybe we have a relative here? It would be amazing if I could meet them."
 
-    "It would be amazing if I could meet them. The Captain wouldn’t mind me looking through his trash, especially if he didn’t look at it."
+    "The Captain wouldn’t mind me looking through his trash, especially if he didn’t look at it himself."
 
     play effect "audio/letteropen.wav"
 
@@ -157,6 +158,8 @@ label act1_2:
 
     "I should dispose of it as ordered."
 
+    "..."
+
     "Although, this is an invitation to a school."
 
     "Where best to learn about people my age then a building full of them?"
@@ -175,6 +178,8 @@ label act1_2:
     show BG harbor
     show crowd
     with dissolve
+
+    define lady_pts = 0 # for annoying woman check into street label
 
     play music track2 volume 0.5 fadein 1.5 fadeout 1.5
     play effect "audio/chattering.mp3" volume 0.9 fadein 2.0
@@ -197,32 +202,32 @@ label act1_2:
 
         "A sailor."
 
-        "Wait, people are wearing all sorts of clothes. There isn't a conformist way of dressing."
+        "Wait, people are wearing all sorts of clothes. There doesn't seem to be a conformist way of dressing."
 
         "Despite the fact that it's hot here, people are even wearing layers."
 
-        "Thank Poseidon I can pass this mess off as fashionable. Land dwellers aren't all bad."
+        "Thank Poseidon I can pass this mess off as fashionable."
 
     "Let’s test that, hopefully my fake mainlander dialect can keep me passing."
 
     show lib with dissolve
-    $ woman = Character('Woman',color="#07BB01", callback=lib_voice)# Librarian
+    $ woman = Character('Woman',color="#07BB01", callback=lib_voice)# book store clerk
 
     mc "Excuse me ma’am, could I bother you for today’s date?"
 
-    woman "Umm yeah, it’s the 28th."
+    woman "Umm yeah, it’s the twenty-eighth."
 
     hide lib with Dissolve(0.3)
 
     "Wow, she rushed away faster than she was walking before. She didn’t scream or anything so I'll assume I'm normal enough."
 
-    mc "The 28th, {cps=20}hmmmmmmmm.{/cps}"
+    mc "The twenty-eighth, {cps=20}hmmmmmmmm.{/cps}"
 
     "I’ve been eighteen for a week without knowing. Sure, I’m not supposed to feel different, but I had a feeling it might've been yesterday."
 
     "The letter said this place was called Seaborough. Some of the signs on the eatteries confirm it."
 
-    "Other than the more personal stuff Mom uses to tell me, I’ve heard some interesting things about Florida. Mainly how there’s a bunch of old and crazy people here who have given up on life."
+    "Other than the more personal stuff Mom use to tell me, I’ve heard some interesting things about Florida. Mainly how there’s a bunch of old and crazy people here who have given up on life."
 
     "So I got to keep an eye out for lunatics, but also not to hurt anyone. Leaving my pistol onboard was a good idea, even if it leaves me naked."
 
@@ -233,6 +238,8 @@ label act1_2:
     "All my manual labor keeps me in good physical condition. In a fight I can take care of myself, but losing the ship’s annual arm wrestling contest keeps me humble."
 
     "I have to wonder how often some of these people even look at a hammar, nonetheless do real labor."
+
+    "Some of these people look like they could swallow a cannonball whole."
 
     "I should keep my expectations low and definitely not fight anybody."
 
@@ -249,7 +256,7 @@ label act1_2:
 
     "Accidentally wandered away from where all the shops and people were. Thought it would last longer."
 
-    "That was all really interesting to see. It feels so weird taking it all in like that so quickly."
+    "That was all really interesting to see though. It feels so weird taking it all in like that so quickly."
 
     "I saw more people in the last few hours than I have had all year on the ship. Even large vessels we’ve ravaged, most of the crew stayed hidden while we stole their stuff."
 
@@ -257,7 +264,7 @@ label act1_2:
 
     "There was that police car that went by before. I wasn't as wary of the law as I should have been because that was the first car I’ve seen!"
 
-    "It was much smaller than I expected, books kinda assume you know what they look like already."
+    "It was much smaller than I expected, books kinda assume you know what they look like already besides the color."
 
     "They’ve been described to me by pirates with more land experience, but only enough to give me the general idea."
 
@@ -272,7 +279,7 @@ label act1_2:
     mc "Ha ha ha ha hargh!"
 
     define activity_choice = "default"
-    "Alright, that's enough walking. What should I go back and see with more detail?"
+    "Alright, that's enough walking. What should I go back and visit?"
 
     $ renpy.block_rollback()
 
@@ -322,7 +329,7 @@ label act1_2:
         show BG harbor with fade
         pause 2.0
 
-        "A large logo with a black bird displays its name, the Raven’s Nest. For some reason it’s spelt \"Raven’s Nezt\"."
+        "A large logo with a black bird displays a name, the Raven’s Nest. For some reason it’s spelt \"Raven’s Nezt\"."
 
         "No need to ask anybody about that, it’s probably a trendy land spelling."
 
@@ -343,13 +350,13 @@ label act1_2:
         $ woman = Character('Clerk', color="#07BB01", callback=lib_voice)# Store clerk
         woman "Excuse me, do you need help with something?"
 
-        mc "Oh, um yeah I’m looking for a book."
+        mc "Oh, umm correct ma'am. I’m looking for a book."
 
         "It’s the woman who I asked the time from a few hours ago. Seems that she works here."
 
         "Or maybe she doesn’t and wants to help me? Let’s not over think this, I am going to steal a book from here anyway. Don’t want to look suspicious."
 
-        woman "What kind of book?"
+        woman "We have a few of those here. What kind of book you looking for?"
 
         mc "What kind of book? I want something,"
 
@@ -369,7 +376,7 @@ label act1_2:
 
                 $ quick_menu = True
 
-                "My life is already full of life threatening events, so I required vastly less escapism than someone in land school."
+                "My life is already full of life threatening events, so I required vastly less escapism than someone in Florida."
 
                 "Yet there are so many frontiers I’ve never thought to explore that could provide me with more relatable desires. Like space or something, I don’t know?"
 
@@ -407,19 +414,14 @@ label act1_2:
 
                     $ persistent.book4_count = 1
                     $ persistent.book_count += 1
-                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+                    #$ achievement.progress("Book Worm Deluxe", persistent.book_count)
 
                     $ persistent.theft_count += 1
-                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+                    #$ achievement.progress("Sticky Fingers", persistent.theft_count)
 
                 if persistent.book_count == 7:
 
                     $ achievement.grant("Book Worm Deluxe")
-                    $ achievement.sync()
-
-                if persistent.theft_count == 6:
-
-                    $ achievement.grant("Sticky Fingers")
                     $ achievement.sync()
 
                 "I’m capable of reading a book summary, so why ask for someone to explain it to me."
@@ -455,7 +457,12 @@ label act1_2:
 
                 "Where is that woman? I don’t want anyone to catch me."
 
-                "Nobody sees me, the store is practically empty. The woman is reading behind the counter. An easy swipe for me."
+                "I'm undetected, the store is practically empty. The woman is reading behind the counter. An easy swipe."
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
 
@@ -493,7 +500,7 @@ label act1_2:
 
                 show lib with moveinright
 
-                woman "Have you read The Night Sky yet?"
+                woman "Have you read {i}The Night Sky{/i} yet?"
 
                 mc "No, I don’t think so. What’s it about?"
 
@@ -509,19 +516,14 @@ label act1_2:
 
                     $ persistent.book5_count = 1
                     $ persistent.book_count += 1
-                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+                    #$ achievement.progress("Book Worm Deluxe", persistent.book_count)
 
                     $ persistent.theft_count += 1
-                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+                    #$ achievement.progress("Sticky Fingers", persistent.theft_count)
 
                 if persistent.book_count == 7:
 
                     $ achievement.grant("Book Worm Deluxe")
-                    $ achievement.sync()
-
-                if persistent.theft_count == 6:
-
-                    $ achievement.grant("Sticky Fingers")
                     $ achievement.sync()
 
                 "I’m capable of reading a book summary, so why ask for someone to explain it to me."
@@ -551,7 +553,12 @@ label act1_2:
 
                 "I’ll nab it for later, no reason not to at this point. Where is that woman? I don’t want anyone to catch me."
 
-                "Nobody sees me, the store is practically empty. The woman is reading behind the counter. An easy swipe for me."
+                "I'm undetected, the store is practically empty. The woman is reading behind the counter. An easy swipe."
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
 
@@ -597,7 +604,7 @@ label act1_2:
 
                 woman "I don’t know if any joke books are good? This one is pirate themed if you’re into that sort of thing."
 
-                mc "I guess I’ll look at that one then."
+                mc "I guess I’ll look at that one then, thank you."
 
                 hide lib with moveoutright
 
@@ -607,19 +614,14 @@ label act1_2:
 
                     $ persistent.book7_count = 1
                     $ persistent.book_count += 1
-                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+                    #$ achievement.progress("Book Worm Deluxe", persistent.book_count)
 
                     $ persistent.theft_count += 1
-                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+                    #$ achievement.progress("Sticky Fingers", persistent.theft_count)
 
                 if persistent.book_count == 7:
 
                     $ achievement.grant("Book Worm Deluxe")
-                    $ achievement.sync()
-
-                if persistent.theft_count == 6:
-
-                    $ achievement.grant("Sticky Fingers")
                     $ achievement.sync()
 
                 "I’m capable of finding my own book if this one sucks."
@@ -665,7 +667,12 @@ label act1_2:
 
                 "I’ll nab it for later, no reason not to at this point. Where is that woman? I don’t want anyone to catch me."
 
-                "Nobody sees me, the store is practically empty. The woman is reading behind the counter. An easy swipe for me."
+                "I'm undetected, the store is practically empty. The woman is reading behind the counter. An easy swipe."
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
 
@@ -702,7 +709,7 @@ label act1_2:
 
                 show lib with moveinright
 
-                woman "Have you read Rune yet?"
+                woman "Have you read {i}Rune{/i} yet?"
 
                 mc "No, I don’t think so. What’s it about?"
 
@@ -718,19 +725,14 @@ label act1_2:
 
                     $ persistent.book6_count = 1
                     $ persistent.book_count += 1
-                    $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+                    #$ achievement.progress("Book Worm Deluxe", persistent.book_count)
 
                     $ persistent.theft_count += 1
-                    $ achievement.progress("Sticky Fingers", persistent.theft_count)
+                    #$ achievement.progress("Sticky Fingers", persistent.theft_count)
 
                 if persistent.book_count == 7:
 
                     $ achievement.grant("Book Worm Deluxe")
-                    $ achievement.sync()
-
-                if persistent.theft_count == 6:
-
-                    $ achievement.grant("Sticky Fingers")
                     $ achievement.sync()
 
                 "I’m capable of reading a book summary, so why ask for someone to explain it to me."
@@ -762,9 +764,14 @@ label act1_2:
 
                 "Looks like this one could be a multiple reread type of book. I’ll take all the content I can get."
 
-                "Hopefully it’ll sit with me better after the first read. It barely fits in my pants without being noticable, no reason not to take it at this point."
+                "Hopefully it’ll sit with me better after the first read. It barely fits in my pants without being noticable, I'll have to really try to sneak out with it."
 
-                "Nobody sees me, the store is practically empty. The woman is reading behind the counter. An easy swipe for me."
+                "I slid it on me without notice, the store is practically empty. The woman is reading behind the counter. An easy swipe."
+
+                if persistent.theft_count == 6:
+
+                    $ achievement.grant("Sticky Fingers")
+                    $ achievement.sync()
 
                 "I should ask them how to get to the school. I didn’t see it on my walk and I don’t want to wander aimlessly looking for it."
 
@@ -772,13 +779,13 @@ label act1_2:
 
     label bstore_end:
 
-                mc "Excuse me, miss?"
+                mc "Excuse me, ma'am?"
 
                 show lib with dissolve
 
-                woman "Yes, hello again. Did you decide on a book?"
+                woman "Yeah, hi again. Did you decide on a book?"
 
-                mc "Um, no. I liked what you recommended but I left my wallet at home."
+                mc "Umm, no. I liked what you recommended but I left my wallet at home."
 
                 woman "Oh, well I can hold it on the side for you if you want."
 
@@ -797,15 +804,17 @@ label act1_2:
 
                 woman "Yeah sure. Don’t you have any kind of map app though?"
 
-                "No, the letter didn’t come with a map unfortunately. Just tell me please."
+                "No, the letter didn’t come with a map unfortunately. Just tell me already."
 
                 mc "Uh no, I don’t have one. Is it far away?"
 
-                woman "Not really. Going left out of the store, take the first left and it’s a mile up the road. You can’t miss it."
+                woman "Not really. Go left out of the store, take the first left and it’s a mile up the road. You can’t miss it."
 
                 mc "Thank you Yoko. Have a nice afternoon."
 
                 woman "You too. Please come again."
+
+                hide lib with dissolve
 
                 "{i}Please come again?{/i}"
 
@@ -813,9 +822,56 @@ label act1_2:
 
                 "Did she want me to spend money? Now I feel kind of bad about stealing from her."
 
-                "Let's just focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
+                define forgot_book = 0
 
-                jump act1_3
+                menu:
+
+                    "She was kind of cute":
+
+                        $ quick_menu = False
+                        $ renpy.block_rollback()
+
+                        "She was cute looking. Maybe I should sneak back in later and put the book back."
+
+                        $ quick_menu = True
+
+                        "If I remember and there is time after school I'll come back."
+
+                        $ forgot_book = 1
+
+                        jump act1_3
+
+                    "She was nice":
+
+                        $ quick_menu = False
+                        $ renpy.block_rollback()
+
+                        "She was nice to me. It makes me feel a little bad."
+
+                        $ quick_menu = True
+
+                        "I'm so use to stealing from people of ill gotten wealth, this feels wrong."
+
+                        "If I remember and there is time after school I'll come back."
+
+                        $ forgot_book = 1
+
+                        jump act1_3
+
+                    "Who cares":
+
+                        $ quick_menu = False
+                        $ renpy.block_rollback()
+
+                        "It doesn't matter to me. I steal all the time."
+
+                        $ quick_menu = True
+
+                        "I also just met her."
+
+                        "Let's just focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
+
+                        jump act1_3
 
     label market:
 
@@ -837,7 +893,7 @@ label act1_2:
 
         "Mostly foods, but some of this stuff is weird to me to sell by fish and vegetables."
 
-        "There’s multiple candle stands, one with soaps, and random crafts. Each of them have large banners with their website I presume."
+        "There’s multiple candle stands, one with soaps, and random crafts. Each of them have large banners with their website names I presume."
 
         "Someone explained what \"dot com\" meant to me, but it has not been saved to memory."
 
@@ -864,7 +920,7 @@ label act1_2:
 
             $ persistent.apple_check = 1
             $ persistent.theft_count += 1
-            $ achievement.progress("Sticky Fingers", persistent.theft_count)
+            #$ achievement.progress("Sticky Fingers", persistent.theft_count)
 
         if persistent.theft_count == 6:
 
@@ -876,9 +932,9 @@ label act1_2:
         play sound "audio/apple3.wav"
         $ food_check = 1
 
-        "There’s a bench with nobody sitting there. Relaxing and eating while listening to other conversations could be a benefit."
+        "There’s a bench with nobody sitting there. Relaxing and eating while listening to other conversations could be a benefit to my understanding of these people."
 
-        "Do other people do that? If it feels weird then I’ll stop immediately."
+        "Do other people do this? If it feels weird then I’ll stop immediately."
 
         cr "Have you played the new chapter yet?"
 
@@ -906,7 +962,7 @@ label act1_2:
 
         "A lot of people are walking around with friends and family. No one has looked my way yet, sitting on this bench alone doesn’t make me stand out too much."
 
-        "A lot of people, presumably moms, are getting groceries by themselves or with friends. There are very few people that look my age walking around."
+        "A lot of people, presumably caregivers, are getting groceries by themselves or with friends. There are very few people that look my age walking around."
 
         "They’re probably in some type of school instead of being a pirate. Is nobody on land able to live freely as I have at sea?"
 
@@ -923,7 +979,7 @@ label act1_2:
 
         mc "No, that’s dumb. You can do it matey."
 
-        "Just need to walk up to someone who looks like a mom. They’ll know where it is."
+        "Just need to walk up to someone who looks like a parent. They’ll know where it is."
 
         mc "Excuse ma’am."
 
@@ -936,21 +992,48 @@ label act1_2:
             "She thinks I’m a girl! Poseidon damn this luxurious hair!"
         else:
 
-            "She doesn't sound annoyed, good start."
+            "She doesn't sound annoyed that I'm bothering her, good start."
 
         mc "Do you know where the Seaborough high school is?"
 
         ma "Why aren’t you at school?"
 
-        "Uh oh."
+        "Uh oh. Think fast!"
 
-        mc "Because I graduated from another school. I need to pick something up from there."
+        menu:
 
-        ma "You need to pick up something from another school?"
+            "I'm an alumni":
 
-        "Damn this woman! Why is she asking so many questions? Is this so hard to just tell me?"
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-        $ ma = Character('Annoying Woman', color="#FF793B", callback=rot_voice)
+                mc "I just graduated. I need to pick something up from."
+
+                $ quick_menu = True
+
+                ma "You don't know where the school you just graduated from is?"
+
+                "Damn this woman! That's obvious though, that bad call is on me."
+
+                "Is this so hard to just tell me though?"
+
+                $ ma = Character('Annoying Woman', color="#FF793B", callback=rot_voice)
+
+            "I'm from another school":
+
+                $ quick_menu = False
+                $ renpy.block_rollback()
+                $ lady_pts += 1
+
+                mc "Because I graduated from another school. I need to pick something up from there."
+
+                $ quick_menu = True
+
+                ma "You need to pick up something from another school?"
+
+                "Damn this woman! Why is she asking so many questions? Is this so hard to just tell me?"
+
+                $ ma = Character('Annoying Woman', color="#FF793B", callback=rot_voice)
 
         mc "Yup, that’s weird I know but that’s where they sent them."
 
@@ -958,19 +1041,70 @@ label act1_2:
 
         "Poseidon drown this woman for me!"
 
-        mc "Them my papers. Do you know where it is at all?"
+        menu:
 
-        ma "Which papers?"
+            "My school work":
 
-        "Do I just not pass as a high school graduate?"
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-        mc "My uh, test scores. They got sent to the wrong school by accident."
+                mc "I need to pick up some school work is all."
 
-        ma "The tests you took at your school got sent to another?"
+                $ quick_menu = True
 
-        $ ma = Character('Nightmare', color="#FF793B", callback=rot_voice)
+                mc "Could you tell me which way it is from here please?"
 
-        mc "No, the tests I took somewhere else got sent to Seaborough. Could you please just tell me where to go?"
+                ma "But I thought you graduated already?"
+
+                "What does it look like lady?!"
+
+                $ ma = Character('Nightmare', color="#FF793B", callback=rot_voice)
+
+            "My papers":
+
+                $ quick_menu = False
+                $ renpy.block_rollback()
+                $ lady_pts += 1
+
+                mc "Them my papers. Do you know where it is at all?"
+
+                $ quick_menu = True
+
+                ma "Which papers?"
+
+                "Do I just not pass as a high school graduate?"
+
+                mc "My uh, test scores. I need them for referening."
+
+                ma "Why don't you have your test scores?"
+
+                "None of your business, that's why!"
+
+                $ ma = Character('Nightmare', color="#FF793B", callback=rot_voice)
+
+            "My lunch":
+
+                $ quick_menu = False
+                $ renpy.block_rollback()
+                $ lady_pts -= 1
+
+                mc "I forgot my lunch."
+
+                $ quick_menu = True
+
+                ma "Your lunch?"
+
+                mc "Yes ma'am."
+
+                ma "So did you graduate or didn't you?"
+
+                "What kind of answer was that?!"
+
+                mc "I just need to get back to school."
+
+                $ ma = Character('Nightmare', color="#FF793B", callback=rot_voice)
+
+        mc "Could you please just tell me where to go?"
 
         ma "{cps=20}Uhhhhhhhh.{/cps}"
 
@@ -978,40 +1112,126 @@ label act1_2:
 
         ma "But I'm not entirely sure. Let me ask that nice police officer over there if they know."
 
-        mc "Ma’am please, I’m sure someone like yourself knows the general direction from here."
+        "Oh no. Not the law. What would have Mom done to avoid them?"
 
-        mc "I’ve been told the woman of Seaborough knows the streets very well."
+        menu:
 
-        "You think she bought my cheap bouquet of flattery?"
+            "Flattery":
 
-        ma "{cps=10}Hmmmmmmm.{/cps}"
+                $ quick_menu = False
+                $ renpy.block_rollback()
+                $ lady_pts += 1
 
-        ma "Yes of course, you know my husband never thinks I’m good with directions."
+                mc "Ma’am please, I’m sure someone like yourself knows the general direction from here."
 
-        ma "He’s such a rude man you wouldn’t believe it."
+                $ quick_menu = True
 
-        mc "You deserve someone who treats you like the smart independent woman you are."
+                mc "I’ve been told the woman of Seaborough knows the streets very well."
 
-        "If this was any other person I would believe that line."
+                ma "{cps=10}Hmmmmmmm.{/cps}"
 
-        ma "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
+                ma "Yes of course, you know my husband never thinks I’m good with directions."
 
-        mc "Thank you ma’am! Have a nice day!"
+                ma "He’s such a rude man you wouldn’t believe it."
 
-        hide mm with dissolve
+                mc "You deserve someone who treats you like the smart independent woman you are."
 
-        "That was painful."
+                "If this was any other person I would believe that line."
 
-        "Unless it was the Captain's orders to keep quiet, pirates are easier to get important information from. It keeps duties efficient."
+            "Double Down":
 
-        "If I see a mom picking their kid up it’s best to avoid them. This will be useful information."
+                $ quick_menu = False
+                $ renpy.block_rollback()
 
-        "Let's focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
+                mc "Look lady. I'm just lost and I'm asking for directions."
 
-        hide crowd with dissolve
-        stop effect fadeout 2.0
+                $ quick_menu = True
 
-        jump act1_3
+                mc "If you need the police to guide your every action, I can find someone else to tell me."
+
+                "I really should have by now."
+
+                ma "I don't think I like your tone very much, young lady."
+
+                if player_identity == "m" or player_identity == "nb":
+
+                    mc "Well I'm not a bloody woman!"
+
+                    mc "Are you gonna tell me where to go or not?"
+
+                else:
+
+                    mc "Are you gonna tell me where to go or not?"
+
+            "Run Away":
+
+                $ quick_menu = False
+                $ renpy.block_rollback()
+                $ lady_pts -= 10
+
+                "I can't risk dealing with the police right now."
+
+                $ quick_menu = True
+
+                "Nobody would know if I was in custody and I wouldn't get to go to school."
+
+                "My whole day would be ruined. Better make a break for it."
+
+                mc "You know what wench. I'm out of here."
+
+                hide mm with dissolve
+                jump street
+
+        if lady_pts >= 2:
+
+            if lady_pts == 3:
+
+                $ achievement.grant("Karen Along") # Grant Achievement
+                $ achievement.sync()
+
+            ma "Exit the market that way, make a left, then the second. No the third right! Then go down the street, you can’t miss it."
+
+            mc "Thank you ma’am! Have a nice day!"
+
+            hide mm with dissolve
+
+            "That was painful."
+
+            "Unless it was the Captain's orders to keep quiet, pirates are easier to get important information from. It keeps duties efficient."
+
+            "If I see a mom picking their kid up it’s best to avoid them. This will be useful information."
+
+            "Let's focus on getting to that school. I have to see how many sails these kids are missing if they were expecting the Captain to just talk to them."
+
+            hide crowd with dissolve
+            stop effect fadeout 2.0
+
+            jump act1_3
+
+        else:
+
+            ma "No, I don't think I will. You've been quite rude to me and I don't want you anywhere near my daughter."
+
+            "What daughter?!"
+
+            ma "Stay away from me or I'll call the police."
+
+            mc "You have to be kidding me."
+
+            hide mm with dissolve
+
+            "What an obnoxious woman. It took all I had not to brandish my weapon."
+
+            "Not that I have it on me."
+
+            "I don't want anything like that to happen again. I'll just wander around until I find the school. I have the address at least."
+
+            "Hopefully there aren't any people like that at the school or I'm doomed."
+
+            hide crowd with dissolve
+            stop effect fadeout 2.0
+
+            jump street
 
     label arcade:
 
@@ -1096,9 +1316,9 @@ label act1_2:
 
         "The bartender’s expression turns blank as he’s now staring at the floor."
 
-        mc "Thanks matey."
+        mc "Thanks sir."
 
-        "He mumbles something close to \"No problem\" under his breath still looking down."
+        "He mumbles something close to \"No problem\" under his breath, still looking down."
 
         hide bartender with dissolve
 
@@ -1122,7 +1342,7 @@ label act1_2:
 
                 "My kind of game."
 
-                "After the coin goes into the machine it says {color=#F93A22}\"Player One\"{/color} can start. At hand level there is only a stick and one red button."
+                "After the coin goes into the machine it says {color=#F93A22}\"Player One\"{/color} can start. Where my hands are suppose to go there's only a stick and one red button."
 
                 "Seems simple enough, hopefully easy to play."
 
@@ -1140,7 +1360,7 @@ label act1_2:
 
                     $ persistent.game1_count = 1
                     $ persistent.game_count += 1
-                    $ achievement.progress("G A M E R", persistent.game_count)
+                    #$ achievement.progress("G A M E R", persistent.game_count)
 
                 if persistent.game_count == 4:
 
@@ -1162,7 +1382,7 @@ label act1_2:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                "This machine appears as if it was painted over in black recently."
+                "This machine appears as if it was painted over black recently."
 
                 $ quick_menu = True
 
@@ -1172,13 +1392,13 @@ label act1_2:
 
                 "The music coming from the screen is noticeably joyful. Compared to the other machines it sounds much higher quality."
 
-                "If I suck then no big deal, the song is simply mesmerizing."
+                "If I lose then no big deal, the song is simply mesmerizing."
 
                 "Plus monkeys are cool. I've seen much older pirates with ones as pets."
 
                 "They always do little dances when songs are played."
 
-                "I saw one throw a knife once."
+                "I saw one throw a knife at a guy once."
 
                 "The game takes my coin with no issues."
 
@@ -1198,7 +1418,7 @@ label act1_2:
 
                     $ persistent.game2_count = 1
                     $ persistent.game_count += 1
-                    $ achievement.progress("G A M E R", persistent.game_count)
+                    #$ achievement.progress("G A M E R", persistent.game_count)
 
                 if persistent.game_count == 4:
 
@@ -1211,9 +1431,9 @@ label act1_2:
 
                 "Yet the music, coupled with the monkey’s faces triggered something in my brain that forced a smile onto my face. That was incredibly fun."
 
-                "JoeJoe was always saying he wanted a monkey."
+                "JoeJoe is always saying he wants a monkey on the ship."
 
-                "If I ever think I could tell him about today without getting hit, I'll mention this game."
+                "If I think I could tell him about today without getting hit, I'll mention this game."
 
                 "Turning back to the bartender I could tell he was watching me enjoying the game. He also has a big grin on his face."
 
@@ -1252,7 +1472,7 @@ label act1_2:
 
                     $ persistent.game3_count = 1
                     $ persistent.game_count += 1
-                    $ achievement.progress("G A M E R", persistent.game_count)
+                    #$ achievement.progress("G A M E R", persistent.game_count)
 
                 if persistent.game_count == 4:
 
@@ -1275,7 +1495,7 @@ label act1_2:
 
         "I should ask him how to get to the school. There was no sign of a map anywhere and all that was in the letter was the address."
 
-        "If I finish at the school quickly then maybe I should come back here and try to play more games. There’s bound to be some loose change at the school that could get me on a couple more machines."
+        "If I finish at the school quickly then maybe I should come back here and try to play more games. There’s bound to be some loose change at the school that could get me on a couple more games."
 
         show bartender with dissolve
 
@@ -1287,7 +1507,7 @@ label act1_2:
 
         bt "Sure kid. Make a left when you exit and then take the next left. Follow the signs for the school zone and you won’t be able to miss it."
 
-        mc "Thank you matey."
+        mc "Thank you sir. Have a nice day."
 
         bt "No problem."
 
@@ -1309,17 +1529,30 @@ label act1_2:
 
     label street:
 
-        $ quick_menu = False
-        $ renpy.block_rollback()
+        if lady_pts == 2 or lady_pts == 3:
 
-        "I should go to the school while I’m thinking about it. There’s no need to waste a ton of time there."
+            $ quick_menu = False
+            $ renpy.block_rollback()
 
-        $ quick_menu = True
+            "I should go to the school while I’m thinking about it. There’s no need to waste a ton of time there."
 
-        "If things move quickly, I can check out the rest of town. Hopefully this club won’t eat up the entire day."
+            $ quick_menu = True
 
-        show BG black with fade
-        show BG st with fade
+            "If things move quickly, I can check out the rest of town. Hopefully this club won’t eat up the entire day."
+
+            show BG black with fade
+            show BG st with fade
+
+        else:
+
+            "The school must be around somewhere."
+
+            "I didn't see it wandering around the port, so it must be deeper into the town."
+
+            hide crowd with dissolve
+            stop effect fadeout 2.0
+            show BG black with fade
+            show BG st with fade
 
         "Wandering the town’s underbelly isn’t as exciting as I thought it would be."
 
@@ -1351,7 +1584,7 @@ label act1_2:
 
         mc "Oh no."
 
-        "It's starting to hit me."
+        "It's starting to dawn on me."
 
         "This is going to be the first interaction with people my own age I’ve ever had."
 
@@ -1363,15 +1596,13 @@ label act1_2:
 
         "What should I do? Oh, damn it!"
 
-        mc "Poseidon, fuel my flames!"
+        mc "Poseidon, fuel my determination!"
 
         "I can do this. Screw the pressure."
 
         "I’m a bloody pirate no matter what."
 
-        "No more worrying about how people view me. A Pirate Culture Club wants to know what a pirate life is like."
-
-        "I’m going to show them what it’s really like."
+        "No more worrying about how people view me. A pirate culture club wants to know what a pirate life is like. I’m going to show them what it’s really like."
 
         "Behaving on land is one thing, but I’ve cut the arms off of a man who called the Captain a dolphin breeder."
 

@@ -149,6 +149,7 @@ init python:
     achievement.register("Master Sword")
     achievement.register("Jane Doe", stat_max = 5)
     achievement.register("Your Own Medicine")
+    achievement.register("Karen Along")
 
 transform wiggle: # To shake the characters a little bit, use at
     linear 0.1 xoffset -5 yoffset 0

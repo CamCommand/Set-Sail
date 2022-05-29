@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.26
 label act1_1:
 
         transform pan:                       # panning and looping the BG
@@ -92,7 +93,7 @@ label act1_1:
 
                         $ persistent.female = 1
                         $ persistent.gender_count += 1
-                        $ achievement.progress("Fluid", persistent.gender_count)
+                        #$ achievement.progress("Fluid", persistent.gender_count)
 
                     if persistent.gender_count == 3:
 
@@ -112,7 +113,7 @@ label act1_1:
 
                         $ persistent.male= 1
                         $ persistent.gender_count += 1
-                        $ achievement.progress("Fluid", persistent.gender_count)
+                        #$ achievement.progress("Fluid", persistent.gender_count)
 
                     if persistent.gender_count == 3:
 
@@ -132,7 +133,7 @@ label act1_1:
 
                         $ persistent.nb = 1
                         $ persistent.gender_count += 1
-                        $ achievement.progress("Fluid", persistent.gender_count)
+                        #$ achievement.progress("Fluid", persistent.gender_count)
 
                     if persistent.gender_count == 3:
 
@@ -193,7 +194,7 @@ label act1_1:
 
                     $ persistent.female = 1
                     $ persistent.gender_count += 1
-                    $ achievement.progress("Fluid", persistent.gender_count)
+                    #$ achievement.progress("Fluid", persistent.gender_count)
 
                 if persistent.gender_count == 3:
 
@@ -211,7 +212,7 @@ label act1_1:
 
                     $ persistent.male = 1
                     $ persistent.gender_count += 1
-                    $ achievement.progress("Fluid", persistent.gender_count)
+                    #$ achievement.progress("Fluid", persistent.gender_count)
 
                 if persistent.gender_count == 3:
 
@@ -229,7 +230,7 @@ label act1_1:
 
                     $ persistent.nb = 1
                     $ persistent.gender_count += 1
-                    $ achievement.progress("Fluid", persistent.gender_count)
+                    #$ achievement.progress("Fluid", persistent.gender_count)
 
                 if persistent.gender_count == 3:
 
@@ -246,7 +247,7 @@ label act1_1:
             if renpy.windows:
                 $ config.tts_voice = "Zira"
 
-            mc "I'm feeling okay enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "I'm feeling good enough. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night again."
             jump opening
 
         label choice_name_O:
@@ -257,7 +258,7 @@ label act1_1:
             if renpy.windows:
                 $ config.tts_voice = "Mark"
 
-            mc "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "Feeling tighter than an anchor knot. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night again."
 
             jump opening
 
@@ -269,7 +270,7 @@ label act1_1:
             if renpy.windows:
                 $ config.tts_voice = "David"
 
-            mc "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "It's another salty morning. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night again."
 
             jump opening
 
@@ -290,7 +291,7 @@ label act1_1:
 
                 $ config.tts_voice = "David"
 
-            mc "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night."
+            mc "Suffering is key to living. Poseidon, please allow for pleasant skys today. I cannot sleep through something as brutal as last night again."
 
             jump opening
 
@@ -298,7 +299,7 @@ label act1_1:
 
             $ pirate = "Pirate"
 
-            "Sunlight pours into my eyes through the cracks in the old boards across the room."
+            "Sunlight pours into my eyes through the cracks in the old boards from across the room."
 
             $ quick_menu = True
 
@@ -407,7 +408,7 @@ label act1_1:
 
             "Presumably most were slacking off before Two Hands was shouting his head off. The deck is actually pretty clean."
 
-            "The planks are looking pretty good in the bright morning light and they’re especially clear due to the lack of supplies available."
+            "The planks are looking pretty good in the bright morning glare and they’re especially clear due to the lack of supplies available."
 
             th "Aye, there thee are Captain, right were I thought thee were."
 
@@ -450,7 +451,9 @@ label act1_1:
 
             "Not many around have been on this ship as long as I have."
 
-            "Of the Captain’s {i}Demon Moments{/i}, this wasn’t that bad, but I haven’t flinched during one of them since I was sixteen."
+            "Of the Captain’s {i}Demon Moments{/i}, where he swings his authority around, this wasn’t that bad."
+
+            "You get use to them after a while. I haven’t flinched during one of them since I was fourteen."
 
             "The intimidation tactics keep the crew in line and his reputation secured."
 
@@ -502,17 +505,19 @@ label act1_1:
 
             Cap "Nevertheless I wanted to give ye something. I got something made for ye, something I wish my."
 
-            Cap "Captain"
+            Cap "Captain."
 
             Cap "Gave me when I became a man."
 
-            Cap "{cps=20}But it's, uh, I don’t have it yet.{/cps} It’sa, gonna be loaded up at while we're at port."
+            Cap "{cps=20}But it's, uh, I don’t have it yet.{/cps} It’sa, gonna be loaded uh-board while we're at port."
 
             Cap "I mainly wanted to say to ye is don’t worry about yer usual duties at port."
 
             Cap "I got Flavio to rearrange the grunt work so you could enjoy some of the fruits of land life."
 
             mc "Oh, thank you Captain. This is pleasantly unexpected."
+
+            "It really is."
 
             show cap yelling with Dissolve(0.1)
 
@@ -522,7 +527,7 @@ label act1_1:
 
             mc "Do you need me to get you anything while I'm there?"
 
-            Cap "No, no, nothing for me child. There be nothing else I'll ever need from this port again."
+            Cap "No, no, nothing for me child. There be nothing else I'll 'ver need from this port again."
 
             Cap "Personally that is. We’re gonna need a lot more cannonballs of course."
 
@@ -568,6 +573,8 @@ label act1_1:
 
             th "Yee got some fuck’en nerve doin’ that te me infront of thee Captain!"
 
+            "I am getting so sick of this guy!"
+
             mc "Fuck off Two Hands I outrank you!"
 
             th "Aye, but a rank doesn’t stop me from order’n ye around."
@@ -578,7 +585,7 @@ label act1_1:
 
             mc "I just didn’t do it when you wanted me to is all!"
 
-            th "Which there lies thee problem."
+            th "Which'in lies thee problem."
 
             mc "Your problem, not mine!"
 
@@ -602,11 +609,11 @@ label act1_1:
 
             fla "Knot now?"
 
-            fla "Aye, let’s go then."
+            fla "Excellent, let’s go then."
 
             fla "Bye [player_name], thanks for getting the canons clean so early."
 
-            mc "Thanks Flavio."
+            mc "Sure thing Flavio."
 
             mc "Make sure you get’em nice and tight Mr. Two Whole Hands!"
 
@@ -682,7 +689,7 @@ label act1_1:
             $ clothing_check = 1
             $ renpy.block_rollback()
 
-            mc  "Wait don’t I have a nicer set of clothes somewhere?"
+            mc "Wait, don’t I have a nicer set of clothes somewhere?"
 
             "I can’t walk through the streets looking like a dirty pirate. There has to be a clean shirt I kept somewhere in here."
 
@@ -710,7 +717,9 @@ label act1_1:
 
             mc "That’s one soft shirt."
 
-            "A folded black blouse barely fits in the recycled box. I stole it off a French Admiral’s son when he flipped me off as we were leaving their vessel."
+            "A folded black blouse barely fits in the recycled box. I stole it off a French Admiral’s son as we were leaving their vessel."
+
+            "The louse was horribly annoying, he gave me no qualms taking everything he had."
 
             "With this shirt and a quick boot shine I should be looking moderately normal, or at least cleaner."
 
@@ -743,17 +752,17 @@ label act1_1:
 
             "Most of these books aren’t actually stolen."
 
-            "Obviously the first few were, but either at pirate ports or on the mainland, if there is ever a delay with the Plague leaving I go and find someone to do a swap with."
+            "Obviously the first few were, but either at pirate ports or on the mainland. If there is ever a delay with the Plague leaving I go and find someone to do a swap with."
 
             "Most of those interactions go smoothly if you know who to approach."
 
             "Not to stereotype, but the muscle bound tattooed walls of meat don’t tend to be well read."
 
-            "The more well dressed and young pirates normally have a novel or two they’d be willing to swap with me for one of mine."
+            "The more well dressed and young pirates normally have a novel or two they’d be willing to swap with me."
 
             "My mate Merigold in the Virgin Islands has a really nice collection and swaps with me what she wants me to experience."
 
-            "Sometimes out of a sense of urgency when she learns I haven't read any American classics."
+            "Sometimes out of a sense of urgency when she learns I haven't read a certain American classic."
 
             "I prefer reading stuff that came out this decade. Most of my social insight of the mainland comes from young adult fiction."
 
@@ -765,7 +774,7 @@ label act1_1:
 
             "As ample of an opportunity that this is, trying new things on the mainland could also be beneficial."
 
-            mc "So what should I start?"
+            mc "So what should I start reading?"
 
             $ renpy.block_rollback()
 
@@ -788,8 +797,8 @@ label act1_1:
 
                 $ persistent.book1_count = 1
                 $ persistent.book_count += 1
-                $ achievement.progress("Book Worm", persistent.book_count)
-                $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+                #$ achievement.progress("Book Worm", persistent.book_count)
+                #$ achievement.progress("Book Worm Deluxe", persistent.book_count)
 
             if persistent.book_count == 3:
 
@@ -830,8 +839,8 @@ label act1_1:
 
                 $ persistent.book2_count = 1
                 $ persistent.book_count += 1
-                $ achievement.progress("Book Worm", persistent.book_count)
-                $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+                #$ achievement.progress("Book Worm", persistent.book_count)
+                #$ achievement.progress("Book Worm Deluxe", persistent.book_count)
 
             if persistent.book_count == 3:
 
@@ -862,7 +871,7 @@ label act1_1:
 
             "As nice as Elysium sounds, I’d be perfectly content with the Underworlds bleak nothingness for eternity."
 
-            "Sounds more peaceful than worshiping forever in Cloud World for no reason."
+            "Sounds more peaceful than worshiping forever in a Cloud World for no reason."
 
             "But let's learn the wisdom from a not so dead kid. I'm sure it'll be insightful."
 
@@ -880,10 +889,10 @@ label act1_1:
 
             if persistent.book3_count == 0:
 
-                $ persistent.book3_count += 1
+                $ persistent.book3_count = 1
                 $ persistent.book_count += 1
-                $ achievement.progress("Book Worm", persistent.book_count)
-                $ achievement.progress("Book Worm Deluxe", persistent.book_count)
+                #$ achievement.progress("Book Worm", persistent.book_count)
+                #$ achievement.progress("Book Worm Deluxe", persistent.book_count)
 
             if persistent.book_count == 3:
 
@@ -906,7 +915,9 @@ label act1_1:
 
             "As opposed to a bunch of criminals on a boat."
 
-            "Not enough to find out first hand, but that’s why books are so great. I can live a life that I could only sparsely imagine."
+            "I couldn't find out first hand, but that’s why books are so great. I can live a life that I could only sparsely imagine."
+
+            "For example, fresh fruit in land prison. That already sounds like a better deal than the gallows."
 
             play effect "audio/pages.wav"
 
@@ -929,7 +940,9 @@ label act1_1:
 
             "I might be stressing out about this, it was just a thought, didn't actually say it."
 
-            "I’ll just close my eyes and lie down."
+            "I don't know how to talk like how a normal person might, but for sure the rich monsters we steal from aren't a good example."
+
+            "Ignore that. Just close my eyes and lie down."
 
             "A good snooze should whip my inner monologue into shape. Or, at the very least not make me sound like I live in a palace."
 
@@ -941,7 +954,7 @@ label act1_1:
 
             "Anything can happen, unlike at sea where you either die or don't."
 
-            "I'm sure I'll be fine. Captain believes in me and that's enough."
+            "I'm sure I'll be fine. Captain believes I'll make the right choices and that's enough for me."
 
             "..."
 
@@ -960,15 +973,17 @@ label act1_1:
 
             "We were around Havana a couple of days ago. We might have turned north last night to avoid the worst of the storm."
 
-            "If that’s right then we are headed to-"
+            "If that’s right then we are headed twoards the states."
+
+            "No, worse. We'd be headed to-"
 
             "Florida."
 
             "That’s why Captain said that thing about not needing anything from there anymore. Florida is where he picked up Mom all those years ago."
 
-            "Imagining this place as sentimental to him at all is difficult."
+            "Imagining that place as sentimental to him at all is difficult."
 
-            "The grizzled old pirate wouldn’t make special precautions for a port where zero people  give a shite that he's there."
+            "The grizzled old pirate wouldn’t make special precautions for a port where zero people give a shite that he's there."
 
             "He'd appreciate the lack of attention and interpret it as fear."
 
@@ -1022,7 +1037,7 @@ label act1_1:
 
             "You were the only person that cared for me, that I cared about. Dad gives me a day off of work and it’s the nicest thing anyone has done for me in years."
 
-            "I need more people like you in my or this life is gonna kill me slower than scurvy ever could."
+            "I need more people like you around or this life is gonna kill me slower than scurvy ever could."
 
             "You didn’t own a single thing when you stepped on The Red Plague."
 
@@ -1046,7 +1061,7 @@ label act1_1:
 
             "You dropped everything in your old life to start anew. It's crazy to think about."
 
-            "It's like Dad said, you were the happiest on this ship."
+            "It's like the Captain said, you were the happiest on this ship."
 
             "That was clear as day when anyone looked into your eyes."
 
