@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.5
 label act1_3:
 
     show BG black with fade
@@ -11,7 +12,7 @@ label act1_3:
 
     if activity_choice == "school":
 
-        "Only wasted a few hours looking for it, but I knew from books that the long yellow cars go to schools."
+        "Only wasted a few hours looking for it, thankfully I knew from books that the long yellow cars go to schools."
 
     else:
 
@@ -23,7 +24,7 @@ label act1_3:
 
     "Other than narrowly avoiding leaving cars, nobody is looking at me."
 
-    "The letter said someone would meet me outside the school, but there are so many people around my rendezvous could be anyone."
+    "The letter said someone would meet me outside the school, but there are so many people around. My rendezvous could be anyone."
 
     "If everyone is leaving the school, I could wait to see who stays. I don't know what the club member will look like though."
 
@@ -85,7 +86,7 @@ label act1_3:
 
     show ast happy with Dissolve(0.4)
 
-    "Poseidon help me this girl is..."
+    "Poseidon help me, this girl she's..."
 
     $ renpy.block_rollback()
 
@@ -96,7 +97,7 @@ label act1_3:
             $ quick_menu = False
             $ renpy.block_rollback()
 
-            mc "Are you alright?"
+            mc "Are you alright? Take it easy lass."
 
             $ quick_menu = True
 
@@ -140,7 +141,9 @@ label act1_3:
 
             $ a = Character('Astrid', color="#c83d32", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")]) # remove outline on text
 
-            mc "It sure did sailor. I'm ready to go."
+            mc "It sure did. I'm ready to enter if you'd escort me."
+
+            a "Aye aye [player_name]!"
 
             show ast smile
 
@@ -165,11 +168,13 @@ label act1_3:
 
             $ a = Character('Astrid', color="#c83d32", callback=astrid_voice, who_outlines=[ (1, "#FFFFFF")]) # remove outline on text
 
-            mc "I’d agree. You can just call me [player_name]."
+            mc "I’d agree it does. You can just call me [player_name]."
 
             show ast happy
 
-            a "Aye aye Captain [player_name]!"
+            mc "Shall we proceed miss Bellewood?"
+
+            a "Aye aye [player_name]!"
 
             show ast smile
 
@@ -211,6 +216,10 @@ label act1_3:
 
             mc "Nice to meet you lass, thanks for the invitation."
 
+            mc "Drop the title too. Will you escort me inside?"
+
+            a "Aye aye [player_name]!"
+
             show ast smile
 
             jump school_entry
@@ -233,7 +242,7 @@ label act1_3:
 
             a "I'll assume from your less than sparkling attire you're from the Red Plague?"
 
-            "Am I that {i}gross{/i} looking?"
+            "Am I that gross looking?"
 
         "Covertly rubbing my thumb against the side of the leg, a black residue stains comes off on me."
 
@@ -241,9 +250,9 @@ label act1_3:
 
         "What color were my pants originally"
 
-        mc "Yes, that’s me. I’m the first mate."
+        mc "Umm, yes, that’s me. I’m the first mate."
 
-        mc "The um, Captain sent me instead. We are here on important business and he was needed elsewhere."
+        mc "The Captain sent me instead. We are here on important business and he was needed elsewhere."
 
         show ast sad with Dissolve(0.1)
 
@@ -390,7 +399,7 @@ label act1_3:
 
                     a "{cps=80}Why did I say that outloud?{/cps}"
 
-                    "Her face starts glowing brighter than before while she tries not to look at me."
+                    "Her face bloomed brighter than before while she tries not to look at me."
 
                     "I have no problem answering questions, but if they start getting repetitive I’ll cut them off."
 
@@ -419,7 +428,7 @@ label act1_3:
 
                     a "No, why do you have a lot of them?"
 
-                    mc "Yes, wait no, I mean there is but no."
+                    mc "Yes, wait no, I mean there is, but no."
 
                     mc "I can’t tell you everything about my crew or it could jeopardize our safety."
 
@@ -445,6 +454,8 @@ label act1_3:
             "There are some skulls and hearts drawn on the whiteboard next to the club's name, yet the rest of the room has been thoroughly cleaned."
 
             "Or at least has been kept this clean intentionally. It reminds me of how the ship looked with none of the supplies on it when I left."
+
+            "Everyone perks up when Astrid enters the room."
 
             show ast at center with dissolve
 
@@ -517,7 +528,7 @@ label act1_3:
 
                     show fiona sad with Dissolve(0.1)
 
-                    f "What earns you respect on pirate ships? Do you have to be a big strong man to get it?"
+                    f "Hey, what earns you respect on pirate ships? Do you have to be a big strong man to get it?"
 
                     "Her tone makes it sound like she already knows the answer. Captain does a similar thing. It's kind of annoying."
 
@@ -526,6 +537,8 @@ label act1_3:
                     mc "From my experience, it’s feats and age."
 
                     mc "I feel as if I’ve done some pretty heroic things for the greater crew, but I’m treated like I was kidnapped yesterday."
+
+                    "Well, not by everyone."
 
                     mc "As for your second concern, our ship has had many prominent women figures throughout its voyage. And I’ve met a handful of retired female Captains in our travels."
 
@@ -537,9 +550,15 @@ label act1_3:
 
                     mc "Being a pirate is all about how good you are at the job. There have been some amazing pirates who are unbearable to talk to and be around."
 
-                    mc "But when the going gets tough, a great pirate tightens their buckle and draws their sword."
+                    f "Do you all have swords?"
+
+                    mc "For the most part yes. Some people I know use less conventional tools like sickles and flails."
+
+                    mc "But when the going gets tough, a great pirate tightens their buckle and draws their blade."
 
                     "The room rings with a  small wave of applause. I’ve never been clapped at before."
+
+                    "That was such a cheesy line too. I might as well have read it off the back of an adventure novel."
 
                     hide fiona with dissolve
 
@@ -590,9 +609,9 @@ label act1_3:
 
                     "She's calling me out!"
 
-                    mc "Well, let me think on that, uhhhh."
+                    mc "Well, let me think on that, {cps=30}Uhhhh...{/cps}"
 
-                    mc "It would have to be that time I saw Poseidon himself perform an act of God."
+                    mc "It would have to be that time I saw Poseidon himself perform a miracle."
 
                     mc "We stole a Mexican vessel’s shipment full of beers and sodas. And their boss begged the Captain on his hands and knees to spare their lives."
 
@@ -616,7 +635,7 @@ label act1_3:
 
                     mc "Alright, before I could brace for impact, an uncharacteristically powerful wave for that stage of the storm knocked into the Mexican ship."
 
-                    mc "The sailor knocked over and their ship bursted into multiple explosions."
+                    mc "The sailor got knocked over and their ship bursted into multiple explosions."
 
                     mc "Our lives were saved by His divine decision."
 
@@ -646,7 +665,7 @@ label act1_3:
 
                     mc "Constantly fighting for life and death just for a sliver of profits is a dreary way to live."
 
-                    mc "Our living quarters are dank and grim. I had to burn through skin and bones to get a proper bed when I was fifteen."
+                    mc "Our living quarters are dank and grim. I had to burn through skin and bones to get a proper bed when I was younger."
 
                     mc "Pirates are the worst type of people. They’re remorseless thieves and you’re treated like dirt unless you’re in charge."
 
@@ -702,7 +721,7 @@ label act1_3:
 
                     show be emb
 
-                    b "Yes, that’s me."
+                    b "Yeah?"
 
                     mc "Pirates don’t have quotas or missions."
 
@@ -712,8 +731,10 @@ label act1_3:
 
                     show be with Dissolve(0.1)
 
-                    b "T-thank you for your honesty. That’s a lot to digest, I’ll adjust my data points accordingly."
+                    b "T-thank you for your honesty. That’s a lot to digest, I’ll adjust my later questions accordingly."
                     hide be with dissolve
+
+                    "She looks so relieved just to sit back down."
 
                     $ Be_affinity += 1
                     $ b_met += 1
@@ -736,7 +757,11 @@ label act1_3:
 
             a "Why don’t we eat some of the food that G brought and we can kinda just talk some more. You can spread the culture on us as thick as you want."
 
-            hide ast with dissolve
+            show ast emb
+
+            a "Astrid, phrasing. Come on."
+
+            hide ast emb with dissolve
 
             "The people not paying attention perked up for the food to rush the table. I expected to monologue more, guess it’s less pressure on me now."
 
@@ -751,7 +776,6 @@ label act1_3:
         label classroom_choice:
 
             define x = 0 # very simple line check
-
             # keeps track of conversation moments
             define b_convo = 0
             define f_convo = 0
@@ -770,7 +794,7 @@ label act1_3:
 
                     jump food
 
-                "Use the bathroom" if b_check == 0:
+                "Excuse myself briefly" if b_check == 0:
 
                     jump washroom
 
@@ -791,7 +815,7 @@ label act1_3:
             define persistent.woman3 = 0
             define persistent.woman4 = 0
 
-            # just a check to do an intro line
+            # just a check to do an intro line if first time choosing this option
             if x == 0:
 
                 "This is what I wanted to do on land. Talk to people my own age, I should take advantage of this moment."
@@ -853,14 +877,43 @@ label act1_3:
                     $ quick_menu = True
 
                     show be emb with Dissolve(0.1)
+                    $ b = Character('Girl', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])
 
-                    b "Y-yes hi I am. I’m B-behati. T-thank you for c-coming t-today."
+                    b "Y-yes hi I am. I mean, t-thank you for c-coming t-today."
 
-                    mc "Are you nervous about something Behati?"
+                    show be emb at wiggle
 
-                    b "Meeting a real p-pirate is overwhelming. I don’t, well I can’t. No, I-I d-don’t know what s-s-say, I-I mean."
+                    b "It it, is an honor to h-have the Red-"
+
+                    mc "Are you nervous about something lass?"
+
+                    b "Meeting a real p-pirate is overwhelming. I don’t, well I can’t. No, I-I d-don’t know what say, I-I mean."
+
+                    show be emb at bounce
+
+                    b "Oh my God I forgot to say my name too!"
 
                     mc "It’s alright, I’m not going to hurt you in any way."
+
+                    mc "Just calm down and listen to the waves-"
+
+                    b "There are no waves!"
+
+                    mc "What I mean is-"
+
+                    $ b = Character('Behati', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])
+
+                    b "Behati!"
+
+                    b "That's my name."
+
+                    "I've never seen anyone this nervous about anything."
+
+                    "And I've watched men walk the plank."
+
+                    "Maybe my introduction was too much?"
+
+                    mc "Nice to meet you Behati. Sorry if my introduction gave off a threatening tone."
 
                     mc "I was just trying to show everyone that being a pirate has its glory but it is very dangerous. Trying to be realistic, you know?"
 
@@ -868,9 +921,11 @@ label act1_3:
 
                     b "It’s okay, I’m fine. I just need to breathe."
 
+                    show be with Dissolve(0.1)
+
                     b "But, you’re not giving the Pirate Culture Club enough credit. We aren’t just a bunch of weebs, we appreciate the life you live. It’s admirable."
 
-                    $ b_met += 1
+                    "The stuttering stop fast once she got her name out there. She might just not be good at introducing herself?"
 
                 else:
 
@@ -885,9 +940,9 @@ label act1_3:
 
                     mc "Maybe I said a little too much. It was to show everyone that being a pirate isn’t what you think it might be."
 
-                    b "Hey [player_name]."
+                    b "Hey [player_name]. It wasn't bad at all."
 
-                    b "That was definitely a shock, but you shouldn’t underestimate us."
+                    b "It was definitely a shock, but you shouldn’t underestimate us."
 
                     b "We aren’t just a bunch of weebs, we appreciate the life you live. It’s admirable."
 
@@ -917,13 +972,13 @@ label act1_3:
 
                 b "The open seas, stealing to survive, all the interesting uses of old and new technology."
 
-                b "It’s such a rich history, I’ve been wiki diving on new pirate stuff almost every month for the past two years."
+                b "It’s such a rich history, I’ve been wiki dumping on new pirate stuff almost every month for the past two years."
 
-                mc "What’s a \"wiki dive\"?"
+                mc "What’s a \"wiki dump\"?"
 
                 show be shocked
 
-                b "Oh my God, does your ship not get Wi-Fi? A generator to charge a Mi-Fi box even?"
+                b "Oh my God, does your ship not get Wi-Fi? Batteries for a a Mi-Fi box even? A single hard drive someone updates?"
 
                 mc "Since those words mean nothing to me, I’ll say no."
 
@@ -933,13 +988,13 @@ label act1_3:
 
                 show be skeptical with Dissolve(0.1)
 
-                "Behait’s face seems worried. I should have had a better definition prepared, knowing that the internet is important to people our age."
+                "Behati’s face seems worried. I should have had a better definition prepared, knowing that the internet is important to people our age."
 
                 b "Well yes but there’s so much more. Movies, music, videos, games, the solar system of information!"
 
                 show be with Dissolve(0.1)
 
-                b "But it also has something called a wiki. It’s like all the information we have on super easy to read pages all linked together."
+                b "But it also has sites called a wikis. It’s like all the information we have on super easy to read pages all linked together."
 
                 b "With pictures and citations and there’s a page for everything. They’re constantly updated so you’re never behind and it's and and the-"
 
@@ -955,17 +1010,19 @@ label act1_3:
 
                 show be with Dissolve(0.1)
 
-                b "There’s even a page on The Red Plague. It’s not well documented because a lot of historic pirating is told through legal documents after they’ve been hanged or died."
+                b "There’s even a page on The Red Plague. It’s not well documented because a ton of historic pirating is told through legal documents after they’ve been hanged or died."
 
                 b "However, your ship is often recorded as the reason for lost products publicly for some companies. I wonder why there’s only a few?"
 
                 mc "That's so great. It feels wrong, but just true enough to keep the mythos alive."
 
+                mc "Most of our mystic comes from word of mouth."
+
                 show be quiz with Dissolve(0.1)
 
                 b "Yeah it’s pretty cool, I wish there was more info though."
 
-                mc "Cool. Yes that's cool."
+                mc "Cool. Yes that is cool."
 
                 show be
 
@@ -990,6 +1047,7 @@ label act1_3:
                 b "Nevermind, if you think of anything let me know."
 
                 $ b_convo += 1
+                $ b_met += 1
                 $ activity_check += 1
                 hide be emb with dissolve
                 jump social
@@ -1013,11 +1071,11 @@ label act1_3:
 
                 mc "This great tale on how we ran over a blue whale from the bow of the ship."
 
-                mc "The heroics of harvesting it’s resources risking our own lives, the whole crew pitched in this once and a lifetime-"
+                mc "The heroics of harvesting the resources, risking our own lives. The whole crew pitched in this once and a lifetime-"
 
                 show be skeptical with Dissolve(0.1)
 
-                b "{cps=15}Ummmmm. But, that’s n-not.{/cps}"
+                b "{cps=15}Ummmmm. But, that’s not.{/cps}"
 
                 mc "What you don’t think it’s true?"
 
@@ -1025,11 +1083,11 @@ label act1_3:
 
                 show be with Dissolve(0.1)
 
-                b "Wikis are supposed to be informational. They aren’t the place for hearsay stories or non-formative tales."
+                b "Wikis are supposed to be informational. They aren’t the place for hearsay stories or non-informative tales."
 
-                mc "Alright, even though this is entirely a formative tale, I know what you mean."
+                mc "Alright, even though this is entirely an informative tale, I know what you mean."
 
-                "That's really disappointing. I thought I could get a scribe to tell our tales for free. Most scribes aren’t worth the ink they charge us for."
+                "That's really disappointing. I thought I could get a scribe to tell our tales for free. Most scribes aren’t worth the ink they charge for."
 
                 show be quiz
 
@@ -1047,7 +1105,9 @@ label act1_3:
 
                 b "Both my brothers left for college last year, so I’ve been able to use the big T.V. after school for anime."
 
-                "What is she trying to say? I think the whale story may have made things weird."
+                b "It's on my mind is all. Everything is on my mind. Why did I bring up anime to a real pirate?"
+
+                "What is she trying to say? I think the whale story may have thrown her off?"
 
                 "I can still steer the conversation away from the awkward wiki misunderstanding."
 
@@ -1067,7 +1127,7 @@ label act1_3:
 
                 show be shocked with Dissolve(0.1)
 
-                b "Oh my, being on a pirate ship sounds overwhelming. I’d want to do so much learning by myself. I’ve never even shot a gun before."
+                b "Oh my, being on a pirate ship sounds overwhelming. I’d want to do so much learning myself. I’ve never even shot a gun before."
 
                 mc "Do you want to?"
 
@@ -1079,7 +1139,7 @@ label act1_3:
 
                 b "I’ve read so much about older and new pistols. The mechanisms are so fascinating to me."
 
-                mc "Is there a lot you gravitate towards about the pirate culture?"
+                mc "Is there lots you gravitate towards about the pirate culture?"
 
                 show be with Dissolve(0.1)
 
@@ -1091,13 +1151,13 @@ label act1_3:
 
                 show be skeptical with Dissolve(0.1)
 
-                b "No way, I’m firing it. I read that old flintlocks make sounds louder than desert eagles. I have to know if that’s true."
+                b "No way, I’m firing it. I read that old flintlocks make sounds louder than desert eagles but have less kickback. I have to know if that’s true."
 
                 mc "I can confirm they are very loud."
 
                 show be quiz with Dissolve(0.1)
 
-                b "Something might be louder actually. I have to look this up."
+                b "Something might be louder actually. Wait, I have to look this up."
 
                 show be quiz at sitting with ease
 
@@ -1124,7 +1184,7 @@ label act1_3:
 
                     b "Hey [player_name]. What’s sticking in your waistband? Is that a book or something?"
 
-                    "How did she notice, she didn’t even glance at me, seemingly."
+                    "How did she notice? She didn’t even glance at me, seemingly."
 
                     mc "Yes, it’s a book. I grabbed this book from a store after I got off the ship. Thought it could be an interesting read."
 
@@ -1146,18 +1206,25 @@ label act1_3:
 
                     "All I learn out at sea is how to be a pirate. Here is where I think the most knowledge lies."
 
+                    mc "You don't have to be embarrassed about what you like."
+
+                    mc "I'm the only pirate onboard who likes to read. I get where you're coming from."
+
+                    show be happy with Dissolve(0.1)
+
                     b "Maybe we'll talk later? Kay?"
 
                     mc "Alright, sure thing Behati."
 
                     show be skeptical
 
-                    b "I got some more homework to, uh, work on."
+                    b "I got some more homework to work on. But thank you."
 
                     hide be skeptical with dissolve
 
                     $ book_choice = "used" # just to know when the variable is used
                     $ b_convo += 1
+                    $ Be_affinity += 1
                     $ activity_check += 1
                     jump social
 
@@ -1181,22 +1248,35 @@ label act1_3:
 
                     mc "Straight gunpowder guns are a pain and finding raw materials for them is borderline impossible."
 
+                    "Or at least that's what I'm told."
+
                     show be happy with Dissolve(0.1)
 
                     b "Thanks, that’s good advice."
 
+                    b "Would you show me how to use one?"
+
+                    mc "Why not?"
+
+                    "Probably won't ever be around here again."
+
                     show be with dissolve
 
-                    b "Maybe we'll talk later? Kay?"
+                    b "Thanks for the hollow agreement. I know you need to uphold the mission once you leave today."
 
-                    mc "Alright, sure thing Behati."
+                    mc "And what mission is that?"
 
-                    show be skeptical
+                    b "You tell me when you figure that out."
 
-                    b "I got some more homework to, uh, work on."
+                    b "Maybe we'll talk later? Kay? I got some homework I need to make up."
 
-                    hide be skeptical with dissolve
+                    mc "Alright, sure thing Behati. I'll leave you to it."
+
+                    "What is my mission after all this?"
+
+                    hide be with dissolve
                     $ b_convo += 1
+                    $ Be_affinity += 1
                     $ activity_check += 1
                     jump social
 
@@ -1242,13 +1322,15 @@ label act1_3:
 
                     $ quick_menu = True
 
+                    "Who just said that?"
+
                     $ f = Character('Tall Girl', color="#d1c1ff", callback=fiona_voice, who_outlines=[ (1, "#000000")])
 
                     show fiona angry with Dissolve(0.1)
 
-                    f "You wanna try that again matey?"
+                    f "You wanna try that again, matey?"
 
-                    mc "{cps=20}Ugh, ummmmmmmm, I uh.{/cps} Hello, I’m [player_name], sorry. How are you today?"
+                    mc "{cps=20}Ugh, ummmmmmmm, I uhm.{/cps} Hello, I’m [player_name], sorry. How are you today?"
 
                     $ f = Character('Fiona', color="#d1c1ff", callback=fiona_voice, who_outlines=[ (1, "#000000")])
 
@@ -1268,7 +1350,7 @@ label act1_3:
 
                     f "Then I’d say \"who’s cock?\" and we’d all laugh and just move on with the conversation."
 
-                    mc "{cps=20}Uuuuuuuh. I ugh, don’t know how I’d.{/cps}"
+                    mc "{cps=20}Uuuuuuuh. I uh, don’t know how I’d.{/cps}"
 
                     show fiona laugh
 
@@ -1276,7 +1358,9 @@ label act1_3:
 
                     show fiona with Dissolve(0.1)
 
-                    mc "Umm, most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
+                    mc "Umm, let me think..."
+
+                    mc "Most pirating rule breakers get marooned, but sometimes we will also tie someone to the side of the boat and pull them from the other side."
 
                     mc "The barnacles under the ship tearing their skin off, killing them slowly. You’d be lucky to drown."
 
@@ -1289,7 +1373,7 @@ label act1_3:
                     $ quick_menu = False
                     $ renpy.block_rollback()
 
-                    mc "Hey Fiona, what are you up to?"
+                    mc "Hello Fiona, what are you up to?"
 
                     $ quick_menu = True
 
@@ -1305,7 +1389,9 @@ label act1_3:
 
                     f "So what's a big scary thing you guys do?"
 
-                    mc "Um, you know most pirating rule breakers get marooned but sometimes we will also tie someone to the side of the boat and pull them from the other side."
+                    mc "Um, let me think..."
+
+                    mc "Did you know most pirating rule breakers get marooned, but sometimes we will also tie someone to the side of the boat and pull them from the other side."
 
                     mc "The barnacles under the ship tearing their skin off, killing them slowly. You’d be lucky to drown."
 
@@ -1313,7 +1399,7 @@ label act1_3:
 
                     f "Okay first, very metal. Second, I can't text them that."
 
-                "I’m having a hard time getting a read on Fiona. In a way she’s a lot like other female pirates I’ve met, but something is...funny."
+                "I’m having a hard time getting a read on Fiona. In a way she’s a lot like other female pirates I’ve met, but something is...funny about her."
 
                 mc "Alright, next time I’ll be more relaxed about it."
 
@@ -1329,9 +1415,9 @@ label act1_3:
 
                 f "That sounds really nice, on land we don’t always get that luxury. We have to fight tooth and nail just to do the simple stuff."
 
-                "Fiona’s gaze rolls around the room. I think I know why being a pirate is so appealing to her."
+                "Fiona’s gaze rolls around the room. I think I'm getting the sense on why being a pirate is so appealing to her."
 
-                "Everything is about your merit, nobody is treated wrong based on their appearance if they can do the work. It's a true sense of freedom when everybody respects yours."
+                "Everything is about your merit, nobody is treated wrong based on stuff that doesn't matter if they can do the work. It's a true sense of freedom when everybody respects yours."
 
                 mc "Hey Fiona."
 
@@ -1339,7 +1425,7 @@ label act1_3:
 
                 f "Yup?"
 
-                mc "The most important thing you can do is find where you are most comfortable."
+                mc "The most important thing you can do is find where you are most comfortable and be yourself."
 
                 mc "All I know is pirating, but if it made me feel bad and unappreciated, then it’d be time for a change. You know what I mean?"
 
@@ -1385,7 +1471,7 @@ label act1_3:
 
                 f "I don’t don’t know, depends on who’s cock?"
 
-                mc "That is a pretty fun introduction even if it makes me uneasy."
+                mc "That is a pretty fun introduction, even if it makes me uneasy."
 
                 show fiona with Dissolve(0.1)
 
@@ -1397,11 +1483,11 @@ label act1_3:
 
                     show fiona sad with Dissolve(0.1)
 
-                    f "You stole a book from us?"
+                    f "Did you steal a book from us?"
 
                     mc "What? No! You mean this thing?"
 
-                    mc "I stole this from a book store. It looked interesting, thought I’d read it later."
+                    mc "I got this from a book store. It looked interesting, thought I’d read it later."
 
                     show fiona with Dissolve(0.1)
 
@@ -1421,7 +1507,7 @@ label act1_3:
 
                     f "They aren’t throwing dead babies at each other and saying the n-word but the themes are serious."
 
-                    mc "Okay that sounds cool. I’ll give Rune a chance."
+                    mc "Okay that sounds cool. I’ll give it a chance."
 
                     show fiona with Dissolve(0.1)
 
@@ -1439,7 +1525,7 @@ label act1_3:
 
                     show fiona
 
-                    f "Yes! Yes we are supposed to read to get past the fifth grade!"
+                    f "Yes! Yes we are supposed to read to get past the first grade!"
 
                     show ge at left with slide
 
@@ -1450,6 +1536,7 @@ label act1_3:
                     f "She’s insane. Watching her pay attention in class is like watching the five stages of grief in fifty-two minutes."
 
                     $ f_convo += 1
+                    $ Fi_affinity += 1
                     $ book_choice = "used"
 
                 f "Do you get time to watch any movies or read at all?"
@@ -1474,6 +1561,8 @@ label act1_3:
 
                 f "Most of them are bullshit political pandering and some are seen as history that contradicts the propaganda they feed us here."
 
+                f "I just stick to online stuff mostly. Big open sea of reading there."
+
                 mc "You should read what you want to read Fiona, don’t let anyone stop you."
 
                 show fiona
@@ -1488,17 +1577,19 @@ label act1_3:
 
                 f "It’s exhausting to be around these people. Not in the club at least."
 
-                mc "At least pirating and by association, this club, are very accepting. There’s a lot of violence when you’re a pirate."
+                mc "At least pirating and by association, this club, are very accepting. The sheer amount of violence you experience as a pirate is daunting."
 
                 mc "If you focus on it, life is bleak. Highlighting the good parts in your head really shifts your mood."
 
                 show fiona sad at wiggle
 
-                f "Yeeeeaaaaah. For the last thread of my mental health that sounds like the healthy thing to do."
+                f "Yeeeeaaaaah. For the last thread of my mental health's sake, that sounds like the healthy thing to do."
 
                 show fiona with Dissolve(0.1)
 
-                f "Thanks [player_name], you didn’t need to talk me down there. The serious tone was helpful."
+                f "Thanks [player_name], you didn’t need to talk me down there. Your chill tone was helpful."
+
+                f "Sometimes Astrid wil argue with me or Behati will nervously talk me out of it. But I usually just need someone to hear me."
 
                 mc "Not a problem. You have the mentality of an aged pirate, I do that sometimes for the new crew members."
 
@@ -1529,11 +1620,11 @@ label act1_3:
 
                 mc "Will people spread bad rumors? I think my reputation in Seaborough will survive."
 
-                f "If Astrid wasn’t so pretty and popular she might have been a social outcast by now."
+                f "It could happen. If Astrid wasn’t so pretty and popular she might have been a social outcast by now."
 
                 f "She basically runs this club in secret. A hush hush sort of deal."
 
-                mc "I understand, it's an incognito type situation. As long as the Captain won’t punish you for it I get it."
+                mc "I understand, it's an incognito type situation. As long as the Captain won’t punish you for it, I get it."
 
                 show fiona angry with Dissolve(0.1)
 
@@ -1547,7 +1638,7 @@ label act1_3:
 
                 f "How many people does it take to make a ship go?"
 
-                mc "Four to five roughly. Depends how capable the crew is."
+                mc "Four to five as a rough minimum. Depends how capable the crew is."
 
                 show fiona
 
@@ -1565,13 +1656,21 @@ label act1_3:
 
                 show fiona laugh with Dissolve(0.2)
 
+                f "Where did that come from?"
+
                 f "That is so perfectly extra, I love it."
 
                 f "Hehe, thanks for humoring me matey."
 
+                "Where did that come from?"
+
+                mc "Sure thing cock sucker."
+
+                hide fiona laugh with dissolve
+
                 $ f_convo += 1
                 $ activity_check += 1
-                hide fiona laugh with dissolve
+                $ Fi_affinity += 1
                 jump social
 
             else:
@@ -1590,6 +1689,8 @@ label act1_3:
                 mc "If you think you’re tired of sex jokes you’re the one who has to let me know."
 
                 f "Very true. I’ll be hung before that happens."
+
+                mc "See you at the gallows then."
 
                 show fiona with Dissolve(0.1)
 
@@ -1638,11 +1739,13 @@ label act1_3:
 
                     g "For sure, they won’t catch up to me that fast. And when they do I’ll figure it out."
 
-                    $ g = Character('G', color="#2ef2f4", callback=g_voice, who_outlines=[ (1, "#000000")])
+                    $ g = Character('Geraldine', color="#2ef2f4", callback=g_voice, who_outlines=[ (1, "#000000")])
 
                     g "Behati helps me cram when it gets serious. I’m Geraldine by the way."
 
-                    g "I don’t know if you heard anyone say my name. My friends call me G."
+                    $ g = Character('G', color="#2ef2f4", callback=g_voice, who_outlines=[ (1, "#000000")])
+
+                    g "I don’t know if you heard anyone say my name or not. But my friends call me G."
 
                     mc "Why only one letter?"
 
@@ -1692,13 +1795,15 @@ label act1_3:
 
                     show ge smile
 
-                    g" Tell me some cool pirate stuff."
+                    g "Tell me some cool pirate stuff."
 
                 "Pirate stuff? Could she be more vague? She’s been smiling a lot, maybe tell a funny story."
 
-                mc "So it’s against pirate code to coerce your preferred gender onto the ship. It won’t get you killed but you’ll be punished harshly."
+                mc "So it’s against pirate code to coerce your preferred gender onto the ship. It won’t get you killed, but you’ll be punished harshly."
 
                 show ge with Dissolve(0.1)
+
+                g "Oh yeah?"
 
                 mc "One time these two new pirates, both really burly looking guys were sneaking some prostitutes onboard and the Captain and I caught them red handed."
 
@@ -1738,7 +1843,7 @@ label act1_3:
 
                 show ge smile with Dissolve(0.1)
 
-                g "I’m a big fan of of just the raunchiest gay fanfics I can find."
+                g "I’m a big fan of just the raunchiest gay fanfics I can find."
 
                 mc "Is that a popular genre on land?"
 
@@ -1812,7 +1917,7 @@ label act1_3:
 
                     else:
 
-                        g "Which you seem loaded with girl."
+                        g "Which you seem loaded with dude."
 
                     mc "Yeah that is sort of funny. You want to hear some terrible pirate jokes?"
 
@@ -1897,7 +2002,7 @@ label act1_3:
 
                     g "We’re forced to come to school."
 
-                    "She thinks I have a choice. After eighteen years I’ve only been given permission to prace around the land without a care."
+                    "She thinks I have a choice. After eighteen years I’ve only been given permission to prace around the main land without a care."
 
                     "Leaving on my own accord would have been a death sentence. It might be the same here, should I ask?"
 
@@ -1933,13 +2038,13 @@ label act1_3:
 
                     "That sounds really sad. Admiring the pirate life because yours is without freedom."
 
-                    "A pirate culture club isn't the worst form of escapism that exists. What would Astrid think is a good thing to say?"
+                    "A pirate culture club isn't the worst form of escapism that exists. What would Astrid think is a good thing to say at a time like this?"
 
-                    mc "{cps=25}Arrrrrrgggggh.{/cps} Well aye hope aye made today salty enough for ye lass."
+                    mc "{cps=25}Arrrrrrgggggh.{/cps} Well aye hope aye made teday salty enough for ye lass."
 
                     show ge happy with Dissolve(0.1)
 
-                    g "Haha. Yeah this was fun, I appreciate you coming down matey."
+                    g "Haha. Yeah this was fun, I appreciate you coming aboard matey."
 
                     show ge smile
 
@@ -1953,7 +2058,7 @@ label act1_3:
                     show ge smile with ease:
                         xpos 0.5
 
-                    "She digs into my arm with a swift jab then grabs her screen device."
+                    "She digs into my arm with a swift jab then grabs her handheld device."
 
                     show ge
 
@@ -2057,7 +2162,7 @@ label act1_3:
 
                         $ persistent.game4_count = 1
                         $ persistent.game_count += 1
-                        $ achievement.progress("G A M E R", persistent.game_count)
+                        #$ achievement.progress("G A M E R", persistent.game_count)
 
                     if persistent.game_count == 4:
 
@@ -2078,7 +2183,6 @@ label act1_3:
 
                     "After backing away slowly she stopped and laughed to herself for a good second."
 
-                    $ G_affinity += 1
                     $ g_convo += 1
                     hide ge happy with dissolve
                     jump social
@@ -2162,7 +2266,7 @@ label act1_3:
 
                         $ persistent.game4_count += 1
                         $ persistent.game_count += 1
-                        $ achievement.progress("G A M E R", persistent.book_count)
+                        #$ achievement.progress("G A M E R", persistent.book_count)
 
                     if persistent.game_count == 4:
 
@@ -2234,7 +2338,23 @@ label act1_3:
 
                 show ge happy with Dissolve(0.1)
 
-                g "Yeah dude, you're cool too."
+                g "Cool enough to let us on your ship?"
+
+                mc "That's not a question of you being cool, more hardy."
+
+                g "I don't know about hardy, but I can party hardy with the best of them."
+
+                g "Pirates must throw some wild ragers."
+
+                mc "Sometimes, after a good haul, we'll drink the night away, but the best ones are on pirate islands."
+
+                g "Oh yeah? What's it like there?"
+
+                mc "Pirate islands are all fun all the time. Well, at least for the most part."
+
+                mc "If you don't have to keep track of inventory, repairs, reputation, or your blood alcohol level. Then it's a lot of food and debotury."
+
+                g "Nevermind, I don't want to see your ship. You have to stay here at school and spread some of that sweet sweet pirate life to the people."
 
                 g "Enroll in our school and become one of us."
 
@@ -2243,6 +2363,8 @@ label act1_3:
                 g "{cps=30}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
 
                 hide ge happy with dissolve
+
+                $ G_affinity += 1
                 $ g_convo += 1
                 jump social
 
@@ -2254,7 +2376,7 @@ label act1_3:
 
                 g "{cps=30}One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us. One of us.{/cps}"
 
-                mc "I see that you're busy being fake crazy."
+                mc "I see that you're busy being fake crazy still."
 
                 if persistent.woman3 == 0:
 
@@ -2277,7 +2399,7 @@ label act1_3:
                     $ quick_menu = False
                     $ renpy.block_rollback()
 
-                    mc "Hey Astrid? How’d you like my intro?"
+                    mc "Hey Astrid? How’d you like my introduction?"
 
                     $ quick_menu = True
 
@@ -2301,7 +2423,7 @@ label act1_3:
 
                     show ast happy with Dissolve(0.1)
 
-                    a "For sure, one hundred percent."
+                    a "For sure, hundred percent."
 
                     mc "Did you want to ask me any questions?"
 
@@ -2341,11 +2463,11 @@ label act1_3:
 
                     mc "It means he’s strong and old and you think he’d swing his weight around too much but he doesn't."
 
-                    mc "He knows he can but every once and a while he has to come down to demonstrate why he’s in charge."
+                    mc "He knows he can, but every once and a while he has to come down to demonstrate why he’s in charge."
 
                     a "I’m sorry I called your accurate description into question."
 
-                    a "It sounds like the Greek Gods starting wars amounsgt their subjects over petty arguments. If they want the mortals to do anything they have to be powerful but humble."
+                    a "It sounds like the Greek Gods starting wars amongst their subjects over petty arguments. If they want the mortals to do anything they have to be powerful, but humble."
 
                     mc "Yes, exactly like that."
 
@@ -2431,7 +2553,7 @@ label act1_3:
 
                 a "But I was kinda hoping you'd be a little sexist so I could see Fiona get really mad."
 
-                a "Just go wild at you for the meme."
+                a "Just go wild on a mysogynist pirate for the meme."
 
                 mc "Well you never had to worry about that. We can be bad, but not unfairly bad."
 
@@ -2497,7 +2619,7 @@ label act1_3:
 
                 a "So {cps=20}ummmmmm{/cps}, have you ever wanted to captain your own ship?"
 
-                mc "Wow, that’s uh,"
+                mc "Wow, that’s uh."
 
                 mc "I’ve never really thought about it before. I can’t imagine my Captain ever retiring so..."
 
@@ -2608,7 +2730,7 @@ label act1_3:
             $ quick_menu = False
             $ renpy.block_rollback()
 
-            "My stomach is hurting suddenly. Does my stomach feel the incoming social anxiety or was it something I ate?"
+            "My stomach is hurting suddenly. Is this for the incoming social anxiety or was it something I ate?"
 
             $ quick_menu = True
 
@@ -2713,7 +2835,7 @@ label act1_3:
 
                     "I must have picked the best one then."
 
-                    "The aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+                    "The aroma of sour smelling bleach hits my face like cleaning the ship at dawn."
 
                     show fiona at right with moveinright
 
@@ -2789,7 +2911,7 @@ label act1_3:
 
                     $ f = Character('Fiona', color="#d1c1ff", callback=fiona_voice, who_outlines=[ (1, "#000000")])
 
-                    f "My name's Fiona though."
+                    f "My name's Fiona though. So now you know me."
 
                     mc "Thank you Fiona. I appreciate that."
 
@@ -2805,7 +2927,7 @@ label act1_3:
 
                     "There are multiple facilities inside this huge washroom, it's so nice in here."
 
-                    "Fiona must have known the best one to use, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+                    "Fiona must have known the best one to use, the aroma of sour smelling bleach hits my face like cleaning the ship at dawn."
 
                     show fiona at right with dissolve
 
@@ -2875,7 +2997,7 @@ label act1_3:
 
                 f "You having a problem matey?"
 
-                mc "Oh, hello again Fiona."
+                mc "Oh, Fiona."
 
                 mc "Could you please excuse my lack of land iconography but what do these symbols mean? Do they stop me from entering them?"
 
@@ -2927,7 +3049,7 @@ label act1_3:
 
                     "I must have picked the best one then."
 
-                    "The aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+                    "The aroma of sour smelling bleach hits my face like cleaning the ship at dawn."
 
                     show fiona at right with moveinright
 
@@ -3011,7 +3133,7 @@ label act1_3:
 
                     "There are multiple facilities inside this huge washroom, it's so nice in here."
 
-                    "Fiona must have known the best one to use, the aroma of sweet smelling bleach hits my face like cleaning the ship at dawn."
+                    "Fiona must have known the best one to use, the aroma of sour smelling bleach hits my face like cleaning the ship at dawn."
 
                     show fiona at right with dissolve
 
@@ -3082,7 +3204,7 @@ label act1_3:
 
             $ quick_menu = True
 
-            "The people who burst towards the food after I spoke have left. Apparently they weren’t as interested as the club heads."
+            "The people who burst towards the food after I spoke have left. Apparently they weren’t as interested as the club heads are."
 
             "A side table by the window is laid out with plastic wrapped food. My eye is drawn to the..."
 
@@ -3168,7 +3290,7 @@ label act1_3:
 
                 show ge
 
-                mc "Unapologetically ruthless, when she served her special slop mix to us some sailors would try to insult her looks and she would say terrible things about their mothers."
+                mc "Unapologetically ruthless, when she served her special slop mix to us some pirates would try to insult her looks and she would say terrible things about their mothers."
 
                 show ge happy
 
@@ -3184,7 +3306,7 @@ label act1_3:
 
                 "She almost choked trying to get that out. Her entire body has gone limp from laughter."
 
-                "A few students around us giggle along, but are drowned out by G’s roars."
+                "A few club members around us giggle along, but are drowned out by G’s roars."
 
                 "If I recall correctly, some books I read implied teenagers find being mean really funny."
 
@@ -3194,7 +3316,7 @@ label act1_3:
 
                 g "Oh my God I can picture it now."
 
-                g "One time,"
+                g "One time."
 
                 "She's trying to catch her breath."
 
@@ -3212,7 +3334,7 @@ label act1_3:
 
                 mc "She was definitely an inspiring woman."
 
-                g "I have to go tell Behati about this, she’ll flip."
+                g "I have to go tell Be about this, she’ll flip."
 
                 hide ge smile with moveoutleft
 
@@ -3236,7 +3358,7 @@ label act1_3:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                "Poseidon help me that sandwich is half my size."
+                "Poseidon help me, that sandwich is half my size!"
 
                 $ quick_menu = True
 
@@ -3248,7 +3370,7 @@ label act1_3:
 
                     show be emb with dissolve
 
-                    $ b = Character('Girl with Glasses', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])
+                    $ b = Character('Girl', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])
 
                     b "Do y-you like the sandwiches?"
 
@@ -3267,6 +3389,8 @@ label act1_3:
                     $ b = Character('Behati', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])
                     $ b_met +=1
 
+                    b "I-I'm. Uhhhhh. B-be-be-ha-ha"
+
                     b "{cps=100}I’m Behati. Here’s some water we took from the tap and put in a pitcher!{/cps}"
 
                     play effect "audio/water.ogg" volume .8
@@ -3281,43 +3405,27 @@ label act1_3:
 
                     $ b = Character('Behati', color="#ffcb00", callback=b_voice, who_outlines=[ (1, "#000000")])
 
-                    b "Do y-you like the sandwiches?"
+                    b "Do you like the sandwiches?"
 
                     "It’s Behati. Her questions were very data driven, wonder if that’s how she’s like all the time?"
 
-                    "I really don’t know all of the ships' intakes and outputs (besides how many ships we sink)."
+                    "I really don’t know all of the ships' intakes and outputs. Besides how many ships we sink."
 
                     "Flavio mostly takes care of the number stuff."
 
                     mc "Yes this tastes great. I’ve never had anything like it."
 
-                    if b_convo >= 1:
+                    show be with Dissolve(0.1)
 
-                        show be with Dissolve(0.1)
+                    b "That’s good. Do you want anything to drink?"
 
-                        b "That’s good. Do you want anything to drink?"
+                    mc "Water if you have it."
 
-                        mc "Water if you have it."
+                    b "Let me pour you some, here’s some water we took from the tap and put in a pitcher."
 
-                        b "Let me pour you some, here’s some water we took from the tap and put in a pitcher!"
-
-                        play effect "audio/water.ogg" volume .8
-                        show be shocked with wiggle
-                        "She pours me a cup of water as fast as she said that, spilling a little bit on the table."
-
-                    else:
-
-                        show be emb with wiggle
-
-                        b "That’s g-g-good. Do you w-want anything to d-drink?"
-
-                        mc "Water if you have it. Are you alright? You sound worried about something."
-
-                        b "{cps=100}Worried? Why would I be worried? Here’s some water we took from the tap and put in a pitcher!{/cps}"
-
-                        play effect "audio/water.ogg" volume .8
-                        show be shocked with wiggle
-                        "She pours me a cup of water as fast as she said that, spilling a little bit on the table."
+                    play effect "audio/water.ogg" volume .8
+                    show be shocked with wiggle
+                    "She pours me a cup of water while shaking the pitcher, spilling a little bit on the table."
 
                 mc "{cps=20}Ummmm Beh-{/cps}"
 
@@ -3333,7 +3441,7 @@ label act1_3:
 
                 "She takes a long and shaky sip from her plastic cup. This girl is more on edge than I was."
 
-                "Maybe I was too commanding during my introduction. I should try to calm her down and get to know what’s happening better."
+                "I should try to calm her down and get to know what’s happening better."
 
                 mc "Behati, tell me what it’s like in the Pirate Culture Club."
 
@@ -3381,7 +3489,7 @@ label act1_3:
 
                 hide be happy with dissolve
 
-                "Behati does a weird thing with her eyes and walks away."
+                "Behati does a weird thing with her eyes and walks away quickly."
 
                 $ b_met += 1
                 $ Be_affinity += 1
@@ -3424,7 +3532,7 @@ label act1_3:
 
                 mc "Well, yes."
 
-                mc "Scurvy is still a common problem because we can’t keep fruits on the ship for very long. I get maybe one lemon or something a month."
+                mc "Scurvy is still a common problem because we can’t keep fruits on the ship for very long. I get maybe one lemon or something before we're out for too long."
 
                 a "Well take as many as you’d like. It doesn’t seem like anyone wants them anyway."
 
@@ -3486,7 +3594,9 @@ label act1_3:
 
                 show ast smile
 
-                a "Yeah I knew that. But this is why I asked you to come."
+                mc "Yes, and sometimes there are treasure chests."
+
+                a "Yeah I knew all that. But this is why I asked you to come."
 
                 a "We wanted to learn more from a real pirate. I was just hoping some of the stuff from movies were true."
 
@@ -3502,7 +3612,7 @@ label act1_3:
 
                 a "Uh, do you have a cool sword?"
 
-                a "One which often clashes with other pirates in manly conflicts?"
+                a "One which often clashes with other pirates in dangerous conflicts?"
 
                 mc "Not at the moment."
 
@@ -3528,7 +3638,7 @@ label act1_3:
 
                 a "Really? That sounds so cool!"
 
-                a "Something with ivory would be worth thousands. If it’s old it would be even more."
+                a "Something with real ivory would be worth thousands. If it’s old it would be even more."
 
                 mc "Well I can’t sell it or I’d be without a weapon."
 
@@ -3562,7 +3672,11 @@ label act1_3:
 
                 show ast with dissolve
 
+                "Is that a pirate I'm suppose to know?"
+
                 a "I'm glad we got to meet today."
+
+                mc "Thanks Astrid, that means a lot."
 
                 hide ast with dissolve
                 $ Astrid_affinity += 1
@@ -3610,7 +3724,7 @@ label act1_3:
 
             show ge smile with Dissolve(0.1)
 
-            g "Yeah she’s right. Thanks for coming to talk to us. It was really cool meeting a real pirate."
+            g "Girls' right. Thanks for coming to talk to us. It was really cool meeting a real pirate."
 
             mc "It was my pleasure G, I…"
 
@@ -3648,7 +3762,7 @@ label act1_3:
 
             f "Thanks for showing up. I can imagine a bunch of seaside teenagers didn’t hold your attention this afternoon."
 
-            mc "Fiona this was better than anticipated. You all taught me a lot as well."
+            mc "Fiona this was better than anticipated. You all taught me a bunch as well."
 
             f "That’s nice to know."
 
@@ -3718,7 +3832,7 @@ label act1_3:
 
                 a "Nooooo, did you let them leave? I wanted to sing something for them."
 
-                $ achievement.grant("#1 Fiona Fan")
+                $ achievement.grant("#1 Astrid Fan")
                 $ achievement.sync()
 
             hide ast

@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.5
 init python in myworld:
 
     def getText():
@@ -45,7 +46,7 @@ label act1_0:
 
         "This tome must be cursed or something. I don't have the knowledge to decipher it."
 
-        "This was a bad idea, this isn’t right and it's not going to help me."
+        "It's not going to help me out of this."
 
         jump choice_emptystore
 
@@ -70,7 +71,7 @@ label secretending:
         show BG insidestore3 with dissolve
         mc "What is this tome? What is happening?"
 
-        "Did this book just address me?"
+        "Did this book just address me specifically?"
 
         "The rest of the pages are unintelligible. What is Curse supposed to mean and how does it know I’m a pirate?"
 
@@ -96,7 +97,7 @@ label secretending:
 
         "A weird feeling is running up and down my body. Beyond the silence, this feeling is like."
 
-        "I don’t have the words for it."
+        "I don’t have the words for it. It's undescribable."
 
         "Could it be the energy the tome described? Curse?"
 
@@ -118,7 +119,7 @@ label secretending:
 
         "What the hell is that? Is that the Curse?"
 
-        "This can’t be real, Poseidon, give me strength to overcome this trial."
+        "This can’t be real, Poseidon, give me the strength to overcome this trial."
 
         show c flip at truezoom with dissolve
 

@@ -1,5 +1,5 @@
 # Cameron Drummond 2021-2022
-# version 1.0.26
+# version 1.0.5
 label act1_1:
 
         transform pan:                       # panning and looping the BG
