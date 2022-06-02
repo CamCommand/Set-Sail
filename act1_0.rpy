@@ -97,7 +97,7 @@ label secretending:
 
         "A weird feeling is running up and down my body. Beyond the silence, this feeling is like."
 
-        "I don’t have the words for it. It's undescribable."
+        "I don’t have the words for it. It's indescribable."
 
         "Could it be the energy the tome described? Curse?"
 
@@ -117,7 +117,13 @@ label secretending:
         show c at truecenter with dissolve
         play effect "audio/curse.ogg" loop
 
-        "What the hell is that? Is that the Curse?"
+        if badwords == True:
+
+            "What the {b}fudge{/b} is that? Is that the Curse?"
+
+        else:
+
+            "What the fuck is that? Is that the Curse?"
 
         "This can’t be real, Poseidon, give me the strength to overcome this trial."
 

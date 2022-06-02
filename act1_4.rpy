@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.5
 label act1_4:
 
 # thankfully this game runs smoothly and extra nesting doesn't visually effect runtime
@@ -33,21 +34,23 @@ play music track2 volume 0.5 fadein 1.5 fadeout 1.5
 
 "The shadows of the trees are nice, but it’s just not the same as the majesty of the ocean."
 
-"That trip did not go as I had planned it."
+"Comparing sunsets doesn't stop me from enjoying them though."
 
-"I was expecting them to act like an Admiral's son or someone annoying like that."
+"That trip did not go as I had planned."
+
+"I was expecting them to act like rich kids or someone annoying like that."
 
 "Some pompous wannabes pretending to act like pirates, flexing how naive they are."
 
 "But instead they were a group of genuine people my age who wanted to know more about me and pirates."
 
-"To say I was shocked is an understatement."
+"To say I'm shocked is an understatement."
 
 "Discussing the life I live outside my own bubble for an afternoon was refreshing."
 
 "Not to mention hearing non pirate related problems for once."
 
-"All of that really puts my land confliction in perspective. I feel a bit more at ease after talking."
+"All of that really puts my land confliction in perspective. I feel a bit more at ease after talking to them."
 
 show BG black with dissolve
 show BG walksunset with fade
@@ -70,7 +73,7 @@ show BG walksunset with fade
 
 "It’s the subtle things that keep the peace between everyone. A good deed here or there."
 
-"Getting a second serving of food, someone cleaning your pistol without asking, the way ol’Two Hands makes sure I get my work done on time so that he has someone to play chess with later."
+"Getting a second serving of food, someone cleaning your space without asking, the way ol Two Hands makes sure I get my work done on time so that he has someone to play chess with later."
 
 "Even if he deserved it, I shouldn't have blown up at him."
 
@@ -90,7 +93,9 @@ play effect "audio/seagulls.mp3"
 
 "The sound of the waves and seagulls closing in breaks me from my illusions."
 
-"I'm about to experience my own golden age of piracy. Time to see what life hurls at me next."
+"Or delusions."
+
+"I'm about to experience my very own golden age of piracy. Time to see what life hurls at me next."
 
 stop music fadeout 2.0
 window hide
@@ -121,9 +126,9 @@ label ship_start:
 
     mc "JoeJoe no! Don’t stop fighting!"
 
-    mc "JoeJoe...is..."
+    mc "JoeJoe...can't..."
 
-    "You'll be alright I swear."
+    "You'll be alright, I swear."
 
     "This can’t be happening. Where did these other pirates come from?"
 
@@ -131,7 +136,7 @@ label ship_start:
 
     "They're crawling from below the deck and the sides of the boat. It’s like an infestation!"
 
-    "These pirates aren’t taking some pot shot, this was a well coordinated attack."
+    "These pirates weren’t taking some pot shot, this was a well coordinated attack."
 
     "It started when the storm began, the perfect time for a night raid."
 
@@ -392,13 +397,11 @@ label ship_start:
 
         "They were tasked with covering the cannons tonight, they didn't stand a chance against such a sneak attack."
 
-        "There must be someone around who's still fighting?"
-
-        "There is no way we were all taken out in our sleep!"
+        "Who's still fighting? There's no way we were all taken out in our sleep!"
 
         "The Plague isn’t made up of a bunch of pushovers. We're the strongest crew this side of South America!"
 
-        "What kind of pirates do these people think they are to pull off such an indirect attack?"
+        "What kind of pirates do these people think they are to pull off such an attack?"
 
         show pirate4 at center with dissolve
         p "Say a prayer sea dog!"
@@ -475,17 +478,24 @@ label ship_start:
                 $ pirate5_x = 3
                 show pirate6 at centerrighter behind sword with moveinbottom
 
-                p "Time to meet Davey Jones!"
+                p "Time to meet Davy Jones!"
+
                 $ x_nautzz += 1
-                call screen pirate_fight3_2
+
+                if x_nautzz == 1 and death_count != 0:
+                    call screen pirate_fight3_2
 
             if pirate3_x == 3 and pirate4_x == 3:
 
                 call screen pirate_fight3_1
 
-            elif pirate3_x != 3 and pirate4_x ==3:
+            elif pirate3_x != 3 and pirate4_x == 3 and pirate5_x != 3:
 
                 call screen pirate_fight3_4
+
+            elif pirate4_x == 3 and pirate5_x == 3:
+
+                call screen pirate_fight3_3
 
             else:
 
@@ -614,7 +624,14 @@ label ship_start:
             show pirate5 slash at wiggle
 
             show sword at sword with ease
-            p "I'll see ye in Hell!"
+
+            if badwords == True:
+
+                p "I'll see ye in {b}H E Double Hockey Sticks{/b}!"
+
+            else:
+
+                p "I'll see ye in Hell!"
 
             hide pirate5 slash with moveoutbottom
 
@@ -658,7 +675,15 @@ label ship_start:
             show pirate5 slash at wiggle
 
             show sword at sword with ease
-            p "I'll see ye in Hell!"
+            if badwords == True:
+
+                p "I'll see ye in {b}H E Double Hockey Sticks{/b}!"
+
+            else:
+
+                p "I'll see ye in Hell!"
+
+            hide pirate5 slash with moveoutbottom
 
             hide pirate5 slash with moveoutbottom
 
@@ -707,6 +732,7 @@ label ship_start:
 
                 call screen pirate_fight3_4
 
+
     label down_with_the_ship:
 
         $ quick_menu = False
@@ -725,7 +751,7 @@ label ship_start:
 
         "The bullet went clean through his head."
 
-        "The horror still stained on Flavio’s face tells me more than that he just lost a duel. His arms and torso have slash marks all over them."
+        "The horror still stained on Flavio’s face says more than that he just lost a duel. His arms and torso have slash marks all over them."
 
         if matey2 >= 2:
 
@@ -811,6 +837,7 @@ label ship_start:
         if player_identity == "f":
 
             th "Aye lass I’ll live a little longer!"
+
         else:
 
             th "Aye lad I’ll live a little longer!"
@@ -856,7 +883,7 @@ label ship_start:
         show twohands angry dark flip with Dissolve(0.1)
         th "Fight me you cowards!"
 
-        mc "Thank you Hans"
+        mc "Thank you, Hans"
 
         hide twohands angry dark flip with moveoutleft
         th "{cps=30}Arrrrrrrrrrrgggggggggggh!{/cps}"
@@ -868,6 +895,7 @@ label ship_start:
         play effect "audio/sword_clash.ogg" volume .5
         queue effect "audio/sword_clash.ogg" volume .5
         pause 0.3
+
         th "...I’ll cut yer throats!"
 
         "I won’t let his sacrifice lay dead at sea."
@@ -876,7 +904,7 @@ label ship_start:
         pause 1.0
         show BG nightdeck3 with dissolve
 
-        "Avoiding the sounds of gunshots and clashing swords I’m able to get to the poop deck undetected."
+        "Avoiding the sounds of gunshots and clashing swords, I’m able to get to the poop deck undetected."
 
         "If I make it out of this, Two Hands can have all my sweets for the rest of the year."
 
@@ -886,7 +914,7 @@ label ship_start:
 
         "The figure is struggling to hold their gun straight."
 
-        mc "Captain is that you?"
+        mc "Captain, is that you?"
 
         hide sword
         show cap bloody at sitting with dissolve
@@ -916,13 +944,13 @@ label ship_start:
 
         mc "You’ve been shot!"
 
-        "Multiple holes and lashes all over his body as if he jumped on an entire army."
+        "Multiple holes and lashes all over his body, as if he jumped on an entire army."
 
         "His coat is soaked in blood and most of it looks like his. I don’t know if he’s gonna make it."
 
         mc "Captain hang on, Two Hands will be here soon and we’ll finish this."
 
-        Cap "Aye don’t think so matey. At least six men got past me, well armed too."
+        Cap "Don’t think so matey. At least six men got past me, well armed too."
 
         Cap "I’m afraid Two Hands is as good as gone. Unless he found some more hands?"
 
@@ -956,7 +984,7 @@ label ship_start:
         show BG nightdeck3 at zoom
         hide cap bloody yelling
 
-        mc "A dingy"
+        mc "A dinghy?"
 
         show BG nightdeck3 at redo with ease
         show cap bloody at sitting

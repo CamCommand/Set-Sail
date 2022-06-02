@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.5
 ################################################################################
 ## Initialization
 ################################################################################
@@ -1124,6 +1125,7 @@ screen preferences():
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
+
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
 
@@ -1132,6 +1134,7 @@ screen preferences():
             hbox:
                 style_prefix "slider"
                 box_wrap True
+
 
                 vbox:
 
@@ -1142,6 +1145,12 @@ screen preferences():
                     label _("Auto-Forward Time")
 
                     bar value Preference("auto-forward time")
+
+                    label _("Profanity Filter")
+
+                    textbutton _("On") action [SetVariable("badwords",True), gui.SetPreference("badwords",True)]
+
+                    textbutton _("Off") action [SetVariable("badwords",False), gui.SetPreference("badwords",False)]
 
                 vbox:
 
@@ -1182,7 +1191,8 @@ screen preferences():
                         null height gui.pref_spacing
 
                         textbutton _("Mute All"):
-                            action Preference("all mute", "toggle"), achievement.grant("Quiet Time"), achievement.sync()
+                            action Preference("all mute", "toggle")
+                            #action Preference(achievement.grant("Quiet Time"), achievement.sync())
                             hovered [Play("effect", "audio/click.ogg")]
                             style "mute_all_button"
 

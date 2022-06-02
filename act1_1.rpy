@@ -363,7 +363,13 @@ label act1_1:
             $ pirate = "ol'Two Hands"
             "I think that’s [pirate] calling for me."
 
-            "Last time I checked I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
+            if badwords == True:
+
+                "Last time I checked I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like {b}poop{/b}."
+
+            else:
+
+                "Last time I checked I outrank him, but when you’re younger than everyone else the more hardened pirates still treat you like shite."
 
             "I’ll grab my bristoles and brush my teeth and hair before gracing him."
 
@@ -453,7 +459,7 @@ label act1_1:
 
             "Of the Captain’s {i}Demon Moments{/i}, where he swings his authority around, this wasn’t that bad."
 
-            "You get use to them after a while. I haven’t flinched during one of them since I was fourteen."
+            "You get used to them after a while. I haven’t flinched during one of them since I was fourteen."
 
             "The intimidation tactics keep the crew in line and his reputation secured."
 
@@ -571,11 +577,23 @@ label act1_1:
             scene BG deckview with fade
             show twohands angry with dissolve
 
-            th "Yee got some fuck’en nerve doin’ that te me infront of thee Captain!"
+            if badwords == True:
+
+                th "Yee got some {b}real{/b} nerve doin’ that te me infront of thee Captain!"
+
+            else:
+
+                th "Yee got some fuck’en nerve doin’ that te me infront of thee Captain!"
 
             "I am getting so sick of this guy!"
 
-            mc "Fuck off Two Hands I outrank you!"
+            if badwords == True:
+
+                mc "{b}Back{/b} off Two Hands I outrank you!"
+
+            else:
+
+                mc "Fuck off Two Hands I outrank you!"
 
             th "Aye, but a rank doesn’t stop me from order’n ye around."
 
@@ -627,7 +645,13 @@ label act1_1:
 
             "There isn’t a nicer, more studious pirate on this ship than I and he still has to give me a hard time."
 
-            "Captain made me learn the hard way a long time ago, that if shite didn’t get done, we’d pay the price."
+            if badwords == True:
+
+                "Captain made me learn the hard way a long time ago, that if {b}stuff{/b} didn’t get done, we’d pay the price."
+
+            else:
+
+                "Captain made me learn the hard way a long time ago, that if shite didn’t get done, we’d pay the price."
 
             "The easiest lesson to learn, and it’s still not good enough for some of these bastards."
 
@@ -701,9 +725,12 @@ label act1_1:
 
             mc "Under my bed."
 
-            "Getting under there is a crapshoot already because I can barely see that low to the floor."
+            if badwords == True:
+                "Getting under there is a {b}failure{/b} already because I can barely see that low to the floor."
+            else:
+                "Getting under there is a crapshoot already because I can barely see that low to the floor."
 
-            "If I angle my arm right and move these book, some light should reach the back..."
+            "If I angle my arm right and move these books, some light should reach the back..."
 
             mc "Got it!"
 
@@ -817,7 +844,13 @@ label act1_1:
 
             $ quick_menu = True
 
-            "This book is supposedly about a dystopian world where people live in this virtual world instead of dealing with the hellscape they find themselves in."
+            if badwords == True:
+
+                "This book is supposedly about a dystopian world where people live in this virtual world instead of dealing with the {b}bad place{/b} they find themselves in."
+
+            else:
+
+                "This book is supposedly about a dystopian world where people live in this virtual world instead of dealing with the hellscape they find themselves in."
 
             "The main character lives in Mexico and is so good at the virtual game they upstart a revolution inside the game. Merigold said it was selling really well in the US so I asked to read it."
 
@@ -973,7 +1006,7 @@ label act1_1:
 
             "We were around Havana a couple of days ago. We might have turned north last night to avoid the worst of the storm."
 
-            "If that’s right then we are headed twoards the states."
+            "If that’s right then we are headed towards the states."
 
             "No, worse. We'd be headed to-"
 
@@ -983,7 +1016,13 @@ label act1_1:
 
             "Imagining that place as sentimental to him at all is difficult."
 
-            "The grizzled old pirate wouldn’t make special precautions for a port where zero people give a shite that he's there."
+            if badwords == True:
+
+                "The grizzled old pirate wouldn’t make special precautions for a port where zero people give a {b}hoot{/b} that he's there."
+
+            else:
+
+                "The grizzled old pirate wouldn’t make special precautions for a port where zero people give a shite that he's there."
 
             "He'd appreciate the lack of attention and interpret it as fear."
 
@@ -1007,7 +1046,10 @@ label act1_1:
 
             else:
 
-                mc "Shite!"
+                if badwords == True:
+                    mc "Dang it!"
+                else:
+                    mc "Shite!"
                 jump breakdown
 
             jump waiting
@@ -1031,7 +1073,10 @@ label act1_1:
 
             "I know the world of thieves more than anything else. More than myself."
 
-            "Shite, I wish you were still here."
+            if badwords == True:
+                "{b}Gosh{/b}, I wish you were still here."
+            else:
+                "Fuckin', I wish you were still here."
 
             "How different would I be if swashbuckling didn’t envelope me after you left? Would you recognize me?"
 

@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.5
 init python:
 
     # splitting the mc's name in half
@@ -33,11 +34,11 @@ label act1_5:
 
     "In the middle of nowhere."
 
-    "Well, maybe not nowhere. I can faintly here some civilization behind me."
+    "Well, maybe not nowhere. I can faintly hear some civilization behind me."
 
     "Not sure where this \"where\" is, but I hope it isn’t South America. I haven’t spoken Spanish in five years at least."
 
-    "There was plenty of reason to use it, however the past eight years or so the number of Spanish speaking crew mates dwindled until it was just me and Captain."
+    "There were plenty of reasons to use it, however the past eight years or so the number of Spanish speaking crew mates dwindled until it was just me and Captain."
 
     "And he didn't exactly talk to me that much so really it's his..."
 
@@ -55,7 +56,7 @@ label act1_5:
 
     "How long do I have to just sit with it before moving on?"
 
-    "Poseidon has allowed me to touch land again, yet what is his plan for me? There’s nothing left for me to do."
+    "Poseidon has allowed me to touch land again. What is his plan for me? There’s nothing left for me to do."
 
     "I wonder if anyone else made it out?"
 
@@ -67,7 +68,7 @@ label act1_5:
 
     "Based on how I found Flavio I don’t think they were playing fair."
 
-    "Yet nobody but me will remember their last moments. Their crimes will be revered but them as people will be forgotten."
+    "Nobody but me will remember their last moments. Their crimes will be revered, but them as people will be forgotten."
 
     stop effect fadeout 3.5
 
@@ -112,21 +113,21 @@ label act1_5:
 
     n "Simply believing that is true wouldn’t suffice if I hadn't lived it along with them. I will live the rest of my life, celebrating theirs."
 
-    n "Whenever I’m eating food that doesn’t taste like wood I’ll remember Donatello who could spice up a turd to make it a blessing from the Gods."
+    n "Whenever I’m eating food that doesn’t taste like wood, I’ll remember Donatello who could spice up a turd to make it a blessing from the Gods."
 
     n "Everytime I draw a pistol I’ll remember Iron Hip, who could empty a gun into an enemy's chest faster than anyone I ever knew."
 
-    n "I’ll never forget how ol’Two Hands used both his hands in every task he did, no matter the risks. His efficiency was immeasurable."
+    n "I’ll never forget how ol Two Hands used both his hands in every task he did, no matter the risks. His efficiency was immeasurable."
 
     n "And most of all, I’ll remember my Captain and his ideology of brutal honor down to his very last moment. I will take the lessons you all taught me and carry them to my own end."
 
-    n "The freedom of this lawless lifestyle was not just a chaotic band of misfits committing crimes against the ruly. It was an organized fraternal bond that gave said misfits a place to call home."
+    n "The freedom of this lawless lifestyle was not just a chaotic band of misfits committing crimes against the ruly. It was and is, an organized fraternal bond that gave said misfits a place to call home."
 
     n "I realize that now more than ever."
 
     n "Until Posideon deems it to be my final act, I will continue on all your legacies. May you all be guided to the afterlife safely and with peace in your souls."
 
-    n "This grave itself cannot express the size of our loss, but it represents more than anyone will ever understand. The Red Plague and it’s crew will be marked into eternity by my hands."
+    n "This grave itself cannot express the size of our loss, but it represents more than anyone will ever understand. The Red Plague and its crew will be marked into eternity by my hands."
 
     n " Thank you for everything Captain."
 
@@ -147,7 +148,7 @@ label act1_5:
 
     "I should turn my shirt inside out, it just occurred to me how much blood has seeped into it."
 
-    "Don’t think any of it is mine, thankfully. Nobody will let me near them if I look this bad."
+    "Don’t think any of it's mine, thankfully. Nobody will let me near them if I look this bad."
 
     "It may be time to sell my earrings for something to ration. If they take earrings as payment still."
 
@@ -158,7 +159,6 @@ label act1_5:
     "If silver hasn’t gone down in price, at least one of my studs should buy me a sandwich."
 
     pause 2.0
-
     show BG black with fade
     show BG streetpost with fade
     stop music fadeout 2.0
@@ -178,7 +178,9 @@ label act1_5:
 
     "No matter the reason, concealing my face might be a good idea."
 
-    mc "Excuse me fellas, why are you wearing masks today?"
+    "Let me try to ask where to get one."
+
+    mc "Excuse me fellas, why are you wearing masks and whe-"
 
     cr "Get bent you anti-vaxx jackass!"
 
@@ -210,13 +212,13 @@ label act1_5:
             $ quick_menu = False
             $ renpy.block_rollback()
 
-            "If it’s a medical thing, I should find a mask to wear. Who knows what gross disease they’re trying to avoid."
+            "I think two negatives make a positive? So just vaxxers."
 
             $ quick_menu = True
 
-            "Plus hiding my identity doesn't sound too bad either."
+            "If it’s a medical thing, I should find a vaxxer and ask for a mask. Who knows what gross disease they’re trying to avoid."
 
-            "It wouldn’t seem clean to dry one off from the ground. Maybe an anti-anti-vaxx shop could give me one."
+            "Plus hiding my identity doesn't sound too bad either."
 
             show BG black with fade
             show BG dollcorner with fade
@@ -232,7 +234,7 @@ label act1_5:
 
             $ quick_menu = True
 
-            "Best to stay with the winning team, if those passersbys were anything to go off of this sounds like a serious disagreement."
+            "Best to stay with the winning team, if those passersby were anything to go off of, this sounds like a serious disagreement."
 
             show BG black with fade
             show BG signcorner with fade
@@ -250,7 +252,9 @@ label act1_5:
 
             "Getting one off the ground would defeat the medical purpose of one."
 
-            "Maybe an anti-anti-vaxx shop could give me one."
+            "Maybe an anti-anti-vaxx shop could give me one?"
+
+            "Doesn't a double negative just cancel out though? So they're vaxxers."
 
             show BG black with dissolve
             pause 1.5
@@ -274,7 +278,7 @@ label act1_5:
 
         "Woah!"
 
-        "Some street urchin peaked behind a pillar to say that. Freaked me out."
+        "Some street urchin appeared from behind a pillar to say that. Freaked me out."
 
         mc "Hello, um, yes."
 
@@ -289,7 +293,9 @@ label act1_5:
 
         "She doesn't appear to be hostile. Not that I trust her, but my guard doesn't have to be up so high."
 
-        mc "Something like that. Could you fill me in?"
+        "I can't let her find out I'm a pirate."
+
+        mc "Nothing like that. I just don't know. Could you fill me in?"
 
         dl "Oh really now? I was just playing."
 
@@ -308,11 +314,11 @@ label act1_5:
         $ dl = Character('Doll', color = "#740E86", callback=hobo_voice)
         dl "You can call me Doll sweetheart, haven’t been called Miss in a long time."
 
-        dl "I’m not against the jab but there really isn't a way for me to avoid the filth out here by myself."
+        dl "I’m not against the jab, but there really isn't a way for me to avoid the filth out here by myself."
 
         dl "Do you want a mask sweetheart?"
 
-        mc "Yeah I was looking for one."
+        mc "Yeah, I was looking for one."
 
         dl "One second sweetheart."
 
@@ -338,7 +344,7 @@ label act1_5:
 
             $ persistent.mask_check = 1
             $ persistent.theft_count += 1
-            $ achievement.progress("Sticky Fingers", persistent.theft_count)
+            #$ achievement.progress("Sticky Fingers", persistent.theft_count)
 
         if persistent.theft_count == 6:
 
@@ -349,6 +355,8 @@ label act1_5:
 
         dl "Like I said, I don’t need’em."
 
+        dl "It's only stealing if you think it is or somethin'."
+
         mc "Thank you Doll, you’ve shown me a great kindness."
 
         dl "Yeah yeah, I don’t need to be buttered up."
@@ -357,7 +365,7 @@ label act1_5:
 
         mc "Wait what did you say? That name?"
 
-        dl "You’re in Seaborough sweetheart. Welcome to Florida, don’t catch the rona."
+        dl "You’re in Seaborough sweetheart. Welcome to Florida, don’t catch the rona or somethin' else."
 
         show doll at wiggle
 
@@ -385,7 +393,7 @@ label act1_5:
 
         "Maybe they found it nineteen years ago? Am I supposed to know what a covid is?"
 
-        "Also what’s a kindergarten?"
+        "Also what’s kindergarten?"
 
         "The world seems to have changed a lot in a few years. No way I could have kept up."
 
@@ -417,7 +425,7 @@ label act1_5:
         define persistent.name4 = 0
         define persistent.name5 = 0
 
-        # for Your own Med achievement
+        # for Your Own Med achievement
         define persistent.earring_check = 0
 
         $ m = Character("[may_name]", color="#ffc77f", callback=may_voice, who_outlines=[ (1, "#000000")])
@@ -428,9 +436,9 @@ label act1_5:
 
         "This is a sign by the Gods that I need to do something here!"
 
-        "To figure out what it is I have to do I should retrace my steps."
+        "To figure out what it is I have to do. I should retrace my steps."
 
-        "After walking around where did I go first?"
+        "After walking around back then, where did I go first?"
         #$ activity_choice = "market"  # for testing purposes
         $ renpy.block_rollback()
 
@@ -443,9 +451,9 @@ label act1_5:
 
                 "The school!"
 
-                "I should go see if the girls are still there."
-
                 $ quick_menu = True
+
+                "I should go see if the girls are still there."
 
                 "They’d still be in high school right?"
 
@@ -453,7 +461,7 @@ label act1_5:
 
                 "The school shouldn’t be that far from here. I’ll get there before the club meeting ends."
 
-                "Then Poseidon  will reveal to me what I should do next."
+                "Then Poseidon will reveal to me what I should do next."
 
                 if activity_choice == "school":
 
@@ -462,6 +470,8 @@ label act1_5:
                 else:
 
                     "Wait, I didn’t go to the school first."
+
+                    $ quick_menu = True
 
                     "I stopped by the [activity_choice] first then found my way to the school."
 
@@ -492,6 +502,10 @@ label act1_5:
 
                 $ quick_menu = True
 
+                if book_forgot == 1:
+
+                    "Oh damn, I forgot to go back there. Oh well, I can go back now at least."
+
                 "If I’ve learned anything else about this world that wasn’t from pirates, it was from books."
 
                 "Even learned what a bookstore actually was from the labels on the spines of my first few volumes I secured."
@@ -505,6 +519,8 @@ label act1_5:
                 else:
 
                     mc "Wait!"
+
+                    $ quick_menu = True
 
                     "I don’t remember actually going in there at all."
 
@@ -683,7 +699,7 @@ label act1_5:
 
         "So how do I get in? I wish there was some way to contact Astrid."
 
-        "She’s likely onto bigger and better things at this point, no reason for her to stick around."
+        "She’s likely onto bigger and better things at this point. What reason for me to think she's in there."
 
         "The rest of the E-board as well. Staying four additional years here doesn't sound like something they'd all do."
 
@@ -750,7 +766,7 @@ label act1_5:
 
                     $ persistent.name1 = 1
                     $ persistent.may_name_count += 1
-                    $ achievement.progress("Jane Doe", persistent.may_name_count)
+                    #$ achievement.progress("Jane Doe", persistent.may_name_count)
 
                 if persistent.may_name_count == 5:
 
@@ -767,7 +783,7 @@ label act1_5:
 
                 show may smile with Dissolve(0.3)
 
-                m "I’m Mrs. Paul, nice to meet you."
+                m "I’m Mrs. Paul."
 
                 m "Could you remind me which way the gymnasium is? Because like I mentioned, I’m new."
 
@@ -787,7 +803,7 @@ label act1_5:
 
                 show may with Dissolve(0.1)
 
-                m "The ones in your other class."
+                m "The ones in your class."
 
                 "This is getting risky. I'll have to take one final shot to crush both our stories."
 
@@ -812,13 +828,20 @@ label act1_5:
 
                 hide may with dissolve
 
-                "I knew she was full of shite! There was no way she was really a teacher."
+                if badwords == True:
+
+                    "I knew she was full of {b}bugs{/b}! There was no way she was really a teacher."
+
+                else:
+                    "I knew she was full of shite! There was no way she was really a teacher."
 
                 "I'll take this chance to leave as well."
 
-                "The girls aren’t here and if lying to another criminal is that hard, I don’t think I’d have much luck if the police are called."
+                "The girls aren’t here and if lying to another criminal is that easy, I don’t think I’d have a problem if the police are called."
 
                 "Normally giving up so easily isn't in my playbook, but I'm getting super hungry."
+
+                "I could have snuck in or used that woman as a way inside."
 
                 "A better solution might come to me after some calories."
 
@@ -841,13 +864,13 @@ label act1_5:
 
                 m "Oh, excuse me then."
 
-                $ may_name = "Mrs. Padilla"
+                $ may_name = "Miss Padilla"
 
                 if persistent.name2 == 0:
 
                     $ persistent.name2 = 1
                     $ persistent.may_name_count += 1
-                    $ achievement.progress("Jane Doe", persistent.may_name_count)
+                    #$ achievement.progress("Jane Doe", persistent.may_name_count)
 
                 if persistent.may_name_count == 5:
 
@@ -857,7 +880,7 @@ label act1_5:
 
                 $ may_position = "\"teacher\""
 
-                m "My name is Mrs. Padilla. I’m a recent graduate and am here to drop off my resume for the teaching job here."
+                m "My name is Miss Padilla. I’m a recent graduate and am here to drop off my resume for the teaching job here."
 
                 mc "That’s fine, no harm done."
 
@@ -871,9 +894,12 @@ label act1_5:
 
                 m "Where are your students? And your whistle?"
 
-                "Shite, she's flipping it on me now!"
+                if badwords == True:
+                    "{b}Hotdog{/b}, she's flipping it on me now!"
+                else:
+                    "Shite, she's flipping it on me now!"
 
-                mc "They’re {cps=5}uh,{/cps} running laps."
+                mc "They’re {cps=5}umm uh,{/cps} running laps."
 
                 m "There’s a track here?"
 
@@ -889,9 +915,19 @@ label act1_5:
 
                 show may fl
 
-                m "Oh, thank you Dr. [player_name]."
+                m "Oh, thank you Dr. [player_name]?"
 
-                "I think I gained her trust. Flexing authority got me unearned respect."
+                m "What is your doctorate in? If you don't mind me asking."
+
+                "Bad call!"
+
+                mc "It's in, personal fitness..."
+
+                show may smile with Dissolve(0.1)
+
+                m "Well, okay then."
+
+                "She bought it. Flexing authority got me unearned respect."
 
                 "As long as I don’t claim a role that requires identification, this might open some golden opportunities."
 
@@ -903,7 +939,7 @@ label act1_5:
 
                 m "What number is your classroom?"
 
-                mc "I’m number..."
+                mc "I am, number..."
 
                 define num = 0
                 $ renpy.block_rollback()
@@ -949,7 +985,7 @@ label act1_5:
 
                 show may smile with Dissolve(0.1)
 
-                m "Alrighty, see you soon around then."
+                m "I guess not. Okay, see you soon then."
 
                 hide may with dissolve
 
@@ -976,7 +1012,7 @@ label act1_5:
 
                 "Compared to everyone I saw around town or at school she is the most out of place."
 
-                "She smells about as bad as I do and I doubt she's on a mission from Poseidon ."
+                "She smells about as bad as I do and I doubt she's on a mission from Poseidon."
 
                 "I’d bet she’s trying to intimidate something out of me. Well it isn't going to work lady."
 
@@ -986,7 +1022,7 @@ label act1_5:
 
                     $ persistent.name3 = 1
                     $ persistent.may_name_count += 1
-                    $ achievement.progress("Jane Doe", persistent.may_name_count)
+                    #$ achievement.progress("Jane Doe", persistent.may_name_count)
 
                 if persistent.may_name_count == 5:
 
@@ -1001,7 +1037,7 @@ label act1_5:
 
                 m "Who are you?"
 
-                "Like Hell she’s a nurse!"
+                "No way she’s a nurse!"
 
                 "She must also think I’m suspicious. Let’s see who’s bluff lasts the longest."
 
@@ -1027,25 +1063,28 @@ label act1_5:
 
                 "That's a risky card to play Mrs. Panza, but I can counter it."
 
-                mc "The student’s didn’t have school, faculty meeting, you had to be there."
+                mc "The student’s didn’t have school, school worker meeting, you had to be there."
 
-                "So glad I remembered what faculty meetings are."
+                m "You mean the faculty meeting?"
+
+                mc "Yes."
 
                 m "That only applies to the teachers, not the nurses."
 
-                "Shite!"
+                if badwords == True:
+                    "{b}What!{/b}"
+                else:
+                    "Shite!"
 
                 mc "But we had a discussion set aside for supply budgeting, this included the nurses."
 
-                m "Were you at a meeting or did you stop by the office?"
+                m "Were you at a meeting or did you stop by my office?"
 
                 show may smile with Dissolve(0.3)
 
-                m "Which is it?"
+                "That doesn't make sense? You're trying to throw me off, so clever!"
 
-                "Oh, you think you're so clever!"
-
-                mc "It was both, I stopped by the office to look for Miss. Conners."
+                mc "It was both. I stopped by the office to look for Miss. Conners."
 
                 "Throw another character in there, knock her off balance."
 
@@ -1053,13 +1092,15 @@ label act1_5:
 
                 "Yeah, like you know Miss Connners!"
 
+                "Wait, I just made her up."
+
                 mc "Miss Conners and I don’t get along very well, I went to get her and strike up a conversation."
 
                 mc "She didn’t tell me she was gone."
 
                 m "Weren't you sent to get her for the meeting?"
 
-                mc "Yes that’s how I know you weren’t there."
+                mc "Yes and no. Nurses were supposed to be there and I went to find her. That’s how I know you weren’t there."
 
                 m "If you were sent to get Miss Conners then others should have known she wasn’t here."
 
@@ -1145,15 +1186,18 @@ label act1_5:
 
         "This was that store I went to."
 
-        mc "Shite!"
+        if badwords == True:
+            mc "{b}How could this be{/b}?"
+        else:
+            mc "Shite!"
 
         "How could this happen? This is where I was supposed to go, I just know it."
 
-        "A peek inside shows the shelves have been stripped clean of their contents. Thick layers of dust tell me it's been closed for a long time now."
+        "A peek inside shows the shelves have been stripped clean of their contents. Thick layers of dust show it's been closed for a long time now."
 
         mc "Damn it all, this can’t be it!"
 
-        "Is this COVID’s doing?"
+        "Is this covid’s doing?"
 
         play effect "audio/banging.ogg" loop
 
@@ -1200,11 +1244,17 @@ label act1_5:
 
         play effect "audio/duck.ogg" volume 2.5
 
-        "I duck behind some debris, there's no chance anyone can see me in this lighting."
+        "Duck behind some debris, there's no chance anyone can see me in this lighting."
 
         "Do old buildings still count as trespassing? This could get bad."
 
-        m "I saw you go in here. This place looks empty as Hell, not much to steal."
+        if badwords == True:
+
+            m "I saw you go in here. This place looks empty as {b}Heck{/b}, not much to steal."
+
+        else:
+
+            m "I saw you go in here. This place looks empty as Hell, not much to steal."
 
         "She’s right, there’s nothing in here."
 
@@ -1218,7 +1268,7 @@ label act1_5:
 
         "They didn’t seem like the type to rat out a pirate. If they even cared?"
 
-        "No matter the, reason for it, Poseidon wants me to go back there."
+        "No matter the reason for it, Poseidon wants me to go back there."
 
         "It shouldn’t be far from here. Somewhere on the street behind this one."
 
@@ -1241,7 +1291,7 @@ label act1_5:
 
         "What was it called again?"
 
-        "Swift Street? Gamer Street? Street Bar?"
+        "Swift Street? Gamer Street? Cup Game?"
 
         "I suppose video games aren’t as valuable as food, but still."
 
@@ -1353,7 +1403,7 @@ label act1_5:
 
         mc "{cps=20}You don’t ummmmmmm.{/cps}"
 
-        mc "I mean you don’t look that pregnant."
+        mc "I mean, you don’t look that pregnant."
 
         show may smile with Dissolve(0.1)
 
@@ -1389,9 +1439,11 @@ label act1_5:
 
             show doll
 
-            dl "If you’re giving, give to the mom sweetheart. Doll will make it through this week somethin’ fine without it."
+            dl "If you’re giving, give to the mom sweetheart."
 
             $ dl = Character('Doll', color = "#740E86", callback=hobo_voice)
+
+            dl "Doll will make it through this week somethin’ fine without it."
 
         "She's got this weird look in her eye. What should I do?"
 
@@ -1410,7 +1462,7 @@ label act1_5:
 
                 "However, even if there’s a slim chance she probably needs it more than me. It’s sad, but I should help in some way."
 
-                mc "Sure, I could give you something. I don’t have any cash but I was going to sell my earrings."
+                mc "Sure, I could give you something. I don’t have any cash, but I was going to sell my earrings."
 
                 mc "They’re solid silver, hopefully you can get something for them."
 
@@ -1500,6 +1552,7 @@ label act1_5:
                         mc "Nice meeting you Doll, I’m needed elsewhere."
 
                         show doll
+                        $ dl = Character('Doll', color = "#740E86", callback=hobo_voice)
 
                         dl "Good luck out there sweetheart. Don’t lose your shirt next."
 
@@ -1527,6 +1580,7 @@ label act1_5:
                         namesplit = getSplit([player_name])
 
                     show may smug flip
+
                     m "I'll name one [namesplit]."
 
                     m "Bye bye darlings."
@@ -1551,9 +1605,7 @@ label act1_5:
 
                         dl "Hehehehehe!"
 
-                        dl "Hook, line and stinkers. At least you'll get some babies out of this."
-
-                        dl "That might not be what you want though."
+                        dl "I've seen worse jobs."
 
                     "Hopefully that wasn’t a huge mistake. I’m too tired to have to enact some form of pirate’s wrath on her."
 
@@ -1578,13 +1630,13 @@ label act1_5:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                "There’s no barnacle splitting way this woman is pregnant with twins!"
+                "There’s no board splitting way this woman is pregnant with twins!"
 
                 $ quick_menu = True
 
-                "Not that I have any money to give her anyway. And like Hell is she getting my earrings."
+                "Not that I have any money to give her anyway. She isn't getting my earrings either."
 
-                mc "Sorry, I don’t have any money so spare."
+                mc "Sorry, I don’t have any money to spare."
 
                 play effect "audio/bad.mp3"
 
@@ -1636,7 +1688,7 @@ label act1_5:
 
                     "I should let her down easy and walk away."
 
-                mc "Sorry Miss, there’s nothing you can do for me right now."
+                mc "Sorry, there’s nothing you can do for me right now."
 
                 show may sad at redochar
 
@@ -1665,7 +1717,7 @@ label act1_5:
 
                 mc "That wasn’t called for lady!"
 
-                mc "Stay the Hell away from me!"
+                mc "Stay far away from me!"
 
                 show may sad
 
@@ -1769,13 +1821,13 @@ label act1_5:
 
         "There are scratches and scuffs on the concrete. Coupled with trashed masks laid on the edges of the sidewalk, I’ll assume there isn’t anything left of the market."
 
-        "Is it not here all the time, or is this COVID’s fault?"
+        "Is it not here all the time, or is this covid’s fault?"
 
         play effect "audio/stomach.ogg"
 
         "I’m starting to hurt more and there’s nothing to eat around here. Barren buildings and trashed streets, there’s also nothing to steal."
 
-        "The wind going through the trees carries silence throughout the empty lot."
+        "The wind passing through the trees carries silence throughout the empty lot."
 
         "There’s no hum to Seaborough’s town at all and with little to no people walking around it all feels so dead."
 
@@ -1824,7 +1876,7 @@ label act1_5:
 
         m "You don’t look so hot too, are you okay sweetheart?"
 
-        "Her concern is nice. Maybe I shouldn’t be crass to a fellow human down on their luck. "
+        "Her concern is nice. Maybe I shouldn’t be crass to a fellow human down on their luck."
 
         mc "I’ll be alright, thanks. I don’t mean to come off agitated."
 
@@ -1836,7 +1888,7 @@ label act1_5:
 
         show may sad with Dissolve(0.1)
 
-        m "Hey don’t worry about it too much kid. I'm sure there's something to eat around here."
+        m "Hey don’t worry about it too much. I'm sure there's something to eat around here."
 
         show may
 
@@ -1850,11 +1902,11 @@ label act1_5:
 
         show may smile with Dissolve(0.1)
 
-        m "There’s a café a few streets over I was planning on going to later. You want to come with me, I can get you a muffin or something cheap."
+        m "There’s a café a few streets over that I was planning on going to later. You want to come with me, I can get you a muffin or something cheap."
 
         "This is unexpected."
 
-        mc "That’s really kind of you Miss. But I just met you and all, I don't want to-"
+        mc "That’s really kind of you. But I just met you and all, I don't want to-"
 
         show may
 
@@ -1878,7 +1930,7 @@ label act1_5:
 
             $ persistent.name4 = 1
             $ persistent.may_name_count += 1
-            $ achievement.progress("Jane Doe", persistent.may_name_count)
+            #$ achievement.progress("Jane Doe", persistent.may_name_count)
 
         if persistent.may_name_count == 5:
 
@@ -1899,7 +1951,7 @@ label act1_5:
 
         m "Oh yeah? Wanna talk about it?"
 
-        mc "{cps=20}Hmmmmm{/cps}a. I’m not so sure that’s a good idea."
+        mc "{cps=20}Hmmmmm{/cps}. I’m not so sure that’s a good idea."
 
         mc "A little too personal to say to someone I just met."
 
@@ -1913,7 +1965,7 @@ label act1_5:
 
         show may sad with Dissolve(0.1)
 
-        m "Their names are ugh."
+        m "Their names are..."
 
         show may
 
@@ -1927,7 +1979,7 @@ label act1_5:
 
         m "You mentioned you weren’t from around here? Or you just got here?"
 
-        mc "Yeah, my uh. My family’s from Cuba on my Father's side."
+        mc "Yeah, my uh. My family’s from Cuba on my father's side."
 
         "That isn't a lie, but I shouldn't reveal my identity to Hann just yet."
 
@@ -1943,7 +1995,7 @@ label act1_5:
 
         mc "Well, I actually spent most of my time in the Bahamas."
 
-        mc "My Father has a…hotel there. I say Cuba because it’s easier."
+        mc "My father has a hotel there. I say Cuba because it’s easier."
 
         if player_identity == "f":
 
@@ -1983,7 +2035,7 @@ label act1_5:
 
         show may smile at centerlefter with ease
 
-        m "Follow me, I know a shortcut. We'll be there in a few minutes max."
+        m "Follow me, I know a shortcut. We'll be there in a few minutes, ten max."
 
         hide may with moveoutleft
 
@@ -2026,7 +2078,7 @@ label choice_emptystore:
 
         "She looks exacerbated by something she was doing previously."
 
-        "Her clothing choices don't indicate authority, but the lighting could conceal a weapon."
+        "Her clothing choices don't indicate authority, but the lighting could conceal a hidden weapon."
 
         $ may_name = "Woman"
 
@@ -2036,6 +2088,8 @@ label choice_emptystore:
         m "Or am I just late to the party?"
 
         mc "No, there’s nothing here."
+
+        "That's strange of her?"
 
         mc "I visited this store a long time ago and was just sad to see it gone."
 
@@ -2120,7 +2174,9 @@ label choice_emptystore:
         play effect "audio/dooropen.ogg"
         pause 1.5
 
-        "What a weird lady. Can’t believe I didn’t check that box for money."
+        "What just happened? She, that, all of that was weird."
+
+        "Can’t believe I didn’t check that box for money. Not that I knew it was there."
 
         "I guess that's what they kept it in while they were still open."
 
@@ -2156,7 +2212,7 @@ label choice_emptystore:
 
         "Staying perfectly still is really hard when I'm so hungry. Trying my best not to tip over."
 
-        mc "{cps=20}... ... ... {/cps}"
+        mc "{cps=20}... ... ...{/cps}"
 
         m "No? Oh well, more for me."
 
@@ -2190,7 +2246,7 @@ label choice_emptystore:
 
         "Did she find some money?"
 
-        "Before I could catch a glimpse of her she leaves without another word."
+        "Before I could catch a glimpse of her, she ran out the door without another word."
 
         "That felt like a wasted opportunity."
 
@@ -2208,7 +2264,12 @@ label choice_emptystore:
 
         "But if that's the case, then that woman stole what Poseidon laid out for me to find!"
 
-        "Shite! How's that fair?"
+        if badwords == True:
+
+            "{b}Crud!{/b} How's that fair?"
+
+        else:
+            "Shite! How's that fair?"
 
         "I didn't even see her so I can't go after her."
 
@@ -2256,7 +2317,7 @@ label choice_emptystore:
 
         "It's leathery like older books, you could call it a tome even."
 
-        "It’s pages are wrinkly yet it’s as heavy as a cannonball."
+        "Its pages are wrinkly yet it’s as heavy as a cannonball."
 
         "And there's no title or author on the cover or spine."
 

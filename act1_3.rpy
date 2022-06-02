@@ -26,7 +26,7 @@ label act1_3:
 
     "The letter said someone would meet me outside the school, but there are so many people around. My rendezvous could be anyone."
 
-    "If everyone is leaving the school, I could wait to see who stays. I don't know what the club member will look like though."
+    "If everyone is leaving the school, I could wait to see who stays. I don't know what the club members will look like though."
 
     "All sorts of students are leaving. The array of people who go to this school seems vast."
 
@@ -34,7 +34,7 @@ label act1_3:
 
     "That one kid over there might get blown away by a light breeze."
 
-    "You’d think they’d be put them into weight groups so the bigger ones don’t demolish the smaller ones."
+    "You’d think they’d put them into weight groups so the bigger ones don’t demolish the smaller ones."
 
     "If everyone is going home it might be easiest to wait out the crowd, see if the writer makes themselves visible."
 
@@ -246,7 +246,7 @@ label act1_3:
 
         "Covertly rubbing my thumb against the side of the leg, a black residue stains comes off on me."
 
-        "Damn me to Davey Jones', I thought these pants were a dark color on purpose."
+        "Damn me to Davy Jones', I thought these pants were a dark color on purpose."
 
         "What color were my pants originally"
 
@@ -327,7 +327,7 @@ label act1_3:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                mc "Wait Astrid."
+                mc "Wait, Astrid."
 
                 $ quick_menu = True
 
@@ -657,7 +657,7 @@ label act1_3:
                     $ quick_menu = False
                     $ renpy.block_rollback()
 
-                    mc "Alright lassies here’s the dark truth from a subordinate of the Demonic Pirate Ricardo himself."
+                    mc "Alright lassies, here’s the dark truth from a subordinate of the Demonic Pirate Ricardo himself."
 
                     $ quick_menu = True
 
@@ -883,7 +883,7 @@ label act1_3:
 
                     show be emb at wiggle
 
-                    b "It it, is an honor to h-have the Red-"
+                    b "It-it, is an honor to h-have the Red-"
 
                     mc "Are you nervous about something lass?"
 
@@ -925,7 +925,7 @@ label act1_3:
 
                     b "But, you’re not giving the Pirate Culture Club enough credit. We aren’t just a bunch of weebs, we appreciate the life you live. It’s admirable."
 
-                    "The stuttering stop fast once she got her name out there. She might just not be good at introducing herself?"
+                    "The stuttering stopped fast once she got her name out there. She might just not be good at introducing herself?"
 
                 else:
 
@@ -978,7 +978,7 @@ label act1_3:
 
                 show be shocked
 
-                b "Oh my God, does your ship not get Wi-Fi? Batteries for a a Mi-Fi box even? A single hard drive someone updates?"
+                b "Oh my God, does your ship not get Wi-Fi? Batteries for a Mi-Fi box even? A single hard drive someone updates?"
 
                 mc "Since those words mean nothing to me, I’ll say no."
 
@@ -994,7 +994,7 @@ label act1_3:
 
                 show be with Dissolve(0.1)
 
-                b "But it also has sites called a wikis. It’s like all the information we have on super easy to read pages all linked together."
+                b "But it also has sites called wikis. It’s like all the information we have on super easy to read pages all linked together."
 
                 b "With pictures and citations and there’s a page for everything. They’re constantly updated so you’re never behind and it's and and the-"
 
@@ -1016,7 +1016,7 @@ label act1_3:
 
                 mc "That's so great. It feels wrong, but just true enough to keep the mythos alive."
 
-                mc "Most of our mystic comes from word of mouth."
+                mc "Most of our mysticism comes from word of mouth."
 
                 show be quiz with Dissolve(0.1)
 
@@ -1559,7 +1559,13 @@ label act1_3:
 
                 show fiona angry with Dissolve(0.1)
 
-                f "Most of them are bullshit political pandering and some are seen as history that contradicts the propaganda they feed us here."
+                if badwords == True:
+
+                    f "Most of them are {b}dumb{/b} political pandering and some are seen as history that contradicts the propaganda they feed us here."
+
+                else:
+
+                    f "Most of them are bullshit political pandering and some are seen as history that contradicts the propaganda they feed us here."
 
                 f "I just stick to online stuff mostly. Big open sea of reading there."
 
@@ -1571,7 +1577,10 @@ label act1_3:
 
                 f "We’ve come further in the past decade with multicultural and sexually diverse reading topics, but this isn’t a great place to live as far as cutting edge comes."
 
-                f "Some of these frickin meatheads will just shit on you for no reason other than you’re different."
+                if badwords == True:
+                    f "Some of these {b}frickin{/b} meatheads will just {b}poop{/b} on you for no reason other than you’re different."
+                else:
+                    f "Some of these fucking meatheads will just shit on you for no reason other than you’re different."
 
                 show fiona sad with Dissolve(0.1)
 
@@ -1589,7 +1598,7 @@ label act1_3:
 
                 f "Thanks [player_name], you didn’t need to talk me down there. Your chill tone was helpful."
 
-                f "Sometimes Astrid wil argue with me or Behati will nervously talk me out of it. But I usually just need someone to hear me."
+                f "Sometimes Astrid will argue with me or Behati will nervously talk me out of it. But I usually just need someone to hear me."
 
                 mc "Not a problem. You have the mentality of an aged pirate, I do that sometimes for the new crew members."
 
@@ -1823,7 +1832,13 @@ label act1_3:
 
                 show ge int at bounce
 
-                g "No Fucking Way!"
+                if badwords == True:
+
+                    g "No {b}Gosh Darn Diddly{/b} Way!"
+
+                else:
+
+                    g "No Fucking Way!"
 
                 mc "Yeah, it was slow, painful, and super weird to watch. They clearly weren’t into it while they're going at it."
 
@@ -1885,7 +1900,10 @@ label act1_3:
 
                 show ge smile with Dissolve(0.1)
 
-                g "This club isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but shit happens."
+                if badwords == True:
+                    g "This club isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but {b}things{/b} happen."
+                else:
+                    g "This club isn't the norm. We try to keep this place a sanctuary from the vitriol that students spew, but shit happen."
 
                 show ge mad
 
@@ -2002,7 +2020,7 @@ label act1_3:
 
                     g "We’re forced to come to school."
 
-                    "She thinks I have a choice. After eighteen years I’ve only been given permission to prace around the main land without a care."
+                    "She thinks I have a choice. After eighteen years I’ve only been given permission to prace around the mainland without a care."
 
                     "Leaving on my own accord would have been a death sentence. It might be the same here, should I ask?"
 
@@ -2112,7 +2130,10 @@ label act1_3:
                     show ge smug with ease:
                         ypos 1.00
 
-                    g "Let me run you a classic game that hasn’t aged like dogshit."
+                    if badwords == True:
+                        g "Let me run you a classic game that hasn’t aged like {b}raw meat{/b}."
+                    else:
+                        g "Let me run you a classic game that hasn’t aged like dogshit."
 
                     mc "What’s it called?"
 
@@ -2198,7 +2219,7 @@ label act1_3:
 
                     $ quick_menu = True
 
-                    mc "No never. I’ve heard of them, but never had a chance to."
+                    mc "No, never. I’ve heard of them, but never had a chance to."
 
                     show ge smile with Dissolve(0.1)
 
@@ -2216,7 +2237,10 @@ label act1_3:
                     show ge smug with ease:
                         ypos 1.00
 
-                    g "Let me run you a classic game that hasn’t aged like dogshit."
+                    if badwords == True:
+                        g "Let me run you a classic game that hasn’t aged like {b}raw meat{/b}."
+                    else:
+                        g "Let me run you a classic game that hasn’t aged like dogshit."
 
                     mc "What’s it called?"
 
@@ -2352,7 +2376,7 @@ label act1_3:
 
                 mc "Pirate islands are all fun all the time. Well, at least for the most part."
 
-                mc "If you don't have to keep track of inventory, repairs, reputation, or your blood alcohol level. Then it's a lot of food and debotury."
+                mc "If you don't have to keep track of inventory, repairs, reputation, or your blood alcohol level. Then it's a lot of food and debauchery."
 
                 g "Nevermind, I don't want to see your ship. You have to stay here at school and spread some of that sweet sweet pirate life to the people."
 
@@ -2553,7 +2577,7 @@ label act1_3:
 
                 a "But I was kinda hoping you'd be a little sexist so I could see Fiona get really mad."
 
-                a "Just go wild on a mysogynist pirate for the meme."
+                a "Just go wild on a misogynist pirate for the meme."
 
                 mc "Well you never had to worry about that. We can be bad, but not unfairly bad."
 
@@ -2662,7 +2686,7 @@ label act1_3:
                 $ quick_menu = False
                 $ renpy.block_rollback()
 
-                a "Fine [player_name], since my allure is so captivating tell me something."
+                a "Fine [player_name], since my allure is so captivating, tell me something."
 
                 show ast smile with Dissolve(0.1)
 
@@ -2690,7 +2714,13 @@ label act1_3:
 
                 a "I wouldn’t charge people for that. But the industry takes a small hit and that's where the rush comes from."
 
-                a "My folks get hella mad at me for it, it’s really amusing watching their heads explode over a 720p recording of some cheapo horror film."
+                if badwords == True:
+
+                    a "My folks get {b}hecking{/b} mad at me for it, it’s really amusing watching their heads explode over a 720p recording of some cheapo horror film."
+
+                else:
+
+                    a "My folks get hella mad at me for it, it’s really amusing watching their heads explode over a 720p recording of some cheapo horror film."
 
                 mc "Rebel where you can I guess. No job is worth losing your skin over, make sure you’re careful."
 
@@ -2877,9 +2907,18 @@ label act1_3:
 
                     show fiona angry
 
-                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+                    if badwords == True:
 
-                    mc "Cis shit?"
+                        f "That's the way it should be. Cis {b}activity{/b} here is unbearable sometimes."
+
+                    else:
+
+                        f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    if badwords == True:
+                        mc "Cis {b}activity{/b}?"
+                    else:
+                        mc "Cis shit?"
 
                     f "Nevermind, just do your business so we can get back to everyone."
 
@@ -2901,7 +2940,13 @@ label act1_3:
 
                     show fiona angry with Dissolve(0.1)
 
-                    f "Yeah I get it. This stupid het norm school fucking sucks."
+                    if badwords == True:
+
+                        f "Yeah I get it. This stupid het norm school {b}really{/b} sucks."
+
+                    else:
+
+                        f "Yeah I get it. This stupid het norm school fucking sucks."
 
                     $ f_met += 1
 
@@ -2969,9 +3014,18 @@ label act1_3:
 
                     show fiona angry
 
-                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+                    if badwords == True:
 
-                    mc "Cis shit?"
+                        f "That's the way it should be. Cis {b}activity{/b} here is unbearable sometimes."
+
+                    else:
+
+                        f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    if badwords == True:
+                        mc "Cis {b}activity{/b}?"
+                    else:
+                        mc "Cis shit?"
 
                     show fiona sad with Dissolve(0.1)
 
@@ -3091,9 +3145,18 @@ label act1_3:
 
                     show fiona angry
 
-                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+                    if badwords == True:
 
-                    mc "Cis shit?"
+                        f "That's the way it should be. Cis {b}activity{/b} here is unbearable sometimes."
+
+                    else:
+
+                        f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    if badwords == True:
+                        mc "Cis {b}activity{/b}?"
+                    else:
+                        mc "Cis shit?"
 
                     f "Nevermind, just do your business so we can get back to everyone."
 
@@ -3115,7 +3178,13 @@ label act1_3:
 
                     show fiona angry with dissolve
 
-                    f "Yeah I get it. This stupid het norm school fucking sucks."
+                    if badwords == True:
+
+                        f "Yeah I get it. This stupid het norm school {b}really{/b} sucks."
+
+                    else:
+
+                        f "Yeah I get it. This stupid het norm school fucking sucks."
 
                     f "I know you don’t know me that well, but come in the girls room with me I’ll make sure nobody bugs us."
 
@@ -3175,9 +3244,18 @@ label act1_3:
 
                     show fiona angry
 
-                    f "That's the way it should be. Cis shit here is unbearable sometimes."
+                    if badwords == True:
 
-                    mc "Cis shit?"
+                        f "That's the way it should be. Cis {b}activity{/b} here is unbearable sometimes."
+
+                    else:
+
+                        f "That's the way it should be. Cis shit here is unbearable sometimes."
+
+                    if badwords == True:
+                        mc "Cis {b}activity{/b}?"
+                    else:
+                        mc "Cis shit?"
 
                     show fiona sad with Dissolve(0.1)
 
@@ -3278,7 +3356,7 @@ label act1_3:
 
                 g "Really? What was she like?"
 
-                "Swallowing the last of what remained on my plate, I try to recall the most flattering memory of ol'Geraldine."
+                "Swallowing the last of what remained on my plate, I try to recall the most flattering memory of ol Geraldine."
 
                 mc "She was the biggest woman I’ve ever seen."
 
@@ -3298,11 +3376,23 @@ label act1_3:
 
                 mc "She’d say horrible things. Like when they called her fat she would say something like,"
 
-                mc "\"At least if I gave birth to an ugly fuck like yerself I’d have the decency to eat ya and save me the trouble of looking like I passed around a goat.\""
+                if badwords == True:
+
+                    mc "\"At least if I gave birth to an ugly {b}man{/b} like yerself I’d have the decency to eat ya and save me the trouble of looking like I passed around a goat.\""
+
+                else:
+
+                    mc "\"At least if I gave birth to an ugly fuck like yerself I’d have the decency to eat ya and save me the trouble of looking like I passed around a goat.\""
 
                 show ge happy at wiggle
 
-                g "BWAHahahahahaha! That fucking hilarious. And she’d do that how often?"
+                if badwords == True:
+
+                    g "BWAHahahahahaha! That's {b} really darn hilarious{/b}. And she’d do that how often?"
+
+                else:
+
+                    g "BWAHahahahahaha! That's fucking hilarious. And she’d do that how often?"
 
                 "She almost choked trying to get that out. Her entire body has gone limp from laughter."
 
@@ -3378,7 +3468,7 @@ label act1_3:
 
                     "She seems nervous to talk to me, couldn’t imagine what she’d be like if the Captain show’d up."
 
-                    mc "Yes this tastes great. I’ve never had anything like it."
+                    mc "Yes, this tastes great. I’ve never had anything like it."
 
                     show be emb at wiggle
 
@@ -3413,7 +3503,7 @@ label act1_3:
 
                     "Flavio mostly takes care of the number stuff."
 
-                    mc "Yes this tastes great. I’ve never had anything like it."
+                    mc "Yes, this tastes great. I’ve never had anything like it."
 
                     show be with Dissolve(0.1)
 
@@ -3672,7 +3762,7 @@ label act1_3:
 
                 show ast with dissolve
 
-                "Is that a pirate I'm suppose to know?"
+                "Is that a pirate I'm supposed to know?"
 
                 a "I'm glad we got to meet today."
 

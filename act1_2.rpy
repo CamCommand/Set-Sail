@@ -95,7 +95,7 @@ label act1_2:
 
     "It’s towering over the stands and buildings lining the end of the harbor."
 
-    "As if a sea monster poked it’s gigantic head out of the water to eye it’s next meal and everyone ignored it thinking it would shield them."
+    "As if a sea monster poked its gigantic head out of the water to eye its next meal and everyone ignored it thinking it would shield them."
 
     "Plenty of pirate ships could come here, it might be commonplace."
 
@@ -162,11 +162,11 @@ label act1_2:
 
     "Although, this is an invitation to a school."
 
-    "Where best to learn about people my age then a building full of them?"
+    "Where best to learn about people my age than a building full of them?"
 
     "It would be my pleasure to set those barnacle heads straight about being a pirate as well. I don’t see why I shouldn’t go."
 
-    "If they think being a pirate is all glamour and riches these guys have another thing coming."
+    "If they think being a pirate is all glamor and riches these guys have another thing coming."
 
     "I’ll give them enough horror stories so that they’ll never set foot in Poseidon’s territory again."
 
@@ -227,7 +227,7 @@ label act1_2:
 
     "The letter said this place was called Seaborough. Some of the signs on the eatteries confirm it."
 
-    "Other than the more personal stuff Mom use to tell me, I’ve heard some interesting things about Florida. Mainly how there’s a bunch of old and crazy people here who have given up on life."
+    "Other than the more personal stuff Mom used to tell me, I’ve heard some interesting things about Florida. Mainly how there’s a bunch of old and crazy people here who have given up on life."
 
     "So I got to keep an eye out for lunatics, but also not to hurt anyone. Leaving my pistol onboard was a good idea, even if it leaves me naked."
 
@@ -390,7 +390,7 @@ label act1_2:
 
                 "She laughed at me!"
 
-                woman "Yeah let me find something a triller seeker like you would enjoy."
+                woman "Yeah let me find something a thrill seeker like you would enjoy."
 
                 "I hope I didn’t say that too weirdly."
 
@@ -434,7 +434,7 @@ label act1_2:
 
                 "Wait is this right? It’s about the Gods!"
 
-                "The main character is the half blood daughter of Hades. They're trying to earn their place amongst the Gods."
+                "The main character is the half-blood daughter of Hades. They're trying to earn their place amongst the Gods."
 
                 "That sounds interesting, although, if they get mythos wrong will that make me mad?"
 
@@ -850,7 +850,7 @@ label act1_2:
 
                         $ quick_menu = True
 
-                        "I'm so use to stealing from people of ill gotten wealth, this feels wrong."
+                        "I'm so used to stealing from people of ill gotten wealth, this feels wrong."
 
                         "If I remember and there is time after school I'll come back."
 
@@ -1074,7 +1074,7 @@ label act1_2:
 
                 "Do I just not pass as a high school graduate?"
 
-                mc "My uh, test scores. I need them for referening."
+                mc "My uh, test scores. I need them for referencing."
 
                 ma "Why don't you have your test scores?"
 
@@ -1342,7 +1342,7 @@ label act1_2:
 
                 "My kind of game."
 
-                "After the coin goes into the machine it says {color=#F93A22}\"Player One\"{/color} can start. Where my hands are suppose to go there's only a stick and one red button."
+                "After the coin goes into the machine it says {color=#F93A22}\"Player One\"{/color} can start. Where my hands are supposed to go there's only a stick and one red button."
 
                 "Seems simple enough, hopefully easy to play."
 
@@ -1373,7 +1373,7 @@ label act1_2:
 
                 "They gave me three lives but the enemies didn’t reset at all and killed me the second I was back on the screen."
 
-                "Turning back to the bartender it was obvious he was watching during my first life, but after my character was corner he returned to preparing for paying customers."
+                "Turning back to the bartender it was obvious he was watching during my first life, but after my character was cornered he returned to preparing for paying customers."
 
                 jump ar_end
 
@@ -1456,7 +1456,7 @@ label act1_2:
 
                 "I don’t have any previous experience, but my preconceived notions are being challenged."
 
-                "My character swings their sword in between enemies spousing meaty lines of dialogue at me."
+                "My character swings their sword in between enemies spouting meaty lines of dialogue at me."
 
                 play effect "audio/dino.mp3"
 

@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.5
 ## This file contains options that can be changed to customize your game.
 ##
 ## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
@@ -14,7 +15,7 @@
 ## The _() surrounding the string marks it as eligible for translation.
 
 define config.name = _("Set Sail")
-define config.developer = True
+#define config.developer = True
 
 ## The version of the game.
 
@@ -32,7 +33,7 @@ define gui.about = _p("""
 Set Sail is a western visual novel set in the modern day where the Golden Age of Pirating never properly ended. The player takes the role of a young pirate who has lived their entire life sheltered on a famous pirate ship known as The Red Plague, captained by The Demonic Pirate Ricardo. Everything the main character has learned about life on the mainland was from hearsay from newer pirates or their mother who has been mysteriously absent. Regardless of how much they struggled at sea, the main character was thankful for the freedom that came with pirating. However, they do often wonder if the grass is greener on the other side.\n
 Through a first person perspective, you play as the main character who is given some leeway to explore mainland Florida, USA. After engaging with some colorful bystanders you end up attending a meeting of the local high school’s Pirate Culture Club. Here is where your misconceptions of how people your own age are supposedly like gets shattered into pieces. Getting to know the four female E-board members reinvigorates you and squashes some self doubts.\n
 But life doesn't stop when you think everything will be alright. Poseidon finds a way to rock the boat.\n
-Set Sail is currently in it’s demo phase. The first act of the game is to give players a taste of what is trying to be accomplished with this project. It is currently being developed by a small number of people. If you’d like to support the creator you can by going to their {a=https://www.patreon.com/cam_setsail?fan_landing=true}Patreon{/a}. Thank you for downloading the demo, enjoy the high seas.
+Set Sail is currently is currently just the start of the game. Hopefully, one day, the whole story can unfold. If you’d like to support the creator you can by going to their {a=https://www.patreon.com/cam_setsail?fan_landing=true}Patreon{/a}. Thank you for downloading the demo, enjoy the high seas.
 """)
 
 # These extra centers are for showing four characters on screen at once
@@ -180,6 +181,8 @@ define config.window_hide_transition = Dissolve(.2)
 ## number is the number of characters per second to type out.
 
 default preferences.text_cps = 50
+
+define badwords = gui.preference("badwords",False)
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0

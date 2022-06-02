@@ -1,4 +1,5 @@
 # Cameron Drummond 2021-2022
+# version 1.0.5
 label act1_6:
 
 stop music fadeout 2.0
@@ -12,7 +13,7 @@ if may_talk == 0:
 
     "After some more aimless wandering, finally a strip where everything isn’t closed."
 
-    "Actually, most of these businesses do look closed, but just because of the time according to the open hours signs on their windows."
+    "Actually, most of these businesses do look closed."
 
     "There’s what looks like a small café coming up on the right."
 
@@ -36,11 +37,11 @@ if may_talk == 0:
 
         "I could have had some money if that woman didn't take it all for herself."
 
-        "If she only knew had desperate I am, maybe she would have spared me some change."
+        "If she only knew how desperate I am, maybe she would have spared me some change."
 
     "Getting closer to the windows, people are being served sandwiches and soups. Nobody but the server is wearing a mask though."
 
-    "Apparently this COVID thing spreads through air but not food?"
+    "Apparently this covid thing spreads through air, but not food?"
 
     "Seems strange, but I've never suffered from anything worse than Ocean's Ear."
 
@@ -60,7 +61,7 @@ if may_talk == 0:
 
     "Astrid is who I was meant to find!"
 
-    "Thank you Gods, you’re gracious and benevolent, I’m sorry for ever doubting you weren't looking out for me."
+    "Thank you Gods, you’re all gracious and benevolent, I’m sorry for ever doubting you weren't looking out for me."
 
 elif may_talk == 1:
 
@@ -94,7 +95,7 @@ elif may_talk == 1:
 
         m "Wait, was this lady kinda scraggly looking? Said \"somethin'\" a lot?"
 
-        mc "Yeah that's Doll."
+        mc "Yeah, she said to call her Doll."
 
         show may smile flip with Dissolve(0.1)
 
@@ -128,9 +129,14 @@ elif may_talk == 1:
 
         mc "So how did they get over it? Did it die out?"
 
-        m "No, they just stopped caring. Some people needed haircuts and stpuid shit like that."
+        if badwords == True:
 
-        mc "Oh... Well that’s one way to do it."
+            m "No, they just stopped caring. Some people needed haircuts and {b}silly stuff{/b} like that."
+
+        else:
+            m "No, they just stopped caring. Some people needed haircuts and stupid shit like that."
+
+        mc "Oh...Well that’s one way to do it."
 
         mc "Couldn’t they just give themselves a haircut?"
 
@@ -177,7 +183,7 @@ elif may_talk == 1:
 
     m "Sure, I guess. What is she your little ex-girlfriend?"
 
-    if Astrid_affinity >= 3:
+    if Astrid_affinity > Fi_affinity and Astrid_affinity > Be_affinity and Astrid_affinity > G_affinity:
 
         mc "What?! No! I mean, like, I don't think."
 
@@ -189,7 +195,7 @@ elif may_talk == 1:
 
         show may flip with Dissolve(0.1)
 
-        m "Okay dude, sure thing. I said I was, didn't I?"
+        m "Okay relax, sure thing. I said I was, didn't I?"
 
     else:
 
@@ -199,7 +205,7 @@ elif may_talk == 1:
 
         show may flip with Dissolve(0.1)
 
-        m "Chill dude, I said I was going to, didn’t I?"
+        m "Chill okay, I said I was going to, didn’t I?"
 
 $ w = Character('Waitress', color="#FF793B", callback=rot_voice) # resuing the market woman for the waitress
 
@@ -277,13 +283,13 @@ if may_talk == 1:
 
     m "Um hello?"
 
-    mc "Oh my bad. Astrid, this is Hanna."
+    mc "Oh my bad. Astrid, this is Hann."
 
-    mc "She is showing me around and was going to buy me some food."
+    mc "She was showing me around and was going to buy me some food."
 
     show ast post with Dissolve(0.1)
 
-    a "Nice to meet you Hanna."
+    a "Nice to meet you Hann."
 
     a "Any friend of [player_name] is a friend of ours."
 
@@ -324,7 +330,11 @@ b "Women live on average longer than men. She is the most likely candidate to br
 
 show fi madpost
 
-f "I don’t believe the shit you’re spewing G."
+if badwords == True:
+    f "I don’t believe the {b}stank{/b} you’re spewing G."
+
+else:
+    f "I don’t believe the shit you’re spewing G."
 
 f "Why are you rooting for an old lady to die?"
 
@@ -390,7 +400,7 @@ f "Then why haven’t we heard about it?"
 
 show be confpost with Dissolve(0.1)
 
-b "Oh, that’s because…"
+b "Oh, that’s because..."
 
 show be quizpost with Dissolve(0.1)
 
@@ -422,7 +432,7 @@ if may_talk == 1:
 
     m "Hey waitress, can we get two cups of black coffee and a chocolate chip muffin?"
 
-    mc "Thanks Hanna, again that means a lot."
+    mc "Thanks Hann, again that means a lot."
 
 else:
 
@@ -456,7 +466,7 @@ else:
 
     g "Oh duh, sorry dude."
 
-    mc "It’s okay, we can talk all you like, I just need something to eat."
+    mc "It’s alright, we can talk all you like, I just need something to eat."
 
     if earrings == 1:
 
@@ -524,13 +534,13 @@ g "We try, if we can get Astrid out of her room."
 show fi madpost with Dissolve(0.1)
 show be suppost at wiggle
 
-f "G! Come on dude!"
+f "G! Come on!"
 
 show ge madpost
 
 g "What, stop snapping at me? It’s true."
 
-g "How many of these has Behati tried setting up and we barely are all together once every other month."
+g "How many of these has Behati tried setting up and we barely are all together once every other month?"
 
 f "Don’t know if you remembered but there’s been a stupid pandemic prancing around."
 
@@ -565,7 +575,7 @@ g "Two weeks my ass."
 
 if may_talk == 1:
 
-    mc "Hanna, did you know this was going on for so long?"
+    mc "Hann, did you know this was going on for so long?"
 
     m "Like I said, it’s been rough around here."
 
@@ -581,13 +591,17 @@ if may_talk == 1:
 
     "The first bite was like nothing had ever graced my mouth in years."
 
-    "Hanna’s muffin already disappeared, she’s started on her coffee now. I’m still feeling hungry though."
+    "Hann’s muffin already disappeared, she’s started on her coffee now. I’m still feeling hungry though."
 
     "Maybe one of the girls will share some of their sandwiches with me later."
 
 mc "So, everything hasn’t been great?"
+if badwords == True:
 
-f "Not like all our lives were on track for success after high school, but the pandemic really messed our shit up."
+    f "Not like all our lives were on track for success after high school, but the pandemic really messed our {b}plans{/b} up."
+
+else:
+    f "Not like all our lives were on track for success after high school, but the pandemic really messed our shit up."
 
 show ge madpost at wiggle
 
@@ -614,7 +628,7 @@ b "A video game studio opening in Florida felt like a bad idea from the start."
 
 show ge smilepost with Dissolve(0.1)
 
-g "Well we were almost done with my contract when,"
+g "Well we were almost done with my contract when-"
 
 show ge madpost at wiggle
 
@@ -644,7 +658,10 @@ else:
 
     mc "That’s terrible G, I’m sorry it wound up like that."
 
-    g "I know right! It’s bullcrap."
+    if badwords == True:
+        g "I know right! It’s {b}cruddy{/b}!"
+    else:
+        g "I know right! It’s bullcrap!"
 
 show ge post
 
@@ -681,7 +698,12 @@ f "No wait, it isn’t because that’s not how vaccines work! Half our state al
 
 show ast confpost with Dissolve(0.1)
 
-a "It’s bullshit, we know, but calm down girl."
+if badwords == True:
+
+    a "It’s {b}icky{/b}, we know, but calm down girl."
+
+else:
+    a "It’s bullshit, we know, but calm down girl."
 
 show fi sadpost with Dissolve(0.1)
 
@@ -702,7 +724,7 @@ show fi smilepost
 
 f "I was learning actually cool stuff, there was a super large queer association on campus, living in the dorms was hard but fulfilling."
 
-f "It was all just so…"
+f "It was all just so..."
 
 show ge smugpost with Dissolve(0.1)
 
@@ -746,17 +768,17 @@ show be happypost with Dissolve(0.1)
 
 b "Yes I did! I got a full ride to Florida State."
 
-b "I was still undeclared but was having a great time. Living in a co-ed dorm and everyone was so pretty it was nuts!"
+b "I was still undeclared, but was having a great time. Living in a co-ed dorm and everyone was so pretty it was nuts."
 
 if may_talk == 1:
 
     show may fl
 
-    m "So you went for the whole platter aye?"
+    m "So you went for the whole platter huh?"
 
     m "Go gettem girl."
 
-    b "Oh it was so overwhelming."
+    b "Oh, it was so overwhelming."
 
     show may smile
 
@@ -774,7 +796,7 @@ show fi madpost with Dissolve(0.1)
 
 f "All I got were rocks."
 
-f "Fair and balanced my perfect ass!"
+f "Fair and balanced my perfect ass."
 
 show be happypost at wiggle
 
@@ -833,6 +855,8 @@ if may_talk == 1:
 
     m "All sounds like a waste of time to me. College is a scam."
 
+    mc "I wouldn't know."
+
 show be post with Dissolve(0.1)
 
 b "Well either way the school system shut down due to rona at the same time I was allowed to reapply."
@@ -860,19 +884,25 @@ f "Oh quit it G! I don’t need your-"
 
 show ge post with Dissolve(0.1)
 
-g "Okay, okay, remember to relax."
+g "Okay, okay, remember to relax dude."
 
 show ast happypost with Dissolve(0.1)
 
 a "[player_name] tell us what you’ve been up to please."
 
-a "You can skip the bad parts right? You said being a pirate was very freeing."
+a "You can skip the bad parts right? You said being a pirate was very freeing back then."
 
 show ast happypost at wiggle
 
 a "You were still living free, right?"
 
 mc "..."
+
+if may_talk == 0:
+
+    "I guess I can't escape Hann knowing I'm a pirate now."
+
+    "Maybe she won't ask for context. Or I could convince her later I lied to the girls and not her."
 
 mc "Yeah, I was doing great for a while."
 
@@ -930,7 +960,7 @@ if may_talk == 0:
 
     elif may_v == 1:
 
-        mc "Wait I know you."
+        mc "Wait, I know you."
 
         mc "You took my earrings!"
 
@@ -956,7 +986,7 @@ if may_talk == 0:
 
     mc "In Europe."
 
-    mc "We’re doing a history school thing about it."
+    mc "We’re doing a history. School. Thing. About Europe."
 
     show may smile with Dissolve(0.1)
     show ast post
@@ -979,7 +1009,7 @@ if may_talk == 0:
 
         mc "You’re that [may_position] from the [activity_choice]."
 
-        if activity_choice == "market":
+        if activity_choice == "market":# this does not appear
 
             mc "Or what was left of it."
 
@@ -1031,7 +1061,7 @@ if may_talk == 0:
 
     g "Who do you think you are?"
 
-    b "This is such a weird and barely qualifies as a hostage situation."
+    b "This is so weird and barely qualifies as a hostage situation."
 
     mc "My thoughts exactly, why would you want to join a pirate crew anyway?"
 
@@ -1096,11 +1126,11 @@ if may_talk == 0:
 
     show may smug with Dissolve(0.1)
 
-    m "It isn’t a matter of trust, it’s easy peasy, super appealing, blackmail."
+    m "It isn’t a matter of trust, it’s easy peasy, always in style, blackmail."
 
     show may
 
-    m "Or at the very least get you kicked out of one of the few remaining coffee shops left in town."
+    m "At the very least get you kicked out of one of the few remaining coffee shops left in town. Put you on the lam."
 
     show may fl with Dissolve(0.1)
 
@@ -1172,7 +1202,21 @@ else:
 
     m "What happened to the rich brat story?"
 
-    mc "Sorry for lying Hanna, I didn’t know if I could trust you."
+    if badwords == True:
+        "{b}Oh nuts{/b}. I was hoping she'd call me out later so i wouldn't have to explain in front of the girls."
+
+    else:
+        "Shite. I was hoping she'd call me out later so i wouldn't have to explain in front of the girls."
+
+    show ge suppost
+
+    g "You didn't tell her?"
+
+    show ast sadpost
+
+    a "Well they might not want everyone to know G. So really we blew it."
+
+    mc "Girls it's alright. Sorry for lying Hann, I didn’t know if I could trust you."
 
     mc "The Red Plague is a notorious ship, I didn't know if you would change your opinion about me if you had known."
 
@@ -1184,13 +1228,18 @@ else:
 
     mc "What if you’d turn me into the state?"
 
+    mc "..."
+
     mc "You aren’t going to do that, are you?"
 
     show may fl behind fi
     show ast post
     show may fl at redochar
 
-    m "No, of course not. I’m not going to go crawl to the cops or some dumb shit like that."
+    if badwords == True:
+        m "No, of course not. I’m not going to go crawl to the cops or some dumb {b}meme{/b} like that."
+    else:
+        m "No, of course not. I’m not going to go crawl to the cops or some dumb shit like that."
 
     m "I lied to you too, by the way."
 
@@ -1216,7 +1265,7 @@ else:
     show ge suppost
     with Dissolve(0.1)
 
-    mc "That’s not funny Hanna."
+    mc "That’s not funny, not Hanna."
 
     show may with Dissolve(0.1)
 
@@ -1234,9 +1283,9 @@ else:
 
     show be confpost with Dissolve(0.1)
 
-    b "Yeah and I can't get you, uh, porkchop... If you want."
+    b "Yeah and I can't get you, uh, porkchop...If you want."
 
-    mc "Girls, no. But I'm confused though."
+    mc "Stop, no bribes. But I'm confused though."
 
     mc "Why do you want to join a pirate crew anyway?"
 
@@ -1252,7 +1301,7 @@ else:
     show ge post
     with Dissolve(0.1)
 
-    mc "For sure, an excellent doctor is roaming the streets earning sympathy points from random pirates."
+    mc "I'm confident, an excellent doctor is roaming the streets earning sympathy points from random pirates."
 
     show may smug with Dissolve(0.1)
 
@@ -1324,7 +1373,7 @@ m "How’d something like that happen to the feared ship of the Demonic Pirate R
 
 mc "Not sure yet. We were boarded during a storm."
 
-mc "There was no telling by how many pirates there were, but it was enough to disarm and destroy the majority of our crew in a matter of minutes."
+mc "There was no telling by how many pirates, but it was enough to disarm and destroy the majority of our crew in a matter of minutes."
 
 b "How’d you escape?"
 
@@ -1364,7 +1413,7 @@ show ast happypost with Dissolve(0.1)
 
 a "Yes, you idiots. Always trying to get me out of my house when I doomer post online."
 
-a "Coming over with movies to watch, because even though the theater couldn’t stay open, you all knew movies make me happy."
+a "Coming over with movies to watch, because even though the theater couldn’t stay open, you all know movies make me happy."
 
 show fi happypost with Dissolve(0.1)
 
@@ -1394,17 +1443,17 @@ if may_talk == 0:
 
     w "Absolutely. I’ll put them in now."
 
-"The food came out looking so hot and delicious. I remember the first time I got to enjoy food hot."
+"The food came out looking so hot and delicious. I remember the first time I got to enjoy hot food."
 
 "It was once I contributed to my first ship raid that I was allowed to eat before the ship hands and get the food before it cooled off."
 
-"It was inconceivable to me that Geraldine’s porridge was better warm."
+"It was inconceivable to me that chef Geraldine’s porridge was better warm."
 
 if may_talk == 0:
 
     show fi smilepost with Dissolve(0.1)
 
-    f "Here’s my soup dude. It's all yours."
+    f "Here’s my soup matey. It's all yours."
 
     mc "Thank you Fiona. What kind is it?"
 
@@ -1422,7 +1471,7 @@ if may_talk == 0:
 
     show fi sadpost with Dissolve(0.1)
 
-    f "You good matey?"
+    f "You doin' good?"
 
     mc "These are amazing, are they like, the greatest in the world here?"
 
@@ -1453,7 +1502,7 @@ else:
 
     show ast happypost with Dissolve(0.1)
 
-    a "Yeah, sure matey. Have you ever had them before?"
+    a "Yeah, sure [player_name]. Have you ever had them before?"
 
     mc "Cooked potato strips, I’ve had before."
 
@@ -1465,13 +1514,15 @@ else:
 
     mc "From some pirate friends with more experience with land folks than I."
 
+    mc "I just heard it off hand from them."
+
     show ge smugpost with Dissolve(0.1)
 
     g "More experience than you? That’s impossible, you went to high school for a day."
 
     show ast happypost
 
-    mc "Huhhuha, yeah,"
+    mc "Huh huh ha, yeah."
 
     mc "I’m very cultured as you all know."
 
@@ -1489,7 +1540,7 @@ else:
 
 show may smile with Dissolve(0.1)
 
-m "Heh heh,"
+m "Heh heh."
 
 m "You all seem like real good friends."
 
@@ -1503,7 +1554,7 @@ f "Um, yeah, sure."
 
 g "Are you still here?"
 
-g "Why don’t you go find some happy people whose lives you can worsen?"
+g "Why don’t you go find some happy people whose lives you can make worse?"
 
 show may with Dissolve(0.1)
 
@@ -1537,7 +1588,7 @@ if persistent.name5 == 0:
 
     $ persistent.name5 = 1
     $ persistent.may_name_count += 1
-    $ achievement.progress("Jane Doe", persistent.may_name_count)
+    #$ achievement.progress("Jane Doe", persistent.may_name_count)
 
 if persistent.may_name_count == 5:
 
@@ -1636,6 +1687,7 @@ label mAYbe:
         $ May_affinity += 3
         play effect "audio/good.mp3"
         show may smile with Dissolve(0.1)
+
         m "{color=#50A23B}Thank you girls. And [player_name], that means a lot.{/color}"
 
     else:
@@ -1648,7 +1700,7 @@ label mAYbe:
 
         if earrings == 0:
 
-            mc "I would like my earrings back though."
+            mc "I would like my earrings back too."
 
             show may sad with Dissolve(0.1)
 
@@ -1660,7 +1712,7 @@ label mAYbe:
 
             show may with Dissolve(0.1)
 
-            m "I’m sorry, I didn't get that much anyway. I feel about it now I guess."
+            m "I’m sorry, I didn't get that much anyway. I feel bad about it now I guess."
 
             mc "Disregarding that slight."
 
@@ -1703,6 +1755,7 @@ label mAYbe:
         $ May_affinity = 0
         play effect "audio/bad.mp3"
         show may with Dissolve(0.1)
+
         m "{color=#f00}Well, I can’t say I trust you all either, I’d get nothing out of being crude to you now.{/color}"
 
     show fi sadpost
@@ -1739,7 +1792,7 @@ label mAYbe:
 
     show be happypost at wiggle
 
-    b "You had G distract Mike in the sound booth so I could get in and play the song when you walked."
+    b "You had G distract Mike in the sound booth so I could get in and play the song when you walked on stage."
 
     f "The confusion on Vice Principal Rowan’s face was worth it to me."
 
@@ -1747,7 +1800,7 @@ label mAYbe:
 
     g "That little creep thought I was making a move on him."
 
-    g "I know he was kinda fem and all but not on your life Mike."
+    g "Yeah, he was kinda fem and all but not on your life Mike."
 
     f "But you planned the entire scheme in like a day."
 
@@ -1765,11 +1818,11 @@ label mAYbe:
 
     show fi sadpost with Dissolve(0.1)
 
-    f "Well she use to a lot before COVID."
+    f "Well, she used to a lot before covid."
 
     show ge smilepost with Dissolve(0.1)
 
-    g "Like that time at the deli-"
+    g "Like that time at the deli."
 
     "I wonder which pirates in Honduras have their own theme song? I had no idea they were so coordinated."
 
@@ -1781,10 +1834,15 @@ label mAYbe:
 
     a "So you said you’re the only survivor of The Red Plague?"
 
+    show fi madpost with Dissolve(0.1)
+
+    f "Astrid! Too soon."
+
     mc "Not that I want to go into details, but everyone else was either slain or went down with the ship."
 
     show ge post
     show be post
+    show fi post
 
     a "If your Captain told you to escape, why do you think that is?"
 
@@ -1810,9 +1868,9 @@ label mAYbe:
 
     show fi sadpost with Dissolve(0.1)
 
-    f "Astrid, don’t you think this is too soon?"
+    f "Astrid, don’t you think that's all a little much for someone that close to death?"
 
-    f "They just lost everyone they knew to the pirate equivalent of a sucker punch."
+    f "[player_name] just lost everyone they knew to the pirate equivalent of a sucker punch."
 
     a "Not everyone, that’s where we come in."
 
@@ -1854,7 +1912,7 @@ label mAYbe:
 
     g "Now that’s the Astrid I remember!"
 
-    g "Just like {i}The Great Budget Meeting of ‘16{/i}, we’re taking control of our own destinies!"
+    g "Just like {i}The Great Budget Meeting of ‘16{/i}, we’re taking control of our own destiny!"
 
     show fi madpost at wiggle
 
@@ -1866,7 +1924,7 @@ label mAYbe:
 
     a "Exactly! Were you not a member of the Pirate Culture Club?"
 
-    m "Did ya'll really have a \"Pirate Culture Club\"?"
+    m "Did y'all really have a \"Pirate Culture Club\"?"
 
     a "Yes we did, and it was the best thing ever."
 
@@ -1904,9 +1962,13 @@ label mAYbe:
 
     a "Besides the fact we studied this stuff all the time in high school, we each have something valuable we can use. I bet [player_name] sees it too."
 
+    m "And I've been on a ship for the past few years as well."
+
+    a "Exactly!"
+
     show fi sadpost with Dissolve(0.1)
 
-    f "[player_name], you can’t be on the same page Astrid turned is?"
+    f "[player_name], you can’t be on the same page Astrid is on?"
 
     mc "Well, considering what I know about you all."
 
@@ -1976,7 +2038,7 @@ label pirate_position:
 
                 f "You’re all just being nice, I couldn’t navigate a pirate ship!"
 
-                a "Looks like you’re the minority here Fiona. Sounds to me like you're a navigator from now."
+                a "Looks like you’re the minority here Fiona. Sounds to me like you're a navigator."
 
                 show fi madpost with Dissolve(0.1)
 
@@ -2049,7 +2111,7 @@ label pirate_position:
 
                 show be suppost at bounce with Dissolve(0.1)
 
-                b "That is all taken out of context."
+                b "That's all taken out of context."
 
                 show ast happypost with Dissolve(0.1)
 
@@ -2059,11 +2121,11 @@ label pirate_position:
 
                 show be quizpost with Dissolve(0.1)
 
-                b "That’s {cps=90}ummmmm,{/cps} not at all. But I guess. It seems like a plausible idea."
+                b "That’s {cps=90}ummmmmmm,{/cps} not at all. But I guess. It seems like a plausible idea."
 
                 b "I’d give it maybe a sixty percent chance of happening."
 
-                b "Under the right circumstances obviously."
+                b "Under the right circumstances, obviously."
 
                 a "I know you’d be great at it Be."
 
@@ -2232,7 +2294,7 @@ label pirate_position:
 
                     m "I need the help of a big strong man to get the young ones to agree with me."
 
-                    mc "Girls I think you should give May a fair shake if we’re going to try this."
+                    mc "Girls, I think you should give May a fair shake if we’re going to try this."
 
                 else:
 
@@ -2344,13 +2406,13 @@ label act1_end:
 
     mc "I wouldn’t just ship you off on the first vessel that came into port. You all couldn’t pass for hardened pirates, but maybe"
 
-    mc "With the proper guidance,"
+    mc "With the proper guidance."
 
     show fi sadpost at wiggle
 
     f "You don’t really think that."
 
-    mc "-you could become amazing pirates."
+    mc "You could become amazing pirates."
 
     show ast happypost at bounce
 
@@ -2442,7 +2504,7 @@ label act1_end:
 
     show ast sadpost at bounce
 
-    a "Oh right, sorry. How about…the?"
+    a "Oh right, sorry. How about the..."
 
     mc "How about we worry about a name once we have a ship?"
 
@@ -2468,7 +2530,13 @@ label act1_end:
 
     b "But why can’t I be? The alliteration is so nice to say. You can be Fiona the Fearless."
 
-    f "I might as well be Fiona the Barely Fuckable if \"The Beautiful\" is already taken."
+    if badwords == True:
+
+        f "I might as well be Fiona the Barely {b}Loveable{/b} if \"The Beautiful\" is already taken."
+
+    else:
+
+        f "I might as well be Fiona the Barely Fuckable if \"The Beautiful\" is already taken."
 
     show be suppost at bounce
 
@@ -2490,7 +2558,7 @@ label act1_end:
 
     show ge smilepost with Dissolve(0.1)
 
-    g "I am for it. I wish I did say it."
+    g "I am for it. I wish I said it."
 
     show may
     show be post
@@ -2502,9 +2570,9 @@ label act1_end:
 
     show may smile with Dissolve(0.1)
 
-    m "Well aren’t you an honorable Captain so far. Here I thought it was going to be hard to tell."
+    m "Well aren’t you an honorable Captain so far? Here I thought it was going to be hard to tell."
 
-    mc "My base comes from the Pirate Code first and then the Gods."
+    mc "My core comes from the Pirate Code first and then the Gods."
 
     show ge suppost with Dissolve(0.1)
 
@@ -2514,7 +2582,9 @@ label act1_end:
 
     a "It’s the rules pirates abide by, G there was a poster with them in the club room."
 
-    g "Was it next to the French class word collage? Because my eyes steered clear of that mess."
+    a "For four years."
+
+    g "Was it next to the word collage from the French class? Because my eyes steered clear of that mess."
 
     show be confpost with Dissolve(0.1)
 
@@ -2637,7 +2707,7 @@ label act1_end:
 
         while wherex < 9:
 
-            mc "Poseidon expels this being.{nw}"
+            mc "Poseidon expels this being!{nw}"
             with delete
 
             $ wherex += 1
