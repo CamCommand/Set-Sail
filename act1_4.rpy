@@ -248,7 +248,7 @@ label ship_start:
 
                 jump game_over
 
-        if matey < 2 and death_count != 0: # only the first pirate is here
+        if matey < 2 and death_count != 0 and pirate1_x == 3: # only the first pirate is here
 
             if pirate1_x == 3:
 
@@ -269,7 +269,9 @@ label ship_start:
                     show pirate3 at left with moveinleft
 
                     p "Mind if I CUT in?"
+
                     $ x_naut += 1
+                    $ pirate2_x = 3
                     call screen pirate_fight2_1
 
                 call screen pirate_fight2_0
@@ -284,7 +286,7 @@ label ship_start:
 
         elif matey >= 2 and death_count != 0: # second pirate appears
 
-            if pirate1_x == 3 and pirate2_x != 3:
+            if pirate1_x == 3 and pirate2_x != 3: # pirate 1 is alive pirate 2 is not
 
                 show sword swing at sword with ease
                 play effect "audio/sword_clash.ogg"
@@ -297,10 +299,24 @@ label ship_start:
 
                 $ matey += 1
                 $ death_count -= 1
-
                 call screen pirate_fight2_0
 
-            elif pirate1_x == 3 or pirate2_x == 3:
+            elif pirate1_x == 3 and pirate2_x == 3: # pirate 1 and 2 is alive
+
+                 show sword swing at sword with ease
+                 play effect "audio/sword_clash.ogg"
+                 show BG nightdeck2 with flash
+
+                 show sword at sword with ease
+                 $ random_line = renpy.random.randint(0, 3)
+                 $ p_line = pirate_lines[random_line]
+                 p "[p_line]"
+
+                 $ matey += 1
+                 $ death_count -= 1
+                 call screen pirate_fight2_1
+
+            elif pirate1_x != 3 and pirate2_x == 3: # pirate 2 is alive pirate 1 is not
 
                  show sword swing at sword with ease
                  play effect "audio/sword_clash.ogg"
@@ -314,7 +330,7 @@ label ship_start:
                  $ matey += 1
                  $ death_count -= 1
 
-                 call screen pirate_fight2_1
+                 call screen pirate_fight2_2
 
     label pirate_fight2_1: # when pirate 1 of the fight dies
 

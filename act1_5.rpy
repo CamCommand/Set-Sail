@@ -502,10 +502,6 @@ label act1_5:
 
                 $ quick_menu = True
 
-                if book_forgot == 1:
-
-                    "Oh damn, I forgot to go back there. Oh well, I can go back now at least."
-
                 "If I’ve learned anything else about this world that wasn’t from pirates, it was from books."
 
                 "Even learned what a bookstore actually was from the labels on the spines of my first few volumes I secured."

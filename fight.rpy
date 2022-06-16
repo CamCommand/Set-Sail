@@ -49,7 +49,6 @@ screen pirate_fight2_0:
 
 # both pirates in alive fight 2
 screen pirate_fight2_1:
-
 # pirate 1
 
     imagebutton:
