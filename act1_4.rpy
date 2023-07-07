@@ -1,8 +1,8 @@
 # Cameron Drummond 2021-2022
-# version 1.0.5
+# version 1.1.0
 label act1_4:
 
-# thankfully this game runs smoothly and extra nesting doesn't visually effect runtime
+# Thankfully this game runs smoothly and extra nesting doesn't visually effect runtime
 # I know the If-soup for the pirate fights are bad
 
 # But I had to redesign the fight after adding image buttons

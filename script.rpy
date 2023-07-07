@@ -1,5 +1,5 @@
 ﻿# Cameron Drummond 2021-2022
-# version 1.0.5
+# version 1.1.0
 init python:
 
     player_identity_voice = "m"
@@ -24,6 +24,12 @@ init python:
         config.tts_voice = "Alex"
     elif renpy.linux:
         config.tts_voice = "english_rp"
+
+    def music_loop():
+        renpy.music.play("music/MainThemeEnd.ogg", channel="music")
+        renpy.music.queue("music/BelowDeck.ogg", channel="music")
+        renpy.music.queue("music/PirateTimes.ogg", channel="music")
+        renpy.music.queue("music/SchoolSucks.ogg", channel="music")
 
     def voice(event, **kwargs):# voice for MC
         if event == "show":
@@ -394,6 +400,7 @@ $ persistent.menuflag = 0       # for the changing main menu
 $ persistent.menuflag_count = 0 # for knowing if the player has reached a menu before
 $ persistent.flg = 0            # you know what this is for ;)
 
+
 if persistent.menuflag == 1:
 
     $ gui.main_menu_background = "gui/main_menu_sword.png"
@@ -407,12 +414,13 @@ else:
     $ gui.main_menu_background = "gui/main_menu.png"
 
 # colors used reference
-#50A23B a good choice
-#f00 a bad choice
+# 50A23B a good choice
+# f00 a bad choice
 
 # The Start of Game
 label start:
 
+    define track0 = "music/MainThemeEnd.ogg"
     define track1 = "music/BelowDeck.ogg"
     define track2 = "music/PirateTimes.ogg"
     define track3 = "music/SchoolSucks.ogg"

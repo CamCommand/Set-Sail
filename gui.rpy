@@ -1,5 +1,5 @@
 # Cameron Drummond 2021-2022
-# version 1.0.5
+# version 1.1.0
 ################################################################################
 ## Initialization
 ################################################################################
@@ -12,8 +12,6 @@ init offset = -2
 ## width and height of the game.
 init python:
     gui.init(1920, 1080)
-
-
 
 ################################################################################
 ## GUI Configuration Variables
@@ -89,6 +87,7 @@ define gui.title_text_size = 150
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
 define gui.main_menu_background2 = "gui/main_menu_sword.png"
+
 
 #if menuflag == True:
 

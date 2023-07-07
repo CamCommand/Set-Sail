@@ -1,11 +1,10 @@
 # Cameron Drummond 2021-2022
-# version 1.0.5
+# version 1.1.0
 ################################################################################
 ## Initialization
 ################################################################################
 
 init offset = -1
-
 
 ################################################################################
 ## Styles
@@ -129,7 +128,6 @@ style say_thought is say_dialogue
 
 style namebox is default
 style namebox_label is say_label
-
 
 style window:
     xalign 0.5
@@ -307,7 +305,6 @@ screen navigation():
             textbutton _("Start") action Start() hovered [Play("effect", "audio/click.ogg")]
             #imagebutton auto "gui/mm_start_%s.png" xpos 15 ypos 968 focus_mask True action Start() hovered [Play("effect", "audio/click.ogg")]
 
-
         else:
 
             textbutton _("History") action ShowMenu("history") hovered [Play("effect", "audio/click.ogg")]
@@ -384,7 +381,6 @@ screen main_menu2():
             # textbutton _("Start") action Start()
             imagebutton auto "gui/mm_start_%s.png" xpos 15 ypos 968 focus_mask True action Start() hovered [Play("effect", "audio/click.ogg")]
 
-
         else:
 
             textbutton _("History") action ShowMenu("history")
@@ -404,6 +400,15 @@ screen main_menu2():
 
         # textbutton _("Preferences") action ShowMenu("preferences")
         imagebutton auto "gui/mm_pref_%s.png" xpos 403 ypos 967 focus_mask True action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
+
+        # music button
+        imagebutton:
+             auto "gui/button/ms_%s.png"
+             xpos -210
+             ypos -205
+             focus_mask True
+             action ShowMenu("PC")
+             hovered [Play("effect", "audio/bum.mp3")]
 
         # textbutton _("Pirate Code") action ShowMenu("PC")
         imagebutton auto "gui/mm_pc_%s.png" xpos 794 ypos 960 focus_mask True action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
@@ -440,23 +445,17 @@ screen main_menu2():
 screen main_menu1():
 
     tag menu
-
     add "gui/main_menu.png"
 
     fixed:
 
         style_prefix "navigation"
-
-        #xpos gui.navigation_xpos
-        #yalign 0.5
-
         spacing gui.navigation_spacing
 
         if main_menu:
 
             # textbutton _("Start") action Start()
             imagebutton auto "gui/mm_start_%s.png" xpos 15 ypos 968 focus_mask True action Start() hovered [Play("effect", "audio/click.ogg")]
-
 
         else:
 
@@ -478,6 +477,15 @@ screen main_menu1():
         # textbutton _("Preferences") action ShowMenu("preferences")
         imagebutton auto "gui/mm_pref_%s.png" xpos 403 ypos 967 focus_mask True action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
 
+        # music button
+        imagebutton:
+             auto "gui/button/ms_%s.png"
+             xpos -210
+             ypos -205
+             focus_mask True
+             action ShowMenu("vibe")
+             hovered [Play("effect", "audio/bum.mp3")]
+
         # textbutton _("Pirate Code") action ShowMenu("PC")
         imagebutton auto "gui/mm_pc_%s.png" xpos 794 ypos 960 focus_mask True action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
 
@@ -496,7 +504,6 @@ screen main_menu1():
             ## Web.
             # textbutton _("Quit") action Quit(confirm=not main_menu)
             imagebutton auto "gui/mm_quit_%s.png" xpos 1762 ypos 960 focus_mask True action Quit(confirm=not main_menu) hovered [Play("effect", "audio/click.ogg")]
-
 
     if gui.show_name:
 
@@ -532,7 +539,6 @@ screen main_menu2():
             # textbutton _("Start") action Start()
             imagebutton auto "gui/mm_start_%s.png" xpos 15 ypos 968 focus_mask True action Start() hovered [Play("effect", "audio/click.ogg")]
 
-
         else:
 
             textbutton _("History") action ShowMenu("history")
@@ -552,6 +558,15 @@ screen main_menu2():
 
         # textbutton _("Preferences") action ShowMenu("preferences")
         imagebutton auto "gui/mm_pref_%s.png" xpos 403 ypos 967 focus_mask True action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
+
+        # music button
+        imagebutton:
+             auto "gui/button/ms_%s.png"
+             xpos -210
+             ypos -205
+             focus_mask True
+             action ShowMenu("vibe")
+             hovered [Play("effect", "audio/bum.mp3")]
 
         # textbutton _("Pirate Code") action ShowMenu("PC")
         imagebutton auto "gui/mm_pc_%s.png" xpos 794 ypos 960 focus_mask True action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
@@ -628,6 +643,15 @@ screen main_menu3():
         # textbutton _("Preferences") action ShowMenu("preferences")
         imagebutton auto "gui/mm2_pref_%s.png" xpos 403 ypos 967 focus_mask True action ShowMenu("preferences") hovered [Play("effect", "audio/click.ogg")]
 
+        # music button
+        imagebutton:
+             auto "gui/button/ms2_%s.png"
+             xpos -210
+             ypos -205
+             focus_mask True
+             action ShowMenu("vibe")
+             hovered [Play("effect", "audio/bum.mp3")]
+
         # textbutton _("Pirate Code") action ShowMenu("PC")
         imagebutton auto "gui/mm2_pc_%s.png" xpos 794 ypos 960 focus_mask True action ShowMenu("PC") hovered [Play("effect", "audio/click.ogg")]
 
@@ -660,7 +684,6 @@ screen main_menu3():
                 font "FORTE.ttf"
                 style "main_menu_title"
 
-
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
@@ -679,8 +702,6 @@ screen main_menu():
     else:
 
         use main_menu1
-
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -781,7 +802,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     textbutton _("Return"):
         style "return_button" hovered [Play("effect", "audio/click.ogg")]
-
         action Return()
 
     label title
@@ -812,8 +832,6 @@ style game_menu_outer_frame:
 style game_menu_navigation_frame:
     xsize 420
     yfill True
-
-
 
 style game_menu_content_frame:
     left_margin 60
@@ -1175,9 +1193,6 @@ screen preferences():
                             bar value Preference("sound volume")
                             textbutton _("*") action Play("sound", "audio/blip3.ogg")
 
-
-
-
                     #if config.has_voice:
                     #    label _("Voice Volume")
 
@@ -1520,12 +1535,83 @@ style help_label_text:
     xalign 1.0
     text_align 1.0
 
-
-
 ################################################################################
 ## Additional screens
 ################################################################################
 
+## Vibe screen ##############################################################
+##
+## Image Maps to overlay a hovering Geraldine compared to different music choices
+##
+screen G_music1():
+
+    imagemap:
+        ground "images/G alt/g happy alt.png" xalign 0.05 yalign 0.9802
+
+screen G_music2():
+
+    imagemap:
+        ground "images/G alt/g sup alt.png" xalign 0.05 yalign 0.9802
+
+screen G_music3():
+
+    imagemap:
+        ground "images/G alt/g mad alt.png" xalign 0.05 yalign 0.9802
+
+screen G_music4():
+
+    imagemap:
+        ground "images/G alt/g smug alt.png" xalign 0.05 yalign 0.9802
+
+screen vibe:
+    ## Ensure other screens do not get input while this screen is displayed.
+    modal True
+    add "gui/frame2.png" xpos 0 ypos 0
+    add "gui/sub_box1.png"
+    image "gui/music_deck_label.png"
+    # text vibe check
+    image "images/G alt/g smile alt.png" xalign 0.05 yalign 0.9802
+    textbutton _("Return"):
+        xalign 0.85
+        yalign 0.9
+        style "return_button" hovered [Play("effect", "audio/click.ogg")]
+        action Hide("vibe")
+
+    hbox:
+
+        xalign 0.5
+        yalign 0.85
+        spacing 50
+        style_prefix "confirm"
+        textbutton _("Play All"):
+            action Function(music_loop)
+        textbutton _("Stop"):
+            hovered Play("effect", "audio/click.ogg")
+            action Stop("music")
+
+    vbox:
+        xalign 0.75
+        yalign 0.35
+        spacing 30
+        textbutton _("Main Theme"):
+            hovered [Play("effect", "audio/click.ogg"), Show("G_music1")]
+            unhovered [Hide("G_music1")]
+            action Play("music", track0)
+
+        textbutton _("Below Deck"):
+            hovered [Play("effect", "audio/click.ogg"), Show("G_music2")]
+            unhovered [Hide("G_music2")]
+            action Play("music", track1)
+
+        textbutton _("School Sucks"):
+            hovered [Play("effect", "audio/click.ogg"), Show("G_music3")]
+            unhovered [Hide("G_music3")]
+            action Play("music", track3)
+
+        textbutton _("Pirate Times"):
+            hovered [Play("effect", "audio/click.ogg"), Show("G_music4")]
+            unhovered [Hide("G_music4")]
+            action Play("music", track2)
 
 ## Confirm screen ##############################################################
 ##
