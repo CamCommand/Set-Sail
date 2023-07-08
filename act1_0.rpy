@@ -1,5 +1,5 @@
 # Cameron Drummond 2021-2022
-# version 1.0.5
+# version 1.1.0
 init python in myworld:
 
     def getText():
