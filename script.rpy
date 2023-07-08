@@ -433,6 +433,9 @@ label start:
     # for the custom cursor
     define config.mouse = { }
     define config.mouse['default'] = [ ( "gui/arrow.png", 0, 0) ]
+    define config.mouse['man'] = [ ( "gui/arrow1.png", 0, 0) ]
+    define config.mouse['woman'] = [ ( "gui/arrow2.png", 0, 0) ]
+    define config.mouse['nb'] = [ ( "gui/arrow3.png", 0, 0) ] 
 
     # position name of character speaking
     define gui.name_xpos = 0.1

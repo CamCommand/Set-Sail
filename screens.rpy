@@ -1387,7 +1387,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Help"), scroll="viewport"):
+    use game_menu(_("Controls"), scroll="viewport"):
 
         style_prefix "help"
 
@@ -1584,6 +1584,7 @@ screen vibe:
         spacing 50
         style_prefix "confirm"
         textbutton _("Play All"):
+            hovered Play("effect", "audio/click.ogg")
             action Function(music_loop)
         textbutton _("Stop"):
             hovered Play("effect", "audio/click.ogg")

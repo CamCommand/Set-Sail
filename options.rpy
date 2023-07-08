@@ -1,11 +1,5 @@
 # Cameron Drummond 2021-2022
 # version 1.1.0
-## This file contains options that can be changed to customize your game.
-##
-## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
-## them. Lines beginning with a single '#' mark are commented-out code, and you
-## may want to uncomment them when appropriate.
-
 
 ## Basics ######################################################################
 
@@ -19,7 +13,7 @@ define config.name = _("Set Sail")
 
 ## The version of the game.
 
-define config.version = "1.0.3"
+define config.version = "1.1.0"
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -33,7 +27,7 @@ define gui.about = _p("""
 Set Sail is a western visual novel set in the modern day where the Golden Age of Pirating never properly ended. The player takes the role of a young pirate who has lived their entire life sheltered on a famous pirate ship known as The Red Plague, captained by The Demonic Pirate Ricardo. Everything the main character has learned about life on the mainland was from hearsay from newer pirates or their mother who has been mysteriously absent. Regardless of how much they struggled at sea, the main character was thankful for the freedom that came with pirating. However, they do often wonder if the grass is greener on the other side.\n
 Through a first person perspective, you play as the main character who is given some leeway to explore mainland Florida, USA. After engaging with some colorful bystanders you end up attending a meeting of the local high school’s Pirate Culture Club. Here is where your misconceptions of how people your own age are supposedly like gets shattered into pieces. Getting to know the four female E-board members reinvigorates you and squashes some self doubts.\n
 But life doesn't stop when you think everything will be alright. Poseidon finds a way to rock the boat.\n
-Set Sail is currently is currently just the start of the game. Hopefully, one day, the whole story can unfold. If you’d like to support the creator you can by going to their {a=https://www.patreon.com/swiftstr33t?fan_landing=true}Patreon{/a}. Thank you for downloading the demo, enjoy the high seas.
+Set Sail is currently is currently just the start of the game. Hopefully, one day, the whole story can unfold. If you’d like to support the creator you can by going to their {a=https://www.patreon.com/swiftstr33t?fan_landing=true}Patreon{/a}. Thank you for downloading, enjoy the high seas.
 """)
 
 # These extra centers are for showing four characters on screen at once

@@ -88,6 +88,7 @@ label act1_1:
                     $ player_name = "Valerie"
                     $ player_identity_voice = "f"
                     $ mc = Character('Valerie', color="FF4DA6", callback=voice)
+                    $ default_mouse = "woman"
 
                     if persistent.female == 0:
 
@@ -108,6 +109,7 @@ label act1_1:
                     $ player_name = "Oscar"
                     $ player_identity_voice = "m"
                     $ mc = Character('Oscar', color="00AAFF", callback=voice)
+                    $ default_mouse = "man"
 
                     if persistent.male == 0:
 
@@ -128,6 +130,7 @@ label act1_1:
                     $ player_name = "Reed"
                     $ player_identity_voice = "nb"
                     $ mc = Character('Reed', color="116600", callback=voice)
+                    $ default_mouse = "nb"
 
                     if persistent.nb == 0:
 
@@ -151,6 +154,7 @@ label act1_1:
                     if player_name == "":
 
                         $ player_name = "Reed"
+                        $ default_mouse = "nb"
 
                     if player_name == "Blackbeard" or player_name == "black beard" or player_name == "Black Beard":
 
@@ -172,7 +176,7 @@ label act1_1:
 
                     if player_name == "Anne Bonny" or player_name == "anne bonny" or player_name == "Mary Read" or player_name == "mary read":
 
-                        "Those girls were the finest vessels, but they aren't me."
+                        "That girl was the finest femme on the sea, but they aren't me."
 
                         $ achievement.grant("Cheeky Name") # Grant Achievement
                         $ achievement.sync()
@@ -189,6 +193,7 @@ label act1_1:
 
                 $ player_identity = "f"
                 $ mc = Character('[player_name]', color="FF4DA6", callback=voice)
+                $ default_mouse = "woman"
 
                 if persistent.female == 0:
 
@@ -207,6 +212,7 @@ label act1_1:
 
                 $ mc = Character('[player_name]', color="00AAFF", callback=voice)
                 $ player_identity = "m"
+                $ default_mouse = "man"
 
                 if persistent.male == 0:
 
@@ -225,6 +231,7 @@ label act1_1:
 
                 $ mc = Character('[player_name]', color="116600", callback=voice)
                 $ player_identity = "nb"
+                $ default_mouse = "nb"
 
                 if persistent.nb == 0:
 
